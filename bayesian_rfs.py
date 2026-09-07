@@ -60,6 +60,8 @@ class RFSOutput:
     position_covariance: np.ndarray
     existence: np.ndarray
     visible: np.ndarray
+    state_variance: np.ndarray
+    process_variance: np.ndarray
     occupancy_probability: np.ndarray
     density_mean: float
     density_std: float
@@ -227,10 +229,17 @@ class BayesianRFSBelief:
 
     def _prediction_for_track(
         self, track: BernoulliTrack, horizon: int
-    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    ) -> Tuple[np.ndarray, ...]:
         transition, process = self._transition()
         mean = track.mean.copy()
         covariance = track.covariance.copy()
+        # The recursion is linear, so P_h separates exactly into the propagated
+        # state term and the accumulated process term.  Only the second is
+        # uncertainty about what the pedestrian will choose to do next.
+        state_only = track.covariance.copy()
+        process_only = np.zeros_like(state_only)
+        state_var = np.empty(horizon, dtype=np.float64)
+        process_var = np.empty(horizon, dtype=np.float64)
         starts = np.empty((horizon, 2), dtype=np.float64)
         ends = np.empty_like(starts)
         buffers = np.empty(horizon, dtype=np.float64)
@@ -240,6 +249,10 @@ class BayesianRFSBelief:
             starts[step] = mean[:2]
             next_mean = transition @ mean
             next_covariance = transition @ covariance @ transition.T + process
+            state_only = transition @ state_only @ transition.T
+            process_only = transition @ process_only @ transition.T + process
+            state_var[step] = state_only[0, 0]
+            process_var[step] = process_only[0, 0]
             ends[step] = next_mean[:2]
             if self.mode == "fixed":
                 fixed_std = self.cfg.fixed_uncertainty_radius / np.sqrt(
@@ -262,7 +275,7 @@ class BayesianRFSBelief:
                 )
                 buffers[step] = np.sqrt(quantile) * radial_std
             mean, covariance = next_mean, next_covariance
-        return starts, ends, buffers, covariances
+        return starts, ends, buffers, covariances, state_var, process_var
 
     def _poisson_probability(
         self,
@@ -313,11 +326,15 @@ class BayesianRFSBelief:
         ]
         entities: List[List[float]] = []
         starts, ends, buffers, covariances, existences = [], [], [], [], []
+        state_vars, process_vars = [], []
         for track in selected:
             entities.append(
                 [track.mean[0], track.mean[1], track.mean[2], track.mean[3], track.radius]
             )
-            start, end, buffer, covariance = self._prediction_for_track(track, horizon)
+            (start, end, buffer, covariance,
+             state_var, process_var) = self._prediction_for_track(track, horizon)
+            state_vars.append(state_var)
+            process_vars.append(process_var)
             starts.append(start)
             ends.append(end)
             buffers.append(buffer)
@@ -349,6 +366,8 @@ class BayesianRFSBelief:
             position_covariance=covariance_array,
             existence=existence_array,
             visible=np.asarray([t.visible for t in selected], dtype=bool),
+            state_variance=np.asarray(state_vars, dtype=np.float64).reshape(-1, horizon),
+            process_variance=np.asarray(process_vars, dtype=np.float64).reshape(-1, horizon),
             occupancy_probability=probability,
             density_mean=float(density_mean),
             density_std=float(density_std),

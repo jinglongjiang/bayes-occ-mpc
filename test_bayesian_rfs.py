@@ -217,7 +217,7 @@ class MPCTerminalSemanticsTest(unittest.TestCase):
             human_uncertainty_buffer=None,
             human_position_covariance=None,
             human_existence=None,
-            human_visible=None,
+            human_visible=None, human_state_var=None, human_process_var=None,
             unknown=None,
             occupancy_probability=None,
             provenance="unit",
@@ -465,7 +465,7 @@ class ReobservationTests(unittest.TestCase):
             robot_radius=.3,goal_xy=np.array([0.,3.]),entities=xy,
             human_segment_start=segments.copy(),human_segment_end=segments.copy(),
             human_uncertainty_buffer=None,human_position_covariance=np.array(future_cov)[None],
-            human_existence=np.array([.8]), human_visible=None,unknown=None,occupancy_probability=None,provenance='synthetic',
+            human_existence=np.array([.8]), human_visible=None, human_state_var=None, human_process_var=None,unknown=None,occupancy_probability=None,provenance='synthetic',
             state_covariances=np.tile(.1*np.eye(4),(1,1,1)),missed=np.array([missed]))
         return cfg,obs
 

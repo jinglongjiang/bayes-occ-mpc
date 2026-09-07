@@ -65,6 +65,11 @@ class MPCConfig:
     probability_weight: float = 2500.0
     chance_limit: float = 0.10
     risk_gamma: float = 2.0
+    # Process-noise scale mixture on the collision probability only.  pi = 0.0
+    # leaves the shipped single-Gaussian computation bit-identical.
+    mixture_pi: float = 0.0
+    mixture_a: float = 0.0
+    mixture_b: float = 1.0
     near_chance_limit: float = 0.10
     occupancy_chance_limit: float = 0.15
     fixed_uncertainty_radius: float = 0.35
@@ -132,6 +137,8 @@ class PlannerObservation:
     human_position_covariance: Optional[np.ndarray]
     human_existence: Optional[np.ndarray]
     human_visible: Optional[np.ndarray]
+    human_state_var: Optional[np.ndarray]
+    human_process_var: Optional[np.ndarray]
     unknown: Optional[UnknownField]
     occupancy_probability: Optional[ProbabilityField]
     provenance: str
@@ -470,37 +477,51 @@ class ContinuousCEMMPC:
         human_positions = obs.human_segment_end
         relative = positions[:, None, :, :] - human_positions[None, :, :, :]
         distance = np.linalg.norm(relative, axis=3)
-        variance = 0.5 * np.trace(
-            obs.human_position_covariance, axis1=2, axis2=3
-        )
         collision_radius = (
             obs.robot_radius
             + obs.entities[None, :, None, 4]
             + self.cfg.human_margin
         )
-        scaled_radius = np.square(collision_radius) / np.maximum(
-            variance[None, :, :], 1e-9
-        )
-        noncentrality = np.square(distance) / np.maximum(
-            variance[None, :, :], 1e-9
-        )
-        # A collision disc lies inside its near-side tangent half-plane.
-        # Beyond 8 sigma use the upper bound Phi(-8), never drop a person.
-        # Per-step hazard error is at most N * 6.23e-16 (roundoff aside).
-        far = (distance - collision_radius) >= 8.0 * np.sqrt(variance)[None, :, :]
-        conditional = np.full(distance.shape, ndtr(-8.0))
-        near = ~far
-        conditional[near] = ncx2.cdf(
-            np.broadcast_to(scaled_radius, distance.shape)[near],
-            2.0, noncentrality[near],
-        )
-        deterministic = variance < 1e-9
-        if np.any(deterministic):
-            conditional = np.where(
-                deterministic[None, :, :],
-                distance <= collision_radius,
-                conditional,
+
+        def mass_inside(variance):
+            """Probability mass inside the collision disc for an isotropic
+            Gaussian of the given variance, exactly (non-central chi-square)."""
+            scaled_radius = np.square(collision_radius) / np.maximum(
+                variance[None, :, :], 1e-9
             )
+            noncentrality = np.square(distance) / np.maximum(
+                variance[None, :, :], 1e-9
+            )
+            # A collision disc lies inside its near-side tangent half-plane.
+            # Beyond 8 sigma use the upper bound Phi(-8), never drop a person.
+            # Per-step hazard error is at most N * 6.23e-16 (roundoff aside).
+            far = (distance - collision_radius) >= 8.0 * np.sqrt(variance)[None, :, :]
+            conditional = np.full(distance.shape, ndtr(-8.0))
+            near = ~far
+            conditional[near] = ncx2.cdf(
+                np.broadcast_to(scaled_radius, distance.shape)[near],
+                2.0, noncentrality[near],
+            )
+            deterministic = variance < 1e-9
+            if np.any(deterministic):
+                conditional = np.where(
+                    deterministic[None, :, :],
+                    distance <= collision_radius,
+                    conditional,
+                )
+            return conditional
+
+        total = 0.5 * np.trace(obs.human_position_covariance, axis1=2, axis2=3)
+        pi = self.cfg.mixture_pi
+        if (pi <= 0.0 or obs.human_state_var is None
+                or obs.human_process_var is None):
+            conditional = mass_inside(total)
+        else:
+            # Process-noise scale mixture: the state term is irreducible and is
+            # never scaled; only the future-motion term carries the mixture.
+            state, proc = obs.human_state_var, obs.human_process_var
+            conditional = (pi * mass_inside(state + self.cfg.mixture_a * proc)
+                           + (1.0 - pi) * mass_inside(state + self.cfg.mixture_b * proc))
         component = conditional * obs.human_existence[None, :, None]
         return -np.log1p(-np.clip(component, 0.0, 1.0 - 1e-12)).sum(axis=1)
 
@@ -898,6 +919,8 @@ class ObservationAdapter:
         human_position_covariance = None
         human_existence = None
         human_visible = None
+        human_state_var = None
+        human_process_var = None
         if self.arm == "worst":
             sensor = sensor_grid
             unknown_mask = sensor == 0.5
@@ -959,6 +982,8 @@ class ObservationAdapter:
                 human_position_covariance = output.position_covariance
                 human_existence = output.existence
                 human_visible = output.visible
+                human_state_var = output.state_variance
+                human_process_var = output.process_variance
             mx, my = mesh
             if np.any(output.occupancy_probability > 0.0):
                 occupancy_probability = ProbabilityField(
@@ -992,6 +1017,8 @@ class ObservationAdapter:
             human_position_covariance=human_position_covariance,
             human_existence=human_existence,
             human_visible=human_visible,
+            human_state_var=human_state_var,
+            human_process_var=human_process_var,
             unknown=unknown,
             occupancy_probability=occupancy_probability,
             provenance=f"{state.provenance}:{obs_hash}",
