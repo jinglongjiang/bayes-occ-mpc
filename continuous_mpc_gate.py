@@ -64,7 +64,6 @@ class MPCConfig:
     unknown_weight: float = 6500.0
     probability_weight: float = 2500.0
     chance_limit: float = 0.10
-    risk_gamma: float = 2.0
     near_chance_limit: float = 0.10
     occupancy_chance_limit: float = 0.15
     fixed_uncertainty_radius: float = 0.35
@@ -131,7 +130,6 @@ class PlannerObservation:
     human_uncertainty_buffer: Optional[np.ndarray]
     human_position_covariance: Optional[np.ndarray]
     human_existence: Optional[np.ndarray]
-    human_visible: Optional[np.ndarray]
     unknown: Optional[UnknownField]
     occupancy_probability: Optional[ProbabilityField]
     provenance: str
@@ -190,7 +188,7 @@ class ContinuousCEMMPC:
         limits = (
             self.cfg.near_chance_limit
             + (self.cfg.chance_limit - self.cfg.near_chance_limit)
-            * np.power(phase, self.cfg.risk_gamma)
+            * np.square(phase)
         )
         return limits
 
@@ -897,7 +895,6 @@ class ObservationAdapter:
         human_uncertainty_buffer = None
         human_position_covariance = None
         human_existence = None
-        human_visible = None
         if self.arm == "worst":
             sensor = sensor_grid
             unknown_mask = sensor == 0.5
@@ -958,7 +955,6 @@ class ObservationAdapter:
             elif self.arm != "deterministic":
                 human_position_covariance = output.position_covariance
                 human_existence = output.existence
-                human_visible = output.visible
             mx, my = mesh
             if np.any(output.occupancy_probability > 0.0):
                 occupancy_probability = ProbabilityField(
@@ -991,7 +987,6 @@ class ObservationAdapter:
             human_uncertainty_buffer=human_uncertainty_buffer,
             human_position_covariance=human_position_covariance,
             human_existence=human_existence,
-            human_visible=human_visible,
             unknown=unknown,
             occupancy_probability=occupancy_probability,
             provenance=f"{state.provenance}:{obs_hash}",

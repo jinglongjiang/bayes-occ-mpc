@@ -59,7 +59,6 @@ class RFSOutput:
     uncertainty_buffer: np.ndarray
     position_covariance: np.ndarray
     existence: np.ndarray
-    visible: np.ndarray
     occupancy_probability: np.ndarray
     density_mean: float
     density_std: float
@@ -348,7 +347,6 @@ class BayesianRFSBelief:
             uncertainty_buffer=buffer_array,
             position_covariance=covariance_array,
             existence=existence_array,
-            visible=np.asarray([t.visible for t in selected], dtype=bool),
             occupancy_probability=probability,
             density_mean=float(density_mean),
             density_std=float(density_std),
