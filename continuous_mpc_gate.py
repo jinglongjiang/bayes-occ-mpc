@@ -73,6 +73,10 @@ class MPCConfig:
     init_std: float = 0.65
     min_std: float = 0.08
     acceleration_std: float = 0.55
+    # Ablation: pin the existence probability used by the risk term while
+    # leaving the track set, the means and the covariances untouched.  This
+    # separates "is this person still there" from "where exactly are they".
+    existence_override: Optional[float] = None
     conformal_visible_radii: Tuple[float, ...] = ()
     conformal_hidden_radii: Tuple[float, ...] = ()
 
@@ -501,7 +505,10 @@ class ContinuousCEMMPC:
                 distance <= collision_radius,
                 conditional,
             )
-        component = conditional * obs.human_existence[None, :, None]
+        existence = obs.human_existence
+        if self.cfg.existence_override is not None:
+            existence = np.full_like(existence, self.cfg.existence_override)
+        component = conditional * existence[None, :, None]
         return -np.log1p(-np.clip(component, 0.0, 1.0 - 1e-12)).sum(axis=1)
 
     def _belief_collision_probability(
