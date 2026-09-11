@@ -1,0 +1,14 @@
+{
+  "passed": [
+    "empty",
+    "no_covariance",
+    "zero_existence",
+    "one_existence",
+    "at_goal",
+    "nonfinite",
+    "negative_covariance",
+    "invalid_existence",
+    "anisotropic"
+  ],
+  "envelope_fallback": "exact controls preserved"
+}

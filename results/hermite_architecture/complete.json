@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "tasks": [
+    [
+      5,
+      23000
+    ],
+    [
+      5,
+      23001
+    ],
+    [
+      5,
+      23002
+    ],
+    [
+      5,
+      23003
+    ],
+    [
+      5,
+      23004
+    ],
+    [
+      5,
+      23005
+    ],
+    [
+      5,
+      23006
+    ],
+    [
+      5,
+      23007
+    ],
+    [
+      5,
+      23008
+    ],
+    [
+      5,
+      23009
+    ],
+    [
+      10,
+      23000
+    ],
+    [
+      10,
+      23001
+    ],
+    [
+      10,
+      23002
+    ],
+    [
+      10,
+      23003
+    ],
+    [
+      10,
+      23004
+    ],
+    [
+      10,
+      23005
+    ],
+    [
+      10,
+      23006
+    ],
+    [
+      10,
+      23007
+    ],
+    [
+      10,
+      23008
+    ],
+    [
+      10,
+      23009
+    ],
+    [
+      20,
+      23000
+    ],
+    [
+      20,
+      23001
+    ],
+    [
+      20,
+      23002
+    ],
+    [
+      20,
+      23003
+    ],
+    [
+      20,
+      23004
+    ],
+    [
+      20,
+      23005
+    ],
+    [
+      20,
+      23006
+    ],
+    [
+      20,
+      23007
+    ],
+    [
+      20,
+      23008
+    ],
+    [
+      20,
+      23009
+    ]
+  ],
+  "steps": 1358,
+  "comparisons": 4,
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "timing": true,
+  "source_hashes": {
+    "nav/belief.py": "49cf4ac1c45f38ad3532ea1b6a9c0e24fac4e7310bdd6907db53a877f30fce55",
+    "nav/risk.py": "740113b9ed13d1d133d52d42ee0bbd5ac5127962dec764dc6ea08dd8c0777d04",
+    "nav/__init__.py": "ae545a7792f0242831102312672f304ff9c4f0e35bb01498a94eb262612811ec",
+    "nav/contracts.py": "05a0e80f297d1cb0e3eabf21ebf138705604751bd10e7df65518a957bbdfbcad",
+    "nav/planner.py": "b9e77ae9f6ac56dd4919406dcbe55ea161883761bf133d6e07895141c01f5dbd"
+  }
+}
