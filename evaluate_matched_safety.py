@@ -32,7 +32,10 @@ SCENES = [
     ("large_square", 20, "square_crossing", None, 14.),
 ]
 RISK_SCALES = (.5, .75, 1., 1.5, 2.)
-METHODS = ("bayes", "static_cov", "ewma", "conformal", "fixed")
+# The age-margin arm's five operating points are target coverages, not
+# chance limits: they must move the geometric margin itself.
+AGE_TARGETS = (.75, .85, .90, .95, .975)
+METHODS = ("bayes", "static_cov", "ewma", "conformal", "fixed", "age_margin")
 
 
 def save(path, value):
@@ -156,6 +159,50 @@ class CVMemoryAdapter(ObservationAdapter):
         return observation
 
 
+class AgeMarginAdapter(MatchedAdapter):
+    """Duration-dependent geometric margin instead of a posterior risk term.
+
+    Shares the Bayesian tracker, the track set and the trajectory means with the
+    bayes arm, so the only difference the planner sees is how uncertainty is
+    expressed: a margin m(age, h) = k * ((age + h) * dt) ** p inflating the
+    collision disc, rather than a probability mass integrated over a posterior.
+    The covariance and existence channels are cleared so no probabilistic hazard
+    is computed - otherwise the two mechanisms would both be active.
+
+    The operating point selects the target coverage the margin was fitted to, so
+    the five points genuinely move the margin.
+    """
+
+    def __init__(self, *args, **kwargs):
+        kwargs["method"] = "bayes"           # identical tracking to the bayes arm
+        point = kwargs.get("point", 2)
+        super().__init__(*args, **kwargs)
+        target = f"{AGE_TARGETS[point]:.3f}".rstrip("0")
+        table = (self.calibration or {}).get("age_margin", {})
+        entry = table.get(target) or table.get(f"{AGE_TARGETS[point]:.2f}")
+        if entry is None:
+            raise RuntimeError(
+                f"age_margin calibration missing target {target}; available {sorted(table)}")
+        self.margin_scale = float(entry["scale"])
+        self.margin_power = float(entry["power"])
+
+    def read(self, env):
+        observation = super().read(env)
+        if not observation.entities.size:
+            return observation
+        ages = np.asarray([self.rfs.tracks[i].missed_steps for i in self.reported_ids],
+                          dtype=np.float64)
+        steps = np.arange(1, self.horizon + 1, dtype=np.float64)
+        elapsed = (ages[:, None] + steps[None, :]) * self.dt
+        observation.human_uncertainty_buffer = (
+            self.margin_scale * elapsed ** self.margin_power)
+        observation.human_position_covariance = None
+        observation.human_existence = None
+        observation.provenance += (f":age_margin:k={self.margin_scale:.4f}"
+                                   f":p={self.margin_power:.3f}")
+        return observation
+
+
 def planner_class(search):
     if search == "new":
         return ContinuousCEMMPC
@@ -182,7 +229,8 @@ def evaluate_one(spec):
     return asdict(run_episode(DEFAULT_CROWDNAV, "bayes", count, sim, case, cfg,
         radius, width, seed, *noise, time_limit=25,
         planner_type=planner_class(search),
-        adapter_factory=partial(MatchedAdapter, method=method, calibration=calibration, point=point)))
+        adapter_factory=partial(AgeMarginAdapter if method == 'age_margin' else MatchedAdapter,
+                                method=method, calibration=calibration, point=point)))
 
 
 class CalibrationRecorder:
@@ -194,25 +242,31 @@ class CalibrationRecorder:
         # Called only AFTER control selection. Truth is offline supervision, never
         # passed back to the observation adapter or planner.
         detected = {int(e["id"]): np.array([e["px"], e["py"]]) for e in adapter.detected_entities}
-        for identifier, origin, h, visible, mean in self.pending.pop(step, []):
+        for identifier, origin, h, visible, mean, age in self.pending.pop(step, []):
             truth = np.asarray(env.humans[identifier].get_position())
             error = truth - mean
             measured_error = detected[identifier] - mean if identifier in detected else np.zeros(2)
+            # Column 9 is the miss duration at the forecast origin.  Appended at
+            # the end so every existing column index stays valid.
             self.rows.append([identifier, origin, h, visible, *error,
-                              int(identifier in detected), *measured_error])
+                              int(identifier in detected), *measured_error, age])
         for i, identifier in enumerate(adapter.reported_ids):
+            track = adapter.rfs.tracks[identifier]
             for h in range(adapter.horizon):
                 self.pending.setdefault(step + h + 1, []).append((identifier, step, h + 1,
-                    int(adapter.rfs.tracks[identifier].visible), observation.human_segment_end[i, h].copy()))
+                    int(track.visible), observation.human_segment_end[i, h].copy(),
+                    int(track.missed_steps)))
 
 
 def calibrate_one(task):
-    case, destination = task
+    case, destination, noise = task
     recorder = CalibrationRecorder()
     result = run_episode(DEFAULT_CROWDNAV, "bayes", 5, "circle_crossing", case,
-        config(), circle_radius=4., time_limit=25, step_observer=recorder)
+        config(), circle_radius=4., planner_seed_offset=0,
+        position_noise_std=noise[0], velocity_noise_std=noise[1],
+        detection_probability=noise[2], time_limit=25, step_observer=recorder)
     path = Path(destination) / f"case_{case}.npz"
-    np.savez_compressed(path, rows=np.asarray(recorder.rows, dtype=float).reshape(-1, 9))
+    np.savez_compressed(path, rows=np.asarray(recorder.rows, dtype=float).reshape(-1, 10))
     return asdict(result)
 
 
@@ -238,12 +292,51 @@ def ewma_validation(rows, base, alpha):
     return total, n
 
 
+def fit_age_margin(fit, validation, dt, horizon, targets=(.90,)):
+    """Two-parameter geometric margin  m(age, h) = k * ((age + h) * dt) ** p.
+
+    The duration-dependent baseline the Bayesian arm has to beat: it uses only
+    how long a track has been missed and how far ahead the forecast reaches,
+    which is exactly the information the clean-condition covariance turns out
+    to encode.  Two parameters, fitted on development data, so it cannot be
+    dismissed as an under-tuned straw man; the alternative of one free radius
+    per (age, horizon) cell would be a look-up table, not a method.
+    """
+    age = fit[:, 9]
+    h = fit[:, 2]
+    radius = np.linalg.norm(fit[:, 4:6], axis=1)
+    elapsed = (age + h) * dt
+    out = {}
+    for target in targets:
+        best = None
+        for power in np.linspace(0.5, 2.0, 31):
+            scale = np.quantile(radius / np.maximum(elapsed ** power, 1e-9), target)
+            achieved = float(np.mean(radius <= scale * elapsed ** power))
+            # Prefer the tightest margin that still reaches the target coverage.
+            area = float(np.mean((scale * elapsed ** power) ** 2))
+            if achieved >= target - 0.005 and (best is None or area < best[0]):
+                best = (area, float(scale), float(power), achieved)
+        if best is None:
+            continue
+        _, scale, power, achieved = best
+        cover = []
+        for rows in validation:
+            r = np.linalg.norm(rows[:, 4:6], axis=1)
+            e = (rows[:, 9] + rows[:, 2]) * dt
+            cover.append(float(np.mean(r <= scale * e ** power)))
+        out[f"{target:.2f}"] = {"scale": scale, "power": power,
+                                "fit_coverage": achieved,
+                                "validation_coverage": float(np.mean(cover))}
+    return out
+
+
 def fit_calibration(args):
     directory = args.output.parent / "calibration_records"
     directory.mkdir(parents=True)
     cases = list(range(args.offset, args.offset + args.count))
+    noise = (args.position_noise, args.velocity_noise, args.detection_probability)
     with futures.ProcessPoolExecutor(args.workers) as executor:
-        for r in executor.map(calibrate_one, [(case, str(directory)) for case in cases]):
+        for r in executor.map(calibrate_one, [(case, str(directory), noise) for case in cases]):
             print("calibration", r["case_id"], r["event"], flush=True)
     midpoint = len(cases)//2
     fit = np.concatenate([np.load(directory/f"case_{c}.npz")["rows"] for c in cases[:midpoint]])
@@ -285,6 +378,8 @@ def fit_calibration(args):
         "ewma_validation_nll":ewma_scores,"conformal_radii":radii,
         "fixed_radii":[.15,.25,.35,.45,.60],
         "cases_fit":cases[:midpoint],"cases_validation":cases[midpoint:],
+        "age_margin":fit_age_margin(fit, validation, config().dt, config().horizon),
+        "noise":[args.position_noise, args.velocity_noise, args.detection_probability],
         "human_count":5,"robot_visible":False,
         "conformal_scope":"Empirical radial sets; overlapping forecasts are not independent samples, no distribution-free trajectory guarantee claimed."})
 
@@ -397,8 +492,11 @@ def make_report(out):
         bk = f"bayes_p{selection['bayes']}_new"
         if bk in complete:
             for method in METHODS[1:]:
+                if method not in selection:
+                    continue
                 key = f"{method}_p{selection[method]}_new"
-                if key not in complete: continue
+                if key not in complete:
+                    continue
                 effects = {metric:interval(matrix(bk,metric)-matrix(key,metric))
                            for metric in ("collision_union","audited_time","success_without_overlap","timeout")}
                 effects["supports_predeclared_safety_and_time"] = (

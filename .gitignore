@@ -1,8 +1,12 @@
 # 结果数据不入库（318MB，本身有 source_sha256 可追溯）
 results/
 __pycache__/
+.pytest_cache/
 *.pyc
 *.log
+
+# Catkin/acados diagnostics are generated from src/ and are never source files.
+build_modern/
 
 # 第三方仓库（各自上游版本化，可重新 clone）
 src/

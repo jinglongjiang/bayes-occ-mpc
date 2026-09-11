@@ -38,6 +38,11 @@ from scipy.special import ndtr
 from scipy.stats import ncx2
 
 
+# The success radius the six-scene contract defines, plus the two looser radii
+# the order requires be reported for every method alike so that the auxiliary
+# criterion is not a concession granted only to the comparators.
+GOAL_RADII = ("0.25", "0.5", "1.0")
+
 ROOT = Path(__file__).resolve().parent
 DEFAULT_CROWDNAV = Path(
     "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav"
@@ -139,6 +144,8 @@ class PlannerObservation:
     unknown: Optional[UnknownField]
     occupancy_probability: Optional[ProbabilityField]
     provenance: str
+    # Only the unicycle planner reads this; the holonomic path never touches it.
+    robot_heading: Optional[float] = None
 
 
 @dataclass
@@ -169,6 +176,22 @@ class EpisodeResult:
     deadline_miss_fraction: float = 0.0
     plan_step_ms: List[float] = field(default_factory=list)
     pipeline_step_ms: List[float] = field(default_factory=list)
+    # Steps whose commanded action fell outside the registered actuator box and
+    # was saturated, and the largest amount by which it did.  Not an error and
+    # not hidden: an arm whose solver leaves its own bounds has to be visible.
+    bound_violations: int = 0
+    max_bound_excess: float = 0.0
+    # One row per control step, in order.  The order requires the formal run to
+    # keep the robot's own trajectory, the command it was given, how far it
+    # actually advanced, and whether the solve succeeded -- the failure analysis
+    # and goal-radius queues are computed from these rows rather than by running
+    # more simulations.
+    steps: List[Dict[str, float]] = field(default_factory=list)
+    # First time the robot entered each radius of the goal, and whether the
+    # trajectory up to that moment was free of overlap.  A collision after the
+    # entry does not retract the auxiliary arrival event.
+    goal_entry: Dict[str, Optional[float]] = field(default_factory=dict)
+    goal_entry_clean: Dict[str, bool] = field(default_factory=dict)
 
 
 class ContinuousCEMMPC:
@@ -258,6 +281,20 @@ class ContinuousCEMMPC:
             [np.repeat(target[None, :], self.cfg.horizon, axis=0) for target in targets]
         )
         return self._project_controls(raw, obs.robot_velocity)
+
+    def _rollout(self, samples: np.ndarray, obs: PlannerObservation):
+        """Sampled parameters to (executable parameters, XY velocities, positions).
+
+        The holonomic model is parameterised directly by its velocities, so the
+        first two returns are the same array.  A different kinematic model
+        overrides this and leaves every cost and clearance term untouched: they
+        only ever see XY velocities and the positions they produce.
+        """
+        controls = self._project_controls(samples, obs.robot_velocity)
+        positions = obs.robot_xy[None, None, :] + np.cumsum(
+            controls * self.cfg.dt, axis=1
+        )
+        return controls, controls, positions
 
     def _project_controls(
         self, controls: np.ndarray, initial_velocity: np.ndarray
@@ -601,6 +638,19 @@ class ContinuousCEMMPC:
             first = np.minimum(first, unknown[:, 0])
         return full, first
 
+    def _degraded_choice(self, costs, first_physical, params, obs) -> int:
+        """Which candidate to execute when nothing is feasible.
+
+        The registered policy keeps moving: among the candidates that hold the
+        largest physical clearance at the first step, take the cheapest.  The
+        modern comparators instead brake on an infeasible solve, and whether that
+        difference matters is an experimental question, so subclasses override
+        this rather than the whole optimiser.
+        """
+        safest = float(first_physical.max())
+        near_safest = np.flatnonzero(first_physical >= safest - 0.02)
+        return int(near_safest[np.argmin(costs[near_safest])])
+
     def plan(self, obs: PlannerObservation, seed: int) -> Tuple[np.ndarray, float]:
         cfg = self.cfg
         rng = np.random.default_rng(seed)
@@ -612,12 +662,22 @@ class ContinuousCEMMPC:
         deviations = np.full_like(means, cfg.init_std)
         # Retain half the budget around the warm start. Fit alternatives
         # independently so left/right turns cannot cancel out.
-        remaining = cfg.population - cfg.population // 2
-        counts = [cfg.population // 2] + [remaining // 3] * 3
-        for i in range(remaining % 3):
-            counts[i + 1] += 1
+        # The mode structure follows the number of route seeds the planner
+        # produced.  With the default three routes this is the original
+        # half-to-the-warm-start, thirds-to-the-routes split; with zero routes it
+        # collapses to one distribution over the whole population, which is what
+        # the route-separation ablation needs -- same budget, same seeds, same
+        # execution rule, only the grouping changes.
+        n_routes = int(route_seeds.shape[0])
+        if n_routes:
+            remaining = cfg.population - cfg.population // 2
+            counts = [cfg.population // 2] + [remaining // n_routes] * n_routes
+            for i in range(remaining % n_routes):
+                counts[i + 1] += 1
+        else:
+            counts = [cfg.population]
         bounds = np.cumsum([0] + counts)
-        mode_ids = np.repeat(np.arange(4), counts)
+        mode_ids = np.repeat(np.arange(len(counts)), counts)
         best_controls = seeds[0].copy()
         best_cost = math.inf
         best_class = 3
@@ -632,13 +692,10 @@ class ContinuousCEMMPC:
             samples = means[mode_ids] + deviations[mode_ids] * noise
             samples[:len(seeds)] = seeds
             samples[len(seeds)] = mean
-            for route in range(1, 4):
+            for route in range(1, len(counts)):
                 samples[bounds[route]] = means[route]
                 samples[bounds[route] + 1] = route_seeds[route - 1]
-            controls = self._project_controls(samples, obs.robot_velocity)
-            positions = obs.robot_xy[None, None, :] + np.cumsum(
-                controls * cfg.dt, axis=1
-            )
+            params, controls, positions = self._rollout(samples, obs)
             human_clearance = (
                 self._human_clearance(controls, obs) if obs.entities.size else None
             )
@@ -682,11 +739,8 @@ class ContinuousCEMMPC:
                 iteration_best = int(near_safest[np.argmin(costs[near_safest])])
                 candidate_class = 1
             else:
-                safest = float(first_physical.max())
-                near_safest = np.flatnonzero(first_physical >= safest - 0.02)
-                iteration_best = int(
-                    near_safest[np.argmin(costs[near_safest])]
-                )
+                iteration_best = self._degraded_choice(
+                    costs, first_physical, params, obs)
                 candidate_class = 2
             candidate_cost = float(costs[iteration_best])
             candidate_first = float(first_clearance[iteration_best])
@@ -717,14 +771,14 @@ class ContinuousCEMMPC:
                 best_first_clearance = candidate_first
                 best_full_clearance = float(full_clearance[iteration_best])
                 best_first_physical = float(first_physical[iteration_best])
-                best_controls = controls[iteration_best].copy()
+                best_controls = params[iteration_best].copy()
             for route, count in enumerate(counts):
                 begin, end = bounds[route:route + 2]
                 indices = self._elite_indices(
                     costs[begin:end], full_clearance[begin:end],
                     first_clearance[begin:end], max(4, round(count * cfg.elite_fraction)),
                 ) + begin
-                elite = controls[indices]
+                elite = params[indices]
                 means[route] = 0.22 * means[route] + 0.78 * elite.mean(axis=0)
                 deviations[route] = np.maximum(cfg.min_std, elite.std(axis=0))
 
@@ -1002,6 +1056,10 @@ class ObservationAdapter:
             unknown=unknown,
             occupancy_probability=occupancy_probability,
             provenance=f"{state.provenance}:{obs_hash}",
+            # Robot proprioception, not a pedestrian observation: it is the same
+            # quantity the environment already integrates, and only the unicycle
+            # planner reads it.
+            robot_heading=float(getattr(robot, "theta", 0.0)),
         )
 
 
@@ -1047,10 +1105,10 @@ def _load_modules(crowdnav_root: Path):
         sys.path.insert(0, root_text)
     from crowd_sim.envs.crowd_sim import CrowdSim
     from crowd_sim.envs.policy.policy_factory import NonePolicy
-    from crowd_sim.envs.utils.action import ActionXY
+    from crowd_sim.envs.utils.action import ActionRot, ActionXY
     from crowd_sim.envs.utils.robot import Robot
 
-    return CrowdSim, NonePolicy, ActionXY, Robot
+    return CrowdSim, NonePolicy, ActionXY, Robot, ActionRot
 
 
 def build_env(
@@ -1063,7 +1121,7 @@ def build_env(
     time_limit: Optional[int] = None,
     occlusion: bool = True,
 ):
-    CrowdSim, NonePolicy, _, Robot = _load_modules(crowdnav_root)
+    CrowdSim, NonePolicy, _, Robot, _ = _load_modules(crowdnav_root)
     source = crowdnav_root / "crowd_nav/configs/env.config"
     config = configparser.RawConfigParser()
     if not config.read(source):
@@ -1128,15 +1186,32 @@ def run_episode(
     adapter_factory=ObservationAdapter,
     step_observer=None,
     occlusion: bool = True,
+    robot_kinematics: str = "holonomic",
+    step_executor=None,
 ) -> EpisodeResult:
     env, _, _ = build_env(
         crowdnav_root, arm, human_num, scenario, circle_radius, square_width,
         time_limit, occlusion,
     )
-    _, _, ActionXY, _ = _load_modules(crowdnav_root)
+    _, _, ActionXY, _, ActionRot = _load_modules(crowdnav_root)
     env.reset(options={"test_case": case_id})
     if env.robot.visible:
         raise RuntimeError("protocol violation: robot.visible must be false")
+    if robot_kinematics not in ("holonomic", "unicycle"):
+        raise ValueError(f"unknown robot kinematics {robot_kinematics!r}")
+    if robot_kinematics != "holonomic":
+        # Only the robot changes.  Pedestrians keep the holonomic ORCA path, so
+        # the crowd is identical to the holonomic runs and only the robot's
+        # actuation differs.  Setting it after reset, because reset rebuilds the
+        # agents from the config.
+        env.robot.kinematics = robot_kinematics
+        # Registered initial heading: pointing at the goal, so no method pays a
+        # start-up turn the holonomic planner never has to make.
+        to_goal = np.array([env.robot.gx - env.robot.px,
+                            env.robot.gy - env.robot.py], dtype=np.float64)
+        env.robot.theta = float(np.arctan2(to_goal[1], to_goal[0])) % (2 * np.pi)
+        if any(h.kinematics != "holonomic" for h in env.humans):
+            raise RuntimeError("pedestrians must stay holonomic in a matched run")
 
     planner = planner_type(planner_config)
     adapter = adapter_factory(
@@ -1162,8 +1237,16 @@ def run_episode(
     overlap_steps = 0
     first_overlap = None
     hashes: List[str] = []
+    bound_violations = 0
+    bound_excess = 0.0
     event = "timeout"
     terminated = truncated = False
+    goal_xy = np.array(env.robot.get_goal_position(), dtype=np.float64)
+    step_rows: List[Dict[str, float]] = []
+    goal_entry: Dict[str, Optional[float]] = {r: None for r in GOAL_RADII}
+    goal_entry_clean: Dict[str, bool] = {r: False for r in GOAL_RADII}
+    goal_entry.setdefault(str(float(env.robot.radius)), None)
+    goal_entry_clean.setdefault(str(float(env.robot.radius)), False)
 
     while not (terminated or truncated):
         cycle_start = time.perf_counter()
@@ -1176,20 +1259,63 @@ def run_episode(
         )
         velocity, plan_ms = planner.plan(observation, seed)
         pipeline_times.append((time.perf_counter() - cycle_start) * 1000.)
-        if not np.all(np.isfinite(velocity)) or np.linalg.norm(velocity) > planner_config.v_max + 1e-6:
+        if not np.all(np.isfinite(velocity)):
             raise RuntimeError("invalid planner velocity")
+        # The registered actuator box is enforced here, at the environment
+        # boundary, identically for every arm.
+        #
+        # T-MPC++'s acados solver returns a first input slightly outside its own
+        # declared bound of 0.8 rad/s -- measured up to 0.869 rad/s, about 8.7%
+        # over, on a small fraction of steps, with the solve reported successful.
+        # Rejecting those steps would score a comparator as failing on a
+        # numerical artefact; clipping them without saying so would hide a real
+        # constraint violation.  So the box saturates and every violation is
+        # counted and reported.  The Bayesian planner projects its own controls
+        # and never reaches this path, so saturation is a no-op for it and the
+        # holonomic results are unchanged.
+        # A violation is one outside numerical tolerance; the same 1e-6 band the
+        # holonomic check has always used applies to both kinematics, so this
+        # does not alter any previously recorded holonomic trajectory.
+        tolerance = 1e-6
+        if robot_kinematics == "holonomic":
+            speed = float(np.linalg.norm(velocity))
+            if speed > planner_config.v_max + tolerance:
+                bound_excess = max(bound_excess, speed - planner_config.v_max)
+                bound_violations += 1
+                velocity = velocity * (planner_config.v_max / speed)
+            command = ActionXY(float(velocity[0]), float(velocity[1]))
+        else:
+            # (speed, heading increment).  r is an increment already in radians;
+            # multiplying by dt here would apply the timestep twice.
+            speed, turn = float(velocity[0]), float(velocity[1])
+            turn_limit = getattr(planner_config, "omega_max", 1.0) * planner_config.dt
+            speed_floor = -planner_config.v_max if getattr(
+                planner_config, "reverse", False) else 0.0
+            clipped_speed = min(max(speed, speed_floor), planner_config.v_max)
+            clipped_turn = min(max(turn, -turn_limit), turn_limit)
+            excess = max(abs(speed - clipped_speed), abs(turn - clipped_turn))
+            if excess > tolerance:
+                bound_excess = max(bound_excess, excess)
+                bound_violations += 1
+                speed, turn = clipped_speed, clipped_turn
+            command = ActionRot(speed, turn)
         plan_times.append(plan_ms)
         if step_observer is not None:
             step_observer(env, observation, adapter, step)
         previous = np.array(env.robot.get_position(), dtype=np.float64)
         human_start = np.asarray([h.get_position() for h in env.humans], dtype=np.float64)
         radii = np.asarray([h.radius + env.robot.radius for h in env.humans])
-        _, _, terminated, truncated, info = env.step(
-            ActionXY(float(velocity[0]), float(velocity[1]))
-        )
+        if step_executor is None:
+            _, _, terminated, truncated, info = env.step(command)
+        else:
+            _, _, terminated, truncated, info = step_executor(env, command)
         current = np.array(env.robot.get_position(), dtype=np.float64)
-        physical = swept_min_clearance(previous, current, human_start,
-                    np.asarray([h.get_position() for h in env.humans]), radii)
+        physical = (float(info["physical_clearance"]) if step_executor is not None
+                    else swept_min_clearance(previous, current, human_start,
+                        np.asarray([h.get_position() for h in env.humans]), radii))
+        if info.get("acceleration_clip", 0.) > tolerance:
+            bound_violations += 1
+            bound_excess = max(bound_excess, float(info["acceleration_clip"]))
         actual_minimum = min(actual_minimum, physical)
         if physical < -1e-9:
             overlap_steps += 1
@@ -1198,6 +1324,31 @@ def run_episode(
         path_length += float(np.linalg.norm(current - previous))
         minimum_clearance = min(minimum_clearance, float(info.get("dmin", math.inf)))
         event = str(info.get("event", "nothing"))
+
+        diagnostics = getattr(planner, "last_diagnostics", None) or {}
+        distance = float(np.linalg.norm(current - goal_xy))
+        step_rows.append({
+            "t": float(env.global_time),
+            "x": float(current[0]), "y": float(current[1]),
+            "theta": float(getattr(env.robot, "theta", 0.0)),
+            "speed": float(np.hypot(env.robot.vx, env.robot.vy)),
+            "goal_distance": distance,
+            "action_a": float(command[0]), "action_b": float(command[1]),
+            "advance": float(np.linalg.norm(current - previous)),
+            "clearance": float(info.get("dmin", math.inf)),
+            "solver_success": float(diagnostics.get("solver_success", math.nan)),
+            "exit_code": float(diagnostics.get("exit_code", math.nan)),
+            "solve_ms": float(diagnostics.get("solve_ms", math.nan)),
+            "plan_ms": float(plan_ms),
+        })
+        for key in ("feasibility_class", "first_clearance", "horizon_clearance",
+                    "first_physical_clearance"):
+            if key in diagnostics:
+                step_rows[-1][key] = float(diagnostics[key])
+        for radius in goal_entry:
+            if goal_entry[radius] is None and distance <= float(radius):
+                goal_entry[radius] = float(env.global_time)
+                goal_entry_clean[radius] = overlap_steps == 0
 
     success = int(event == "reach_goal")
     collision = int(event == "collision")
@@ -1228,6 +1379,11 @@ def run_episode(
         mean_pipeline_ms=float(np.mean(pipeline_times)),
         p95_pipeline_ms=float(np.percentile(pipeline_times, 95)),
         deadline_miss_fraction=float(np.mean(np.asarray(pipeline_times) > planner_config.dt * 1000)),
+        steps=step_rows,
+        bound_violations=bound_violations,
+        max_bound_excess=bound_excess,
+        goal_entry=goal_entry,
+        goal_entry_clean=goal_entry_clean,
         plan_step_ms=plan_times,
         pipeline_step_ms=pipeline_times,
     )
@@ -1246,7 +1402,7 @@ def verify_pairing(
         env, _, _ = build_env(
             crowdnav_root, arm, human_num, scenario, circle_radius, square_width
         )
-        _, _, ActionXY, _ = _load_modules(crowdnav_root)
+        _, _, ActionXY, _, _ = _load_modules(crowdnav_root)
         env.reset(options={"test_case": 0})
         trajectory = []
         for _ in range(8):

@@ -1,0 +1,169 @@
+{
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "tasks": [
+    [
+      5,
+      23000
+    ],
+    [
+      5,
+      23001
+    ],
+    [
+      20,
+      23000
+    ],
+    [
+      20,
+      23001
+    ],
+    [
+      5,
+      23002
+    ],
+    [
+      5,
+      23003
+    ],
+    [
+      5,
+      23004
+    ],
+    [
+      5,
+      23005
+    ],
+    [
+      5,
+      23006
+    ],
+    [
+      5,
+      23007
+    ],
+    [
+      5,
+      23008
+    ],
+    [
+      5,
+      23009
+    ],
+    [
+      10,
+      23000
+    ],
+    [
+      10,
+      23001
+    ],
+    [
+      10,
+      23002
+    ],
+    [
+      10,
+      23003
+    ],
+    [
+      10,
+      23004
+    ],
+    [
+      10,
+      23005
+    ],
+    [
+      10,
+      23006
+    ],
+    [
+      10,
+      23007
+    ],
+    [
+      10,
+      23008
+    ],
+    [
+      10,
+      23009
+    ],
+    [
+      20,
+      23002
+    ],
+    [
+      20,
+      23003
+    ],
+    [
+      20,
+      23004
+    ],
+    [
+      20,
+      23005
+    ],
+    [
+      20,
+      23006
+    ],
+    [
+      20,
+      23007
+    ],
+    [
+      20,
+      23008
+    ],
+    [
+      20,
+      23009
+    ]
+  ],
+  "assets": {
+    "/home/abc/workspace/bayes_occ_mpc/continuous_mpc_gate.py": "5b5489cb115984f5356c81d09deda5e77af452f47efd8b718e5c173fbbd804df",
+    "/home/abc/workspace/bayes_occ_mpc/bayesian_rfs.py": "c3622b4c6a1b7051d91a42a666919bb925f889fec6a6dbd16a692361c8421a4f",
+    "/home/abc/temp/elite_audit_20260911/elite_preserving_mpc/rank_certified_cem.py": "53e4061b8ccd65fbb3a89473ee579c653389d138ec62b128df079daf7f4c8120",
+    "/home/abc/temp/elite_audit_20260911/three_arm.py": "db85cc5c2c166149027a18eafda6af61591df3b0af63a447ff8605feefa9fbbc",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm.py": "1d763dcaee739cb5b3bfafd2ec9acdf3ec16912e6eb6893c81c938a786b40735"
+  },
+  "development_only": true,
+  "independent_test": false,
+  "timing_threads": 1,
+  "timing_repeats": 1,
+  "rectangle_baseline": "cached constants; bounds bitwise equal to supplied rectangle helper",
+  "supersedes": "Uncached rectangle run stopped before completion; retain as implementation diagnosis only"
+}
