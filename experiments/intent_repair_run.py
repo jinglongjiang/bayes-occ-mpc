@@ -957,6 +957,14 @@ def timing_summary(values):
 
 
 def report():
+    raw=prediction_rows()
+    expected={(r['case'],r['step'],r['tid']) for r in map(json.loads,(old.OUT/'predictions.jsonl').read_text().splitlines())}
+    actual={(r['case'],r['step'],r['tid']) for r in raw}
+    if actual!=expected or len(raw)!=len(expected):raise RuntimeError('incomplete or duplicated prediction pool')
+    tmp=OUT/'predictions.jsonl.tmp'
+    with tmp.open('w') as stream:
+        for row in raw:stream.write(json.dumps(row,default=old.encode,allow_nan=False)+'\n')
+    tmp.replace(OUT/'predictions.jsonl')
     prediction=summarize_predictions();save('prediction_summary.json',prediction)
     rows=[json.loads(s) for s in (OUT/'episodes.jsonl').read_text().splitlines()] if (OUT/'episodes.jsonl').exists() else []
     table=[];timing=[];paired=[]
