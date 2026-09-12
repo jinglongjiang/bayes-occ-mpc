@@ -1,0 +1,1 @@
+{"k": 256, "passed": false, "fallback": "if no K passes, retain all inference particles before deduplicating identical goals; report missed runtime rather than silently lose mode accuracy"}
