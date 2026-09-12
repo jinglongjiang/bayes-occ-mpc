@@ -549,14 +549,21 @@ class MixtureEnvelope:
 
     def bounds(self,positions):
         start=time.perf_counter()
-        lo,hi=self.table.conditional_bounds(positions)
-        out=self.aggregate(lo),self.aggregate(hi)
+        # Bound temporary arrays independently of the retained mode count.
+        chunk=max(1,262144//max(1,len(self.weights)*self.cfg.horizon))
+        lower,upper=[],[]
+        for first in range(0,len(positions),chunk):
+            lo,hi=self.table.conditional_bounds(positions[first:first+chunk])
+            lower.append(self.aggregate(lo));upper.append(self.aggregate(hi))
+        out=np.concatenate(lower),np.concatenate(upper)
         self.seconds+=time.perf_counter()-start
         return out
 
     def exact(self,positions):
         t=self.table
-        return self.aggregate(disc_conditional(positions,t.obs.human_segment_end,t.variance,t.radius))
+        chunk=max(1,262144//max(1,len(self.weights)*self.cfg.horizon))
+        return np.concatenate([self.aggregate(disc_conditional(positions[i:i+chunk],t.obs.human_segment_end,t.variance,t.radius))
+                               for i in range(0,len(positions),chunk)])
 
 
 class MixturePlanner(MPCPlanner):
@@ -632,7 +639,7 @@ class IntentEngine:
             start=time.perf_counter()
             if self.arm=='M':goals,w=m.map_goal()[None],np.ones(1)
             else:goals,w=compress_goals(f,m.goals,np.exp(m.logweights),self.k)
-            timing['compression']+=(time.perf_counter()-start)*1000
+            timing['goal_update' if self.arm=='M' else 'compression']+=(time.perf_counter()-start)*1000
             start=time.perf_counter();p=old.forward(f,goals,16)
             timing['rollout']+=(time.perf_counter()-start)*1000
             mixtures[j]=(p,w,variance)
@@ -708,8 +715,8 @@ def compression(records,protocol,calibration):
         save('compression.json',results);log('COMPRESS',case,[(x['k'],x['pass_check'],round(x['risk_max'],4)) for x in modes])
     eligible=[k for k in (4,8,16) if all(next(m for m in r[name] if m['k']==k)['pass_check']
                                        for r in results for name in ('modes','old_modes'))]
-    save('compression_config.json',dict(k=min(eligible) if eligible else 16,passed=bool(eligible),
-        fallback='if no K passes, K=16 exploratory approximation retained and explicitly NOT certified; no budget claim'))
+    save('compression_config.json',dict(k=min(eligible) if eligible else inference['count'],passed=bool(eligible),
+        fallback='if no K passes, retain all inference particles before deduplicating identical goals; report missed runtime rather than silently lose mode accuracy'))
 
 
 def interface(records,calibration):
@@ -972,7 +979,7 @@ def report():
         '- Current CV geometry is common to all arms and may block mode-dependent routes.',
         '- Timing is measured serially, includes inference and MPC, excludes environment truth/audit and writing.',
         '- Risk is a subset of MPC time, not an additional summand. Component percentiles do not add.',
-        '- Goal MAP selection is charged to the compression/representation component for M.',
+        '- Goal MAP optimization is included in goal-update time for M.',
         '- No claim of novelty from AR residuals, Rao-Blackwellization or medoids alone.',
         '', '## Paired outcomes','']
     for r in paired:lines.append('- '+json.dumps(r))
@@ -987,9 +994,12 @@ def main():
     parser.add_argument('command',choices=['prepare','factorial','fit','select','numerical','predict','compress','interface','actions','navigate','report','all'])
     parser.add_argument('--resume',action='store_true')
     args=parser.parse_args()
+    if hasattr(os,'sched_getaffinity'):
+        os.sched_setaffinity(0,{max(os.sched_getaffinity(0))})
     records=old.data();calibration=json.loads((old.OUT/'calibration.json').read_text());protocol=setup(records)
     source=old.digest(__file__)
     protocol['source_revisions'].append(dict(sha=source,command=args.command,time=time.time()))
+    protocol['cpu_affinity']=sorted(os.sched_getaffinity(0)) if hasattr(os,'sched_getaffinity') else None
     save('protocol.json',protocol)
     started=time.perf_counter()
     if args.command=='all':
