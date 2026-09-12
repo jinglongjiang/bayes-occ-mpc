@@ -1,0 +1,425 @@
+{
+  "status": "frozen",
+  "selected": {
+    "exact": 640,
+    "hermite": 640
+  },
+  "development": {
+    "exact": {
+      "512": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 17,
+          "collision": 2,
+          "timeout": 1,
+          "penalty": 16.6125,
+          "p50": 135.3328162804246,
+          "p95": 154.3005222454667,
+          "p99": 160.96415027976036,
+          "deadline_fraction": 0.0,
+          "steps": 1169
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.475,
+            "p50": 130.02137001603842,
+            "p95": 154.20576678588986,
+            "p99": 160.6079630739987,
+            "deadline_fraction": 0.0,
+            "steps": 579
+          },
+          "severe": {
+            "n": 10,
+            "success": 7,
+            "collision": 2,
+            "timeout": 1,
+            "penalty": 18.75,
+            "p50": 137.10119063034654,
+            "p95": 155.90899237431583,
+            "p99": 161.5346366725862,
+            "deadline_fraction": 0.0,
+            "steps": 590
+          }
+        }
+      },
+      "640": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 18,
+          "collision": 1,
+          "timeout": 1,
+          "penalty": 16.6125,
+          "p50": 168.16727351397276,
+          "p95": 193.08664184063673,
+          "p99": 199.91362441331148,
+          "deadline_fraction": 0.0,
+          "steps": 1245
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.35,
+            "p50": 164.0826785005629,
+            "p95": 190.17799235880375,
+            "p99": 198.49578640423715,
+            "deadline_fraction": 0.0,
+            "steps": 574
+          },
+          "severe": {
+            "n": 10,
+            "success": 8,
+            "collision": 1,
+            "timeout": 1,
+            "penalty": 18.875,
+            "p50": 170.34356389194727,
+            "p95": 195.22279407829046,
+            "p99": 200.49373805522916,
+            "deadline_fraction": 0.0,
+            "steps": 671
+          }
+        }
+      },
+      "768": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 16,
+          "collision": 2,
+          "timeout": 2,
+          "penalty": 16.475,
+          "p50": 198.83026042953134,
+          "p95": 231.677654851228,
+          "p99": 241.80557221174237,
+          "deadline_fraction": 0.004266211604095563,
+          "steps": 1172
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.55,
+            "p50": 195.70327550172806,
+            "p95": 230.43675762601197,
+            "p99": 236.49290400557217,
+            "deadline_fraction": 0.0,
+            "steps": 582
+          },
+          "severe": {
+            "n": 10,
+            "success": 6,
+            "collision": 2,
+            "timeout": 2,
+            "penalty": 18.4,
+            "p50": 203.71996192261577,
+            "p95": 233.83395276032388,
+            "p99": 246.62429668940604,
+            "deadline_fraction": 0.00847457627118644,
+            "steps": 590
+          }
+        }
+      },
+      "896": {
+        "eligible": false,
+        "combined": {
+          "n": 20,
+          "success": 14,
+          "collision": 4,
+          "timeout": 2,
+          "penalty": 17.6,
+          "p50": 232.19583369791508,
+          "p95": 273.5624327324331,
+          "p99": 287.1574969962239,
+          "deadline_fraction": 0.25547445255474455,
+          "steps": 1096
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.35,
+            "p50": 233.02315268665552,
+            "p95": 275.6610721349716,
+            "p99": 290.52590678445995,
+            "deadline_fraction": 0.2857142857142857,
+            "steps": 574
+          },
+          "severe": {
+            "n": 10,
+            "success": 4,
+            "collision": 4,
+            "timeout": 2,
+            "penalty": 20.85,
+            "p50": 228.63757237792015,
+            "p95": 268.9152610953897,
+            "p99": 284.4740428216755,
+            "deadline_fraction": 0.2222222222222222,
+            "steps": 522
+          }
+        }
+      },
+      "1024": {
+        "eligible": false,
+        "combined": {
+          "n": 20,
+          "success": 18,
+          "collision": 1,
+          "timeout": 1,
+          "penalty": 15.1125,
+          "p50": 271.89185516908765,
+          "p95": 312.4957231339067,
+          "p99": 332.8549447469413,
+          "deadline_fraction": 0.6607460035523979,
+          "steps": 1126
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 13.5,
+            "p50": 267.2783792950213,
+            "p95": 311.90970349125564,
+            "p99": 325.78937345184386,
+            "deadline_fraction": 0.6481481481481481,
+            "steps": 540
+          },
+          "severe": {
+            "n": 10,
+            "success": 8,
+            "collision": 1,
+            "timeout": 1,
+            "penalty": 16.725,
+            "p50": 275.99167451262474,
+            "p95": 312.77633155696094,
+            "p99": 337.78869369998574,
+            "deadline_fraction": 0.6723549488054608,
+            "steps": 586
+          }
+        }
+      }
+    },
+    "hermite": {
+      "512": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 17,
+          "collision": 2,
+          "timeout": 1,
+          "penalty": 16.6125,
+          "p50": 115.3425881639123,
+          "p95": 134.22702848911285,
+          "p99": 139.47680953890085,
+          "deadline_fraction": 0.0,
+          "steps": 1169
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.475,
+            "p50": 109.30659621953964,
+            "p95": 124.71370194107294,
+            "p99": 130.3313560783863,
+            "deadline_fraction": 0.0,
+            "steps": 579
+          },
+          "severe": {
+            "n": 10,
+            "success": 7,
+            "collision": 2,
+            "timeout": 1,
+            "penalty": 18.75,
+            "p50": 120.6773966550827,
+            "p95": 138.1882281973958,
+            "p99": 143.21719978936017,
+            "deadline_fraction": 0.0,
+            "steps": 590
+          }
+        }
+      },
+      "640": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 18,
+          "collision": 1,
+          "timeout": 1,
+          "penalty": 16.6125,
+          "p50": 143.75245850533247,
+          "p95": 179.94058150798077,
+          "p99": 183.52299761027098,
+          "deadline_fraction": 0.0,
+          "steps": 1245
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.35,
+            "p50": 134.16501553729177,
+            "p95": 168.30368945375085,
+            "p99": 172.832010705024,
+            "deadline_fraction": 0.0,
+            "steps": 574
+          },
+          "severe": {
+            "n": 10,
+            "success": 8,
+            "collision": 1,
+            "timeout": 1,
+            "penalty": 18.875,
+            "p50": 146.9907034188509,
+            "p95": 182.31434375047684,
+            "p99": 184.38879661262035,
+            "deadline_fraction": 0.0,
+            "steps": 671
+          }
+        }
+      },
+      "768": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 16,
+          "collision": 2,
+          "timeout": 2,
+          "penalty": 16.475,
+          "p50": 177.10909340530634,
+          "p95": 208.9036454912275,
+          "p99": 215.5784997344017,
+          "deadline_fraction": 0.0,
+          "steps": 1172
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.55,
+            "p50": 173.27076336368918,
+            "p95": 205.91041641309855,
+            "p99": 214.4904868584126,
+            "deadline_fraction": 0.0,
+            "steps": 582
+          },
+          "severe": {
+            "n": 10,
+            "success": 6,
+            "collision": 2,
+            "timeout": 2,
+            "penalty": 18.4,
+            "p50": 188.26589500531554,
+            "p95": 210.982959670946,
+            "p99": 216.66724998503923,
+            "deadline_fraction": 0.0,
+            "steps": 590
+          }
+        }
+      },
+      "896": {
+        "eligible": true,
+        "combined": {
+          "n": 20,
+          "success": 14,
+          "collision": 4,
+          "timeout": 2,
+          "penalty": 17.6,
+          "p50": 204.4653557240963,
+          "p95": 239.10509934648871,
+          "p99": 244.91868186742064,
+          "deadline_fraction": 0.002737226277372263,
+          "steps": 1096
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 14.35,
+            "p50": 205.81687660887837,
+            "p95": 233.95848176442087,
+            "p99": 241.688594808802,
+            "deadline_fraction": 0.003484320557491289,
+            "steps": 574
+          },
+          "severe": {
+            "n": 10,
+            "success": 4,
+            "collision": 4,
+            "timeout": 2,
+            "penalty": 20.85,
+            "p50": 203.69873056188226,
+            "p95": 242.7408482413739,
+            "p99": 246.06813393533227,
+            "deadline_fraction": 0.0019157088122605363,
+            "steps": 522
+          }
+        }
+      },
+      "1024": {
+        "eligible": false,
+        "combined": {
+          "n": 20,
+          "success": 18,
+          "collision": 1,
+          "timeout": 1,
+          "penalty": 15.1125,
+          "p50": 241.6267958469689,
+          "p95": 277.3212641477585,
+          "p99": 283.1305833533406,
+          "deadline_fraction": 0.39520426287744226,
+          "steps": 1126
+        },
+        "conditions": {
+          "clean": {
+            "n": 10,
+            "success": 10,
+            "collision": 0,
+            "timeout": 0,
+            "penalty": 13.5,
+            "p50": 230.58889945968986,
+            "p95": 271.12584435380995,
+            "p99": 275.77974730171263,
+            "deadline_fraction": 0.31666666666666665,
+            "steps": 540
+          },
+          "severe": {
+            "n": 10,
+            "success": 8,
+            "collision": 1,
+            "timeout": 1,
+            "penalty": 16.725,
+            "p50": 248.32800030708313,
+            "p95": 279.61337147280574,
+            "p99": 285.16857735812664,
+            "deadline_fraction": 0.46757679180887374,
+            "steps": 586
+          }
+        }
+      }
+    }
+  },
+  "frozen": "2026-09-12T10:35:45+0900",
+  "protocol_sha256": "b10cec02d69ffea35681f817bfa708d8fc9bf8fab065a466c6a75683b3b8b927"
+}
