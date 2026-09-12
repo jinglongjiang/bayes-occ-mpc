@@ -633,7 +633,8 @@ class IntentEngine:
             if tid not in features or features[tid]['goal_source']=='birth_antipode':continue
             f=features[tid]
             if self.arm=='B':
-                mixtures[j]=(obs.human_segment_end[j:j+1],np.ones(1),variance)
+                # Risk predictors share the same measured initial state; hard geometry stays untouched.
+                mixtures[j]=(base.predict(f,f['goal'],'cv',.5)[None],np.ones(1),variance)
                 continue
             m=self.tracks[tid]
             start=time.perf_counter()
