@@ -412,6 +412,11 @@ def summarize(records):
         queries=len(rows),episodes=len({r['case'] for r in rows}),
         distribution='goal-only conditional deterministic D modes for every arm; no residual kernel; ES is not full predictive calibration',
         status='prediction evidence only; no navigation or novelty claim')
+    if (OUT/'summary.json').exists():
+        previous=json.loads((OUT/'summary.json').read_text())
+        for key in ('posthoc_goal_arrival','episode_wall_seconds','episode_wall_note','common_kernel_audit'):
+            if key in previous:
+                result[key]=previous[key]
     save('summary.json',result)
     lines=['# Continuous Goal Posterior: Fixed Evaluation', '',
         '12 development / 18 previously viewed evaluation episodes. No new navigation runs.',
@@ -427,9 +432,92 @@ def summarize(records):
     print('SUMMARY',json.dumps(result,default=encode),flush=True)
 
 
+def audit_distribution(records):
+    """Common conditional-error kernel; no posterior or point forecast changes."""
+    residuals = {n: [] for n in (5,10,20)}
+    for record in records:
+        if record['split'] != 'development':
+            continue
+        for step, tid, f in base.queries(record):
+            target = np.array([record['truth']['positions'][step+h][tid] for h in base.HORIZONS])
+            p = base.predict(f, np.array(record['truth']['goals'][tid]), 'improved', .5)
+            residuals[record['people']].append(target-p[np.array(base.HORIZONS)-1])
+    kernels = {}
+    for n, residual in residuals.items():
+        e = np.array(residual)
+        kernels[n] = np.einsum('nhi,nhj->hij',e,e)/len(e)+np.eye(2)[None]*1e-8
+    rows = [json.loads(s) for s in (OUT/'predictions.jsonl').read_text().splitlines()]
+    row_index = {(r['case'],r['step'],r['tid']):r for r in rows}
+    contexts_by_key = {(r['case'],s,i):f for r in records if r['split']=='holdout'
+                       for s,i,f in base.queries(r)}
+    by_case = {r['case']:r for r in records}
+    with gzip.open(OUT/'modes.jsonl.gz','rt') as stream:
+        for line in stream:
+            saved = json.loads(line)
+            key = saved['case'],saved['step'],saved['tid']
+            row, f, record = row_index[key],contexts_by_key[key],by_case[key[0]]
+            truth = np.array([record['truth']['positions'][key[1]+h][key[2]] for h in base.HORIZONS])
+            im,hm=saved['interaction'],saved['heading']
+            modes={
+                'Interaction-FULL':(np.array(im['positions']),np.array(im['weights'])),
+                'Heading-FULL':(np.array(hm['positions']),np.array(hm['weights'])),
+                'Interaction-MAP':(np.array(im['map_positions'])[None],np.ones(1))}
+            for arm,g,mode in [('CV',f['goal'],'cv'),('C',f['goal'],'improved'),
+                                ('D',np.array(record['truth']['goals'][key[2]]),'improved')]:
+                modes[arm]=(base.predict(f,g,mode,.5)[None],np.ones(1))
+            rng=np.random.default_rng(key[0]*100003+key[1]*97+key[2]+7301)
+            row['energy_common_kernel']={arm:[] for arm in ARMS}
+            for h,k in enumerate(np.array(base.HORIZONS)-1):
+                # Independent pairs give an unbiased ES estimate; draws are shared across arms.
+                ua,ub=rng.random((2,4096))
+                chol=np.linalg.cholesky(kernels[row['people']][h])
+                ea,eb=rng.normal(size=(2,4096,2)) @ chol.T
+                for arm,(p,w) in modes.items():
+                    cdf=np.cumsum(w);cdf[-1]=1.
+                    xa=p[np.searchsorted(cdf,ua),k]+ea
+                    xb=p[np.searchsorted(cdf,ub),k]+eb
+                    es=np.mean(np.linalg.norm(xa-truth[h],axis=1))-.5*np.mean(np.linalg.norm(xa-xb,axis=1))
+                    row['energy_common_kernel'][arm].append(float(es))
+    tables,contrasts=[],[]
+    for sub in ('all','ordinary','conflict','unknown_goal','unknown_conflict'):
+        chosen=[r for r in rows if sub=='all' or sub=='ordinary' and not r['conflict'] or
+                sub=='conflict' and r['conflict'] or sub=='unknown_goal' and not r['fixed'] or
+                sub=='unknown_conflict' and not r['fixed'] and r['conflict']]
+        arrays=[];groups=[]
+        for case in sorted({r['case'] for r in chosen}):
+            q=[r for r in chosen if r['case']==case]
+            arrays.append([[np.mean([r['energy_common_kernel'][a][h] for r in q]) for h in range(4)] for a in ARMS])
+            groups.append(q[0]['people'])
+        a,g=np.array(arrays),np.array(groups)
+        mean=np.mean([a[g==n].mean(axis=0) for n in sorted(set(groups))],axis=0)
+        tables.extend(dict(subset=sub,arm=arm,values=mean[i]) for i,arm in enumerate(ARMS))
+        for left,right in (('Interaction-FULL','Interaction-MAP'),('Interaction-FULL','Heading-FULL'),
+                           ('Interaction-FULL','CV'),('Interaction-FULL','C')):
+            d=a[:,ARMS.index(left)]-a[:,ARMS.index(right)]
+            contrasts.append(dict(subset=sub,contrast=left+' - '+right,
+                mean_delta=np.mean([d[g==n].mean() for n in sorted(set(groups))]),
+                mean_ci=base.interval(d.mean(axis=1),groups)))
+    summary=json.loads((OUT/'summary.json').read_text())
+    summary['common_kernel_audit']=dict(table=tables,contrasts=contrasts,
+        covariance={str(n):v for n,v in kernels.items()},development_queries={str(n):len(r) for n,r in residuals.items()},
+        interpretation='same zero-mean D residual second-moment Gaussian for ALL arms, fitted only on development; marginal-horizon ES, not calibrated joint process',
+        mc_pairs=4096,role='supplementary fairness audit; point predictions and posterior untouched')
+    save('summary.json',summary)
+    temp=OUT/'predictions.jsonl.tmp'
+    with temp.open('w') as stream:
+        for row in rows:stream.write(json.dumps(row,default=encode,allow_nan=False)+'\n')
+    temp.replace(OUT/'predictions.jsonl')
+    checks=json.loads((OUT/'checks.json').read_text())
+    checks['scores_sha256_before_kernel_audit']=checks['scores_sha256']
+    checks['scores_sha256']=digest(OUT/'predictions.jsonl')
+    checks['common_residual_kernel_development_only']=True
+    save('checks.json',checks)
+    print('COMMON_KERNEL',json.dumps(dict(table=tables,contrasts=contrasts),default=encode),flush=True)
+
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('command',choices=('prepare','run','summarize','stability'))
+    ap.add_argument('command',choices=('prepare','run','summarize','stability','audit-distribution'))
     args=ap.parse_args()
     records=data()
     if args.command=='prepare':
@@ -451,7 +539,9 @@ def main():
     if p['code_sha']!=digest(__file__) or p['model_sha']!=digest(base.__file__):
         raise RuntimeError('frozen experimental source changed')
     calibration=json.loads((OUT/'calibration.json').read_text())
-    if args.command=='run':
+    if args.command=='audit-distribution':
+        audit_distribution(records)
+    elif args.command=='run':
         if (OUT/'predictions.jsonl').exists():
             raise RuntimeError('results exist; refusing duplicate run')
         with gzip.open(OUT/'modes.jsonl.gz','wt',compresslevel=1) as modes, (OUT/'predictions.jsonl').open('w') as scores:
