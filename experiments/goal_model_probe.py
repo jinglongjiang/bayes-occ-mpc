@@ -196,7 +196,7 @@ def legal_features(item, frame, entity, past):
                 goal=goal, goal_source=source, omega=omega, conflict=bool(conflict), neighbors=neighbors)
 
 
-def predict(features, goal, mode, parameter=1.):
+def predict(features, goal, mode, parameter=1., steps=16):
     pos = np.asarray(features['pos'], dtype=np.float64).copy()
     velocity = np.asarray(features['vel'], dtype=np.float64).copy()
     if mode == 'improved':
@@ -206,7 +206,7 @@ def predict(features, goal, mode, parameter=1.):
         policy._last_pref_vel = velocity.copy()
     result = []
     omega = features['omega']
-    for k in range(16):
+    for k in range(steps):
         if mode == 'old':
             velocity = (features['speed'] * unit(goal - pos)
                         if np.linalg.norm(goal - pos) > .35 else np.zeros(2))
