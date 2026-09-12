@@ -122,6 +122,7 @@ class RepairedPosterior(old.GoalPosterior):
         self.bias_covariance = self.fraction*self.sigma_matrix
         self.bias_step = step
         self.mh_steps = mh
+        self._density_cache = {}
 
     def replay(self, goals):
         goals = np.asarray(goals).reshape(-1, 2)
@@ -143,10 +144,18 @@ class RepairedPosterior(old.GoalPosterior):
         return density, means, covariance
 
     def logposterior(self, goals):
+        goals=np.asarray(goals).reshape(-1,2)
+        # MAP's repeated identical trials need not replay the same ORCA history twice.
+        if len(goals)==1:
+            key=tuple(goals[0])
+            if key not in self._density_cache:
+                self._density_cache[key]=float(self.replay(goals)[0][0])
+            return np.array([self._density_cache[key]])
         return self.replay(goals)[0]
 
     def update(self, step, features):
         started = time.perf_counter()
+        self._density_cache.clear()
         previous_step, previous = self.previous
         if step <= previous_step:
             raise ValueError('duplicate observation')
@@ -751,9 +760,16 @@ def interface(records,calibration):
     for s in features:
         for tid in features[s]:
             np.testing.assert_array_equal(features[s][tid]['goal'],alternate[s][tid]['goal'])
+    model,_=model_at(record,24,0,calibration,fitted_settings())
+    cached=model.logposterior
+    model.logposterior=lambda goals:model.replay(goals)[0]
+    reference_goal=model.map_goal()
+    model.logposterior=cached
+    np.testing.assert_array_equal(model.map_goal(),reference_goal)
     save('interface.json',dict(single_mode=True,duplicate_mode=True,mode_order=True,zero_existence=True,
         mixed_before_log=True,numerical_enclosure=True,geometry_unchanged=True,cv_reference_action=True,
-        truth_metadata_does_not_enter_features=True,scope='floating tolerance 1e-12; synthetic and one development observation; no safety certificate'))
+        truth_metadata_does_not_enter_features=True,MAP_density_cache_exact=True,
+        scope='floating tolerance 1e-12; synthetic and one development observation; no safety certificate'))
     log('INTERFACE PASSED')
 
 
