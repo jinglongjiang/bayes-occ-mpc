@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "interpolation_error": 7.344952207555266e-08,
+  "tests": [
+    "identical nodes/derivatives",
+    "interior and tails",
+    "deterministic",
+    "T never calls bounds",
+    "empty",
+    "absent covariance",
+    "zero existence"
+  ]
+}

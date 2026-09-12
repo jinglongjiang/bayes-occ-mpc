@@ -391,11 +391,13 @@ def fsave(name, value):
     temporary.replace(target)
 
 
-def fmanifest():
+def fmanifest(report=False):
     path = FOCUS/'protocol.json'
     if path.exists():
         result = json.loads(path.read_text())
         for source, checksum in result['files'].items():
+            if report:
+                checksum = result.get('reporting_source_hashes', {}).get(source, checksum)
             assert hashlib.sha256(Path(source).read_bytes()).hexdigest() == checksum, source
         return result
     verify_assets()
@@ -788,7 +790,7 @@ def ftiming():
 
 
 def ftables():
-    fmanifest()
+    fmanifest(report=True)
     from collections import Counter
     mechanism=[json.loads(x) for x in (FOCUS/'mechanism.jsonl').read_text().splitlines()]
     timing=[json.loads(x) for x in (FOCUS/'timing.jsonl').read_text().splitlines()]
@@ -839,6 +841,12 @@ def ftables():
                     v['fixed']['enclosure_max_violation']=max(b.get('enclosure_max_violation',0.) for b in batches)
                     for k in ('width_bins','extra_width_bins'):
                         v['fixed'][k]=np.sum([b.get(k,[0]*8) for b in batches],axis=0).tolist()
+                    # No-risk batches have an all-resolved mask but perform no CDF refinement.
+                    bounded=[b for b in batches if 'hazard_width_mean' in b]
+                    v['fixed']['bounded_partition']={k:sum(b[k] for b in bounded)
+                        for k in ('refined','elite_refined','selection_only_refined','extra_refined','excluded')}
+                    v['fixed']['bounded_partition']['total']=len(bounded)*CFG.population
+                    v['fixed']['without_bounds_rows']=(len(batches)-len(bounded))*CFG.population
             methods[a]=v
         paired={}
         for a in ('E','R','T'):
@@ -882,12 +890,12 @@ def fplots(result,mechanism):
     labels=('Elite','Selection only','Extra refinement','Excluded')
     cs=('#3274ad','#36986b','#d68922','#dddddd')
     for j,(n,a) in enumerate((n,a) for n in (5,10,20) for a in ('R','H')):
-        s=result['configurations'][n]['methods'][a]['fixed'];bottom=0
+        s=result['configurations'][n]['methods'][a]['fixed']['bounded_partition'];bottom=0
         for k,label,c in zip(names,labels,cs):
             height=s[k]/s['total']*100
             axes[0].bar(j,height,bottom=bottom,color=c,label=label if j==0 else None);bottom+=height
     axes[0].set_xticks(range(6));axes[0].set_xticklabels(['5 R','5 H','10 R','10 H','20 R','20 H'])
-    axes[0].set_ylabel('Fixed-candidate partition (%)');axes[0].legend(frameon=False,fontsize=8)
+    axes[0].set_ylabel('Bound-evaluated candidate partition (%)');axes[0].legend(frameon=False,fontsize=8)
     for a in ('R','H'):
         s=result['configurations'][20]['methods'][a]['fixed']
         count=np.array(s['width_bins']);extra=np.array(s['extra_width_bins'])
