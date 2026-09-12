@@ -154,8 +154,8 @@ def unit(x):
 
 
 def legal_features(item, frame, entity, past):
-    pos = np.array([entity['px'], entity['py']])
-    vel = np.array([entity['vx'], entity['vy']])
+    pos = np.array([entity['px'], entity['py']], dtype=np.float64)
+    vel = np.array([entity['vx'], entity['vy']], dtype=np.float64)
     observations = past[-8:]
     speeds = [np.linalg.norm(v) for _, _, v in observations]
     speed = float(np.clip(np.mean(speeds), 0., 1.))
@@ -191,7 +191,8 @@ def legal_features(item, frame, entity, past):
 
 
 def predict(features, goal, mode, parameter=1.):
-    pos, velocity = features['pos'].copy(), features['vel'].copy()
+    pos = np.asarray(features['pos'], dtype=np.float64).copy()
+    velocity = np.asarray(features['vel'], dtype=np.float64).copy()
     if mode == 'improved':
         from crowd_sim.envs.policy.orca import ORCA
         from crowd_sim.envs.utils.state import FullState, ObservableState, JointState
@@ -377,6 +378,7 @@ def selftest():
     assert np.array_equal(a,predict(f,g,'improved',1.))
     f2=dict(f, neighbors=[dict(id=7,px=2.,py=0.,vx=-.5,vy=0.,radius=.3)])
     assert np.isfinite(predict(f2,g,'improved',1.)).all()
+    assert np.isfinite(predict(dict(f, vel=np.array([0,0])),g,'improved',1.)).all()
     print('SELFTEST_PASS', flush=True)
 
 
