@@ -515,11 +515,329 @@ def audit_distribution(records):
     print('COMMON_KERNEL',json.dumps(dict(table=tables,contrasts=contrasts),default=encode),flush=True)
 
 
+DEPTH = OUT / 'depth'
+DEPTH_STATES = ((2000000,16,3), (2000010,12,0), (2000020,24,0))
+
+
+def depth_save(name, value):
+    DEPTH.mkdir(parents=True,exist_ok=True)
+    path=DEPTH/name
+    tmp=path.with_suffix(path.suffix+'.tmp')
+    tmp.write_text(json.dumps(value,default=encode,allow_nan=False)+'\n')
+    tmp.replace(path)
+
+
+def depth_setup(records):
+    import ast
+    previous=ast.parse(subprocess.check_output(['git','show','f77c533:experiments/goal_posterior_probe.py'],cwd=ROOT))
+    current=ast.parse(Path(__file__).read_text())
+    for name in ('GoalPosterior','infer','fit','forward','contexts','evaluate'):
+        assert ast.dump(next(n for n in previous.body if getattr(n,'name',None)==name))==ast.dump(next(n for n in current.body if getattr(n,'name',None)==name))
+    rows=[json.loads(x) for x in (OUT/'predictions.jsonl').read_text().splitlines()]
+    states=[]
+    for n in (5,10,20):
+        choices=sorted({(r['case'],r['step']) for r in rows if r['people']==n and r['conflict'] and not r['fixed']})
+        for i in (len(choices)//3,2*len(choices)//3):
+            states.append(list(choices[i]))
+    protocol=dict(baseline='f77c533',reference_states=DEPTH_STATES,action_states=states,
+        grids=[32,64,128,256],shifted_grid=[256,.25,.75],
+        reference_check=dict(log_normalizer_absolute=.02,binned_TV=.05,future_mean_max_m=.02),
+        criterion='both 128-to-256 and independent shifted-256 comparisons; practical numerical check, not rigorous integration error bound',
+        forecast_omitted_mass=1e-6,bin_count=32,posterior_and_model_unchanged=True,
+        action_scope='CV vs MAP mean vs FULL mean vs D mean; only visible unknown-goal targets replaced; covariance fixed; NOT multimodal risk and NOT closed-loop benefit',
+        action_replay='rebuild old environment with recorded controls; verify all states/detections and old MPC controls; common pre-query warm start',
+        files={str(Path(__file__)):digest(__file__),str(base.__file__):digest(base.__file__),
+               str(OUT/'calibration.json'):digest(OUT/'calibration.json'),
+               str(OUT/'modes.jsonl.gz'):digest(OUT/'modes.jsonl.gz'),
+               str(OUT/'predictions.jsonl'):digest(OUT/'predictions.jsonl')})
+    if (DEPTH/'protocol.json').exists():
+        saved=json.loads((DEPTH/'protocol.json').read_text())
+        for path,h in saved['files'].items():
+            if digest(path)!=h:raise RuntimeError('depth frozen file changed: '+path)
+        return saved
+    depth_save('protocol.json',protocol)
+    return protocol
+
+
+def posterior_at(record, step, tid, calibration, offset=0):
+    model=None
+    last=None
+    for s,features in contexts(legal_record(record)):
+        if s>step:break
+        if tid not in features:continue
+        last=features[tid]
+        if model is None:
+            model=GoalPosterior(record['scene'],s,last,calibration,record['case']*1009+tid*97+offset)
+        else:model.update(s,last)
+    if model is None or model.previous[0]!=step:raise RuntimeError('target not observed')
+    return model,last
+
+
+def posterior_hist(goals, weights):
+    return np.histogram2d(goals[:,0],goals[:,1],bins=32,range=[[-5,5],[-5,5]],weights=weights)[0]
+
+
+def grid_reference(model, features, size, offset=(.5,.5)):
+    began=time.perf_counter()
+    x=-5.+(np.arange(size)+offset[0])*10./size
+    y=-5.+(np.arange(size)+offset[1])*10./size
+    gx,gy=np.meshgrid(x,y,indexing='ij')
+    goals=np.stack([gx.ravel(),gy.ravel()],axis=1)
+    goals=goals[model.valid(goals)]
+    logdensity=model.logposterior(goals)
+    normalizer=logsumexp(logdensity)
+    weights=np.exp(logdensity-normalizer)
+    goal_mean=weights@goals
+    covariance=np.einsum('n,ni,nj->ij',weights,goals-goal_mean,goals-goal_mean)
+    order=np.argsort(-weights,kind='stable')
+    kept=order[:min(len(order),np.searchsorted(np.cumsum(weights[order]),1.-1e-6)+1)]
+    omitted=max(0.,1.-float(weights[kept].sum()))
+    positions=forward(features,goals[kept],16)
+    w=weights[kept]/weights[kept].sum()
+    future_mean=np.einsum('n,nhd->hd',w,positions)
+    hist=posterior_hist(goals,weights)
+    summary=dict(size=size,offset=offset,nodes=len(goals),forecast_nodes=len(kept),
+        log_normalizer=float(normalizer+2*np.log(10./size)),goal_mean=goal_mean,
+        goal_covariance=covariance,future_mean=future_mean,histogram=hist,
+        omitted_mass=omitted,forecast_mean_truncation_bound_m=8.*omitted,
+        discrete_KL_from_uniform_nodes=float(np.sum(weights*(logdensity-normalizer+np.log(len(goals))))),
+        seconds=time.perf_counter()-began)
+    return summary,dict(goals=goals,weights=weights,logdensity=logdensity,
+                        kept=kept,positions=positions,kept_weights=w)
+
+
+def reference_difference(a,b):
+    return dict(log_normalizer=abs(a['log_normalizer']-b['log_normalizer']),
+        binned_TV=float(.5*np.abs(np.array(a['histogram'])-np.array(b['histogram'])).sum()),
+        future_mean_max_m=float(np.linalg.norm(np.array(a['future_mean'])-np.array(b['future_mean']),axis=1).max()))
+
+
+def depth_reference(records, calibration, protocol):
+    results=[]
+    for case,step,tid in DEPTH_STATES:
+        r=next(r for r in records if r['case']==case)
+        model,features=posterior_at(r,step,tid,calibration)
+        summaries=[]
+        retained=None
+        for n,offset in [(n,(.5,.5)) for n in protocol['grids']]+[(256,(.25,.75))]:
+            s,details=grid_reference(model,features,n,offset)
+            summaries.append(s)
+            if n==256 and offset==(.5,.5):retained=details
+            print('GRID',case,n,offset,'nodes',s['nodes'],'seconds',round(s['seconds'],2),
+                  'logZ',round(s['log_normalizer'],5),'mean',s['goal_mean'].tolist(),flush=True)
+        differences=[reference_difference(summaries[-3],summaries[-2]),reference_difference(summaries[-2],summaries[-1])]
+        passed=all(d['log_normalizer']<=.02 and d['binned_TV']<=.05 and d['future_mean_max_m']<=.02 for d in differences)
+        ref=summaries[-2]
+        truth_goal=np.array(r['truth']['goals'][tid])
+        truth_ll=float(model.logposterior(truth_goal)[0])
+        particle=[]
+        for seed in (0,104729,209458):
+            m,f=posterior_at(r,step,tid,calibration,seed)
+            p=forward(f,m.goals,16)
+            w=np.exp(m.logweights)
+            mean=np.einsum('n,nhd->hd',w,p)
+            particle.append(dict(seed_offset=seed,goal_mean=w@m.goals,
+                binned_TV_to_reference=float(.5*np.abs(posterior_hist(m.goals,w)-np.array(ref['histogram'])).sum()),
+                future_mean_difference_m=np.linalg.norm(mean-np.array(ref['future_mean']),axis=1),
+                ess=float(1./np.sum(w*w)),unique_goals=len(np.unique(m.goals,axis=0))))
+        rng=np.random.default_rng(case+step+tid)
+        refmean=np.array(ref['future_mean'])
+        iid=[]
+        for _ in range(200):
+            ids=rng.choice(len(retained['kept']),128,replace=True,p=retained['kept_weights'])
+            sample=retained['positions'][ids].mean(axis=0)
+            iid.append(np.linalg.norm(sample-refmean,axis=1))
+        future_truth=np.array(r['truth']['positions'])[step+1:step+17,tid]
+        item=dict(case=case,step=step,tid=tid,updates=model.updates,grids=summaries,
+            refinement_differences=differences,reference_stable_under_registered_check=passed,
+            particles=particle,iid128_future_difference_p95=np.quantile(iid,.95,axis=0),
+            true_goal=truth_goal,true_goal_log_likelihood=truth_ll,
+            reference_max_node_log_likelihood=float(retained['logdensity'].max()),
+            posterior_mass_higher_density_than_true=float(retained['weights'][retained['logdensity']>truth_ll].sum()),
+            reference_future_endpoint_errors=np.linalg.norm(refmean-future_truth,axis=1)[np.array(base.HORIZONS)-1])
+        results.append(item)
+        depth_save('reference.json',results)
+        np.savez_compressed(DEPTH/f'reference_{case}.npz',**retained)
+        print('REFERENCE',case,'stable',passed,'differences',differences,flush=True)
+
+
+def depth_refine(records, calibration):
+    results=json.loads((DEPTH/'reference.json').read_text())
+    for item in results:
+        if item['reference_stable_under_registered_check']:continue
+        case,step,tid=item['case'],item['step'],item['tid']
+        record=next(r for r in records if r['case']==case)
+        model,f=posterior_at(record,step,tid,calibration)
+        s,details=grid_reference(model,f,512)
+        differences=[reference_difference(item['grids'][-2],s),reference_difference(item['grids'][-1],s)]
+        passed=all(d['log_normalizer']<=.02 and d['binned_TV']<=.05 and d['future_mean_max_m']<=.02 for d in differences)
+        particle=[]
+        for seed in (0,104729,209458):
+            m,features=posterior_at(record,step,tid,calibration,seed)
+            w=np.exp(m.logweights);p=forward(features,m.goals,16)
+            mean=np.einsum('n,nhd->hd',w,p)
+            particle.append(dict(seed_offset=seed,future_mean_difference_m=np.linalg.norm(mean-s['future_mean'],axis=1)))
+        rng=np.random.default_rng(case+step+tid);iid=[]
+        for _ in range(200):
+            ids=rng.choice(len(details['kept']),128,replace=True,p=details['kept_weights'])
+            iid.append(np.linalg.norm(details['positions'][ids].mean(axis=0)-s['future_mean'],axis=1))
+        true_ll=float(model.logposterior(np.array(record['truth']['goals'][tid]))[0])
+        item['refinement_512']=dict(grid=s,differences_to_both_256_grids=differences,
+            stable_under_extended_check=passed,particles=particle,iid128_future_difference_p95=np.quantile(iid,.95,axis=0),
+            posterior_mass_higher_density_than_true=float(details['weights'][details['logdensity']>true_ll].sum()))
+        np.savez_compressed(DEPTH/f'reference_{case}_refined.npz',**details)
+        depth_save('reference.json',results)
+        print('REFINED',case,'seconds',s['seconds'],'stable',passed,'differences',differences,flush=True)
+
+
+def depth_likelihood(records, calibration):
+    from crowd_sim.envs.policy.orca import ORCA
+    from crowd_sim.envs.utils.state import FullState,ObservableState,JointState
+    _,_,ActionXY,_,_=base.legacy._load_modules(base.CROWD)
+    results=[]
+    for case,step,tid in DEPTH_STATES:
+        record=next(r for r in records if r['case']==case)
+        feature_map={s:f for s,group in contexts(legal_record(record)) for i,f in group.items() if i==tid}
+        observed={fr['step']:{e['id']:e for e in fr['detections']} for fr in record['frames']}
+        env=base.environment(record);rows=[]
+        for frame in record['frames']:
+            s=frame['step']
+            if s>=step:break
+            np.testing.assert_allclose([[h.px,h.py] for h in env.humans],record['truth']['positions'][s],atol=1e-12,rtol=0)
+            if s in feature_map and s+1 in feature_map:
+                f=feature_map[s];target=feature_map[s+1]['pos'];human=env.humans[tid]
+                goal=np.array(record['truth']['goals'][tid])
+                predictions={'frozen_D':forward(f,[goal])[0,0]}
+                for name,oracle_memory,full in (('no_extra_response_clip',False,False),
+                        ('oracle_memory_legal_neighbors',True,False),('oracle_memory_full_neighbors',True,True)):
+                    policy=ORCA()
+                    policy._last_pref_vel=copy.deepcopy(human.policy._last_pref_vel) if oracle_memory else f['vel'].copy()
+                    neighbors=([h.get_observable_state() for i,h in enumerate(env.humans) if i!=tid] if full else
+                        [ObservableState(e['px'],e['py'],e['vx'],e['vy'],e['radius']) for e in f['neighbors']])
+                    state=JointState(FullState(*f['pos'],*f['vel'],f['radius'],*goal,1.,0.),neighbors)
+                    predictions[name]=f['pos']+.25*np.array(policy.predict(state))
+                errors={name:float(np.linalg.norm(p-target)) for name,p in predictions.items()}
+                if errors['oracle_memory_full_neighbors']>1e-6:raise RuntimeError('full behavior oracle does not reproduce next observation')
+                rows.append(dict(step=s,legal_neighbors=len(f['neighbors']),errors_m=errors))
+            env.step(ActionXY(*map(float,frame['action'])))
+        results.append(dict(case=case,step=step,tid=tid,transitions=rows,
+            rms_m={name:float(np.sqrt(np.mean([r['errors_m'][name]**2 for r in rows]))) for name in rows[0]['errors_m']},
+            note='true-goal diagnostics ONLY; oracle memory/full neighbors prohibited from inference; no frozen model changed'))
+        print('LIKELIHOOD_MODEL',case,results[-1]['rms_m'],flush=True)
+    depth_save('likelihood_model.json',results)
+
+
+def depth_profile(records, calibration):
+    results=[]
+    for case,step,tid in DEPTH_STATES:
+        record=next(r for r in records if r['case']==case)
+        models={}
+        for s,features in contexts(legal_record(record)):
+            if s>step:break
+            current=[]
+            for identifier,f in features.items():
+                start=time.perf_counter()
+                if identifier not in models:
+                    models[identifier]={kind:GoalPosterior(record['scene'],s,f,calibration,case*1009+identifier*97,kind=kind)
+                                        for kind in ('interaction','heading')}
+                    im_ms=hd_ms=0.
+                else:
+                    models[identifier]['interaction'].update(s,f)
+                    im_ms=1000*(time.perf_counter()-start)
+                    start=time.perf_counter();models[identifier]['heading'].update(s,f)
+                    hd_ms=1000*(time.perf_counter()-start)
+                if s==step:
+                    im,hd=models[identifier]['interaction'],models[identifier]['heading']
+                    start=time.perf_counter();forward(f,im.goals,16);full_ms=1000*(time.perf_counter()-start)
+                    start=time.perf_counter();g=im.map_goal();forward(f,[g],16);map_ms=1000*(time.perf_counter()-start)
+                    start=time.perf_counter();forward(f,hd.goals,16);heading_ms=1000*(time.perf_counter()-start)
+                    current.append(dict(tid=identifier,fixed=im.fixed,interaction_update_ms=im_ms,
+                        full_rollout_ms=full_ms,map_search_and_rollout_ms=map_ms,
+                        heading_update_ms=hd_ms,heading_rollout_ms=heading_ms))
+            if s==step:
+                item=dict(case=case,step=step,visible=len(current),targets=current,
+                    FULL_only_ms=sum(x['interaction_update_ms']+x['full_rollout_ms'] for x in current),
+                    MAP_only_ms=sum(x['interaction_update_ms']+x['map_search_and_rollout_ms'] for x in current),
+                    note='one current observation update plus all visible target forecasts; excludes MPC and observation/filter processing; serial measurements, no extrapolation')
+                results.append(item);print('PROFILE',case,item['FULL_only_ms'],item['MAP_only_ms'],flush=True)
+    depth_save('profile.json',results)
+
+
+def depth_actions(records, protocol):
+    from nav.contracts import MPCConfig
+    from nav.planner import MPCPlanner
+    from integration.crowdnav import BayesObservationAdapter
+    selected={tuple(x) for x in protocol['action_states']}
+    modes={}
+    with gzip.open(OUT/'modes.jsonl.gz','rt') as stream:
+        for line in stream:
+            m=json.loads(line)
+            if (m['case'],m['step']) in selected:
+                modes[m['case'],m['step'],m['tid']]=m
+    cfg=MPCConfig(**json.loads((base.OUT/'protocol.json').read_text())['config'])
+    _,_,ActionXY,_,_=base.legacy._load_modules(base.CROWD)
+    results=[];checked_steps=0
+    for record in records:
+        steps={step for case,step in selected if case==record['case']}
+        if not steps:continue
+        env=base.environment(record);adapter=BayesObservationAdapter(cfg);planner=MPCPlanner(cfg)
+        features={(s,i):f for s,i,f in base.queries(record)}
+        for frame in record['frames']:
+            step=frame['step']
+            if step>max(steps):break
+            human=np.array([[h.px,h.py] for h in env.humans])
+            np.testing.assert_allclose(human,record['truth']['positions'][step],atol=1e-12,rtol=0)
+            np.testing.assert_allclose([env.robot.px,env.robot.py,env.robot.vx,env.robot.vy,env.robot.radius],frame['robot'],atol=1e-12,rtol=0)
+            obs=adapter.read(env)
+            if adapter.detected_entities!=frame['detections']:raise RuntimeError('replayed legal detection mismatch')
+            before=copy.deepcopy(planner._previous_mean)
+            seed=record['case']*100003+step*97+1729
+            action,_=planner.plan(obs,seed)
+            if not np.array_equal(action,frame['action']):raise RuntimeError('original MPC action not reproduced')
+            checked_steps+=1
+            if step in steps:
+                row=dict(case=record['case'],step=step,people=record['people'],arms={
+                    'CV':dict(action=action,diagnostics=planner.last_diagnostics.copy())})
+                for arm in ('CV-repeat','MAP','FULL-mean','D-mean'):
+                    shadow=MPCPlanner(cfg);shadow._previous_mean=copy.deepcopy(before)
+                    modified=copy.deepcopy(obs);changed=[]
+                    for j,identifier in enumerate(adapter.reported_ids):
+                        key=record['case'],step,identifier
+                        if arm=='CV-repeat' or key not in modes or modes[key]['interaction']['fixed']:continue
+                        m=modes[key]['interaction']
+                        if arm=='MAP':p=np.array(m['map_positions'])
+                        elif arm=='FULL-mean':p=np.einsum('n,nhd->hd',m['weights'],m['positions'])
+                        else:p=base.predict(features[step,identifier],np.array(record['truth']['goals'][identifier]),'improved',.5)
+                        modified.human_segment_end[j]=p
+                        modified.human_segment_start[j]=np.concatenate([modified.entities[j:j+1,:2],p[:-1]])
+                        changed.append(identifier)
+                    alternative,ms=shadow.plan(modified,seed)
+                    if arm=='CV-repeat' and not np.array_equal(alternative,action):raise RuntimeError('same-input planning not deterministic')
+                    row['arms'][arm]=dict(action=alternative,delta_speed_m_s=float(np.linalg.norm(alternative-action)),
+                        delta_one_step_position_m=float(.25*np.linalg.norm(alternative-action)),
+                        changed_targets=changed,plan_ms=ms,diagnostics=shadow.last_diagnostics.copy())
+                results.append(row);print('ACTION',record['case'],step,{a:v.get('delta_speed_m_s',0) for a,v in row['arms'].items()},flush=True)
+            env.step(ActionXY(*map(float,frame['action'])))
+    assert len(results)==len(selected)
+    depth_save('actions.json',dict(states=results,original_steps_bitwise_reproduced=checked_steps,
+        limitation='mean-channel sensitivity only; no mixture covariance, no posterior-risk integration, no outcome comparison; non-change cannot reject full distribution value'))
+
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('command',choices=('prepare','run','summarize','stability','audit-distribution'))
+    ap.add_argument('command',choices=('prepare','run','summarize','stability','audit-distribution',
+        'depth-prepare','depth-reference','depth-profile','depth-actions','depth-refine','depth-likelihood'))
     args=ap.parse_args()
     records=data()
+    if args.command.startswith('depth-'):
+        protocol=depth_setup(records)
+        calibration=json.loads((OUT/'calibration.json').read_text())
+        if args.command=='depth-reference':depth_reference(records,calibration,protocol)
+        elif args.command=='depth-profile':depth_profile(records,calibration)
+        elif args.command=='depth-actions':depth_actions(records,protocol)
+        elif args.command=='depth-refine':depth_refine(records,calibration)
+        elif args.command=='depth-likelihood':depth_likelihood(records,calibration)
+        return
     if args.command=='prepare':
         if (OUT/'protocol.json').exists():
             raise RuntimeError('already frozen; do not overwrite protocol')
