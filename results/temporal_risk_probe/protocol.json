@@ -1,0 +1,182 @@
+{
+  "baseline": "12c20dc",
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "hashes": {
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/belief.py": "49cf4ac1c45f38ad3532ea1b6a9c0e24fac4e7310bdd6907db53a877f30fce55",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/risk.py": "740113b9ed13d1d133d52d42ee0bbd5ac5127962dec764dc6ea08dd8c0777d04",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/__init__.py": "ae545a7792f0242831102312672f304ff9c4f0e35bb01498a94eb262612811ec",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/contracts.py": "05a0e80f297d1cb0e3eabf21ebf138705604751bd10e7df65518a957bbdfbcad",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/planner.py": "b9e77ae9f6ac56dd4919406dcbe55ea161883761bf133d6e07895141c01f5dbd",
+    "experiments/temporal_risk_probe.py": "423b896a07cbf0f20251c7bd4c60773a054b93b56f1f0b3acbaa56e421b4acc7",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/experiments/replay.py": "257eb48c3e3d9ed60b5e5b344e2c9ca9e2a281bc6cd1be42e9db7281f0c1ad88",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23000.pkl": "6e3f84bc9b4bc005766c14a5cc7ad9dcdd15a00a32bd70fe50bf92094275ad82",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23001.pkl": "8d3e20ea4eddb8e2804597649aa82d82fd44c169c54173409fb6cca5a769478d",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23002.pkl": "5f2a4755c044c36abef686c74c6951c2d06ce707bb6ad7b85e8c3414273d6bc1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23003.pkl": "55e26db7731a943659c2b51165b329d71ab37a72e54a06007a407c77b4732baf",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23004.pkl": "5b94cbefe32920215ce2c0172c37025abc3410b8a970312dde21d41ff71825e7",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23005.pkl": "081e7b98e05e199690578eb35c3bc9ef72cff8d2fd4e5eee4102f284e29b1e97",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23006.pkl": "43ef714fc283939d1c77f5cef7d339b43d4e9ecaa461b0d3f7cbaecb74885639",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23007.pkl": "2360c53ec8cef1e91b56209487cbbbd0f0832c4f7622c90b96b6a72582a267ac",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23008.pkl": "bda8619dd69580da04c47bd9fcaa296ddfa8768a36921073c1dfed5131941baa",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23009.pkl": "40c2efc7ba10d2779f83b80cf4f598447e68bd77679a6f0f328d6607a08d5848",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23000.pkl": "498799a760a429bd7bd50e0505c537a8a66a4662d6be33a046c91d499980d7f1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23001.pkl": "dbf813ce75aa6c0c415b1cf8e7369322b1930f71958deaef5e3f8ec6a754a9f2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23002.pkl": "e017ceff5fd0bd976efc83f106e4223482108d0ea624c552fc13999a244f0a1f",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23003.pkl": "b60dad3eba4b4dbddb3bb2c2a47262e259319a39845020b0b318c2880a8cb8c6",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23004.pkl": "a3bb26f1c57093c3692c6e905bea4d6005546dd65f3a06bb7979b1d3aeacd1e1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23005.pkl": "cbc7b758e0d50f9c81f35fe2fd7ece8ae365e6783cc0d79efb60bced2df2f6b2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23006.pkl": "3f34f668bafd0c7f7515a555fe8c1057ea01a5d9a37397a409748d291b434b71",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23007.pkl": "19b104ea6545861d3705f498745adf853645fc669b4f4c94be68b514bf0fb158",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23008.pkl": "fba0bf8cc79e916b6e23a4c3e197f8662aa96c9c30994a88a22b419faaf62d55",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23009.pkl": "db110f1fa2c06ec30997d44066c34c97fd1f074b20a16d9882d422eeeaa07c38",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23000.pkl": "c722c6acd7d1b8e71ea7fdc30f1a84a48e4f2e9ecf726625d624d99e5717931f",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23001.pkl": "50c38f90c066232bb84ae83c13185a8d97676542a971e5ba7565ee430d9ea2f2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23002.pkl": "c3f9851ba34a3162c0fc837c446654063d8f94ff518a9867b8db2b7268eaa9f9",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23003.pkl": "53b301dd40bc2297b41b33aca57f228cc28865eba3f5149a0699c66a7aa98333",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23004.pkl": "8870c0beb6531bc5b1bc6992735d452109d80e53ca689f3846428e61b7af9d2a",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23005.pkl": "2ea5fbc136797268cad6fb9f800b7c2f793d3aab6c53162628db6d9f5055e747",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23006.pkl": "2313cf63c5727cb64b8e4ea52823afbaafd900c0cce47637a724562ca11174ea",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23007.pkl": "d67ff9e51c1fee26abe8a629b009953e3b4570bbec8014f283882435aaab73d6",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23008.pkl": "1be548402f858cfab362d7409714f020a3c941107f24b9c79dd0ce5832440178",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23009.pkl": "e153dae50d6df255d421fbf93b6a799d748e95ab09f8f10bef2cb7b710632819",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/source/three_arm.py": "db85cc5c2c166149027a18eafda6af61591df3b0af63a447ff8605feefa9fbbc",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/source/bayesian_rfs.py": "c3622b4c6a1b7051d91a42a666919bb925f889fec6a6dbd16a692361c8421a4f"
+  },
+  "state_rule": "floor(length/3), floor(2*length/3); closest prior nonterminal if needed",
+  "candidates": "four routes x (three uniform first-iteration + three lowest J0 last-iteration); deduplicate, fill same route in stable order; include O replacing last uniform if absent",
+  "conditional_model": "one initial 4D Gaussian draw, sequential independent low-rank acceleration increments; existence applied once per person",
+  "P0": "clean exact-reset model only; unique missed-age in 0..40 matching ALL 16 future covariance matrices; no generic inversion",
+  "samples_select": 4096,
+  "samples_eval": 65536,
+  "chunk": 2048,
+  "epsilon": [
+    0.25,
+    0.1,
+    0.5
+  ],
+  "C_quadrature": "standard-normal Cartesian disk quadrature 16x16 then 32x32; 64x64 if pair diff>0.001 or crowd diff>0.002; numerical convergence not formal bound",
+  "C_tail": "truncate each standard normal coordinate at +/-9; skip pairs with min(q_prev,q_next)<1e-12; record no safety certification",
+  "reference_pool": "union of O and I/C/J winners for all eps, plus two J candidates closest to each eps",
+  "risk_CI": "paired delta-method SE from independent per-human Bernoulli covariance, evaluated on fresh samples; risk upper bound aggregates per-person Bonferroni Wilson intervals",
+  "gate": "main eps .25; I-J change >=.05m/s; >=6 states in >=4 episodes; risk gain>=.01 with paired 95% CI, J0<=1.02 I, OR J upper95<=eps, terminal distance gain>=.10m and J0<=I",
+  "source_IDS": "replay lacks persistent IDs; independent-person propagation uses stable local entity row, never matches identities between saved states",
+  "no_training": true,
+  "no_new_navigation": true,
+  "branch_validation": "only after gate passes; no partial snapshot restoration",
+  "seed": 20260912,
+  "threads": 1,
+  "created": "2026-09-12T21:17:57+0900",
+  "implementation_commit": "3709ed3",
+  "F": [
+    [
+      1.0,
+      0.0,
+      0.25,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.25
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "Q": [
+    [
+      0.00029541015625000005,
+      0.0,
+      0.0023632812500000004,
+      0.0
+    ],
+    [
+      0.0,
+      0.00029541015625000005,
+      0.0,
+      0.0023632812500000004
+    ],
+    [
+      0.0023632812500000004,
+      0.0,
+      0.018906250000000003,
+      0.0
+    ],
+    [
+      0.0,
+      0.0023632812500000004,
+      0.0,
+      0.018906250000000003
+    ]
+  ],
+  "process_root": [
+    [
+      0.0171875,
+      0.0
+    ],
+    [
+      0.0,
+      0.0171875
+    ],
+    [
+      0.1375,
+      0.0
+    ],
+    [
+      0.0,
+      0.1375
+    ]
+  ],
+  "states_sha256": "94d4bbbf1a9f6bbb2c140146abac6a0e65d5522a6365f203e4b865f4d7135f8c",
+  "post_run_validation": [
+    "60 unique preselected states",
+    "1440 unique within-state candidates",
+    "all P0/covariance and geometry checks",
+    "all choices recomputed",
+    "65536-sample positive-case exact reproducibility",
+    "paired risk interval reproduction",
+    "production core unchanged"
+  ],
+  "completed": "2026-09-12T21:35:44+0900"
+}

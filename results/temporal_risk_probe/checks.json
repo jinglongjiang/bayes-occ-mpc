@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "checks": [
+    "low-rank Q",
+    "run-count identity",
+    "unique clean covariance reconstruction",
+    "H=1",
+    "r=0/1",
+    "no entities",
+    "deterministic trajectory",
+    "goal entry retained"
+  ]
+}
