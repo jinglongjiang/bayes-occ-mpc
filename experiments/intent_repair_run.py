@@ -725,10 +725,74 @@ def compression(records,protocol,calibration):
             same_query_errors={name:np.linalg.norm(p[H]-truth,axis=1) for name,p in
                                [('CV',cv),('D',truth_d),('OldFULL',old_mean),('NewFULL',reference_mean)]}))
         save('compression.json',results);log('COMPRESS',case,[(x['k'],x['pass_check'],round(x['risk_max'],4)) for x in modes])
+    joint=joint_compression(records,protocol,calibration)
     eligible=[k for k in (4,8,16) if all(next(m for m in r[name] if m['k']==k)['pass_check']
-                                       for r in results for name in ('modes','old_modes'))]
+                                       for r in results for name in ('modes','old_modes'))
+              and all(r['pass_check'] for r in joint if r['k']==k)]
     save('compression_config.json',dict(k=min(eligible) if eligible else inference['count'],passed=bool(eligible),
         fallback='if no K passes, retain all inference particles before deduplicating identical goals; report missed runtime rather than silently lose mode accuracy'))
+
+
+def joint_compression(records,protocol,calibration):
+    """Per-person tolerances do not imply a tolerance on the multi-person union."""
+    cfg=MPCConfig(**protocol['config']);configuration=fitted_settings();results=[]
+    for case,step,anchor in protocol['states']:
+        record=next(r for r in records if r['case']==case)
+        _,adapter,obs=observation_at(record,step)
+        history=list(old.contexts(old.legal_record(record)))
+        features=next(f for s,f in history if s==step)
+        needed={tid for tid,f in features.items() if f['goal_source']!='birth_antipode' and tid in adapter.reported_ids}
+        tracks={'new':{},'old':{}}
+        for s,group in history:
+            if s>step:break
+            for tid in needed & group.keys():
+                f=group[tid]
+                for name,models in tracks.items():
+                    if tid not in models:
+                        models[tid]=(RepairedPosterior(record['scene'],s,f,calibration,case*1009+tid*97,**configuration)
+                                     if name=='new' else old.GoalPosterior(record['scene'],s,f,calibration,case*1009+tid*97))
+                    else:models[tid].update(s,f)
+        planner=MPCPlanner(cfg);rng=np.random.default_rng(case+step)
+        raw=np.repeat(planner._initial_mean(obs)[None],24,axis=0)+rng.normal(0,cfg.init_std,(24,16,2))
+        seeds=planner._seed_trajectories(obs);raw[:len(seeds)]=seeds
+        _,_,positions=planner._rollout(raw,obs)
+        active=planner._active_until_goal(positions,obs)[0]
+        variance=np.array(read('calibration.json')['variance'][str(record['people'])])
+        for name,models in tracks.items():
+            reference={};full_mean={};full_es={};seconds=0.
+            for j,tid in enumerate(adapter.reported_ids):
+                if tid not in needed:continue
+                m=models[tid];f=features[tid];w=np.exp(m.logweights)
+                start=time.perf_counter();p=old.forward(f,m.goals,16);seconds+=time.perf_counter()-start
+                reference[j]=(p,w,variance);full_mean[j]=np.einsum('m,mhd->hd',w,p)
+                truth=np.array(record['truth']['positions'])[step+H+1,tid]
+                full_es[j]=common_score(p,w,truth,variance,case+step+tid,pairs=8192)[1]
+            full_probability=-np.expm1(-MixtureEnvelope(cfg,obs,reference).exact(positions))
+            for k in (4,8,16):
+                compressed={};mean_max=0.;energy=[];compress_ms=0.;rollout_ms=0.
+                for j,tid in enumerate(adapter.reported_ids):
+                    if tid not in needed:continue
+                    m=models[tid];f=features[tid];start=time.perf_counter()
+                    goals,w=compress_goals(f,m.goals,np.exp(m.logweights),k)
+                    compress_ms+=(time.perf_counter()-start)*1000
+                    start=time.perf_counter();p=old.forward(f,goals,16);rollout_ms+=(time.perf_counter()-start)*1000
+                    compressed[j]=(p,w,variance)
+                    mean_max=max(mean_max,float(np.linalg.norm(np.einsum('m,mhd->hd',w,p)-full_mean[j],axis=1).max()))
+                    truth=np.array(record['truth']['positions'])[step+H+1,tid]
+                    es=common_score(p,w,truth,variance,case+step+tid,pairs=8192)[1]
+                    energy.append(np.mean(np.array(es)-full_es[j]))
+                probability=-np.expm1(-MixtureEnvelope(cfg,obs,compressed).exact(positions))
+                delta=float(np.where(active,np.abs(probability-full_probability),0.).max())
+                flips=int(np.sum((probability[:,0]<=cfg.near_chance_limit)!=(full_probability[:,0]<=cfg.near_chance_limit)))
+                es_delta=float(np.mean(energy)) if energy else 0.
+                row=dict(case=case,step=step,arm=name,k=k,unknown_visible=len(needed),joint_risk_max=delta,
+                    first_boundary_flips=flips,mean_max=mean_max,ES_delta=es_delta,
+                    reference_rollout_ms=seconds*1000,compression_ms=compress_ms,rollout_ms=rollout_ms,
+                    pass_check=delta<=.01 and flips==0 and mean_max<=.05 and es_delta<=.01)
+                results.append(row)
+            save('joint_compression.json',results)
+            log('JOINT_COMPRESS',case,name,[(r['k'],r['pass_check'],round(r['joint_risk_max'],4)) for r in results[-3:]])
+    return results
 
 
 def interface(records,calibration):
