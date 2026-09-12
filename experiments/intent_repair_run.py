@@ -438,9 +438,11 @@ def predict(records,calibration):
         if r['split']!='holdout' or (OUT/f'prediction_{r["case"]}.jsonl.gz').exists():
             continue
         queries={(s,i):f for s,i,f in base.queries(r)};tracks={};result=[]
+        last_query=max(s for s,i in queries)
         path=OUT/f'prediction_{r["case"]}.jsonl.gz'
         with gzip.open(str(path)+'.tmp','wt') as stream:
             for step,features in old.contexts(old.legal_record(r)):
+                if step>last_query:break
                 for tid,f in features.items():
                     if tid not in tracks:
                         tracks[tid]={name:RepairedPosterior(r['scene'],step,f,calibration,r['case']*1009+tid*97,**cfg,wide=name=='wide') for name in ('new','wide')}
