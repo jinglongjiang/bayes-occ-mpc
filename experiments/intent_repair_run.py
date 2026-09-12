@@ -887,12 +887,23 @@ def action_diagnostic(records,calibration):
                     scope='fixed original first-iteration pool shared by all arms, same starting warm state; offline future clearance only')
                 for arm in NAV_ARMS:
                     p=MPCPlanner(cfg,envelope=None) if arm=='O' else MixturePlanner(cfg)
-                    if arm!='O':p.mixtures=mixtures[arm];p.audit_geometry=True
+                    if arm!='O':p.mixtures=mixtures[arm]
                     p._previous_mean=copy.deepcopy(previous)
                     def fixed_rollout(self,samples,observation):
                         positions=observation.robot_xy[None,None]+np.cumsum(candidates*.25,axis=1)
                         return candidates,candidates,positions
                     p._rollout=types.MethodType(fixed_rollout,p)
+                    audited=[]
+                    def audit_pool(state):
+                        if audited or arm=='O':return
+                        hazard=p.mixture_evaluator.exact(state['positions'])
+                        active=p._active_until_goal(state['positions'],obs)[0]
+                        permitted=np.all(np.where(active,hazard<=p._belief_hazard_limits()[None],True),axis=1)
+                        geometric,_=p._combined_clearance(state['controls'],obs,state['positions'],
+                                                         state['human_clearance'],state['occupancy'],None)
+                        p.geometry_counts=[int(np.sum(permitted & (geometric<0))),int(permitted.sum())]
+                        audited.append(True)
+                    p.trace_hook=audit_pool
                     action,_=p.plan(obs,r['case']*100003+step*97+1729)
                     positions=obs.robot_xy+np.cumsum(.25*p.last_controls,axis=0)
                     available=min(16,len(r['truth']['positions'])-step-1)
@@ -900,6 +911,7 @@ def action_diagnostic(records,calibration):
                     radius=np.array([h.radius for h in env.humans])+env.robot.radius
                     clearance=float(np.min(np.linalg.norm(positions[:available,None]-truth,axis=2)-radius[None])) if available else None
                     row['arms'][arm]=dict(action=action,diagnostics=p.last_diagnostics.copy(),future_discrete_clearance=clearance,
+                        future_evaluation_steps=available,full_four_second_labels=available==16,
                         progress=float(np.linalg.norm(obs.goal_xy-obs.robot_xy)-np.linalg.norm(obs.goal_xy-positions[-1])),
                         geometry_rejected=(p.geometry_counts if arm!='O' else None))
                 results.append(row);save('actions.json',results)
@@ -994,6 +1006,9 @@ def report():
         '- Compression status: '+json.dumps(read('compression_config.json')),
         '- Risk is conditional on a fitted isotropic marginal D error kernel, not a certified joint safety probability.',
         '- Current CV geometry is common to all arms and may block mode-dependent routes.',
+        '- F versus F0 includes both likelihood repair and the registered particle/MH refinement; L2 versus L1 isolates the temporal likelihood at matched approximation.',
+        '- Offline action clearance uses only available future labels; records shorter than four seconds are flagged, not extended.',
+        '- The factorial diagnostic uses the actual ORCA/TTC generator without extra D rollout clipping in all four cells; D forecasts remain frozen.',
         '- Timing is measured serially, includes inference and MPC, excludes environment truth/audit and writing.',
         '- Risk is a subset of MPC time, not an additional summand. Component percentiles do not add.',
         '- Goal MAP optimization is included in goal-update time for M.',
