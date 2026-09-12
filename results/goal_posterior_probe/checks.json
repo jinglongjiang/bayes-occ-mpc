@@ -1,0 +1,1 @@
+{"bitwise_model_parity_queries": 24, "first_step_parity": true, "audit_label_permutation_invariance": true, "missing_not_evidence": true, "duplicate_evidence_rejected": true, "full_history_density_consistency": true, "identical_predictions_identical_likelihood": true}
