@@ -101,6 +101,8 @@ def load_protocol():
     for path, digest in p['files'].items():
         if sha(path) != digest:
             raise RuntimeError('frozen source changed: ' + path)
+    if 'data_sha256' in p and sha(OUT/'episodes.jsonl') != p['data_sha256']:
+        raise RuntimeError('frozen observation/label data changed')
     return p
 
 
@@ -157,8 +159,12 @@ def legal_features(item, frame, entity, past):
     pos = np.array([entity['px'], entity['py']], dtype=np.float64)
     vel = np.array([entity['vx'], entity['vy']], dtype=np.float64)
     observations = past[-8:]
-    speeds = [np.linalg.norm(v) for _, _, v in observations]
-    speed = float(np.clip(np.mean(speeds), 0., 1.))
+    # Match the vendored old tracker's public speed prior/EMA and gap discipline.
+    speed = 1.
+    for previous, current in zip(past[:-1], past[1:]):
+        if current[0] - previous[0] == 1:
+            observed = np.linalg.norm(current[1] - previous[1]) / DT
+            speed = float(np.clip(.7 * speed + .3 * observed, .2, 2.5))
     direction = unit(np.mean([v for _, _, v in observations], axis=0))
     first_step, first_pos, _ = past[0]
     if item['scene'] == 'circle_crossing' and first_step == 0:
@@ -202,7 +208,8 @@ def predict(features, goal, mode, parameter=1.):
     omega = features['omega']
     for k in range(16):
         if mode == 'old':
-            velocity = features['speed'] * unit(goal - pos)
+            velocity = (features['speed'] * unit(goal - pos)
+                        if np.linalg.norm(goal - pos) > .35 else np.zeros(2))
         elif mode == 'turn':
             angle = omega * DT
             c, s = math.cos(angle), math.sin(angle)
@@ -382,9 +389,74 @@ def selftest():
     print('SELFTEST_PASS', flush=True)
 
 
+def audit():
+    """Read-only prediction checks and descriptive decompositions; no reselection."""
+    records = list(map(json.loads, (OUT/'episodes.jsonl').read_text().splitlines()))
+    rows = json.loads((OUT/'predictions.json').read_text())
+    summary = json.loads((OUT/'summary.json').read_text())
+    means = []
+    for subset in ('all', 'ordinary', 'conflict'):
+        for a,b in (('C','A'),('D','C'),('B','A'),('C','CV'),('D','CV'),('D','TURN')):
+            values, groups = [], []
+            for rec in records:
+                q=[r for r in rows if r['case']==rec['case'] and
+                   (subset=='all' or r['conflict']==(subset=='conflict'))]
+                if q:
+                    values.append(float(np.mean([np.mean(r['errors'][a])-np.mean(r['errors'][b]) for r in q])))
+                    groups.append(rec['people'])
+            balanced=float(np.mean([np.mean(np.asarray(values)[np.array(groups)==n]) for n in (5,10,20)]))
+            means.append(dict(subset=subset,contrast=a+'-'+b,delta=balanced,ci=interval(values,groups)))
+    coverage, censor = {}, []
+    for n in (5,10,20):
+        anchors=(np.array([[4*np.cos(2*np.pi*k/8),4*np.sin(2*np.pi*k/8)] for k in range(8)])
+                 if n!=20 else np.array([[x,y] for x in (-2.5,2.5) for y in (-3.75,-1.25,1.25,3.75)]))
+        errors=[]
+        for rec in records:
+            if rec['people']==n and rec['split']=='holdout':
+                goals=np.array(rec['truth']['goals'])
+                errors.extend(np.min(np.linalg.norm(goals[:,None]-anchors[None],axis=2),axis=1).tolist())
+        coverage[str(n)]=dict(mean_nearest_anchor_m=float(np.mean(errors)),
+            p95=float(np.quantile(errors,.95)),exact_matches=int(np.sum(np.array(errors)<1e-9)),targets=len(errors))
+    record_map={r['case']:r for r in records}
+    for rec in records:
+        if rec['split']=='holdout':
+            total=sum(len(f['detections']) for f in rec['frames'] if f['step']%4==0)
+            used=sum(r['case']==rec['case'] for r in rows)
+            censor.append(dict(case=rec['case'],potential_queries=total,used=used,tail_censored=total-used))
+    born=[r for r in rows if r['goal_source']=='birth_antipode']
+    assert all(r['goal_error']<1e-12 and r['errors']['C']==r['errors']['D'] for r in born)
+    for row in rows:
+        rec=record_map[row['case']]; t=row['track']; s=row['step']
+        future=np.asarray(rec['truth']['positions'])[s:s+17,t]
+        row['near_goal_window']=bool(np.min(np.linalg.norm(future-rec['truth']['goals'][t],axis=1))<.5)
+    arrival=[]
+    for subset in ('all','conflict'):
+        for near in (False,True):
+            q=[r for r in rows if r['near_goal_window']==near and (subset=='all' or r['conflict'])]
+            values,groups,errors=[],[],[]
+            for case,rec in record_map.items():
+                selected=[r for r in q if r['case']==case]
+                if selected:
+                    errors.append([np.mean([r['errors'][arm] for r in selected],axis=0) for arm in ('CV','C','D')])
+                    values.append(float(np.mean([np.mean(r['errors']['D'])-np.mean(r['errors']['C']) for r in selected])))
+                    groups.append(rec['people'])
+            e=np.array(errors)
+            table=np.mean([e[np.array(groups)==n].mean(axis=0) for n in sorted(set(groups))],axis=0)
+            arrival.append(dict(subset=subset,near_goal_window=near,queries=len(q),episodes=len(values),
+                configurations=sorted(set(groups)),CV_C_D=table.tolist(),D_minus_C_CI=interval(values,groups),
+                note='Post-hoc truth-based descriptive label; not a new gate, main subset, or deployable selector'))
+    summary.update(mean_horizon_contrasts=means,goal_dictionary_coverage=coverage,censoring=censor,
+        posthoc_goal_arrival_check=arrival,
+        checks=dict(birth_antipode_exact_queries=len(born),holdout_queries=len(rows),
+                    conflict_queries=sum(r['conflict'] for r in rows),episodes_sha256=sha(OUT/'episodes.jsonl'),
+                    predictions_sha256=sha(OUT/'predictions.json')))
+    save('summary.json',summary)
+    print('AUDIT_PASS',summary['checks'],flush=True)
+
+
 if __name__ == '__main__':
     ap=argparse.ArgumentParser()
-    ap.add_argument('command', choices=['selftest','init','collect','evaluate'])
+    ap.add_argument('command', choices=['selftest','init','collect','evaluate','audit'])
     args=ap.parse_args()
     if args.command=='selftest':
         selftest()
@@ -392,5 +464,8 @@ if __name__ == '__main__':
         initialize()
     elif args.command=='collect':
         collect(load_protocol())
+    elif args.command=='audit':
+        load_protocol()
+        audit()
     else:
         run(load_protocol())
