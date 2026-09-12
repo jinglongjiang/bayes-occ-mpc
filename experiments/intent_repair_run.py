@@ -89,6 +89,8 @@ def setup(records):
 
 
 def read_config():
+    if (OUT/'protocol.json').exists():
+        return read('protocol.json')['config']
     return json.loads((base.OUT/'protocol.json').read_text())['config']
 
 
@@ -864,6 +866,8 @@ def register_navigation(protocol):
 
 def episode(item,arm,calibration,k):
     cfg=MPCConfig(**read_config());env=base.environment(item)
+    if env.robot.kinematics!='holonomic' or env.time_step!=cfg.dt or env.time_limit!=25 or cfg.horizon!=16:
+        raise RuntimeError('frozen execution protocol mismatch')
     if base.layout(env)!=item['layout_hash']:raise RuntimeError('initial layout mismatch')
     adapter=BayesObservationAdapter(cfg)
     planner=MPCPlanner(cfg) if arm=='O' else MixturePlanner(cfg)
