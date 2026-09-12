@@ -377,7 +377,559 @@ def run(tasks, timing=False):
     print(json.dumps({k:v for k,v in summary.items() if k not in ('config','source_hashes')}),flush=True)
 
 
-if __name__ == '__main__':
+FOCUS = ROOT/'results/hermite_focused'
+FARMS = ('E', 'R', 'T', 'H')
+FTASKS = [(n,c) for n in (5,10,20) for c in range(23000,23010)]
+_meter = None
+
+
+def fsave(name, value):
+    FOCUS.mkdir(exist_ok=True, parents=True)
+    target = FOCUS/name
+    temporary = target.with_suffix(target.suffix+'.tmp')
+    temporary.write_text(json.dumps(value, indent=2, allow_nan=False)+'\n')
+    temporary.replace(target)
+
+
+def fmanifest():
+    path = FOCUS/'protocol.json'
+    if path.exists():
+        result = json.loads(path.read_text())
+        for source, checksum in result['files'].items():
+            assert hashlib.sha256(Path(source).read_bytes()).hexdigest() == checksum, source
+        return result
+    verify_assets()
+    sources = list((ROOT/'nav').glob('*.py')) + [Path(__file__), ROOT/'experiments/controls.py',
+                                               ROOT/'archive/hermite_audit/protocol.json']
+    sources += [DATA/f'replay_{n}_{c}.pkl' for n,c in FTASKS]
+    result = dict(baseline='a8c3d90', tasks=FTASKS, config=CONFIG, step=.125,
+        arms=dict(E='reference exact', R='cached rectangle screening',
+                  T='direct cubic point, no interval screening', H='original Hermite screening'),
+        files={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
+        created=time.strftime('%Y-%m-%dT%H:%M:%S%z'),
+        layers=['fixed E candidates, exact truth only for post-audit',
+                'independent search and warm starts on common exogenous posteriors'],
+        repeats=3, order='24 lexicographic permutations; (3*global_frame+repeat)%24',
+        timing='external plan wall time including table; no instrumentation or serialization',
+        profiles='exclusive instrumented subroutine times, diagnostic only; never mixed with pure timing',
+        units='paired episodes; repetitions are technical replicates',
+        threads={k:os.environ[k] for k in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS')},
+        no_navigation=True, budget_replay_available=False,
+        stopping='no grid retuning regardless of T disagreements; no extra navigation or baselines',
+        reason_partition='refined elites; refined exact tolerance pool excluding elites; other refined; excluded',
+        enclosure_audit_tolerance=1e-10,
+        masks='big-endian np.packbits hex; candidate index order, first population bits')
+    fsave('protocol.json', result)
+    return result
+
+
+def fmodel(arm):
+    from experiments.controls import DirectMPC
+    if arm == 'T':
+        return DirectMPC(CFG)
+    return MPCPlanner(CFG, envelope={'E':None,'R':CachedRectangle,'H':CompiledDiscRisk}[arm])
+
+
+class Meter:
+    """Read-only audit instrumentation; never installed for pure timing."""
+    def __init__(self):
+        self.reset()
+
+    def reset(self):
+        self.times = {}
+        self.calls = dict(table_cdf=0, candidate_cdf=0, bessel=0, normal_cdf=0)
+        self.stack = []
+
+    def exclude(self, dt):
+        if self.stack:
+            self.stack[-1][1] += dt
+
+    def wrap(self, fn, bucket):
+        def wrapped(*args, **kwargs):
+            frame = [bucket, 0.]
+            self.stack.append(frame)
+            start = time.perf_counter()
+            try:
+                return fn(*args, **kwargs)
+            finally:
+                elapsed = time.perf_counter()-start
+                self.times[bucket] = self.times.get(bucket,0.) + (elapsed-frame[1])*1000
+                self.stack.pop()
+                self.exclude(elapsed)
+        return wrapped
+
+
+def instrument(p, arm):
+    m = p.meter = Meter()
+    for name, bucket in (('_cost','common'),('_combined_clearance','common'),
+                         ('_physical_clearance','common'),('_active_until_goal','common'),
+                         ('_rollout','common'),('_human_clearance','common'),
+                         ('_score_from_hazard','score'),('_evaluate_batch','screen')):
+        setattr(p, name, m.wrap(getattr(p,name),bucket))
+    original_hazard = m.wrap(p._belief_collision_hazard, 'point_query' if arm=='T' else 'exact')
+    def hazard(*args, **kwargs):
+        value = original_hazard(*args, **kwargs)
+        start = time.perf_counter()
+        p.audit_hazard = None if value is None else value.copy()
+        m.exclude(time.perf_counter()-start)
+        return value
+    p._belief_collision_hazard = hazard
+    original_build = m.wrap(p._build_envelope, 'build')
+    def build(obs):
+        value = original_build(obs)
+        if value is not None and arm in ('R','H'):
+            original_bounds = m.wrap(value.bounds, 'bounds_query')
+            def bounds(positions):
+                lo,hi = original_bounds(positions)
+                start = time.perf_counter()
+                p.audit_bounds = (lo.copy(),hi.copy())
+                m.exclude(time.perf_counter()-start)
+                return lo,hi
+            value.bounds = bounds
+        return value
+    p._build_envelope = build
+    return p
+
+
+def invoke(p, fn, *args):
+    global _meter
+    previous, _meter = _meter, p.meter
+    try:
+        return fn(*args)
+    finally:
+        _meter = previous
+
+
+def count_functions(enable):
+    import nav.risk as risk
+    import experiments.controls as controls
+    if not enable:
+        risk.ncx2.cdf, risk.ive, risk.ndtr, controls.ndtr = count_functions.originals
+        return
+    count_functions.originals = (risk.ncx2.cdf, risk.ive, risk.ndtr, controls.ndtr)
+    def wrap(fn, kind):
+        def counted(*args,**kwargs):
+            value = fn(*args,**kwargs)
+            if _meter is not None:
+                key = kind
+                if key=='cdf':
+                    key = 'table_cdf' if any(f[0]=='build' for f in _meter.stack) else 'candidate_cdf'
+                _meter.calls[key] += int(np.size(value))
+            return value
+        return counted
+    risk.ncx2.cdf = wrap(risk.ncx2.cdf,'cdf')
+    risk.ive = wrap(risk.ive,'bessel')
+    risk.ndtr = wrap(risk.ndtr,'normal_cdf')
+    controls.ndtr = wrap(controls.ndtr,'normal_cdf')
+
+
+def selection(p, state, scores):
+    """Independent read-only mirror, checked against the actual E loop each time."""
+    costs,full,first,physical = scores
+    if (full>=0).any():
+        pool = np.flatnonzero(full>=0)
+        winner = int(pool[np.argmin(costs[pool])])
+        pool = np.array([winner])
+    elif (first>=0).any():
+        pool = np.flatnonzero(first>=0)
+        pool = pool[full[pool]>=full[pool].max()-.02]
+        winner = int(pool[np.argmin(costs[pool])])
+    else:
+        pool = np.flatnonzero(physical>=physical.max()-.02)
+        winner = p._degraded_choice(costs,physical,state['params'],state['obs'])
+    elites = []
+    for i,count in enumerate(state['counts']):
+        lo,hi = state['bounds'][i:i+2]
+        ids = MPCPlanner._elite_indices(costs[lo:hi],full[lo:hi],first[lo:hi],
+                                       max(4,round(count*CFG.elite_fraction))) + lo
+        elites.append(ids.tolist())
+    return elites,winner,pool
+
+
+def packed(mask):
+    return np.packbits(mask).tobytes().hex()
+
+
+def reference_q(obs, positions):
+    import nav.risk as risk
+    d = np.linalg.norm(positions[:,None]-obs.human_segment_end[None],axis=3)
+    var = .5*np.trace(obs.human_position_covariance,axis1=2,axis2=3)
+    radius = obs.robot_radius + obs.entities[None,:,None,4]+CFG.human_margin
+    far = d-radius>=8*np.sqrt(var)[None]
+    q = np.full(d.shape,risk.ndtr(-8.))
+    q[~far] = risk.ncx2.cdf(np.broadcast_to(radius**2/np.maximum(var[None],1e-9),d.shape)[~far],
+                            2., (d**2/np.maximum(var[None],1e-9))[~far])
+    return np.where(var[None]<1e-9,d<=radius,q)
+
+
+def frame_trace(state):
+    p = state['self']
+    elites,winner,_ = selection(p,state,(state['costs'],state['full'],state['first'],state['first_physical']))
+    assert winner == state['ibest']
+    return dict(iteration=int(state['_']), elites=elites, winner=winner,
+                params=digest(state['params']), means=digest(state['means']),
+                deviations=digest(state['deviations']), best=digest(state['best_controls']))
+
+
+def fixed_audit(state, helpers, table, result):
+    from nav.risk import _keys
+    p,obs = state['self'],state['obs']
+    e_scores = (state['costs'],state['full'],state['first'],state['first_physical'])
+    elites,winner,pool = selection(p,state,e_scores)
+    assert winner==state['ibest']
+    n = len(state['controls'])
+    elite = np.zeros(n,bool); elite[np.concatenate(elites)] = True
+    select_pool = np.zeros(n,bool); select_pool[pool] = True
+    needed = elite|select_pool
+    h = p.audit_hazard
+    q = reference_q(obs,state['positions']) if h is not None else None
+    row = dict(iteration=int(state['_']), population=n, elites=elites, winner=winner,
+               exact_category=np.bincount(_keys(*e_scores[:3])[0],minlength=3).tolist(), methods={})
+    active,_,_ = MPCPlanner._active_until_goal(state['positions'],obs)
+    limits = p._belief_hazard_limits()[None]
+    # Post-audit score endpoints reuse the production formula, never an online oracle.
+    base = MPCPlanner._cost(p,state['controls'],obs,state['positions'],state['human_clearance'],state['occupancy'],None)
+    gf,gs = MPCPlanner._combined_clearance(p,state['controls'],obs,state['positions'],state['human_clearance'],state['occupancy'],None)
+    base_category = _keys(*e_scores[:3])[0]
+    for arm,x in helpers.items():
+        x.audit_bounds = None
+        scores = invoke(x,x._evaluate_batch,state['controls'],obs,state['positions'],
+                        state['human_clearance'],state['occupancy'],state['counts'],state['bounds'])
+        got,win,_ = selection(x,state,scores)
+        exact = x._exact_mask.copy() if arm!='T' else np.zeros(n,bool)
+        v = dict(ordered_elites=got,winner=win,
+                 elite_route_changes=sum(a!=b for a,b in zip(elites,got)),
+                 winner_changed=win!=winner)
+        if arm=='T':
+            v.update(category_changes=int((_keys(*scores[:3])[0]!=base_category).sum()),
+                     hazard_max_error=float(np.max(np.abs(x.audit_hazard-h))) if h is not None else 0.)
+            if q is not None:
+                tq = table.conditional(state['positions'])
+                error = np.abs(tq-q)
+                v.update(probability_max_error=float(error.max()),probability_mean_error=float(error.mean()))
+        else:
+            v.update(refined=int(exact.sum()), elite_refined=int((exact&elite).sum()),
+                selection_only_refined=int((exact&select_pool&~elite).sum()),
+                extra_refined=int((exact&~needed).sum()),excluded=int((~exact).sum()),
+                exact_mask=packed(exact), extra_mask=packed(exact&~needed),
+                incorrectly_excluded=int((~exact&elite).sum())+int(not exact[winner]),
+                refined_category_changes=int(((_keys(*scores[:3])[0]!=base_category)&exact).sum()))
+            assert v['elite_refined']+v['selection_only_refined']+v['extra_refined']+v['excluded']==n
+            assert not v['elite_route_changes'] and not v['winner_changed'] and not v['incorrectly_excluded'], (arm,v)
+            if h is not None and x.audit_bounds is not None:
+                lo,hi = x.audit_bounds
+                gap = hi-lo
+                clo,flo,slo = MPCPlanner._score_from_hazard(x,base,gf,gs,active,limits,lo)
+                chi,fhi,shi = MPCPlanner._score_from_hazard(x,base,gf,gs,active,limits,hi)
+                catlo,cathi = _keys(clo,flo,slo)[0],_keys(chi,fhi,shi)[0]
+                v.update(hazard_width_mean=float(gap.mean()),hazard_width_max=float(gap.max()),
+                    category_ambiguous=int((catlo!=cathi).sum()),
+                    enclosure_raw_misses=int(((h<lo)|(h>hi)).sum()),
+                    enclosure_max_violation=float(max(0.,(lo-h).max(),(h-hi).max())),
+                    enclosure_misses=int(((h<lo-1e-10)|(h>hi+1e-10)).sum()))
+                assert v['enclosure_misses']==0,(arm,v)
+                # Fixed histogram bins measure refinement versus interval width.
+                width = gap.max(axis=1)
+                bins = np.array([0,1e-5,1e-3,1e-1,1,10,100,1000,np.inf])
+                v['width_bins'] = np.histogram(width,bins)[0].tolist()
+                v['extra_width_bins'] = np.histogram(width[exact&~needed],bins)[0].tolist()
+                # Save one natural, class-zero route boundary example per frame.
+                ids = np.asarray(elites[0]); cut = int(ids[-1])
+                if base_category[cut]==0:
+                    local = np.flatnonzero(base_category[:state['counts'][0]]==0)
+                    local = local[np.argsort(state['costs'][local],kind='stable')]
+                    rank = int(np.flatnonzero(local==cut)[0])
+                    chosen = local[max(0,rank-5):rank+7]
+                    v['boundary'] = dict(ids=chosen.tolist(), cut_cost=float(state['costs'][cut]),
+                        exact=state['costs'][chosen].tolist(), lower=clo[chosen].tolist(), upper=chi[chosen].tolist(),
+                        ambiguous=(catlo[chosen]!=cathi[chosen]).tolist())
+        row['methods'][arm] = v
+    result.append(row)
+
+
+def fgate():
+    from experiments.controls import DirectDiscRisk, DirectMPC
+    assert DirectMPC.plan is MPCPlanner.plan
+    with (DATA/'replay_20_23000.pkl').open('rb') as f:
+        frame = pickle.load(f)[0]
+    obs = copy.deepcopy(frame['obs'])
+    obs.entities = obs.entities[:1].copy()
+    obs.human_segment_end = np.zeros((1,CFG.horizon,2))
+    obs.human_position_covariance = np.tile(np.eye(2)*.0025,(1,CFG.horizon,1,1))
+    obs.human_existence = np.ones(1)
+    t,h = DirectDiscRisk(CFG,obs),CompiledDiscRisk(CFG,obs)
+    np.testing.assert_array_equal(t.table,h.table)
+    np.testing.assert_array_equal(t.derivative,h.derivative)
+    radius = float(t.radius[0,0])
+    z = np.array([-9.,-8.,-3.0625,-.0625,0.,.0625,7.9375,8.,9.])
+    positions = np.zeros((len(z),CFG.horizon,2)); positions[:,:,0]=(radius+.05*z)[:,None]
+    t.conditional_bounds = lambda *_: (_ for _ in ()).throw(AssertionError('T called intervals'))
+    err = float(np.max(np.abs(t.conditional(positions)-reference_q(obs,positions))))
+    assert err < h.interpolation_error+1e-10
+    obs.human_position_covariance[:] = 0
+    t = DirectDiscRisk(CFG,obs)
+    np.testing.assert_array_equal(t.conditional(positions),reference_q(obs,positions))
+    for mode in ('empty','no_covariance','zero_existence'):
+        o = copy.deepcopy(frame['obs'])
+        if mode=='empty':
+            o.entities=np.empty((0,5)); o.human_position_covariance=None; o.human_existence=None
+        elif mode=='no_covariance':
+            o.human_position_covariance=None
+        else:
+            o.human_existence[:]=0
+        a,b=fmodel('E'),fmodel('T')
+        a.plan(o,frame['seed']);b.plan(o,frame['seed'])
+        np.testing.assert_array_equal(a.last_controls,b.last_controls)
+    p=fmodel('T')
+    def guarded(cfg,obs):
+        table=DirectDiscRisk(cfg,obs)
+        table.bounds=lambda *_: (_ for _ in ()).throw(AssertionError('T planner called bounds'))
+        return table
+    p.envelope=guarded
+    p.plan(frame['obs'],frame['seed'])
+    fsave('gate.json',dict(status='PASS', interpolation_error=err,
+                          tests=['identical nodes/derivatives','interior and tails','deterministic',
+                                 'T never calls bounds','empty','absent covariance','zero existence']))
+    fmechanism([(5,23000),(10,23000),(20,23000)],limit=3)
+
+
+def fmechanism(tasks=FTASKS, limit=None):
+    global _meter
+    if not limit:
+        fmanifest()
+    path = FOCUS/('mechanism_gate.jsonl' if limit else 'mechanism.jsonl')
+    if path.exists() and not limit:
+        raise RuntimeError('audit already exists; do not overwrite evidence: '+str(path))
+    count_functions(True)
+    try:
+        with path.open('w') as output:
+            for n,case in tasks:
+                with (DATA/f'replay_{n}_{case}.pkl').open('rb') as f:
+                    frames = pickle.load(f)
+                if limit:
+                    frames=frames[:limit]
+                models={a:instrument(fmodel(a),a) for a in FARMS}
+                for step,frame in enumerate(frames):
+                    obs=frame['obs']
+                    helpers={a:instrument(fmodel(a),a) for a in ('R','T','H')}
+                    for a,p in helpers.items():
+                        p.risk_rows=p.refinement_batches=p.bound_fallbacks=0
+                        p._compiled=invoke(p,p._build_envelope,obs)
+                    from experiments.controls import DirectDiscRisk
+                    truth_table=DirectDiscRisk(CFG,obs) if obs.entities.size and obs.human_position_covariance is not None else None
+                    fixed=[]; traces={a:[] for a in FARMS}
+                    def hook(state):
+                        global _meter
+                        previous,_meter=_meter,None
+                        try:
+                            traces['E'].append(frame_trace(state))
+                            fixed_audit(state,helpers,truth_table,fixed)
+                        finally:
+                            _meter=previous
+                    for a,p in models.items():
+                        p.meter.reset()
+                        p.trace_hook=hook if a=='E' else lambda state,a=a: traces[a].append(frame_trace(state))
+                        invoke(p,p.plan,obs,frame['seed'])
+                    free={}
+                    for a in FARMS:
+                        p=models[a]
+                        differences=[i for i,(x,y) in enumerate(zip(traces['E'],traces[a])) if x!=y]
+                        elite_changes=sum(x['elites']!=y['elites'] for x,y in zip(traces['E'],traces[a]))
+                        winner_changes=sum(x['winner']!=y['winner'] for x,y in zip(traces['E'],traces[a]))
+                        action_change=not np.array_equal(p.last_controls[0],models['E'].last_controls[0])
+                        controls_change=not np.array_equal(p.last_controls,models['E'].last_controls)
+                        free[a]=dict(first_different_iteration=differences[0] if differences else None,
+                            elite_iterations_changed=elite_changes,winner_iterations_changed=winner_changes,
+                            action_changed=action_change,controls_changed=controls_change,
+                            max_action_difference=float(np.max(np.abs(p.last_controls[0]-models['E'].last_controls[0]))),
+                            max_control_difference=float(np.max(np.abs(p.last_controls-models['E'].last_controls))),
+                            traces=traces[a], calls=p.meter.calls, profile_ms=p.meter.times,
+                            table_nodes=p.table_cdf_values,
+                            curves=int(p._compiled.table.shape[0]) if p._compiled is not None and hasattr(p._compiled,'table') else 0)
+                        if a in ('R','H'):
+                            assert not differences and not controls_change,(n,case,step,a,free[a])
+                    row=dict(n=n,case=case,step=step,seed=frame['seed'],fixed=fixed,free=free,
+                        fixed_calls={a:p.meter.calls for a,p in helpers.items()})
+                    output.write(json.dumps(row,allow_nan=False)+'\n');output.flush()
+                print('MECHANISM',n,case,len(frames),'frames complete',flush=True)
+    finally:
+        count_functions(False)
+    if not limit:
+        fmanifest()
+
+
+def ftiming():
+    fmanifest()
+    records=[json.loads(line) for line in (FOCUS/'mechanism.jsonl').read_text().splitlines()]
+    assert len(records)==1358
+    path=FOCUS/'timing.jsonl'
+    if path.exists():
+        raise RuntimeError('timing already exists; do not overwrite technical replicates')
+    orders=list(itertools.permutations(FARMS))
+    with path.open('w') as output:
+        for repeat in range(3):
+            global_step=0
+            for n,case in FTASKS:
+                with (DATA/f'replay_{n}_{case}.pkl').open('rb') as f:
+                    frames=pickle.load(f)
+                models={a:fmodel(a) for a in FARMS}
+                for step,frame in enumerate(frames):
+                    order=orders[(3*global_step+repeat)%len(orders)]
+                    for position,a in enumerate(order):
+                        start=time.perf_counter()
+                        models[a].plan(frame['obs'],frame['seed'])
+                        ms=(time.perf_counter()-start)*1000
+                        output.write(json.dumps(dict(repeat=repeat,n=n,case=case,step=step,
+                            arm=a,order=position,ms=ms))+'\n')
+                    global_step+=1
+                output.flush()
+                print('TIMING',repeat,n,case,len(frames),'frames complete',flush=True)
+    fmanifest()
+
+
+def ftables():
+    fmanifest()
+    from collections import Counter
+    mechanism=[json.loads(x) for x in (FOCUS/'mechanism.jsonl').read_text().splitlines()]
+    timing=[json.loads(x) for x in (FOCUS/'timing.jsonl').read_text().splitlines()]
+    assert len(mechanism)==1358 and len(timing)==1358*4*3
+    assert len({(r['repeat'],r['n'],r['case'],r['step'],r['arm']) for r in timing})==len(timing)
+    rng=np.random.default_rng(20260912)
+    result=dict(frames=1358, episodes=30, repeats=3, configurations={},
+                no_navigation=True, baseline='a8c3d90',
+                order_counts={a:dict(Counter(r['order'] for r in timing if r['arm']==a)) for a in FARMS})
+    for n in (5,10,20):
+        group=[r for r in mechanism if r['n']==n]
+        methods={}
+        for a in FARMS:
+            times=np.array([r['ms'] for r in timing if r['n']==n and r['arm']==a])
+            episode_times=np.array([np.mean([r['ms'] for r in timing if r['n']==n and r['arm']==a and r['case']==c])
+                                    for c in range(23000,23010)])
+            profile={};calls={}
+            for row in group:
+                for k,v in row['free'][a]['profile_ms'].items(): profile[k]=profile.get(k,0.)+v/len(group)
+                for k,v in row['free'][a]['calls'].items(): calls[k]=calls.get(k,0)+v
+            v=dict(mean=float(times.mean()),p50=float(np.median(times)),p95=float(np.percentile(times,95)),
+                p99=float(np.percentile(times,99)),episode_means=episode_times.tolist(),
+                controls_changed=sum(r['free'][a]['controls_changed'] for r in group),
+                actions_changed=sum(r['free'][a]['action_changed'] for r in group),
+                max_action_difference=max(r['free'][a]['max_action_difference'] for r in group),
+                max_control_difference=max(r['free'][a]['max_control_difference'] for r in group),
+                elite_iterations_changed=sum(r['free'][a]['elite_iterations_changed'] for r in group),
+                winner_iterations_changed=sum(r['free'][a]['winner_iterations_changed'] for r in group),
+                first_free_disagreement=next((dict(case=r['case'],step=r['step'],
+                    iteration=r['free'][a]['first_different_iteration']) for r in group
+                    if r['free'][a]['first_different_iteration'] is not None),None),
+                calls=calls,diagnostic_mean_ms=profile,
+                curves_mean=float(np.mean([r['free'][a]['curves'] for r in group])))
+            if a!='E':
+                batches=[b['methods'][a] for r in group for b in r['fixed']]
+                v['fixed']=dict(elite_route_changes=sum(b['elite_route_changes'] for b in batches),
+                                winner_changes=sum(b['winner_changed'] for b in batches))
+                if a=='T':
+                    v['fixed'].update(category_changes=sum(b['category_changes'] for b in batches),
+                        max_probability_error=max(b.get('probability_max_error',0.) for b in batches),
+                        max_hazard_error=max(b['hazard_max_error'] for b in batches))
+                else:
+                    names=('refined','elite_refined','selection_only_refined','extra_refined','excluded',
+                           'incorrectly_excluded','refined_category_changes','category_ambiguous','enclosure_misses','enclosure_raw_misses')
+                    v['fixed'].update({k:sum(b.get(k,0) for b in batches) for k in names})
+                    v['fixed']['total']=len(batches)*CFG.population
+                    v['fixed']['hazard_width_mean']=float(np.mean([b.get('hazard_width_mean',0.) for b in batches]))
+                    v['fixed']['enclosure_max_violation']=max(b.get('enclosure_max_violation',0.) for b in batches)
+                    for k in ('width_bins','extra_width_bins'):
+                        v['fixed'][k]=np.sum([b.get(k,[0]*8) for b in batches],axis=0).tolist()
+            methods[a]=v
+        paired={}
+        for a in ('E','R','T'):
+            x=np.array(methods['H']['episode_means']);y=np.array(methods[a]['episode_means'])
+            delta=x-y;ratio=x/y;idx=rng.integers(0,10,(20000,10))
+            ht={(r['repeat'],r['case'],r['step']):r['ms'] for r in timing if r['n']==n and r['arm']=='H'}
+            at={(r['repeat'],r['case'],r['step']):r['ms'] for r in timing if r['n']==n and r['arm']==a}
+            slower=[list(k) for k in ht if ht[k]>at[k]]
+            paired[a]=dict(mean_difference=float(delta.mean()),ci95=np.percentile(delta[idx].mean(axis=1),[2.5,97.5]).tolist(),
+                mean_episode_ratio=float(ratio.mean()),ratio_ci95=np.percentile(ratio[idx].mean(axis=1),[2.5,97.5]).tolist(),
+                slower_episodes=[23000+i for i,v in enumerate(delta) if v>0],slower_step_replicates=slower)
+        result['configurations'][n]=dict(frames=len(group),methods=methods,paired=paired)
+    fsave('summary.json',result)
+    print(json.dumps({n:{a:{k:v[k] for k in ('p50','p95','controls_changed','actions_changed')}
+                        for a,v in g['methods'].items()} for n,g in result['configurations'].items()},indent=2),flush=True)
+    fplots(result,mechanism)
+
+
+def fplots(result,mechanism):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    colors={'E':'#595959','R':'#d68922','T':'#36986b','H':'#3274ad'}
+    fig,axes=plt.subplots(1,2,figsize=(10,3.8),layout='constrained')
+    for j,n in enumerate((5,10,20)):
+        methods=result['configurations'][n]['methods']
+        for i,a in enumerate(FARMS):
+            axes[0].bar(j+(i-1.5)*.18,methods[a]['p50'],width=.17,color=colors[a],label=a if j==0 else None)
+        for i,a in enumerate(('E','T')):
+            p=result['configurations'][n]['paired'][a];lo,hi=p['ci95']
+            axes[1].errorbar(j+(i-.5)*.15,p['mean_difference'],
+                yerr=[[p['mean_difference']-lo],[hi-p['mean_difference']]],fmt='o',
+                color=colors[a],label='H minus '+a if j==0 else None,capsize=3)
+    for ax in axes:
+        ax.set_xticks(range(3));ax.set_xticklabels(['5 circle','10 circle','20 square']);ax.legend(frameon=False)
+    axes[0].set_ylabel('Median planning time (ms)')
+    axes[1].set_ylabel('Paired episode mean difference (ms)');axes[1].axhline(0,color='#777777',linewidth=.7)
+    fig.savefig(FOCUS/'latency.png',dpi=180);plt.close(fig)
+    fig,axes=plt.subplots(1,2,figsize=(10,3.8),layout='constrained')
+    names=('elite_refined','selection_only_refined','extra_refined','excluded')
+    labels=('Elite','Selection only','Extra refinement','Excluded')
+    cs=('#3274ad','#36986b','#d68922','#dddddd')
+    for j,(n,a) in enumerate((n,a) for n in (5,10,20) for a in ('R','H')):
+        s=result['configurations'][n]['methods'][a]['fixed'];bottom=0
+        for k,label,c in zip(names,labels,cs):
+            height=s[k]/s['total']*100
+            axes[0].bar(j,height,bottom=bottom,color=c,label=label if j==0 else None);bottom+=height
+    axes[0].set_xticks(range(6));axes[0].set_xticklabels(['5 R','5 H','10 R','10 H','20 R','20 H'])
+    axes[0].set_ylabel('Fixed-candidate partition (%)');axes[0].legend(frameon=False,fontsize=8)
+    for a in ('R','H'):
+        s=result['configurations'][20]['methods'][a]['fixed']
+        count=np.array(s['width_bins']);extra=np.array(s['extra_width_bins'])
+        valid=count>0
+        axes[1].plot(np.arange(8)[valid],100*extra[valid]/count[valid],'o-',color=colors[a],label=a)
+    axes[1].set_xticks(range(8));axes[1].set_xticklabels(['<1e-5','1e-3','0.1','1','10','100','1000','inf'],rotation=35)
+    axes[1].set_xlabel('Upper edge of max step-hazard interval-width bin')
+    axes[1].set_ylabel('Extra refinement within bin (%)');axes[1].legend(frameon=False)
+    fig.savefig(FOCUS/'mechanism.png',dpi=180);plt.close(fig)
+    example=next((dict(case=r['case'],step=r['step'],batch=b) for r in mechanism if r['n']==20
+                  for b in r['fixed'] if all('boundary' in b['methods'][a] for a in ('R','H'))),None)
+    if example is not None:
+        fig,axes=plt.subplots(1,2,figsize=(10,3.8),layout='constrained',sharey=True)
+        for ax,a in zip(axes,('R','H')):
+            b=example['batch']['methods'][a]['boundary'];cut=b['cut_cost'];x=np.arange(len(b['ids']))
+            ax.vlines(x,np.array(b['lower'])-cut,np.array(b['upper'])-cut,color=colors[a],linewidth=2)
+            ax.scatter(x,np.array(b['exact'])-cut,color='#222222',s=12,label='Reference score')
+            ambiguous=np.asarray(b['ambiguous'])
+            ax.scatter(x[ambiguous],(np.array(b['upper'])-cut)[ambiguous],marker='x',color='#b44b44',label='Category unresolved')
+            ax.axhline(0,color='#777777',linestyle='--',linewidth=1)
+            ax.set_yscale('symlog',linthresh=.01);ax.set_title(a+' bounds on identical E candidates')
+            ax.set_xticks(x);ax.set_xticklabels(b['ids'],rotation=60,fontsize=7);ax.set_xlabel('Candidate index');ax.legend(fontsize=7,frameon=False)
+        axes[0].set_ylabel('Cost minus exact route-elite cutoff (symlog)')
+        fig.suptitle('First class-0 boundary: case %d, step %d, iteration %d' %
+                     (example['case'],example['step'],example['batch']['iteration']),fontsize=10)
+        fig.savefig(FOCUS/'boundary.png',dpi=180);plt.close(fig)
+
+
+if __name__ == '__main__' and any(a.startswith('--focused-') for a in sys.argv):
+    if '--focused-gate' in sys.argv:
+        fgate()
+    elif '--focused-mechanism' in sys.argv:
+        fmechanism()
+    elif '--focused-timing' in sys.argv:
+        ftiming()
+    elif '--focused-tables' in sys.argv:
+        ftables()
+    elif '--focused-all' in sys.argv:
+        fmechanism();ftiming();ftables()
+    else:
+        raise SystemExit('unknown focused command')
+elif __name__ == '__main__':
     tasks = [(5,23000),(10,23000),(20,23000)]
     if '--full' in sys.argv:
         tasks = [(n,c) for n in (5,10,20) for c in range(23000,23010)]
