@@ -1,0 +1,57 @@
+{
+  "complete": true,
+  "age_frontier": [
+    {
+      "target": 0.5,
+      "n": 50,
+      "collisions": 1,
+      "successes": 49,
+      "penalty": 10.31
+    },
+    {
+      "target": 0.6,
+      "n": 50,
+      "collisions": 0,
+      "successes": 50,
+      "penalty": 10.19
+    },
+    {
+      "target": 0.75,
+      "n": 50,
+      "collisions": 0,
+      "successes": 50,
+      "penalty": 10.53
+    },
+    {
+      "target": 0.85,
+      "n": 50,
+      "collisions": 0,
+      "successes": 48,
+      "penalty": 11.45
+    },
+    {
+      "target": 0.9,
+      "n": 50,
+      "collisions": 0,
+      "successes": 47,
+      "penalty": 12.215
+    },
+    {
+      "target": 0.95,
+      "n": 50,
+      "collisions": 0,
+      "successes": 45,
+      "penalty": 13.65
+    },
+    {
+      "target": 0.975,
+      "n": 50,
+      "collisions": 0,
+      "successes": 37,
+      "penalty": 16.375
+    }
+  ],
+  "selected_age_target": 0.6,
+  "confirmation_episodes_completed": 0,
+  "note": "Development only. No new navigation claim or safety-equivalence conclusion."
+}

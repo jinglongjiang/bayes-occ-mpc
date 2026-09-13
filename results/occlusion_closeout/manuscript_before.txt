@@ -1,0 +1,1177 @@
+% !TeX program = pdflatex
+% Working draft, 2026-09-09. This is the only manuscript source file.
+% No external chapter or bibliography files are required by this source.
+% One external figure is required: occlusion_figure.png, placed beside this file.
+% Author information is provisionally transferred from latex_paper.txt.
+% Confirm authorship, current affiliations, funding, and declarations before submission.
+% Modern independent-test and deployment results are intentionally not fabricated.
+\documentclass[review]{fcs}
+\usepackage{amsmath}
+\usepackage{booktabs,tabularx,array}
+\usepackage{graphicx}
+\usepackage{algorithm,algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ind}{\mathbb{I}}
+\newcommand{\method}{Bayes-MPC}
+
+\title{Bayes-MPC: Occlusion-Aware Crowd Navigation with Recursive Beliefs and Continuous Trajectory Optimization}
+\author[1]{Jinglong~Jiang}
+\author[2]{Husna~Mutahira}
+\author[3]{Kanwal~Naveed}
+\author[4]{Vladimir~Shin}
+\author[5,+]{Mannan~Saeed~Muhammad}
+\author[1]{Juneho~Yi}
+\address[1]{Dept. of ECE, SKKU, Suwon, SK}
+\address[2]{Dept. of CSE, SU, Seoul, SK}
+\address[3]{CEME, NUST, Islamabad, PK}
+\address[4]{Dept. of AI, FinU, Moscow, RF}
+\address[5]{EECS, QMUL, London, UK}
+\corremail{mannan.muhammad@qmul.ac.uk}
+% Other contacts from the first-paper source:
+% {jianglong,jhyi}@skku.edu; husna@sogang.ac.kr;
+% kanwalnaveed@ceme.nust.edu; vishin@fa.ru.
+% Do not invent received/accepted dates or final publication metadata.
+
+\begin{abstract}
+Occlusion makes crowd navigation a problem of controlling under missing information:
+a pedestrian that disappears from the sensor may still occupy the robot's intended path.
+Retaining a predicted position addresses this loss only partially, because the reliability
+of that prediction changes during an observation gap.
+This paper presents \method{}, a training-free navigation framework that combines
+recursive Bernoulli--Gaussian pedestrian beliefs with continuous trajectory optimization.
+Visible detections update track states, while missed detections propagate position
+uncertainty and modify existence confidence according to visibility evidence.
+The planner evaluates probability mass within robot--pedestrian collision regions and
+uses route-separated sampling to search for executable, goal-directed motion.
+The formulation consumes the posterior directly in trajectory evaluation rather than
+adding uncertainty features to a learned policy.
+In a completed six-scene CrowdNav study with 600 paired episodes per arm,
+the full-posterior method achieves 97.17\% success and 2.00\% collision,
+compared with 93.00\% and 7.00\% for constant-velocity memory under the same planner.
+The reduction corresponds to 42 versus 12 collisions, with a 0.129\,s increase in
+failure-penalized task time.
+Controlled ablations attribute the clearest benefit to position uncertainty;
+the additional contribution of existence weighting is not statistically resolved.
+A calibrated duration-dependent geometric margin incurs substantially more timeouts,
+whereas fairly calibrated EWMA and conformal alternatives remain competitive under
+severe observation noise.
+These results support probabilistic treatment of occluded tracks without establishing
+universal Bayesian superiority or a closed-loop safety guarantee.
+\end{abstract}
+\keywords{Crowd navigation; Partial observability; Bayesian filtering; Model predictive control; Collision probability; Occlusion}
+
+\begin{document}
+
+\section{INTRODUCTION}
+\label{sec:introduction}
+Autonomous robots operating among pedestrians must reconcile collision avoidance,
+timely arrival, and predictable motion. These objectives become more difficult when
+the robot cannot continuously observe everyone nearby. One pedestrian can hide another,
+a previously visible person can disappear behind an obstacle, and an apparently open
+route can become occupied before the next reliable observation. A navigation algorithm
+must therefore reason not only about where a pedestrian is predicted to move, but also
+about how much confidence should be placed in that prediction.
+
+Reactive geometric methods and learned crowd-navigation policies address different
+parts of this problem. Reciprocal collision avoidance constructs locally admissible
+velocities using a model of how other agents respond. Learned policies and
+value-based methods encode interaction patterns from experience, using pairwise
+representations, attention, or recurrent state.
+These approaches provide important baselines, but a missing observation remains a
+substantive modeling decision: the controller can discard the pedestrian, extrapolate
+a remembered position, or maintain a distribution over the pedestrian's possible state.
+The last option is useful only if the planner converts that distribution into better
+closed-loop decisions.
+
+This distinction motivates the present work. A more accurate predictive density is
+not by itself a navigation contribution. A controller may react identically to two
+different uncertainty estimates, a conservative risk region may prevent useful
+progress, or a restricted trajectory family may contain no suitable evasive motion.
+Consequently, prediction quality, uncertainty representation, and control generation
+must be evaluated together. The relevant question is not whether a Bayesian model
+can be attached to a navigation system, but whether its posterior provides information
+that a controller can use beyond a deterministic memory or a calibrated safety margin.
+
+We study this question through a training-free architecture. A recursive
+Bernoulli--Gaussian filter maintains one belief for each associated pedestrian.
+The posterior contains an existence probability, a mean position and velocity, and
+a covariance. During occlusion, the track continues to evolve rather than disappearing
+from the planner's input. A continuous model predictive controller then evaluates
+the probability mass inside candidate collision regions and searches several
+motion families separately. It applies the first control of an evaluated trajectory,
+rather than averaging distinct evasive maneuvers into a new, unevaluated motion.
+The framework requires neither imitation learning nor reinforcement learning,
+and does not use a learned navigation policy.
+
+The Bayesian component is a state estimator and the uncertainty source for planning,
+not a claim of mathematical exclusivity. Other probabilistic estimators and calibrated
+prediction sets can represent uncertainty. Moreover, in the clean observation model
+used by part of our benchmark, the covariance after an exact detection is determined
+by the subsequent time without observations. This makes a duration-dependent geometric
+margin an especially important alternative. A meaningful evaluation must give such
+simple alternatives enough development data to operate competitively.
+
+The completed experiments support a specific, narrower conclusion than universal
+dominance. Under occlusion, replacing constant-velocity memory with the full posterior
+reduces collisions from 42 to 12 in 600 paired episodes. Using the same Bayesian
+track means without covariance or existence weighting produces 39 collisions.
+However, forcing existence weights to one while retaining covariance produces
+16 collisions, a difference from the full method that is not statistically resolved.
+In addition, under fairly calibrated severe noise, the full method does not establish
+a significant success- or collision-rate advantage over EWMA and conformal alternatives.
+These findings distinguish useful posterior information from an unnecessarily broad
+claim that all of its components are indispensable.
+
+The main contributions are as follows.
+\begin{enumerate}
+  \item A fully specified occlusion-belief-to-control formulation integrates recursive
+  pedestrian state estimation, collision-region probability evaluation, and
+  route-separated continuous trajectory optimization. Its assumptions and fallback
+  behavior are stated explicitly.
+  \item Controlled closed-loop experiments separate current sensing, deterministic
+  memory, posterior means, position covariance, and existence weighting, identifying
+  which parts of the representation account for the observed navigation improvement.
+  \item Calibration-matched alternatives, a duration-margin control, and single-process
+  timing measurements characterize the method's practical benefits and limitations.
+\end{enumerate}
+The formulation builds on established filtering, collision-probability, and
+sampling-based optimization tools. The study focuses on their integration and
+the closed-loop contribution of posterior information under occlusion.
+Section~\ref{sec:related} reviews related approaches, and
+Sections~\ref{sec:method}--\ref{sec:results} present the method and evaluation.
+
+\section{RELATED WORK}
+\label{sec:related}
+\subsection{Reactive and Learned Crowd Navigation}
+ORCA distributes collision-avoidance responsibility between interacting agents and
+constructs velocity constraints from their relative geometry. Its
+reciprocity assumption differs from the non-responsive-human setting considered here:
+when pedestrians do not account for the robot, the robot must compensate for that
+asymmetry. This does not make reciprocal methods invalid baselines, but the interaction
+assumption must be disclosed.
+
+CADRL and related deep value-learning methods evaluate the consequences of candidate
+actions using learned interaction values. Recurrent representations
+support variable numbers of surrounding agents, while SARL aggregates
+human--human and human--robot interactions through attention. DSRNN
+structures recurrent computation around interaction relations.
+Prediction-aware interaction graphs further connect anticipated pedestrian motion to
+navigation. These methods motivate the retained-checkpoint benchmark
+in this paper, but that benchmark does not isolate the effect of Bayesian inference:
+both the state representation and the controller differ from \method{}.
+
+Our principal attribution experiments therefore keep the MPC fixed and intervene on
+the information supplied to it. The comparison with older learned methods is useful
+as a navigation reference, whereas the controlled interventions address why posterior
+uncertainty matters within the proposed architecture.
+
+\subsection{Occlusion, Belief, and Object Persistence}
+People-as-Sensors learns an occlusion-aware representation from observable crowd
+behavior and incorporates it into navigation. Belief-aided navigation
+using Bayesian reinforcement learning also addresses humans in blind
+spots. These approaches show that using belief in partially observed
+crowds is not itself a new research direction. Our implementation instead maintains
+explicit parametric tracks and consumes their posterior in a non-learned MPC.
+Its strongest existing evidence concerns pedestrians that were observed and
+subsequently occluded. It does not establish recovery of never-observed pedestrians
+from visible-agent behavior.
+
+The Bayesian filtering machinery follows established recursive state-estimation
+principles. A missed measurement is not equivalent to evidence of
+absence: an occluded track should generally be propagated, while a track predicted
+inside a reliably observed empty region can receive negative detection evidence.
+Existence probabilities have also been considered in motion planning for automated
+driving. Consequently, neither object persistence nor multiplying
+collision risk by existence confidence can be claimed as unprecedented in isolation.
+
+\subsection{Modern Probabilistic and Interactive MPC}
+Topology-driven parallel MPC searches distinct trajectory classes to reduce the
+limitations of a single local optimization; T-MPC++ combines guided candidates with
+an additional unguided planner. This is a particularly relevant comparator
+because our route-separated search also attempts to preserve alternative passing
+motions. Our finite collection of seeded velocity populations is not equivalent to
+a certified enumeration of homotopy classes.
+
+Scenario-based SH-MPC addresses the probability of collision over a trajectory
+through scenario optimization. Its risk object differs from a
+per-time-step probability computed from independent marginal pedestrian beliefs.
+Giving the two planners numerically identical risk parameters would therefore not
+establish equal conservatism or equal guarantees. We compare operating points in terms
+of measured safety and efficiency, and retain the distinction between their formal
+assumptions.
+
+SICNav embeds an interaction model in a bilevel planning problem,
+and SICNav-Diffusion combines interactive navigation with diffusion trajectory
+predictions. Their interaction assumptions and optimization
+structures differ from independent constant-velocity belief propagation.
+Occlusion-aware consistent MPC explicitly considers occlusion-related planning
+structure. This literature prevents us from describing passive
+uncertainty propagation as active perception or contingent belief-space planning.
+The current method neither optimizes expected information gain nor branches its
+future controls on hypothetical observations.
+
+\begin{table}[tb]
+\centering\small
+\caption{Technical positioning against close families. The distinctions describe
+the formulations, not measured superiority. Adapted implementations are labeled
+separately in the planned modern comparison.}
+\label{tab:positioning}
+\begin{tabularx}{\linewidth}{@{}p{27mm}XXX@{}}
+\toprule
+Method & Uncertainty or interaction representation & Control construction &
+Distinction relevant here\\
+\midrule
+PaS / BNBRL+ & Learned occlusion or belief representations &
+Learned navigation policy & Training and policy consumption differ\\
+T-MPC++ & Predicted dynamic obstacles with topology guidance &
+Parallel continuous optimization & Topological search is a strong planning comparator\\
+SH-MPC & Sampled obstacle trajectories and a horizon-level risk formulation &
+Scenario-constrained MPC & Risk semantics and guarantees differ\\
+SICNav & Explicit human interaction model &
+Bilevel MPC & Human response assumptions require matching\\
+\method{} & Recursive associated-track means, covariance, and existence &
+Route-separated sampling with collision-mass evaluation &
+Controlled uncertainty attribution under occlusion\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Calibration and Sampling-Based Optimization}
+Bayesian filtering is sensitive to its observation and process models. A posterior
+can be internally consistent yet miscalibrated when pedestrians turn unexpectedly,
+identities are incorrect, or sensor noise differs from the assumed distribution.
+Conformal prediction provides an alternative route to calibrated sets under its
+own assumptions. It is not intrinsically restricted to one global
+radius: nonconformity scores, conditioning variables, and adaptation mechanisms can
+produce different widths in different contexts. Our calibrated conformal and EWMA
+controls should thus be read as particular implementations, not exhaustive
+representatives of those families.
+
+Cross-entropy trajectory optimization and sampling reuse have a substantial
+literature, including sample-efficient real-time planning.
+The proposed controller uses this established optimization family. The method-level
+question is how persistent uncertain tracks, probability-mass risk, and separate
+motion populations work together in partially observed navigation. The completed
+ablations support uncertainty-aware planning; a claim of a novel optimization
+principle would require additional evidence and is not made here.
+
+\section{METHODOLOGY}
+\label{sec:method}
+\subsection{Problem Formulation and System Overview}
+The robot has planar position $p^r_t\in\R^2$, velocity $v^r_t\in\R^2$, radius
+$r_r$, and goal $g$. Pedestrian $i$ has state
+$x^i_t=[(p^i_t)^\top,(v^i_t)^\top]^\top\in\R^4$ and radius $r_i$.
+Only a subset of pedestrians is detected at time $t$. Let $Z_t$ be the associated
+detection set and $\mathcal V_t$ the robot's visibility information. Navigation seeks
+an executable trajectory that reaches $g$ while controlling collision exposure and
+unnecessary delay.
+
+Two visibility notions must be separated. Sensor occlusion determines which
+pedestrians the robot observes. The environment parameter
+\texttt{robot.visible=false} instead determines whether pedestrians account for the
+robot when generating their own motion. The latter is fixed to false in the completed
+benchmark. It does not imply that the robot itself receives no pedestrian observations.
+
+The deployed information interface contains detections, observed velocities, radii,
+and visibility evidence, but not hidden ground-truth positions, pedestrian goals, or
+the true number of unobserved people. Ground truth is reserved for environment
+evolution and outcome auditing. The current simulator provides track identity
+association; handling identity switches is outside the validated scope.
+
+\begin{figure}[tb]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw,rounded corners=2pt,align=center,text width=31mm,minimum height=17mm,
+    inner sep=4pt,font=\small},
+  arr/.style={-{Latex[length=2mm]},thick}]
+  \node[box,fill=gray!8] (obs) {Visible detections\\and visibility};
+  \node[box,fill=blue!7,right=6mm of obs] (belief) {Recursive belief\\$r_i,\mu_i,P_i$};
+  \node[box,fill=green!7,right=6mm of belief] (risk) {Candidate rollout\\and collision mass};
+  \node[box,fill=gray!8,right=6mm of risk] (control) {Separate route search\\first control};
+  \draw[arr] (obs) -- (belief);
+  \draw[arr] (belief) -- (risk);
+  \draw[arr] (risk) -- (control);
+  \draw[arr] (control.south) -- ++(0,-8mm) -| (obs.south);
+  \node[font=\footnotesize,fill=white] at (5.8,-1.9) {execute, observe, update};
+\end{tikzpicture}
+\caption{Implemented belief-to-control pipeline. The feedback loop uses real
+subsequent observations. It is not a tree of hypothetical future observations,
+and no learned navigation policy is present.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{Recursive Pedestrian Beliefs}
+\subsubsection{State and Existence Representation}
+Each maintained track is represented by
+\begin{equation}
+b^i_t=\{r^i_t,\mu^i_t,P^i_t,a^i_t\},
+\end{equation}
+where $r^i_t$ is the probability of existence, $\mu^i_t$ and $P^i_t$ are the
+conditional Gaussian state mean and covariance, and $a^i_t$ counts missed observation
+steps. The Bernoulli track has empty-set probability $1-r^i_t$ and singleton density
+$r^i_t\mathcal N(x;\mu^i_t,P^i_t)$. The collection is factorized across associated
+tracks. It is not a full posterior over correlated crowd trajectories or a
+multi-hypothesis data-association distribution.
+
+The formal configuration creates tracks from visible detections. It does not enable
+a general spatial birth prior for never-observed people. Existence uncertainty
+therefore concerns the persistence and removal of previously observed tracks.
+This distinction is essential when interpreting the term \emph{occlusion awareness}.
+
+\subsubsection{Prediction}
+For sampling interval $\Delta t$, the constant-velocity model is
+\begin{equation}
+F=
+\begin{bmatrix}I_2&\Delta t I_2\\0&I_2\end{bmatrix},\qquad
+Q=\sigma_a^2
+\begin{bmatrix}
+\frac{\Delta t^4}{4}I_2&\frac{\Delta t^3}{2}I_2\\
+\frac{\Delta t^3}{2}I_2&\Delta t^2 I_2
+\end{bmatrix}.
+\label{eq:process}
+\end{equation}
+The predictive update is
+\begin{align}
+\mu^{i,-}_t&=F\mu^{i,+}_{t-1},&
+P^{i,-}_t&=FP^{i,+}_{t-1}F^\top+Q,\\
+r^{i,-}_t&=p_Sr^{i,+}_{t-1},
+\end{align}
+with survival parameter $p_S$. This model captures the growth of extrapolation
+uncertainty; it does not infer a hidden destination or assume that a pedestrian
+will negotiate with the robot. Unexpected turning or acceleration is represented
+only through the process-noise approximation.
+
+\subsubsection{Detection and Missed-Detection Updates}
+For an associated detection $z_t^i$ containing position and velocity, the measurement
+matrix is $I_4$ and the noise covariance is
+\begin{equation}
+R=\operatorname{diag}(\sigma_p^2,\sigma_p^2,\sigma_v^2,\sigma_v^2).
+\end{equation}
+The Gaussian update uses
+\begin{align}
+K_t&=P_t^-(P_t^-+R)^{-1},\\
+\mu_t^+&=\mu_t^-+K_t(z_t-\mu_t^-),\\
+P_t^+&=(I-K_t)P_t^-(I-K_t)^\top+K_tRK_t^\top.
+\label{eq:joseph}
+\end{align}
+The Joseph form maintains the covariance structure in finite precision.
+In the exact-observation condition, the implementation explicitly sets the state
+to the measurement and the covariance to zero. A confirmed detection resets the
+missed-step counter and sets existence confidence close to one.
+
+When no associated detection is available, the predicted mean is queried against
+the visibility map. If this location should be observable but no detection occurs,
+negative evidence gives
+\begin{equation}
+r_t^+=\frac{(1-p_D)r_t^-}{1-p_Dr_t^-}.
+\label{eq:miss}
+\end{equation}
+If the predicted location is occluded or unobserved, this negative-evidence update
+is not applied. The update is a mean-location approximation: it does not integrate
+detection probability over every position in the Gaussian posterior.
+Tracks are removed after low existence confidence or a maximum missed age.
+These management thresholds are part of the model, not measurements of the true
+number of remaining pedestrians.
+
+\subsubsection{Prediction Across the Planning Horizon}
+For future step $k$, the planner receives
+\begin{align}
+\mu_{t,k}^i&=F^k\mu_t^i,\\
+P_{t,k}^i&=F^kP_t^i(F^k)^\top+
+\sum_{j=0}^{k-1}F^jQ(F^j)^\top.
+\label{eq:horizon}
+\end{align}
+The implementation uses the current existence weight over the candidate horizon;
+it does not repeatedly multiply this weight by $p_S$ for every hypothetical step.
+The position mean and covariance are the corresponding upper blocks of
+\eqref{eq:horizon}.
+
+After an exact observation, $P=0$. With $m$ missed steps, the future covariance
+satisfies
+\begin{equation}
+P_{m+k}=\sum_{j=0}^{m+k-1}F^jQ(F^j)^\top.
+\label{eq:agecov}
+\end{equation}
+Under these assumptions, covariance is a function of observation age and prediction
+horizon, not a learned, person-specific measure of behavioral surprise.
+Equation~\eqref{eq:agecov} directly motivates the age-dependent margin baseline.
+Replacing this equation by an identical lookup table would be an implementation
+optimization, not a genuinely different non-Bayesian method.
+
+\subsection{Collision-Region Probability}
+\subsubsection{Probability for One Pedestrian}
+Consider robot candidate position $p^r_{t,k}$ and pedestrian position distribution
+$\mathcal N(\mu^p_{i,k},\Sigma_{i,k})$. Define the interaction radius
+\begin{equation}
+R_i=r_r+r_i+m_h,
+\end{equation}
+where $m_h$ is a geometric buffer shared across the matched planning interventions.
+The desired conditional collision probability is the Gaussian mass inside a disc:
+\begin{equation}
+q_{i,k}=
+\int_{\norm{y-p^r_{t,k}}\le R_i}
+\mathcal N(y;\mu^p_{i,k},\Sigma_{i,k})\,dy.
+\label{eq:disc}
+\end{equation}
+For isotropic position covariance $\Sigma_{i,k}=s_{i,k}^2 I_2$, let
+$d_{i,k}=\norm{\mu^p_{i,k}-p^r_{t,k}}$. The integral becomes
+\begin{equation}
+q_{i,k}=F_{\chi'^2_2(\lambda_{i,k})}
+\left(\frac{R_i^2}{s_{i,k}^2}\right),\qquad
+\lambda_{i,k}=\frac{d_{i,k}^2}{s_{i,k}^2},
+\label{eq:ncx}
+\end{equation}
+where $F_{\chi'^2_2(\lambda)}$ denotes a noncentral chi-square CDF.
+As variance approaches zero, the implementation uses the corresponding deterministic
+overlap indicator.
+
+The present process and measurement models produce isotropic position uncertainty
+under the evaluated initialization. If an arbitrary anisotropic covariance is
+supplied, the implementation replaces it by
+$s^2=\operatorname{tr}(\Sigma)/2$; \eqref{eq:ncx} is then an isotropic approximation,
+not an exact anisotropic integral. General anisotropic collision integration is
+not claimed by this version.
+
+Existence-weighted probability is
+\begin{equation}
+\pi_{i,k}=r_t^i q_{i,k}.
+\end{equation}
+The effect of this weight is tested separately from covariance. It is possible for
+track management to use existence even when the planning weight is fixed to one;
+the two interventions should not be conflated.
+
+\subsubsection{Combining Pedestrians and Time}
+Under the factorized pedestrian approximation,
+\begin{equation}
+p_k=1-\prod_i(1-\pi_{i,k}),\qquad
+\ell_k=-\sum_i\log(1-\pi_{i,k}).
+\label{eq:hazard}
+\end{equation}
+The negative-log-survival quantity $\ell_k$ permits stable accumulation and yields
+$p_k=1-\exp(-\ell_k)$. Numerical clipping prevents logarithmic singularities.
+The factorization ignores correlated pedestrian motion and is therefore a modeling
+assumption rather than an unconditional safety certificate.
+
+The risk limit varies over the horizon:
+\begin{equation}
+\epsilon_k=\epsilon_{\mathrm{near}}+
+(\epsilon_{\mathrm{far}}-\epsilon_{\mathrm{near}})
+\left(\frac{k-1}{H-1}\right)^\gamma,\quad k=1,\ldots,H.
+\label{eq:budget}
+\end{equation}
+The evaluated baseline uses $\gamma=2$.
+Each step is checked against its own limit. Neither summing $\ell_k$ in the objective
+nor enforcing \eqref{eq:budget} computes the probability of any collision over the
+whole trajectory: successive pedestrian predictions are temporally correlated.
+In particular, these limits are not interchangeable with the horizon-level risk
+guarantee of SH-MPC.
+
+\subsection{Continuous Trajectory Construction}
+\subsubsection{Executable Motion and Swept Geometry}
+In the completed holonomic benchmark, controls are planar velocities
+$U=(u_0,\ldots,u_{H-1})$ satisfying
+\begin{equation}
+\norm{u_k}\le v_{\max},\qquad
+\norm{u_k-u_{k-1}}\le a_{\max}\Delta t.
+\end{equation}
+Candidate samples are sequentially projected onto these limits, then propagated by
+\begin{equation}
+p^r_{k+1}=p^r_k+\Delta t\,u_k.
+\end{equation}
+The projection is included before trajectory scoring. The selected command is
+therefore scored in the same holonomic representation that is executed.
+The differential-drive comparison is a separate protocol because this equivalence
+does not automatically survive a conversion to angular and linear velocities.
+
+Endpoint risk alone can miss a crossing between two simulation steps. The planner
+also computes a swept geometric clearance against the predicted pedestrian means.
+For relative endpoints $d_0,d_1$, define $\delta=d_1-d_0$ and
+\begin{equation}
+\alpha^\star=\operatorname{clip}
+\left(-\frac{d_0^\top\delta}{\norm{\delta}^2},0,1\right),\qquad
+c=\norm{d_0+\alpha^\star\delta}-R_i.
+\label{eq:swept}
+\end{equation}
+Degenerate zero relative displacement uses $\alpha^\star=0$.
+This check is geometric: it does not turn the endpoint probability model into a
+continuous-time stochastic collision guarantee. An independent swept-overlap audit
+is retained during evaluation.
+
+\subsubsection{Goal-Directed Objective}
+For a candidate trajectory, define distance to the goal region as
+$d_g(p)=\max(\norm{p-g}-r_r,0)$. The objective combines goal progress, control effort,
+smoothness, collision-related penalties, and failure to make progress:
+\begin{align}
+J(U)={}&w_g\sum_{k=1}^{H_a}d_g(p^r_k)
++w_T d_g(p^r_{H_a})
++w_u\sum_{k=0}^{H_a-1}\norm{u_k}^2 \nonumber\\
+&+w_\Delta\sum_{k=0}^{H_a-1}\norm{u_k-u_{k-1}}^2
++w_{\mathrm{prob}}\sum_{k=1}^{H_a}\ell_k \nonumber\\
+&+J_{\mathrm{geom}}(U)+J_{\mathrm{risk}}(U)+J_{\mathrm{progress}}(U).
+\label{eq:objective}
+\end{align}
+Here $H_a$ denotes the active portion of the horizon up to goal entry, if any.
+The goal-entry step remains subject to collision checks; steps after termination
+do not incur fictitious post-arrival interaction cost.
+$J_{\mathrm{geom}}$ penalizes overlap and insufficient clearance,
+$J_{\mathrm{risk}}$ penalizes excess over the scheduled probability limits, and
+$J_{\mathrm{progress}}$ discourages negligible progress.
+Their role is to shape candidate ranking; explicit feasibility labels are also
+used rather than relying solely on a finite weighted penalty.
+
+\subsubsection{Route-Separated Sampling}
+A single Gaussian over all useful controls can merge incompatible passing motions.
+For example, averaging left- and right-passing trajectories may produce a straight
+path through a pedestrian. To avoid executing that average, we maintain separate
+sampling populations initialized from the shifted previous solution, left-biased
+motion, right-biased motion, and waiting-oriented motion.
+These are motion seeds, not a complete topological classification.
+
+At each search iteration, temporally correlated perturbations are added to the
+population means. After projection and evaluation, elites are selected within
+each population. The sampling mean is smoothed toward its elites and each
+standard deviation is bounded below to retain exploration. The implementation uses
+short-range correlated perturbations; no claim of a learned diffusion model or
+long-horizon autoregressive noise process is made.
+
+The best evaluated control sequence is retained across iterations and populations.
+The robot executes its first command. Distribution means are search parameters,
+not actions to be averaged across distinct successful routes.
+This design follows the broader sampling-MPC and cross-entropy family;
+its incremental value relative to modern multi-route optimization remains a
+question for the independent comparator study.
+
+\subsubsection{Feasibility Hierarchy and Fallback}
+Candidates are prioritized in three groups. First, a trajectory that satisfies
+the geometric and probabilistic checks over the active horizon is preferred.
+Second, when none does, trajectories satisfying the first-step checks are ranked
+by horizon slack and objective value. Third, if no first-step-feasible candidate
+has been found, the controller prioritizes immediate nominal geometric clearance
+before applying the remaining ranking criteria.
+
+The third group can violate the nominal risk constraints. It is a practical
+best-available-motion fallback, not a safety-preserving invariant set.
+Consequently, this algorithm should be described as risk-aware MPC, not as a
+recursively feasible or provably collision-free controller.
+Fallback frequency, feasibility class, and subsequent outcomes belong in the final
+failure analysis.
+
+\begin{algorithm}[tb]
+\caption{Recursive belief and route-separated receding-horizon control}
+\label{alg:main}
+\begin{algorithmic}[1]
+\Require Prior tracks, previous solution, detections $Z_t$, visibility $\mathcal V_t$
+\State Predict each track using $F,Q,p_S$
+\State Update detected tracks; apply justified missed-detection evidence
+\State Remove expired tracks and initialize newly detected tracks
+\State Predict surviving track means and covariances for $H$ steps
+\State Initialize separate warm-start, left, right, and waiting populations
+\For{$j=1,\ldots,K$}
+  \State Sample velocity sequences and project onto the robot limits
+  \State Compute rollouts, swept clearance, collision mass, and objective
+  \State Assign feasibility classes and update each population's elites
+  \State Retain the best evaluated sequence across all populations
+\EndFor
+\State Execute its first control and shift the sequence for the next cycle
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Computational Structure and Scope}
+With $B$ candidates, $K$ iterations, $H$ prediction steps, and $M$ maintained
+pedestrians, the dominant pairwise evaluation scales as $O(KBHM)$.
+The implementation vectorizes this calculation, but the completed measurements
+use a desktop CPU path. The presence of a GPU in the host machine does not imply
+that the planner uses GPU kernels.
+There is no policy checkpoint to deploy; the executable artifact consists of
+the filtering and planning implementation, its numerical dependencies, and a
+frozen parameter configuration.
+
+This formulation makes uncertainty operational: changing covariance changes
+collision-region probability and can change the selected trajectory. It does not
+make Bayesian inference logically indispensable. A calibrated set estimator or
+another predictive distribution can provide relevant information as well.
+The experiments test whether the particular recursive posterior is useful and
+which simpler alternatives remain competitive, rather than attempting to prove
+that only a Bayesian algorithm could solve the navigation task.
+
+\section{EXPERIMENTS}
+\label{sec:experiments}
+\subsection{Research Questions}
+The evaluation distinguishes three questions. First, does retaining occluded pedestrians
+improve navigation relative to current sensing alone? Second, does position uncertainty
+provide useful information beyond a remembered or filtered mean? Third, can a simpler,
+fairly calibrated uncertainty representation achieve the same safety--efficiency
+tradeoff?
+
+These questions require different comparisons. Older learned baselines test the
+complete navigation system; they cannot determine whether the gain comes from
+filtering or trajectory search. Posterior-mean and existence interventions address
+specific components. Calibration-matched alternatives test the necessity of the
+particular uncertainty treatment.
+
+\subsection{CrowdNav Benchmark}
+\subsubsection{Scenarios and Physical Settings}
+The completed holonomic evaluation uses six configurations drawn from circle and
+square crossing geometries, summarized in Table~\ref{tab:scenarios}. The six
+configurations vary crowd size and spatial extent; they are not six unrelated
+environment types. No corridor or merging experiment is implied by this table.
+
+\begin{table}[tb]
+\centering\small
+\caption{Six-scene benchmark. Each completed six-scene cohort contains 100
+episodes per scene, with equal weight in the macro average.}
+\label{tab:scenarios}
+\begin{tabular}{llrl}
+\toprule
+ID & Scene & Pedestrians & Spatial parameter\\
+\midrule
+0 & Baseline circle & 5 & Circle radius 4 m\\
+1 & Baseline square & 10 & Square width 10 m\\
+2 & Dense circle & 10 & Circle radius 4 m\\
+3 & Dense square & 20 & Square width 10 m\\
+4 & Large circle & 12 & Circle radius 6 m\\
+5 & Large square & 20 & Square width 14 m\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The control interval is 0.25\,s, the time limit is 25\,s, and the holonomic robot
+is limited to 1.0\,m/s with acceleration bounded by 2.0\,m/s$^2$.
+The benchmark robot and pedestrian radii are 0.30\,m, and the goal tolerance is
+the same 0.30\,m: the simulator declares arrival when the robot centre enters a
+disc of one robot radius about the goal. The \texttt{success\_radius} entry of
+0.25\,m present in the environment configuration file is not read by the active
+environment and does not affect any reported outcome. The local visibility grid
+has 0.25\,m resolution and spans approximately 5\,m in each direction from
+the robot.
+
+Pedestrian response to the robot is disabled
+(\texttt{robot.visible=false}). This is a deliberately demanding protocol, and it
+has a consequence that matters when comparing controllers: because pedestrians do
+not yield, holding still is not a safe action. A controller whose fallback on an
+infeasible or low-confidence step is to brake becomes a stationary obstacle that
+walking pedestrians can reach. Completion and collision rates under this protocol
+therefore penalise conservative fallback behaviour more sharply than an
+environment with reactive pedestrians would, and this should be kept in view when
+the numbers are compared with published results obtained under reactive crowds.
+The current-sensor condition supplies only visible detections, whereas remembered
+tracks can persist through subsequent observation gaps in the other conditions.
+
+Figure~\ref{fig:observability} shows what this protocol removes from the robot's
+input. Two mechanisms are involved and they are not interchangeable. A pedestrian
+can be hidden behind another body, which is inter-agent occlusion proper, or can
+simply be farther away than the sensor reaches. Because these scenes contain no
+walls or static obstacles, every occluder is another pedestrian, so genuine
+occlusion requires the crowd to be dense enough for people to line up with one
+another. In the five-person scene of Figure~\ref{fig:observability} no pedestrian
+is occluded at all and the three missing ones are out of range, whereas the
+twenty-person square scene has five occluded and ten out of range. Statements in
+this paper about occlusion refer to limited-range sensing with inter-agent
+occlusion, and the belief maintains previously observed tracks through the
+resulting gaps; it does not place a prior on people who have never been seen.
+
+\begin{figure*}[tb]
+\centering
+\includegraphics[width=\linewidth]{occlusion_figure.png}
+\caption{What limits observability in this benchmark, drawn from three executed
+episodes. The shadows are the tangent-line polygons the simulator itself uses to
+decide visibility, and the visible/occluded split is the simulator's own. Two
+distinct causes are separated: a pedestrian hidden behind another body (red) and
+one simply farther away than the 5\,m sensor reaches (grey). The scenes contain
+no walls or static obstacles, so every occluder is another pedestrian.
+Inter-agent occlusion therefore appears only once the crowd is dense enough for
+people to line up with one another: in the five-person scene no pedestrian is
+occluded and the three missing ones are out of range, whereas the twenty-person
+square scene has five occluded and ten out of range.}
+\label{fig:observability}
+\end{figure*}
+
+
+The tested planner uses 16 prediction steps, 512 sampled sequences, four search
+iterations, and an elite fraction of 0.08. A geometric human buffer of 0.10\,m is
+included. These settings are extracted from the completed experimental configuration,
+not from potentially different defaults in a later working tree.
+Early experiments using 1.2\,m/s are not merged into the tables in this draft.
+
+\subsubsection{Calibration Rather Than Policy Training}
+The method does not undergo imitation or reinforcement learning.
+It nevertheless contains parameters and calibrated alternatives; training-free
+does not mean data-free or tuning-free.
+For the fair calibration study, each noise condition has 100 five-person
+development episodes, using case identifiers 3600--3699. Working-point selection
+uses development cases 3650--3699. Reuse within this development pool is allowed
+for model construction and selection, but its calibration coverage is not presented
+as an independent final test.
+
+Clean observations have zero injected measurement noise. Severe observations add
+position standard deviation 0.10\,m, velocity standard deviation 0.20\,m/s, and
+detection probability 0.80. Methods receive the same noise-condition information
+and development trajectories. Testing a method configured for severe noise against
+an alternative calibrated only on clean observations would answer a different
+transfer question and is not the fair-noise comparison reported here.
+
+\subsection{Controlled Belief and Planning Interventions}
+Table~\ref{tab:interventions} defines the ablation arms. With the exception of the
+explicit CV-memory control, the relevant uncertainty alternatives reuse the Bayesian
+track set and predicted means. This controls the geometry presented to the planner
+while varying its risk representation.
+
+\begin{table}[tb]
+\centering\small
+\caption{Intervention definitions. A shared tracker does not imply identical
+uncertainty treatment. Conversely, the shared-tracker alternatives do not constitute
+a test of Bayesian state estimation against an entirely independent estimator.}
+\label{tab:interventions}
+\begin{tabularx}{\linewidth}{@{}p{29mm}XXX@{}}
+\toprule
+Arm & Temporal state & Risk input & Question addressed\\
+\midrule
+Current sensor & Current visible detections & Deterministic geometry &
+Value of retaining missing observations\\
+CV memory & Independent CV extrapolation and expiry & Deterministic geometry &
+Value beyond simple memory\\
+Posterior mean & Bayesian track means & No covariance or existence weight &
+Value beyond filtered positions\\
+Existence-one & Same Bayesian tracks and means & Covariance; planning existence set to 1 &
+Increment of planning existence weights\\
+Full Bayes & Same Bayesian tracks and means & Covariance and existence &
+Complete implemented representation\\
+Static covariance & Same Bayesian tracks and means & Calibrated visibility/horizon variance &
+Need for recursive covariance values\\
+EWMA & Same Bayesian tracks and means & Residual-adapted covariance scale &
+Need beyond simple online adaptation\\
+Conformal & Same Bayesian tracks and means & Calibrated geometric prediction regions &
+Probability mass versus calibrated sets\\
+Age margin & Same Bayesian tracks and means & Duration/horizon geometric margin &
+Value beyond observation age\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The CV-memory arm stores the last observation and extrapolates velocity with its
+own one-second expiry and visible-empty-space management. It is not identical
+to posterior mean. The posterior-mean intervention retains the Bayesian track
+selection but removes both covariance and planning existence weights.
+The existence-one intervention leaves existence-based track management intact.
+Consequently, it isolates the planner's use of existence, not the entire role of
+existence in the pipeline.
+
+The age-margin control uses
+\begin{equation}
+m(a,k)=\kappa\big((a+k)\Delta t\big)^\eta.
+\label{eq:agemargin}
+\end{equation}
+Its coefficients are fitted from development residuals. Five target-coverage
+levels, 0.75, 0.85, 0.90, 0.95, and 0.975, define candidate working points.
+The control removes covariance and existence inputs from the geometric planner
+to avoid unintentionally retaining the full probability mechanism.
+The fitted severe-noise margins are larger than the clean margins; this control
+does respond to the known noise condition through calibration, although not to
+online person-specific residuals.
+
+Each family's working point is selected on development data using the registered
+criterion: among points whose empirical collision rate is within two percentage
+points of that family's minimum, choose the shortest failure-penalized time, with
+the smaller point index breaking ties. This supplies an explicit selection rule,
+but does not force all families to have the same true collision probability.
+The resulting selected-point comparison is therefore not automatically a
+matched-safety Pareto comparison. Small development samples also make point
+selection uncertain; the final independent table must retain its frozen selection.
+
+\subsection{Metrics and Statistical Analysis}
+\subsubsection{Outcome and Time Definitions}
+Each episode is assigned one of three mutually exclusive audited outcomes.
+A recorded collision takes precedence over a nominal goal event.
+A success requires reaching the goal without an audited overlap. Remaining episodes
+are failures to finish within the deadline.
+The principal rates are success (SR), collision (CR), and timeout (TR).
+The stored collision-union and success-without-overlap flags define the completed
+tables. The independent final audit additionally reconciles those flags against
+the raw swept-overlap fields and environment event.
+
+To avoid measuring speed only on the episodes a method happens to complete, define
+\begin{equation}
+T_p^{(e)}=
+\begin{cases}
+T_{\mathrm{goal}}^{(e)},&\text{audited success},\\
+T_{\max},&\text{otherwise},
+\end{cases}
+\qquad
+\bar T_p=\frac{1}{n}\sum_{e=1}^{n}T_p^{(e)}.
+\label{eq:penaltytime}
+\end{equation}
+We call this \emph{failure-penalized task time}, not average arrival time.
+It combines completion and speed: a lower value need not imply that successful
+trajectories are individually faster.
+Path length, mean progress, common-success paired arrival time, minimum clearance,
+and actual overlap steps are complementary measures for the final evaluation.
+An efficiency claim at equal safety requires safety non-inferiority or a
+predefined risk-budget comparison, not merely overlapping collision confidence
+intervals.
+
+\subsubsection{Pairing, Uncertainty, and Repeated Layouts}
+Methods are paired by scene and case identifier, with the same initial layout.
+Macro rates give each of the six scenes equal weight. With 100 episodes per
+scene, these equal the pooled rates. Binary comparisons use the exact paired
+McNemar test, based on discordant episodes, rather than an unpaired Fisher test.
+Time intervals use 4,000 paired bootstrap resamples within each scene.
+The layout is retained as the comparison unit; individual control steps are not
+independent navigation trials.
+
+The historical 5000--5099 layouts have been inspected and reused in later
+development. Their results remain useful as controlled descriptive evidence,
+but must not be relabeled as a newly held-out confirmation.
+The severe-noise cohort uses cases 5100--5699 and was independent of its own
+calibration at execution. It too becomes historical evidence once inspected.
+Reported historical $p$-values are exploratory and unadjusted. The final independent
+comparison must apply its registered primary contrast and multiple-comparison
+procedure, with no post-test changes to the selected working points.
+
+Repeating planner seeds measures sensitivity to stochastic trajectory search.
+It does not create independent training seeds or new layout samples.
+Repeated runs of the same layout must remain clustered in any pooled uncertainty
+estimate. A non-significant difference does not demonstrate equivalence, and a
+small collision count can leave a practically important difference unresolved.
+
+\subsection{External Baselines}
+The completed historical full-observation benchmark includes ORCA, CADRL,
+LSTM-RL, SARL, DSRNN, and AttnGraph. Retained checkpoints are evaluated in the
+local harness. They are not retrained under an equal optimization budget, and
+their original publication rates are not substituted for local outcomes.
+An apparent large gap therefore includes controller design, training provenance,
+and possible adaptation effects. The AttnGraph timeout pattern and the DSRNN
+occlusion-mask contract require particular care.
+
+These baselines share a limitation that this paper does not attempt to hide:
+they are learned policies from an earlier generation, and beating them says
+little about how the method compares with contemporary probabilistically
+constrained MPC. A separate comparison against T-MPC++ and SH-MPC is under
+construction on this benchmark and is deliberately not reported here, because
+the interfacing work it requires is not finished. Two properties of that
+comparison are already fixed and are stated now so that its eventual numbers
+are read correctly. First, the comparators consume this project's detections,
+track means and marginal predictive covariances rather than performing their own
+inference, so any such table compares constraint formulations under a shared
+posterior, not end-to-end systems. Second, the two families express risk
+differently: the formulation here allocates a per-step budget that varies over
+the horizon, whereas the ellipsoidal and scenario constraints of those methods
+are configured with a single risk level applied at every step. Under a predictive
+covariance that grows with the prediction interval these are not interchangeable
+settings, and matching the nominal risk numbers would not make the two
+conservatism levels equal.
+
+\section{RESULTS}
+\label{sec:results}
+\subsection{Closed-Loop Value of Persistent Beliefs}
+\begin{table}[tb]
+\centering\small
+\caption{Controlled occlusion ablation, six scenes and 600 layouts per arm. The audited collision indicator takes precedence over the environment outcome. All arms use the same MPC configuration; CV memory has its own track-management rule. These historical layouts have subsequently been reused, not newly held out.}
+\label{tab:ablation}
+\begin{tabular}{lrrrr}
+\toprule
+Method & SR (\%) & CR (\%) & TR (\%) & $\bar T_p$ (s) \\
+\midrule
+Current sensor & 67.17 & 32.83 & 0.00 & 15.33 \\
+CV memory & 93.00 & 7.00 & 0.00 & 12.09 \\
+Posterior mean & 93.50 & 6.50 & 0.00 & 12.03 \\
+Covariance, existence=1 & 96.67 & 2.67 & 0.67 & 12.26 \\
+Bayes-MPC & 97.17 & 2.00 & 0.83 & 12.22 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:ablation} provides the central controlled comparison.
+Discarding a pedestrian when it becomes unobservable results in 67.17\% success
+and 32.83\% collision. Constant-velocity memory increases success to 93.00\%
+and reduces collision to 7.00\%, showing that much of the difference from the
+sensor-only controller is attributable to retaining information across
+observation gaps.
+
+The full posterior improves further, reaching 97.17\% success and 2.00\%
+collision. Relative to CV memory, this is a 4.17 percentage-point increase
+in success and a 5.00 percentage-point reduction in collision.
+The collision count falls from 42 to 12, a 71.4\% relative reduction.
+There are 37 paired episodes in which CV memory collides and the full method does
+not, against seven in the opposite direction. The exact paired collision
+$p$-value is $5.30\times10^{-6}$.
+The paired bootstrap interval for the collision-rate difference is
+$[-7.00,-2.83]$ percentage points.
+
+This safety improvement should not be rewritten as an unconditional speed improvement.
+Failure-penalized task time increases from 12.091\,s to 12.220\,s:
+a paired difference of 0.129\,s, with a 95\% bootstrap interval of
+$[-0.182,0.439]$\,s. The point estimate is approximately a 1.1\% time increase.
+The full method has five timeouts where the CV-memory arm has none.
+The evidence supports substantially fewer collisions with a small observed
+time difference, not simultaneous statistically established improvement in
+every metric.
+
+\subsection{Position Covariance and Existence Weighting}
+The posterior-mean arm achieves 93.50\% success and 6.50\% collision.
+Because this arm retains the Bayesian track set and predicted means, its difference
+from the full method is not explained simply by placing more remembered positions
+in the planner. The full method reduces collisions from 39 to 12
+($p=2.53\times10^{-5}$) and increases success by 3.67 percentage points
+($p=0.00126$). Its penalized-time difference is $+0.191$\,s, with interval
+$[-0.123,0.510]$\,s.
+
+Retaining covariance while fixing all planning existence weights to one yields
+96.67\% success and 2.67\% collision. This recovers most of the observed difference
+between posterior mean and the full method. The remaining four-collision difference
+between existence-one and full Bayes has exact paired $p=0.289$;
+the 0.50 percentage-point success difference has $p=0.549$.
+Thus, the current data most clearly support position-uncertainty-aware planning.
+They do not establish a significant additional navigation benefit from existence
+weighting.
+
+This finding has two implications for the contribution statement. First, the
+Bernoulli--Gaussian formulation is an accurate description of the implemented state,
+but the empirical claim should not put all its emphasis on the Bernoulli component.
+Second, setting a planning existence weight to one does not remove the filter's
+existence-based track management. A claim that existence modeling is altogether
+unnecessary would require a separate, properly matched management intervention.
+
+\subsection{Is Observation Age Alone Sufficient?}
+\begin{table}[tb]
+\centering\small
+\caption{Clean six-scene duration-margin comparison after development-only point selection. Each arm has 600 episodes on reused layouts. Non-significant collision differences do not establish safety equivalence.}
+\label{tab:age}
+\begin{tabular}{lrrrr}
+\toprule
+Method & SR (\%) & CR (\%) & TR (\%) & $\bar T_p$ (s) \\
+\midrule
+Bayes-MPC & 97.17 & 2.00 & 0.83 & 12.22 \\
+Age margin & 92.67 & 1.67 & 5.67 & 14.13 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Equation~\eqref{eq:agecov} makes age-dependent uncertainty a strong simple explanation
+of the clean-condition result. Table~\ref{tab:age} tests a calibrated geometric
+margin with this information. At the independently selected development points,
+age margin attains 92.67\% success, 1.67\% collision, and 5.67\% timeout.
+The full method attains 97.17\%, 2.00\%, and 0.83\%, respectively.
+
+Age margin has two fewer collisions, a difference not resolved by the paired test
+($p=0.804$). However, it has 27 fewer successes ($p=9.85\times10^{-5}$)
+and 29 additional timeouts ($p=1.31\times10^{-7}$).
+The full method reduces failure-penalized task time by 1.912\,s, with a paired
+95\% interval of $[-2.207,-1.617]$\,s for full minus age margin.
+In the dense-square scene, success is 92\% for the full method and 73\%
+for age margin.
+
+The selected geometric control is therefore more prone to freezing in dense
+conditions. The result is consistent with an advantage from evaluating local
+collision mass instead of treating the whole enlarged region as an obstacle.
+It does not prove equal safety: absence of a significant collision difference
+is not a safety-equivalence test. Nor does one fitted power-law margin establish
+that every deterministic duration-aware construction must fail.
+The supported statement is that this calibrated, budget-matched control does
+not recover the full method's completion and penalized-time performance.
+
+\subsection{Fairly Calibrated Severe Observation Noise}
+\begin{table}[tb]
+\centering\small
+\caption{Matched-information severe-noise test: 600 layouts per arm, dense square only. Calibration and point selection use five-person development episodes. Position noise is 0.10 m, velocity noise 0.20 m/s, and detection probability 0.80.}
+\label{tab:noise}
+\begin{tabular}{lrrrr}
+\toprule
+Method & SR (\%) & CR (\%) & TR (\%) & $\bar T_p$ (s) \\
+\midrule
+Bayes-MPC & 74.00 & 11.67 & 14.33 & 18.13 \\
+EWMA & 75.67 & 13.00 & 11.33 & 17.89 \\
+Conformal & 74.17 & 11.00 & 14.83 & 18.73 \\
+Static covariance & 63.83 & 35.33 & 0.83 & 17.46 \\
+Age margin & 49.67 & 6.83 & 43.50 & 21.62 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:noise} changes both observation quality and the calibration protocol.
+All five methods receive severe-noise development data before their working points
+are frozen. The final evaluation comprises 600 dense-square layouts per arm,
+not a six-scene macro average.
+
+The full method achieves 74.00\% success, 11.67\% collision, and 14.33\%
+timeout. EWMA achieves 75.67\%, 13.00\%, and 11.33\%; conformal achieves
+74.17\%, 11.00\%, and 14.83\%. The full method's collision differences against
+EWMA and conformal have paired $p$-values of 0.410 and 0.747.
+The corresponding success $p$-values are 0.423 and 1.000.
+These results do not support a clear full-posterior advantage over either
+calibrated alternative in success or collision.
+
+Failure-penalized time is 18.129\,s for the full method, 17.885\,s for EWMA,
+and 18.726\,s for conformal. Full minus EWMA is $+0.244$\,s,
+with interval $[-0.100,0.590]$\,s. Full minus conformal is $-0.598$\,s,
+with interval $[-1.010,-0.188]$\,s. The latter exploratory time difference
+does not establish a matched-safety Pareto improvement because the safety
+comparison remains uncertain.
+
+Static covariance produces 35.33\% collision and only 0.83\% timeout.
+Its low timeout rate is not evidence of better risk handling: much of its task
+failure occurs through collision instead. Compared with this control, the full
+method reduces collision by 23.67 percentage points but increases timeout by
+13.50 percentage points. This is a materially different operating pattern.
+It also cautions against reporting only one failure category.
+
+Age margin produces the lowest observed collision rate, 6.83\%, but times out
+in 43.50\% of episodes and succeeds in only 49.67\%. Its conservative behavior
+is not simply the absence of any noise adaptation: its severe-noise calibration
+uses larger margins than its clean calibration. The difficulty is that a
+duration-dependent inflated region cannot express the same local probability
+tradeoff as the other tested risk representations.
+
+The most important inference from this experiment is negative but informative:
+fair calibration substantially narrows the apparent Bayesian advantage.
+EWMA and conformal remain viable alternatives. A previous comparison in which
+one method used noise-aware settings and another retained clean calibration
+would not isolate the uncertainty algorithm itself.
+
+\subsection{Historical Full-Observation Baselines}
+\begin{table}[tb]
+\centering\small
+\caption{Historical fully observed, six-scene evaluation (600 layouts per arm). Learned baselines are retained checkpoints, not equal-budget retraining. Adapter and training-provenance limitations apply; this is not the modern MPC main table.}
+\label{tab:full}
+\begin{tabular}{lrrrr}
+\toprule
+Method & SR (\%) & CR (\%) & TR (\%) & $\bar T_p$ (s) \\
+\midrule
+Bayes-MPC & 98.33 & 0.83 & 0.83 & 12.10 \\
+Static covariance & 98.33 & 0.83 & 0.83 & 12.71 \\
+ORCA & 74.17 & 20.17 & 5.67 & 17.10 \\
+LSTM-RL & 72.83 & 15.83 & 11.33 & 17.28 \\
+SARL & 68.50 & 31.33 & 0.17 & 16.16 \\
+AttnGraph & 62.67 & 2.17 & 35.17 & 18.07 \\
+DSRNN & 50.17 & 19.50 & 30.33 & 19.58 \\
+CADRL & 46.33 & 38.00 & 15.67 & 19.66 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Under full observation, the completed Bayes and static-covariance arms both
+achieve 98.33\% success and 0.83\% collision. Their equal aggregate rates
+do not imply equal trajectories or actions. The respective failure-penalized
+times are 12.096\,s and 12.712\,s, so even this summary shows different behavior.
+The claim of pointwise equivalence under full observation is not supported.
+
+The retained external checkpoints have lower success in this local benchmark:
+ORCA reaches 74.17\%, LSTM-RL 72.83\%, SARL 68.50\%, AttnGraph 62.67\%,
+DSRNN 50.17\%, and CADRL 46.33\%.
+These numbers demonstrate that the tested MPC is a functioning navigation system,
+not merely an uncertainty predictor. They do not attribute the difference to
+Bayesian inference, since the full-observation static-covariance controller
+already matches its aggregate success and collision rates.
+
+The external table remains a historical reference rather than the final modern
+main comparison. The checkpoint training distributions are not uniformly
+retrained, and adapter behavior can affect outcomes. In particular, the 35.17\%
+AttnGraph timeout rate warrants a matched-interface explanation before making
+a broad comparative claim. The absence of a validated DSRNN occlusion mask
+precludes filling an occlusion row by guesswork.
+Publication percentages obtained under another speed, geometry, termination
+rule, or visibility setting are not directly comparable to Table~\ref{tab:full}.
+
+\subsection{Planner-Seed Sensitivity}
+\begin{table}[tb]\centering\small
+\caption{Planner-repeat stability on reused six-scene layouts, with 600 episodes per row. Two complete planning repetitions are reported; these are not independent training seeds.}
+\label{tab:seeds}
+\begin{tabular}{lrrrr}\toprule
+Method & Seed & SR (\%) & CR (\%) & $\bar T_p$ (s) \\\midrule
+Bayes-MPC & 0 & 97.17 & 2.00 & 12.220 \\
+Bayes-MPC & 1 & 96.50 & 2.50 & 12.334 \\
+Posterior mean & 0 & 93.50 & 6.50 & 12.029 \\
+Posterior mean & 1 & 91.17 & 8.83 & 12.299 \\
+\bottomrule\end{tabular}\end{table}
+
+The additional complete locally available planning repeat yields 96.50\%
+success and 2.50\% collision for the full method, compared with 91.17\%
+and 8.83\% for posterior mean. This is consistent in direction with the
+original repeat, but two complete repeats are not evidence of arbitrary
+seed robustness.
+
+\subsection{Computational Efficiency}
+\begin{table}[tb]\centering\small
+\caption{Completed single-process desktop timing audit. Percentiles concatenate raw step arrays, not episode percentiles. Each arm has 20 episodes on one dense-square setting; no hard real-time or onboard claim is implied.}
+\label{tab:latency}
+\begin{tabular}{lrrrr}\toprule
+Method & Steps & Plan p95 & Pipe p95 & Miss (\%) \\\midrule
+Current sensor & 610 & 50.0 & 51.1 & 0.00 \\
+CV memory & 784 & 65.0 & 66.8 & 0.00 \\
+Posterior mean & 765 & 68.5 & 103.2 & 0.00 \\
+Age margin & 2020 & 60.7 & 90.9 & 0.00 \\
+Conformal & 1333 & 65.6 & 97.5 & 0.00 \\
+Static covariance & 1007 & 139.5 & 169.5 & 0.00 \\
+EWMA & 1080 & 139.3 & 169.6 & 0.00 \\
+Bayes-MPC & 1284 & 163.8 & 198.2 & 0.00 \\
+\bottomrule\end{tabular}\end{table}
+
+The single-process timing audit concatenates per-step timing arrays before computing
+percentiles. Averaging per-episode 95th percentiles would produce a different,
+generally incorrect estimate of the overall 95th percentile.
+The full method has a planning p95 of 163.8\,ms and pipeline p95 of
+198.2\,ms over 1,284 measured steps. Its pipeline p99 is 203.7\,ms, and
+no measured step exceeds the 250\,ms control interval.
+
+The full method is computationally heavier than the alternatives in this audit:
+posterior mean has a pipeline p95 of 103.2\,ms, conformal 97.5\,ms, and
+CV memory 66.8\,ms. Thus, computational efficiency should not be confused with
+shorter navigation time. The evidence supports operation within the measured
+desktop control period for these 20 dense-square episodes, not an unconditional
+real-time guarantee or onboard performance claim.
+
+Concurrent batch runs showed more deadline misses, illustrating the importance
+of resource contention. Their timings are not merged with the single-process
+measurements in Table~\ref{tab:latency}.
+
+\subsection{Discussion and Limitations}
+The strongest current conclusion is that a deterministic location is an insufficient
+summary for the tested occluded-track planner. Full-posterior planning materially
+reduces collision relative to both CV memory and posterior mean. The covariance
+intervention accounts for most of that change. This result is more informative than
+a standalone high success rate because it controls the downstream planner.
+
+The next claim is narrower. The tested duration-aware geometric margin does not
+match completion and penalized time, especially in dense square crossings.
+This is evidence against that specific simple substitute, not against every
+geometric risk formulation. Under severe noise, calibrated EWMA and conformal
+controls remain competitive; the experiments do not establish that recursive
+Bayesian covariance is universally necessary.
+
+The evaluation is limited to the tested simulation dynamics, association assumptions,
+and calibrated uncertainty families. The matched-tracker alternatives isolate risk
+representation but do not compare entirely independent perception systems.
+Performance against contemporary continuous planners and transfer to a physical
+platform are outside the completed evaluation.
+
+\section{CONCLUSION}
+\label{sec:conclusion}
+This paper has presented a training-free crowd-navigation framework that maintains
+explicit beliefs over intermittently observed pedestrians and consumes those
+beliefs in continuous trajectory optimization.
+Its recursive state representation preserves occluded tracks, while collision-region
+probability and route-separated search translate uncertainty into executable motion.
+The formulation does not depend on a learned temporal backbone or a trained policy.
+
+Completed six-scene experiments show a reduction from 42 to 12 collisions relative
+to constant-velocity memory under the same MPC, and from 39 to 12 relative to
+posterior-mean planning. These gains occur with a small observed increase in
+failure-penalized task time. Position covariance supplies the clearest incremental
+benefit; an independent advantage from planning existence weights remains unresolved.
+A duration-dependent margin is more prone to freezing, but fairness-matched
+severe-noise experiments also show that EWMA and conformal alternatives can
+remain competitive.
+
+The present evidence supports uncertainty-aware planning through occlusion, not
+universal Bayesian superiority, guaranteed safety, or completed sim-to-real transfer.
+Future work will examine contemporary continuous-planning baselines,
+differential-drive deployment, track-association errors, and the interaction
+between prediction dispersion and finite-horizon risk.
+
+\end{document}
