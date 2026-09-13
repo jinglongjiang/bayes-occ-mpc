@@ -1,0 +1,2588 @@
+{
+ "frozen_at": "2026-09-09T21:22:47",
+ "selection_source": "snapshot/d2_selection.json",
+ "selection_rule": "within own-minimum CR + 2 percentage points, shortest penalised time; ties by higher SR then manifest order",
+ "arms_occluded": {
+  "bayes_full": {
+   "family": "bayes",
+   "candidate_id": "c05_p4_n16",
+   "existence_override": null,
+   "horizon": 16,
+   "prediction_seconds": 4.0,
+   "rationale": "most permissive registered point",
+   "risk_point": 4,
+   "population": 512,
+   "iterations": 4
+  },
+  "bayes_r1": {
+   "family": "bayes",
+   "candidate_id": "c05_p4_n16",
+   "existence_override": 1.0,
+   "horizon": 16,
+   "prediction_seconds": 4.0,
+   "rationale": "most permissive registered point",
+   "risk_point": 4,
+   "population": 512,
+   "iterations": 4
+  },
+  "tmpc_shared": {
+   "family": "tmpc",
+   "candidate_id": "c03_current",
+   "existence_override": null,
+   "horizon": 16,
+   "prediction_seconds": 4.0,
+   "rationale": "the current working point carried forward from the earlier sweep",
+   "workspace": "tmpc",
+   "risk_own_units": 0.35,
+   "risk_effective": 0.35,
+   "contour_weight": 0.05,
+   "terminal_contouring_weight": 10.0,
+   "path_overshoot_m": 2.0,
+   "settings": "/home/abc/temp/modern/candidates/tmpc_c03_current.yaml",
+   "settings_sha256": "7e3f6c2fa9c2dc44c9470db1ad192641facf5ecc266d4cbce10ce0574559623f",
+   "artefacts": {
+    "settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "4a42edd6664a7909c8e08e194c10a6b82c052b48066b21191af95bd96ea33186"
+    },
+    "generator.py": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/scripts/generate_jackalsimulator_solver.py",
+     "sha256": "01d172c5440de02a20a9613824dcfb7de7c9c64a7c0bbad9f3b1861305b0d6c7"
+    },
+    "acados_ocp_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "a2dc8b26c0ae2ce73597e4fe6e48b134d043d902fe46027c783186dc50a89f1f"
+    },
+    "libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_solver.so",
+     "sha256": "dcc74134a27ebdbad68968038d028e22f49f3f315a964b30ead62e27e97272bc"
+    },
+    "libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_modules.so",
+     "sha256": "922e4b6b7c52f50f054f6f9c344543b08827b0c8ef9ea9dfb91b9ed64013c7b8"
+    },
+    "mpc_bridge": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/mpc_planner_bridge/mpc_bridge",
+     "sha256": "d8be5603fa1d9ab4a77f2860c3804c789f07fae535ca1e805b3917185a90161d"
+    },
+    "bridge_source": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner_bridge/src/mpc_bridge.cpp",
+     "sha256": "1cd829a96960209ac950dd438136ed9e76ea84bd1b209e2e7ab45f2a60efcfa7"
+    },
+    "config/ros2_guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/ros2_guidance_planner.yaml",
+     "sha256": "376ad5b1bf0b3961abeea83d97683c4ff4a1433cf74d3e78d7be312ee5d74cd8"
+    },
+    "config/guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/guidance_planner.yaml",
+     "sha256": "ea177ce2fbbc39144d0c79595149ac61ff68016602b99ea71fa7fa4c364c66c8"
+    },
+    "config/settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "4a42edd6664a7909c8e08e194c10a6b82c052b48066b21191af95bd96ea33186"
+    },
+    "loaded/libmpc_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner.so",
+     "sha256": "46b53e720cb036761e33177596a134edc0930faf8706ef915ebfc2dca7fc36cb"
+    },
+    "loaded/libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_solver.so",
+     "sha256": "dcc74134a27ebdbad68968038d028e22f49f3f315a964b30ead62e27e97272bc"
+    },
+    "loaded/libacados.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libacados.so",
+     "sha256": "75e001534c8623391130b7e03e782ce55185a404a90d862ff7afe848d70697ef"
+    },
+    "loaded/libyaml-cpp.so.0.6": {
+     "path": "/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6",
+     "sha256": "b8a2d129e9b39d03ad7dade4eaa4eb1327a2562e203c17b50bcd8eb117d1ed7e"
+    },
+    "loaded/libmpc_planner_types.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_types.so",
+     "sha256": "2cd6ee6397587ed09ade8e5d10576cd879fef22df312203f4198cf4cce13e0d6"
+    },
+    "loaded/libroscpp.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp.so",
+     "sha256": "d90fb0e9a8784fc33c677b788830bf9e0775ea73d4b5d3002aad0946e53ff8ca"
+    },
+    "loaded/libpthread.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libpthread.so.0",
+     "sha256": "af27ed906f6185e0143b9c0d0da287788efa7eb6b2639e44d48fb2939415fdc5"
+    },
+    "loaded/libstdc++.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+     "sha256": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+    },
+    "loaded/libgcc_s.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+     "sha256": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27"
+    },
+    "loaded/libc.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libc.so.6",
+     "sha256": "53b909551f8e581120ddc2d24cfb5df76c52e3c2e2a5dac0d202b25638b3e902"
+    },
+    "loaded/libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_modules.so",
+     "sha256": "922e4b6b7c52f50f054f6f9c344543b08827b0c8ef9ea9dfb91b9ed64013c7b8"
+    },
+    "loaded/libmpc_planner_util.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_util.so",
+     "sha256": "434c1ce9b95b8e9a012251b193deb7a346ef5737e9d99d863669aadbbf834aa2"
+    },
+    "loaded/libros_tools.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libros_tools.so",
+     "sha256": "af1c1be6121bb335811f61245be68dce23136c69c9ea5313fcfcbce86a748840"
+    },
+    "loaded/librosconsole.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole.so",
+     "sha256": "d61e661ee2a546ae0f198cf54e1a7aab48ea58c0ff36a399c078153cd580476b"
+    },
+    "loaded/librostime.so": {
+     "path": "/opt/ros/noetic/lib/librostime.so",
+     "sha256": "b2ea789daa9e06f68ebfcfe5194c6a2a03a8d400ccea5e64a094bb49b30d2223"
+    },
+    "loaded/libm.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libm.so.6",
+     "sha256": "a0e70f48f02a399e8dd37f861a99e226c285a9daf50a25d19fff7ccf18b97f9c"
+    },
+    "loaded/libacados_ocp_solver_Solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "a2dc8b26c0ae2ce73597e4fe6e48b134d043d902fe46027c783186dc50a89f1f"
+    },
+    "loaded/libqpOASES_e.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libqpOASES_e.so",
+     "sha256": "111e43170b6d0c01a80a453a3933f0865cc478164204bcf980082947077127e3"
+    },
+    "loaded/libhpipm.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libhpipm.so",
+     "sha256": "c87594b6ccc2f1c4a7a320527b20faf15a3d745d43b445a1029558a365814daa"
+    },
+    "loaded/libblasfeo.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libblasfeo.so",
+     "sha256": "ceef49e9bc31111cdd047e52f41732a8353b0c88d4ef5b3317c6024474b337a7"
+    },
+    "loaded/libroscpp_serialization.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp_serialization.so",
+     "sha256": "e89883d963d9e7cc12c0170f3083712c24be101464b05d2bd12043a0bba3c112"
+    },
+    "loaded/libxmlrpcpp.so": {
+     "path": "/opt/ros/noetic/lib/libxmlrpcpp.so",
+     "sha256": "529ca45a6e32c3e1ff6cd368f4a43891983f9b804246d9f988a8a0bc9936d8a5"
+    },
+    "loaded/libcpp_common.so": {
+     "path": "/opt/ros/noetic/lib/libcpp_common.so",
+     "sha256": "91ec3a88803d0a1deb5bfa8926d9d399eb8f11f09ba33120898d09e0141999f8"
+    },
+    "loaded/libboost_thread.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0",
+     "sha256": "8bf9cd91f41bb60d52083d6c66e3b79b7f5884945d14b4aa95aa13d8486d9daf"
+    },
+    "loaded/libboost_chrono.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0",
+     "sha256": "d1b51a0aaec8675081523ab596742813c14ede4832c529c1cca2f25d3aee5050"
+    },
+    "loaded/libboost_filesystem.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0",
+     "sha256": "e1ba3a5cf611782b0dd5d7981edd06504edcb867482d2929213ae655a98d0ae2"
+    },
+    "loaded/libguidance_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libguidance_planner.so",
+     "sha256": "73ac827e7acb8eb9943751cba4f403e8822a7b3f95a66491c4690266a633c0ee"
+    },
+    "loaded/libgomp.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgomp.so.1",
+     "sha256": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94"
+    },
+    "loaded/libroslib.so": {
+     "path": "/opt/ros/noetic/lib/libroslib.so",
+     "sha256": "75b965aed0010d65eac3249befa86967c9b37694db17ad6216d859e4f5116fa4"
+    },
+    "loaded/librosconsole_log4cxx.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_log4cxx.so",
+     "sha256": "135bcf7ab6956a8c5a5615902989460fb7877967a8759e05d4d28bc768950cdd"
+    },
+    "loaded/librosconsole_backend_interface.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_backend_interface.so",
+     "sha256": "35e0cefa709dbf3bf37579b369d81282fe7b672ee792fd990dd7539c5cfbb16f"
+    },
+    "loaded/liblog4cxx.so.10": {
+     "path": "/lib/x86_64-linux-gnu/liblog4cxx.so.10",
+     "sha256": "5693f25a8d6fc9582486b8ae34ce72a16f4d976319eaa813587d13ac56c7ebcc"
+    },
+    "loaded/libboost_regex.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0",
+     "sha256": "8ba016f96cf59ea484eb77a800bdaa2020e6a3dde60b1d320b2cf807a4aedaf2"
+    },
+    "loaded/libconsole_bridge.so.0.4": {
+     "path": "/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+     "sha256": "3008f31164aced8976b266973a20cf5355b70ae38c60f0405e578c2bee194a43"
+    },
+    "loaded/libdynamic_reconfigure_config_init_mutex.so": {
+     "path": "/opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so",
+     "sha256": "2ba5d37225df1171ba86231f67618d735c95828137526bacbff823421bc03663"
+    },
+    "loaded/libguidance_planner_homotopy.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libguidance_planner_homotopy.so",
+     "sha256": "bef8a33251664f83bff47fb91d1c8535bcfbd45c0c1c01a2a92cf5637cd99ddf"
+    },
+    "loaded/libgsl.so.27": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libgsl.so.27",
+     "sha256": "2f7b62fc4c3ec4e53e6002ad7b82a3eee6e40b3366003e6d56f0e3108cc3e8b6"
+    },
+    "loaded/libdl.so.2": {
+     "path": "/lib/x86_64-linux-gnu/libdl.so.2",
+     "sha256": "e0d0cace80b627e50ca3f7b621b64917677c27c74077080854d57cf4e548edc6"
+    },
+    "loaded/librospack.so": {
+     "path": "/opt/ros/noetic/lib/librospack.so",
+     "sha256": "5c008861028d8945966e44eba9eedc0780d0dc3b77d581882d35fc3e2aa4fc3f"
+    },
+    "loaded/libapr-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libapr-1.so.0",
+     "sha256": "f002556ea2645376d2358992f402d224b35142c262adc0fb56217159c4951320"
+    },
+    "loaded/libaprutil-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libaprutil-1.so.0",
+     "sha256": "d532af8eccfede0733a7dc321b606ac3cc63e916a7966262a064a917f52b1da8"
+    },
+    "loaded/libicui18n.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicui18n.so.66",
+     "sha256": "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
+    },
+    "loaded/libicuuc.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicuuc.so.66",
+     "sha256": "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
+    },
+    "loaded/libgslcblas.so.0": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libgslcblas.so.0",
+     "sha256": "6a3b759ed96e490f510328649da92daf12995bafaf877c4d277a0ee4b00c254c"
+    },
+    "loaded/libtinyxml2.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libtinyxml2.so.6",
+     "sha256": "a1be9bbef257c1657ba73570bd8c60702c6a87549ee34d5dfebddf4dd559d403"
+    },
+    "loaded/libboost_program_options.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0",
+     "sha256": "16a89b0d75de54bfef18b479eb1d38710e5c242246a17baffa11eb4f2d544663"
+    },
+    "loaded/libpython3.8.so.1.0": {
+     "path": "/lib/x86_64-linux-gnu/libpython3.8.so.1.0",
+     "sha256": "20490b457242c6ed9a6a081ea04996aea3f8fa7a988d2ce869794919f9ce09ee"
+    },
+    "loaded/libuuid.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libuuid.so.1",
+     "sha256": "5255c40077f560d9572f60e8c1b85333bd409ac5daeee326e5c1bb3273dca0a9"
+    },
+    "loaded/libcrypt.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libcrypt.so.1",
+     "sha256": "5744b3669e4574920dfac2b33207db4e8cb501df88ef28c3801ba0673a7c7d6f"
+    },
+    "loaded/libexpat.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+     "sha256": "78f843a1bedfa4446d888d3ac0a501bbd27c08d3ef35999cbf6afc2592b357d6"
+    },
+    "loaded/libicudata.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicudata.so.66",
+     "sha256": "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
+    },
+    "loaded/libz.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libz.so.1",
+     "sha256": "ccfda8d7e0d2f77c8a4feb2febbae057edab668d7d7ee6410e2c517724c056c8"
+    },
+    "loaded/libutil.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libutil.so.1",
+     "sha256": "bf3fc8a2b1a9c61a720d246159df980be573721210ab1430e90dd13378e55160"
+    }
+   }
+  },
+  "shmpc_shared": {
+   "family": "shmpc",
+   "candidate_id": "c10_n24",
+   "existence_override": null,
+   "horizon": 24,
+   "prediction_seconds": 6.0,
+   "rationale": "6 s horizon, native tracking",
+   "workspace": "shmpc_n24",
+   "risk_own_units": 0.2,
+   "risk_effective": 0.4,
+   "contour_weight": 0.05,
+   "terminal_contouring_weight": 10.0,
+   "path_overshoot_m": 2.0,
+   "settings": "/home/abc/temp/modern/candidates/shmpc_c10_n24.yaml",
+   "settings_sha256": "5d4c645281314271f6419d8230f543180f1a09df61d07f818e1e7f0b65da4e8a",
+   "artefacts": {
+    "settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "71c4997b80dc783d326f559d7423eb3934cadb6a4bfab750827f40a2f0a098c2"
+    },
+    "generator.py": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/scripts/generate_jackalsimulator_solver.py",
+     "sha256": "210c4325e8872cf751c972b0f1458b414e77dac98b31704e14bd6861c759eff1"
+    },
+    "acados_ocp_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "6970deef088d1eed7b202afbac25c2c3507aca143cad22948290e5122050e20b"
+    },
+    "libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_solver.so",
+     "sha256": "41459332e4f62858edbabc65d65ef27377359874a76d2335cbd1fc99c0624440"
+    },
+    "libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_modules.so",
+     "sha256": "f7eda27f98ae97b918ace7fa81a7f127b7fc9e8a312231dce9ffe0c0cd672605"
+    },
+    "mpc_bridge": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/mpc_planner_bridge/mpc_bridge",
+     "sha256": "35ef589280b531576f4f55f027587ad72fd2d46a1430128ace3906ccd66990e8"
+    },
+    "bridge_source": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner_bridge/src/mpc_bridge.cpp",
+     "sha256": "f8d1efd162910704b4bbd4ec8e7f96fe45a3140facf24b54bf862b2a943deb69"
+    },
+    "config/ros2_guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/ros2_guidance_planner.yaml",
+     "sha256": "376ad5b1bf0b3961abeea83d97683c4ff4a1433cf74d3e78d7be312ee5d74cd8"
+    },
+    "config/guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/guidance_planner.yaml",
+     "sha256": "5d8682d9a8b59767b21411af9aa7832fa64b703ec0b743e619c196f853416647"
+    },
+    "config/settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "71c4997b80dc783d326f559d7423eb3934cadb6a4bfab750827f40a2f0a098c2"
+    },
+    "loaded/libmpc_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner.so",
+     "sha256": "4d6a605f68579e28ce5e74ebbd49794672868074522c824b1656a9a9efbac627"
+    },
+    "loaded/libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_solver.so",
+     "sha256": "41459332e4f62858edbabc65d65ef27377359874a76d2335cbd1fc99c0624440"
+    },
+    "loaded/libacados.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libacados.so",
+     "sha256": "75e001534c8623391130b7e03e782ce55185a404a90d862ff7afe848d70697ef"
+    },
+    "loaded/libyaml-cpp.so.0.6": {
+     "path": "/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6",
+     "sha256": "b8a2d129e9b39d03ad7dade4eaa4eb1327a2562e203c17b50bcd8eb117d1ed7e"
+    },
+    "loaded/libmpc_planner_types.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_types.so",
+     "sha256": "2cd6ee6397587ed09ade8e5d10576cd879fef22df312203f4198cf4cce13e0d6"
+    },
+    "loaded/libroscpp.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp.so",
+     "sha256": "d90fb0e9a8784fc33c677b788830bf9e0775ea73d4b5d3002aad0946e53ff8ca"
+    },
+    "loaded/libpthread.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libpthread.so.0",
+     "sha256": "af27ed906f6185e0143b9c0d0da287788efa7eb6b2639e44d48fb2939415fdc5"
+    },
+    "loaded/libstdc++.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+     "sha256": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+    },
+    "loaded/libgcc_s.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+     "sha256": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27"
+    },
+    "loaded/libc.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libc.so.6",
+     "sha256": "53b909551f8e581120ddc2d24cfb5df76c52e3c2e2a5dac0d202b25638b3e902"
+    },
+    "loaded/libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_modules.so",
+     "sha256": "f7eda27f98ae97b918ace7fa81a7f127b7fc9e8a312231dce9ffe0c0cd672605"
+    },
+    "loaded/libmpc_planner_util.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_util.so",
+     "sha256": "1bef104ef401cce8217f7be45f6a71504c60be05b4f0c473b9371aaba7d6b5a5"
+    },
+    "loaded/libros_tools.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libros_tools.so",
+     "sha256": "477bf6f5efa0b0d25c3b279d12885286a2cc4a46714ff9ce3d3e2594b7b9a9e8"
+    },
+    "loaded/librosconsole.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole.so",
+     "sha256": "d61e661ee2a546ae0f198cf54e1a7aab48ea58c0ff36a399c078153cd580476b"
+    },
+    "loaded/librostime.so": {
+     "path": "/opt/ros/noetic/lib/librostime.so",
+     "sha256": "b2ea789daa9e06f68ebfcfe5194c6a2a03a8d400ccea5e64a094bb49b30d2223"
+    },
+    "loaded/libm.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libm.so.6",
+     "sha256": "a0e70f48f02a399e8dd37f861a99e226c285a9daf50a25d19fff7ccf18b97f9c"
+    },
+    "loaded/libacados_ocp_solver_Solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "6970deef088d1eed7b202afbac25c2c3507aca143cad22948290e5122050e20b"
+    },
+    "loaded/libqpOASES_e.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libqpOASES_e.so",
+     "sha256": "111e43170b6d0c01a80a453a3933f0865cc478164204bcf980082947077127e3"
+    },
+    "loaded/libhpipm.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libhpipm.so",
+     "sha256": "c87594b6ccc2f1c4a7a320527b20faf15a3d745d43b445a1029558a365814daa"
+    },
+    "loaded/libblasfeo.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libblasfeo.so",
+     "sha256": "ceef49e9bc31111cdd047e52f41732a8353b0c88d4ef5b3317c6024474b337a7"
+    },
+    "loaded/libroscpp_serialization.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp_serialization.so",
+     "sha256": "e89883d963d9e7cc12c0170f3083712c24be101464b05d2bd12043a0bba3c112"
+    },
+    "loaded/libxmlrpcpp.so": {
+     "path": "/opt/ros/noetic/lib/libxmlrpcpp.so",
+     "sha256": "529ca45a6e32c3e1ff6cd368f4a43891983f9b804246d9f988a8a0bc9936d8a5"
+    },
+    "loaded/libcpp_common.so": {
+     "path": "/opt/ros/noetic/lib/libcpp_common.so",
+     "sha256": "91ec3a88803d0a1deb5bfa8926d9d399eb8f11f09ba33120898d09e0141999f8"
+    },
+    "loaded/libboost_thread.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0",
+     "sha256": "8bf9cd91f41bb60d52083d6c66e3b79b7f5884945d14b4aa95aa13d8486d9daf"
+    },
+    "loaded/libboost_chrono.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0",
+     "sha256": "d1b51a0aaec8675081523ab596742813c14ede4832c529c1cca2f25d3aee5050"
+    },
+    "loaded/libboost_filesystem.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0",
+     "sha256": "e1ba3a5cf611782b0dd5d7981edd06504edcb867482d2929213ae655a98d0ae2"
+    },
+    "loaded/libscenario_module.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libscenario_module.so",
+     "sha256": "ca6eaa83cd62526f934713b9e50fe8f829a23d198d612878bf051e75ae1586cf"
+    },
+    "loaded/libgomp.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgomp.so.1",
+     "sha256": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94"
+    },
+    "loaded/libroslib.so": {
+     "path": "/opt/ros/noetic/lib/libroslib.so",
+     "sha256": "75b965aed0010d65eac3249befa86967c9b37694db17ad6216d859e4f5116fa4"
+    },
+    "loaded/librosconsole_log4cxx.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_log4cxx.so",
+     "sha256": "135bcf7ab6956a8c5a5615902989460fb7877967a8759e05d4d28bc768950cdd"
+    },
+    "loaded/librosconsole_backend_interface.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_backend_interface.so",
+     "sha256": "35e0cefa709dbf3bf37579b369d81282fe7b672ee792fd990dd7539c5cfbb16f"
+    },
+    "loaded/liblog4cxx.so.10": {
+     "path": "/lib/x86_64-linux-gnu/liblog4cxx.so.10",
+     "sha256": "5693f25a8d6fc9582486b8ae34ce72a16f4d976319eaa813587d13ac56c7ebcc"
+    },
+    "loaded/libboost_regex.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0",
+     "sha256": "8ba016f96cf59ea484eb77a800bdaa2020e6a3dde60b1d320b2cf807a4aedaf2"
+    },
+    "loaded/libconsole_bridge.so.0.4": {
+     "path": "/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+     "sha256": "3008f31164aced8976b266973a20cf5355b70ae38c60f0405e578c2bee194a43"
+    },
+    "loaded/libdl.so.2": {
+     "path": "/lib/x86_64-linux-gnu/libdl.so.2",
+     "sha256": "e0d0cace80b627e50ca3f7b621b64917677c27c74077080854d57cf4e548edc6"
+    },
+    "loaded/librospack.so": {
+     "path": "/opt/ros/noetic/lib/librospack.so",
+     "sha256": "5c008861028d8945966e44eba9eedc0780d0dc3b77d581882d35fc3e2aa4fc3f"
+    },
+    "loaded/libapr-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libapr-1.so.0",
+     "sha256": "f002556ea2645376d2358992f402d224b35142c262adc0fb56217159c4951320"
+    },
+    "loaded/libaprutil-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libaprutil-1.so.0",
+     "sha256": "d532af8eccfede0733a7dc321b606ac3cc63e916a7966262a064a917f52b1da8"
+    },
+    "loaded/libicui18n.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicui18n.so.66",
+     "sha256": "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
+    },
+    "loaded/libicuuc.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicuuc.so.66",
+     "sha256": "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
+    },
+    "loaded/libtinyxml2.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libtinyxml2.so.6",
+     "sha256": "a1be9bbef257c1657ba73570bd8c60702c6a87549ee34d5dfebddf4dd559d403"
+    },
+    "loaded/libboost_program_options.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0",
+     "sha256": "16a89b0d75de54bfef18b479eb1d38710e5c242246a17baffa11eb4f2d544663"
+    },
+    "loaded/libpython3.8.so.1.0": {
+     "path": "/lib/x86_64-linux-gnu/libpython3.8.so.1.0",
+     "sha256": "20490b457242c6ed9a6a081ea04996aea3f8fa7a988d2ce869794919f9ce09ee"
+    },
+    "loaded/libuuid.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libuuid.so.1",
+     "sha256": "5255c40077f560d9572f60e8c1b85333bd409ac5daeee326e5c1bb3273dca0a9"
+    },
+    "loaded/libcrypt.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libcrypt.so.1",
+     "sha256": "5744b3669e4574920dfac2b33207db4e8cb501df88ef28c3801ba0673a7c7d6f"
+    },
+    "loaded/libexpat.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+     "sha256": "78f843a1bedfa4446d888d3ac0a501bbd27c08d3ef35999cbf6afc2592b357d6"
+    },
+    "loaded/libicudata.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicudata.so.66",
+     "sha256": "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
+    },
+    "loaded/libz.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libz.so.1",
+     "sha256": "ccfda8d7e0d2f77c8a4feb2febbae057edab668d7d7ee6410e2c517724c056c8"
+    },
+    "loaded/libutil.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libutil.so.1",
+     "sha256": "bf3fc8a2b1a9c61a720d246159df980be573721210ab1430e90dd13378e55160"
+    }
+   }
+  }
+ },
+ "arms_full": {
+  "bayes_full": {
+   "family": "bayes",
+   "candidate_id": "c05_p4_n16",
+   "existence_override": null,
+   "horizon": 16,
+   "prediction_seconds": 4.0,
+   "rationale": "most permissive registered point",
+   "risk_point": 4,
+   "population": 512,
+   "iterations": 4
+  },
+  "tmpc_shared": {
+   "family": "tmpc",
+   "candidate_id": "c03_current",
+   "existence_override": null,
+   "horizon": 16,
+   "prediction_seconds": 4.0,
+   "rationale": "the current working point carried forward from the earlier sweep",
+   "workspace": "tmpc",
+   "risk_own_units": 0.35,
+   "risk_effective": 0.35,
+   "contour_weight": 0.05,
+   "terminal_contouring_weight": 10.0,
+   "path_overshoot_m": 2.0,
+   "settings": "/home/abc/temp/modern/candidates/tmpc_c03_current.yaml",
+   "settings_sha256": "7e3f6c2fa9c2dc44c9470db1ad192641facf5ecc266d4cbce10ce0574559623f",
+   "artefacts": {
+    "settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "4a42edd6664a7909c8e08e194c10a6b82c052b48066b21191af95bd96ea33186"
+    },
+    "generator.py": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/scripts/generate_jackalsimulator_solver.py",
+     "sha256": "01d172c5440de02a20a9613824dcfb7de7c9c64a7c0bbad9f3b1861305b0d6c7"
+    },
+    "acados_ocp_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "a2dc8b26c0ae2ce73597e4fe6e48b134d043d902fe46027c783186dc50a89f1f"
+    },
+    "libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_solver.so",
+     "sha256": "dcc74134a27ebdbad68968038d028e22f49f3f315a964b30ead62e27e97272bc"
+    },
+    "libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_modules.so",
+     "sha256": "922e4b6b7c52f50f054f6f9c344543b08827b0c8ef9ea9dfb91b9ed64013c7b8"
+    },
+    "mpc_bridge": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/mpc_planner_bridge/mpc_bridge",
+     "sha256": "d8be5603fa1d9ab4a77f2860c3804c789f07fae535ca1e805b3917185a90161d"
+    },
+    "bridge_source": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner_bridge/src/mpc_bridge.cpp",
+     "sha256": "1cd829a96960209ac950dd438136ed9e76ea84bd1b209e2e7ab45f2a60efcfa7"
+    },
+    "config/ros2_guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/ros2_guidance_planner.yaml",
+     "sha256": "376ad5b1bf0b3961abeea83d97683c4ff4a1433cf74d3e78d7be312ee5d74cd8"
+    },
+    "config/guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/guidance_planner.yaml",
+     "sha256": "ea177ce2fbbc39144d0c79595149ac61ff68016602b99ea71fa7fa4c364c66c8"
+    },
+    "config/settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "4a42edd6664a7909c8e08e194c10a6b82c052b48066b21191af95bd96ea33186"
+    },
+    "loaded/libmpc_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner.so",
+     "sha256": "46b53e720cb036761e33177596a134edc0930faf8706ef915ebfc2dca7fc36cb"
+    },
+    "loaded/libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_solver.so",
+     "sha256": "dcc74134a27ebdbad68968038d028e22f49f3f315a964b30ead62e27e97272bc"
+    },
+    "loaded/libacados.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libacados.so",
+     "sha256": "75e001534c8623391130b7e03e782ce55185a404a90d862ff7afe848d70697ef"
+    },
+    "loaded/libyaml-cpp.so.0.6": {
+     "path": "/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6",
+     "sha256": "b8a2d129e9b39d03ad7dade4eaa4eb1327a2562e203c17b50bcd8eb117d1ed7e"
+    },
+    "loaded/libmpc_planner_types.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_types.so",
+     "sha256": "2cd6ee6397587ed09ade8e5d10576cd879fef22df312203f4198cf4cce13e0d6"
+    },
+    "loaded/libroscpp.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp.so",
+     "sha256": "d90fb0e9a8784fc33c677b788830bf9e0775ea73d4b5d3002aad0946e53ff8ca"
+    },
+    "loaded/libpthread.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libpthread.so.0",
+     "sha256": "af27ed906f6185e0143b9c0d0da287788efa7eb6b2639e44d48fb2939415fdc5"
+    },
+    "loaded/libstdc++.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+     "sha256": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+    },
+    "loaded/libgcc_s.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+     "sha256": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27"
+    },
+    "loaded/libc.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libc.so.6",
+     "sha256": "53b909551f8e581120ddc2d24cfb5df76c52e3c2e2a5dac0d202b25638b3e902"
+    },
+    "loaded/libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_modules.so",
+     "sha256": "922e4b6b7c52f50f054f6f9c344543b08827b0c8ef9ea9dfb91b9ed64013c7b8"
+    },
+    "loaded/libmpc_planner_util.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libmpc_planner_util.so",
+     "sha256": "434c1ce9b95b8e9a012251b193deb7a346ef5737e9d99d863669aadbbf834aa2"
+    },
+    "loaded/libros_tools.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libros_tools.so",
+     "sha256": "af1c1be6121bb335811f61245be68dce23136c69c9ea5313fcfcbce86a748840"
+    },
+    "loaded/librosconsole.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole.so",
+     "sha256": "d61e661ee2a546ae0f198cf54e1a7aab48ea58c0ff36a399c078153cd580476b"
+    },
+    "loaded/librostime.so": {
+     "path": "/opt/ros/noetic/lib/librostime.so",
+     "sha256": "b2ea789daa9e06f68ebfcfe5194c6a2a03a8d400ccea5e64a094bb49b30d2223"
+    },
+    "loaded/libm.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libm.so.6",
+     "sha256": "a0e70f48f02a399e8dd37f861a99e226c285a9daf50a25d19fff7ccf18b97f9c"
+    },
+    "loaded/libacados_ocp_solver_Solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "a2dc8b26c0ae2ce73597e4fe6e48b134d043d902fe46027c783186dc50a89f1f"
+    },
+    "loaded/libqpOASES_e.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libqpOASES_e.so",
+     "sha256": "111e43170b6d0c01a80a453a3933f0865cc478164204bcf980082947077127e3"
+    },
+    "loaded/libhpipm.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libhpipm.so",
+     "sha256": "c87594b6ccc2f1c4a7a320527b20faf15a3d745d43b445a1029558a365814daa"
+    },
+    "loaded/libblasfeo.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libblasfeo.so",
+     "sha256": "ceef49e9bc31111cdd047e52f41732a8353b0c88d4ef5b3317c6024474b337a7"
+    },
+    "loaded/libroscpp_serialization.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp_serialization.so",
+     "sha256": "e89883d963d9e7cc12c0170f3083712c24be101464b05d2bd12043a0bba3c112"
+    },
+    "loaded/libxmlrpcpp.so": {
+     "path": "/opt/ros/noetic/lib/libxmlrpcpp.so",
+     "sha256": "529ca45a6e32c3e1ff6cd368f4a43891983f9b804246d9f988a8a0bc9936d8a5"
+    },
+    "loaded/libcpp_common.so": {
+     "path": "/opt/ros/noetic/lib/libcpp_common.so",
+     "sha256": "91ec3a88803d0a1deb5bfa8926d9d399eb8f11f09ba33120898d09e0141999f8"
+    },
+    "loaded/libboost_thread.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0",
+     "sha256": "8bf9cd91f41bb60d52083d6c66e3b79b7f5884945d14b4aa95aa13d8486d9daf"
+    },
+    "loaded/libboost_chrono.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0",
+     "sha256": "d1b51a0aaec8675081523ab596742813c14ede4832c529c1cca2f25d3aee5050"
+    },
+    "loaded/libboost_filesystem.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0",
+     "sha256": "e1ba3a5cf611782b0dd5d7981edd06504edcb867482d2929213ae655a98d0ae2"
+    },
+    "loaded/libguidance_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libguidance_planner.so",
+     "sha256": "73ac827e7acb8eb9943751cba4f403e8822a7b3f95a66491c4690266a633c0ee"
+    },
+    "loaded/libgomp.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgomp.so.1",
+     "sha256": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94"
+    },
+    "loaded/libroslib.so": {
+     "path": "/opt/ros/noetic/lib/libroslib.so",
+     "sha256": "75b965aed0010d65eac3249befa86967c9b37694db17ad6216d859e4f5116fa4"
+    },
+    "loaded/librosconsole_log4cxx.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_log4cxx.so",
+     "sha256": "135bcf7ab6956a8c5a5615902989460fb7877967a8759e05d4d28bc768950cdd"
+    },
+    "loaded/librosconsole_backend_interface.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_backend_interface.so",
+     "sha256": "35e0cefa709dbf3bf37579b369d81282fe7b672ee792fd990dd7539c5cfbb16f"
+    },
+    "loaded/liblog4cxx.so.10": {
+     "path": "/lib/x86_64-linux-gnu/liblog4cxx.so.10",
+     "sha256": "5693f25a8d6fc9582486b8ae34ce72a16f4d976319eaa813587d13ac56c7ebcc"
+    },
+    "loaded/libboost_regex.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0",
+     "sha256": "8ba016f96cf59ea484eb77a800bdaa2020e6a3dde60b1d320b2cf807a4aedaf2"
+    },
+    "loaded/libconsole_bridge.so.0.4": {
+     "path": "/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+     "sha256": "3008f31164aced8976b266973a20cf5355b70ae38c60f0405e578c2bee194a43"
+    },
+    "loaded/libdynamic_reconfigure_config_init_mutex.so": {
+     "path": "/opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so",
+     "sha256": "2ba5d37225df1171ba86231f67618d735c95828137526bacbff823421bc03663"
+    },
+    "loaded/libguidance_planner_homotopy.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libguidance_planner_homotopy.so",
+     "sha256": "bef8a33251664f83bff47fb91d1c8535bcfbd45c0c1c01a2a92cf5637cd99ddf"
+    },
+    "loaded/libgsl.so.27": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libgsl.so.27",
+     "sha256": "2f7b62fc4c3ec4e53e6002ad7b82a3eee6e40b3366003e6d56f0e3108cc3e8b6"
+    },
+    "loaded/libdl.so.2": {
+     "path": "/lib/x86_64-linux-gnu/libdl.so.2",
+     "sha256": "e0d0cace80b627e50ca3f7b621b64917677c27c74077080854d57cf4e548edc6"
+    },
+    "loaded/librospack.so": {
+     "path": "/opt/ros/noetic/lib/librospack.so",
+     "sha256": "5c008861028d8945966e44eba9eedc0780d0dc3b77d581882d35fc3e2aa4fc3f"
+    },
+    "loaded/libapr-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libapr-1.so.0",
+     "sha256": "f002556ea2645376d2358992f402d224b35142c262adc0fb56217159c4951320"
+    },
+    "loaded/libaprutil-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libaprutil-1.so.0",
+     "sha256": "d532af8eccfede0733a7dc321b606ac3cc63e916a7966262a064a917f52b1da8"
+    },
+    "loaded/libicui18n.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicui18n.so.66",
+     "sha256": "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
+    },
+    "loaded/libicuuc.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicuuc.so.66",
+     "sha256": "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
+    },
+    "loaded/libgslcblas.so.0": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/tmpc/devel/lib/libgslcblas.so.0",
+     "sha256": "6a3b759ed96e490f510328649da92daf12995bafaf877c4d277a0ee4b00c254c"
+    },
+    "loaded/libtinyxml2.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libtinyxml2.so.6",
+     "sha256": "a1be9bbef257c1657ba73570bd8c60702c6a87549ee34d5dfebddf4dd559d403"
+    },
+    "loaded/libboost_program_options.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0",
+     "sha256": "16a89b0d75de54bfef18b479eb1d38710e5c242246a17baffa11eb4f2d544663"
+    },
+    "loaded/libpython3.8.so.1.0": {
+     "path": "/lib/x86_64-linux-gnu/libpython3.8.so.1.0",
+     "sha256": "20490b457242c6ed9a6a081ea04996aea3f8fa7a988d2ce869794919f9ce09ee"
+    },
+    "loaded/libuuid.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libuuid.so.1",
+     "sha256": "5255c40077f560d9572f60e8c1b85333bd409ac5daeee326e5c1bb3273dca0a9"
+    },
+    "loaded/libcrypt.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libcrypt.so.1",
+     "sha256": "5744b3669e4574920dfac2b33207db4e8cb501df88ef28c3801ba0673a7c7d6f"
+    },
+    "loaded/libexpat.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+     "sha256": "78f843a1bedfa4446d888d3ac0a501bbd27c08d3ef35999cbf6afc2592b357d6"
+    },
+    "loaded/libicudata.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicudata.so.66",
+     "sha256": "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
+    },
+    "loaded/libz.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libz.so.1",
+     "sha256": "ccfda8d7e0d2f77c8a4feb2febbae057edab668d7d7ee6410e2c517724c056c8"
+    },
+    "loaded/libutil.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libutil.so.1",
+     "sha256": "bf3fc8a2b1a9c61a720d246159df980be573721210ab1430e90dd13378e55160"
+    }
+   }
+  },
+  "shmpc_shared": {
+   "family": "shmpc",
+   "candidate_id": "c10_n24",
+   "existence_override": null,
+   "horizon": 24,
+   "prediction_seconds": 6.0,
+   "rationale": "6 s horizon, native tracking",
+   "workspace": "shmpc_n24",
+   "risk_own_units": 0.2,
+   "risk_effective": 0.4,
+   "contour_weight": 0.05,
+   "terminal_contouring_weight": 10.0,
+   "path_overshoot_m": 2.0,
+   "settings": "/home/abc/temp/modern/candidates/shmpc_c10_n24.yaml",
+   "settings_sha256": "5d4c645281314271f6419d8230f543180f1a09df61d07f818e1e7f0b65da4e8a",
+   "artefacts": {
+    "settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "71c4997b80dc783d326f559d7423eb3934cadb6a4bfab750827f40a2f0a098c2"
+    },
+    "generator.py": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/scripts/generate_jackalsimulator_solver.py",
+     "sha256": "210c4325e8872cf751c972b0f1458b414e77dac98b31704e14bd6861c759eff1"
+    },
+    "acados_ocp_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "6970deef088d1eed7b202afbac25c2c3507aca143cad22948290e5122050e20b"
+    },
+    "libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_solver.so",
+     "sha256": "41459332e4f62858edbabc65d65ef27377359874a76d2335cbd1fc99c0624440"
+    },
+    "libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_modules.so",
+     "sha256": "f7eda27f98ae97b918ace7fa81a7f127b7fc9e8a312231dce9ffe0c0cd672605"
+    },
+    "mpc_bridge": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/mpc_planner_bridge/mpc_bridge",
+     "sha256": "35ef589280b531576f4f55f027587ad72fd2d46a1430128ace3906ccd66990e8"
+    },
+    "bridge_source": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner_bridge/src/mpc_bridge.cpp",
+     "sha256": "f8d1efd162910704b4bbd4ec8e7f96fe45a3140facf24b54bf862b2a943deb69"
+    },
+    "config/ros2_guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/ros2_guidance_planner.yaml",
+     "sha256": "376ad5b1bf0b3961abeea83d97683c4ff4a1433cf74d3e78d7be312ee5d74cd8"
+    },
+    "config/guidance_planner.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/guidance_planner.yaml",
+     "sha256": "5d8682d9a8b59767b21411af9aa7832fa64b703ec0b743e619c196f853416647"
+    },
+    "config/settings.yaml": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_jackalsimulator/config/settings.yaml",
+     "sha256": "71c4997b80dc783d326f559d7423eb3934cadb6a4bfab750827f40a2f0a098c2"
+    },
+    "loaded/libmpc_planner.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner.so",
+     "sha256": "4d6a605f68579e28ce5e74ebbd49794672868074522c824b1656a9a9efbac627"
+    },
+    "loaded/libmpc_planner_solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_solver.so",
+     "sha256": "41459332e4f62858edbabc65d65ef27377359874a76d2335cbd1fc99c0624440"
+    },
+    "loaded/libacados.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libacados.so",
+     "sha256": "75e001534c8623391130b7e03e782ce55185a404a90d862ff7afe848d70697ef"
+    },
+    "loaded/libyaml-cpp.so.0.6": {
+     "path": "/lib/x86_64-linux-gnu/libyaml-cpp.so.0.6",
+     "sha256": "b8a2d129e9b39d03ad7dade4eaa4eb1327a2562e203c17b50bcd8eb117d1ed7e"
+    },
+    "loaded/libmpc_planner_types.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_types.so",
+     "sha256": "2cd6ee6397587ed09ade8e5d10576cd879fef22df312203f4198cf4cce13e0d6"
+    },
+    "loaded/libroscpp.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp.so",
+     "sha256": "d90fb0e9a8784fc33c677b788830bf9e0775ea73d4b5d3002aad0946e53ff8ca"
+    },
+    "loaded/libpthread.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libpthread.so.0",
+     "sha256": "af27ed906f6185e0143b9c0d0da287788efa7eb6b2639e44d48fb2939415fdc5"
+    },
+    "loaded/libstdc++.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libstdc++.so.6",
+     "sha256": "26916e7389a561537a0510661fc75538cea236139346f3dbe21bc64ba65605bf"
+    },
+    "loaded/libgcc_s.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgcc_s.so.1",
+     "sha256": "489803ded8a4d803e2c792763a2767c12185f5764b7bba080742d14ef2452b27"
+    },
+    "loaded/libc.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libc.so.6",
+     "sha256": "53b909551f8e581120ddc2d24cfb5df76c52e3c2e2a5dac0d202b25638b3e902"
+    },
+    "loaded/libmpc_planner_modules.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_modules.so",
+     "sha256": "f7eda27f98ae97b918ace7fa81a7f127b7fc9e8a312231dce9ffe0c0cd672605"
+    },
+    "loaded/libmpc_planner_util.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libmpc_planner_util.so",
+     "sha256": "1bef104ef401cce8217f7be45f6a71504c60be05b4f0c473b9371aaba7d6b5a5"
+    },
+    "loaded/libros_tools.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libros_tools.so",
+     "sha256": "477bf6f5efa0b0d25c3b279d12885286a2cc4a46714ff9ce3d3e2594b7b9a9e8"
+    },
+    "loaded/librosconsole.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole.so",
+     "sha256": "d61e661ee2a546ae0f198cf54e1a7aab48ea58c0ff36a399c078153cd580476b"
+    },
+    "loaded/librostime.so": {
+     "path": "/opt/ros/noetic/lib/librostime.so",
+     "sha256": "b2ea789daa9e06f68ebfcfe5194c6a2a03a8d400ccea5e64a094bb49b30d2223"
+    },
+    "loaded/libm.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libm.so.6",
+     "sha256": "a0e70f48f02a399e8dd37f861a99e226c285a9daf50a25d19fff7ccf18b97f9c"
+    },
+    "loaded/libacados_ocp_solver_Solver.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/src/mpc_planner/mpc_planner_solver/acados/Solver/libacados_ocp_solver_Solver.so",
+     "sha256": "6970deef088d1eed7b202afbac25c2c3507aca143cad22948290e5122050e20b"
+    },
+    "loaded/libqpOASES_e.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libqpOASES_e.so",
+     "sha256": "111e43170b6d0c01a80a453a3933f0865cc478164204bcf980082947077127e3"
+    },
+    "loaded/libhpipm.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libhpipm.so",
+     "sha256": "c87594b6ccc2f1c4a7a320527b20faf15a3d745d43b445a1029558a365814daa"
+    },
+    "loaded/libblasfeo.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/results/acados_v042_mpcplanner/lib/libblasfeo.so",
+     "sha256": "ceef49e9bc31111cdd047e52f41732a8353b0c88d4ef5b3317c6024474b337a7"
+    },
+    "loaded/libroscpp_serialization.so": {
+     "path": "/opt/ros/noetic/lib/libroscpp_serialization.so",
+     "sha256": "e89883d963d9e7cc12c0170f3083712c24be101464b05d2bd12043a0bba3c112"
+    },
+    "loaded/libxmlrpcpp.so": {
+     "path": "/opt/ros/noetic/lib/libxmlrpcpp.so",
+     "sha256": "529ca45a6e32c3e1ff6cd368f4a43891983f9b804246d9f988a8a0bc9936d8a5"
+    },
+    "loaded/libcpp_common.so": {
+     "path": "/opt/ros/noetic/lib/libcpp_common.so",
+     "sha256": "91ec3a88803d0a1deb5bfa8926d9d399eb8f11f09ba33120898d09e0141999f8"
+    },
+    "loaded/libboost_thread.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0",
+     "sha256": "8bf9cd91f41bb60d52083d6c66e3b79b7f5884945d14b4aa95aa13d8486d9daf"
+    },
+    "loaded/libboost_chrono.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0",
+     "sha256": "d1b51a0aaec8675081523ab596742813c14ede4832c529c1cca2f25d3aee5050"
+    },
+    "loaded/libboost_filesystem.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0",
+     "sha256": "e1ba3a5cf611782b0dd5d7981edd06504edcb867482d2929213ae655a98d0ae2"
+    },
+    "loaded/libscenario_module.so": {
+     "path": "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc_n24/devel/lib/libscenario_module.so",
+     "sha256": "ca6eaa83cd62526f934713b9e50fe8f829a23d198d612878bf051e75ae1586cf"
+    },
+    "loaded/libgomp.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libgomp.so.1",
+     "sha256": "98b21ff32bb07b53f1fb266d887d2db0086ea66c8ad03696a1db53f65321cd94"
+    },
+    "loaded/libroslib.so": {
+     "path": "/opt/ros/noetic/lib/libroslib.so",
+     "sha256": "75b965aed0010d65eac3249befa86967c9b37694db17ad6216d859e4f5116fa4"
+    },
+    "loaded/librosconsole_log4cxx.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_log4cxx.so",
+     "sha256": "135bcf7ab6956a8c5a5615902989460fb7877967a8759e05d4d28bc768950cdd"
+    },
+    "loaded/librosconsole_backend_interface.so": {
+     "path": "/opt/ros/noetic/lib/librosconsole_backend_interface.so",
+     "sha256": "35e0cefa709dbf3bf37579b369d81282fe7b672ee792fd990dd7539c5cfbb16f"
+    },
+    "loaded/liblog4cxx.so.10": {
+     "path": "/lib/x86_64-linux-gnu/liblog4cxx.so.10",
+     "sha256": "5693f25a8d6fc9582486b8ae34ce72a16f4d976319eaa813587d13ac56c7ebcc"
+    },
+    "loaded/libboost_regex.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0",
+     "sha256": "8ba016f96cf59ea484eb77a800bdaa2020e6a3dde60b1d320b2cf807a4aedaf2"
+    },
+    "loaded/libconsole_bridge.so.0.4": {
+     "path": "/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+     "sha256": "3008f31164aced8976b266973a20cf5355b70ae38c60f0405e578c2bee194a43"
+    },
+    "loaded/libdl.so.2": {
+     "path": "/lib/x86_64-linux-gnu/libdl.so.2",
+     "sha256": "e0d0cace80b627e50ca3f7b621b64917677c27c74077080854d57cf4e548edc6"
+    },
+    "loaded/librospack.so": {
+     "path": "/opt/ros/noetic/lib/librospack.so",
+     "sha256": "5c008861028d8945966e44eba9eedc0780d0dc3b77d581882d35fc3e2aa4fc3f"
+    },
+    "loaded/libapr-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libapr-1.so.0",
+     "sha256": "f002556ea2645376d2358992f402d224b35142c262adc0fb56217159c4951320"
+    },
+    "loaded/libaprutil-1.so.0": {
+     "path": "/lib/x86_64-linux-gnu/libaprutil-1.so.0",
+     "sha256": "d532af8eccfede0733a7dc321b606ac3cc63e916a7966262a064a917f52b1da8"
+    },
+    "loaded/libicui18n.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicui18n.so.66",
+     "sha256": "e6b2f6fdf6f473bd529526a06b1e1bb6dab4a9998da941346711f1805dd42816"
+    },
+    "loaded/libicuuc.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicuuc.so.66",
+     "sha256": "d41e9287614412b6e95f809773a5f0f86ee3763a7d5f0db4856e79f64f7c8dab"
+    },
+    "loaded/libtinyxml2.so.6": {
+     "path": "/lib/x86_64-linux-gnu/libtinyxml2.so.6",
+     "sha256": "a1be9bbef257c1657ba73570bd8c60702c6a87549ee34d5dfebddf4dd559d403"
+    },
+    "loaded/libboost_program_options.so.1.71.0": {
+     "path": "/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0",
+     "sha256": "16a89b0d75de54bfef18b479eb1d38710e5c242246a17baffa11eb4f2d544663"
+    },
+    "loaded/libpython3.8.so.1.0": {
+     "path": "/lib/x86_64-linux-gnu/libpython3.8.so.1.0",
+     "sha256": "20490b457242c6ed9a6a081ea04996aea3f8fa7a988d2ce869794919f9ce09ee"
+    },
+    "loaded/libuuid.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libuuid.so.1",
+     "sha256": "5255c40077f560d9572f60e8c1b85333bd409ac5daeee326e5c1bb3273dca0a9"
+    },
+    "loaded/libcrypt.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libcrypt.so.1",
+     "sha256": "5744b3669e4574920dfac2b33207db4e8cb501df88ef28c3801ba0673a7c7d6f"
+    },
+    "loaded/libexpat.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libexpat.so.1",
+     "sha256": "78f843a1bedfa4446d888d3ac0a501bbd27c08d3ef35999cbf6afc2592b357d6"
+    },
+    "loaded/libicudata.so.66": {
+     "path": "/lib/x86_64-linux-gnu/libicudata.so.66",
+     "sha256": "50b039da86ab40fed973954892aa52b0b833127b94103ec62b71c1e0891ce5ed"
+    },
+    "loaded/libz.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libz.so.1",
+     "sha256": "ccfda8d7e0d2f77c8a4feb2febbae057edab668d7d7ee6410e2c517724c056c8"
+    },
+    "loaded/libutil.so.1": {
+     "path": "/lib/x86_64-linux-gnu/libutil.so.1",
+     "sha256": "bf3fc8a2b1a9c61a720d246159df980be573721210ab1430e90dd13378e55160"
+    }
+   }
+  }
+ },
+ "contract": {
+  "robot_visible": false,
+  "robot_radius": 0.3,
+  "human_radius": 0.3,
+  "human_margin": 0.1,
+  "v_max": 1.0,
+  "a_max": 2.0,
+  "omega_max": 0.8,
+  "reverse": false,
+  "execution_period_s": 0.25,
+  "time_limit_s": 25,
+  "goal_radius_m": 0.25,
+  "auxiliary_goal_radii_m": [
+   0.5,
+   1.0
+  ],
+  "actuator_box_enforcement": "saturated at the environment boundary for every arm alike, with violations counted per episode; tolerance 1e-6"
+ },
+ "resources": {
+  "machine": "local Ryzen 7 5700G, 8 physical / 16 logical cores, 15 GB",
+  "workers": 1,
+  "threads_per_worker": 4,
+  "development_legacy_workers": 2,
+  "development_note": "CC D1 is retained as coarse development only; its environment specified OMP_NUM_THREADS but did not enforce OMP_THREAD_LIMIT. D2 and all formal queues enforce four threads; L includes a separately enforced one-thread profile. D1 timings are not hardware benchmarks.",
+  "note": "the 4090 carries the Bayesian project only and has neither ROS nor acados nor the free disk to install them, so the whole matrix runs on one machine; splitting one method per machine is ruled out by the order in any case"
+ },
+ "rng_policy": {
+  "environment": "seeded by case_id",
+  "planner": "case_id * 100003 + step * 97 + 1729 + repeat * 10000019",
+  "comparators": "SH-MPC seeds its scenario sampler from std::random_device and T-MPC++ varies through its parallel branches, so neither is bit-reproducible.  Native parallelism is kept under a common CPU quota, as the order prefers, and the variation is bounded by three independent repeats per layout rather than hidden behind a single-thread run."
+ },
+ "statistics": {
+  "primary": "macro over six scenes of SR, CR, TR and penalised time",
+  "aggregation": "repeats averaged within a layout first",
+  "resampling": "cluster bootstrap over layouts within scene, 10000 draws, seed 20260909",
+  "p_values": "two-sided paired layout-cluster sign permutation with plus-one correction",
+  "correction": "Holm-Bonferroni over the six pre-registered tests"
+ },
+ "cases": {
+  "debug_circle": {
+   "n": 100,
+   "cases": [
+    3650,
+    3651,
+    3652,
+    3653,
+    3654,
+    3655,
+    3656,
+    3657,
+    3658,
+    3659,
+    3660,
+    3661,
+    3662,
+    3663,
+    3664,
+    3665,
+    3666,
+    3667,
+    3668,
+    3669,
+    3670,
+    3671,
+    3672,
+    3673,
+    3674,
+    3675,
+    3676,
+    3677,
+    3678,
+    3679,
+    3680,
+    3681,
+    3682,
+    3683,
+    3684,
+    3685,
+    3686,
+    3687,
+    3688,
+    3689,
+    3690,
+    3691,
+    3692,
+    3693,
+    3694,
+    3695,
+    3696,
+    3697,
+    3698,
+    3699,
+    3700,
+    3701,
+    3702,
+    3703,
+    3704,
+    3705,
+    3706,
+    3707,
+    3708,
+    3709,
+    3710,
+    3711,
+    3712,
+    3713,
+    3714,
+    3715,
+    3716,
+    3717,
+    3718,
+    3719,
+    3720,
+    3721,
+    3722,
+    3723,
+    3724,
+    3725,
+    3726,
+    3727,
+    3728,
+    3729,
+    3730,
+    3731,
+    3732,
+    3733,
+    3734,
+    3735,
+    3736,
+    3737,
+    3738,
+    3739,
+    3740,
+    3741,
+    3742,
+    3743,
+    3744,
+    3745,
+    3746,
+    3747,
+    3748,
+    3749
+   ]
+  },
+  "debug_square": {
+   "n": 100,
+   "cases": [
+    3650,
+    3651,
+    3652,
+    3653,
+    3654,
+    3655,
+    3656,
+    3657,
+    3658,
+    3659,
+    3660,
+    3661,
+    3662,
+    3663,
+    3664,
+    3665,
+    3666,
+    3667,
+    3668,
+    3669,
+    3670,
+    3671,
+    3672,
+    3673,
+    3674,
+    3675,
+    3676,
+    3677,
+    3678,
+    3679,
+    3680,
+    3681,
+    3682,
+    3683,
+    3684,
+    3685,
+    3686,
+    3687,
+    3688,
+    3689,
+    3690,
+    3691,
+    3692,
+    3693,
+    3694,
+    3695,
+    3696,
+    3697,
+    3698,
+    3699,
+    3700,
+    3701,
+    3702,
+    3703,
+    3704,
+    3705,
+    3706,
+    3707,
+    3708,
+    3709,
+    3710,
+    3711,
+    3712,
+    3713,
+    3714,
+    3715,
+    3716,
+    3717,
+    3718,
+    3719,
+    3720,
+    3721,
+    3722,
+    3723,
+    3724,
+    3725,
+    3726,
+    3727,
+    3728,
+    3729,
+    3730,
+    3731,
+    3732,
+    3733,
+    3734,
+    3735,
+    3736,
+    3737,
+    3738,
+    3739,
+    3740,
+    3741,
+    3742,
+    3743,
+    3744,
+    3745,
+    3746,
+    3747,
+    3748,
+    3749
+   ]
+  },
+  "D1_circle": {
+   "n": 20,
+   "cases": [
+    11000,
+    11001,
+    11002,
+    11003,
+    11004,
+    11005,
+    11006,
+    11007,
+    11008,
+    11009,
+    11010,
+    11011,
+    11012,
+    11013,
+    11014,
+    11015,
+    11016,
+    11017,
+    11018,
+    11019
+   ]
+  },
+  "D1_square": {
+   "n": 20,
+   "cases": [
+    11020,
+    11021,
+    11022,
+    11023,
+    11024,
+    11025,
+    11026,
+    11027,
+    11028,
+    11029,
+    11030,
+    11031,
+    11032,
+    11033,
+    11034,
+    11035,
+    11036,
+    11037,
+    11038,
+    11039
+   ]
+  },
+  "D2_circle": {
+   "n": 50,
+   "cases": [
+    11100,
+    11101,
+    11102,
+    11103,
+    11104,
+    11105,
+    11106,
+    11107,
+    11108,
+    11109,
+    11110,
+    11111,
+    11112,
+    11113,
+    11114,
+    11115,
+    11116,
+    11117,
+    11118,
+    11119,
+    11120,
+    11121,
+    11122,
+    11123,
+    11124,
+    11125,
+    11126,
+    11127,
+    11128,
+    11129,
+    11130,
+    11131,
+    11132,
+    11133,
+    11134,
+    11135,
+    11136,
+    11137,
+    11138,
+    11139,
+    11140,
+    11141,
+    11142,
+    11143,
+    11144,
+    11145,
+    11146,
+    11147,
+    11148,
+    11149
+   ]
+  },
+  "D2_square": {
+   "n": 50,
+   "cases": [
+    11150,
+    11151,
+    11152,
+    11153,
+    11154,
+    11155,
+    11156,
+    11157,
+    11158,
+    11159,
+    11160,
+    11161,
+    11162,
+    11163,
+    11164,
+    11165,
+    11166,
+    11167,
+    11168,
+    11169,
+    11170,
+    11171,
+    11172,
+    11173,
+    11174,
+    11175,
+    11176,
+    11177,
+    11178,
+    11179,
+    11180,
+    11181,
+    11182,
+    11183,
+    11184,
+    11185,
+    11186,
+    11187,
+    11188,
+    11189,
+    11190,
+    11191,
+    11192,
+    11193,
+    11194,
+    11195,
+    11196,
+    11197,
+    11198,
+    11199
+   ]
+  },
+  "T_baseline_circle": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "T_baseline_square": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "T_dense_circle": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "T_dense_square": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "T_large_circle": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "T_large_square": {
+   "n": 100,
+   "cases": [
+    12000,
+    12001,
+    12002,
+    12003,
+    12004,
+    12005,
+    12006,
+    12007,
+    12008,
+    12009,
+    12010,
+    12011,
+    12012,
+    12013,
+    12014,
+    12015,
+    12016,
+    12017,
+    12018,
+    12019,
+    12020,
+    12021,
+    12022,
+    12023,
+    12024,
+    12025,
+    12026,
+    12027,
+    12028,
+    12029,
+    12030,
+    12031,
+    12032,
+    12033,
+    12034,
+    12035,
+    12036,
+    12037,
+    12038,
+    12039,
+    12040,
+    12041,
+    12042,
+    12043,
+    12044,
+    12045,
+    12046,
+    12047,
+    12048,
+    12049,
+    12050,
+    12051,
+    12052,
+    12053,
+    12054,
+    12055,
+    12056,
+    12057,
+    12058,
+    12059,
+    12060,
+    12061,
+    12062,
+    12063,
+    12064,
+    12065,
+    12066,
+    12067,
+    12068,
+    12069,
+    12070,
+    12071,
+    12072,
+    12073,
+    12074,
+    12075,
+    12076,
+    12077,
+    12078,
+    12079,
+    12080,
+    12081,
+    12082,
+    12083,
+    12084,
+    12085,
+    12086,
+    12087,
+    12088,
+    12089,
+    12090,
+    12091,
+    12092,
+    12093,
+    12094,
+    12095,
+    12096,
+    12097,
+    12098,
+    12099
+   ]
+  },
+  "L_baseline_circle": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  },
+  "L_baseline_square": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  },
+  "L_dense_circle": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  },
+  "L_dense_square": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  },
+  "L_large_circle": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  },
+  "L_large_square": {
+   "n": 5,
+   "cases": [
+    11200,
+    11201,
+    11202,
+    11203,
+    11204
+   ]
+  }
+ },
+ "acceptance_scope": {
+  "date": "2026-09-09",
+  "proceed_shared_belief_comparison": true,
+  "scope": "Shared-detector/tracker marginal predictions, adapted planners on the registered CrowdSim unicycle task; not original end-to-end systems or isolated Bayesian necessity.",
+  "evidence": [
+   "snapshot/goal_audit.json",
+   "bridge/interface_audit.log",
+   "snapshot/model_gap.json",
+   "snapshot/dynamics_crosscheck.json"
+  ],
+  "dynamics": "40 development layouts: all four Bayesian diagnostic variants SR=100%, CR=0%; penalised time changes -0.05 to +0.1375 seconds. This is supportive sensitivity evidence, not proof that comparator performance is insensitive. The arc-with-mean-speed diagnostic is an approximation to the native accelerating model.",
+  "limitations": [
+   "Native continuous prediction and CrowdSim turn-then-translate execution differ; disclosed with the same actuator limits for all methods.",
+   "SH conversion matches marginal covariances, not the full cross-time covariance of the CV posterior.",
+   "Native stochastic solvers are not exactly reproducible across runs; report all three repeats and cluster by layout.",
+   "Off-axis/away-from-goal initial-heading probes failed; formal initial heading is goal-aligned for every method.",
+   "This comparison alone does not establish novelty or Bayesian indispensability."
+  ],
+  "execution": "Preserve running CC D1. Subsequent stages use one local worker, four internal threads, with no scientific candidate changes. Re-run interface tests after transport-only edits before formal freeze."
+ },
+ "legacy_development_sources": "/home/abc/temp/modern/takeover_20260909/original",
+ "sources": {
+  "/home/abc/workspace/bayes_occ_mpc/continuous_mpc_gate.py": "64935ec2c280eee7be0dac9fcde037a9f8c549fcb32d6caeb2ce49e46be7e45d",
+  "/home/abc/workspace/bayes_occ_mpc/unicycle_mpc_gate.py": "f00867a5c654d6b176160469af9521e28ded17ca2cc20807e1a743763715a164",
+  "/home/abc/workspace/bayes_occ_mpc/modern_worker.py": "a2a5fdba62b637e7480fa885c4e2d797204382d7231766d4dcda82028e50dd8c",
+  "/home/abc/workspace/bayes_occ_mpc/evaluate_matched_safety.py": "12f3d0a0523cd7c89be7944a4cddf9e94e39be2ea5f0b2a513b20c2b0c59950c",
+  "/home/abc/temp/modern/candidates.py": "94f4aa3f1ec7a000fde8cfc54177c23033b12918ab58087a9b01341cfcc94a1b",
+  "/home/abc/temp/modern/case_registry.py": "1ff16268d0240d0e8a0600ac14b4bd2e330e6dba61bbd8d628811cf03c3b6d59",
+  "/home/abc/temp/modern/analysis.py": "5ef0bb3e76bdb9916a0548f5c4760bbcbc195d7c4e1b5c33434dd2f88e3c2141",
+  "/home/abc/temp/modern/freeze.py": "6a1753cd3043410469ae8cd07f7e1f6c19979047ba2ccf82391b6ed90ff2ee3b",
+  "/home/abc/temp/modern/env.sh": "3004f35d3efdc347a5af96fd61b95a0307255b2e089ff67d5a511b64c6666ed7",
+  "/home/abc/temp/modern/build_variant.sh": "2f0b1371bf57d49161cafef46f5c9f35fd044daf94e930c7f64ec9686830ebf2",
+  "/home/abc/temp/modern/deploy_bridge.sh": "513450a170c7a332c0547306d49e6003f684048253507b7a9239a8278c025b88",
+  "/home/abc/temp/modern/bridge/mpc_bridge.cpp": "1cd829a96960209ac950dd438136ed9e76ea84bd1b209e2e7ab45f2a60efcfa7",
+  "/home/abc/temp/modern/bridge/run_bridge_cohort.py": "4bac39542e7f99b81cce00ad85dddb1437de6c73b10c59b25685613612e6bc1f",
+  "/home/abc/temp/modern/bridge/verify_uncertainty.py": "0c5a62871f32dcf6e9170ecf25048fa09a75e5945c0c60dccb54c5737d13f2f2",
+  "/home/abc/temp/modern/risk_sweep/front.py": "e5f46d44213d98936ff897fc33d386f047f963b0f4fcad9b5381ea328faf0f27",
+  "/home/abc/workspace/bayes_occ_mpc/bayesian_rfs.py": "c3622b4c6a1b7051d91a42a666919bb925f889fec6a6dbd16a692361c8421a4f",
+  "/home/abc/temp/modern/pipeline.sh": "2c4e5ee1b9fff73db8523821276bd4346b546a19803c412d3238c9bc903903d6",
+  "/home/abc/temp/modern/supervise.py": "d9e1a3aa8c77209da9bd4126269a1def4d8660046467a53460180ee864cd78ad",
+  "/home/abc/temp/modern/snapshot/candidates.json": "df7e1db8a60947ea161246245e158033e08970bfc2d3356fadd31aeabf04e0d7",
+  "/home/abc/temp/modern/snapshot/case_registry.json": "859bffe5dcae25ffe8335d13b1c666b90906c58399a1b8b4dd5252a799a52931",
+  "/home/abc/temp/modern/snapshot/d1_selection.json": "1e800fdff369ba18e8dfaa1d4a98abffa43a425538a9e3ed1f118b03824a7780",
+  "/home/abc/temp/modern/snapshot/d2_selection.json": "73a0202414499e1b23af38f03a10f411d111338b9049c94631cac5180fc0e455",
+  "/home/abc/temp/modern/snapshot/acceptance_takeover.json": "0715d33c76e8bc005312103acf7f1b507ad3123e150faffeeaec8e1849f62569",
+  "/home/abc/temp/modern/bridge/interface_audit.py": "d849fd7abdad67bb44cd245c4121b3ef4e0f5398ccc969e0be0dd37aa4c7aecf",
+  "/home/abc/temp/modern/test_takeover.py": "61fb19ca11066af3532b16f9ea77bf2ff57e559ad1b2199f30b42a0c9a39129f",
+  "/home/abc/temp/modern/snapshot/dynamics_crosscheck.json": "6d83caca053ea18db2527be3722723071719917bd4e4f57b254455327a5ebf80",
+  "/home/abc/temp/modern/dynamics_crosscheck.py": "d8d5357ae20d5d14ea078f67082f3fb66e725e8a4af3774cd144fe7acce1288f",
+  "/home/abc/workspace/bayes_occ_mpc/build_modern/shmpc/src/scenario_module/config/params.yaml": "4a2bcb7bcfe714b4c9b8fb497fd94b9eab82bf9f0719ee22354ccf974a2e1eee",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/__init__.py": "d7c25e84bc3a8aa1f6b58d0e87430117d8c2a8f9c8e2d92af1229118e0a7e6c4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/__init__.py": "7ce4d6b62cc05f8cbf7b5d2b7d43b61c637d2ee32fe60d8d43dc044ccf004917",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/occlusion_belief.py": "6b66149bb685903135df734499537fd80890973efaa6af1814e2b1b98f6a16a9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/crowd_sim.py": "cfc5c977284a240639280caecbc602a64df1302d14f98f1d274a80a038b97eab",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/crowd_sim_backup.py": "f492ea72e9a7c06ade92d003a25623d04c49e338161ec8cda432ab0d0a90e80d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/linear.py": "e5e55833c45ce64cafee3c5f6a50fdaae7c2664b663935800f98d4da5fa937b4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/sf.py": "efa4f3ce9c87dd000ca2183e764062068ddb541bd649380a673c7b6ec848e79c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/policy.py": "d73f0fca7ad2ad3cbb6c6a9324ea0d600d8b9e68c46b363c5ecfe5f92720ecdf",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/policy_factory.py": "851a07050076a1348c3814b5a52a748847ed31e21fa1fec8d3286bdf0749f0e5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/orca.py": "3d4eab21a556a8767f0fcfc962b444652385c21d29b2ea22a38b711d6df50967",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/orca_gpu.py": "4d9aae4e187c4a8159c408387ca93596fbaf529e9fc148af3f94a1d5962f7508",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/orca_pure.py": "fe2661a54ecad9bf349a9d8eb1049ca5d4fb0d45aac0488c8d1b9909950d9e52",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/simulator.py": "8de3e2872fc3c0f060395cbe5314fc800967db199b1f04faac3b1e24dcfa7708",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/potentials.py": "f3ef9f63e82336c54b579ef020f926fc0a96763f1308d24af4431a6d5e3e4e06",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/show.py": "92734e5d6cc8566d7e2fe3080e4623e6449aa9768880411180316a0b7d7561a7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/__init__.py": "5837bae0d3c30c74154b967bc8599befbcc3ac3b9b09630b33b6bc2f6488af77",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/stateutils.py": "7a5788c13a42b874f91f8efb64e657b9d52c6a8b452854c9857edec35c6814fb",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/policy/socialforce/fieldofview.py": "475d6db36dd0287e44444127823810c1c1686dafe3ddf7ce905b6f81de79ae6d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/info.py": "af1928ae2c266689b655741630d9bcf65213a486e9557b7a1003ba1762c4c7ec",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/utils.py": "fbee6ffc321abbfed833d906b8c5e40a9f4d829f993edcb0ed1e6f9cb8ee7d77",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/agent.py": "3861156a22ea9012e8b73109d871e72d13b234264d6bbc12535e7c988bb87be2",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/human.py": "ed51807d9511a677026360029c4528c6305e010a1f83be55b9da17c7ab01832b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/robot.py": "5b63e6747864fbd08550660ddfcdea31386ad8e002f4ace7a3027002d2bb38a2",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/state.py": "b7b65142095d926c98a19139ab7ab1305dff48735371a3d023d3ee767143a510",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/utils/action.py": "643a2ebf410f503e8d667baa154d12254eaa9efcbbb45cd1ab265fb31887ed5b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/train_fast.py": "d6d2155b9c06161a9e8a568273ffd4bf754b8f7e7ab396273308d2e58eeffce7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/quick_seed_test.py": "009b221c79e0c103a9f43ad10dcd46dadba212ebf009d9c5fe2a215fa7f9748e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/pipeline.py": "30116fa12be0b5ddc40e969c60fef37e6da8987cbae5b80f322f2774708d3558",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/simple_seed_test.py": "15770ff0f032d9c43c06586dd60c225a880142f5b9ac08c5ac2449303071baa6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test_occlusion_belief.py": "b79d0326a11fff74a818ecca4f91f454ec07afd622a169cdfd5c0da70ead8096",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/leg_sarl_node.py": "e4677aa0fca35c211f1dfd510d1003b71543cb1e505eafa81d529e88526012e4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test5.py": "0d42fa2b9e5697570da930f7b00f95f2f0e89f5f3c2b86e5cc4319f123015985",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test3.py": "1ea977751bd7758e67ceebd355ebb811fb6fbb33cdd5a1e7d9ac80390415fcb1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test2.py": "c3694145d0cf6c3ad33b1e62f2d9b287e8e4b42083dc3de43d944a975ef24858",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gdbn.py": "68d8335ec74d3eb6b3f35817fd3a65eb937edb5722bd94465ddc1001b07ce445",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test.py": "4e29357f7b2571cebf19efc6c79d54400d1a9a5f0f17f9c768630b456a308a26",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test_optimized.py": "8b607ff523354f17b8a2d82509d031de4b1eea42a6d4462d623fb9f55147545e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test4.py": "5a6554594ff6199bcaff5b7bd4b44f398419935a4b78bcda097f4dd1f9339d96",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/find_best_seed.py": "4622ca11fad3e7af86fecc46c17ef2257ed52fc33008b2057434be6c13bb6f36",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test8.py": "332ea5dea46c66a59554c588a57f71a92e38b7ecd156a8b7105e8dffb3ba17a8",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/contracts.py": "2f4ff0624defbd9636d0ae5e0add3d684558f57307d3f34a9560d0757f543623",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/1.py": "f410f708bd054b021db89ebd94df5ef5ed1567850ce741e97a9cacdd5975039c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/train.py": "b7eb225bb5d8d91ccbddc9b6cadd7abca47866f66ab88106f745bac78c70d870",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/analyze_lr_results.py": "34c07ff055efbf2586fbd1dba605cb63803597b7f3d4ed1a046f78a6113b355e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/contracts_gdbn.py": "7cdd0aeea2f87efb064391c5d0954e8cdd79a7573280899ff6c3af34703d8af4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/crowdnav_ros.py": "aba7867c2cd2317939ecebdbd6b0e23a6903df947223f5e79cdaeceea2942a1b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test7.py": "71c73bd244c3ce877eb32be28a6154cb43e18496b7e58d694b501420a65c17a7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/test_gdbn.py": "7a21969ece8fd5540d4a4a1c1c226d50dc871904e1f369f65d80b6f8aeae93b5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/risk_models.py": "8395676616eed7b2067fa1efaf67d6174ac215d9a73e3ba8cb3791cf9d19b945",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_space_rl/evaluate_checkpoints.py": "6127899ae4eb2bf2cd287152db6a6e40f4c9a1ddd5edb54a2d2dfdf457bdde17",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_space_rl/model.py": "d299f51ca4d9a4b0193e0bac6a800c292a9e22800b18efec7d6404ad5d514a6a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_space_rl/__init__.py": "1d0f96cb4d8fc18b493f6ef0255460b85d4dfd5acf04c343962552e3790570d4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_space_rl/train.py": "727af4a421037ac28f9a6b03d7186fc3b0a4cb241b9be827e609844c6868b086",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_space_rl/runtime.py": "0254e7254dea4de0331f9d11ff9b9f777077cc5805c8bb93a75d5377b145c4ab",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/d0_record.py": "1ea25217e3b0a39773779bef9aec94681c6d552d28a41eee4e5811f74116c742",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/d0_probe_b.py": "c0191e46907abfca7d744ac33229a67fb4111d24bf69cf5c326acccef533c79d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/d0_probe_a.py": "a38e33733fa43486865d330dd955c98f4915319b1a88fef6eaf286222a696366",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/d1_policy.py": "5ff9dba05d6bfe1cb7bb7134fa4766dc8909b20b82231dff5eecd0a15ce68d51",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/p_horizon.py": "bda0b3440830a76a2b39959a1f11bd72784a02dbb44de32393c3cd5169e9b47e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/d0_probe_b2.py": "94cd169113d5ba9abf4dde74e61a46ea003a9f31d0719a7677fc47614c70c793",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/v_velocity.py": "849297f6ec75bc5c5945943ab73038e8fb37452558bfd548a815f58db0568506",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/vendor/intent_tracker.py": "89f98bbcb5e34c6bd71d0407e69669ab933353b180a70597e9e0508158b440d7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/vendor/scene_candidates.py": "3265c3b3907db385f077dc843f1eb1fa12dd143d1bce27a1268297a3cdd518e7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/vendor/__init__.py": "1b9c63a08ccb0b7d6388c171d4b3e555be97e986f6b5e5b1e23437d39d59249a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bsw/vendor/intent_runtime_config.py": "57625453934e60cefa961d3e9617b60eb909c3dbd5d5c02c064caa94a96e2236",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/evaluate_prediction_gate.py": "b995e411fa8980a9fe90979451bfe6e9eb71f9f5ffd732e863cdcc19b8a746b8",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/run_prediction_gate.py": "aeabbf6500dfb22035ad089050d02a3fc564229b29e3d3c31006205fbb0d6eec",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/__init__.py": "30eff88086fce561028c57742cded5c6a22ae5c20570f4fc39e6ad384d2af131",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/collect_nonstationary.py": "51f4f944f5a064c3ac181555952476ff76451976f392f7acc37cb96392f9f286",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/calibrate_bma_cv.py": "62b5ae018e772bf06ab847db3be1ae8e76a8a068e3b45d99e4cbe5d07d538e06",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/evaluate_prefit_gate.py": "97bd89d7f2f3598f4abb371d566112a948a6132ad123520a971c5e43ae42350b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_pilot/protocol.py": "5858cecb1754da43daab07f3dde0e5fe248748f1eb77cd5d3eb6c27026d7383d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/nonreciprocal_policy.py": "7c3069dcca2b617f3458e9c07ad5b6580713a43b6f6857e45a6409b012ded469",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/trajectory_sampler.py": "8d9d2531357675eef8e78459bbb07f82a1fa29f4400d1d96d2eead94b97a7900",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/statistics.py": "69d7f2ee3497962167b0fb4a383c1d023309b943307b64b713bf1de4117d63ec",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_selftest.py": "8b606c744009108eb38682a5e422ccf072f19a878f7788e7c4748b341abc098d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/config.py": "fbfc1ed0064a8ebcbb41c43a602ffedc274ce67036221fadd0ef15a5ce937357",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/test_upstream_equivalence.py": "f1a69a74e8258e4f7b2e7cf2ea7686b00c01c82232e5ec97db13d670822e8056",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/interactive_crowdsim.py": "a63ff674c8193c7b908db64ca232fde8fd6b57da0d0bee37de357dc5b7627d5f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/s1_pipeline.py": "449ab128ed7c00beb952d2171af610ed5465921838899d295e1601afdd3665e4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/schemas.py": "471d4615c1bca1c882fc344ecd88c1762954dbae4db53b04b27b78f117749e94",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/evaluate.py": "bcf7826cefb5a7880a4c71e0335161f4b08a1512f31dc94438acdde29eb10cd6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/robot_sampler.py": "4c8b0ddfd93887c81e5c0e99bd99dcce9df7ea1f502f57c5a1c10571945ecc2a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/belief_tracker.py": "f943e2c61e80f3056d0e793e2c3b3530b1975e6636611bd4d22bb4b39812507f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/s1_protocol.py": "9ab998ba96f5bd82b25aca4e1bb048d725b1ef7b3bce730a50b06396f4a1fb74",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/decision_oracle.py": "d72a5af95bedaa8d7f3a5856f3a822b88ac2788d41d4cb4bff6241aa5362c99f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/interaction_protocol.py": "b0086093cf2806f5349a75c1eaed55f51cb6e6c5320a1b3bf2095edd8f6fd427",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_runtime.py": "098c2c62ad0c555a8331ff5a0b97c013e323efd5c147c7e1b9634967fed51673",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/policy.py": "d576a57d24586f4cb1e3393aaad1c8202ad44b5f516012defaa632b21d1ac580",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/gazebo_adapter.py": "c99d6f8b566396f7fe8c55b0d1f42391bbcab6fb2d83e04e24d9270870b0ba27",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_s1_pipeline.py": "1cf26b3f56f8c046fbfafed79bace016ecae29e136fa89547d17f3abb6629f82",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/multimodal_s1_pipeline.py": "128fb35cdc444e3b1f32405818cd994bc66339d180b7bf1037d99539e0c43c09",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/__init__.py": "fe3d9e7cbd0ef549d4df4b5d44dd0f9dc929d59e0b859a0eca4d634bb2288904",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/decision_oracle_selftest.py": "aeb9e3312d064ac237323cf39aa07b90697c54d8ba7c8a23a94349cfacb1f623",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/collect_dataset.py": "390c63036a91084f20dee1905be3432cf1fbc35e57dad717569c6fe6e0a89e29",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/selftest.py": "c1c4645a002957122c718403882ac77ab6a2fb9757bb770a65c3590283f80f73",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/test_integration.py": "877662a828f0dc995621bbebb99b0376084e9d8a88389d5f9cd4a93cfa74ec16",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/action_conditioned_arhmm.py": "235d58d50440ab10dd307077bf32810004fb5cf27989ab1280cea447e20e0738",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_pair_data.py": "ff69389e2f7176148ba55fd2d3645a65c308c3d1edcc9c14c65367e9dd1ba73b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/brne_adapter.py": "021e73962138f8c836d9c64cf343a2a5c7c1b3caccabf3d7de76d715debdd143",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/multimodal_selftest.py": "c5073b27774449c96e1cce9af9027ba3f74cd116b179dd5d6e97072a15ab1cce",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/mode_model.py": "7065e40f5b138d70b91340b4eea742217ad73f1c6cf412ed9cca946d8bb15b38",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/diagnostics.py": "012f55d3f3fcb1b3104cba0da1b681d5585e982bd298e404b5f517ba92682b2f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_evaluate.py": "cd4bc575cf7bdb528a7e01301cdd9a08b9b97eb72375f30e15dfbd57a9037862",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/equilibrium_loop.py": "22c194419078962c7c31ad597b388fa193bccac0f3bae84908a885d03b0dde16",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/data_io.py": "a72923b450e4002e85a8093f1ca885fa525a6db4052b6add2835ed7cc755eb0e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/provenance.py": "937343c381e07c0fb3694054a5318d0fd96531c480894fe23dd3bc6d0b1b7ea1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/multimodal_evaluate.py": "fe639619ad8fd46684a05bf50552267b3f1795ff17723140716b85890e163731",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/sparse_graph.py": "85a925d0411178952eecaffd3ae31226b4f8b2f6878cd06fab9074dfeb80b43d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_brne/causal_response_arhmm.py": "645a094fa839a349bf3843bd282b7ee1badfb6d59b2465dca575a5552a9b5569",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/bayesian_fullcrowd_risk_value.py": "752597994ddfe90d06c27acc30b3a8c738844d20ac9f5f5d168498c9002a9084",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/mamba.py": "54783120e5051e81ae22b035bcacc0dbfb5bec9fc9abe3ed13e03b338c1ac642",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/cadrl.py": "cda63955622fd01043b3ad660f7c10ed39f96d00fadbd727460e638da024930f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/mamba_rl.py": "41f3d9f41501d97e1908f7cb3553d9b8f62aa7c97a8b995093f440e8b63d543b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/mamba_rl_gdbn.py": "ab9ec49d65e4f0af3a3d60e348cf30c4e48dc6a3b78ce31caec6f5b5bd2ef359",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/policy_factory.py": "496d614b9514b64a91b64128ebab83676bc0472f52bb8dd07dae95345c26034a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/dsrnn_policy.py": "d502390d1ad1006a524e95a1cc5c509c9c59ce70b7af1f54f55ed5c699afe4c3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/lstm_rl.py": "4a5051fe5477db24de688d1f90eaeb904c3a7db866c2e8838c6547b0d5052d7e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/cv_fullcrowd_risk_value.py": "83fc8305fbca3e4531538001e10cdbd59189406f0e7023fa0fc0d87a28a9cb07",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/mamba_rl_ppo.py": "48787eb92ffe1453184b19051e73606cc7e3f7f82ba665c1fb22569d1967766f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/attngraph_policy.py": "c7ab20ff95fb35c68dc2a2e09266082de06aab626d9db4c2bf060c6b9925fa3e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/orca_wrapper.py": "66a52054fb9a74c72d4def5bb72083076b111f596acf563ba13c8ea66e957c80",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/sarl.py": "76e88bdd1af548d25bc47a1ff3f672e4ebc73eeacc9a483918097ec218761b98",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/multi_human_rl.py": "33dd6c29c98f7fffb0a5f00088bc4fbc509221a821d46a9cf307f81eeaf70d7c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/bayesian_model_average_risk_value.py": "c6a787fb581ea07efe9e94c2b21417e6fb3f5e05f4550b0ad573286b110a4d73",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/dsrnn_configs/config.py": "4e405a8c0ae9af50259873a5f50d57005a5b9ba917ed233e84827ba05aec8dc6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/dsrnn_configs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/evaluation.py": "b5899ed457829eaad1aa2fdf0c4e29dd5375767a8d8b2c541d809dd702365f1e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/envs.py": "737f694dd643e03c24f0e2737a3291c5a6ee6d0f1fae6aa849b47db1542e7887",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/storage.py": "795e1f1e31a1daf41f4e9843a3010defb5fa46862a95f9966120d993c726503d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/shmem_vec_env.py": "0e6f3e4ba28dac3a85f1697aa35b787eb15c05e05d144bab25784bd3aa309397",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/utils.py": "cadad9690d0cf3b87c14a83e3b8d6f9422972c8e965b5385a4f7ceb5e071ab50",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/model.py": "72d24587b33574b69ed850d008150e3cd2f983599d6ed0f2d431b88834da2020",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/srnn_model.py": "c2d2e61a163ec92cd9664a57fc3e13b42844d1b22a7f30f7a9706713c1c9bbc6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/distributions.py": "2ed3f91a6eee406c0d71549c15243a9100a9c28d9ce4b9f3c6b52388d941eeda",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/algo/ppo.py": "aa56c0590c7761a41643e5dbb6ae12264b27a3f8bc867aa4a73389ab0c9fee59",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/policy/pytorchBaselines/a2c_ppo_acktr/algo/__init__.py": "7e633c99320cc17174164cb8d07356150db9afcc797d5e1846603d342a57e2c7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/vectorized_sampler.py": "59056002a8415f545fc4c15ee8a1ba771db57632c9c57ab3bdb865ce99d84755",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/memory_simple_sample.py": "75485b28193027db34408ed1e1a977922dd52d0608f6da3b77fc9ac4933b165a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/log_formatter.py": "f6ab0ba6350d9bede93a254341f4e760c505dea25a3382f1f0019762c620367a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/plot.py": "5884fa46c85e05bfb48a64d65723288d0ec610d269ed274d02b356743630c2fe",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/metrics.py": "3d0e0eeb52805375ed32b0033e4e8dc3ffe128f74e358df4b488e6fdc4cca4c8",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/data_utils.py": "13be8bbbffdc9735b22f60782ecbb4726ad8ede6c903dabb6d2832760038df7e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/memory.py": "9a0fcd344ee95e355344b1e0d5bfec8f0eb3ec0de26deeca3f32c2c16b327966",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/ppo_buffer.py": "a2647a3aed2a3f704cd6945e45fc4f24eeb56c938dedc705c754b67eb065364c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/utils/explorer.py": "a3f5eefb70fe54eee6917ab72d1451ea7876935f699fea82dced18747ef96fb6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/junction_scenario.py": "58f4f1ccd7adae7a3e27f2d6872b1fe121fb7a67d12b3a0f62290c7b5864602a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/geometry_features.py": "2d15ae1940f8a4bb8f5f59e2533979cf58a7004b669932b07e7527c49e6586ce",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/evaluation_protocol.py": "b793e5bdfe2023718f2507e52ac8a527eff1e3150ca09fffd4dfec9a7a23d6a3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/statistics.py": "6939767521c907663df37e664b4ed075158ca8f428b74d9ccd13ed03ae3613cd",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_tracker.py": "2ee9250281a4bae152f00ab55d2f1a3fc3e6c24b56f363f997c1d2cb37c5ab88",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/source_manifest.py": "ea9246fd96fbf15360ac994d2648177e2a58a4fbd735eab088305436a8673e20",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/normalization.py": "932c269cb7c9befd6e5cc1046acd4ccb6ec70039636400c6c5b604a95a5ae7dc",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_config.py": "df3c56bc90ba0d985b502ff0a30c3b02fb777043eedfa11e78f9a9aae54d4271",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_selection.py": "39690aa41e286facd0192b3cb275092c7baa04382b615c21b8ab2eca45e2d16c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/evaluate.py": "7c603e23bbda5047c981f5697b9c79aff3fe86a6730a0282d6dd884663b985c4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_train_cli.py": "29068fba6cc77067e85589d33b3c9b658a006a0a1418c57530b2c5560614100c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/model.py": "7b298da88b2a0d1cbc652c3edccbd49fe6680488b3b54aceed87d5e017b7948d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_monitor.py": "5d4c1421e29b4b58ab3cd770037a4455b1bf6afccc10fa10dd7e7280bd1a9243",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/scene_candidates.py": "d53d232fa8e83d2b6bd9abc2d77346ab7b80c3520f5fe098f578d3d8313cfcf1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/ranking.py": "2718698af9674f9af6d0921f304290f26e50a3bdbb09911df59ed75ee0a78173",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/set_encoder.py": "00ee5f03756eaca01b038af2028c56976dc0e595c35f28600051b9737b9867eb",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/__init__.py": "accc478ce4bea0b6149bb7dc1beac97e2411c2b4664241f2dc67f363910357be",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_crowdnav_policy.py": "dc1ad1b6a1382d683a788bd64cd0055bc34e58fd3008ee1aa1bb8b21f34b9bba",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_policy.py": "01702dc06882d25a0c14db0e999b48d6d6d29452d1b9e4f39b552df9e7c52ff0",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/selftest.py": "3bc9e3453129e1cf28672acd659b9d3aeac4f35c8638620517c5da830ac85e3c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_runtime_config.py": "57625453934e60cefa961d3e9617b60eb909c3dbd5d5c02c064caa94a96e2236",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/candidate_audit.py": "695c66971086cc63993ab45984e4569808c0f4b0ef3efcc74d61259ab12c04a6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/contracts.py": "d49e64c2b9150c9d2e5eca6b9239f6394bfbaa4882be2b64147062cab10dc0d6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/iqn.py": "5e54db17bad349a5979dd0247c808ab848dfc5abff56b553b9511d2cc521b139",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_evaluate.py": "989672c43e984f66e4a5f3f4f568ea634bf14bd833cd71c2274a3f1294c5abad",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/intent_train.py": "a3896b065a7e6b7de802695d27f49ee2c4fe5fb43e2fb7a6af6412c17353e8e9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/run_v0.py": "461fe3057213530c14ebea4bfe152fa3f9c7af66adb4b07db373c7e895312ceb",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/learner_states.py": "84612cc25832ada3596a963de55f45cdb4f06faf77f728b774ac134d65dfa3a6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/lookahead.py": "0495561153345bef604d982773bbfdf1f16592b60f1dcea5b8bc3b6b6ef0d1ec",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/rank_data.py": "e7725652862084d4dd9bd17429f82d9b4a04d18b16ddad93c7f969f38b5adcee",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/value_model.py": "84dd9d7d025c56a2ad18a82d6d71fec393db3866226ce4855586282cd5bbb4eb",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/collect_learner.py": "8d15912641da56d9c8dd54f264cb964d2b9e9afb0d33eccfaa0c072002f6e45b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/v0/scoring.py": "17830671dcef7b24c598e5ce71c2ca05ca0a6871b77dba0a46742adb21e47de9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_cli.py": "0e50c2f7ee0b43182612ae5dbe31b871ad39e3d791888d4453dbfebd2cef7575",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_training.py": "162beb5913d148a33d2e2adb2bf53e3a6e5b5291985cf3518a3bd5ba44ee0856",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_integration.py": "a3b51b5bd9c3dae8aa00dfce59e32607017f8ea449895b6ed8e5a6de106dfce9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_tracker.py": "a553e834424f8b5133695b4867834548ea93eb2870ca7b1797f15029d88d2264",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_scene_candidates.py": "71d703260ed828597a44e7bd2000e27c185942ba8eef5882e8ae95b66e2e0386",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_seed_roles_v2.py": "fd634c53736961943ef0a16c4a0a2b2ab1bca4e002754613f61dc2d15f08ac99",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_junction_crowd_v2.py": "a66a936c31700d972669dfb69108ebcdd5744667105b8e64283b65883e914536",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_monitor.py": "5067eeeb14cd57a65edbad891281decc502add32eb504dd8688ddb845ee6f924",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/_common.py": "60911ed3595bc922c2661a6d655c4debbca991c7058e5cca71648015825af167",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_intent_policy.py": "b7c466c2f650498f34709875a53dac9095e62268a3463e1c4a0ed14f1b40cc69",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_post_adam_alignment.py": "edd39790732b2aeed4e525538ba5d8ba6ab7ab0e6bf049b9b22942ab9d6b2716",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_candidate_audit.py": "5dded9ead432f01fab6ed8e80e54ca288c9620fc6cf3688da853c3c55072f12d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/tests/test_abort_types.py": "62d3e36e04379f25baa681ea1175af3e81518570978646c8b73b4714ca02de1a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/actor/model.py": "0f1a040c689a84fbb8f090f1dc7dc48c149dac7bd63bbc85f0d06f15c2b9e219",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/actor/collect_dagger.py": "bb085d967c7b5078698a9a675ee17277a8e4b5e32015657209f28fe86663466c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/actor/run_actor.py": "760b275a634321649b9b8e68e6bd9a9e00554879a6c35a04c2355f1eb469d636",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_dvl/actor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/stage1_gate_audit.py": "d5bb28305b16b2573989260929de5bb85b33fb11add0059308482e7822aecbe5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/test_teacher_equivalence.py": "02a734b1de4ff1deef8ff48bbfd38d10682288b11236d33005b00ba88413bb5c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/evaluate.py": "dcdddacd6dfa53815e3b0ca704a0dcbf5749894c34c17e22b0434178639c68e2",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/model.py": "bf2d8ddb224db83ebbc2116a6b1b7db6d3f712dd21f6edfc810510f5e2951029",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/hashing.py": "af0c7e9300223211073edec23e26fb05ae76f62249e992c07e7670f5a61f166b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/__init__.py": "a1abcb612d8aeceb2f17dbc1f27f39dc556228b36e6933fb68e145691f9d2f5c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/selftest.py": "6d0d1f96c87a8a246de044b6c1cacba3f103e45452748a51a7c2b42e892b9fce",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/train.py": "17d162a419ee570dcda2f70c93f23685d0780d949a9eac70608d40f39d07dc5f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/select_checkpoint.py": "d605ae760bbd4c672dbea48de94600c99c5b08091cf1cfe4ce696be303e18f90",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/compare_checkpoints.py": "6349ebe2e02b6ad567e680f1fd918acdd06fdb3e6b86a64892b04e5aed0dce45",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/belief_mdp/runtime.py": "1aa05d7948e0154bd9bb9e8772f0b4bcfae4fbb0779d5684be554cfbbcf5631c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/evaluate_action_ranking.py": "22a906a5ae2d6fd6d17df12ba819ee00c4af9c10648b93fc15cc35c9395188ba",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/bootstrap.py": "1ee7d04a17faa8e8bef5660b5cbc3f3f3229f87299f960d577834f2cd7a9b77f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/evaluate_prediction.py": "cbeef1f51db3a32d128892bb7b3ea3d30f2e6eed8f0b53bdfdc8ca12acbced15",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/collect_dataset.py": "361baddc664e47d25895413adf48e0e5db1e56c624cf5bfb8f9b7d3ec470096a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/selftest.py": "26577a1284e0c67df09ed96c0538df00bc478ee6033a9c353d5e752ef159446c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/run_gate.py": "6bffc8889dce1b7dd04aa2858f132ebeb7d141ccb8936ef4b67f761cf9141b20",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/protocol.py": "22055ee574da175399c1d5e72ae22b6c7231d528a1099ea69e028cb9af9ea3b0",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/bayesian_decision_gate/fit_models.py": "4b737b9b1a038577cb28c6196bf97b110f24acc874e62ef1e32be265ba5e61db",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_a10_smoke.py": "82f68a2f9f6ff832d0d3ea1f3f4c72b0c7d024aef58a73ded4bef2cb86259adc",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_a2_transition_equivalence.py": "a353b67a097b40a331b451abfd16d1b3278355c109333937b8733a7f6faba67c",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_a13_e2e_determinism.py": "8db7ebde6f6390c82f8083e3a8e12a2c5133a89e8b4f4785fa8547cf963db82e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/evaluate_bdvl_paper_main.py": "adce9e0306dcce5c4d5266ee6b5de4841fa1604ebb863d39893a5503089d06db",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/select_bdvl_checkpoint.py": "31ec96c74d8c71c10d536804634e58da5b883f70f5a4e8ceb3219a17e9265f4b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_decision_oracle_formal_queue.py": "02afac384fa8b1fb65c0a00767cb074bcb5881b728712430bbfc3fa75fd60c5e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/u3_necessity_gate.py": "1f393c57ce5760aeac9ec41f139e34427f614d4859ae4e47008782a8aa6409b8",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/initialize_bayesian_fullcrowd_risk.py": "6d27344c535d6f9396bb6c34a3e42539c42b66b0a73780d17fec0846dab3d514",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/collect_bdvl_r4_4_data.py": "606e466cd73712619c1dd6a6f9bdd1a880cea1f8b35d13a1eb0438282b45473f",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_s1_queue.py": "da4c6a844444db623af243988a2e257f0605f370e63608da7b652d75d05d19c6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_multimodal_action_sensitivity.py": "b999f01f66413525fbfaa9330c4df59d36b9fc5ba3f59bf47cf3c023c01e12ea",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/validate_gdbn_prediction.py": "960016a7981bae845843bdb044e73e40061599ec91c3cc9df1d6c597eaab31a8",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/fit_k1_gdbn.py": "5ee466632b322ad6e075c42daf3631cdcb851be63d46ffa57108183dacef2c99",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/merge_decision_oracle_shards.py": "c07202286f436328da1035915febcb891fb587ada09a9ec365a7f732b17c7538",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/analyze_occlusion_information_gates.py": "f3705d48f5a783d6ec675045ac1c83cc992d73fca3c2dbc4f6455898a3416a88",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/collect_bdvl_data.py": "6b7de46e9870ecb058076c9aea2a1bb7f39f37175cde394bde1d91a948cecff0",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/order9s_shuffle_test.py": "247b774697b29735d9889e280f7ca6cd18d54b4254d5c923f41a5de430f5da85",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_paper_main_parallel.py": "a91355900ebeb092ff842a5917b09ef83a995388061b15c273bd90778c7dbb23",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_causal_s1_queue.py": "0ec441ba1644acef7f2f6ef7f7f4c5d3058c1449299dc47694b4f917d7581813",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/summarize_occlusion_slots.py": "b948135652771f8afb8ab8a87e2a5865006e58d42dca6f05efcfa64edde4a80e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/coverage_report.py": "60c588246fc1753e6c01e12b7be3139e9a41b90df1c82289baceaaf40fa6d45b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/collect_bayesian_risk_trajectories.py": "46dbb67b74fc10586285381bc46ed9649b43e74fb7a27f857219a52cd194935d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_preconditions.py": "a2899e143c5ab93bcdabf6d163731757142131c4696e85c93388b9a2cf773407",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/sm_brne_smoke.py": "76766fae702a3dd12cc30c0192fdf9ca39eb835c73275b8eea7686eee571df92",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_a12_resume_equivalence.py": "05254f55fc7f121a356845719ff2505575a59bef5c5071fdc855582605f79ec6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/fit_bayesian_brne.py": "332b94edb1c5d8e757c198f679759acef9a46c0df7a3bf76c96d8c15c49d488e",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/generate_counterfactual_supervision.py": "628f397477ae5111d221a145f78bb59577847f542cec759298e8897ada05828d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_ttc_velocity_bias.py": "ff953614c4a12b3f26f780e6ff7ae719e61ec159339ffa5f64fc30c71a81b8b3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/migrate_engineering_artifact_r3.py": "083787e084f89537f518fede6f32c6f7cc68eda848182addc1aa99ca01fb5fc0",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/order9s_orca_negative_control.py": "42a45c821956e7c1279d660716cce6006624a83e519c45dbcdd2cd0c0fb4a6d4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/f7_benchmark.py": "fbd0b062393994053801ad1cf220b66c410f830fa0470b2f6e2b4655173f9a9a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_a11_latency.py": "344c87f79869f20f4023de5b16e52a6bf8379d6b1a341ee80fa703e9fc326e73",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_seed_suite.py": "7d735b6ffc17b26d27203e1b396308564b1ecf3b93c751bfed2ae310dec33324",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/promote_bdvl_cvar.py": "591f0cd8c37c758c5ac3ef7bba0abffde62eb1dc2a8d0b6fe579e8aa68f9723b",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_bdvl_queue.py": "4ec68d5f4129fa929038eb5d1631110fcce3cad987effc65f83b0880a8415499",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_b9_legacy_policy_regression.py": "071759f607a6a9cd88054c81867a43959d617f43743361c0edb4107ebabdf9ca",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/evaluate_decision_oracle_gate.py": "46a41848fa998f8d027f0f6c0a03ea222e565162f671e0fcad604ede4c7e84d5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/evaluate_bdvl.py": "832962a77614271d4f0207fdda7b070f394457fe635b5198bf0f3a63caa16e88",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_multimodal_repaired_pilot.py": "a881b97cdab618f190417aead2d9ae041a0e9d0b82eb6286b765a8c31a6a9362",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/analyze_candidate_diag.py": "4a166d6ffe88a66e241f1554b59bf5179934dbd3cd329d3a76031f4c1015f9cf",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_orca_protocol_mismatch.py": "b9bc8b838ba7231b2f8497e730473ab9c10185e20c32572757ef9383158abf13",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_action_identifiability.py": "bcb87669a119767f9e211456f47582a8c64dd57643fc5204c55ed12d205072e3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/train_bdvl.py": "b1f2daf876ec746c1c5bbbcac544d1c29ffc5f7f012098754cba31d137ede8bf",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/analyze_fullcrowd_eval.py": "29ee673dccb7341e5bb8cc0d31c06ff0df90f2875dc923559e78ca04b95af822",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_r3r2_gradient.py": "188395318fa11a02843fe121a7a7649aa0661e9438dd6442bb4bb97d77344080",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/compare_bayesian_brne.py": "9df9bd0905ef7a872448781af9411b5ae8f7536b5eb3812e30a3e4d7a8d40da0",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_p0_2_coverage.py": "4bd798dbf00887de96ec1e2ef2f7266e294c4aa10b3a2f66a64a11f0024cd77a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/order9s_3b_feature_ablation.py": "1965fc8e0fe5627b0e5f673c061ab6a1dbc6ede1767629fe999eb3a2b62f4773",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/analyze_counterfactual_risk.py": "c1f4a67367bf04b2c3a105ffeee640889c8aa3d9dc18b72b6620009ad6ec23c1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_multimodal_s1_queue.py": "f119387e40846c7eddc14829d35d2a30aae7277e22f47940738841fef9bb72ab",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_eval_queue.py": "75b60c4d03171cebfdc5c18c3d68635b7a0dcea0fb3435c70b4be0b747126946",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_candidate_decision_oracle.py": "9c99e2be61960fdd87aa2e1f776bdd39a9842903fbf63c343b0ca09668c1c3eb",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/build_doom_dataset.py": "b45d63e93e9cc2f4ecaa8ae87264615687442ef5094c8b5859cd07a5e3c8a7ed",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/summarize_slot_candidates.py": "a73c5c0a6fbbf5e61a5a2f49353fe08e0dfbc3dee65dfd4dff1400df3b051eb3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/eval35_status.py": "3b0d3871d4c6807ec53480cf1aef05bce19cef7dfa59e1183c8c93e54b159edf",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/s1_strict_gate.py": "8cdbc936de56a73640d4cdf36f87af71f83c17be1f499f69451036dba0d682d7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_bdvl_r4_0_belief_bypass.py": "0972d39f75f37806f2518e5d90d6877cdb07ea8adcfac062760dda522f486904",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/audit_slot_contracts.py": "de89b7d48ffb018027e96a179ffaf8f51802460f0d00fe5b58c8fc8713a082d1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/run_bayesian_brne_suite.py": "91304f5e34f9d1c8f876f770e322e5aab8a270ae3f051bad50ed8f9fbcf27f78",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/train_doom_predictor.py": "f03194f4b324d1c188887c82f1f7a7b21cc9dad57379aa70c1ae832594bf7ae4",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/order9s_independent_generator.py": "ebdd185751aaa261eed3a53dcc47e7c714597966fef3f28062b8099e673a151a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/fit_behavior_gdbn_modes.py": "ee771a2c3a380d4d6859d643dd1f9bb7a4cb6f30707949c35efdaea0875d35b6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/order9s_k_plateau_audit.py": "e099bfc407a541d3c8eba0a4f459c1ab6515abeb22927a1f89fb4f2144d677f7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/fit_bdvl_world_model.py": "fe25b732cd223a3976e18bdf3fc3643a8b755520f8a8c167ed68e3734dfb4d50",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/build_r3_input_manifest.py": "9da3b5b6b3c546fc5f5f7f7a4bcd005ad618b78ffd668a1c151eee5c5e7ab9b6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/combine_fullcrowd_eval.py": "d94ae3782e6ae4d9340e887605a9f469cc20d9b32b85e7b69e9e205820d756b3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/evaluate_multimodal_repaired_gates.py": "e31add12150d802b89230b885409837bc6722221d81cd89fcc82267b04e00111",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/tools/evaluate_sm_brne.py": "d189a0dbdfa5c2038badb5e03dbc4b8ea2fae13dc08625409e5626cebc690398",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/model.py": "e8858703e4c210b3a4cc3c84fbf7d45fd1364d1124513ba2dec7dd2d2fbbc4c2",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/solver.py": "5183d65f054d77366184651317d1d614e0b165bafa60c8efd8e8d3261ed91e89",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/__init__.py": "81f6e0d9e1a57323733c2f8467a3337252f91b57b0588cdea101c060b44eda6d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/run_gate.py": "0317ba178b64403a4b9779ea17ba45a372af1833108792ed71b2bac4c0328193",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/audit_gate.py": "4838bc2b05aff070ce66bb9f9b5550da7cd26f52f845aa65f060abfab8e78134",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/test_gate.py": "996d1a4f4006cb72fc3c6502e1c418f3d0deb8ab01ec96f23495af7d8df28dc5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/gate_lcorner/test_redteam.py": "165fbc2b62d85b959ff4f484a499c5d0893ae93d11ee3eb567058d449801a3d9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_ppo.config": "534f0245bd6577e407921f4b2cca87ea95ae4dbdbc1d8e79c63ff7aa3c48e4d7",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_gdbn.config": "1557bd9445426fc16a604a472043e78516f8af0f1dae0a2662c4f6b42e6e85c9",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_distributional.config": "5e39f2848352f92555fabdebcb9f71528ef5f4b608d584d58493b0aa1b8c809a",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/train_intent_bdvl.config": "304d9d183ae6cd033d30d7b6ca3b62d5a3f8335c095c392c208f4bb784a74246",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_fullcrowd_tail.config": "0384d7491534d6007111d3e36c7e8331d342681f73ac781f7bf6bccbad390a79",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/env_bayesian_dvl.config": "1551911d374129a9aff28126470aeeda360dd3734c6050ef83148ed6f3f293f3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_fullcrowd_compact.config": "521a52d64c6a6c1a82fabb2a81bd1793326d35627f85a18d15f62b563848e54d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_dvl.config": "c6f5dbd45396e31a7aff969ed1d5e07b5a48898e9524e6159efeec0c844bbcf5",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_model_average.config": "81130a67c853578ef907645d515fb8d16f5554730f7bafc789b740850cc5a100",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_bayesian_brne.config": "0cf6eeaec9eaa96576409e63da0cc388a794b817804155eba71fbd59cc8a61ab",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/env_gdbn.config": "20d0a3fb40b905b3771836ba96edd96399d30d15db5fa924ef3177ba9e2d0ec1",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy_fixed_model_average.config": "2d480bb3296746a6ad4368d42327e7a891a40eba8053f27093b1ac16fd772076",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/env_belief_mdp.config": "5c9be91dd31209d51e889aafc8ad1c6e0cd282f2f66ea7548daa6aa68b56f10d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/policy.config": "85558017ffa2557e40f54b8b46531016d887c90b8f9d413f2a55d3cb41784e01",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/env_bayesian_brne.config": "b3e46d4b5d40909421d79d703c6ae28918c38b93690464d537a49f6b41c0d9a6",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/train_bayesian_dvl.config": "04ae5660a6ab458e0fe2bebd432db51926fbb5ec609c65014cc9c182762e2a95",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/env.config": "9a8626e3666676e9e3cc809047ee04c66106ac2d82e8c37cb7d1b06fc5b4c022",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs/train.config": "71e86a226b92f6527dc1a4a8a3c76f12c4b17a7d01fcf3003d8b9f191c27d84d",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_phase1/policy.config": "0e11199562f38238187ea5f19a047a5a770b2746b4886a12981c83fc6db8f294",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_phase1/env.config": "cda5c48c40184b59f79aacf775b6b7be916aa41d982148f132f8a521d3e5e989",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_phase1/train.config": "ee0f8d166b9d81fd0c92afe1f1694203f3a84f6dd7a337a5af361780dbe001a3",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001725/policy.config": "999578625968792511e472af3c5d79a0c87afabf22fb0f44fe63af829c03d455",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001725/env.config": "5567f3cd93156a875bad96fe1b98eace5b9a142b70330424fad93ffb368586ca",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001725/train.config": "b14fa97913d5ff4634e52737465f5348535ce50b3398b17d0d770df474a05d50",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_165950/policy.config": "62760cc42c6203ed01fd57510045dc295f79cda2216fb3e300b65826e662c269",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_165950/env.config": "ae43e74f9f0594595ddf10d2b7ff18aea9f285667a5be2a469e2758671592dae",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_165950/train.config": "e6343dbb7e9e05cdf10a1a455ba76aa23c13de4dcce8e689c41b306ae2148070",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001244/policy.config": "999578625968792511e472af3c5d79a0c87afabf22fb0f44fe63af829c03d455",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001244/env.config": "81b6f4fb0c0e9c43f1236f6be2fca496f664ce142fcee8c22c0258c3c4dba3cd",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001244/train.config": "87ef8dadf794abbbadcc8cc4c6d5b2848347346450fecd33620889bc6fef1367",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_003028/policy.config": "999578625968792511e472af3c5d79a0c87afabf22fb0f44fe63af829c03d455",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_003028/env.config": "5567f3cd93156a875bad96fe1b98eace5b9a142b70330424fad93ffb368586ca",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_003028/train.config": "b14fa97913d5ff4634e52737465f5348535ce50b3398b17d0d770df474a05d50",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_170546/policy.config": "62760cc42c6203ed01fd57510045dc295f79cda2216fb3e300b65826e662c269",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_170546/env.config": "ae43e74f9f0594595ddf10d2b7ff18aea9f285667a5be2a469e2758671592dae",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_optimized_20250820_170546/train.config": "e6343dbb7e9e05cdf10a1a455ba76aa23c13de4dcce8e689c41b306ae2148070",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_000547/policy.config": "101e09a9af8b371e3202904530545c40567de065b2db94363d059398a7740f49",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_000547/env.config": "81b6f4fb0c0e9c43f1236f6be2fca496f664ce142fcee8c22c0258c3c4dba3cd",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_000547/train.config": "87ef8dadf794abbbadcc8cc4c6d5b2848347346450fecd33620889bc6fef1367",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001500/policy.config": "999578625968792511e472af3c5d79a0c87afabf22fb0f44fe63af829c03d455",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001500/env.config": "5567f3cd93156a875bad96fe1b98eace5b9a142b70330424fad93ffb368586ca",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/data/output_fast_20250821_001500/train.config": "87ef8dadf794abbbadcc8cc4c6d5b2848347346450fecd33620889bc6fef1367",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_gate1/policy.config": "0e11199562f38238187ea5f19a047a5a770b2746b4886a12981c83fc6db8f294",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_gate1/env.config": "d5b5fc4e14e84e869c16452737496937354ddcbf63cc253462e3f4cc926f8989",
+  "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_nav/configs_gate1/train.config": "ee0f8d166b9d81fd0c92afe1f1694203f3a84f6dd7a337a5af361780dbe001a3"
+ },
+ "archive": "/home/abc/temp/modern/snapshot/frozen_files"
+}

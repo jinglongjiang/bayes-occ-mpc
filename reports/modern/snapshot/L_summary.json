@@ -1,0 +1,242 @@
+{
+ "bayes_full|baseline_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 9.45,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|baseline_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 10.3,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|dense_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 80.0,
+  "cr": 20.0,
+  "tr": 0.0,
+  "penalised_time": 14.5,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|dense_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 80.0,
+  "cr": 20.0,
+  "tr": 0.0,
+  "penalised_time": 13.95,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|large_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 14.95,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|large_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 13.2,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|baseline_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 9.45,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|baseline_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 80.0,
+  "cr": 20.0,
+  "tr": 0.0,
+  "penalised_time": 13.7,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|dense_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 80.0,
+  "cr": 20.0,
+  "tr": 0.0,
+  "penalised_time": 14.45,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|dense_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 80.0,
+  "cr": 20.0,
+  "tr": 0.0,
+  "penalised_time": 13.95,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|large_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 15.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_r1|large_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 100.0,
+  "cr": 0.0,
+  "tr": 0.0,
+  "penalised_time": 12.55,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|baseline_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 0.0,
+  "tr": 100.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|baseline_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 20.0,
+  "tr": 80.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|dense_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 0.0,
+  "tr": 100.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|dense_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 80.0,
+  "tr": 20.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|large_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 10.0,
+  "tr": 90.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|large_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 100.0,
+  "tr": 0.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|baseline_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 20.0,
+  "cr": 0.0,
+  "tr": 80.0,
+  "penalised_time": 23.3,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|baseline_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 10.0,
+  "cr": 50.0,
+  "tr": 40.0,
+  "penalised_time": 24.65,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|dense_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 20.0,
+  "cr": 0.0,
+  "tr": 80.0,
+  "penalised_time": 23.525,
+  "cr_unknown": 0.0,
+  "bound_violations": 1
+ },
+ "tmpc_shared|dense_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 80.0,
+  "tr": 20.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|large_circle": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 20.0,
+  "tr": 80.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|large_square": {
+  "n": 10,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 100.0,
+  "tr": 0.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ }
+}

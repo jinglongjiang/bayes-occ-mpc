@@ -1,0 +1,130 @@
+{
+ "preregistered_family": [
+  "bayes_full_vs_shmpc_shared|cr",
+  "bayes_full_vs_shmpc_shared|sr",
+  "bayes_full_vs_shmpc_shared|time",
+  "bayes_full_vs_tmpc_shared|cr",
+  "bayes_full_vs_tmpc_shared|sr",
+  "bayes_full_vs_tmpc_shared|time"
+ ],
+ "correction": "Holm-Bonferroni over the six pre-registered tests",
+ "bootstrap": {
+  "iterations": 10000,
+  "seed": 20260909,
+  "cluster": "layout within scene, repeats aggregated first"
+ },
+ "p_values": "two-sided paired layout-cluster sign permutation, plus-one Monte Carlo correction",
+ "primary": {
+  "bayes_full_vs_shmpc_shared|cr": {
+   "difference": -0.31555555555555553,
+   "ci_low": -0.34611111111111115,
+   "ci_high": -0.28500000000000003,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  },
+  "bayes_full_vs_shmpc_shared|sr": {
+   "difference": 0.8655555555555554,
+   "ci_low": 0.8422222222222223,
+   "ci_high": 0.8877777777777777,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  },
+  "bayes_full_vs_shmpc_shared|time": {
+   "difference": -11.633611111111113,
+   "ci_low": -11.940020833333335,
+   "ci_high": -11.306527777777777,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  },
+  "bayes_full_vs_tmpc_shared|cr": {
+   "difference": -0.3511111111111111,
+   "ci_low": -0.3833333333333333,
+   "ci_high": -0.31833333333333336,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  },
+  "bayes_full_vs_tmpc_shared|sr": {
+   "difference": 0.777222222222222,
+   "ci_low": 0.7472222222222221,
+   "ci_high": 0.8072222222222223,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  },
+  "bayes_full_vs_tmpc_shared|time": {
+   "difference": -10.871250000000002,
+   "ci_low": -11.239031249999998,
+   "ci_high": -10.483743055555557,
+   "p": 9.999000099990002e-05,
+   "n_layouts": 600,
+   "p_holm": 0.0005999400059994001
+  }
+ },
+ "auxiliary": {
+  "mcnemar|bayes_full_vs_shmpc_shared": {
+   "0": {
+    "a_only": 517,
+    "b_only": 0,
+    "both": 16,
+    "neither": 67
+   },
+   "2": {
+    "a_only": 516,
+    "b_only": 0,
+    "both": 15,
+    "neither": 69
+   },
+   "1": {
+    "a_only": 525,
+    "b_only": 0,
+    "both": 14,
+    "neither": 61
+   }
+  },
+  "mcnemar|bayes_full_vs_tmpc_shared": {
+   "0": {
+    "a_only": 471,
+    "b_only": 3,
+    "both": 62,
+    "neither": 64
+   },
+   "2": {
+    "a_only": 464,
+    "b_only": 4,
+    "both": 67,
+    "neither": 65
+   },
+   "1": {
+    "a_only": 474,
+    "b_only": 3,
+    "both": 65,
+    "neither": 58
+   }
+  },
+  "bayes_full_vs_bayes_r1|cr": {
+   "difference": 0.0038888888888888723,
+   "ci_low": -0.0027777777777777783,
+   "ci_high": 0.010555555555555556,
+   "p": 0.33286671332866713,
+   "n_layouts": 600
+  },
+  "bayes_full_vs_bayes_r1|sr": {
+   "difference": -0.0033333333333332993,
+   "ci_low": -0.010555555555555554,
+   "ci_high": 0.003333333333333334,
+   "p": 0.43225677432256776,
+   "n_layouts": 600
+  },
+  "bayes_full_vs_bayes_r1|time": {
+   "difference": 0.030833333333333712,
+   "ci_low": -0.05750000000000001,
+   "ci_high": 0.12347222222222222,
+   "p": 0.5177482251774822,
+   "n_layouts": 600
+  }
+ }
+}

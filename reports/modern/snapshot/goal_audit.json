@@ -1,0 +1,174 @@
+{
+ "tmpc": {
+  "长距离 heading=+pi/2": {
+   "first_entry": {
+    "0.25": 8.75,
+    "0.5": 8.5,
+    "1.0": 7.75
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.16777470715384224,
+   "steps": 35
+  },
+  "长距离 heading=0": {
+   "first_entry": {
+    "0.25": null,
+    "0.5": null,
+    "1.0": 9.25
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 2.5153930993018383,
+   "steps": 200
+  },
+  "长距离 heading=-pi/2": {
+   "first_entry": {
+    "0.25": null,
+    "0.5": null,
+    "1.0": null
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 8.003190592631615,
+   "steps": 200
+  },
+  "短距离 1.5m": {
+   "first_entry": {
+    "0.25": 2.0,
+    "0.5": 1.75,
+    "1.0": 1.0
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.11795974368218996,
+   "steps": 8
+  },
+  "最后一米 0.9m": {
+   "first_entry": {
+    "0.25": 1.25,
+    "0.5": 1.0,
+    "1.0": 0.25
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.18339858353342342,
+   "steps": 5
+  },
+  "障碍移开后继续": {
+   "first_entry": {
+    "0.25": 10.75,
+    "0.5": 10.25,
+    "1.0": 9.75
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.13515745233203671,
+   "steps": 43
+  }
+ },
+ "shmpc": {
+  "长距离 heading=+pi/2": {
+   "first_entry": {
+    "0.25": 8.75,
+    "0.5": 8.5,
+    "1.0": 7.75
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.16758243888824642,
+   "steps": 35
+  },
+  "长距离 heading=0": {
+   "first_entry": {
+    "0.25": null,
+    "0.5": null,
+    "1.0": 9.25
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 2.591192192656929,
+   "steps": 200
+  },
+  "长距离 heading=-pi/2": {
+   "first_entry": {
+    "0.25": null,
+    "0.5": null,
+    "1.0": null
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 8.003190593356992,
+   "steps": 200
+  },
+  "短距离 1.5m": {
+   "first_entry": {
+    "0.25": 2.0,
+    "0.5": 1.75,
+    "1.0": 1.0
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.11795974368218996,
+   "steps": 8
+  },
+  "最后一米 0.9m": {
+   "first_entry": {
+    "0.25": 1.25,
+    "0.5": 1.0,
+    "1.0": 0.25
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.18339858353342342,
+   "steps": 5
+  },
+  "障碍移开后继续": {
+   "first_entry": {
+    "0.25": 10.5,
+    "0.5": 10.25,
+    "1.0": 9.75
+   },
+   "clean_prefix": {
+    "0.25": true,
+    "0.5": true,
+    "1.0": true
+   },
+   "final_distance": 0.24438564762137518,
+   "steps": 42
+  }
+ }
+}

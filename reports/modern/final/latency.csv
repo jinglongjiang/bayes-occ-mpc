@@ -1,0 +1,9 @@
+arm,condition,threads,steps,plan_p50,plan_p95,plan_p99,pipeline_p50,pipeline_p95,pipeline_p99,over_250ms_rate
+bayes_full,occluded,1,1384,82.22,143.38,152.58,98.91,175.41,184.91,0.000
+bayes_full,occluded,4,1384,80.61,143.73,152.94,97.44,175.47,183.96,0.000
+bayes_r1,occluded,1,1365,80.18,145.11,153.41,97.08,176.40,185.72,0.000
+bayes_r1,occluded,4,1365,80.46,144.74,152.92,96.91,176.19,185.28,0.000
+shmpc_shared,occluded,1,2049,37.06,101.23,139.85,55.13,118.04,153.22,0.000
+shmpc_shared,occluded,4,2098,15.71,46.32,64.96,34.70,64.47,79.43,0.000
+tmpc_shared,occluded,1,1879,31.45,44.18,54.11,47.49,60.24,67.13,0.000
+tmpc_shared,occluded,4,1771,23.85,28.83,33.20,37.92,48.37,52.37,0.000

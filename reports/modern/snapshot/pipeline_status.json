@@ -1,0 +1,44 @@
+{
+ "status": "TEST_DONE",
+ "stage": "FINISHED",
+ "pid": 3766871,
+ "child_pid": null,
+ "updated_at": "2026-09-10T10:27:27+09:00",
+ "elapsed_hours": 13.957350042727258,
+ "workers": 1,
+ "threads_per_worker": 4,
+ "device": "local CPU",
+ "queues": {
+  "D1": {
+   "completed": 1440,
+   "planned": 1440,
+   "errors": 0
+  },
+  "D2": {
+   "completed": 1000,
+   "planned": 1000,
+   "errors": 0
+  },
+  "T-OCC": {
+   "completed": 7200,
+   "planned": 7200,
+   "errors": 0
+  },
+  "T-FULL": {
+   "completed": 5400,
+   "planned": 5400,
+   "errors": 0
+  },
+  "L": {
+   "completed": 240,
+   "planned": 240,
+   "errors": 0
+  }
+ },
+ "message": "正式表、CI、多重比较、逐步耗时与失败分析已生成，见temp/modern/final/。",
+ "remaining_hours_range": [
+  0,
+  0
+ ],
+ "eta_note": "Initial sparse/dense probe estimate, updated from serial completed stages; excludes unforeseen repair time."
+}

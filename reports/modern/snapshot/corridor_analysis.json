@@ -1,0 +1,36 @@
+{
+ "risks": {
+  "tmpc_shared": 0.35,
+  "shmpc_shared": 0.4
+ },
+ "chi_factors": {
+  "tmpc_shared": 1.4490149236627468,
+  "shmpc_shared": 1.353728726055671
+ },
+ "scenes": {
+  "baseline_circle": {
+   "humans": 5,
+   "raw_median": 4.774999999999983,
+   "tmpc_shared_median": 4.399999999999984,
+   "shmpc_shared_median": 4.449999999999984
+  },
+  "dense_circle": {
+   "humans": 10,
+   "raw_median": 3.5249999999999875,
+   "tmpc_shared_median": 3.0249999999999893,
+   "shmpc_shared_median": 3.149999999999989
+  },
+  "dense_square": {
+   "humans": 20,
+   "raw_median": 1.699999999999994,
+   "tmpc_shared_median": 1.3499999999999952,
+   "shmpc_shared_median": 1.4499999999999948
+  },
+  "large_square": {
+   "humans": 20,
+   "raw_median": 2.7499999999999902,
+   "tmpc_shared_median": 2.4249999999999914,
+   "shmpc_shared_median": 2.4499999999999913
+  }
+ }
+}

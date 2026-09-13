@@ -1,0 +1,62 @@
+[
+ {
+  "arm": "bayes_full",
+  "scene_id": "baseline_circle",
+  "humans": 5,
+  "wall_s": 4.248219984583557,
+  "steps": 58,
+  "ms_per_step": 73.24517214799235,
+  "peak_rss_mb": 444.83984375,
+  "event": "reach_goal"
+ },
+ {
+  "arm": "bayes_full",
+  "scene_id": "dense_square",
+  "humans": 20,
+  "wall_s": 10.588043766096234,
+  "steps": 65,
+  "ms_per_step": 162.89298101686515,
+  "peak_rss_mb": 462.29296875,
+  "event": "reach_goal"
+ },
+ {
+  "arm": "tmpc_shared",
+  "scene_id": "baseline_circle",
+  "humans": 5,
+  "wall_s": 3.3941472936421633,
+  "steps": 101,
+  "ms_per_step": 33.60541874893231,
+  "peak_rss_mb": 462.29296875,
+  "event": "timeout"
+ },
+ {
+  "arm": "tmpc_shared",
+  "scene_id": "dense_square",
+  "humans": 20,
+  "wall_s": 4.4364726804196835,
+  "steps": 101,
+  "ms_per_step": 43.9254720833632,
+  "peak_rss_mb": 462.29296875,
+  "event": "timeout"
+ },
+ {
+  "arm": "shmpc_shared",
+  "scene_id": "baseline_circle",
+  "humans": 5,
+  "wall_s": 3.6626936281099916,
+  "steps": 101,
+  "ms_per_step": 36.26429334762368,
+  "peak_rss_mb": 462.29296875,
+  "event": "timeout"
+ },
+ {
+  "arm": "shmpc_shared",
+  "scene_id": "dense_square",
+  "humans": 20,
+  "wall_s": 1.7444382961839437,
+  "steps": 41,
+  "ms_per_step": 42.54727551668155,
+  "peak_rss_mb": 462.29296875,
+  "event": "collision"
+ }
+]

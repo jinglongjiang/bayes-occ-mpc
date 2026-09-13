@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Occluded six-scene comparison, macro averaged over scenes. All arms share one detector, tracker and marginal predictions; the comparators are shared-belief adaptations of the published planners, not the authors' original systems.}
+\label{tab:main_occlusion}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+Method & SR (\%) & CR (\%) & TR (\%) & Err (\%) & Penalised time (s) \\
+\midrule
+bayes full & 89.1 & 10.7 & 0.2 & 0.0 & 13.16 \\
+bayes r1 & 89.4 & 10.3 & 0.3 & 0.0 & 13.13 \\
+shmpc shared & 2.5 & 42.3 & 55.2 & 0.0 & 24.79 \\
+tmpc shared & 11.3 & 45.8 & 42.8 & 0.0 & 24.03 \\
+\bottomrule
+\end{tabular}
+\end{table}

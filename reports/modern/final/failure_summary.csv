@@ -1,0 +1,8 @@
+arm,condition,episodes,solver_failure_steps,steps,solved_but_no_progress,stalled_near_goal,collisions,timeouts,errors,bound_violation_steps,max_bound_excess
+bayes_full,full,1800,0,79303,0,0,155,7,0,0,0.0000
+bayes_full,occluded,1800,0,78659,0,0,193,4,0,0,0.0000
+bayes_r1,occluded,1800,0,78979,0,0,186,5,0,0,0.0000
+shmpc_shared,full,1800,92456,115722,838,2,746,998,0,0,0.0000
+shmpc_shared,occluded,1800,93415,115260,891,12,761,994,0,0,0.0000
+tmpc_shared,full,1800,22049,105844,300,5,835,758,0,6,0.0182
+tmpc_shared,occluded,1800,28487,105929,211,8,825,771,0,27,0.0210

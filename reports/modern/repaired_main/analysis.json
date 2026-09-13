@@ -1,0 +1,2708 @@
+{
+  "selected": [
+    {
+      "id": "bayes_h16_p4",
+      "family": "bayes",
+      "arm": "bayes",
+      "horizon": 16,
+      "point": 4,
+      "profile": "legacy",
+      "risk": null
+    },
+    {
+      "id": "tmpc_h16_goal_track_r0.9",
+      "family": "tmpc",
+      "arm": "tmpc_repair_n16",
+      "horizon": 16,
+      "point": null,
+      "profile": "goal_track",
+      "risk": 0.9
+    },
+    {
+      "id": "shmpc_h8_goal_track_r0.325",
+      "family": "shmpc",
+      "arm": "shmpc_repair_n8",
+      "horizon": 8,
+      "point": null,
+      "profile": "goal_track",
+      "risk": 0.325
+    }
+  ],
+  "verification": "complete, paired, frozen sources unchanged",
+  "main": {
+    "occluded": {
+      "bayes": {
+        "n": 600,
+        "SR": 0.855,
+        "CR": 0.14166666666666666,
+        "TR": 0.0033333333333333335,
+        "penalty_time": 14.03375,
+        "successes": 513,
+        "collisions": 85,
+        "timeouts": 2,
+        "path_length": 9.50853161981438,
+        "success_only_time": 12.173976608187134,
+        "success_only_path": 10.449793015099601,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 26961,
+        "pipeline_ms": {
+          "mean": 101.31679950250543,
+          "p50": 98.13502244651318,
+          "p95": 170.58389075100422,
+          "p99": 180.68029657006267,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 84.61006557567042,
+          "p95": 140.71312546730042
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 85,
+          "collision_step_end_speed_below_01": 13,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.97,
+            "CR": 0.03,
+            "TR": 0.0,
+            "penalty_time": 10.785
+          },
+          "baseline_square": {
+            "SR": 0.83,
+            "CR": 0.17,
+            "TR": 0.0,
+            "penalty_time": 12.6675
+          },
+          "dense_circle": {
+            "SR": 0.83,
+            "CR": 0.17,
+            "TR": 0.0,
+            "penalty_time": 14.395
+          },
+          "dense_square": {
+            "SR": 0.72,
+            "CR": 0.27,
+            "TR": 0.01,
+            "penalty_time": 16.8375
+          },
+          "large_circle": {
+            "SR": 0.95,
+            "CR": 0.04,
+            "TR": 0.01,
+            "penalty_time": 16.11
+          },
+          "large_square": {
+            "SR": 0.83,
+            "CR": 0.17,
+            "TR": 0.0,
+            "penalty_time": 13.4075
+          }
+        }
+      },
+      "tmpc": {
+        "n": 600,
+        "SR": 0.44666666666666666,
+        "CR": 0.535,
+        "TR": 0.018333333333333333,
+        "penalty_time": 19.5325,
+        "successes": 268,
+        "collisions": 321,
+        "timeouts": 11,
+        "path_length": 5.352821372074555,
+        "success_only_time": 12.759328358208956,
+        "success_only_path": 9.054276779088571,
+        "requested_action_saturations": 450,
+        "max_requested_bound_excess": 0.25000000048900006,
+        "steps": 21598,
+        "pipeline_ms": {
+          "mean": 34.196544147190316,
+          "p50": 34.10820849239826,
+          "p95": 49.38020659610627,
+          "p99": 55.71820863522588,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 18.744933539538394,
+          "p95": 24.88919449970125
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 321,
+          "collision_step_end_speed_below_01": 308,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 3,
+          "failure_within_last_five_commands": 320
+        },
+        "native_solved_fraction": 0.781229743494768,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "qp_status": {
+          "mean": 0.43670710250949163,
+          "max": 2.0,
+          "nonzero": 4719,
+          "count": 21598,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 16879,
+            "1": 6,
+            "2": 4713
+          }
+        },
+        "acados_status": {
+          "mean": 0.872858598018335,
+          "max": 4.0,
+          "nonzero": 4713,
+          "count": 21598,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 16885,
+            "4": 4713
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.8,
+            "CR": 0.2,
+            "TR": 0.0,
+            "penalty_time": 13.65
+          },
+          "baseline_square": {
+            "SR": 0.5,
+            "CR": 0.46,
+            "TR": 0.04,
+            "penalty_time": 18.01
+          },
+          "dense_circle": {
+            "SR": 0.57,
+            "CR": 0.43,
+            "TR": 0.0,
+            "penalty_time": 18.455
+          },
+          "dense_square": {
+            "SR": 0.05,
+            "CR": 0.89,
+            "TR": 0.06,
+            "penalty_time": 24.4675
+          },
+          "large_circle": {
+            "SR": 0.51,
+            "CR": 0.49,
+            "TR": 0.0,
+            "penalty_time": 21.085
+          },
+          "large_square": {
+            "SR": 0.25,
+            "CR": 0.74,
+            "TR": 0.01,
+            "penalty_time": 21.5275
+          }
+        }
+      },
+      "shmpc": {
+        "n": 600,
+        "SR": 0.44,
+        "CR": 0.31666666666666665,
+        "TR": 0.24333333333333335,
+        "penalty_time": 21.259166666666665,
+        "successes": 264,
+        "collisions": 190,
+        "timeouts": 146,
+        "path_length": 7.652320800729012,
+        "success_only_time": 16.498106060606062,
+        "success_only_path": 10.336768590916916,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 35769,
+        "pipeline_ms": {
+          "mean": 31.0142442883517,
+          "p50": 31.0719832777977,
+          "p95": 38.6679470539093,
+          "p99": 41.474344208836555,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 22.197670882403262,
+          "p95": 25.495094247162342
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 190,
+          "collision_step_end_speed_below_01": 122,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 190,
+          "failure_within_last_five_commands": 0,
+          "solved_collision_steps_with_nonzero_slack": 190,
+          "solved_collision_steps_with_slack_record": 190
+        },
+        "native_solved_fraction": 0.9998322569823032,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "scenario_validation_status",
+          "slack1",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "slack1": {
+          "mean": 0.058576326896230865,
+          "max": 2.77910758921,
+          "nonzero": 35763,
+          "count": 35763,
+          "population": "accepted_native_solutions",
+          "above_1e_minus3": 14713
+        },
+        "scenario_validation_status": {
+          "mean": 1.233872997231776,
+          "max": 3.0,
+          "nonzero": 14717,
+          "count": 35763,
+          "population": "accepted_native_solutions",
+          "counts": {
+            "0": 21046,
+            "1": 11,
+            "2": 2,
+            "3": 14704
+          }
+        },
+        "qp_status": {
+          "mean": 5.5914339232296124e-05,
+          "max": 1.0,
+          "nonzero": 2,
+          "count": 35769,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 35767,
+            "1": 2
+          }
+        },
+        "acados_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 35769,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 35769
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.81,
+            "CR": 0.16,
+            "TR": 0.03,
+            "penalty_time": 15.745
+          },
+          "baseline_square": {
+            "SR": 0.5,
+            "CR": 0.19,
+            "TR": 0.31,
+            "penalty_time": 20.5475
+          },
+          "dense_circle": {
+            "SR": 0.54,
+            "CR": 0.2,
+            "TR": 0.26,
+            "penalty_time": 20.675
+          },
+          "dense_square": {
+            "SR": 0.05,
+            "CR": 0.54,
+            "TR": 0.41,
+            "penalty_time": 24.8125
+          },
+          "large_circle": {
+            "SR": 0.54,
+            "CR": 0.22,
+            "TR": 0.24,
+            "penalty_time": 22.505
+          },
+          "large_square": {
+            "SR": 0.2,
+            "CR": 0.59,
+            "TR": 0.21,
+            "penalty_time": 23.27
+          }
+        }
+      }
+    },
+    "fully_observed": {
+      "bayes": {
+        "n": 600,
+        "SR": 0.8666666666666667,
+        "CR": 0.12833333333333333,
+        "TR": 0.005,
+        "penalty_time": 13.74375,
+        "successes": 520,
+        "collisions": 77,
+        "timeouts": 3,
+        "path_length": 9.54036768252368,
+        "success_only_time": 12.01201923076923,
+        "success_only_path": 10.3904828113332,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 26909,
+        "pipeline_ms": {
+          "mean": 111.44636042949506,
+          "p50": 100.6775675341487,
+          "p95": 174.0119518712163,
+          "p99": 182.69322454929352,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 91.12321062510438,
+          "p95": 142.6329268142581
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 77,
+          "collision_step_end_speed_below_01": 15,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.95,
+            "CR": 0.05,
+            "TR": 0.0,
+            "penalty_time": 11.1075
+          },
+          "baseline_square": {
+            "SR": 0.85,
+            "CR": 0.15,
+            "TR": 0.0,
+            "penalty_time": 12.3025
+          },
+          "dense_circle": {
+            "SR": 0.92,
+            "CR": 0.08,
+            "TR": 0.0,
+            "penalty_time": 13.19
+          },
+          "dense_square": {
+            "SR": 0.69,
+            "CR": 0.29,
+            "TR": 0.02,
+            "penalty_time": 16.8575
+          },
+          "large_circle": {
+            "SR": 0.93,
+            "CR": 0.06,
+            "TR": 0.01,
+            "penalty_time": 15.9975
+          },
+          "large_square": {
+            "SR": 0.86,
+            "CR": 0.14,
+            "TR": 0.0,
+            "penalty_time": 13.0075
+          }
+        }
+      },
+      "tmpc": {
+        "n": 600,
+        "SR": 0.47833333333333333,
+        "CR": 0.49833333333333335,
+        "TR": 0.023333333333333334,
+        "penalty_time": 19.2275,
+        "successes": 287,
+        "collisions": 299,
+        "timeouts": 14,
+        "path_length": 5.554548977526929,
+        "success_only_time": 12.932055749128919,
+        "success_only_path": 9.082754965757648,
+        "requested_action_saturations": 401,
+        "max_requested_bound_excess": 0.250000000491,
+        "steps": 22623,
+        "pipeline_ms": {
+          "mean": 39.01986075579298,
+          "p50": 39.170701056718826,
+          "p95": 55.151764303445816,
+          "p99": 59.56258764490485,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 18.927557096352935,
+          "p95": 25.06657736375928
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 299,
+          "collision_step_end_speed_below_01": 290,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 1,
+          "failure_within_last_five_commands": 298
+        },
+        "native_solved_fraction": 0.7890200238695133,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "qp_status": {
+          "mean": 0.4204128541749547,
+          "max": 2.0,
+          "nonzero": 4757,
+          "count": 22623,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 17866,
+            "1": 3,
+            "2": 4754
+          }
+        },
+        "acados_status": {
+          "mean": 0.8405604915351633,
+          "max": 4.0,
+          "nonzero": 4754,
+          "count": 22623,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 17869,
+            "4": 4754
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.86,
+            "CR": 0.14,
+            "TR": 0.0,
+            "penalty_time": 12.7075
+          },
+          "baseline_square": {
+            "SR": 0.48,
+            "CR": 0.47,
+            "TR": 0.05,
+            "penalty_time": 18.395
+          },
+          "dense_circle": {
+            "SR": 0.57,
+            "CR": 0.43,
+            "TR": 0.0,
+            "penalty_time": 18.375
+          },
+          "dense_square": {
+            "SR": 0.1,
+            "CR": 0.86,
+            "TR": 0.04,
+            "penalty_time": 23.7775
+          },
+          "large_circle": {
+            "SR": 0.58,
+            "CR": 0.41,
+            "TR": 0.01,
+            "penalty_time": 20.545
+          },
+          "large_square": {
+            "SR": 0.28,
+            "CR": 0.68,
+            "TR": 0.04,
+            "penalty_time": 21.565
+          }
+        }
+      },
+      "shmpc": {
+        "n": 600,
+        "SR": 0.4583333333333333,
+        "CR": 0.2966666666666667,
+        "TR": 0.245,
+        "penalty_time": 21.061666666666667,
+        "successes": 275,
+        "collisions": 178,
+        "timeouts": 147,
+        "path_length": 7.776181752670688,
+        "success_only_time": 16.407272727272726,
+        "success_only_path": 10.41649952992006,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 36062,
+        "pipeline_ms": {
+          "mean": 34.272358398485785,
+          "p50": 33.2468063570559,
+          "p95": 42.1699967700988,
+          "p99": 44.76138750091195,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 22.80588603243963,
+          "p95": 25.86215571500361
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 178,
+          "collision_step_end_speed_below_01": 98,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 178,
+          "failure_within_last_five_commands": 0,
+          "solved_collision_steps_with_nonzero_slack": 178,
+          "solved_collision_steps_with_slack_record": 178
+        },
+        "native_solved_fraction": 0.9999445399589596,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "scenario_validation_status",
+          "slack1",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "slack1": {
+          "mean": 0.05250955043799603,
+          "max": 2.6954233648,
+          "nonzero": 36060,
+          "count": 36060,
+          "population": "accepted_native_solutions",
+          "above_1e_minus3": 14119
+        },
+        "scenario_validation_status": {
+          "mean": 1.1744037714919577,
+          "max": 3.0,
+          "nonzero": 14120,
+          "count": 36060,
+          "population": "accepted_native_solutions",
+          "counts": {
+            "0": 21940,
+            "1": 4,
+            "2": 3,
+            "3": 14113
+          }
+        },
+        "qp_status": {
+          "mean": 5.546004104043037e-05,
+          "max": 1.0,
+          "nonzero": 2,
+          "count": 36062,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 36060,
+            "1": 2
+          }
+        },
+        "acados_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 36062,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 36062
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.83,
+            "CR": 0.12,
+            "TR": 0.05,
+            "penalty_time": 15.465
+          },
+          "baseline_square": {
+            "SR": 0.44,
+            "CR": 0.24,
+            "TR": 0.32,
+            "penalty_time": 20.7925
+          },
+          "dense_circle": {
+            "SR": 0.57,
+            "CR": 0.2,
+            "TR": 0.23,
+            "penalty_time": 20.5125
+          },
+          "dense_square": {
+            "SR": 0.09,
+            "CR": 0.5,
+            "TR": 0.41,
+            "penalty_time": 24.3275
+          },
+          "large_circle": {
+            "SR": 0.65,
+            "CR": 0.12,
+            "TR": 0.23,
+            "penalty_time": 21.875
+          },
+          "large_square": {
+            "SR": 0.17,
+            "CR": 0.6,
+            "TR": 0.23,
+            "penalty_time": 23.3975
+          }
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "occluded": {
+      "tmpc": {
+        "n": 600,
+        "layouts": 600,
+        "seed_blocks": 100,
+        "left_minus_right": [
+          0.4083333333333333,
+          -0.3933333333333333,
+          -0.015,
+          -5.49875
+        ],
+        "paired_ci95": [
+          [
+            0.365,
+            0.45166666666666666
+          ],
+          [
+            -0.43833333333333335,
+            -0.35
+          ],
+          [
+            -0.02666666666666667,
+            -0.0033333333333333335
+          ],
+          [
+            -6.063760416666667,
+            -4.94625
+          ]
+        ],
+        "events": {
+          "SR": {
+            "left_only": 265,
+            "right_only": 20,
+            "p_block_sign_flip": 3.256417816752337e-27,
+            "p_exact": null,
+            "p_holm_two_primary": 6.512835633504673e-27
+          },
+          "CR": {
+            "left_only": 21,
+            "right_only": 257,
+            "p_block_sign_flip": 1.2167390602128886e-26,
+            "p_exact": null
+          },
+          "TR": {
+            "left_only": 2,
+            "right_only": 11,
+            "p_block_sign_flip": 0.0224609375,
+            "p_exact": null
+          }
+        },
+        "joint_success_time_secondary": {
+          "n": 248,
+          "layouts": 248,
+          "seed_blocks": 97,
+          "left_minus_right": [
+            0.0,
+            0.0,
+            0.0,
+            -1.0423387096774193
+          ],
+          "paired_ci95": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              -1.3518545751633988,
+              -0.7336045717371966
+            ]
+          ],
+          "events": {
+            "SR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "CR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "TR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            }
+          }
+        }
+      },
+      "shmpc": {
+        "n": 600,
+        "layouts": 600,
+        "seed_blocks": 100,
+        "left_minus_right": [
+          0.415,
+          -0.175,
+          -0.24,
+          -7.225416666666667
+        ],
+        "paired_ci95": [
+          [
+            0.375,
+            0.455
+          ],
+          [
+            -0.22,
+            -0.13
+          ],
+          [
+            -0.275,
+            -0.205
+          ],
+          [
+            -7.7283333333333335,
+            -6.734583333333333
+          ]
+        ],
+        "events": {
+          "SR": {
+            "left_only": 281,
+            "right_only": 32,
+            "p_block_sign_flip": 1.299537900824886e-25,
+            "p_exact": null,
+            "p_holm_two_primary": 1.299537900824886e-25
+          },
+          "CR": {
+            "left_only": 52,
+            "right_only": 157,
+            "p_block_sign_flip": 4.7837680251239275e-11,
+            "p_exact": null
+          },
+          "TR": {
+            "left_only": 1,
+            "right_only": 145,
+            "p_block_sign_flip": 1.3234889800848443e-23,
+            "p_exact": null
+          }
+        },
+        "joint_success_time_secondary": {
+          "n": 232,
+          "layouts": 232,
+          "seed_blocks": 97,
+          "left_minus_right": [
+            0.0,
+            0.0,
+            0.0,
+            -4.53125
+          ],
+          "paired_ci95": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              -5.074470418066443,
+              -3.980659711223736
+            ]
+          ],
+          "events": {
+            "SR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "CR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "TR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            }
+          }
+        }
+      }
+    },
+    "fully_observed": {
+      "tmpc": {
+        "n": 600,
+        "layouts": 600,
+        "seed_blocks": 100,
+        "left_minus_right": [
+          0.3883333333333333,
+          -0.37,
+          -0.018333333333333333,
+          -5.48375
+        ],
+        "paired_ci95": [
+          [
+            0.34833333333333333,
+            0.42833333333333334
+          ],
+          [
+            -0.4116666666666667,
+            -0.33
+          ],
+          [
+            -0.03,
+            -0.006666666666666667
+          ],
+          [
+            -6.0183437500000005,
+            -4.9366666666666665
+          ]
+        ],
+        "events": {
+          "SR": {
+            "left_only": 260,
+            "right_only": 27,
+            "p_block_sign_flip": 2.1204581132340797e-27,
+            "p_exact": null
+          },
+          "CR": {
+            "left_only": 28,
+            "right_only": 250,
+            "p_block_sign_flip": 1.6155871338926322e-26,
+            "p_exact": null
+          },
+          "TR": {
+            "left_only": 2,
+            "right_only": 13,
+            "p_block_sign_flip": 0.00738525390625,
+            "p_exact": null
+          }
+        },
+        "joint_success_time_secondary": {
+          "n": 260,
+          "layouts": 260,
+          "seed_blocks": 98,
+          "left_minus_right": [
+            0.0,
+            0.0,
+            0.0,
+            -1.1240384615384615
+          ],
+          "paired_ci95": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              -1.4403846153846154,
+              -0.7943367277433419
+            ]
+          ],
+          "events": {
+            "SR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "CR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "TR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            }
+          }
+        }
+      },
+      "shmpc": {
+        "n": 600,
+        "layouts": 600,
+        "seed_blocks": 100,
+        "left_minus_right": [
+          0.4083333333333333,
+          -0.16833333333333333,
+          -0.24,
+          -7.317916666666667
+        ],
+        "paired_ci95": [
+          [
+            0.36666666666666664,
+            0.45
+          ],
+          [
+            -0.20666666666666667,
+            -0.13166666666666665
+          ],
+          [
+            -0.27666666666666667,
+            -0.20333333333333334
+          ],
+          [
+            -7.845,
+            -6.795416666666667
+          ]
+        ],
+        "events": {
+          "SR": {
+            "left_only": 266,
+            "right_only": 21,
+            "p_block_sign_flip": 1.0097419586828951e-28,
+            "p_exact": null
+          },
+          "CR": {
+            "left_only": 41,
+            "right_only": 142,
+            "p_block_sign_flip": 2.3775986130532452e-14,
+            "p_exact": null
+          },
+          "TR": {
+            "left_only": 2,
+            "right_only": 146,
+            "p_block_sign_flip": 3.970466940254533e-22,
+            "p_exact": null
+          }
+        },
+        "joint_success_time_secondary": {
+          "n": 254,
+          "layouts": 254,
+          "seed_blocks": 98,
+          "left_minus_right": [
+            0.0,
+            0.0,
+            0.0,
+            -4.249015748031496
+          ],
+          "paired_ci95": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              -4.736004150197628,
+              -3.762350523697118
+            ]
+          ],
+          "events": {
+            "SR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "CR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            },
+            "TR": {
+              "left_only": 0,
+              "right_only": 0,
+              "p_block_sign_flip": 1.0,
+              "p_exact": null
+            }
+          }
+        }
+      }
+    }
+  },
+  "stability": {
+    "bayes": {
+      "0": {
+        "n": 120,
+        "SR": 0.8166666666666667,
+        "CR": 0.16666666666666666,
+        "TR": 0.016666666666666666,
+        "penalty_time": 14.285416666666666,
+        "successes": 98,
+        "collisions": 20,
+        "timeouts": 2,
+        "path_length": 9.426763587320037,
+        "success_only_time": 11.880102040816327,
+        "success_only_path": 10.35751012662777,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 5318,
+        "pipeline_ms": {
+          "mean": 101.09855859158978,
+          "p50": 98.34968391805887,
+          "p95": 170.24538186378774,
+          "p99": 178.477328363806,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 84.42250971800405,
+          "p95": 140.1937676128
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 20,
+          "collision_step_end_speed_below_01": 4,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 1.0,
+            "CR": 0.0,
+            "TR": 0.0,
+            "penalty_time": 10.2125
+          },
+          "baseline_square": {
+            "SR": 0.8,
+            "CR": 0.2,
+            "TR": 0.0,
+            "penalty_time": 12.8125
+          },
+          "dense_circle": {
+            "SR": 0.65,
+            "CR": 0.35,
+            "TR": 0.0,
+            "penalty_time": 16.7
+          },
+          "dense_square": {
+            "SR": 0.65,
+            "CR": 0.3,
+            "TR": 0.05,
+            "penalty_time": 16.9375
+          },
+          "large_circle": {
+            "SR": 0.9,
+            "CR": 0.05,
+            "TR": 0.05,
+            "penalty_time": 16.3875
+          },
+          "large_square": {
+            "SR": 0.9,
+            "CR": 0.1,
+            "TR": 0.0,
+            "penalty_time": 12.6625
+          }
+        }
+      },
+      "1": {
+        "n": 120,
+        "SR": 0.8333333333333334,
+        "CR": 0.16666666666666666,
+        "TR": 0.0,
+        "penalty_time": 14.322916666666666,
+        "successes": 100,
+        "collisions": 20,
+        "timeouts": 0,
+        "path_length": 9.359985530691468,
+        "success_only_time": 12.1875,
+        "success_only_path": 10.594285064138251,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 5234,
+        "pipeline_ms": {
+          "mean": 101.69458938912013,
+          "p50": 98.64424401894212,
+          "p95": 172.47985405847427,
+          "p99": 180.42064977809787,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 84.91509101706968,
+          "p95": 141.80962778627872
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 20,
+          "collision_step_end_speed_below_01": 4,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.9,
+            "CR": 0.1,
+            "TR": 0.0,
+            "penalty_time": 11.6625
+          },
+          "baseline_square": {
+            "SR": 0.8,
+            "CR": 0.2,
+            "TR": 0.0,
+            "penalty_time": 13.0625
+          },
+          "dense_circle": {
+            "SR": 0.65,
+            "CR": 0.35,
+            "TR": 0.0,
+            "penalty_time": 16.7875
+          },
+          "dense_square": {
+            "SR": 0.75,
+            "CR": 0.25,
+            "TR": 0.0,
+            "penalty_time": 15.6
+          },
+          "large_circle": {
+            "SR": 1.0,
+            "CR": 0.0,
+            "TR": 0.0,
+            "penalty_time": 15.925
+          },
+          "large_square": {
+            "SR": 0.9,
+            "CR": 0.1,
+            "TR": 0.0,
+            "penalty_time": 12.9
+          }
+        }
+      },
+      "2": {
+        "n": 120,
+        "SR": 0.8166666666666667,
+        "CR": 0.175,
+        "TR": 0.008333333333333333,
+        "penalty_time": 14.39375,
+        "successes": 98,
+        "collisions": 21,
+        "timeouts": 1,
+        "path_length": 9.361741149487141,
+        "success_only_time": 12.012755102040817,
+        "success_only_path": 10.332120026287397,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 5308,
+        "pipeline_ms": {
+          "mean": 100.97165886939453,
+          "p50": 98.08449167758226,
+          "p95": 172.45095400139687,
+          "p99": 180.5827226676047,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 84.36858672392502,
+          "p95": 141.8286839965731
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 21,
+          "collision_step_end_speed_below_01": 3,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.95,
+            "CR": 0.05,
+            "TR": 0.0,
+            "penalty_time": 10.8625
+          },
+          "baseline_square": {
+            "SR": 0.85,
+            "CR": 0.15,
+            "TR": 0.0,
+            "penalty_time": 12.1375
+          },
+          "dense_circle": {
+            "SR": 0.75,
+            "CR": 0.25,
+            "TR": 0.0,
+            "penalty_time": 15.575
+          },
+          "dense_square": {
+            "SR": 0.65,
+            "CR": 0.35,
+            "TR": 0.0,
+            "penalty_time": 16.8375
+          },
+          "large_circle": {
+            "SR": 0.85,
+            "CR": 0.1,
+            "TR": 0.05,
+            "penalty_time": 17.3625
+          },
+          "large_square": {
+            "SR": 0.85,
+            "CR": 0.15,
+            "TR": 0.0,
+            "penalty_time": 13.5875
+          }
+        }
+      }
+    },
+    "tmpc": {
+      "0": {
+        "n": 120,
+        "SR": 0.425,
+        "CR": 0.55,
+        "TR": 0.025,
+        "penalty_time": 19.575,
+        "successes": 51,
+        "collisions": 66,
+        "timeouts": 3,
+        "path_length": 5.2491589518496085,
+        "success_only_time": 12.235294117647058,
+        "success_only_path": 8.949631417405046,
+        "requested_action_saturations": 73,
+        "max_requested_bound_excess": 0.250000000456,
+        "steps": 4207,
+        "pipeline_ms": {
+          "mean": 33.959473639112105,
+          "p50": 33.68290327489376,
+          "p95": 50.50773900002241,
+          "p99": 55.42709130793809,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 18.855447318411112,
+          "p95": 24.909074697643515
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 66,
+          "collision_step_end_speed_below_01": 65,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 0,
+          "failure_within_last_five_commands": 66
+        },
+        "native_solved_fraction": 0.7803660565723793,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "qp_status": {
+          "mean": 0.43903018778226766,
+          "max": 2.0,
+          "nonzero": 924,
+          "count": 4207,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3283,
+            "1": 1,
+            "2": 923
+          }
+        },
+        "acados_status": {
+          "mean": 0.8775849774185881,
+          "max": 4.0,
+          "nonzero": 923,
+          "count": 4207,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3284,
+            "4": 923
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.85,
+            "CR": 0.15,
+            "TR": 0.0,
+            "penalty_time": 13.0875
+          },
+          "baseline_square": {
+            "SR": 0.55,
+            "CR": 0.35,
+            "TR": 0.1,
+            "penalty_time": 16.525
+          },
+          "dense_circle": {
+            "SR": 0.4,
+            "CR": 0.6,
+            "TR": 0.0,
+            "penalty_time": 20.6875
+          },
+          "dense_square": {
+            "SR": 0.05,
+            "CR": 0.9,
+            "TR": 0.05,
+            "penalty_time": 24.325
+          },
+          "large_circle": {
+            "SR": 0.45,
+            "CR": 0.55,
+            "TR": 0.0,
+            "penalty_time": 21.375
+          },
+          "large_square": {
+            "SR": 0.25,
+            "CR": 0.75,
+            "TR": 0.0,
+            "penalty_time": 21.45
+          }
+        }
+      },
+      "1": {
+        "n": 120,
+        "SR": 0.475,
+        "CR": 0.5,
+        "TR": 0.025,
+        "penalty_time": 19.102083333333333,
+        "successes": 57,
+        "collisions": 60,
+        "timeouts": 3,
+        "path_length": 5.6923824922783846,
+        "success_only_time": 12.583333333333334,
+        "success_only_path": 8.916360477129786,
+        "requested_action_saturations": 83,
+        "max_requested_bound_excess": 0.25000000045799997,
+        "steps": 4581,
+        "pipeline_ms": {
+          "mean": 34.43945882200733,
+          "p50": 34.060331992805004,
+          "p95": 51.86449084430933,
+          "p99": 56.60398323088882,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 18.617618145716747,
+          "p95": 24.577546864748
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 60,
+          "collision_step_end_speed_below_01": 58,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 1,
+          "failure_within_last_five_commands": 59
+        },
+        "native_solved_fraction": 0.776686313032089,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "qp_status": {
+          "mean": 0.4453176162409954,
+          "max": 2.0,
+          "nonzero": 1020,
+          "count": 4581,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3561,
+            "2": 1020
+          }
+        },
+        "acados_status": {
+          "mean": 0.8906352324819908,
+          "max": 4.0,
+          "nonzero": 1020,
+          "count": 4581,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3561,
+            "4": 1020
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.9,
+            "CR": 0.1,
+            "TR": 0.0,
+            "penalty_time": 12.4125
+          },
+          "baseline_square": {
+            "SR": 0.5,
+            "CR": 0.4,
+            "TR": 0.1,
+            "penalty_time": 17.225
+          },
+          "dense_circle": {
+            "SR": 0.5,
+            "CR": 0.5,
+            "TR": 0.0,
+            "penalty_time": 19.6
+          },
+          "dense_square": {
+            "SR": 0.2,
+            "CR": 0.75,
+            "TR": 0.05,
+            "penalty_time": 22.6625
+          },
+          "large_circle": {
+            "SR": 0.5,
+            "CR": 0.5,
+            "TR": 0.0,
+            "penalty_time": 21.2875
+          },
+          "large_square": {
+            "SR": 0.25,
+            "CR": 0.75,
+            "TR": 0.0,
+            "penalty_time": 21.425
+          }
+        }
+      },
+      "2": {
+        "n": 120,
+        "SR": 0.4666666666666667,
+        "CR": 0.5083333333333333,
+        "TR": 0.025,
+        "penalty_time": 19.172916666666666,
+        "successes": 56,
+        "collisions": 61,
+        "timeouts": 3,
+        "path_length": 5.5480479504184785,
+        "success_only_time": 12.513392857142858,
+        "success_only_path": 8.974230909143753,
+        "requested_action_saturations": 78,
+        "max_requested_bound_excess": 0.2500000004930001,
+        "steps": 4445,
+        "pipeline_ms": {
+          "mean": 34.74633357161813,
+          "p50": 34.274677745997906,
+          "p95": 52.26954910904169,
+          "p99": 56.98440987616779,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 18.824965601495737,
+          "p95": 24.604646489024162
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 61,
+          "collision_step_end_speed_below_01": 59,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 1,
+          "failure_within_last_five_commands": 60
+        },
+        "native_solved_fraction": 0.7885264341957255,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "qp_status": {
+          "mean": 0.4220472440944882,
+          "max": 2.0,
+          "nonzero": 939,
+          "count": 4445,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3506,
+            "1": 2,
+            "2": 937
+          }
+        },
+        "acados_status": {
+          "mean": 0.8431946006749156,
+          "max": 4.0,
+          "nonzero": 937,
+          "count": 4445,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 3508,
+            "4": 937
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.9,
+            "CR": 0.1,
+            "TR": 0.0,
+            "penalty_time": 12.2125
+          },
+          "baseline_square": {
+            "SR": 0.45,
+            "CR": 0.5,
+            "TR": 0.05,
+            "penalty_time": 18.2
+          },
+          "dense_circle": {
+            "SR": 0.5,
+            "CR": 0.5,
+            "TR": 0.0,
+            "penalty_time": 19.5875
+          },
+          "dense_square": {
+            "SR": 0.15,
+            "CR": 0.75,
+            "TR": 0.1,
+            "penalty_time": 23.1375
+          },
+          "large_circle": {
+            "SR": 0.5,
+            "CR": 0.5,
+            "TR": 0.0,
+            "penalty_time": 21.0375
+          },
+          "large_square": {
+            "SR": 0.3,
+            "CR": 0.7,
+            "TR": 0.0,
+            "penalty_time": 20.8625
+          }
+        }
+      }
+    },
+    "shmpc": {
+      "0": {
+        "n": 120,
+        "SR": 0.425,
+        "CR": 0.325,
+        "TR": 0.25,
+        "penalty_time": 21.2625,
+        "successes": 51,
+        "collisions": 39,
+        "timeouts": 30,
+        "path_length": 7.437204075072623,
+        "success_only_time": 16.205882352941178,
+        "success_only_path": 10.24400601960104,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 7100,
+        "pipeline_ms": {
+          "mean": 30.750110032377947,
+          "p50": 30.603795312345028,
+          "p95": 38.71358628384769,
+          "p99": 41.573075028136394,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 21.95855303273969,
+          "p95": 25.346882129088044
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 39,
+          "collision_step_end_speed_below_01": 24,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 39,
+          "failure_within_last_five_commands": 0,
+          "solved_collision_steps_with_nonzero_slack": 39,
+          "solved_collision_steps_with_slack_record": 39
+        },
+        "native_solved_fraction": 1.0,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "scenario_validation_status",
+          "slack1",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "slack1": {
+          "mean": 0.06302388538547969,
+          "max": 2.5658030338,
+          "nonzero": 7100,
+          "count": 7100,
+          "population": "accepted_native_solutions",
+          "above_1e_minus3": 2862
+        },
+        "scenario_validation_status": {
+          "mean": 1.2088732394366197,
+          "max": 3.0,
+          "nonzero": 2864,
+          "count": 7100,
+          "population": "accepted_native_solutions",
+          "counts": {
+            "0": 4236,
+            "1": 4,
+            "2": 1,
+            "3": 2859
+          }
+        },
+        "qp_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 7100,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 7100
+          }
+        },
+        "acados_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 7100,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 7100
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.75,
+            "CR": 0.2,
+            "TR": 0.05,
+            "penalty_time": 16.2125
+          },
+          "baseline_square": {
+            "SR": 0.45,
+            "CR": 0.2,
+            "TR": 0.35,
+            "penalty_time": 19.675
+          },
+          "dense_circle": {
+            "SR": 0.65,
+            "CR": 0.2,
+            "TR": 0.15,
+            "penalty_time": 20.3875
+          },
+          "dense_square": {
+            "SR": 0.0,
+            "CR": 0.5,
+            "TR": 0.5,
+            "penalty_time": 25.0
+          },
+          "large_circle": {
+            "SR": 0.6,
+            "CR": 0.15,
+            "TR": 0.25,
+            "penalty_time": 21.8
+          },
+          "large_square": {
+            "SR": 0.1,
+            "CR": 0.7,
+            "TR": 0.2,
+            "penalty_time": 24.5
+          }
+        }
+      },
+      "1": {
+        "n": 120,
+        "SR": 0.4583333333333333,
+        "CR": 0.2833333333333333,
+        "TR": 0.25833333333333336,
+        "penalty_time": 20.866666666666667,
+        "successes": 55,
+        "collisions": 34,
+        "timeouts": 31,
+        "path_length": 7.593849185954642,
+        "success_only_time": 15.981818181818182,
+        "success_only_path": 10.038470011738744,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 7261,
+        "pipeline_ms": {
+          "mean": 31.834493087230882,
+          "p50": 31.736324541270733,
+          "p95": 39.3541781231761,
+          "p99": 42.65691339969635,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 22.895222559141327,
+          "p95": 25.89330915361643
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 34,
+          "collision_step_end_speed_below_01": 20,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 34,
+          "failure_within_last_five_commands": 0,
+          "solved_collision_steps_with_nonzero_slack": 34,
+          "solved_collision_steps_with_slack_record": 34
+        },
+        "native_solved_fraction": 1.0,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "scenario_validation_status",
+          "slack1",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "slack1": {
+          "mean": 0.05777254281246981,
+          "max": 2.36207190915,
+          "nonzero": 7261,
+          "count": 7261,
+          "population": "accepted_native_solutions",
+          "above_1e_minus3": 3051
+        },
+        "scenario_validation_status": {
+          "mean": 1.2594683927833632,
+          "max": 3.0,
+          "nonzero": 3051,
+          "count": 7261,
+          "population": "accepted_native_solutions",
+          "counts": {
+            "0": 4210,
+            "1": 4,
+            "3": 3047
+          }
+        },
+        "qp_status": {
+          "mean": 0.0002754441536978378,
+          "max": 1.0,
+          "nonzero": 2,
+          "count": 7261,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 7259,
+            "1": 2
+          }
+        },
+        "acados_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 7261,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 7261
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.8,
+            "CR": 0.15,
+            "TR": 0.05,
+            "penalty_time": 15.7125
+          },
+          "baseline_square": {
+            "SR": 0.6,
+            "CR": 0.15,
+            "TR": 0.25,
+            "penalty_time": 17.525
+          },
+          "dense_circle": {
+            "SR": 0.6,
+            "CR": 0.1,
+            "TR": 0.3,
+            "penalty_time": 20.525
+          },
+          "dense_square": {
+            "SR": 0.0,
+            "CR": 0.4,
+            "TR": 0.6,
+            "penalty_time": 25.0
+          },
+          "large_circle": {
+            "SR": 0.65,
+            "CR": 0.2,
+            "TR": 0.15,
+            "penalty_time": 22.05
+          },
+          "large_square": {
+            "SR": 0.1,
+            "CR": 0.7,
+            "TR": 0.2,
+            "penalty_time": 24.3875
+          }
+        }
+      },
+      "2": {
+        "n": 120,
+        "SR": 0.45,
+        "CR": 0.35,
+        "TR": 0.2,
+        "penalty_time": 21.172916666666666,
+        "successes": 54,
+        "collisions": 42,
+        "timeouts": 24,
+        "path_length": 7.443968139847459,
+        "success_only_time": 16.49537037037037,
+        "success_only_path": 10.380456664542908,
+        "requested_action_saturations": 0,
+        "max_requested_bound_excess": 0.0,
+        "steps": 6783,
+        "pipeline_ms": {
+          "mean": 31.843734793084906,
+          "p50": 31.692534685134888,
+          "p95": 39.59007579833269,
+          "p99": 42.229341007769115,
+          "deadline_miss": 0.0
+        },
+        "plan_ms": {
+          "mean": 22.887998711870832,
+          "p95": 26.014939416199923
+        },
+        "posthoc_failure_descriptives": {
+          "collisions": 42,
+          "collision_step_end_speed_below_01": 31,
+          "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+          "last_command_solved": 42,
+          "failure_within_last_five_commands": 0,
+          "solved_collision_steps_with_nonzero_slack": 42,
+          "solved_collision_steps_with_slack_record": 42
+        },
+        "native_solved_fraction": 0.9998525726079905,
+        "native_diagnostic_fields": [
+          "acados_status",
+          "br_enabled",
+          "br_ok",
+          "br_res_eq",
+          "br_status",
+          "br_total",
+          "br_worst_exit",
+          "branch",
+          "cost",
+          "hpipm_iter",
+          "hpipm_raw",
+          "kkt",
+          "max_par",
+          "nf_first",
+          "nf_par",
+          "nf_ws",
+          "nlp_res",
+          "orig_disabled",
+          "orig_exit",
+          "orig_status",
+          "qp_status",
+          "res_comp",
+          "res_eq",
+          "res_ineq",
+          "res_stat",
+          "scenario_validation_status",
+          "slack1",
+          "spline0",
+          "splineN",
+          "sqp_iter",
+          "success",
+          "vN"
+        ],
+        "slack1": {
+          "mean": 0.06609452172848322,
+          "max": 2.46772162351,
+          "nonzero": 6782,
+          "count": 6782,
+          "population": "accepted_native_solutions",
+          "above_1e_minus3": 2824
+        },
+        "scenario_validation_status": {
+          "mean": 1.248894131524624,
+          "max": 3.0,
+          "nonzero": 2825,
+          "count": 6782,
+          "population": "accepted_native_solutions",
+          "counts": {
+            "0": 3957,
+            "1": 2,
+            "2": 1,
+            "3": 2822
+          }
+        },
+        "qp_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 6783,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 6783
+          }
+        },
+        "acados_status": {
+          "mean": 0.0,
+          "max": 0.0,
+          "nonzero": 0,
+          "count": 6783,
+          "population": "all_solver_replies",
+          "counts": {
+            "0": 6783
+          }
+        },
+        "per_scene": {
+          "baseline_circle": {
+            "SR": 0.85,
+            "CR": 0.1,
+            "TR": 0.05,
+            "penalty_time": 15.6875
+          },
+          "baseline_square": {
+            "SR": 0.35,
+            "CR": 0.45,
+            "TR": 0.2,
+            "penalty_time": 20.8875
+          },
+          "dense_circle": {
+            "SR": 0.4,
+            "CR": 0.35,
+            "TR": 0.25,
+            "penalty_time": 21.95
+          },
+          "dense_square": {
+            "SR": 0.05,
+            "CR": 0.5,
+            "TR": 0.45,
+            "penalty_time": 24.35
+          },
+          "large_circle": {
+            "SR": 0.8,
+            "CR": 0.1,
+            "TR": 0.1,
+            "penalty_time": 21.3625
+          },
+          "large_square": {
+            "SR": 0.25,
+            "CR": 0.6,
+            "TR": 0.15,
+            "penalty_time": 22.8
+          }
+        }
+      }
+    }
+  },
+  "latency": {
+    "bayes": {
+      "n": 30,
+      "SR": 0.7333333333333333,
+      "CR": 0.26666666666666666,
+      "TR": 0.0,
+      "penalty_time": 15.316666666666666,
+      "successes": 22,
+      "collisions": 8,
+      "timeouts": 0,
+      "path_length": 8.125923094272943,
+      "success_only_time": 11.795454545454545,
+      "success_only_path": 10.085019857435219,
+      "requested_action_saturations": 0,
+      "max_requested_bound_excess": 0.0,
+      "steps": 1156,
+      "pipeline_ms": {
+        "mean": 100.27767837717872,
+        "p50": 99.34406541287899,
+        "p95": 169.64964335784316,
+        "p99": 178.84324225597086,
+        "deadline_miss": 0.0
+      },
+      "plan_ms": {
+        "mean": 83.86140422666749,
+        "p95": 140.33051137812436
+      },
+      "posthoc_failure_descriptives": {
+        "collisions": 8,
+        "collision_step_end_speed_below_01": 1,
+        "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact"
+      },
+      "per_scene": {
+        "baseline_circle": {
+          "SR": 1.0,
+          "CR": 0.0,
+          "TR": 0.0,
+          "penalty_time": 9.85
+        },
+        "baseline_square": {
+          "SR": 0.4,
+          "CR": 0.6,
+          "TR": 0.0,
+          "penalty_time": 18.55
+        },
+        "dense_circle": {
+          "SR": 0.8,
+          "CR": 0.2,
+          "TR": 0.0,
+          "penalty_time": 14.15
+        },
+        "dense_square": {
+          "SR": 0.4,
+          "CR": 0.6,
+          "TR": 0.0,
+          "penalty_time": 21.85
+        },
+        "large_circle": {
+          "SR": 0.8,
+          "CR": 0.2,
+          "TR": 0.0,
+          "penalty_time": 17.7
+        },
+        "large_square": {
+          "SR": 1.0,
+          "CR": 0.0,
+          "TR": 0.0,
+          "penalty_time": 9.8
+        }
+      }
+    },
+    "tmpc": {
+      "n": 30,
+      "SR": 0.4,
+      "CR": 0.6,
+      "TR": 0.0,
+      "penalty_time": 19.858333333333334,
+      "successes": 12,
+      "collisions": 18,
+      "timeouts": 0,
+      "path_length": 4.885389042718282,
+      "success_only_time": 12.145833333333334,
+      "success_only_path": 8.960783607901611,
+      "requested_action_saturations": 16,
+      "max_requested_bound_excess": 0.250000000277,
+      "steps": 963,
+      "pipeline_ms": {
+        "mean": 35.87491988752768,
+        "p50": 35.81889346241951,
+        "p95": 51.80537607520818,
+        "p99": 56.280073542147875,
+        "deadline_miss": 0.0
+      },
+      "plan_ms": {
+        "mean": 19.706428433968643,
+        "p95": 26.2413683347404
+      },
+      "posthoc_failure_descriptives": {
+        "collisions": 18,
+        "collision_step_end_speed_below_01": 18,
+        "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+        "last_command_solved": 0,
+        "failure_within_last_five_commands": 18
+      },
+      "native_solved_fraction": 0.8016614745586709,
+      "native_diagnostic_fields": [
+        "acados_status",
+        "br_enabled",
+        "br_ok",
+        "br_res_eq",
+        "br_status",
+        "br_total",
+        "br_worst_exit",
+        "branch",
+        "cost",
+        "hpipm_iter",
+        "hpipm_raw",
+        "kkt",
+        "max_par",
+        "nf_first",
+        "nf_par",
+        "nf_ws",
+        "nlp_res",
+        "orig_disabled",
+        "orig_exit",
+        "orig_status",
+        "qp_status",
+        "res_comp",
+        "res_eq",
+        "res_ineq",
+        "res_stat",
+        "spline0",
+        "splineN",
+        "sqp_iter",
+        "success",
+        "vN"
+      ],
+      "qp_status": {
+        "mean": 0.39667705088265837,
+        "max": 2.0,
+        "nonzero": 191,
+        "count": 963,
+        "population": "all_solver_replies",
+        "counts": {
+          "0": 772,
+          "2": 191
+        }
+      },
+      "acados_status": {
+        "mean": 0.7933541017653167,
+        "max": 4.0,
+        "nonzero": 191,
+        "count": 963,
+        "population": "all_solver_replies",
+        "counts": {
+          "0": 772,
+          "4": 191
+        }
+      },
+      "per_scene": {
+        "baseline_circle": {
+          "SR": 1.0,
+          "CR": 0.0,
+          "TR": 0.0,
+          "penalty_time": 10.75
+        },
+        "baseline_square": {
+          "SR": 0.2,
+          "CR": 0.8,
+          "TR": 0.0,
+          "penalty_time": 21.8
+        },
+        "dense_circle": {
+          "SR": 0.4,
+          "CR": 0.6,
+          "TR": 0.0,
+          "penalty_time": 20.8
+        },
+        "dense_square": {
+          "SR": 0.0,
+          "CR": 1.0,
+          "TR": 0.0,
+          "penalty_time": 25.0
+        },
+        "large_circle": {
+          "SR": 0.4,
+          "CR": 0.6,
+          "TR": 0.0,
+          "penalty_time": 21.65
+        },
+        "large_square": {
+          "SR": 0.4,
+          "CR": 0.6,
+          "TR": 0.0,
+          "penalty_time": 19.15
+        }
+      }
+    },
+    "shmpc": {
+      "n": 30,
+      "SR": 0.4666666666666667,
+      "CR": 0.26666666666666666,
+      "TR": 0.26666666666666666,
+      "penalty_time": 21.225,
+      "successes": 14,
+      "collisions": 8,
+      "timeouts": 8,
+      "path_length": 8.21574174130542,
+      "success_only_time": 16.910714285714285,
+      "success_only_path": 10.979995667489552,
+      "requested_action_saturations": 0,
+      "max_requested_bound_excess": 0.0,
+      "steps": 1847,
+      "pipeline_ms": {
+        "mean": 33.217512055501366,
+        "p50": 33.23926404118538,
+        "p95": 39.92749936878681,
+        "p99": 43.79391480237245,
+        "deadline_miss": 0.0
+      },
+      "plan_ms": {
+        "mean": 23.57168644454893,
+        "p95": 27.297818195074793
+      },
+      "posthoc_failure_descriptives": {
+        "collisions": 8,
+        "collision_step_end_speed_below_01": 5,
+        "note": "post-hoc descriptions, not proof of a causal mechanism; speed is at the end of the collision interval, not necessarily at first contact",
+        "last_command_solved": 8,
+        "failure_within_last_five_commands": 0,
+        "solved_collision_steps_with_nonzero_slack": 8,
+        "solved_collision_steps_with_slack_record": 8
+      },
+      "native_solved_fraction": 1.0,
+      "native_diagnostic_fields": [
+        "acados_status",
+        "br_enabled",
+        "br_ok",
+        "br_res_eq",
+        "br_status",
+        "br_total",
+        "br_worst_exit",
+        "branch",
+        "cost",
+        "hpipm_iter",
+        "hpipm_raw",
+        "kkt",
+        "max_par",
+        "nf_first",
+        "nf_par",
+        "nf_ws",
+        "nlp_res",
+        "orig_disabled",
+        "orig_exit",
+        "orig_status",
+        "qp_status",
+        "res_comp",
+        "res_eq",
+        "res_ineq",
+        "res_stat",
+        "scenario_validation_status",
+        "slack1",
+        "spline0",
+        "splineN",
+        "sqp_iter",
+        "success",
+        "vN"
+      ],
+      "slack1": {
+        "mean": 0.05394276531176946,
+        "max": 1.60720216021,
+        "nonzero": 1847,
+        "count": 1847,
+        "population": "accepted_native_solutions",
+        "above_1e_minus3": 807
+      },
+      "scenario_validation_status": {
+        "mean": 1.310774228478614,
+        "max": 3.0,
+        "nonzero": 809,
+        "count": 1847,
+        "population": "accepted_native_solutions",
+        "counts": {
+          "0": 1038,
+          "1": 3,
+          "3": 806
+        }
+      },
+      "qp_status": {
+        "mean": 0.0,
+        "max": 0.0,
+        "nonzero": 0,
+        "count": 1847,
+        "population": "all_solver_replies",
+        "counts": {
+          "0": 1847
+        }
+      },
+      "acados_status": {
+        "mean": 0.0,
+        "max": 0.0,
+        "nonzero": 0,
+        "count": 1847,
+        "population": "all_solver_replies",
+        "counts": {
+          "0": 1847
+        }
+      },
+      "per_scene": {
+        "baseline_circle": {
+          "SR": 1.0,
+          "CR": 0.0,
+          "TR": 0.0,
+          "penalty_time": 13.95
+        },
+        "baseline_square": {
+          "SR": 0.2,
+          "CR": 0.4,
+          "TR": 0.4,
+          "penalty_time": 23.75
+        },
+        "dense_circle": {
+          "SR": 0.6,
+          "CR": 0.2,
+          "TR": 0.2,
+          "penalty_time": 20.0
+        },
+        "dense_square": {
+          "SR": 0.0,
+          "CR": 0.8,
+          "TR": 0.2,
+          "penalty_time": 25.0
+        },
+        "large_circle": {
+          "SR": 0.4,
+          "CR": 0.0,
+          "TR": 0.6,
+          "penalty_time": 22.9
+        },
+        "large_square": {
+          "SR": 0.6,
+          "CR": 0.2,
+          "TR": 0.2,
+          "penalty_time": 21.75
+        }
+      }
+    }
+  },
+  "synthetic_acceptance": [
+    {
+      "family": "tmpc",
+      "case": "aligned",
+      "success": true,
+      "collision": false,
+      "time": 8.25
+    },
+    {
+      "family": "tmpc",
+      "case": "near_lateral",
+      "success": true,
+      "collision": false,
+      "time": 1.25
+    },
+    {
+      "family": "tmpc",
+      "case": "lateral",
+      "success": true,
+      "collision": false,
+      "time": 4.25
+    },
+    {
+      "family": "tmpc",
+      "case": "away",
+      "success": true,
+      "collision": false,
+      "time": 7.25
+    },
+    {
+      "family": "tmpc",
+      "case": "stationary_obstacle",
+      "success": true,
+      "collision": false,
+      "time": 8.5
+    },
+    {
+      "family": "shmpc",
+      "case": "aligned",
+      "success": true,
+      "collision": false,
+      "time": 8.5
+    },
+    {
+      "family": "shmpc",
+      "case": "near_lateral",
+      "success": true,
+      "collision": false,
+      "time": 1.25
+    },
+    {
+      "family": "shmpc",
+      "case": "lateral",
+      "success": true,
+      "collision": false,
+      "time": 4.5
+    },
+    {
+      "family": "shmpc",
+      "case": "away",
+      "success": true,
+      "collision": false,
+      "time": 7.25
+    },
+    {
+      "family": "shmpc",
+      "case": "stationary_obstacle",
+      "success": false,
+      "collision": false,
+      "time": 25.0
+    }
+  ],
+  "acceptance_review": "/home/abc/temp/modern/repaired_main/ACCEPTANCE_REVIEW.md",
+  "stability_clustered_comparisons": {
+    "tmpc": {
+      "n": 360,
+      "layouts": 120,
+      "seed_blocks": 20,
+      "left_minus_right": [
+        0.36666666666666664,
+        -0.35,
+        -0.016666666666666666,
+        -4.949305555555555
+      ],
+      "paired_ci95": [
+        [
+          0.28888888888888886,
+          0.45
+        ],
+        [
+          -0.4222222222222222,
+          -0.28055555555555556
+        ],
+        [
+          -0.044444444444444446,
+          0.008333333333333333
+        ],
+        [
+          -6.048003472222222,
+          -3.9409548611111114
+        ]
+      ],
+      "events": {
+        "SR": {
+          "left_only": 150,
+          "right_only": 18,
+          "p_block_sign_flip": 3.814697265625e-06,
+          "p_exact": null
+        },
+        "CR": {
+          "left_only": 17,
+          "right_only": 143,
+          "p_block_sign_flip": 3.814697265625e-06,
+          "p_exact": null
+        },
+        "TR": {
+          "left_only": 3,
+          "right_only": 9,
+          "p_block_sign_flip": 0.34375,
+          "p_exact": null
+        }
+      }
+    },
+    "shmpc": {
+      "n": 360,
+      "layouts": 120,
+      "seed_blocks": 20,
+      "left_minus_right": [
+        0.37777777777777777,
+        -0.15,
+        -0.22777777777777777,
+        -6.766666666666667
+      ],
+      "paired_ci95": [
+        [
+          0.3138888888888889,
+          0.4444444444444444
+        ],
+        [
+          -0.2111111111111111,
+          -0.08333333333333333
+        ],
+        [
+          -0.28888888888888886,
+          -0.16666666666666666
+        ],
+        [
+          -7.644461805555556,
+          -5.89717013888889
+        ]
+      ],
+      "events": {
+        "SR": {
+          "left_only": 158,
+          "right_only": 22,
+          "p_block_sign_flip": 1.9073486328125e-06,
+          "p_exact": null
+        },
+        "CR": {
+          "left_only": 34,
+          "right_only": 88,
+          "p_block_sign_flip": 0.00054168701171875,
+          "p_exact": null
+        },
+        "TR": {
+          "left_only": 2,
+          "right_only": 84,
+          "p_block_sign_flip": 3.814697265625e-06,
+          "p_exact": null
+        }
+      }
+    }
+  }
+}

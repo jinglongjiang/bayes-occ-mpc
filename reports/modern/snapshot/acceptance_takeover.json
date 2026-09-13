@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-09",
+  "proceed_shared_belief_comparison": true,
+  "scope": "Shared-detector/tracker marginal predictions, adapted planners on the registered CrowdSim unicycle task; not original end-to-end systems or isolated Bayesian necessity.",
+  "evidence": ["snapshot/goal_audit.json", "bridge/interface_audit.log", "snapshot/model_gap.json", "snapshot/dynamics_crosscheck.json"],
+  "dynamics": "40 development layouts: all four Bayesian diagnostic variants SR=100%, CR=0%; penalised time changes -0.05 to +0.1375 seconds. This is supportive sensitivity evidence, not proof that comparator performance is insensitive. The arc-with-mean-speed diagnostic is an approximation to the native accelerating model.",
+  "limitations": [
+    "Native continuous prediction and CrowdSim turn-then-translate execution differ; disclosed with the same actuator limits for all methods.",
+    "SH conversion matches marginal covariances, not the full cross-time covariance of the CV posterior.",
+    "Native stochastic solvers are not exactly reproducible across runs; report all three repeats and cluster by layout.",
+    "Off-axis/away-from-goal initial-heading probes failed; formal initial heading is goal-aligned for every method.",
+    "This comparison alone does not establish novelty or Bayesian indispensability."
+  ],
+  "execution": "Preserve running CC D1. Subsequent stages use one local worker, four internal threads, with no scientific candidate changes. Re-run interface tests after transport-only edits before formal freeze."
+}

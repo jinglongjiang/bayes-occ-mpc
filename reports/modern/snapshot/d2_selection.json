@@ -1,0 +1,121 @@
+{
+ "rule": "within own-minimum CR + 2 percentage points, shortest penalised time; ties by higher SR then manifest order",
+ "selected": {
+  "tmpc": "c03_current",
+  "shmpc": "c10_n24",
+  "bayes": "c05_p4_n16"
+ },
+ "table": {
+  "tmpc": {
+   "c03_current": {
+    "n": 200,
+    "errors": 0,
+    "sr": 28.5,
+    "cr": 18.0,
+    "time": 21.47625,
+    "per_scene": [
+     {
+      "n": 100,
+      "sr": 41.0,
+      "cr": 10.0,
+      "time": 20.0925
+     },
+     {
+      "n": 100,
+      "sr": 16.0,
+      "cr": 26.0,
+      "time": 22.86
+     }
+    ]
+   }
+  },
+  "shmpc": {
+   "c08_tight_reach": {
+    "n": 200,
+    "errors": 0,
+    "sr": 9.5,
+    "cr": 28.0,
+    "time": 23.93125,
+    "per_scene": [
+     {
+      "n": 100,
+      "sr": 4.0,
+      "cr": 15.0,
+      "time": 24.6775
+     },
+     {
+      "n": 100,
+      "sr": 15.0,
+      "cr": 41.0,
+      "time": 23.185
+     }
+    ]
+   },
+   "c10_n24": {
+    "n": 200,
+    "errors": 0,
+    "sr": 6.0,
+    "cr": 24.5,
+    "time": 24.463749999999997,
+    "per_scene": [
+     {
+      "n": 100,
+      "sr": 10.0,
+      "cr": 6.0,
+      "time": 24.15
+     },
+     {
+      "n": 100,
+      "sr": 2.0,
+      "cr": 43.0,
+      "time": 24.7775
+     }
+    ]
+   }
+  },
+  "bayes": {
+   "c05_p4_n16": {
+    "n": 200,
+    "errors": 0,
+    "sr": 97.0,
+    "cr": 3.0,
+    "time": 9.93125,
+    "per_scene": [
+     {
+      "n": 100,
+      "sr": 94.0,
+      "cr": 6.0,
+      "time": 11.105
+     },
+     {
+      "n": 100,
+      "sr": 100.0,
+      "cr": 0.0,
+      "time": 8.7575
+     }
+    ]
+   },
+   "c06_p2_n24": {
+    "n": 200,
+    "errors": 0,
+    "sr": 99.0,
+    "cr": 1.0,
+    "time": 10.10875,
+    "per_scene": [
+     {
+      "n": 100,
+      "sr": 98.0,
+      "cr": 2.0,
+      "time": 11.025
+     },
+     {
+      "n": 100,
+      "sr": 100.0,
+      "cr": 0.0,
+      "time": 9.1925
+     }
+    ]
+   }
+  }
+ }
+}

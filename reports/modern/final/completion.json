@@ -1,0 +1,31 @@
+{
+ "status": "TEST_DONE",
+ "queues": {
+  "D1": {
+   "completed": 1440,
+   "planned": 1440,
+   "errors": 0
+  },
+  "D2": {
+   "completed": 1000,
+   "planned": 1000,
+   "errors": 0
+  },
+  "T-OCC": {
+   "completed": 7200,
+   "planned": 7200,
+   "errors": 0
+  },
+  "T-FULL": {
+   "completed": 5400,
+   "planned": 5400,
+   "errors": 0
+  },
+  "L": {
+   "completed": 240,
+   "planned": 240,
+   "errors": 0
+  }
+ },
+ "frozen_sha256": "8d4daaa8a0f09bc2ba3a468851715c84a2d957298f8a9b61afc68dd9ce18cff2"
+}

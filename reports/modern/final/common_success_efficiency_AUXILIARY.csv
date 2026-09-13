@@ -1,0 +1,6 @@
+condition,comparison,paired_success_episodes,reference_time,comparator_time,reference_path,comparator_path
+full,bayes_full_vs_shmpc_shared,56,9.0759,16.6518,8.6824,7.9101
+full,bayes_full_vs_tmpc_shared,200,12.5600,16.8738,11.2847,10.3143
+occluded,bayes_full_vs_bayes_r1,1583,11.6755,11.6941,10.3295,10.3407
+occluded,bayes_full_vs_shmpc_shared,45,8.9833,16.6833,8.6433,7.8950
+occluded,bayes_full_vs_tmpc_shared,194,12.4240,16.3802,11.1108,10.0966

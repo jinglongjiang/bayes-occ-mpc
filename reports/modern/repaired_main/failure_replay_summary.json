@@ -1,0 +1,58 @@
+[
+  {
+    "family": "tmpc",
+    "case": 21000,
+    "exact_formal_replay": true,
+    "event": "collision",
+    "nav_time": 3.25,
+    "steps": 13,
+    "successful_steps": 2,
+    "max_first_prediction_execution_error": 1.7382517460121577e-08,
+    "closest_human_id": 18,
+    "closest_human_reported": true,
+    "closest_human_visible": true,
+    "nearest_endpoint_distance": 0.589087502800724,
+    "last_native": {
+      "success": false,
+      "qp_status": 2.0,
+      "res_eq": 0.0,
+      "acados_status": 4.0,
+      "br_total": 5.0,
+      "br_enabled": 1.0,
+      "br_ok": 0.0,
+      "br_worst_exit": 4.0,
+      "br_status": 4.0,
+      "br_res_eq": 0.0
+    },
+    "note": "post-hoc replay; never added to the evaluation counts or used for tuning"
+  },
+  {
+    "family": "shmpc",
+    "case": 21001,
+    "exact_formal_replay": true,
+    "event": "collision",
+    "nav_time": 2.25,
+    "steps": 9,
+    "successful_steps": 9,
+    "max_first_prediction_execution_error": 1.6149947468857468e-08,
+    "closest_human_id": 17,
+    "closest_human_reported": true,
+    "closest_human_visible": false,
+    "nearest_endpoint_distance": 0.4703271361747761,
+    "last_native": {
+      "success": true,
+      "qp_status": 0.0,
+      "res_eq": 5.3290705182e-14,
+      "acados_status": 0.0,
+      "br_total": -1.0,
+      "br_enabled": -1.0,
+      "br_ok": -1.0,
+      "br_worst_exit": -99.0,
+      "br_status": -99.0,
+      "br_res_eq": -1.0,
+      "slack1": 0.617296251615,
+      "scenario_validation_status": 3.0
+    },
+    "note": "post-hoc replay; never added to the evaluation counts or used for tuning"
+  }
+]

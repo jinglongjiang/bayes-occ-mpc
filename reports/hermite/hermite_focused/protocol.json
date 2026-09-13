@@ -1,0 +1,266 @@
+{
+  "baseline": "a8c3d90",
+  "tasks": [
+    [
+      5,
+      23000
+    ],
+    [
+      5,
+      23001
+    ],
+    [
+      5,
+      23002
+    ],
+    [
+      5,
+      23003
+    ],
+    [
+      5,
+      23004
+    ],
+    [
+      5,
+      23005
+    ],
+    [
+      5,
+      23006
+    ],
+    [
+      5,
+      23007
+    ],
+    [
+      5,
+      23008
+    ],
+    [
+      5,
+      23009
+    ],
+    [
+      10,
+      23000
+    ],
+    [
+      10,
+      23001
+    ],
+    [
+      10,
+      23002
+    ],
+    [
+      10,
+      23003
+    ],
+    [
+      10,
+      23004
+    ],
+    [
+      10,
+      23005
+    ],
+    [
+      10,
+      23006
+    ],
+    [
+      10,
+      23007
+    ],
+    [
+      10,
+      23008
+    ],
+    [
+      10,
+      23009
+    ],
+    [
+      20,
+      23000
+    ],
+    [
+      20,
+      23001
+    ],
+    [
+      20,
+      23002
+    ],
+    [
+      20,
+      23003
+    ],
+    [
+      20,
+      23004
+    ],
+    [
+      20,
+      23005
+    ],
+    [
+      20,
+      23006
+    ],
+    [
+      20,
+      23007
+    ],
+    [
+      20,
+      23008
+    ],
+    [
+      20,
+      23009
+    ]
+  ],
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "step": 0.125,
+  "arms": {
+    "E": "reference exact",
+    "R": "cached rectangle screening",
+    "T": "direct cubic point, no interval screening",
+    "H": "original Hermite screening"
+  },
+  "files": {
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/belief.py": "49cf4ac1c45f38ad3532ea1b6a9c0e24fac4e7310bdd6907db53a877f30fce55",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/risk.py": "740113b9ed13d1d133d52d42ee0bbd5ac5127962dec764dc6ea08dd8c0777d04",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/__init__.py": "ae545a7792f0242831102312672f304ff9c4f0e35bb01498a94eb262612811ec",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/contracts.py": "05a0e80f297d1cb0e3eabf21ebf138705604751bd10e7df65518a957bbdfbcad",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/nav/planner.py": "b9e77ae9f6ac56dd4919406dcbe55ea161883761bf133d6e07895141c01f5dbd",
+    "experiments/replay.py": "3b8437086156dc82f8a0229e59cfef51b8a57d7fbea2c5ffbe7d5cc2431ba036",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/experiments/controls.py": "171a30600647dd6327a11ef4f0cac7c45558581e5dcbb1ef606b45de7f45a186",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23000.pkl": "6e3f84bc9b4bc005766c14a5cc7ad9dcdd15a00a32bd70fe50bf92094275ad82",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23001.pkl": "8d3e20ea4eddb8e2804597649aa82d82fd44c169c54173409fb6cca5a769478d",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23002.pkl": "5f2a4755c044c36abef686c74c6951c2d06ce707bb6ad7b85e8c3414273d6bc1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23003.pkl": "55e26db7731a943659c2b51165b329d71ab37a72e54a06007a407c77b4732baf",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23004.pkl": "5b94cbefe32920215ce2c0172c37025abc3410b8a970312dde21d41ff71825e7",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23005.pkl": "081e7b98e05e199690578eb35c3bc9ef72cff8d2fd4e5eee4102f284e29b1e97",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23006.pkl": "43ef714fc283939d1c77f5cef7d339b43d4e9ecaa461b0d3f7cbaecb74885639",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23007.pkl": "2360c53ec8cef1e91b56209487cbbbd0f0832c4f7622c90b96b6a72582a267ac",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23008.pkl": "bda8619dd69580da04c47bd9fcaa296ddfa8768a36921073c1dfed5131941baa",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_5_23009.pkl": "40c2efc7ba10d2779f83b80cf4f598447e68bd77679a6f0f328d6607a08d5848",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23000.pkl": "498799a760a429bd7bd50e0505c537a8a66a4662d6be33a046c91d499980d7f1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23001.pkl": "dbf813ce75aa6c0c415b1cf8e7369322b1930f71958deaef5e3f8ec6a754a9f2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23002.pkl": "e017ceff5fd0bd976efc83f106e4223482108d0ea624c552fc13999a244f0a1f",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23003.pkl": "b60dad3eba4b4dbddb3bb2c2a47262e259319a39845020b0b318c2880a8cb8c6",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23004.pkl": "a3bb26f1c57093c3692c6e905bea4d6005546dd65f3a06bb7979b1d3aeacd1e1",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23005.pkl": "cbc7b758e0d50f9c81f35fe2fd7ece8ae365e6783cc0d79efb60bced2df2f6b2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23006.pkl": "3f34f668bafd0c7f7515a555fe8c1057ea01a5d9a37397a409748d291b434b71",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23007.pkl": "19b104ea6545861d3705f498745adf853645fc669b4f4c94be68b514bf0fb158",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23008.pkl": "fba0bf8cc79e916b6e23a4c3e197f8662aa96c9c30994a88a22b419faaf62d55",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_10_23009.pkl": "db110f1fa2c06ec30997d44066c34c97fd1f074b20a16d9882d422eeeaa07c38",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23000.pkl": "c722c6acd7d1b8e71ea7fdc30f1a84a48e4f2e9ecf726625d624d99e5717931f",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23001.pkl": "50c38f90c066232bb84ae83c13185a8d97676542a971e5ba7565ee430d9ea2f2",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23002.pkl": "c3f9851ba34a3162c0fc837c446654063d8f94ff518a9867b8db2b7268eaa9f9",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23003.pkl": "53b301dd40bc2297b41b33aca57f228cc28865eba3f5149a0699c66a7aa98333",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23004.pkl": "8870c0beb6531bc5b1bc6992735d452109d80e53ca689f3846428e61b7af9d2a",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23005.pkl": "2ea5fbc136797268cad6fb9f800b7c2f793d3aab6c53162628db6d9f5055e747",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23006.pkl": "2313cf63c5727cb64b8e4ea52823afbaafd900c0cce47637a724562ca11174ea",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23007.pkl": "d67ff9e51c1fee26abe8a629b009953e3b4570bbec8014f283882435aaab73d6",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23008.pkl": "1be548402f858cfab362d7409714f020a3c941107f24b9c79dd0ce5832440178",
+    "/home/abc/temp/elite_audit_20260911/fair_three_arm_results/replay_20_23009.pkl": "e153dae50d6df255d421fbf93b6a799d748e95ab09f8f10bef2cb7b710632819",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/archive/hermite_audit/protocol.json": "b3b150f7180f72799872e97f10c6c45370edb1e891654070d81b0b02bb9d3feb"
+  },
+  "created": "2026-09-12T11:38:07+0900",
+  "layers": [
+    "fixed E candidates, exact truth only for post-audit",
+    "independent search and warm starts on common exogenous posteriors"
+  ],
+  "repeats": 3,
+  "order": "24 lexicographic permutations; (3*global_frame+repeat)%24",
+  "timing": "external plan wall time including table; no instrumentation or serialization",
+  "profiles": "exclusive instrumented subroutine times, diagnostic only; never mixed with pure timing",
+  "units": "paired episodes; repetitions are technical replicates",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "no_navigation": true,
+  "budget_replay_available": false,
+  "stopping": "no grid retuning regardless of T disagreements; no extra navigation or baselines",
+  "reason_partition": "refined elites; refined exact tolerance pool excluding elites; other refined; excluded",
+  "masks": "big-endian np.packbits hex; candidate index order, first population bits",
+  "preflight_corrections": [
+    "Fixed static-method invocation in read-only auditor before full audit; no production changes."
+  ],
+  "implementation_commit": "78be5e1a2a2146e3b5d6ec3b86eb46e4d2d54227",
+  "enclosure_audit_tolerance": 1e-10,
+  "reporting_source_hashes": {
+    "experiments/replay.py": "257eb48c3e3d9ed60b5e5b344e2c9ca9e2a281bc6cd1be42e9db7281f0c1ad88"
+  },
+  "reporting_correction": "Partition plot now excludes 12 no-risk batches (6144 candidate rows) from bound-refinement attribution. Raw masks remain intact. No evaluator, audit, timing, or production function changed; AST checked against 78be5e1.",
+  "hardware": {
+    "cpu": "AMD Ryzen 7 5700G",
+    "python": "3.8",
+    "numpy": "1.23.5",
+    "scipy": "1.10.1",
+    "cpu_frequency_locked": false,
+    "other_experiments_launched": false,
+    "desktop_services_stopped": false
+  },
+  "query_cardinalities_derived_from_frozen_inputs": {
+    "5": {
+      "batches": 1536,
+      "scalar_components": 55214080
+    },
+    "10": {
+      "batches": 1812,
+      "scalar_components": 132349952
+    },
+    "20": {
+      "batches": 2072,
+      "scalar_components": 276725760
+    }
+  },
+  "manuscript": {
+    "path": "/home/abc/workspace/nav_data/mamba/camrl/mamba_log/latex_FCS.txt",
+    "sha256": "8fe55272afd3c2271ba4c2e9343f0a57102cae8fa01a59039580a95d089b7187",
+    "backup_ref": "refs/tags/manuscript-pre-focused-20260912",
+    "final_ref": "refs/tags/manuscript-focused-20260912"
+  },
+  "raw_result_hashes": {
+    "mechanism.jsonl": "9e0f35a5750db4532d29bf0059ffbf6da95294f65a1d6c548fa393b160835262",
+    "timing.jsonl": "27d55127e9c283107f3bdc8bdda4759681eb879fce367da3fed31df1fe0482f1"
+  }
+}

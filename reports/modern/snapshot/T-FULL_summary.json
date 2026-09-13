@@ -1,0 +1,182 @@
+{
+ "bayes_full|baseline_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 97.33333333333334,
+  "cr": 2.666666666666667,
+  "tr": 0.0,
+  "penalised_time": 10.305833333333334,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|baseline_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 93.33333333333333,
+  "cr": 6.0,
+  "tr": 0.6666666666666667,
+  "penalised_time": 10.775,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|dense_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 93.33333333333333,
+  "cr": 6.666666666666667,
+  "tr": 0.0,
+  "penalised_time": 12.22,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|dense_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 74.66666666666667,
+  "cr": 24.0,
+  "tr": 1.3333333333333335,
+  "penalised_time": 15.978333333333333,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|large_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 97.33333333333334,
+  "cr": 2.3333333333333335,
+  "tr": 0.33333333333333337,
+  "penalised_time": 15.448333333333334,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "bayes_full|large_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 90.0,
+  "cr": 10.0,
+  "tr": 0.0,
+  "penalised_time": 12.224166666666667,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|baseline_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 17.666666666666668,
+  "cr": 1.0,
+  "tr": 81.33333333333333,
+  "penalised_time": 23.49416666666667,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|baseline_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 60.0,
+  "tr": 40.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|dense_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.6666666666666667,
+  "cr": 6.0,
+  "tr": 93.33333333333333,
+  "penalised_time": 24.9525,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|dense_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 89.0,
+  "tr": 11.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|large_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.33333333333333337,
+  "cr": 2.666666666666667,
+  "tr": 97.0,
+  "penalised_time": 24.995,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "shmpc_shared|large_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 90.0,
+  "tr": 10.0,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|baseline_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 20.666666666666668,
+  "cr": 5.0,
+  "tr": 74.33333333333333,
+  "penalised_time": 22.456666666666667,
+  "cr_unknown": 0.0,
+  "bound_violations": 4
+ },
+ "tmpc_shared|baseline_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 6.0,
+  "cr": 58.666666666666664,
+  "tr": 35.333333333333336,
+  "penalised_time": 24.3875,
+  "cr_unknown": 0.0,
+  "bound_violations": 1
+ },
+ "tmpc_shared|dense_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 11.0,
+  "cr": 16.333333333333332,
+  "tr": 72.66666666666667,
+  "penalised_time": 23.979166666666668,
+  "cr_unknown": 0.0,
+  "bound_violations": 1
+ },
+ "tmpc_shared|dense_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 0.0,
+  "cr": 90.66666666666666,
+  "tr": 9.333333333333334,
+  "penalised_time": 25.0,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|large_circle": {
+  "n": 300,
+  "errors": 0,
+  "sr": 29.333333333333332,
+  "cr": 21.333333333333336,
+  "tr": 49.333333333333336,
+  "penalised_time": 23.745833333333334,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ },
+ "tmpc_shared|large_square": {
+  "n": 300,
+  "errors": 0,
+  "sr": 2.0,
+  "cr": 86.33333333333333,
+  "tr": 11.666666666666666,
+  "penalised_time": 24.840833333333332,
+  "cr_unknown": 0.0,
+  "bound_violations": 0
+ }
+}
