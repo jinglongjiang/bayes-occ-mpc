@@ -56,8 +56,8 @@ def setup(records):
     if (OUT / 'protocol.json').exists():
         p = read('protocol.json')
         for path, sha in p['frozen_dependencies'].items():
-            from reproducibility.runtime import verify_frozen
-            verify_frozen(path, sha)
+            if old.digest(path) != sha:
+                raise RuntimeError('frozen dependency changed: ' + path)
         return p
     dev = [r for r in records if r['split'] == 'development']
     anchors = {a[0]: a for a in old.DEPTH_STATES}

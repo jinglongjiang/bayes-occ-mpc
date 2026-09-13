@@ -10,3 +10,12 @@ build_modern/
 
 # 第三方仓库（各自上游版本化，可重新 clone）
 src/
+
+# The vendored RVO source is intentional; compiled artifacts are local only.
+!vendor/Python-RVO2/src/
+!vendor/Python-RVO2/src/**
+vendor/Python-RVO2/build/
+vendor/Python-RVO2/dist/
+vendor/Python-RVO2/*.egg-info/
+vendor/Python-RVO2/*.so
+vendor/Python-RVO2/src/rvo2.cpp

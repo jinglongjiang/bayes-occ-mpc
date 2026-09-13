@@ -28,7 +28,7 @@ from nav.planner import MPCPlanner
 from nav.risk import CompiledDiscRisk
 
 OUT = ROOT / 'results/hermite_budget'
-from reproducibility.runtime import CROWD
+CROWD = Path('/home/abc/workspace/nav_data/mamba/camrl/CrowdNav')
 ARMS = ('exact', 'hermite')
 CONDITIONS = ('clean', 'severe')
 

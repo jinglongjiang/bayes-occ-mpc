@@ -20,8 +20,8 @@ from integration.crowdnav import BayesObservationAdapter
 from nav.contracts import MPCConfig
 from nav.planner import MPCPlanner
 from experiments.budget_navigation import history, layout
-from reproducibility.runtime import CROWD, verify_frozen
 
+CROWD = Path('/home/abc/workspace/nav_data/mamba/camrl/CrowdNav')
 OUT = ROOT / 'results/goal_model_probe'
 DT = .25
 ARMS = ('CV', 'TURN', 'A', 'B', 'C', 'D')
@@ -99,7 +99,8 @@ def initialize():
 def load_protocol():
     p = json.loads((OUT / 'protocol.json').read_text())
     for path, digest in p['files'].items():
-        verify_frozen(path, digest)
+        if sha(path) != digest:
+            raise RuntimeError('frozen source changed: ' + path)
     if 'data_sha256' in p and sha(OUT/'episodes.jsonl') != p['data_sha256']:
         raise RuntimeError('frozen observation/label data changed')
     return p
@@ -195,7 +196,7 @@ def legal_features(item, frame, entity, past):
                 goal=goal, goal_source=source, omega=omega, conflict=bool(conflict), neighbors=neighbors)
 
 
-def predict(features, goal, mode, parameter=1., steps=16):
+def predict(features, goal, mode, parameter=1.):
     pos = np.asarray(features['pos'], dtype=np.float64).copy()
     velocity = np.asarray(features['vel'], dtype=np.float64).copy()
     if mode == 'improved':
@@ -205,7 +206,7 @@ def predict(features, goal, mode, parameter=1., steps=16):
         policy._last_pref_vel = velocity.copy()
     result = []
     omega = features['omega']
-    for k in range(steps):
+    for k in range(16):
         if mode == 'old':
             velocity = (features['speed'] * unit(goal - pos)
                         if np.linalg.norm(goal - pos) > .35 else np.zeros(2))

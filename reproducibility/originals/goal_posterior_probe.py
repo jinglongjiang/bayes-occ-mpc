@@ -48,16 +48,14 @@ def digest(p):
 
 
 def data():
-    from reproducibility.runtime import ROOT as portable_root, resolve_path, verify_frozen
     protocol = json.loads((base.OUT / 'protocol.json').read_text())
     for path, expected in protocol['files'].items():
-        if resolve_path(path).resolve() == Path(base.__file__).resolve():
-            old = (portable_root/'reproducibility/originals/goal_model_protocol.py').read_bytes()
+        if Path(path).resolve() == Path(base.__file__).resolve():
+            old = subprocess.check_output(['git', 'show', BASELINE + ':experiments/goal_model_probe.py'], cwd=ROOT)
             if hashlib.sha256(old).hexdigest() != expected:
                 raise RuntimeError('baseline model hash mismatch')
-            verify_frozen(path, digest(portable_root/'reproducibility/originals/goal_model_probe.py'))
-        else:
-            verify_frozen(path, expected)
+        elif digest(path) != expected:
+            raise RuntimeError('frozen dependency changed: ' + path)
     if digest(base.OUT / 'episodes.jsonl') != protocol['data_sha256']:
         raise RuntimeError('raw records changed')
     base.legacy._load_modules(base.CROWD)
@@ -555,8 +553,7 @@ def depth_setup(records):
     if (DEPTH/'protocol.json').exists():
         saved=json.loads((DEPTH/'protocol.json').read_text())
         for path,h in saved['files'].items():
-            from reproducibility.runtime import verify_frozen
-            verify_frozen(path,h)
+            if digest(path)!=h:raise RuntimeError('depth frozen file changed: '+path)
         return saved
     depth_save('protocol.json',protocol)
     return protocol

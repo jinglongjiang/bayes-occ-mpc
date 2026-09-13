@@ -1101,12 +1101,8 @@ def rollout_human_segments(env, horizon: int) -> Tuple[np.ndarray, np.ndarray]:
 def _load_modules(crowdnav_root: Path):
     root_text = str(crowdnav_root.resolve())
     sys.path = [p for p in sys.path if "soc-nav-training/CrowdNav" not in p]
-    sys.path = [p for p in sys.path if p != root_text]
-    sys.path.insert(0, root_text)
-    for name, module in tuple(sys.modules.items()):
-        if name.split('.')[0] in ('crowd_sim', 'crowd_nav') and getattr(module, '__file__', None):
-            if crowdnav_root.resolve() not in Path(module.__file__).resolve().parents:
-                raise RuntimeError('CrowdNav already loaded from another source: ' + name)
+    if root_text not in sys.path:
+        sys.path.insert(0, root_text)
     from crowd_sim.envs.crowd_sim import CrowdSim
     from crowd_sim.envs.policy.policy_factory import NonePolicy
     from crowd_sim.envs.utils.action import ActionRot, ActionXY
