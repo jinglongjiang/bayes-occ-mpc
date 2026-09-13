@@ -1,0 +1,203 @@
+新方向验证报告
+日期：2026-09-14
+分支：direction-validation-20260914
+
+一、先给结论
+
+这轮完成了十个方向的文献与现有代码适配核查，并对排第一的数据关联方向，实际完成60个布局、2715个控制状态的记录动作回放和追加数值对照。
+
+结论不是“找到了一条已经成功的新算法”。结论是：
+1. 关联不确定性确实能改变风险，但在当前精确位置、速度输入下，尚未显示必须保留跨行人联合假设的动作价值。现在不建议直接建设完整关联导航算法。
+2. 改为当前帧只更新位置后，发现一个联合结构改变动作的状态。但这只是接口干预，不是完整匿名跟踪，更没有证明机器人走得更好。
+3. 其余九个方向不能靠现有数据全部做导航验收。缺传感器故障、群体关系、让路类型等真实变量的方向，已明确标为未实测，而不是宣布无效。
+4. 本轮没有新增足以独立支撑方法论文的正结果。也没有证明数据关联研究无效，或贝叶斯不可用于导航。
+
+二、这轮实际做了什么
+
+没有修改正式算法、论文、既有确认实验和导航参数，没有训练网络。
+新增一个隔离实验脚本：experiments/direction_validation.py。
+
+第一阶段：在原六配置中，每配置固定取前10个已有确认布局，完整回放原Bayes机器人动作。恢复行人推进与观测，逐步检查机器人位置与原记录一致，容差1e-9；初始布局哈希也核对。不是新算法控制机器人，所以没有新增成功率或碰撞率。
+
+每个状态用同一份历史先验计算最优和次优两种关联。关联评分使用预测位置高斯密度，99%二维门限，等关联先验；通过禁止最优解中的边逐次求解，获得真正的第二优注入匹配。小规模穷举自检验证了该求解。
+
+两个最优假设中，次优归一化权重至少0.2，标记为关联模糊。注意：这是“两假设内的权重”，不是完整关联空间的后验概率。
+
+每个模糊状态使用相同512条初始候选、16步预测，以及共同原几何约束与非概率代价，比较：
+  MAP：只用最可能关联世界。
+  FULL：各世界内先计算多人风险，再按世界权重求和。
+  独立边缘：每人的两种状态仍保留，但先按人平均概率，再假设人之间独立。
+
+分别测试原精确位置和速度更新，以及仅用当前位置更新的干预。首动作速度差至少0.05米/秒且FULL满足完整约束，才计入有意义的FULL-MAP动作变化。
+
+三、必须先说明的实验限制
+
+这不是可部署的匿名MHT/JPDA跟踪器：
+1. 历史先验来自原来有身份关联的跟踪器；当前真ID用于区分“已有目标检测/新目标检测”及事后评分。数值匹配不读取ID，但外围条件仍有特权信息。
+2. 没有递归累积错误关联，没有解决出生、杂波和未知人数假设。
+3. 位置更新干预仍沿用上述历史先验；新目标背景仍使用原速度。因此不能称作完整位置传感器实验。
+4. 各人存在概率在风险诊断中共同置1，只隔离关联因素；不是原完整Bayes风险的闭环复现。
+5. 固定的是第一轮候选池，不是各臂自行演化的四轮CEM；动作变化不等于动作更好。
+6. 60个布局来自已查看的数据，2715个时刻不是2715个独立实验。本轮不做确认性显著结论。
+7. 有423个状态在指定关联门限下没有可行全局匹配。不能把它们算成“关联清晰”，也不能声称当前关联模型已经充分校准。
+
+四、第一阶段真实结果
+
+总控制状态：2715。
+有可行关联的状态：2192。
+门限下没有可行关联的状态：423。
+其余100个状态缺少本诊断要求的先验或检测。
+关联模糊：68个，占全部状态2.50%，占可行关联状态3.10%。
+其中64个涉及“本次究竟观测到了哪些旧轨迹”的变化，而不只是给同一组可见人交换名字。
+
+                                    原位置+速度更新    当前仅位置更新
+候选风险排序出现至少1个百分点反转          8                 31
+FULL相对MAP的可行动作变化                  1                  3
+FULL相对独立边缘的动作变化>=0.05           0                  1
+最大FULL-MAP首速度差(米/秒)              0.0635             0.8834
+最大独立化风险误差                      0.1779             0.1621
+
+风险误差是候选上的极值，不代表获选动作风险，也不能当成碰撞改善幅度。
+
+最关键的读法：原接口的唯一FULL-MAP动作变化，被独立边缘方法完全复现。因此，这个例子支持“不要太早只选一个世界”，不支持“必须保留跨人的联合结构”。
+
+仅位置更新中，scene=4、case=3001020、step=31，FULL与独立边缘首速度差0.3541米/秒，是本轮唯一的联合结构动作敏感案例。它证明这个条件诊断能出现结构影响，不证明实际执行更安全。
+
+五、追加了高斯投影对照，避免漏掉简单替代
+
+第一阶段结束后，取所有出现可行FULL-MAP动作变化的4个状态，追加单高斯矩匹配。这是事后机制分析，不能拿来估计全体状态中高斯投影的差异率。
+
+每条轨迹匹配完整四维位置-速度均值和协方差，包括交叉项；不是只匹配一个标量方差。各向异性圆域概率使用高斯求积，在15、31、63节点下核对数值与获选候选稳定。8组状态/更新方式检查全部通过，最后两级的最大风险差约2.51e-8。
+
+状态                         更新方式      FULL与单高斯首速度差(米/秒)
+2 / 3001026 / 32              原输入                  0.9095
+2 / 3001026 / 32              仅位置                  0
+4 / 3001020 / 31              原输入                  0
+4 / 3001020 / 31              仅位置                  0.3373
+5 / 3001023 / 49              原输入                  0
+5 / 3001023 / 49              仅位置                  0.2896
+5 / 3001023 / 50              原输入                  0
+5 / 3001023 / 50              仅位置                  0
+
+原输入的第一个状态尤其重要：单高斯与FULL不同，但独立的多峰边缘与FULL相同。这是“高斯投影损失”与“跨人联合结构损失”的区别，不能混成一个新颖性主张。此处的矩匹配只是投影对照，不等于实现并公平测试了一套完整JPDA。
+
+六、GPT/CC说法中需要纠正的部分
+
+1. 数学上的风险损失，不等于已经证明导航必要性。
+在两个等概率世界里，每个世界都恰好有一人占据路径，FULL风险是1，独立边缘是0.75。这一计算正确，但MAP风险同样是1。原例子没有证明MAP会选错。
+
+2. 只换身份名字，可能完全不影响避障。
+如果无标签的位置、速度和未来集合不变，且各人采用相同模型、半径，风险对标签置换不变。合成测试做了100次随机置换核对。必须改变与历史连接后的未来或隐藏目标集合，关联才可能影响风险。
+
+3. 独立化既可能低估，也可能高估。
+两个世界分别是“二人都占路径”和“二人都不占路径”，FULL是0.5，独立边缘是0.75。不能写成总是低估或任何关联不确定都会导致误差。
+
+4. “sensor-health是一个标量，所以后验均值必然足够”也不对。
+若共同检测概率等概率为0.1和0.9，两人同时漏检的概率是E[(1-pD)^2]=0.41，而用均值0.5代替得到0.25。共同隐变量也会产生关联。但这只是似然层面的反例，不是现有导航收益。
+
+5. “数据关联感知规划主要已有静态案例”可以作为文献描述，不能说原理论只能处理静态物体。
+DA-aware POMDP已有一般生成模型和假设剪枝保证；动态目标搜寻/跟踪的多目标POMDP也存在。新颖性不能只靠把静态路标换成行人。
+
+6. “数学结构丢失，因此这条线杀不掉”不成立。
+结构损失可以真实存在，同时对当前动作、实际碰撞或通行表现没有有用增量。本轮结果正好说明必须分开这几层。
+
+七、十个方向分别验到了哪里
+
+1. 行人关联/身份/人数
+完成文献核查、合成验证、60布局回放及投影对照。当前结果不支持直接全面立项；人数和出生分支尚未测试。近邻是DA-BSP、关联感知POMDP、MHT/JPDA跟踪接规划，不能声称首次关联感知规划。[1-4]
+
+2. 共同传感器健康
+数学上有联合结构，不能凭“它是标量”否决。未知检测概率PMBM已经存在；本地没有共同故障隐变量或相应标注，旧独立漏检不能检验这个问题。暂不开发。[5]
+
+3. 让路/不让路类型
+问题真实，但SICNav、SocioSense等近邻很强。本地robot.visible=False时，行人策略不读取机器人，不能从这些轨迹辨识对机器人的配合类型。需要新的交互数据或协议，不适合作为当前低成本扩展。[6-7]
+
+4. 社会群体关系
+已有群体估计导航和群体轨迹预测；本地没有真实群体关系、群体行为生成或社会代价标签。两人靠得近不等于同一群体。未做实证，不建议直接投入。[8]
+
+5. 是否注意到机器人
+本地没有头向、视线或注意状态。Gaze2Nav研究的导航者视线与显著目标，不等于被观察行人是否注意到机器人。问题可以研究，但不能拿该论文或当前轨迹替代感知证据。[9]
+
+6. 从未见过的隐藏人数
+PaS、行人出现概率、OA-MPC已处理相关问题。本地确实可能有尚未观测的初始行人，但没有已验证的新生强度或人数推断模型。不是改开关即可形成新贡献。[10-12]
+
+7. 行为模式切换
+已有未知目标和运动特性的贝叶斯预测。本地固定目标不代表没有避让转向，但缺少独立的模式切换标签；不能把ORCA正常响应直接命名为隐藏模式切换并宣布新颖。本轮未新增训练。[13]
+
+8. 自身定位与障碍误差相关
+联合误差问题真实，已有不确定状态与动态预测的概率规划。本地机器人位置精确，没有相应共同坐标误差。需要新的定位观测链，不是可从原数据直接确认的收益。[14]
+
+9. 用户偏好
+贝叶斯奖励/偏好学习已有导航研究；本地没有用户选择或反馈。改变奖励不等于学到了个体偏好，不建议当前转入。[15]
+
+10. 地形、语义地图和ObjectNav
+已有概率地形和不确定性主动感知。本地是平面人群导航，没有地形接触、语义图像等观测。属于更换研究任务，不是现有代码的一个增量。[16-17]
+
+这些是适配与证据判断，不是十条路线都做完导航后的淘汰排名。原来的9.5/10等主观分数不能替代实验或新颖性审查。
+
+八、最终取舍
+
+当前可以用：原导航底座、原确认结果、这轮的诊断工具和关联风险数值对照。
+当前不能宣称：找到贝叶斯不可替代的导航机制；完整关联后验优于强替代；可以据此保证方法论文。
+
+我不建议马上训练网络或建设完整MHT-MPC。若未来仍投入关联方向，独立的新任务应是匿名、可校准的位置观测与递归关联，且必须包括保留每人多峰边缘的强对照，不能只比MAP和单高斯。这意味着先建立新的感知协议，不是把本轮一个敏感状态升级成成功。
+
+本轮固定验证已经完成，没有因为结果弱而追加布局、调门限找赢家。没有跑新方法闭环，因为尚无经过验收的匿名递归跟踪器；用特权条件诊断去跑“新方法成功率”会产生误导。
+
+九、数据、版本和复现
+
+第一阶段冻结提交：9ff599b。
+原协议及源码哈希：protocol.json；原结果：summary.json、60份配置_案例.json。
+数学自检：selftests.json。
+后续投影分析：projection_protocol.json、projection_summary.json。
+
+解释器：/home/abc/miniconda3/envs/crowdnav/bin/python。
+在仓库根目录运行：
+  第一阶段在9ff599b独立工作目录：python experiments/direction_validation.py --workers 4
+  当前版本追加分析：python experiments/direction_validation.py --followup
+
+追加代码改变了脚本哈希，所以当前版本不能覆盖第一阶段冻结协议；原协议没有被改写或关闭。完整回放仍需已有confirmation数据和运行依赖，本轮没有另外发布全部大体积轨迹或声称跨机器复现。
+
+十、核查来源
+
+以下是本轮使用的主要原始来源。文献筛查不是穷尽性系统综述；“未找到完全一致方法”不作为首次证明。
+[1] Pathak等，A unified framework for data association aware robust belief space planning and perception，IJRR 2018。
+https://indelman.github.io/ANPL-Website/Publications/Pathak18ijrr.pdf
+[2] Data Association Aware POMDP Planning with Hypothesis Pruning Performance Guarantees，2023。全文含一般POMDP模型；实验采用模糊路标。
+https://arxiv.org/html/2303.02139
+[3] STP4：跟踪、时空预测地图与导航。不能据此推断所有MHT导航都不保留联合结构。
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10703004/
+[4] Multi-objective Multi-agent Planning for Discovering and Tracking Multiple Mobile Objects：动态多目标POMDP近邻，任务不同于行人碰撞风险。
+https://ba-ngu.vo-au.com/vo/NVVRR_TSP24.pdf
+[5] Robust PMBM Filter with Unknown Detection Probability Based on Feature Estimation，Sensors 2022。
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9143192/
+[6] SICNav。
+https://arxiv.org/abs/2310.10982
+[7] SocioSense。
+https://arxiv.org/abs/1706.01102
+[8] Group Estimation for Social Robot Navigation in Crowded Environments。
+https://ieeexplore.ieee.org/document/10003761/
+[9] Gaze2Nav作者代码与论文说明。
+https://github.com/Polluxiaga/Gaze2Nav
+[10] Occlusion-Aware Crowd Navigation Using People as Sensors。
+https://arxiv.org/abs/2210.00552
+[11] Pedestrian Emergence Estimation and Occlusion-Aware Risk Assessment for Urban Autonomous Driving。
+https://arxiv.org/abs/2107.02326
+[12] OA-MPC。
+https://ieeexplore.ieee.org/document/10819000/
+[13] Trajectory Prediction via Bayesian Intention Inference under Unknown Goals and Kinematics。
+https://arxiv.org/abs/2509.24928
+[14] Chance-Constrained MPPI under State and Dynamic Object Prediction Uncertainty and the Evaluation of Collision Risk Calibration，预印本。
+https://arxiv.org/abs/2605.28330
+[15] 贝叶斯奖励不确定性与风险规避导航。
+https://arxiv.org/abs/2108.00276
+[16] TRIP，概率地形与运动规划。
+https://arxiv.org/abs/2411.17134
+[17] Uncertainty-Informed Active Perception for Open-Vocabulary Object Goal Navigation。
+https://arxiv.org/abs/2506.13367
+
+另外发现两个需在正式立项前继续逐式核对的近邻，不把其索引摘要当成全部机制已读懂：
+Risk-Aware Active Perception and Control in Sensing-Constrained Environments，使用PMBM的感知控制工作；目前核到公开PDF索引内容，未完整验清其风险是否保留全局假设。
+https://openreview.net/pdf/a6ba0f74fef307fae2498fd9909eebdfe4d88fc6.pdf
+PMBM Filtering With Fusion of Target-Provided and Exteroceptive Measurements: Applications to Maritime Point and Extended Object Tracking，IEEE Access 2024，已有海事跟踪与避碰控制应用；不能再笼统说PMBM只做跟踪、不进控制。
+https://papers.etn-sas.eu/assets/uploads/files/781d1-pmbm_filtering_with_fusion_of_target-provided_and_exteroceptive_measurements_applications_to_maritime_point_and_extended_object_tracking.pdf

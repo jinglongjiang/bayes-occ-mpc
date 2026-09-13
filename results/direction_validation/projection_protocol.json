@@ -1,0 +1,22 @@
+{
+  "scope": "Post-hoc projection check, not independent confirmation",
+  "targets": {
+    "2:3001026": [
+      32
+    ],
+    "4:3001020": [
+      31
+    ],
+    "5:3001023": [
+      49,
+      50
+    ]
+  },
+  "orders": [
+    15,
+    31,
+    63
+  ],
+  "source_sha256": "2adaa589f0b69e3dd87acf6170ce9a279c1fa103f38f03c34f5f72b009835940",
+  "rule": "All previously measured feasible full-MAP action changes; no new states; per-label full 4D moment match, conditional independence; not a complete JPDA implementation"
+}

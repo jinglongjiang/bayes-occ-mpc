@@ -1,0 +1,853 @@
+{
+  "states": 4,
+  "rows": [
+    {
+      "scene": 2,
+      "case": 3001026,
+      "step": 32,
+      "base": {
+        "priors": 8,
+        "known_detections": 3,
+        "ambiguity": true,
+        "status": "valid",
+        "map_wrong_links": 1,
+        "scored_links": 3,
+        "second_weight": 0.4281991508495375,
+        "selected_track_set_changes": true,
+        "assigned_prior_had_miss": true,
+        "arms": {
+          "native_exact_state_update": {
+            "hypothesis_max_risk_difference": 0.02824425428801558,
+            "independent_max_risk_error": 0.17792233612101938,
+            "ordering_reversal_over_1pp": false,
+            "full_map_action_delta": 0.06351300045330291,
+            "feasible_full_map_change": true,
+            "choices": {
+              "map": {
+                "winner": 334,
+                "action": [
+                  0.3050867470727997,
+                  0.6875408175142526
+                ],
+                "level": 0,
+                "full_feasible": 78,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 23,
+                "action": [
+                  0.2580782875350804,
+                  0.73025037099438
+                ],
+                "level": 0,
+                "full_feasible": 81,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 23,
+                "action": [
+                  0.2580782875350804,
+                  0.73025037099438
+                ],
+                "level": 0,
+                "full_feasible": 79,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 23,
+                "action": [
+                  0.2580782875350804,
+                  0.73025037099438
+                ],
+                "level": 0,
+                "full_feasible": 82,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          },
+          "position_only_update": {
+            "hypothesis_max_risk_difference": 0.3982564242577356,
+            "independent_max_risk_error": 0.00596522165732899,
+            "ordering_reversal_over_1pp": true,
+            "full_map_action_delta": 0.0,
+            "feasible_full_map_change": false,
+            "choices": {
+              "map": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          }
+        }
+      },
+      "checks": [
+        {
+          "arm": "native_exact_state_update",
+          "refinement_error": 3.191891195797325e-16,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 84,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 84,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 84,
+                "first_feasible": 512
+              }
+            }
+          ]
+        },
+        {
+          "arm": "position_only_update",
+          "refinement_error": 2.220446049250313e-16,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 218,
+                "action": [
+                  0.03737215012190212,
+                  -0.15201347346919192
+                ],
+                "level": 0,
+                "full_feasible": 91,
+                "first_feasible": 512
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 4,
+      "case": 3001020,
+      "step": 31,
+      "base": {
+        "priors": 11,
+        "known_detections": 5,
+        "ambiguity": true,
+        "status": "valid",
+        "map_wrong_links": 1,
+        "scored_links": 5,
+        "second_weight": 0.4908102096235801,
+        "selected_track_set_changes": true,
+        "assigned_prior_had_miss": true,
+        "arms": {
+          "native_exact_state_update": {
+            "hypothesis_max_risk_difference": 0.152059074853169,
+            "independent_max_risk_error": 0.1767640665821204,
+            "ordering_reversal_over_1pp": false,
+            "full_map_action_delta": 0.0,
+            "feasible_full_map_change": false,
+            "choices": {
+              "map": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 47,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 46,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 46,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 47,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          },
+          "position_only_update": {
+            "hypothesis_max_risk_difference": 0.651796167648806,
+            "independent_max_risk_error": 0.1621383195822108,
+            "ordering_reversal_over_1pp": true,
+            "full_map_action_delta": 0.15681798597130298,
+            "feasible_full_map_change": true,
+            "choices": {
+              "map": {
+                "winner": 3,
+                "action": [
+                  -0.3787261174489149,
+                  0.7262248699526177
+                ],
+                "level": 0,
+                "full_feasible": 2,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 61,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 237,
+                "action": [
+                  -0.2744308506354401,
+                  0.6091164669902261
+                ],
+                "level": 0,
+                "full_feasible": 16,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 377,
+                "action": [
+                  -0.26875304985900883,
+                  0.9632091144665738
+                ],
+                "level": 0,
+                "full_feasible": 19,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          }
+        }
+      },
+      "checks": [
+        {
+          "arm": "native_exact_state_update",
+          "refinement_error": 2.2083160300390148e-10,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 50,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 50,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 50,
+                "first_feasible": 512
+              }
+            }
+          ]
+        },
+        {
+          "arm": "position_only_update",
+          "refinement_error": 3.907426437965711e-09,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 59,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 59,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 493,
+                "action": [
+                  -0.34244400446656936,
+                  0.9395382396714358
+                ],
+                "level": 0,
+                "full_feasible": 59,
+                "first_feasible": 512
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 5,
+      "case": 3001023,
+      "step": 49,
+      "base": {
+        "priors": 20,
+        "known_detections": 9,
+        "ambiguity": true,
+        "status": "valid",
+        "map_wrong_links": 1,
+        "scored_links": 9,
+        "second_weight": 0.45558572380954326,
+        "selected_track_set_changes": true,
+        "assigned_prior_had_miss": true,
+        "arms": {
+          "native_exact_state_update": {
+            "hypothesis_max_risk_difference": 0.0020232160051218,
+            "independent_max_risk_error": 0.00037424331812965783,
+            "ordering_reversal_over_1pp": false,
+            "full_map_action_delta": 0.0,
+            "feasible_full_map_change": false,
+            "choices": {
+              "map": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 32,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 32,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 32,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 32,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          },
+          "position_only_update": {
+            "hypothesis_max_risk_difference": 0.4111249608288693,
+            "independent_max_risk_error": 0.0014342011462226134,
+            "ordering_reversal_over_1pp": true,
+            "full_map_action_delta": 0.4491482450828329,
+            "feasible_full_map_change": true,
+            "choices": {
+              "map": {
+                "winner": 482,
+                "action": [
+                  0.013075524503154023,
+                  0.5507328574951434
+                ],
+                "level": 0,
+                "full_feasible": 4,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 165,
+                "action": [
+                  -0.0721933384047389,
+                  0.6331348048271038
+                ],
+                "level": 0,
+                "full_feasible": 19,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 409,
+                "action": [
+                  0.0314259669897054,
+                  0.9995060823220445
+                ],
+                "level": 0,
+                "full_feasible": 9,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 409,
+                "action": [
+                  0.0314259669897054,
+                  0.9995060823220445
+                ],
+                "level": 0,
+                "full_feasible": 9,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          }
+        }
+      },
+      "checks": [
+        {
+          "arm": "native_exact_state_update",
+          "refinement_error": 9.953623578140558e-09,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 30,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 30,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 49,
+                "action": [
+                  0.1169858280604972,
+                  0.4900171036310809
+                ],
+                "level": 0,
+                "full_feasible": 30,
+                "first_feasible": 512
+              }
+            }
+          ]
+        },
+        {
+          "arm": "position_only_update",
+          "refinement_error": 2.504732277835986e-08,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 345,
+                "action": [
+                  -0.15408074593216514,
+                  0.7770605177426544
+                ],
+                "level": 0,
+                "full_feasible": 19,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 345,
+                "action": [
+                  -0.15408074593216514,
+                  0.7770605177426544
+                ],
+                "level": 0,
+                "full_feasible": 19,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 345,
+                "action": [
+                  -0.15408074593216514,
+                  0.7770605177426544
+                ],
+                "level": 0,
+                "full_feasible": 19,
+                "first_feasible": 512
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 5,
+      "case": 3001023,
+      "step": 50,
+      "base": {
+        "priors": 20,
+        "known_detections": 8,
+        "ambiguity": true,
+        "status": "valid",
+        "map_wrong_links": 1,
+        "scored_links": 8,
+        "second_weight": 0.4683936453118208,
+        "selected_track_set_changes": true,
+        "assigned_prior_had_miss": true,
+        "arms": {
+          "native_exact_state_update": {
+            "hypothesis_max_risk_difference": 0.0020597173929289905,
+            "independent_max_risk_error": 0.006378870310122242,
+            "ordering_reversal_over_1pp": false,
+            "full_map_action_delta": 0.0,
+            "feasible_full_map_change": false,
+            "choices": {
+              "map": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 73,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 73,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 73,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 73,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          },
+          "position_only_update": {
+            "hypothesis_max_risk_difference": 0.45093775310252715,
+            "independent_max_risk_error": 0.0014207850253353804,
+            "ordering_reversal_over_1pp": true,
+            "full_map_action_delta": 0.883350415509749,
+            "feasible_full_map_change": true,
+            "choices": {
+              "map": {
+                "winner": 434,
+                "action": [
+                  -0.08431413467830068,
+                  0.9964392237830911
+                ],
+                "level": 0,
+                "full_feasible": 6,
+                "first_feasible": 512
+              },
+              "second": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 71,
+                "first_feasible": 512
+              },
+              "full": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 37,
+                "first_feasible": 512
+              },
+              "independent": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 37,
+                "first_feasible": 512
+              }
+            },
+            "candidates": 512
+          }
+        }
+      },
+      "checks": [
+        {
+          "arm": "native_exact_state_update",
+          "refinement_error": 6.537331105269106e-09,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 72,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 72,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 72,
+                "first_feasible": 512
+              }
+            }
+          ]
+        },
+        {
+          "arm": "position_only_update",
+          "refinement_error": 1.494599782304873e-08,
+          "stable": true,
+          "orders": [
+            {
+              "order": 15,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 70,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 31,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 70,
+                "first_feasible": 512
+              }
+            },
+            {
+              "order": 63,
+              "choice": {
+                "winner": 81,
+                "action": [
+                  -0.2267657174228072,
+                  0.1246505434511937
+                ],
+                "level": 0,
+                "full_feasible": 70,
+                "first_feasible": 512
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

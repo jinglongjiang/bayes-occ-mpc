@@ -131,7 +131,7 @@ def candidate_pool(obs, cfg, seed):
     return planner, controls, positions
 
 
-def diagnostic(prior_tracks, detections, obs, F, Q, cfg, seed):
+def diagnostic(prior_tracks, detections, obs, F, Q, cfg, seed, capture=None):
     # Truth IDs only define the known-target diagnostic population and score it.
     # The assignment function receives numeric measurements, never identifiers.
     ids = list(prior_tracks)
@@ -170,6 +170,8 @@ def diagnostic(prior_tracks, detections, obs, F, Q, cfg, seed):
     for position_only in (False,True):
         worlds=[updated(states,z,c,position_only)+background for c in (a,b)]
         q=[component_probabilities(s,positions,obs,planner,F,Q) for s in worlds]
+        if capture is not None:
+            capture.append((position_only,worlds,weight,planner,controls,positions,obs,F,Q))
         risk=[-np.expm1(np.log1p(-np.clip(x,0,1-1e-12)).sum(axis=0)) for x in q]
         mixture=(1-weight)*risk[0]+weight*risk[1]
         independent=-np.expm1(np.log1p(-np.clip((1-weight)*q[0]+weight*q[1],0,1-1e-12)).sum(axis=0))
@@ -187,6 +189,89 @@ def diagnostic(prior_tracks, detections, obs, F, Q, cfg, seed):
             feasible_full_map_change=delta>=.05 and choices['full']['level']==0,
             choices=choices, candidates=len(controls))
     return entry
+
+
+def moment_match_check(captured):
+    position_only,worlds,w,planner,controls,positions,obs,F,Q=captured
+    matched_states=[]
+    for (m0,p0,r0),(m1,p1,r1) in zip(*worlds):
+        if abs(r0-r1)>1e-12:
+            raise RuntimeError('Radius mixing not supported in moment diagnostic')
+        m=(1-w)*m0+w*m1
+        cov=(1-w)*(p0+np.outer(m0-m,m0-m))+w*(p1+np.outer(m1-m,m1-m))
+        matched_states.append((m,cov,r0))
+    orders=[]
+    for order in (15,31,63):
+        nodes,weights=np.polynomial.hermite.hermgauss(order)
+        weights/=np.sqrt(np.pi)
+        hazard=np.zeros(positions.shape[:2])
+        for mean,cov,radius in matched_states:
+            mean,cov=mean.copy(),cov.copy()
+            for k in range(planner.cfg.horizon):
+                mean=F@mean
+                cov=F@cov@F.T+Q
+                values,vectors=np.linalg.eigh(cov[:2,:2])
+                if values.min() < -1e-10:
+                    raise RuntimeError('Invalid projected covariance')
+                radius_total=obs.robot_radius+radius+planner.cfg.human_margin
+                if values[1]-values[0]<1e-10:
+                    q=circle(np.linalg.norm(positions[:,k]-mean[:2],axis=1),max(values[0],0.),radius_total)
+                else:
+                    offsets=np.sqrt(2*(values[1]-values[0]))*nodes[:,None]*vectors[:,1]
+                    distance=np.linalg.norm(positions[:,k,None]-mean[:2]-offsets[None],axis=2)
+                    q=circle(distance,max(values[0],0.),radius_total)@weights
+                hazard[:,k]-=np.log1p(-np.clip(q,0,1-1e-12))
+        orders.append(dict(order=order,choice=selection(planner,controls,positions,obs,hazard),
+                           risk=(-np.expm1(-hazard)).tolist()))
+    error=float(np.max(np.abs(np.array(orders[-1]['risk'])-orders[-2]['risk'])))
+    return dict(arm='position_only_update' if position_only else 'native_exact_state_update',
+        refinement_error=error,stable=error<=.005 and orders[-1]['choice']['winner']==orders[-2]['choice']['winner'],
+        orders=[dict(order=x['order'],choice=x['choice']) for x in orders])
+
+
+def followup():
+    """Post-hoc strong projection check on ALL four states with a feasible change."""
+    p=verify()
+    targets={}
+    for path in sorted(DEST.glob('[0-5]_*.json')):
+        row=json.loads(path.read_text())
+        for s in row['states']:
+            if s['ambiguity'] and any(v['feasible_full_map_change'] for v in s['arms'].values()):
+                targets.setdefault((row['scene'],row['case']),[]).append(s['step'])
+    output=[]
+    cfg=legacy.MPCConfig(**p['configs']['bayes'])
+    calibration=json.loads((OUT/'calibration.json').read_text())
+    _,_,ActionXY,_,_=legacy._load_modules(CROWD)
+    with (OUT/'episodes.jsonl').open() as handle:
+        rows=[r for line in handle if (r:=json.loads(line))['method']=='bayes'
+              and r['sensor']=='range_and_occlusion' and (r['scene'],r['case_id']) in targets]
+    save(DEST/'projection_protocol.json',dict(scope='Post-hoc projection check, not independent confirmation',
+        targets={f'{a}:{b}':v for (a,b),v in targets.items()},orders=[15,31,63],
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        rule='All previously measured feasible full-MAP action changes; no new states; per-label full 4D moment match, conditional independence; not a complete JPDA implementation'))
+    for row in rows:
+        env=build(row['scene'],row['case_id'])
+        adapter=matched.MatchedAdapter('bayes',cfg.horizon,cfg.human_margin,cfg.dt,
+            cfg.chance_limit,cfg.fixed_uncertainty_radius,cfg.acceleration_std,
+            method='bayes',calibration=calibration,point=p['points']['bayes'])
+        for step,record in enumerate(row['steps']):
+            priors={i:copy.deepcopy(t) for i,t in adapter.rfs.tracks.items()
+                    if t.visible or t.existence>=adapter.rfs.cfg.report_existence}
+            obs=adapter.read(env)
+            if step in targets[(row['scene'],row['case_id'])]:
+                captures=[]
+                F,Q=adapter.rfs._transition()
+                base=diagnostic(priors,adapter.detected_entities,obs,F,Q,cfg,
+                                row['case_id']*100003+step*97+1729,captures)
+                checks=[moment_match_check(c) for c in captures]
+                output.append(dict(scene=row['scene'],case=row['case_id'],step=step,base=base,checks=checks))
+                print('Projection checked',row['scene'],step,flush=True)
+            env.step(ActionXY(record['action_a'],record['action_b']))
+            if not np.allclose([env.robot.px,env.robot.py],[record['x'],record['y']],atol=1e-9,rtol=0):
+                raise RuntimeError('Followup replay mismatch')
+            if step>=max(targets[(row['scene'],row['case_id'])]):
+                break
+    save(DEST/'projection_summary.json',dict(states=len(output),rows=output))
 
 
 def audit(row):
@@ -221,7 +306,11 @@ def audit(row):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--workers',type=int,default=4)
+    parser.add_argument('--followup',action='store_true')
     args=parser.parse_args()
+    if args.followup:
+        followup()
+        return
     p=verify()
     DEST.mkdir(parents=True,exist_ok=True)
     tests=synthetic()
