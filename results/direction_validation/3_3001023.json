@@ -1,0 +1,407 @@
+{
+  "scene": 3,
+  "case": 3001023,
+  "states": [
+    {
+      "priors": 0,
+      "known_detections": 0,
+      "ambiguity": false,
+      "step": 0
+    },
+    {
+      "priors": 8,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 1
+    },
+    {
+      "priors": 8,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 2
+    },
+    {
+      "priors": 8,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 3
+    },
+    {
+      "priors": 8,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 4
+    },
+    {
+      "priors": 9,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 5
+    },
+    {
+      "priors": 9,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 6
+    },
+    {
+      "priors": 9,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 7
+    },
+    {
+      "priors": 9,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 8
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 9
+    },
+    {
+      "priors": 11,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 10
+    },
+    {
+      "priors": 12,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 11
+    },
+    {
+      "priors": 12,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 12
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 13
+    },
+    {
+      "priors": 14,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 14
+    },
+    {
+      "priors": 14,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.00354808135866895,
+      "step": 15
+    },
+    {
+      "priors": 15,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.005176957721805403,
+      "step": 16
+    },
+    {
+      "priors": 16,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.003873957069807371,
+      "step": 17
+    },
+    {
+      "priors": 16,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 5.310214755625072e-05,
+      "step": 18
+    },
+    {
+      "priors": 16,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 7.435783707938542e-06,
+      "step": 19
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 8.26988331351454e-06,
+      "step": 20
+    },
+    {
+      "priors": 18,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 21
+    },
+    {
+      "priors": 18,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.0,
+      "step": 22
+    },
+    {
+      "priors": 19,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 7.258937707373028e-05,
+      "step": 23
+    },
+    {
+      "priors": 19,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.00022392442906616968,
+      "step": 24
+    },
+    {
+      "priors": 20,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.01744498887165674,
+      "step": 25
+    },
+    {
+      "priors": 20,
+      "known_detections": 13,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 26
+    },
+    {
+      "priors": 20,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.00242849194806768,
+      "step": 27
+    },
+    {
+      "priors": 20,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.09329222067336046,
+      "step": 28
+    },
+    {
+      "priors": 20,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.02275818366729138,
+      "step": 29
+    },
+    {
+      "priors": 20,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.08409271823489431,
+      "step": 30
+    },
+    {
+      "priors": 20,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 31
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0,
+      "step": 32
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 33
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 34
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 35
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.051325753774041784,
+      "step": 36
+    },
+    {
+      "priors": 19,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 4.577960177354822e-06,
+      "step": 37
+    },
+    {
+      "priors": 19,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 2.305652150212896e-06,
+      "step": 38
+    },
+    {
+      "priors": 19,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 39
+    },
+    {
+      "priors": 19,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.03913414706966629,
+      "step": 40
+    },
+    {
+      "priors": 19,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 41
+    },
+    {
+      "priors": 19,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 1.0081565524617745e-06,
+      "step": 42
+    },
+    {
+      "priors": 19,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 1.025500726508645e-06,
+      "step": 43
+    },
+    {
+      "priors": 19,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 1.0563745183290116e-06,
+      "step": 44
+    }
+  ]
+}

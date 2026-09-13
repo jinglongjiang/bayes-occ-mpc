@@ -1,0 +1,641 @@
+{
+  "scene": 4,
+  "case": 3001022,
+  "states": [
+    {
+      "priors": 0,
+      "known_detections": 0,
+      "ambiguity": false,
+      "step": 0
+    },
+    {
+      "priors": 3,
+      "known_detections": 3,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 1
+    },
+    {
+      "priors": 5,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 2
+    },
+    {
+      "priors": 5,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 3
+    },
+    {
+      "priors": 5,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 4
+    },
+    {
+      "priors": 5,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 5
+    },
+    {
+      "priors": 6,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 6
+    },
+    {
+      "priors": 6,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 7
+    },
+    {
+      "priors": 6,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 8
+    },
+    {
+      "priors": 6,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 9
+    },
+    {
+      "priors": 6,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 10
+    },
+    {
+      "priors": 7,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 11
+    },
+    {
+      "priors": 7,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 12
+    },
+    {
+      "priors": 8,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.0,
+      "step": 13
+    },
+    {
+      "priors": 8,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 2.5662803920582833e-05,
+      "step": 14
+    },
+    {
+      "priors": 9,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.00011006948292454712,
+      "step": 15
+    },
+    {
+      "priors": 9,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 16
+    },
+    {
+      "priors": 10,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 17
+    },
+    {
+      "priors": 10,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 18
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 19
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 20
+    },
+    {
+      "priors": 10,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.0,
+      "step": 21
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 22
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 23
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.05191906021438051,
+      "step": 24
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.00016636497065695074,
+      "step": 25
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 26
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 27
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.019117431323417176,
+      "step": 28
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 29
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.00023365368327310865,
+      "step": 30
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0011161661629677897,
+      "step": 31
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.00018853696178271532,
+      "step": 32
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.00021033645305616606,
+      "step": 33
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.04793354680876867,
+      "step": 34
+    },
+    {
+      "priors": 10,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.01925852039074298,
+      "step": 35
+    },
+    {
+      "priors": 10,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 1.2632229318740927e-05,
+      "step": 36
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 1.6249387734254475e-06,
+      "step": 37
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.08720417444281331,
+      "step": 38
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.017036441283200015,
+      "step": 39
+    },
+    {
+      "priors": 11,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 1.2764736379021962e-05,
+      "step": 40
+    },
+    {
+      "priors": 11,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 5.7819591254805244e-05,
+      "step": 41
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 8.113430427093529e-06,
+      "step": 42
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 1.5113228895999952e-05,
+      "step": 43
+    },
+    {
+      "priors": 12,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0104907353383356,
+      "step": 44
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 4.223242399470019e-05,
+      "step": 45
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 4.020309208531595e-05,
+      "step": 46
+    },
+    {
+      "priors": 12,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 3.982228665025786e-05,
+      "step": 47
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 3.8621144931540654e-05,
+      "step": 48
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 3.689559976204853e-05,
+      "step": 49
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 3.487000515323657e-05,
+      "step": 50
+    },
+    {
+      "priors": 12,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 3.1337945955158554e-07,
+      "step": 51
+    },
+    {
+      "priors": 12,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.8710667385744547e-05,
+      "step": 52
+    },
+    {
+      "priors": 12,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.2213529888192625e-06,
+      "step": 53
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.025643618817899557,
+      "step": 54
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 55
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 6,
+      "second_weight": 1.1185620243255182e-05,
+      "step": 56
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 57
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 1.4569965729323481e-05,
+      "step": 58
+    },
+    {
+      "priors": 12,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 1.5312753022303826e-05,
+      "step": 59
+    },
+    {
+      "priors": 11,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 60
+    },
+    {
+      "priors": 11,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 1.5141158924413596e-05,
+      "step": 61
+    },
+    {
+      "priors": 11,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.4482768709421088e-05,
+      "step": 62
+    },
+    {
+      "priors": 11,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.363519240386433e-05,
+      "step": 63
+    },
+    {
+      "priors": 11,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.270884571333241e-05,
+      "step": 64
+    },
+    {
+      "priors": 11,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 1.1776656126531882e-05,
+      "step": 65
+    }
+  ]
+}

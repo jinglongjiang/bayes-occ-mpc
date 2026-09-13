@@ -1,0 +1,2131 @@
+{
+  "scene": 3,
+  "case": 3001026,
+  "states": [
+    {
+      "priors": 0,
+      "known_detections": 0,
+      "ambiguity": false,
+      "step": 0
+    },
+    {
+      "priors": 10,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 1
+    },
+    {
+      "priors": 10,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 2
+    },
+    {
+      "priors": 12,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 3
+    },
+    {
+      "priors": 13,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 4
+    },
+    {
+      "priors": 13,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 5
+    },
+    {
+      "priors": 13,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.0,
+      "step": 6
+    },
+    {
+      "priors": 14,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 7
+    },
+    {
+      "priors": 14,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 8
+    },
+    {
+      "priors": 16,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 4.0245950548831024e-05,
+      "step": 9
+    },
+    {
+      "priors": 16,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.015980058687672008,
+      "step": 10
+    },
+    {
+      "priors": 17,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 4.465586654873652e-05,
+      "step": 11
+    },
+    {
+      "priors": 17,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 5.7718363192858585e-05,
+      "step": 12
+    },
+    {
+      "priors": 16,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.0,
+      "step": 13
+    },
+    {
+      "priors": 16,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.0,
+      "step": 14
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.004507790927171271,
+      "step": 15
+    },
+    {
+      "priors": 17,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 16
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 5.249824416697525e-05,
+      "step": 17
+    },
+    {
+      "priors": 17,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 18
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.05992786104716729,
+      "step": 19
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.07310191987678338,
+      "step": 20
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0005176105479500988,
+      "step": 21
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.00019021532023713342,
+      "step": 22
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 8,
+      "second_weight": 0.33380689241350525,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.038358950219664456,
+          "independent_max_risk_error": 0.0003462882472944906,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.18000624851498742,
+          "independent_max_risk_error": 0.0007692938679939587,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 3,
+              "action": [
+                -0.8909251266390296,
+                0.45415021603344985
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 23
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 7,
+      "second_weight": 0.12360073153193799,
+      "step": 24
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.003222126719123134,
+      "step": 25
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.16955600276589947,
+      "step": 26
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.01004186348172213,
+      "step": 27
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 2,
+      "scored_links": 7,
+      "second_weight": 0.4954074791737334,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0038082154299900195,
+          "independent_max_risk_error": 0.02366940429606923,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.09125294724796892,
+          "independent_max_risk_error": 0.0008043316020399649,
+          "ordering_reversal_over_1pp": true,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 3,
+              "action": [
+                -0.4317417462455801,
+                -0.44723742935838595
+              ],
+              "level": 0,
+              "full_feasible": 2,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 28
+    },
+    {
+      "priors": 17,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0015277963958795085,
+      "step": 29
+    },
+    {
+      "priors": 17,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.00027169331126985444,
+      "step": 30
+    },
+    {
+      "priors": 18,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0008979062465934742,
+      "step": 31
+    },
+    {
+      "priors": 18,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 5.033254787251305e-05,
+      "step": 32
+    },
+    {
+      "priors": 18,
+      "known_detections": 6,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 6,
+      "second_weight": 0.3899478500678661,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0035849314462863616,
+          "independent_max_risk_error": 0.03846667056621855,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 318,
+              "action": [
+                0.8657017966473447,
+                -0.5005600855856961
+              ],
+              "level": 0,
+              "full_feasible": 7,
+              "first_feasible": 247
+            },
+            "second": {
+              "winner": 318,
+              "action": [
+                0.8657017966473447,
+                -0.5005600855856961
+              ],
+              "level": 0,
+              "full_feasible": 7,
+              "first_feasible": 247
+            },
+            "full": {
+              "winner": 318,
+              "action": [
+                0.8657017966473447,
+                -0.5005600855856961
+              ],
+              "level": 0,
+              "full_feasible": 7,
+              "first_feasible": 247
+            },
+            "independent": {
+              "winner": 318,
+              "action": [
+                0.8657017966473447,
+                -0.5005600855856961
+              ],
+              "level": 0,
+              "full_feasible": 7,
+              "first_feasible": 247
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.04325409852343676,
+          "independent_max_risk_error": 0.0036534911036467665,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 158,
+              "action": [
+                0.8706025721493609,
+                -0.49198695243564833
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 236
+            },
+            "second": {
+              "winner": 158,
+              "action": [
+                0.8706025721493609,
+                -0.49198695243564833
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 236
+            },
+            "full": {
+              "winner": 158,
+              "action": [
+                0.8706025721493609,
+                -0.49198695243564833
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 236
+            },
+            "independent": {
+              "winner": 158,
+              "action": [
+                0.8706025721493609,
+                -0.49198695243564833
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 236
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 33
+    },
+    {
+      "priors": 18,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.010548061116575176,
+      "step": 34
+    },
+    {
+      "priors": 18,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0001961244262196792,
+      "step": 35
+    },
+    {
+      "priors": 18,
+      "known_detections": 5,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 5,
+      "second_weight": 0.35449957493623924,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.003441729425534834,
+          "independent_max_risk_error": 9.550977702610375e-06,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.01331616014209186,
+          "independent_max_risk_error": 0.00013833927866852003,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 214,
+              "action": [
+                0.9604306531630321,
+                0.27851922817793323
+              ],
+              "level": 0,
+              "full_feasible": 76,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 36
+    },
+    {
+      "priors": 18,
+      "known_detections": 6,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 6,
+      "second_weight": 0.49077009547719624,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0031101290698340445,
+          "independent_max_risk_error": 0.02208930204692333,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 60,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 60,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 60,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 60,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.04910722104761156,
+          "independent_max_risk_error": 0.005050488062153469,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 59,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 59,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 59,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 74,
+              "action": [
+                0.920199716377394,
+                0.39144920740622746
+              ],
+              "level": 0,
+              "full_feasible": 59,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 37
+    },
+    {
+      "priors": 17,
+      "known_detections": 7,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 2,
+      "scored_links": 7,
+      "second_weight": 0.40998472512026646,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.006672939667815556,
+          "independent_max_risk_error": 0.0008761403901824671,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 64,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.0508147458224569,
+          "independent_max_risk_error": 0.0005633727102321573,
+          "ordering_reversal_over_1pp": true,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 64,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 42,
+              "action": [
+                0.9910936542601643,
+                -0.09957184187680901
+              ],
+              "level": 0,
+              "full_feasible": 63,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 38
+    },
+    {
+      "priors": 18,
+      "known_detections": 7,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 7,
+      "second_weight": 0.46271580787695216,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.006515471883068766,
+          "independent_max_risk_error": 0.016940054587592623,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.06373615199285351,
+          "independent_max_risk_error": 0.0006939970694137959,
+          "ordering_reversal_over_1pp": true,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 503,
+              "action": [
+                0.9286646528719507,
+                0.3709204261108022
+              ],
+              "level": 0,
+              "full_feasible": 75,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 39
+    },
+    {
+      "priors": 18,
+      "known_detections": 7,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 2,
+      "scored_links": 7,
+      "second_weight": 0.43957862346369986,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0017269665628877884,
+          "independent_max_risk_error": 0.0016813390305092102,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "second": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "full": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "independent": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.03576699381743309,
+          "independent_max_risk_error": 0.0005171877588212026,
+          "ordering_reversal_over_1pp": true,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "second": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "full": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            },
+            "independent": {
+              "winner": 124,
+              "action": [
+                0.7721528527070652,
+                0.16516397459505772
+              ],
+              "level": 0,
+              "full_feasible": 94,
+              "first_feasible": 317
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 40
+    },
+    {
+      "priors": 18,
+      "known_detections": 7,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 7,
+      "second_weight": 0.41718861350445613,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.006572050260008282,
+          "independent_max_risk_error": 0.12457463336100505,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 24,
+              "first_feasible": 323
+            },
+            "second": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 24,
+              "first_feasible": 323
+            },
+            "full": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 24,
+              "first_feasible": 323
+            },
+            "independent": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 25,
+              "first_feasible": 323
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.11089013142230278,
+          "independent_max_risk_error": 0.0030039973320780677,
+          "ordering_reversal_over_1pp": true,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 28,
+              "first_feasible": 323
+            },
+            "second": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 28,
+              "first_feasible": 323
+            },
+            "full": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 28,
+              "first_feasible": 323
+            },
+            "independent": {
+              "winner": 412,
+              "action": [
+                0.6242353648433291,
+                0.7812363338189768
+              ],
+              "level": 0,
+              "full_feasible": 28,
+              "first_feasible": 323
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 41
+    },
+    {
+      "priors": 18,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.001819023049639011,
+      "step": 42
+    },
+    {
+      "priors": 18,
+      "known_detections": 8,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 2,
+      "scored_links": 8,
+      "second_weight": 0.37010392375219603,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0030741218824134565,
+          "independent_max_risk_error": 0.02281237712437134,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.00930922035940708,
+          "independent_max_risk_error": 8.519027284631386e-06,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 395,
+              "action": [
+                -0.11040751811904423,
+                0.9938864019307203
+              ],
+              "level": 0,
+              "full_feasible": 6,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 43
+    },
+    {
+      "priors": 18,
+      "known_detections": 10,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 10,
+      "second_weight": 0.2782999269226117,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.006430923448774661,
+          "independent_max_risk_error": 0.0013698499617845472,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.02351954820585106,
+          "independent_max_risk_error": 1.9496696356646748e-05,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 468,
+              "action": [
+                0.6024557817396174,
+                0.719958062408721
+              ],
+              "level": 0,
+              "full_feasible": 3,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 44
+    },
+    {
+      "priors": 18,
+      "known_detections": 10,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 10,
+      "second_weight": 0.36748465770894007,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.003015424751505762,
+          "independent_max_risk_error": 0.0025631400366966095,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 9,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 9,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 9,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 9,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.011730661148371055,
+          "independent_max_risk_error": 8.789829136036237e-06,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 11,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 11,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 11,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 476,
+              "action": [
+                0.26833697678908003,
+                0.963325109652861
+              ],
+              "level": 0,
+              "full_feasible": 11,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 45
+    },
+    {
+      "priors": 17,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 10,
+      "second_weight": 9.935186693439354e-05,
+      "step": 46
+    },
+    {
+      "priors": 18,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 12,
+      "second_weight": 0.0010900507446454846,
+      "step": 47
+    },
+    {
+      "priors": 18,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 2.301195433539142e-05,
+      "step": 48
+    },
+    {
+      "priors": 18,
+      "known_detections": 9,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 9,
+      "second_weight": 0.3727886513054323,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0014831921192197256,
+          "independent_max_risk_error": 0.000901175580033331,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.008942557904598303,
+          "independent_max_risk_error": 2.7941585241497702e-05,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 60,
+              "action": [
+                0.07303587401726726,
+                0.9973293142721382
+              ],
+              "level": 0,
+              "full_feasible": 20,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 49
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0005891917464002208,
+      "step": 50
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.02495622113995653,
+      "step": 51
+    },
+    {
+      "priors": 18,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 1.237369666743222e-05,
+      "step": 52
+    },
+    {
+      "priors": 17,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 0.0005326243166681527,
+      "step": 53
+    },
+    {
+      "priors": 17,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 6.319835461303153e-05,
+      "step": 54
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 2.6963409511176565e-05,
+      "step": 55
+    },
+    {
+      "priors": 18,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 0.00033312039744741874,
+      "step": 56
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 1.3329065136179583e-05,
+      "step": 57
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 1.110581937588297e-05,
+      "step": 58
+    },
+    {
+      "priors": 18,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0006981506044761689,
+      "step": 59
+    },
+    {
+      "priors": 18,
+      "known_detections": 13,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 2,
+      "scored_links": 13,
+      "second_weight": 0.32376710364930245,
+      "selected_track_set_changes": false,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 1.1102230246251565e-16,
+          "independent_max_risk_error": 0.014937168083313246,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 250,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 250,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 250,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 250,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.029695798105668803,
+          "independent_max_risk_error": 0.00023437644425700066,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 249,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 249,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 249,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 456,
+              "action": [
+                0.4108165406864386,
+                0.798964121367031
+              ],
+              "level": 0,
+              "full_feasible": 249,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 60
+    },
+    {
+      "priors": 18,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 61
+    },
+    {
+      "priors": 18,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 12,
+      "second_weight": 0.00034839949112586014,
+      "step": 62
+    },
+    {
+      "priors": 19,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 12,
+      "second_weight": 0.0005164740977471914,
+      "step": 63
+    },
+    {
+      "priors": 19,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 12,
+      "second_weight": 0.0,
+      "step": 64
+    },
+    {
+      "priors": 19,
+      "known_detections": 13,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 13,
+      "second_weight": 0.0,
+      "step": 65
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0,
+      "step": 66
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0,
+      "step": 67
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 0.0,
+      "step": 68
+    },
+    {
+      "priors": 19,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 0.004144040755013084,
+      "step": 69
+    }
+  ]
+}

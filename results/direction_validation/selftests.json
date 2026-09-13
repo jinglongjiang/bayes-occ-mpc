@@ -1,0 +1,40 @@
+{
+  "assignment_bruteforce_cases": 14,
+  "xor": {
+    "joint": 1.0,
+    "independent": 0.75,
+    "map": 1.0
+  },
+  "positive_correlation": {
+    "joint": 0.5,
+    "independent": 0.75,
+    "map": 1.0
+  },
+  "permutation_tests": 100,
+  "max_permutation_error": 1.1102230246251565e-16,
+  "sensor_health": {
+    "shared_two_misses": 0.41000000000000003,
+    "mean_plugin": 0.25
+  },
+  "genuine_map_counterexample": {
+    "weights": [
+      0.6,
+      0.4
+    ],
+    "conditional_risks": [
+      [
+        0.0,
+        0.3
+      ],
+      [
+        1.0,
+        0.3
+      ]
+    ],
+    "mixture_risks": [
+      0.4,
+      0.3
+    ]
+  },
+  "meaning": "Algebra and solver checks only. No measured navigation benefit or novelty."
+}

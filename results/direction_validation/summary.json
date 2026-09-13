@@ -1,0 +1,188 @@
+{
+  "episodes": 60,
+  "rows": [
+    {
+      "scene": null,
+      "states": 2715,
+      "ambiguous_states": 68,
+      "valid_assignment_states": 2192,
+      "no_feasible_assignment_states": 423,
+      "map_wrong_links": 114,
+      "scored_links": 14458,
+      "changed_track_set_states": 64,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 8,
+          "feasible_full_map_changes": 1,
+          "max_action_delta": 0.06351300045330291,
+          "max_hypothesis_risk_difference": 0.152059074853169,
+          "max_independence_error": 0.17792233612101938
+        },
+        "position_only_update": {
+          "order_reversals": 31,
+          "feasible_full_map_changes": 3,
+          "max_action_delta": 0.883350415509749,
+          "max_hypothesis_risk_difference": 0.6572605609511644,
+          "max_independence_error": 0.1621383195822108
+        }
+      }
+    },
+    {
+      "scene": 0,
+      "states": 391,
+      "ambiguous_states": 0,
+      "valid_assignment_states": 337,
+      "no_feasible_assignment_states": 24,
+      "map_wrong_links": 0,
+      "scored_links": 1223,
+      "changed_track_set_states": 0,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 0,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0,
+          "max_hypothesis_risk_difference": 0,
+          "max_independence_error": 0
+        },
+        "position_only_update": {
+          "order_reversals": 0,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0,
+          "max_hypothesis_risk_difference": 0,
+          "max_independence_error": 0
+        }
+      }
+    },
+    {
+      "scene": 1,
+      "states": 341,
+      "ambiguous_states": 3,
+      "valid_assignment_states": 249,
+      "no_feasible_assignment_states": 82,
+      "map_wrong_links": 2,
+      "scored_links": 1598,
+      "changed_track_set_states": 2,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 0,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.029465270373459085,
+          "max_independence_error": 0.0004064649745923049
+        },
+        "position_only_update": {
+          "order_reversals": 0,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.10101981845828986,
+          "max_independence_error": 0.00038710151978224583
+        }
+      }
+    },
+    {
+      "scene": 2,
+      "states": 471,
+      "ambiguous_states": 16,
+      "valid_assignment_states": 415,
+      "no_feasible_assignment_states": 44,
+      "map_wrong_links": 22,
+      "scored_links": 2459,
+      "changed_track_set_states": 15,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 4,
+          "feasible_full_map_changes": 1,
+          "max_action_delta": 0.06351300045330291,
+          "max_hypothesis_risk_difference": 0.04938382255493219,
+          "max_independence_error": 0.17792233612101938
+        },
+        "position_only_update": {
+          "order_reversals": 11,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.6572605609511644,
+          "max_independence_error": 0.019800445974857195
+        }
+      }
+    },
+    {
+      "scene": 3,
+      "states": 477,
+      "ambiguous_states": 30,
+      "valid_assignment_states": 348,
+      "no_feasible_assignment_states": 119,
+      "map_wrong_links": 55,
+      "scored_links": 3312,
+      "changed_track_set_states": 28,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 0,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.05042397225819945,
+          "max_independence_error": 0.12457463336100505
+        },
+        "position_only_update": {
+          "order_reversals": 9,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.5923028983187707,
+          "max_independence_error": 0.033045013348868
+        }
+      }
+    },
+    {
+      "scene": 4,
+      "states": 589,
+      "ambiguous_states": 12,
+      "valid_assignment_states": 510,
+      "no_feasible_assignment_states": 51,
+      "map_wrong_links": 13,
+      "scored_links": 2605,
+      "changed_track_set_states": 12,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 3,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.152059074853169,
+          "max_independence_error": 0.1767640665821204
+        },
+        "position_only_update": {
+          "order_reversals": 7,
+          "feasible_full_map_changes": 1,
+          "max_action_delta": 0.15681798597130298,
+          "max_hypothesis_risk_difference": 0.651796167648806,
+          "max_independence_error": 0.1621383195822108
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "states": 446,
+      "ambiguous_states": 7,
+      "valid_assignment_states": 333,
+      "no_feasible_assignment_states": 103,
+      "map_wrong_links": 22,
+      "scored_links": 3261,
+      "changed_track_set_states": 7,
+      "arms": {
+        "native_exact_state_update": {
+          "order_reversals": 1,
+          "feasible_full_map_changes": 0,
+          "max_action_delta": 0.0,
+          "max_hypothesis_risk_difference": 0.04392042932261675,
+          "max_independence_error": 0.010532304315122643
+        },
+        "position_only_update": {
+          "order_reversals": 4,
+          "feasible_full_map_changes": 2,
+          "max_action_delta": 0.883350415509749,
+          "max_hypothesis_risk_difference": 0.45093775310252715,
+          "max_independence_error": 0.005278486984747144
+        }
+      }
+    }
+  ],
+  "limitation": "Exploratory conditional one-frame association diagnostic, not an anonymous recursive tracker"
+}

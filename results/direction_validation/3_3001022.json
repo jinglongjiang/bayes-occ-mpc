@@ -1,0 +1,740 @@
+{
+  "scene": 3,
+  "case": 3001022,
+  "states": [
+    {
+      "priors": 0,
+      "known_detections": 0,
+      "ambiguity": false,
+      "step": 0
+    },
+    {
+      "priors": 9,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 1
+    },
+    {
+      "priors": 9,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 2
+    },
+    {
+      "priors": 10,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 3
+    },
+    {
+      "priors": 10,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 4
+    },
+    {
+      "priors": 11,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 5
+    },
+    {
+      "priors": 11,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 6
+    },
+    {
+      "priors": 11,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 7
+    },
+    {
+      "priors": 11,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 8
+    },
+    {
+      "priors": 11,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.0,
+      "step": 9
+    },
+    {
+      "priors": 11,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.0,
+      "step": 10
+    },
+    {
+      "priors": 11,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.0,
+      "step": 11
+    },
+    {
+      "priors": 11,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.0,
+      "step": 12
+    },
+    {
+      "priors": 11,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.0,
+      "step": 13
+    },
+    {
+      "priors": 11,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0003190022493828529,
+      "step": 14
+    },
+    {
+      "priors": 11,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0004880217737706432,
+      "step": 15
+    },
+    {
+      "priors": 11,
+      "known_detections": 2,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 2,
+      "second_weight": 0.0,
+      "step": 16
+    },
+    {
+      "priors": 11,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.0,
+      "step": 17
+    },
+    {
+      "priors": 10,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.00019525224142932185,
+      "step": 18
+    },
+    {
+      "priors": 10,
+      "known_detections": 4,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 4,
+      "second_weight": 0.000401429601427783,
+      "step": 19
+    },
+    {
+      "priors": 11,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 20
+    },
+    {
+      "priors": 11,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 21
+    },
+    {
+      "priors": 11,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 22
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0008079882829268594,
+      "step": 23
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0010539766394110617,
+      "step": 24
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 25
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 26
+    },
+    {
+      "priors": 12,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 27
+    },
+    {
+      "priors": 12,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 0.014431988358413302,
+      "step": 28
+    },
+    {
+      "priors": 13,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 5.9103763644977493e-05,
+      "step": 29
+    },
+    {
+      "priors": 14,
+      "known_detections": 9,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 9,
+      "second_weight": 0.4225359068330172,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0011536439378882074,
+          "independent_max_risk_error": 0.03552948205409451,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 35,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 35,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 35,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 35,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.13660146105501528,
+          "independent_max_risk_error": 0.003543681302359686,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 36,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 36,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 36,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 253,
+              "action": [
+                -0.21142728443616407,
+                0.6858865453068045
+              ],
+              "level": 0,
+              "full_feasible": 36,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 30
+    },
+    {
+      "priors": 16,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 0.1917273503166104,
+      "step": 31
+    },
+    {
+      "priors": 17,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 0.00021243408103314816,
+      "step": 32
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 2.5843244339479378e-05,
+      "step": 33
+    },
+    {
+      "priors": 17,
+      "known_detections": 8,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 8,
+      "second_weight": 1.990667413942107e-05,
+      "step": 34
+    },
+    {
+      "priors": 18,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.00030906459416094994,
+      "step": 35
+    },
+    {
+      "priors": 19,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 0.0005791149783073279,
+      "step": 36
+    },
+    {
+      "priors": 19,
+      "known_detections": 13,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 13,
+      "second_weight": 0.0037926043869521997,
+      "step": 37
+    },
+    {
+      "priors": 19,
+      "known_detections": 12,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 12,
+      "second_weight": 0.0008703520374022085,
+      "step": 38
+    },
+    {
+      "priors": 19,
+      "known_detections": 13,
+      "ambiguity": true,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 13,
+      "second_weight": 0.29725078156718815,
+      "selected_track_set_changes": true,
+      "assigned_prior_had_miss": true,
+      "arms": {
+        "native_exact_state_update": {
+          "hypothesis_max_risk_difference": 0.0045414155945490975,
+          "independent_max_risk_error": 0.00010897605308377023,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 347,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 347,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 347,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 347,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        },
+        "position_only_update": {
+          "hypothesis_max_risk_difference": 0.016929713803251256,
+          "independent_max_risk_error": 2.473936332472726e-05,
+          "ordering_reversal_over_1pp": false,
+          "full_map_action_delta": 0.0,
+          "feasible_full_map_change": false,
+          "choices": {
+            "map": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 346,
+              "first_feasible": 512
+            },
+            "second": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 346,
+              "first_feasible": 512
+            },
+            "full": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 346,
+              "first_feasible": 512
+            },
+            "independent": {
+              "winner": 0,
+              "action": [
+                0.3665927336428599,
+                0.9303815172499158
+              ],
+              "level": 0,
+              "full_feasible": 346,
+              "first_feasible": 512
+            }
+          },
+          "candidates": 512
+        }
+      },
+      "step": 39
+    },
+    {
+      "priors": 19,
+      "known_detections": 15,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 15,
+      "second_weight": 0.001116388595929345,
+      "step": 40
+    },
+    {
+      "priors": 19,
+      "known_detections": 14,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 14,
+      "second_weight": 1.8827875009973672e-05,
+      "step": 41
+    },
+    {
+      "priors": 19,
+      "known_detections": 14,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 14,
+      "second_weight": 1.529096408434734e-05,
+      "step": 42
+    },
+    {
+      "priors": 19,
+      "known_detections": 14,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 1,
+      "scored_links": 14,
+      "second_weight": 0.05343566344582403,
+      "step": 43
+    },
+    {
+      "priors": 19,
+      "known_detections": 14,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 14,
+      "second_weight": 0.00035531919506910544,
+      "step": 44
+    },
+    {
+      "priors": 19,
+      "known_detections": 13,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 13,
+      "second_weight": 0.000267060633554292,
+      "step": 45
+    },
+    {
+      "priors": 19,
+      "known_detections": 13,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 13,
+      "second_weight": 0.0002609288363142097,
+      "step": 46
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 3.378150361590063e-05,
+      "step": 47
+    },
+    {
+      "priors": 19,
+      "known_detections": 11,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 11,
+      "second_weight": 9.502486865908425e-06,
+      "step": 48
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 9,
+      "second_weight": 3.7047563137642745e-05,
+      "step": 49
+    },
+    {
+      "priors": 19,
+      "known_detections": 10,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 10,
+      "second_weight": 1.942697279873565e-06,
+      "step": 50
+    },
+    {
+      "priors": 19,
+      "known_detections": 9,
+      "ambiguity": false,
+      "status": "no_feasible_global_assignment_under_gate",
+      "step": 51
+    },
+    {
+      "priors": 19,
+      "known_detections": 7,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 7,
+      "second_weight": 0.0,
+      "step": 52
+    },
+    {
+      "priors": 20,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 0.0,
+      "step": 53
+    },
+    {
+      "priors": 20,
+      "known_detections": 5,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 5,
+      "second_weight": 0.0,
+      "step": 54
+    },
+    {
+      "priors": 20,
+      "known_detections": 6,
+      "ambiguity": false,
+      "status": "valid",
+      "map_wrong_links": 0,
+      "scored_links": 6,
+      "second_weight": 5.641712465689197e-07,
+      "step": 55
+    }
+  ]
+}

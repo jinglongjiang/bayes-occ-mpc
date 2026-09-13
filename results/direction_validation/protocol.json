@@ -1,0 +1,29 @@
+{
+  "scope": "Exploratory conditional one-frame association diagnostic, not an anonymous recursive tracker",
+  "population": "First 10 frozen cases in each of six configurations, all steps; no outcome selection",
+  "cases": [
+    3001017,
+    3001018,
+    3001019,
+    3001020,
+    3001021,
+    3001022,
+    3001023,
+    3001024,
+    3001025,
+    3001026
+  ],
+  "source_sha256": "f66789918effc5f963a38bd667da43f66187584a5d24ed21337e0fc593b22944",
+  "data_sha256": "7876b31b8fd4e0317bc9341046b48fa8e8900749025e0f91e4aa42af3f1f1a62",
+  "privileged_condition": "Prior tracks come from existing identity-associated legal history. Current ID only partitions known/new targets and scores assignments, not likelihood or update.",
+  "association": "Exact top two injective assignments from predicted position Gaussian density; 99% 2D gate; equal assignment prior; conditional on known target detections; no clutter or birth ambiguity.",
+  "ambiguity": "Second normalized weight within TOP TWO >= .2, not mass in full posterior",
+  "risk": "Original per-step disc event, original Q/radius/horizon; all included persons exist with probability one to isolate association, same across worlds; across-person conditional independence.",
+  "comparisons": [
+    "native exact position and velocity update",
+    "position-only current update with same privileged past prior"
+  ],
+  "controls": "Same 512 initial candidate pool and original common geometry/cost; no independent CEM or new navigation outcomes",
+  "relevance": "Two conditional max-over-horizon candidate risk orderings reverse with >=.01 difference in both; also report full-vs-MAP first speed delta >=.05 and full feasibility.",
+  "stop": "Complete fixed 60 replays regardless of sign; fail on state mismatch; no likelihood tuning on results"
+}
