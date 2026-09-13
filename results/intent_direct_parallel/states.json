@@ -1,0 +1,4178 @@
+[
+  {
+    "state": [
+      2000000,
+      16,
+      3
+    ],
+    "people": 5,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 0.9365174919366837,
+        "compression": 0.15260465443134308,
+        "rollout": 1.8082903698086739,
+        "observation": 0.6553307175636292,
+        "mpc": 87.76712603867054,
+        "total": 91.64079464972019,
+        "risk": 58.07683430612087,
+        "mpc_other": 29.690291732549667,
+        "build_pack": 3.969494253396988,
+        "query": 53.82084660232067,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 0.8923076093196869,
+        "compression": 0.1946510747075081,
+        "rollout": 1.7527658492326736,
+        "observation": 0.6549125537276268,
+        "mpc": 77.67391856759787,
+        "total": 81.45588543266058,
+        "risk": 47.95122239738703,
+        "mpc_other": 29.72269617021084,
+        "build_pack": 4.21450100839138,
+        "query": 43.65164879709482,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 0.9289039298892021,
+        "compression": 0.15085935592651367,
+        "rollout": 1.7708539962768555,
+        "observation": 0.6218766793608665,
+        "mpc": 59.520057402551174,
+        "total": 63.28561156988144,
+        "risk": 30.07945418357849,
+        "mpc_other": 29.440603218972683,
+        "build_pack": 4.319893196225166,
+        "query": 25.70515312254429,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 0.9612422436475754,
+        "compression": 0.18829479813575745,
+        "rollout": 1.7564669251441956,
+        "observation": 0.635356642305851,
+        "mpc": 47.56191745400429,
+        "total": 51.40513740479946,
+        "risk": 19.981497898697853,
+        "mpc_other": 27.580419555306435,
+        "build_pack": 4.02571726590395,
+        "query": 15.900952741503716,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 0.8817603811621666,
+        "compression": 0.18361490219831467,
+        "rollout": 1.74773670732975,
+        "observation": 0.6497437134385109,
+        "mpc": 43.37779898196459,
+        "total": 47.12889529764652,
+        "risk": 15.244225040078163,
+        "mpc_other": 28.133573941886425,
+        "build_pack": 4.060150124132633,
+        "query": 11.12205721437931,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 0.9763268753886223,
+        "compression": 0.19611697643995285,
+        "rollout": 1.7534634098410606,
+        "observation": 0.6271852180361748,
+        "mpc": 76.18746254593134,
+        "total": 80.04073798656464,
+        "risk": 48.14258869737387,
+        "mpc_other": 28.044873848557472,
+        "build_pack": 4.016636870801449,
+        "query": 44.03787851333618,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 0.9226175025105476,
+        "compression": 0.15435274690389633,
+        "rollout": 1.789851114153862,
+        "observation": 0.6285812705755234,
+        "mpc": 58.515094220638275,
+        "total": 62.32842057943344,
+        "risk": 30.72451800107956,
+        "mpc_other": 27.790576219558716,
+        "build_pack": 4.049672745168209,
+        "query": 26.6243489459157,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 0.9738830849528313,
+        "compression": 0.15840306878089905,
+        "rollout": 1.7502512782812119,
+        "observation": 0.6845258176326752,
+        "mpc": 48.04543778300285,
+        "total": 51.893824711441994,
+        "risk": 20.48331405967474,
+        "mpc_other": 27.562123723328114,
+        "build_pack": 4.038148559629917,
+        "query": 16.393691301345825,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 0.9580990299582481,
+        "compression": 0.15763379633426666,
+        "rollout": 1.7814701423048973,
+        "observation": 0.627533532679081,
+        "mpc": 44.32220757007599,
+        "total": 48.11255540698767,
+        "risk": 16.12906251102686,
+        "mpc_other": 28.19314505904913,
+        "build_pack": 4.04701940715313,
+        "query": 12.025254778563976,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 0.9191259741783142,
+        "compression": 0.1575639471411705,
+        "rollout": 1.7704358324408531,
+        "observation": 0.6449958309531212,
+        "mpc": 85.43864917010069,
+        "total": 89.19240068644285,
+        "risk": 57.54659045487642,
+        "mpc_other": 27.892058715224266,
+        "build_pack": 3.7436233833432198,
+        "query": 53.474778309464455,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 0.9221285581588745,
+        "compression": 0.170205719769001,
+        "rollout": 1.7812615260481834,
+        "observation": 0.6344495341181755,
+        "mpc": 57.82142095267773,
+        "total": 61.65570020675659,
+        "risk": 29.821105301380157,
+        "mpc_other": 28.00031565129757,
+        "build_pack": 4.177345894277096,
+        "query": 25.58076474815607,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 0.9143063798546791,
+        "compression": 0.1554694026708603,
+        "rollout": 1.7765816301107407,
+        "observation": 0.6297696381807327,
+        "mpc": 48.45974314957857,
+        "total": 52.19603329896927,
+        "risk": 20.47723811119795,
+        "mpc_other": 27.982505038380623,
+        "build_pack": 4.04729787260294,
+        "query": 16.37720875442028,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 0.978352501988411,
+        "compression": 0.1572864130139351,
+        "rollout": 1.8577389419078827,
+        "observation": 0.639965757727623,
+        "mpc": 43.2819752022624,
+        "total": 47.22646623849869,
+        "risk": 15.114669688045979,
+        "mpc_other": 28.167305514216423,
+        "build_pack": 4.224557429552078,
+        "query": 10.836539790034294,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 0.9113727137446404,
+        "compression": 0.15700608491897583,
+        "rollout": 1.73272006213665,
+        "observation": 0.672442838549614,
+        "mpc": 85.21690033376217,
+        "total": 88.97526003420353,
+        "risk": 57.22929537296295,
+        "mpc_other": 27.987604960799217,
+        "build_pack": 3.7661129608750343,
+        "query": 53.1535716727376,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 1.044074073433876,
+        "compression": 0.1607770100235939,
+        "rollout": 1.8929392099380493,
+        "observation": 0.7307622581720352,
+        "mpc": 76.01690664887428,
+        "total": 80.15821408480406,
+        "risk": 47.86727111786604,
+        "mpc_other": 28.149635531008244,
+        "build_pack": 4.0302574634552,
+        "query": 43.78630965948105,
+        "actual_cpus": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000001,
+      16,
+      1
+    ],
+    "people": 5,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 1.2704329565167427,
+        "compression": 0.19402150064706802,
+        "rollout": 1.5702666714787483,
+        "observation": 0.6162188947200775,
+        "mpc": 89.16746638715267,
+        "total": 93.13444513827562,
+        "risk": 61.086904257535934,
+        "mpc_other": 28.080562129616737,
+        "build_pack": 4.193060100078583,
+        "query": 56.82434793561697,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 1.2647761031985283,
+        "compression": 0.13633258640766144,
+        "rollout": 1.725667156279087,
+        "observation": 0.6285123527050018,
+        "mpc": 84.30720213800669,
+        "total": 88.34514208137989,
+        "risk": 44.81277894228697,
+        "mpc_other": 39.49442319571972,
+        "build_pack": 4.2946795001626015,
+        "query": 40.45070428401232,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 1.4484617859125137,
+        "compression": 0.15358440577983856,
+        "rollout": 1.6814563423395157,
+        "observation": 0.6718141958117485,
+        "mpc": 54.465632885694504,
+        "total": 58.7358670309186,
+        "risk": 26.159615255892277,
+        "mpc_other": 28.306017629802227,
+        "build_pack": 4.184050485491753,
+        "query": 21.889660507440567,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 1.2915963307023048,
+        "compression": 0.13926532119512558,
+        "rollout": 1.523681916296482,
+        "observation": 0.6245309486985207,
+        "mpc": 44.79203838855028,
+        "total": 48.657188192009926,
+        "risk": 16.873440705239773,
+        "mpc_other": 27.91859768331051,
+        "build_pack": 4.099121317267418,
+        "query": 12.701541185379028,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 1.2492714449763298,
+        "compression": 0.13954471796751022,
+        "rollout": 1.5196306630969048,
+        "observation": 0.6220163777470589,
+        "mpc": 98.30997791141272,
+        "total": 102.13091783225536,
+        "risk": 70.18597330898046,
+        "mpc_other": 28.12400460243225,
+        "build_pack": 3.843987360596657,
+        "query": 66.01072289049625,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 1.244732178747654,
+        "compression": 0.13800803571939468,
+        "rollout": 1.545403152704239,
+        "observation": 0.6633633747696877,
+        "mpc": 80.60003630816936,
+        "total": 84.5207804813981,
+        "risk": 47.60424420237541,
+        "mpc_other": 32.99579210579395,
+        "build_pack": 4.183071665465832,
+        "query": 43.34203992038965,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 1.2714806944131851,
+        "compression": 0.17390772700309753,
+        "rollout": 1.5447735786437988,
+        "observation": 0.7101576775312424,
+        "mpc": 52.371966652572155,
+        "total": 56.34781438857317,
+        "risk": 24.33659043163061,
+        "mpc_other": 28.035376220941544,
+        "build_pack": 4.158766940236092,
+        "query": 20.125162787735462,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 1.2348145246505737,
+        "compression": 0.1693684607744217,
+        "rollout": 1.5224246308207512,
+        "observation": 0.6541432812809944,
+        "mpc": 44.99926045536995,
+        "total": 48.84513281285763,
+        "risk": 16.87469333410263,
+        "mpc_other": 28.12456712126732,
+        "build_pack": 4.114975221455097,
+        "query": 12.707129120826721,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 1.220216043293476,
+        "compression": 0.1662950962781906,
+        "rollout": 1.505313441157341,
+        "observation": 0.6408737972378731,
+        "mpc": 99.296641536057,
+        "total": 103.08280028402805,
+        "risk": 71.18318509310484,
+        "mpc_other": 28.113456442952156,
+        "build_pack": 3.797401674091816,
+        "query": 66.91497284919024,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 1.2268517166376114,
+        "compression": 0.16566645354032516,
+        "rollout": 1.7670830711722374,
+        "observation": 0.6246017292141914,
+        "mpc": 88.77606876194477,
+        "total": 92.86227077245712,
+        "risk": 61.14703603088856,
+        "mpc_other": 27.629032731056213,
+        "build_pack": 4.253892228007317,
+        "query": 56.82916846126318,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 1.2596072629094124,
+        "compression": 0.14932267367839813,
+        "rollout": 1.501123420894146,
+        "observation": 0.6185946986079216,
+        "mpc": 53.071717731654644,
+        "total": 56.883158162236214,
+        "risk": 25.04150941967964,
+        "mpc_other": 28.030208311975002,
+        "build_pack": 4.029838368296623,
+        "query": 20.954960025846958,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 1.267220824956894,
+        "compression": 0.1515587791800499,
+        "rollout": 1.5831878408789635,
+        "observation": 0.6303982809185982,
+        "mpc": 47.09076229482889,
+        "total": 51.03776603937149,
+        "risk": 18.141848035156727,
+        "mpc_other": 28.948914259672165,
+        "build_pack": 4.968659020960331,
+        "query": 13.091335073113441,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 1.423177309334278,
+        "compression": 0.13626180589199066,
+        "rollout": 1.4952560886740685,
+        "observation": 0.622086226940155,
+        "mpc": 100.43493378907442,
+        "total": 104.39269337803125,
+        "risk": 72.29849696159363,
+        "mpc_other": 28.136436827480793,
+        "build_pack": 3.789091482758522,
+        "query": 68.16592067480087,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 1.5660058706998825,
+        "compression": 0.2077808603644371,
+        "rollout": 2.494562417268753,
+        "observation": 0.9114425629377365,
+        "mpc": 88.8843247666955,
+        "total": 94.37065571546555,
+        "risk": 61.08760368078947,
+        "mpc_other": 27.79672108590603,
+        "build_pack": 4.471170715987682,
+        "query": 56.55042640864849,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 1.2294361367821693,
+        "compression": 0.12934766709804535,
+        "rollout": 1.4933710917830467,
+        "observation": 0.6183134391903877,
+        "mpc": 76.87499094754457,
+        "total": 80.6170767173171,
+        "risk": 44.938987120985985,
+        "mpc_other": 31.93600382655859,
+        "build_pack": 4.061266779899597,
+        "query": 40.81206955015659,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000002,
+      12,
+      3
+    ],
+    "people": 5,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 2.316742204129696,
+        "compression": 0.45795738697052,
+        "rollout": 6.359082646667957,
+        "observation": 0.8255373686552048,
+        "mpc": 173.72205015271902,
+        "total": 183.97526629269123,
+        "risk": 137.71730661392212,
+        "mpc_other": 36.0047435387969,
+        "build_pack": 4.82967309653759,
+        "query": 132.81471747905016,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 2.3426534608006477,
+        "compression": 0.40452741086483,
+        "rollout": 6.417819298803806,
+        "observation": 0.7820948958396912,
+        "mpc": 119.67030353844166,
+        "total": 129.9295974895358,
+        "risk": 83.32507871091366,
+        "mpc_other": 36.345224827528,
+        "build_pack": 4.8951152712106705,
+        "query": 78.34503520280123,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 2.4645989760756493,
+        "compression": 0.4615196958184242,
+        "rollout": 6.384013220667839,
+        "observation": 0.8517978712916374,
+        "mpc": 77.1290073171258,
+        "total": 87.58211228996515,
+        "risk": 48.953039571642876,
+        "mpc_other": 28.17596774548292,
+        "build_pack": 4.8569124191999435,
+        "query": 44.040532782673836,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 2.3511741310358047,
+        "compression": 0.4975581541657448,
+        "rollout": 6.531244143843651,
+        "observation": 0.6280224770307541,
+        "mpc": 296.31148744374514,
+        "total": 306.5938288345933,
+        "risk": 268.3078218251467,
+        "mpc_other": 28.00366561859846,
+        "build_pack": 4.458949901163578,
+        "query": 263.4592214599252,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 2.3751314729452133,
+        "compression": 0.5033547058701515,
+        "rollout": 6.330518051981926,
+        "observation": 0.6226450204849243,
+        "mpc": 272.5154086947441,
+        "total": 282.7100958675146,
+        "risk": 244.0536441281438,
+        "mpc_other": 28.461764566600323,
+        "build_pack": 5.039270035922527,
+        "query": 238.91666531562805,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 2.339511178433895,
+        "compression": 0.46675652265548706,
+        "rollout": 6.3181547448039055,
+        "observation": 0.6600804626941681,
+        "mpc": 116.97710957378149,
+        "total": 127.0650802180171,
+        "risk": 80.73154930025339,
+        "mpc_other": 36.2455602735281,
+        "build_pack": 4.966913722455502,
+        "query": 75.6842466071248,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 2.278190106153488,
+        "compression": 0.42701512575149536,
+        "rollout": 6.430670619010925,
+        "observation": 0.6232038140296936,
+        "mpc": 76.4252757653594,
+        "total": 86.5163179114461,
+        "risk": 48.48474729806185,
+        "mpc_other": 27.940528467297554,
+        "build_pack": 4.840289242565632,
+        "query": 43.53801812976599,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 2.5183074176311493,
+        "compression": 0.5050981417298317,
+        "rollout": 7.415170781314373,
+        "observation": 0.6565190851688385,
+        "mpc": 308.69301222264767,
+        "total": 320.1174158602953,
+        "risk": 280.02528194338083,
+        "mpc_other": 28.667730279266834,
+        "build_pack": 4.438973963260651,
+        "query": 275.16899909824133,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 2.400134690105915,
+        "compression": 0.4318356513977051,
+        "rollout": 6.2476154416799545,
+        "observation": 0.680963508784771,
+        "mpc": 270.39520256221294,
+        "total": 280.46214766800404,
+        "risk": 242.11684335023165,
+        "mpc_other": 28.278359211981297,
+        "build_pack": 5.062667652964592,
+        "query": 236.9598187506199,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 2.415779046714306,
+        "compression": 0.4328824579715729,
+        "rollout": 6.264235824346542,
+        "observation": 0.6748177111148834,
+        "mpc": 173.04283287376165,
+        "total": 183.1598561257124,
+        "risk": 139.13755118846893,
+        "mpc_other": 33.90528168529272,
+        "build_pack": 4.881077446043491,
+        "query": 134.18013788759708,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 4.5586153864860535,
+        "compression": 0.4360247403383255,
+        "rollout": 6.1076488345861435,
+        "observation": 1.2316005304455757,
+        "mpc": 80.82038909196854,
+        "total": 93.4962285682559,
+        "risk": 49.117657355964184,
+        "mpc_other": 31.702731736004353,
+        "build_pack": 4.841267131268978,
+        "query": 44.21276319772005,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 2.7633849531412125,
+        "compression": 0.5667014047503471,
+        "rollout": 7.640901952981949,
+        "observation": 0.8397847414016724,
+        "mpc": 295.9102429449558,
+        "total": 308.0427087843418,
+        "risk": 268.18901766091585,
+        "mpc_other": 27.721225284039974,
+        "build_pack": 4.440302029252052,
+        "query": 263.38630355894566,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 2.266107127070427,
+        "compression": 0.43700356036424637,
+        "rollout": 5.936047062277794,
+        "observation": 0.6687408313155174,
+        "mpc": 269.1351752728224,
+        "total": 278.7675615400076,
+        "risk": 241.88887793570757,
+        "mpc_other": 27.24629733711481,
+        "build_pack": 5.066857673227787,
+        "query": 236.75015103071928,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 2.2341888397932053,
+        "compression": 0.4332326352596283,
+        "rollout": 6.239023990929127,
+        "observation": 0.6076283752918243,
+        "mpc": 172.22162522375584,
+        "total": 181.99495505541563,
+        "risk": 139.31495044380426,
+        "mpc_other": 32.90667477995157,
+        "build_pack": 4.918232560157776,
+        "query": 134.29055828601122,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 2.3665418848395348,
+        "compression": 0.43490808457136154,
+        "rollout": 6.262211129069328,
+        "observation": 0.6169881671667099,
+        "mpc": 115.25919567793608,
+        "total": 125.27124769985676,
+        "risk": 84.1390211135149,
+        "mpc_other": 31.120174564421177,
+        "build_pack": 4.883869551122189,
+        "query": 79.15855664759874,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000003,
+      16,
+      1
+    ],
+    "people": 5,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 1.248014159500599,
+        "compression": 0.3249058499932289,
+        "rollout": 3.296840935945511,
+        "observation": 0.6269058212637901,
+        "mpc": 80.85712604224682,
+        "total": 86.62387449294329,
+        "risk": 52.44069267064333,
+        "mpc_other": 28.41643337160349,
+        "build_pack": 4.462302662432194,
+        "query": 47.88919910788536,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 1.3803662732243538,
+        "compression": 0.2869134768843651,
+        "rollout": 3.477035090327263,
+        "observation": 0.6425492465496063,
+        "mpc": 62.54877429455519,
+        "total": 68.62345803529024,
+        "risk": 34.257004968822,
+        "mpc_other": 28.291769325733185,
+        "build_pack": 4.460835829377174,
+        "query": 29.730381444096565,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 1.2661023065447807,
+        "compression": 0.3246273845434189,
+        "rollout": 3.3587226644158363,
+        "observation": 0.6750952452421188,
+        "mpc": 200.50403382629156,
+        "total": 206.3978249207139,
+        "risk": 171.72791063785553,
+        "mpc_other": 28.77612318843603,
+        "build_pack": 4.0899720042943954,
+        "query": 167.25520230829716,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 1.306542195379734,
+        "compression": 0.5711009725928307,
+        "rollout": 3.786507062613964,
+        "observation": 0.6349366158246994,
+        "mpc": 184.26951114088297,
+        "total": 190.88393915444613,
+        "risk": 156.4305340871215,
+        "mpc_other": 27.838977053761482,
+        "build_pack": 4.545205272734165,
+        "query": 151.8126931041479,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 1.2649158015847206,
+        "compression": 0.31491927802562714,
+        "rollout": 3.5846633836627007,
+        "observation": 0.6709760054945946,
+        "mpc": 116.79838318377733,
+        "total": 122.9336904361844,
+        "risk": 88.55627570301294,
+        "mpc_other": 28.24210748076439,
+        "build_pack": 4.417113959789276,
+        "query": 84.0658275410533,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 1.2959958985447884,
+        "compression": 0.32469723373651505,
+        "rollout": 3.5368194803595543,
+        "observation": 0.687040388584137,
+        "mpc": 60.24264730513096,
+        "total": 66.43871776759624,
+        "risk": 32.0942671969533,
+        "mpc_other": 28.148380108177662,
+        "build_pack": 4.488633014261723,
+        "query": 27.5487145408988,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 1.3372031971812248,
+        "compression": 0.3393646329641342,
+        "rollout": 3.501269966363907,
+        "observation": 0.6484873592853546,
+        "mpc": 202.7454860508442,
+        "total": 208.89965165406466,
+        "risk": 174.4228471070528,
+        "mpc_other": 28.32263894379139,
+        "build_pack": 4.088364541530609,
+        "query": 169.96103525161743,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 1.2872666120529175,
+        "compression": 0.3055594861507416,
+        "rollout": 3.453497774899006,
+        "observation": 0.6244610995054245,
+        "mpc": 182.97847546637058,
+        "total": 188.9201793819666,
+        "risk": 155.6779807433486,
+        "mpc_other": 27.300494723021984,
+        "build_pack": 4.469076171517372,
+        "query": 151.13543160259724,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 1.4117937535047531,
+        "compression": 0.3039548173546791,
+        "rollout": 3.2951664179563522,
+        "observation": 0.676213763654232,
+        "mpc": 116.28965195268393,
+        "total": 122.24183231592178,
+        "risk": 88.48517574369907,
+        "mpc_other": 27.804476208984852,
+        "build_pack": 4.404192790389061,
+        "query": 84.00541357696056,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 1.4156363904476166,
+        "compression": 0.2794405445456505,
+        "rollout": 3.3092042431235313,
+        "observation": 0.6281621754169464,
+        "mpc": 84.85749084502459,
+        "total": 90.79828578978777,
+        "risk": 54.26064506173134,
+        "mpc_other": 30.596845783293247,
+        "build_pack": 4.486188292503357,
+        "query": 49.711598083376884,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 1.2543685734272003,
+        "compression": 0.32525602728128433,
+        "rollout": 3.2842010259628296,
+        "observation": 0.6449250504374504,
+        "mpc": 200.7361901924014,
+        "total": 206.5484058111906,
+        "risk": 172.76877164840698,
+        "mpc_other": 27.967418543994427,
+        "build_pack": 4.096676595509052,
+        "query": 168.30975096672773,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 1.2903381139039993,
+        "compression": 0.3145020455121994,
+        "rollout": 3.3055711537599564,
+        "observation": 0.6621759384870529,
+        "mpc": 186.50907929986715,
+        "total": 192.35768355429173,
+        "risk": 158.40092953294516,
+        "mpc_other": 28.108149766921997,
+        "build_pack": 4.498062655329704,
+        "query": 153.8291135802865,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 1.340346410870552,
+        "compression": 0.2834191545844078,
+        "rollout": 3.5581225529313087,
+        "observation": 0.6335414946079254,
+        "mpc": 115.13830069452524,
+        "total": 121.22464831918478,
+        "risk": 86.86818368732929,
+        "mpc_other": 28.27011700719595,
+        "build_pack": 4.4299643486738205,
+        "query": 82.34358206391335,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 1.2536020949482918,
+        "compression": 0.27790386229753494,
+        "rollout": 3.4490982070565224,
+        "observation": 0.6477879360318184,
+        "mpc": 81.69768005609512,
+        "total": 87.60341536253691,
+        "risk": 53.90975810587406,
+        "mpc_other": 27.78792195022106,
+        "build_pack": 4.748026840388775,
+        "query": 49.09845162183046,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 1.3361545279622078,
+        "compression": 0.28265081346035004,
+        "rollout": 3.3475467935204506,
+        "observation": 0.6537949666380882,
+        "mpc": 63.12986463308334,
+        "total": 69.03496943414211,
+        "risk": 35.09791102260351,
+        "mpc_other": 28.03195361047983,
+        "build_pack": 4.412295296788216,
+        "query": 30.62101174145937,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000010,
+      12,
+      0
+    ],
+    "people": 10,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 2.575858496129513,
+        "compression": 0.6198501214385033,
+        "rollout": 10.48341952264309,
+        "observation": 1.0273819789290428,
+        "mpc": 95.54966632276773,
+        "total": 111.3213412463665,
+        "risk": 55.140032432973385,
+        "mpc_other": 40.40963388979435,
+        "build_pack": 6.560787558555603,
+        "query": 48.51317219436169,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 2.666722983121872,
+        "compression": 0.5918443202972412,
+        "rollout": 10.515055619180202,
+        "observation": 1.0454710572957993,
+        "mpc": 377.72490829229355,
+        "total": 393.58130283653736,
+        "risk": 338.6776903644204,
+        "mpc_other": 39.047217927873135,
+        "build_pack": 5.294474773108959,
+        "query": 333.0005519092083,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 2.735728397965431,
+        "compression": 0.5539916455745697,
+        "rollout": 10.600753128528595,
+        "observation": 1.027870923280716,
+        "mpc": 341.73224680125713,
+        "total": 357.6565980911255,
+        "risk": 302.01482120901346,
+        "mpc_other": 39.71742559224367,
+        "build_pack": 5.87549339979887,
+        "query": 296.0645966231823,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 2.642977051436901,
+        "compression": 0.6254399195313454,
+        "rollout": 10.702512226998806,
+        "observation": 1.0250071063637733,
+        "mpc": 213.17966375499964,
+        "total": 229.25068251788616,
+        "risk": 165.84773641079664,
+        "mpc_other": 47.331927344202995,
+        "build_pack": 5.630206316709518,
+        "query": 160.134207457304,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 2.612873911857605,
+        "compression": 0.6364732980728149,
+        "rollout": 10.362240485846996,
+        "observation": 1.041630282998085,
+        "mpc": 129.42889612168074,
+        "total": 145.12067195028067,
+        "risk": 88.99104222655296,
+        "mpc_other": 40.43785389512777,
+        "build_pack": 5.722050555050373,
+        "query": 83.18867534399033,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 2.994704060256481,
+        "compression": 0.6014835089445114,
+        "rollout": 10.47461573034525,
+        "observation": 1.0049622505903244,
+        "mpc": 383.72730650007725,
+        "total": 399.7302297502756,
+        "risk": 339.01146706193686,
+        "mpc_other": 44.71583943814039,
+        "build_pack": 5.2099647000432014,
+        "query": 333.42120982706547,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 2.5448473170399666,
+        "compression": 0.6009228527545929,
+        "rollout": 10.504300706088543,
+        "observation": 1.0269628837704659,
+        "mpc": 343.8824862241745,
+        "total": 359.438837505877,
+        "risk": 301.7758885398507,
+        "mpc_other": 42.10659768432379,
+        "build_pack": 5.691668018698692,
+        "query": 296.00536823272705,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 2.673008479177952,
+        "compression": 0.6049759685993195,
+        "rollout": 10.619399137794971,
+        "observation": 1.0096421465277672,
+        "mpc": 206.65456727147102,
+        "total": 222.55845367908478,
+        "risk": 160.90177744627,
+        "mpc_other": 45.752789825201035,
+        "build_pack": 5.6487154215574265,
+        "query": 155.17057664692402,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 2.8880545869469643,
+        "compression": 0.5794139578938484,
+        "rollout": 10.569741949439049,
+        "observation": 1.0444940999150276,
+        "mpc": 139.24105744808912,
+        "total": 155.30278906226158,
+        "risk": 93.49685814231634,
+        "mpc_other": 45.74419930577278,
+        "build_pack": 5.744189955294132,
+        "query": 87.66948524862528,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 4.034657031297684,
+        "compression": 0.6113303825259209,
+        "rollout": 12.251895852386951,
+        "observation": 1.2511573731899261,
+        "mpc": 98.879124969244,
+        "total": 118.04039124399424,
+        "risk": 54.97122090309858,
+        "mpc_other": 43.90790406614542,
+        "build_pack": 5.690759979188442,
+        "query": 49.20817352831364,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 2.608964219689369,
+        "compression": 0.5810176953673363,
+        "rollout": 10.506253689527512,
+        "observation": 1.0368814691901207,
+        "mpc": 344.84540298581123,
+        "total": 360.5510788038373,
+        "risk": 302.1850259974599,
+        "mpc_other": 42.660376988351345,
+        "build_pack": 5.788680166006088,
+        "query": 296.32168635725975,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 2.754724584519863,
+        "compression": 0.61014574021101,
+        "rollout": 10.867759585380554,
+        "observation": 1.0780170559883118,
+        "mpc": 209.52306408435106,
+        "total": 225.8207220584154,
+        "risk": 161.92643530666828,
+        "mpc_other": 47.59662877768278,
+        "build_pack": 5.726240575313568,
+        "query": 156.12029377371073,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 2.6686787605285645,
+        "compression": 0.619920901954174,
+        "rollout": 10.674436576664448,
+        "observation": 1.0025883093476295,
+        "mpc": 138.05792666971684,
+        "total": 153.99624686688185,
+        "risk": 91.16125665605068,
+        "mpc_other": 46.89667001366615,
+        "build_pack": 5.745725706219673,
+        "query": 85.33458318561316,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 2.6772702112793922,
+        "compression": 0.5773873999714851,
+        "rollout": 10.654669255018234,
+        "observation": 1.0326197370886803,
+        "mpc": 98.21247775107622,
+        "total": 114.13221899420023,
+        "risk": 54.514103569090366,
+        "mpc_other": 43.698374181985855,
+        "build_pack": 5.676303058862686,
+        "query": 48.77291526645422,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 3.01921833306551,
+        "compression": 0.5976399406790733,
+        "rollout": 10.846596211194992,
+        "observation": 1.023121178150177,
+        "mpc": 383.54822993278503,
+        "total": 400.01057740300894,
+        "risk": 339.0308115631342,
+        "mpc_other": 44.51741836965084,
+        "build_pack": 5.2462127059698105,
+        "query": 333.3732979372144,
+        "actual_cpus": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000011,
+      24,
+      1
+    ],
+    "people": 10,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 11.451083235442638,
+        "compression": 0.6011351943016052,
+        "rollout": 6.614775396883488,
+        "observation": 1.0987604036927223,
+        "mpc": 302.5412214919925,
+        "total": 323.23406357318163,
+        "risk": 259.6773933619261,
+        "mpc_other": 42.863828130066395,
+        "build_pack": 5.645153112709522,
+        "query": 253.64307779818773,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 11.442841961979866,
+        "compression": 0.5445610731840134,
+        "rollout": 6.639920175075531,
+        "observation": 1.0950583964586258,
+        "mpc": 249.2612348869443,
+        "total": 269.9574986472726,
+        "risk": 206.83385245501995,
+        "mpc_other": 42.42738243192434,
+        "build_pack": 5.557151511311531,
+        "query": 201.19707845151424,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 11.455832980573177,
+        "compression": 0.5468670278787613,
+        "rollout": 6.615196354687214,
+        "observation": 1.0770400986075401,
+        "mpc": 162.4735789373517,
+        "total": 183.2050448283553,
+        "risk": 117.40042734891176,
+        "mpc_other": 45.07315158843994,
+        "build_pack": 5.398609675467014,
+        "query": 111.90403811633587,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 11.331372894346714,
+        "compression": 0.5793413147330284,
+        "rollout": 6.625880487263203,
+        "observation": 1.1162208393216133,
+        "mpc": 124.93872735649347,
+        "total": 145.58470528572798,
+        "risk": 70.98399102687836,
+        "mpc_other": 53.954736329615116,
+        "build_pack": 5.402171052992344,
+        "query": 65.49877859652042,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 11.291702277958393,
+        "compression": 0.6521157920360565,
+        "rollout": 6.687968969345093,
+        "observation": 1.1155232787132263,
+        "mpc": 83.80021527409554,
+        "total": 104.62052002549171,
+        "risk": 40.863472037017345,
+        "mpc_other": 42.93674323707819,
+        "build_pack": 5.481931380927563,
+        "query": 35.31623724848032,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 12.185756117105484,
+        "compression": 0.628231093287468,
+        "rollout": 6.728758104145527,
+        "observation": 1.0833954438567162,
+        "mpc": 260.63926331698895,
+        "total": 282.2823105379939,
+        "risk": 215.9647699445486,
+        "mpc_other": 44.67449337244034,
+        "build_pack": 5.364946089684963,
+        "query": 210.5222288519144,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 11.43103837966919,
+        "compression": 0.5685165524482727,
+        "rollout": 6.580832414329052,
+        "observation": 1.11426692456007,
+        "mpc": 166.68172553181648,
+        "total": 187.4564914032817,
+        "risk": 116.42996314913034,
+        "mpc_other": 50.25176238268614,
+        "build_pack": 5.399447865784168,
+        "query": 110.93664728105068,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 11.310351081192493,
+        "compression": 0.5674706771969795,
+        "rollout": 6.606884300708771,
+        "observation": 1.0807421058416367,
+        "mpc": 113.38686104863882,
+        "total": 134.00413375347853,
+        "risk": 70.42706850916147,
+        "mpc_other": 42.95979253947735,
+        "build_pack": 5.4298993200063705,
+        "query": 64.91510570049286,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 11.468335054814816,
+        "compression": 0.6034383550286293,
+        "rollout": 6.588375195860863,
+        "observation": 1.1000176891684532,
+        "mpc": 86.95185463875532,
+        "total": 107.67228528857231,
+        "risk": 43.62182971090078,
+        "mpc_other": 43.33002492785454,
+        "build_pack": 5.4626548662781715,
+        "query": 38.10218069702387,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 13.881320133805275,
+        "compression": 0.5701938644051552,
+        "rollout": 6.649277172982693,
+        "observation": 1.3557123020291328,
+        "mpc": 309.2750087380409,
+        "total": 332.642606459558,
+        "risk": 260.68116817623377,
+        "mpc_other": 48.593840561807156,
+        "build_pack": 4.94128093123436,
+        "query": 255.36371674388647,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 11.915954761207104,
+        "compression": 0.6072800606489182,
+        "rollout": 6.570984609425068,
+        "observation": 1.1660894379019737,
+        "mpc": 164.2104210332036,
+        "total": 185.52891165018082,
+        "risk": 116.60100892186165,
+        "mpc_other": 47.60941211134195,
+        "build_pack": 5.646688863635063,
+        "query": 110.87791435420513,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 11.53433509171009,
+        "compression": 0.5847904831171036,
+        "rollout": 6.647951900959015,
+        "observation": 1.1211102828383446,
+        "mpc": 119.80216763913631,
+        "total": 140.70600178092718,
+        "risk": 69.51527576893568,
+        "mpc_other": 50.286891870200634,
+        "build_pack": 5.4115308448672295,
+        "query": 64.0255929902196,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 13.074290938675404,
+        "compression": 0.7241275161504745,
+        "rollout": 8.208160288631916,
+        "observation": 1.09834223985672,
+        "mpc": 89.93412647396326,
+        "total": 114.07522857189178,
+        "risk": 42.21611004322767,
+        "mpc_other": 47.71801643073559,
+        "build_pack": 5.38038183003664,
+        "query": 36.76979709416628,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 11.542925611138344,
+        "compression": 0.6077690050005913,
+        "rollout": 6.864740513265133,
+        "observation": 1.1482788249850273,
+        "mpc": 316.0620862618089,
+        "total": 337.14381139725447,
+        "risk": 267.99164433032274,
+        "mpc_other": 48.07044193148613,
+        "build_pack": 4.9787163734436035,
+        "query": 262.61301059275866,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 11.435998603701591,
+        "compression": 0.5834633484482765,
+        "rollout": 6.615054793655872,
+        "observation": 1.0851416736841202,
+        "mpc": 253.1597688794136,
+        "total": 273.83570838719606,
+        "risk": 207.580397836864,
+        "mpc_other": 45.57937104254961,
+        "build_pack": 5.502953194081783,
+        "query": 201.99698396027088,
+        "actual_cpus": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000012,
+      20,
+      4
+    ],
+    "people": 10,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 8.863560855388641,
+        "compression": 0.30905380845069885,
+        "rollout": 4.340217448771,
+        "observation": 1.1065136641263962,
+        "mpc": 263.67608178406954,
+        "total": 279.2677730321884,
+        "risk": 223.65616541355848,
+        "mpc_other": 40.019916370511055,
+        "build_pack": 5.4132770746946335,
+        "query": 218.16732082515955,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 8.132311515510082,
+        "compression": 0.30262675136327744,
+        "rollout": 4.036262631416321,
+        "observation": 1.1185258626937866,
+        "mpc": 159.3583282083273,
+        "total": 173.9351386204362,
+        "risk": 118.95916610956192,
+        "mpc_other": 40.39916209876537,
+        "build_pack": 5.327858962118626,
+        "query": 113.55776526033878,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 8.381789550185204,
+        "compression": 0.30667800456285477,
+        "rollout": 3.992892801761627,
+        "observation": 0.9977687150239944,
+        "mpc": 107.82964061945677,
+        "total": 122.46511783450842,
+        "risk": 67.25552305579185,
+        "mpc_other": 40.57411756366491,
+        "build_pack": 5.113792605698109,
+        "query": 62.06378620117903,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 8.053809404373169,
+        "compression": 0.3094011917710304,
+        "rollout": 4.246281459927559,
+        "observation": 1.0027969256043434,
+        "mpc": 81.93968422710896,
+        "total": 96.74746450036764,
+        "risk": 41.484023444354534,
+        "mpc_other": 40.45566078275442,
+        "build_pack": 5.147386342287064,
+        "query": 36.269587464630604,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 8.073993027210236,
+        "compression": 0.26966165751218796,
+        "rollout": 4.270304925739765,
+        "observation": 0.9820545092225075,
+        "mpc": 272.3267627879977,
+        "total": 286.9218736886978,
+        "risk": 231.65961727499962,
+        "mpc_other": 40.667145512998104,
+        "build_pack": 4.614279605448246,
+        "query": 226.66798066347837,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 8.451980538666248,
+        "compression": 0.2843989059329033,
+        "rollout": 4.287555813789368,
+        "observation": 1.0068481788039207,
+        "mpc": 159.15578603744507,
+        "total": 174.17127639055252,
+        "risk": 118.74279472976923,
+        "mpc_other": 40.41299130767584,
+        "build_pack": 5.274290218949318,
+        "query": 113.37526701390743,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 8.15529003739357,
+        "compression": 0.33782701939344406,
+        "rollout": 4.422281868755817,
+        "observation": 1.0078959167003632,
+        "mpc": 109.3969726935029,
+        "total": 124.3306091055274,
+        "risk": 68.80686338990927,
+        "mpc_other": 40.590109303593636,
+        "build_pack": 5.134674720466137,
+        "query": 63.59117105603218,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 7.981941103935242,
+        "compression": 0.29333774000406265,
+        "rollout": 4.215617664158344,
+        "observation": 1.0016094893217087,
+        "mpc": 86.17066778242588,
+        "total": 100.76661501079798,
+        "risk": 44.69481576234102,
+        "mpc_other": 41.47585202008486,
+        "build_pack": 5.48507459461689,
+        "query": 39.15603458881378,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 9.067431092262268,
+        "compression": 0.3014402464032173,
+        "rollout": 4.257595166563988,
+        "observation": 1.6261404380202293,
+        "mpc": 278.639679774642,
+        "total": 294.2162845283747,
+        "risk": 237.1208779513836,
+        "mpc_other": 41.5188018232584,
+        "build_pack": 4.6293651685118675,
+        "query": 232.09724854677916,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 8.272973820567131,
+        "compression": 0.35479944199323654,
+        "rollout": 4.756337963044643,
+        "observation": 1.0792752727866173,
+        "mpc": 269.7795405983925,
+        "total": 285.0855067372322,
+        "risk": 224.78726413100958,
+        "mpc_other": 44.99227646738291,
+        "build_pack": 5.632302723824978,
+        "query": 219.0368603914976,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 8.40344000607729,
+        "compression": 0.31631719321012497,
+        "rollout": 4.1037313640117645,
+        "observation": 1.0015396401286125,
+        "mpc": 113.9166858047247,
+        "total": 128.54036130011082,
+        "risk": 70.32523863017559,
+        "mpc_other": 43.5914471745491,
+        "build_pack": 5.147526040673256,
+        "query": 65.0878269225359,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 8.2735326141119,
+        "compression": 0.3057001158595085,
+        "rollout": 4.16735652834177,
+        "observation": 1.0346462950110435,
+        "mpc": 83.9473744854331,
+        "total": 98.63544441759586,
+        "risk": 41.434294544160366,
+        "mpc_other": 42.513079941272736,
+        "build_pack": 5.450292490422726,
+        "query": 35.92463489621878,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 8.224853314459324,
+        "compression": 0.2986481413245201,
+        "rollout": 4.023133777081966,
+        "observation": 1.0201884433627129,
+        "mpc": 274.35589488595724,
+        "total": 288.74245658516884,
+        "risk": 232.7168919146061,
+        "mpc_other": 41.63900297135115,
+        "build_pack": 4.639632068574429,
+        "query": 227.68558375537395,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 8.231138810515404,
+        "compression": 0.3155488520860672,
+        "rollout": 4.105475731194019,
+        "observation": 1.0297559201717377,
+        "mpc": 268.4584017843008,
+        "total": 282.9501433297992,
+        "risk": 225.4275092855096,
+        "mpc_other": 43.03089249879122,
+        "build_pack": 5.246283486485481,
+        "query": 220.10621707886457,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 8.794836699962616,
+        "compression": 0.3019310534000397,
+        "rollout": 4.091298207640648,
+        "observation": 1.0030074045062065,
+        "mpc": 162.32914477586746,
+        "total": 177.37166676670313,
+        "risk": 119.61065884679556,
+        "mpc_other": 42.7184859290719,
+        "build_pack": 5.187616683542728,
+        "query": 114.34342339634895,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000013,
+      20,
+      7
+    ],
+    "people": 10,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 2.836858853697777,
+        "compression": 0.5644680932164192,
+        "rollout": 9.330807253718376,
+        "observation": 1.0942909866571426,
+        "mpc": 230.7819090783596,
+        "total": 245.55455800145864,
+        "risk": 187.61266116052866,
+        "mpc_other": 43.169247917830944,
+        "build_pack": 6.558971479535103,
+        "query": 180.95583748072386,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 2.8314804658293724,
+        "compression": 0.5909381434321404,
+        "rollout": 9.042080491781235,
+        "observation": 1.0965950787067413,
+        "mpc": 145.67501191049814,
+        "total": 160.25112383067608,
+        "risk": 102.60961763560772,
+        "mpc_other": 43.06539427489042,
+        "build_pack": 5.710734985768795,
+        "query": 96.81206848472357,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 2.8088530525565147,
+        "compression": 0.5752239376306534,
+        "rollout": 8.880393579602242,
+        "observation": 1.0898914188146591,
+        "mpc": 104.34345528483391,
+        "total": 118.72142553329468,
+        "risk": 61.27219367772341,
+        "mpc_other": 43.0712616071105,
+        "build_pack": 5.733154714107513,
+        "query": 55.4711539298296,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 2.828408032655716,
+        "compression": 0.5597891286015511,
+        "rollout": 9.401487186551094,
+        "observation": 1.6337530687451363,
+        "mpc": 450.16064681112766,
+        "total": 465.5179465189576,
+        "risk": 405.96017241477966,
+        "mpc_other": 44.200474396348,
+        "build_pack": 5.390857346355915,
+        "query": 400.1773605123162,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 2.9473500326275826,
+        "compression": 0.651421956717968,
+        "rollout": 9.7358925268054,
+        "observation": 1.1414345353841782,
+        "mpc": 409.5155717805028,
+        "total": 425.03490671515465,
+        "risk": 364.5297195762396,
+        "mpc_other": 44.98585220426321,
+        "build_pack": 5.86920790374279,
+        "query": 358.5835490375757,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 2.9474887996912003,
+        "compression": 0.5891919136047363,
+        "rollout": 9.402466006577015,
+        "observation": 1.124601811170578,
+        "mpc": 150.7525546476245,
+        "total": 165.82664381712675,
+        "risk": 106.58071842044592,
+        "mpc_other": 44.171836227178574,
+        "build_pack": 5.814940668642521,
+        "query": 100.68140737712383,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 2.8203073889017105,
+        "compression": 0.5480526015162468,
+        "rollout": 9.642445482313633,
+        "observation": 1.110004261136055,
+        "mpc": 101.47202387452126,
+        "total": 115.92346802353859,
+        "risk": 61.45560275763273,
+        "mpc_other": 40.01642111688852,
+        "build_pack": 5.8106789365410805,
+        "query": 55.570049211382866,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 2.9007652774453163,
+        "compression": 0.542815774679184,
+        "rollout": 9.24154743552208,
+        "observation": 1.6177603974938393,
+        "mpc": 437.696429900825,
+        "total": 452.32408680021763,
+        "risk": 398.3560102060437,
+        "mpc_other": 39.3404196947813,
+        "build_pack": 5.570141598582268,
+        "query": 392.3717737197876,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 2.8355326503515244,
+        "compression": 0.593939796090126,
+        "rollout": 9.246158413589,
+        "observation": 1.0936632752418518,
+        "mpc": 404.04320880770683,
+        "total": 418.1441143155098,
+        "risk": 364.4698662683368,
+        "mpc_other": 39.57334253937006,
+        "build_pack": 5.772825330495834,
+        "query": 358.6213318631053,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 3.1223753467202187,
+        "compression": 0.5541974678635597,
+        "rollout": 9.312089532613754,
+        "observation": 1.2852400541305542,
+        "mpc": 239.52897358685732,
+        "total": 254.12031076848507,
+        "risk": 196.2015312165022,
+        "mpc_other": 43.32744237035513,
+        "build_pack": 6.119382567703724,
+        "query": 189.9991063401103,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 2.804032526910305,
+        "compression": 0.574801117181778,
+        "rollout": 9.406449273228645,
+        "observation": 1.1190865188837051,
+        "mpc": 101.53725650161505,
+        "total": 115.81905465573072,
+        "risk": 61.791541054844856,
+        "mpc_other": 39.74571544677019,
+        "build_pack": 5.69362286478281,
+        "query": 56.028008460998535,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 2.9128482565283775,
+        "compression": 0.5568526685237885,
+        "rollout": 8.981174789369106,
+        "observation": 2.205274999141693,
+        "mpc": 463.6317128315568,
+        "total": 478.6245049908757,
+        "risk": 423.10040909796953,
+        "mpc_other": 40.531303733587265,
+        "build_pack": 6.393724121153355,
+        "query": 416.2944769486785,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 2.937362529337406,
+        "compression": 0.6114020943641663,
+        "rollout": 9.279055520892143,
+        "observation": 1.162317581474781,
+        "mpc": 400.2142380923033,
+        "total": 414.5241817459464,
+        "risk": 360.1810531690717,
+        "mpc_other": 40.0331849232316,
+        "build_pack": 5.865017883479595,
+        "query": 354.1959756985307,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 2.8661927208304405,
+        "compression": 0.642482191324234,
+        "rollout": 9.264177642762661,
+        "observation": 1.1065835133194923,
+        "mpc": 229.862573556602,
+        "total": 244.08116284757853,
+        "risk": 190.3851954266429,
+        "mpc_other": 39.477378129959106,
+        "build_pack": 5.837917327880859,
+        "query": 184.46961138397455,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 2.8198175132274628,
+        "compression": 0.6636446341872215,
+        "rollout": 9.10263042896986,
+        "observation": 1.1280244216322899,
+        "mpc": 142.38613191992044,
+        "total": 156.4645478501916,
+        "risk": 102.47817449271679,
+        "mpc_other": 39.907957427203655,
+        "build_pack": 5.702213384211063,
+        "query": 96.69724758714437,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000020,
+      24,
+      0
+    ],
+    "people": 20,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 15.484833158552647,
+        "compression": 2.1036500111222267,
+        "rollout": 50.3207640722394,
+        "observation": 1.8438398838043213,
+        "mpc": 296.5662032365799,
+        "total": 368.15929133445024,
+        "risk": 214.23714887350798,
+        "mpc_other": 82.32905436307192,
+        "build_pack": 10.357839986681938,
+        "query": 203.79018783569336,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 13.792620971798897,
+        "compression": 1.8972689285874367,
+        "rollout": 45.095995999872684,
+        "observation": 1.8882602453231812,
+        "mpc": 203.1146725639701,
+        "total": 267.6133783534169,
+        "risk": 122.26543854922056,
+        "mpc_other": 80.84923401474953,
+        "build_pack": 9.097044356167316,
+        "query": 113.06984722614288,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 13.642948120832443,
+        "compression": 2.0329030230641365,
+        "rollout": 45.77276762574911,
+        "observation": 1.925135962665081,
+        "mpc": 962.8550512716174,
+        "total": 1027.3914700374007,
+        "risk": 890.9443188458681,
+        "mpc_other": 71.9107324257493,
+        "build_pack": 8.224851451814175,
+        "query": 882.3449043557048,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 13.867142610251904,
+        "compression": 2.0124418660998344,
+        "rollout": 45.343092642724514,
+        "observation": 1.9240183755755424,
+        "mpc": 803.2202171161771,
+        "total": 867.6773654296994,
+        "risk": 733.9777434244752,
+        "mpc_other": 69.24247369170189,
+        "build_pack": 9.308109059929848,
+        "query": 724.5722068473697,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 13.87168187648058,
+        "compression": 2.066357061266899,
+        "rollout": 45.663878321647644,
+        "observation": 1.8923096358776093,
+        "mpc": 482.36798867583275,
+        "total": 547.3857624456286,
+        "risk": 402.59607415646315,
+        "mpc_other": 79.7719145193696,
+        "build_pack": 9.246437810361385,
+        "query": 393.267709761858,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 13.905555941164494,
+        "compression": 1.9268803298473358,
+        "rollout": 45.575108379125595,
+        "observation": 1.8889578059315681,
+        "mpc": 198.26781935989857,
+        "total": 262.9436431452632,
+        "risk": 120.58083899319172,
+        "mpc_other": 77.68698036670685,
+        "build_pack": 9.457780979573727,
+        "query": 111.01955268532038,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 15.73256403207779,
+        "compression": 2.22189724445343,
+        "rollout": 50.39772856980562,
+        "observation": 1.8852557986974716,
+        "mpc": 994.5092415437102,
+        "total": 1066.1169262602925,
+        "risk": 921.6256057843566,
+        "mpc_other": 72.88363575935364,
+        "build_pack": 9.485508315265179,
+        "query": 911.7643442004919,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 13.798277825117111,
+        "compression": 2.039538696408272,
+        "rollout": 45.93941010534763,
+        "observation": 1.9094906747341156,
+        "mpc": 804.0110431611538,
+        "total": 869.0332863479853,
+        "risk": 734.7166072577238,
+        "mpc_other": 69.29443590342999,
+        "build_pack": 9.238963946700096,
+        "query": 725.3976743668318,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 13.819299638271332,
+        "compression": 1.9106054678559303,
+        "rollout": 45.287081971764565,
+        "observation": 1.9164066761732101,
+        "mpc": 487.0548341423273,
+        "total": 551.6250571236014,
+        "risk": 404.7842351719737,
+        "mpc_other": 82.2705989703536,
+        "build_pack": 9.265084750950336,
+        "query": 395.4179473221302,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 13.669557869434357,
+        "compression": 1.926603727042675,
+        "rollout": 45.815229415893555,
+        "observation": 1.9250661134719849,
+        "mpc": 296.47841211408377,
+        "total": 361.3439276814461,
+        "risk": 216.8592419475317,
+        "mpc_other": 79.61917016655207,
+        "build_pack": 9.239103645086288,
+        "query": 207.53520913422108,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 13.63379880785942,
+        "compression": 2.0068511366844177,
+        "rollout": 45.18112912774086,
+        "observation": 1.8954528495669365,
+        "mpc": 970.2524114400148,
+        "total": 1034.1575955972075,
+        "risk": 898.7489314749837,
+        "mpc_other": 71.50347996503115,
+        "build_pack": 8.21717083454132,
+        "query": 890.1486760005355,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 13.719495385885239,
+        "compression": 1.8708007410168648,
+        "rollout": 45.61499319970608,
+        "observation": 1.9038347527384758,
+        "mpc": 803.0322007834911,
+        "total": 867.436408996582,
+        "risk": 733.8452534750104,
+        "mpc_other": 69.18694730848074,
+        "build_pack": 9.303778409957886,
+        "query": 724.4543805718422,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 13.709576800465584,
+        "compression": 2.003844827413559,
+        "rollout": 45.42830493301153,
+        "observation": 1.8802275881171227,
+        "mpc": 486.0504996031523,
+        "total": 550.5800759419799,
+        "risk": 403.06632313877344,
+        "mpc_other": 82.98417646437883,
+        "build_pack": 9.155433624982834,
+        "query": 393.8296604901552,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 13.588960282504559,
+        "compression": 1.8665390089154243,
+        "rollout": 45.213048346340656,
+        "observation": 1.8892372027039528,
+        "mpc": 287.51420602202415,
+        "total": 351.41701623797417,
+        "risk": 213.12092803418636,
+        "mpc_other": 74.39327798783779,
+        "build_pack": 8.984598331153393,
+        "query": 204.0464412420988,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 13.6036965996027,
+        "compression": 2.039051614701748,
+        "rollout": 45.27444113045931,
+        "observation": 1.8519405275583267,
+        "mpc": 189.60177153348923,
+        "total": 253.9625372737646,
+        "risk": 117.17343609780073,
+        "mpc_other": 72.4283354356885,
+        "build_pack": 9.192029945552349,
+        "query": 107.90039040148258,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000021,
+      20,
+      10
+    ],
+    "people": 20,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 16.37664996087551,
+        "compression": 1.312130130827427,
+        "rollout": 26.907908730208874,
+        "observation": 1.7046444118022919,
+        "mpc": 169.56635564565659,
+        "total": 217.2415591776371,
+        "risk": 103.22444047778845,
+        "mpc_other": 66.34191516786814,
+        "build_pack": 9.495076723396778,
+        "query": 93.64045411348343,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 18.2224465534091,
+        "compression": 1.3830196112394333,
+        "rollout": 27.38570049405098,
+        "observation": 3.4516118466854095,
+        "mpc": 862.4361110851169,
+        "total": 914.3441841006279,
+        "risk": 797.9652034118772,
+        "mpc_other": 64.47090767323971,
+        "build_pack": 8.42565018683672,
+        "query": 789.1431991010904,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 16.391665674746037,
+        "compression": 1.354874111711979,
+        "rollout": 25.09459014981985,
+        "observation": 1.7090439796447754,
+        "mpc": 741.2484111264348,
+        "total": 786.8506899103522,
+        "risk": 683.7009135633707,
+        "mpc_other": 57.5474975630641,
+        "build_pack": 8.043191395699978,
+        "query": 675.5783073604107,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 16.567599959671497,
+        "compression": 1.4145197346806526,
+        "rollout": 25.181962177157402,
+        "observation": 1.7014304175972939,
+        "mpc": 403.71641609817743,
+        "total": 449.6481418609619,
+        "risk": 345.9558989852667,
+        "mpc_other": 57.76051711291075,
+        "build_pack": 8.019935339689255,
+        "query": 337.8607425838709,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 16.220692545175552,
+        "compression": 1.2818174436688423,
+        "rollout": 25.181544944643974,
+        "observation": 1.6919327899813652,
+        "mpc": 239.19393867254257,
+        "total": 284.65115651488304,
+        "risk": 182.02219437807798,
+        "mpc_other": 57.17174429446459,
+        "build_pack": 8.175195194780827,
+        "query": 173.72938431799412,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 16.3422878831625,
+        "compression": 1.3904962688684464,
+        "rollout": 25.144457817077637,
+        "observation": 1.7194496467709541,
+        "mpc": 834.5183506608009,
+        "total": 880.2151270210743,
+        "risk": 775.07015876472,
+        "mpc_other": 59.44819189608097,
+        "build_pack": 7.317320443689823,
+        "query": 767.3532702028751,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 16.62954967468977,
+        "compression": 1.4332346618175507,
+        "rollout": 25.00742767006159,
+        "observation": 1.7301356419920921,
+        "mpc": 740.0372037664056,
+        "total": 785.9152210876346,
+        "risk": 683.0156873911619,
+        "mpc_other": 57.021516375243664,
+        "build_pack": 8.418665267527103,
+        "query": 674.517959356308,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 16.22886396944523,
+        "compression": 1.3327309861779213,
+        "rollout": 24.918590672314167,
+        "observation": 1.7039459198713303,
+        "mpc": 403.03943306207657,
+        "total": 448.3082164078951,
+        "risk": 346.01742774248123,
+        "mpc_other": 57.02200531959534,
+        "build_pack": 8.143626153469086,
+        "query": 337.79613580554724,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 16.298705711960793,
+        "compression": 1.3072388246655464,
+        "rollout": 25.22966731339693,
+        "observation": 1.6826428472995758,
+        "mpc": 240.3442431241274,
+        "total": 285.9056666493416,
+        "risk": 183.12535155564547,
+        "mpc_other": 57.21889156848192,
+        "build_pack": 8.15612729638815,
+        "query": 174.86076150089502,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 16.127522103488445,
+        "compression": 1.2996317818760872,
+        "rollout": 24.937164038419724,
+        "observation": 1.7177741974592209,
+        "mpc": 169.74075138568878,
+        "total": 214.95114639401436,
+        "risk": 109.45382621139288,
+        "mpc_other": 60.2869251742959,
+        "build_pack": 8.465460501611233,
+        "query": 100.90839583426714,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 16.901935450732708,
+        "compression": 1.4401515945792198,
+        "rollout": 25.66024288535118,
+        "observation": 1.9300254061818123,
+        "mpc": 747.124532237649,
+        "total": 794.1235899925232,
+        "risk": 689.0355460345745,
+        "mpc_other": 58.088986203074455,
+        "build_pack": 9.886822663247585,
+        "query": 679.0684750303626,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 16.620400361716747,
+        "compression": 1.3840682804584503,
+        "rollout": 25.644391775131226,
+        "observation": 1.7133746296167374,
+        "mpc": 409.70708057284355,
+        "total": 456.10716938972473,
+        "risk": 350.41289031505585,
+        "mpc_other": 59.294190257787704,
+        "build_pack": 8.39987676590681,
+        "query": 341.9040599837899,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 16.239061020314693,
+        "compression": 1.3965005055069923,
+        "rollout": 25.52042156457901,
+        "observation": 1.6529615968465805,
+        "mpc": 242.046931758523,
+        "total": 287.8298256546259,
+        "risk": 183.75610001385212,
+        "mpc_other": 58.29083174467087,
+        "build_pack": 8.441153913736343,
+        "query": 175.22617522627115,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 16.281036660075188,
+        "compression": 1.343701034784317,
+        "rollout": 25.05855169147253,
+        "observation": 1.6723070293664932,
+        "mpc": 178.57435159385204,
+        "total": 224.0389036014676,
+        "risk": 114.56670891493559,
+        "mpc_other": 64.00764267891645,
+        "build_pack": 8.1547312438488,
+        "query": 106.31000902503729,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 16.49447437375784,
+        "compression": 1.3909833505749702,
+        "rollout": 25.167295709252357,
+        "observation": 1.730276271700859,
+        "mpc": 831.2246510758996,
+        "total": 877.0055891945958,
+        "risk": 769.779110327363,
+        "mpc_other": 61.44554074853659,
+        "build_pack": 7.288753986358643,
+        "query": 762.0802391320467,
+        "actual_cpus": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000022,
+      16,
+      4
+    ],
+    "people": 20,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 16.445583663880825,
+        "compression": 1.6826419159770012,
+        "rollout": 41.003855876624584,
+        "observation": 1.6922811046242714,
+        "mpc": 964.5883999764919,
+        "total": 1025.8422959595919,
+        "risk": 908.6423870176077,
+        "mpc_other": 55.94601295888424,
+        "build_pack": 8.010786026716232,
+        "query": 900.2165980637074,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 16.020105220377445,
+        "compression": 1.6123121604323387,
+        "rollout": 40.5998881906271,
+        "observation": 1.6987072303891182,
+        "mpc": 806.3568389043212,
+        "total": 866.7071843519807,
+        "risk": 751.7392979934812,
+        "mpc_other": 54.617540910840034,
+        "build_pack": 8.896526880562305,
+        "query": 742.7654583007097,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 16.27838145941496,
+        "compression": 1.7372583970427513,
+        "rollout": 40.53737409412861,
+        "observation": 1.7444547265768051,
+        "mpc": 435.6829421594739,
+        "total": 496.38815596699715,
+        "risk": 381.73672929406166,
+        "mpc_other": 53.946212865412235,
+        "build_pack": 8.959105238318443,
+        "query": 372.6875949651003,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 15.998593531548977,
+        "compression": 1.8918924033641815,
+        "rollout": 40.50594940781593,
+        "observation": 1.8509645015001297,
+        "mpc": 253.31907905638218,
+        "total": 313.9935629442334,
+        "risk": 199.70412738621235,
+        "mpc_other": 53.61495167016983,
+        "build_pack": 8.86139739304781,
+        "query": 190.75759407132864,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 16.001456417143345,
+        "compression": 1.723223365843296,
+        "rollout": 40.469978004693985,
+        "observation": 1.716097816824913,
+        "mpc": 195.16688492149115,
+        "total": 255.48314675688744,
+        "risk": 136.34490221738815,
+        "mpc_other": 58.82198270410299,
+        "build_pack": 9.281777776777744,
+        "query": 126.98196619749069,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 16.859332099556923,
+        "compression": 1.9309362396597862,
+        "rollout": 41.85648821294308,
+        "observation": 1.6888603568077087,
+        "mpc": 806.3334422186017,
+        "total": 869.1332312300801,
+        "risk": 751.8759127706289,
+        "mpc_other": 54.457529447972775,
+        "build_pack": 9.354273788630962,
+        "query": 742.4223208799958,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 16.236476600170135,
+        "compression": 1.8769437447190285,
+        "rollout": 40.53521063178778,
+        "observation": 1.6939574852585793,
+        "mpc": 435.99555641412735,
+        "total": 496.7544097453356,
+        "risk": 382.04200845211744,
+        "mpc_other": 53.95354796200991,
+        "build_pack": 9.211096912622452,
+        "query": 372.75310792028904,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 16.722997650504112,
+        "compression": 1.825260929763317,
+        "rollout": 40.83623085170984,
+        "observation": 1.7147716134786606,
+        "mpc": 255.09461294859648,
+        "total": 316.69751182198524,
+        "risk": 200.79688169062138,
+        "mpc_other": 54.2977312579751,
+        "build_pack": 9.099350310862064,
+        "query": 191.61106925457716,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 16.066061332821846,
+        "compression": 1.7024092376232147,
+        "rollout": 40.770371444523335,
+        "observation": 1.6907453536987305,
+        "mpc": 173.29426482319832,
+        "total": 233.94605051726103,
+        "risk": 115.6429797410965,
+        "mpc_other": 57.65128508210182,
+        "build_pack": 9.199224412441254,
+        "query": 106.36609047651291,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 16.649595461785793,
+        "compression": 2.1857162937521935,
+        "rollout": 43.72798930853605,
+        "observation": 1.7013605684041977,
+        "mpc": 967.5309313461185,
+        "total": 1032.2432834655046,
+        "risk": 913.175443187356,
+        "mpc_other": 54.355488158762455,
+        "build_pack": 8.14837496727705,
+        "query": 904.5726722106338,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 16.214126721024513,
+        "compression": 1.669793389737606,
+        "rollout": 40.76345916837454,
+        "observation": 1.7204973846673965,
+        "mpc": 452.58110482245684,
+        "total": 513.3675457909703,
+        "risk": 396.9961777329445,
+        "mpc_other": 55.58492708951235,
+        "build_pack": 9.376972913742065,
+        "query": 387.5424498692155,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 16.198482364416122,
+        "compression": 1.699616201221943,
+        "rollout": 40.633478201925755,
+        "observation": 1.667208969593048,
+        "mpc": 262.05538865178823,
+        "total": 322.72309716790915,
+        "risk": 207.6035849750042,
+        "mpc_other": 54.45180367678404,
+        "build_pack": 8.952890522778034,
+        "query": 198.56443908065557,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 16.14588964730501,
+        "compression": 1.780492253601551,
+        "rollout": 40.584029629826546,
+        "observation": 1.7177741974592209,
+        "mpc": 174.09493774175644,
+        "total": 234.76397432386875,
+        "risk": 116.73678457736969,
+        "mpc_other": 57.35815316438675,
+        "build_pack": 8.877948857843876,
+        "query": 107.77907352894545,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 16.88140071928501,
+        "compression": 1.8387436866760254,
+        "rollout": 41.204445995390415,
+        "observation": 1.985900104045868,
+        "mpc": 961.1357403919101,
+        "total": 1023.5200356692076,
+        "risk": 906.6622164100409,
+        "mpc_other": 54.47352398186922,
+        "build_pack": 8.11506062746048,
+        "query": 898.123562335968,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 16.142677515745163,
+        "compression": 1.616436056792736,
+        "rollout": 40.27064889669418,
+        "observation": 1.6991961747407913,
+        "mpc": 806.6251743584871,
+        "total": 866.7915537953377,
+        "risk": 752.4346504360437,
+        "mpc_other": 54.19052392244339,
+        "build_pack": 9.081120602786541,
+        "query": 743.259385228157,
+        "actual_cpus": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "state": [
+      2000023,
+      28,
+      15
+    ],
+    "people": 20,
+    "candidates": 2048,
+    "errors": [
+      {
+        "threads": 1,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 2,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 4,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      },
+      {
+        "threads": 8,
+        "maximum_hazard_error": 0.0,
+        "cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ],
+        "controls_bitwise": true,
+        "ordered_elites_equal": true
+      }
+    ],
+    "measures": [
+      {
+        "threads": 1,
+        "repetition": 0,
+        "goal_update": 9.07630193978548,
+        "compression": 1.3353843241930008,
+        "rollout": 20.929958671331406,
+        "observation": 2.035556361079216,
+        "mpc": 573.4863635152578,
+        "total": 608.556754887104,
+        "risk": 502.73864436894655,
+        "mpc_other": 70.74771914631128,
+        "build_pack": 9.33492835611105,
+        "query": 493.3242406696081,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 0,
+        "goal_update": 9.258589707314968,
+        "compression": 1.3719843700528145,
+        "rollout": 21.052252501249313,
+        "observation": 2.083119936287403,
+        "mpc": 327.58678309619427,
+        "total": 362.9239732399583,
+        "risk": 258.98253079503775,
+        "mpc_other": 68.60425230115652,
+        "build_pack": 7.90287833660841,
+        "query": 250.9798463433981,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 0,
+        "goal_update": 9.201598353683949,
+        "compression": 1.2778369709849358,
+        "rollout": 21.050505340099335,
+        "observation": 2.0352788269519806,
+        "mpc": 218.99621095508337,
+        "total": 254.23450581729412,
+        "risk": 139.4190164282918,
+        "mpc_other": 79.57719452679157,
+        "build_pack": 8.076927624642849,
+        "query": 131.25939760357141,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 0,
+        "goal_update": 9.011558257043362,
+        "compression": 1.3371333479881287,
+        "rollout": 21.136902272701263,
+        "observation": 2.1148985251784325,
+        "mpc": 167.65532921999693,
+        "total": 202.96919159591198,
+        "risk": 84.45086516439915,
+        "mpc_other": 83.20446405559778,
+        "build_pack": 8.009458892047405,
+        "query": 76.36612001806498,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 0,
+        "goal_update": 9.051436558365822,
+        "compression": 1.4342153444886208,
+        "rollout": 20.820725709199905,
+        "observation": 2.0303186029195786,
+        "mpc": 667.3338292166591,
+        "total": 702.3226469755173,
+        "risk": 595.3700859099627,
+        "mpc_other": 71.96374330669641,
+        "build_pack": 7.056528702378273,
+        "query": 587.884028442204,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 1,
+        "goal_update": 9.224646724760532,
+        "compression": 1.3579446822404861,
+        "rollout": 20.936031825840473,
+        "observation": 2.062026411294937,
+        "mpc": 328.5472560673952,
+        "total": 363.77185955643654,
+        "risk": 257.98036344349384,
+        "mpc_other": 70.56689262390137,
+        "build_pack": 8.024334907531738,
+        "query": 249.85210038721561,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 1,
+        "goal_update": 9.178970009088516,
+        "compression": 1.3160426169633865,
+        "rollout": 21.032418124377728,
+        "observation": 2.0254990085959435,
+        "mpc": 215.7815033569932,
+        "total": 251.03362649679184,
+        "risk": 137.5251691788435,
+        "mpc_other": 78.2563341781497,
+        "build_pack": 7.897152565419674,
+        "query": 129.54099383205175,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 1,
+        "goal_update": 9.126168675720692,
+        "compression": 1.3288892805576324,
+        "rollout": 21.112455055117607,
+        "observation": 2.0819315686821938,
+        "mpc": 159.86768901348114,
+        "total": 195.2782841399312,
+        "risk": 81.38296939432621,
+        "mpc_other": 78.48471961915493,
+        "build_pack": 7.957705296576023,
+        "query": 73.34927935153246,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 1,
+        "goal_update": 9.291207417845726,
+        "compression": 1.3650702312588692,
+        "rollout": 22.53088355064392,
+        "observation": 2.0858440548181534,
+        "mpc": 671.0399473086,
+        "total": 707.9848414286971,
+        "risk": 598.4794739633799,
+        "mpc_other": 72.56047334522009,
+        "build_pack": 7.07587506622076,
+        "query": 590.9710638225079,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 1,
+        "goal_update": 9.165559895336628,
+        "compression": 1.3584354892373085,
+        "rollout": 20.99253609776497,
+        "observation": 2.092408947646618,
+        "mpc": 569.5935562252998,
+        "total": 604.8365300521255,
+        "risk": 499.4817543774843,
+        "mpc_other": 70.11180184781551,
+        "build_pack": 8.06882418692112,
+        "query": 491.3333114236593,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 4,
+        "repetition": 2,
+        "goal_update": 9.234773926436901,
+        "compression": 1.2799333781003952,
+        "rollout": 20.82659211009741,
+        "observation": 2.058745361864567,
+        "mpc": 213.72953243553638,
+        "total": 248.87982476502657,
+        "risk": 135.6313219293952,
+        "mpc_other": 78.09821050614119,
+        "build_pack": 8.033973164856434,
+        "query": 127.5130482390523,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12
+        ]
+      },
+      {
+        "threads": 8,
+        "repetition": 2,
+        "goal_update": 9.077838622033596,
+        "compression": 1.374359242618084,
+        "rollout": 20.85194457322359,
+        "observation": 2.032345160841942,
+        "mpc": 158.7408510968089,
+        "total": 193.83303448557854,
+        "risk": 80.65660949796438,
+        "mpc_other": 78.08424159884453,
+        "build_pack": 8.060863241553307,
+        "query": 72.52080459147692,
+        "actual_cpus": [
+          15,
+          14,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8
+        ]
+      },
+      {
+        "threads": 0,
+        "repetition": 2,
+        "goal_update": 9.164721705019474,
+        "compression": 1.3390891253948212,
+        "rollout": 20.853967405855656,
+        "observation": 2.0956918597221375,
+        "mpc": 666.8050531297922,
+        "total": 701.9965527579188,
+        "risk": 595.103987492621,
+        "mpc_other": 71.70106563717127,
+        "build_pack": 7.155216298997402,
+        "query": 587.5539537519217,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 1,
+        "repetition": 2,
+        "goal_update": 9.312019683420658,
+        "compression": 1.3515893369913101,
+        "rollout": 20.769250579178333,
+        "observation": 2.0880792289972305,
+        "mpc": 570.279898121953,
+        "total": 605.4751686751842,
+        "risk": 499.9241391196847,
+        "mpc_other": 70.35575900226831,
+        "build_pack": 8.116037584841251,
+        "query": 491.7298750951886,
+        "actual_cpus": [
+          15
+        ]
+      },
+      {
+        "threads": 2,
+        "repetition": 2,
+        "goal_update": 9.231142699718475,
+        "compression": 1.3492833822965622,
+        "rollout": 20.89894562959671,
+        "observation": 2.057138830423355,
+        "mpc": 336.0659312456846,
+        "total": 371.2846003472805,
+        "risk": 257.8296409919858,
+        "mpc_other": 78.23629025369883,
+        "build_pack": 7.9430388286709785,
+        "query": 249.8072637245059,
+        "actual_cpus": [
+          15,
+          14
+        ]
+      }
+    ]
+  }
+]

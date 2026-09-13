@@ -20,3 +20,4 @@ vendor/Python-RVO2/*.egg-info/
 vendor/Python-RVO2/*.so
 vendor/Python-RVO2/src/rvo2.cpp
 build_intent_backend/
+experiments/packed_direct_execution/_build/

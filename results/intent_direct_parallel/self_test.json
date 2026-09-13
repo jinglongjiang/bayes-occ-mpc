@@ -1,0 +1,148 @@
+{
+  "common_parameter_cases": [
+    {
+      "variance": 0.0,
+      "threads": 1,
+      "cpus": [
+        15
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.204429030418396
+    },
+    {
+      "variance": 0.0,
+      "threads": 2,
+      "cpus": [
+        15,
+        14
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.18312688916921616
+    },
+    {
+      "variance": 0.0,
+      "threads": 4,
+      "cpus": [
+        15,
+        14,
+        13,
+        12
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.16692373901605606
+    },
+    {
+      "variance": 0.0,
+      "threads": 8,
+      "cpus": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.26861391961574554
+    },
+    {
+      "variance": 0.09,
+      "threads": 1,
+      "cpus": [
+        15
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.1824982464313507
+    },
+    {
+      "variance": 0.09,
+      "threads": 2,
+      "cpus": [
+        15,
+        14
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.13793818652629852
+    },
+    {
+      "variance": 0.09,
+      "threads": 4,
+      "cpus": [
+        15,
+        14,
+        13,
+        12
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.1506498083472252
+    },
+    {
+      "variance": 0.09,
+      "threads": 8,
+      "cpus": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.19088014960289001
+    },
+    {
+      "variance": 2.0,
+      "threads": 1,
+      "cpus": [
+        15
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.1575639471411705
+    },
+    {
+      "variance": 2.0,
+      "threads": 2,
+      "cpus": [
+        15,
+        14
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.1415703445672989
+    },
+    {
+      "variance": 2.0,
+      "threads": 4,
+      "cpus": [
+        15,
+        14,
+        13,
+        12
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.1512095332145691
+    },
+    {
+      "variance": 2.0,
+      "threads": 8,
+      "cpus": [
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8
+      ],
+      "bitwise_equal": true,
+      "first_query_ms": 0.18864497542381287
+    }
+  ],
+  "heterogeneous_modes_bitwise": true,
+  "empty_crowd": true,
+  "nonfinite_context_rejected": true
+}

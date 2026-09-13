@@ -1,0 +1,169 @@
+{
+  "base": "82857b3af7bf1c319f3a695531ee9f624fa48f38",
+  "hardware": {
+    "allowed": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "physical_cpus": [
+      15,
+      14,
+      13,
+      12,
+      11,
+      10,
+      9,
+      8
+    ],
+    "threads": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "omp": {
+      "OMP_PLACES": "{15},{14},{13},{12},{11},{10},{9},{8}",
+      "OMP_PROC_BIND": "close",
+      "OMP_DYNAMIC": "FALSE",
+      "OMP_WAIT_POLICY": "PASSIVE"
+    },
+    "lscpu": "Architecture:                         x86_64\nCPU op-mode(s):                       32-bit, 64-bit\nByte Order:                           Little Endian\nAddress sizes:                        48 bits physical, 48 bits virtual\nCPU(s):                               16\nOn-line CPU(s) list:                  0-15\nThread(s) per core:                   2\nCore(s) per socket:                   8\nSocket(s):                            1\nNUMA node(s):                         1\nVendor ID:                            AuthenticAMD\nCPU family:                           25\nModel:                                80\nModel name:                           AMD Ryzen 7 5700G with Radeon Graphics\nStepping:                             0\nFrequency boost:                      enabled\nCPU MHz:                              1400.000\nCPU max MHz:                          3800.0000\nCPU min MHz:                          1400.0000\nBogoMIPS:                             7586.31\nVirtualization:                       AMD-V\nL1d cache:                            256 KiB\nL1i cache:                            256 KiB\nL2 cache:                             4 MiB\nL3 cache:                             16 MiB\nNUMA node0 CPU(s):                    0-15\nVulnerability Gather data sampling:   Not affected\nVulnerability Itlb multihit:          Not affected\nVulnerability L1tf:                   Not affected\nVulnerability Mds:                    Not affected\nVulnerability Meltdown:               Not affected\nVulnerability Mmio stale data:        Not affected\nVulnerability Reg file data sampling: Not affected\nVulnerability Retbleed:               Not affected\nVulnerability Spec rstack overflow:   Mitigation; safe RET, no microcode\nVulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp\nVulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                  Not affected\nVulnerability Tsx async abort:        Not affected\nFlags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local clzero irperf xsaveerptr rdpru wbnoinvd cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm\n",
+    "quota": {
+      "/sys/fs/cgroup/cpu/cpu.cfs_quota_us": "-1",
+      "/sys/fs/cgroup/cpu/user.slice/cpu.cfs_quota_us": "-1"
+    }
+  },
+  "states": [
+    [
+      2000000,
+      16,
+      3
+    ],
+    [
+      2000001,
+      16,
+      1
+    ],
+    [
+      2000002,
+      12,
+      3
+    ],
+    [
+      2000003,
+      16,
+      1
+    ],
+    [
+      2000010,
+      12,
+      0
+    ],
+    [
+      2000011,
+      24,
+      1
+    ],
+    [
+      2000012,
+      20,
+      4
+    ],
+    [
+      2000013,
+      20,
+      7
+    ],
+    [
+      2000020,
+      24,
+      0
+    ],
+    [
+      2000021,
+      20,
+      10
+    ],
+    [
+      2000022,
+      16,
+      4
+    ],
+    [
+      2000023,
+      28,
+      15
+    ]
+  ],
+  "settings": {
+    "sigma": [
+      [
+        0.00022414219952382976,
+        7.254989278778869e-06
+      ],
+      [
+        7.254989278778869e-06,
+        0.00019372611764709578
+      ]
+    ],
+    "fraction": 0.25,
+    "tau": 0.25,
+    "count": 256,
+    "mh": 2
+  },
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "repetitions": 3,
+  "gate": "all 36 full-pipeline measurements <=250 ms for at least one packed thread configuration",
+  "initial_library_load_or_build_ms": 318.27609054744244,
+  "package_sha256": "5ec34194c0c365bab18deb28b6d9f6f3feefe9dff2c500955bb04a2ef1444550",
+  "source_sha256": {
+    "experiments/intent_direct_parallel.py": "d2e5494a9882b38aafa31106742998833053948f47c9a6f7d4a73cd4ca66c750",
+    "experiments/packed_direct_execution/packed_direct.py": "93fb86b8ad83880693ddb7d4d4a2918ce09947fc2fde252e82538dcbc8f899fc",
+    "experiments/packed_direct_execution/risk_execution.cpp": "89a95fef2f3dabf277368b9df4e4e9bd9322e2e9c2e0e0e8c329230498644594"
+  }
+}
