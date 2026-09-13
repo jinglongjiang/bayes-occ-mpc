@@ -1,0 +1,714 @@
+% !TeX program = pdflatex
+% Working draft, 2026-09-12. This is the only manuscript source file.
+% No external chapter or bibliography files are required by this source.
+% Figures come from the concentrated hermite_focused result directory; no PDF is generated here.
+% Author information is provisionally transferred from latex_paper.txt.
+% Confirm authorship, current affiliations, funding, and declarations before submission.
+% Modern independent-test and deployment results are intentionally not fabricated.
+\documentclass[review]{fcs}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{graphicx}
+\graphicspath{{/home/abc/workspace/bayes_occ_mpc_hermite/results/hermite_focused/}}
+\usepackage{algorithm,algpseudocode}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\ind}{\mathbb{I}}
+\newcommand{\method}{EP-MPC}
+
+\title{Efficient Bayesian Crowd Navigation with Shared Collision-Probability Envelopes and Elite-Preserving Search}
+\author[1]{Jinglong~Jiang}
+\author[2]{Husna~Mutahira}
+\author[3]{Kanwal~Naveed}
+\author[4]{Vladimir~Shin}
+\author[5,+]{Mannan~Saeed~Muhammad}
+\author[1]{Juneho~Yi}
+\address[1]{Dept. of ECE, SKKU, Suwon, SK}
+\address[2]{Dept. of CSE, SU, Seoul, SK}
+\address[3]{CEME, NUST, Islamabad, PK}
+\address[4]{Dept. of AI, FinU, Moscow, RF}
+\address[5]{EECS, QMUL, London, UK}
+\corremail{mannan.muhammad@qmul.ac.uk}
+% Other contacts from the first-paper source:
+% {jianglong,jhyi}@skku.edu; husna@sogang.ac.kr;
+% kanwalnaveed@ceme.nust.edu; vishin@fa.ru.
+% Do not invent received/accepted dates or final publication metadata.
+
+\begin{abstract}
+Probabilistic crowd navigation repeatedly evaluates collision risk for candidate
+trajectories that share the same predictive posterior. Discarding uncertainty can reduce
+computation but also change decisions. We instead study how to preserve a specified
+finite-budget model predictive controller while avoiding irrelevant probability evaluations.
+Shared cubic-Hermite envelopes exploit candidate-independent Gaussian-disc parameters.
+Their bounds propagate through the existing risk aggregation and feasibility ordering;
+only candidates that can affect route elites or the controller's tolerance-based final
+choice require exact refinement. We derive a real-arithmetic interpolation bound and
+conditional search-preservation argument, separately from floating-point certification.
+On 30 development replays with 1358 control states, protected Hermite evaluation preserves
+ordered elites, sampling distributions, iteration winners and complete controls.
+Three balanced timing passes reduce median planning latency in the 20-person square
+configuration from 140.84 to 125.15 ms; cached rectangle bounds require 140.34 ms.
+Direct interpolation is faster still at 104.11 ms and differs in output on only one
+state across the cohort, by $1.11\times10^{-16}$. Thus natural replays do not establish
+a practically significant decision advantage over direct interpolation. Historical
+navigation ablations separately motivate retaining uncertainty, while an independent
+60-layout budget pilot finds lower computation time but no navigation improvement.
+The contribution is a specialized planning-computation mechanism, not a new Bayesian
+filter, global optimality theorem, or real-world safety guarantee.
+\end{abstract}
+\keywords{Bayesian navigation; Model predictive control; Collision probability; Hermite interpolation; Cross-entropy method; Decision preservation}
+\begin{document}
+
+\section{INTRODUCTION}
+Robots navigating among pedestrians evaluate many candidate motions under uncertain
+predictions. A posterior can be useful when pedestrians are intermittently observed:
+a remembered position does not express uncertainty accumulated during an observation
+gap. However, keeping this information creates repeated numerical work. Many robot
+candidates query the same pedestrian prediction at the same future step, differing
+only in distance from its mean.
+
+This paper addresses a computational question:
+\emph{can a navigator retain its posterior, risk criteria, sampling budget and selected
+motions while avoiding probability calculations that cannot change its search?}
+We do not change the crowd model, add a policy network, or tune the risk profile for
+a higher success rate. Instead, we exploit repeated structure in Gaussian-disc risk.
+
+For a fixed predictive posterior, the ratio of collision radius to standard deviation
+is independent of the robot candidate. We tabulate the resulting one-dimensional
+probability function and propagate interpolation intervals to the controller's ranking
+criteria. Exact computation is reserved for candidates that could enter a route's elite
+set or affect its iteration winner. Preserving the final action of one batch is not
+enough: an intermediate elite change alters the next sampling distribution.
+Our method consequently preserves ordered elite updates at every iteration and
+separately handles the controller's clearance-tolerance decisions.
+
+The principal contribution is this shared probability-envelope and refinement mechanism.
+Bayesian tracking, route initialization, actuator constraints, costs and fallback motion
+define the inherited controller; they are not separate innovation claims.
+The theoretical statement is conditional on valid bounds, common random numbers and
+identical ordering conventions. Numerical validation is reported separately because
+small outward padding is not a floating-point proof.
+
+We distinguish posterior uncertainty from numerical uncertainty: the former describes
+where a pedestrian may be, whereas the latter describes the accuracy with which a fixed
+probability has been evaluated. Our method preserves the former and spends computation
+on the latter only where it can affect a selection.
+
+Three evidence cohorts answer separate questions. Historical six-scene experiments
+motivate retaining posterior information. Two-layer replay compares exact evaluation,
+cached rectangles, direct interpolation and protected Hermite evaluation on fixed inputs.
+A population-only budget experiment separately checks whether acceleration purchases
+navigation improvement. Its two arms select the same population and have identical
+navigation outcomes. These cohorts are not combined into a new 97.17\% success claim
+for the accelerated implementation.
+
+\section{RELATED WORK}
+\subsection{Bounded Collision Probability}
+Thomas, Mastrogiovanni and Baglietto derive exact and bounded collision probabilities
+under Gaussian uncertainty for ellipsoidal geometry
+(\href{https://arxiv.org/abs/2110.06348}{Exact and Bounded Collision Probability for Motion Planning under Gaussian Uncertainty}).
+Their Section IV-B also explicitly discusses noncentral-chi-square table lookup;
+neither lookup nor fast probability bounds are new here. Their IV-C upper bound
+requires a finite support bound, which cannot silently be imposed on our untruncated
+Gaussian event. The distinction studied here is a
+shared fixed-ratio disk query coupled to candidate refinement within finite CEM
+iterations, not the first use of collision-probability bounds.
+
+\subsection{Decision-Preserving Simplification}
+Elimelech and Indelman develop decision simplification and action consistency, including
+belief sparsification dedicated to planning
+(\href{https://arxiv.org/abs/1909.00885}{Simplified decision making in the belief space using belief sparsification}).
+Zhitnikov and Indelman study adaptive candidate acceptance and rejection under
+probabilistic belief-dependent constraints
+(\href{https://arxiv.org/abs/2302.06697}{Simplified Continuous High Dimensional Belief Space Planning with Adaptive Probabilistic Belief-dependent Constraints}).
+In particular, their equations (22)--(31) propagate bounds through probabilistic
+constraints and tighten unresolved acceptance or rejection decisions. We supply a
+particular shared disk-probability construction and its scoring-interface propagation,
+not a new general principle of bound-based screening.
+We preserve the predictive posterior and partially resolve risk ordering in a finite
+search, rather than simplifying the initial belief or expanding future observation trees.
+General action-order preservation can already imply elite preservation; induction across
+CEM iterations is not, by itself, a fundamentally new decision-consistency theory.
+
+\subsection{Lazy Cross-Entropy Search}
+LCEOPT uses policy-tree structure to avoid redundant work in sampling, evaluation and
+cross-entropy updates
+(\href{https://arxiv.org/abs/2305.08049}{A Surprisingly Simple Continuous-Action POMDP Solver: Lazy Cross-Entropy Search Over Policy Trees}).
+Our avoided work is risk refinement for trajectory candidates, rather than evaluation
+of unvisited policy-tree components. Bounded probability, decision preservation and
+lazy CEM are therefore not independent novelty claims. The experiment below tests our
+concrete envelope against a cached geometric bound using the same selector, not against
+all these complete planning systems.
+
+\section{BASE NAVIGATOR}
+\subsection{Observation and Recursive Belief}
+Inputs comprise identity-associated position and velocity detections, radii and visibility
+evidence. Hidden true positions and pedestrian goals are not planner inputs.
+Inter-agent occlusion and limited sensing range can both remove pedestrians from
+observation; whether pedestrians react to the robot is a separate simulator setting.
+
+Track $i$ is represented by $(r_t^i,\mu_t^i,P_t^i)$ with existence probability,
+conditional Gaussian state and missed-observation metadata. Its inherited prediction is
+\begin{align}
+F&=\begin{bmatrix}I_2&\Delta t I_2\\0&I_2\end{bmatrix},\\
+Q&=\sigma_a^2\begin{bmatrix}
+\Delta t^4 I_2/4&\Delta t^3 I_2/2\\
+\Delta t^3 I_2/2&\Delta t^2 I_2
+\end{bmatrix},\\
+\mu_t^-&=F\mu_{t-1}^+,\quad
+P_t^-=FP_{t-1}^+F^\top+Q,\quad r_t^-=p_Sr_{t-1}^+ .
+\end{align}
+Noisy detections use the Kalman update in Joseph covariance form. For exact observations,
+the state is set to the measurement and covariance to zero. Detections reset missed age
+and existence confidence to 0.999.
+
+If the predicted mean should be visible but no detection occurs,
+\begin{equation}
+r_t^+=\frac{(1-p_D)r_t^-}{1-p_Dr_t^-}.
+\end{equation}
+This mean-location query is not an integral of detection probability over the posterior.
+Inherited low-existence and missed-age thresholds determine deletion. No spatial birth
+model for never-observed pedestrians is enabled.
+
+Future means and covariances use the same $F,Q$ recursion, while current existence
+weights are retained over the horizon. Following an exact observation,
+$P_m=\sum_{j=0}^{m-1}F^jQ(F^j)^\top$; uncertainty growth is then determined by prediction
+age, not learned intent. These assumptions limit the interpretation of the historical
+Bayesian ablation.
+
+\subsection{Risk and Geometry}
+For robot candidate $j$, pedestrian $i$ and step $k$, let $d_{j,i,k}$ denote distance
+to the predicted mean, and let $R_i=r_r+r_i+m_h$ include the inherited margin.
+For isotropic covariance $\sigma_{i,k}^2I_2$,
+\begin{equation}
+q_{j,i,k}=
+F_{\chi'^2_2(d_{j,i,k}^2/\sigma_{i,k}^2)}
+ (R_i^2/\sigma_{i,k}^2).
+\label{eq:disc}
+\end{equation}
+The new core rejects arbitrary anisotropic covariances rather than silently treating
+an isotropic approximation as exact integration. It retains the reference's variance
+floor, deterministic convention and positive 8-sigma tail substitution. Numerical
+preservation is relative to these conventions, not an unmodified analytic tail.
+
+Existence-weighted components are accumulated as
+\begin{equation}
+h_{j,k}=-\sum_i\log\left(1-
+ \operatorname{clip}(r_t^iq_{j,i,k},0,1-10^{-12})\right).
+\label{eq:hazard}
+\end{equation}
+This factorization ignores dependent pedestrian motion. Marginal step constraints
+also do not constitute a joint trajectory-level collision guarantee.
+The inherited budget remains
+\begin{equation}
+\epsilon_k=\epsilon_{\rm near}
++(\epsilon_{\rm far}-\epsilon_{\rm near})
+\left(\frac{k-1}{H-1}\right)^2,\qquad
+\lambda_k=-\log(1-\epsilon_k).
+\end{equation}
+Swept mean geometry, margins, goal masking and penalties remain part of the base
+navigator. The acceleration study neither removes these rules nor claims they are
+individually optimal.
+
+\subsection{Fixed Search and Three Selection Rules}
+The audited holonomic controller uses $H=16$, $\Delta t=0.25$\,s, population 512,
+four iterations and elite fraction 0.08. Maximum speed and acceleration are 1.0\,m/s
+and 2.0\,m/s$^2$. Its calculation configuration uses $m_h=0.10$\,m,
+$\epsilon_{\rm near}=0.225$, $\epsilon_{\rm far}=0.75$ and risk weight 1.0.
+These are recorded effective values, not class defaults.
+
+Half the population follows the warm-start distribution; the remaining budget follows
+the inherited left, right and wait-then-go routes. Noise correlation, candidate
+projection, seed insertion and route-wise distribution updates are unchanged.
+Risk is appended to a common non-risk cost in the original arithmetic order:
+\begin{equation}
+J_j=J_{{\rm base},j}
++w_h\sum_k A_{j,k}h_{j,k}
++10^5\ind\{\max_{k:A_{j,k}=1}(h_{j,k}-\lambda_k)>0\},
+\label{eq:cost}
+\end{equation}
+where $A$ masks steps after goal entry. The base cost retains goal, smoothness,
+effort, stagnation and geometry contributions.
+
+Let $f_j,s_j$ denote full-horizon and first-step clearance including risk slack.
+Elite selection uses lexicographic keys
+\begin{equation}
+K_j=(c_j,v_j,J_j),\quad
+c_j=\begin{cases}0&f_j\ge0\\1&f_j<0,\ s_j\ge0\\2&s_j<0,\end{cases}
+\quad
+v_j=\begin{cases}0&c_j=0\\-f_j&c_j=1\\-s_j&c_j=2.\end{cases}
+\end{equation}
+The iteration winner is instead lowest-cost full-feasible; otherwise lowest-cost
+first-feasible within 0.02 of maximum horizon clearance; otherwise lowest-cost within
+0.02 of maximum first-step physical clearance. Cross-iteration replacement retains
+its original tolerance ordering. These three responsibilities are distinct; the
+first elite cannot generally substitute for the execution candidate.
+
+\section{SHARED ENVELOPES AND ELITE PRESERVATION}
+\subsection{Shared Query Structure}
+Define
+\begin{equation}
+a_{i,k}=R_i/\sigma_{i,k},\qquad
+z_{j,i,k}=(d_{j,i,k}-R_i)/\sigma_{i,k}.
+\end{equation}
+Each $a_{i,k}$ is fixed across candidates and search iterations in one planning call,
+whereas $z_{j,i,k}$ changes. Equation~\eqref{eq:disc} becomes
+\begin{equation}
+f_a(z)=F_{\chi'^2_2((a+z)^2)}(a^2).
+\end{equation}
+A table for every distinct $a$ is shared over that call, using standardized spacing
+$h=0.125$. It is rebuilt on the next observation. This is shared numerical work,
+not posterior compression or a new cross-time prediction cache.
+
+\subsection{Error Envelope}
+Differentiating Gaussian measure over a translated disk gives a fourth derivative
+of the form $\E[\ind_A He_4(Z_x)]$. Since $\E He_4=0$ and $\E He_4^2=24$,
+\begin{equation}
+|f_a^{(4)}|
+=\left|\E[(\ind_A-\tfrac12)He_4]\right|
+\le\tfrac12\E|He_4|\le\sqrt{24}/2.
+\end{equation}
+The cubic-Hermite remainder therefore satisfies
+\begin{equation}
+|f_a-\widetilde f_a|
+\le\delta_{\rm interp}=\sqrt{24}h^4/768,
+\label{eq:bound}
+\end{equation}
+approximately $1.56\times10^{-6}$ at the selected spacing.
+
+This is a real-arithmetic result. With certified node-value error $e_0$, derivative
+error $e_1$ and polynomial error $e_r$, one sufficient query budget is
+\begin{equation}
+\delta=\sqrt{24}h^4/768+e_0+(h/4)e_1+e_r.
+\end{equation}
+The value basis has absolute sum one; the derivative basis has absolute sum at most
+one quarter. Monotone endpoint clipping and hazard aggregation also require rounding
+accounting. A universal SciPy CDF/Bessel error bound has not been established here.
+Small outward padding and empirical consistency do not provide implementation-level
+formal certification.
+
+\subsection{Refining Only Relevant Candidates}
+The aggregation in \eqref{eq:hazard} is nondecreasing for existence in $[0,1]$.
+With nonnegative risk weight, probability intervals yield optimistic and pessimistic
+costs and clearances through one shared scoring implementation.
+Let $L_j,U_j$ be the associated key bounds.
+For a route requiring $k$ elites, let $\tau$ be its $k$th smallest pessimistic key.
+Exclude candidate $j$ from elite consideration only when
+\begin{equation}
+L_j\succ_{\rm lex}\tau.
+\label{eq:exclude}
+\end{equation}
+At least $k$ true keys are no worse than $\tau$, while this candidate is strictly worse.
+All ties survive. Relevant candidates are refined using the original exact evaluator,
+and the original sorting rule recovers the ordered elites.
+
+The method additionally refines potential iteration winners in the full-feasible
+and clearance-tolerance pools. It never substitutes an interpolation midpoint for an
+exact selected score. An explicit mask checks that selected elites and winners have
+been resolved. Nonfinite or reversed bounds on valid inputs trigger exact evaluation;
+invalid inputs are errors, not zero-risk candidates.
+
+\subsection{Conditional Preservation}
+Assume valid bounds, identical inputs and warm starts, common random numbers and
+unchanged arithmetic, numbering and tie-breaking. The initial candidates coincide.
+Strict exclusion cannot remove a true elite, and exact refinement resolves the
+remaining relevant comparisons. Ordered elite indices are unchanged, so the original
+mean and deviation reductions yield the same next sampling distributions and candidates.
+Induction preserves every finite iteration. Independently preserved iteration winners
+and cross-iteration replacement yield the same complete control sequence.
+
+The claim does not require the full ordering of discarded candidates and does not
+establish global planning optimality. Equality on fixed inputs also does not imply
+identical physical trajectories in asynchronous deployments where latency changes
+future observation or command timing.
+
+\begin{algorithm}[tb]
+\caption{Shared-envelope evaluation within one CEM loop}
+\begin{algorithmic}[1]
+\State Validate the observation and construct per-call envelopes
+\For{each inherited CEM iteration}
+\State Generate and project the original route-wise candidates
+\State Compute common geometry and non-risk cost
+\State Obtain optimistic and pessimistic risk scores
+\State Retain possible elites by strict exclusion only
+\State Retain possible winners of the original tolerance pools
+\State Refine retained candidates with original exact risk
+\State Apply the unchanged three selection rules
+\State Update route distributions in the original order
+\EndFor
+\State \Return first control of the best evaluated sequence
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Computational Balance}
+The relevant cost balance is
+\begin{align}
+T_E&=T_{\rm common}+T_{\rm all\ exact},\\
+T_H&=T_{\rm common}+T_{\rm table}+T_{\rm bounds}
+     +T_{\rm screen}+T_{\rm remaining\ exact}.
+\end{align}
+Geometry still visits all candidates. An approximately 8\% refined-candidate fraction
+is not an 8\% total-operation fraction: exact evaluation already masks distant
+components, and table creation invokes both CDF and derivative functions.
+No reduction of the population-by-human asymptotic order is claimed.
+
+The runtime contains one Bayesian track recursion and one MPC loop; Hermite is an
+internal risk operation. Exact, rectangle and Hermite arms share the loop and scoring
+formula. Unused density recursion, dormant occupancy output and unconsumed Bayes
+uncertainty-buffer calculations are removed, but visibility evidence and track
+management remain. Shared cleanup savings are not attributed exclusively to Hermite.
+
+Direct interpolation is a distinct experimental control, denoted T. It shares the
+same nodes and derivatives but scores the cubic point value without intervals or
+selective refinement. The protection overhead is $T_H-T_T$; H is not required to be
+faster than this unprotected approximation. Small pointwise error alone cannot establish
+selection equivalence near discontinuous feasibility penalties or nearly tied elites.
+
+\section{EXPERIMENTS}
+\subsection{Protocol and Reference Independence}
+The computational study uses 30 previously collected development episodes: ten 5-person
+circles, ten 10-person circles, and ten 20-person squares, totaling 1358 control states.
+Crowd count and layout geometry both change; these are configurations, not an isolated
+density manipulation. Inputs, seeds, effective settings and source hashes are registered.
+This cohort is not a fresh held-out confirmation set.
+
+An earlier architecture regression compares the common implementation against retained
+untouched exact and Hermite references. The present experiment freezes that implementation
+and changes only its experimental evaluator. E uses original exact risk; R uses cached
+rectangle bounds and selective refinement; T directly scores the same cubic table used
+by H; H uses its envelope and necessary refinement. T does not construct and discard
+intervals or evaluate every candidate exactly before returning an approximation.
+
+The first replay layer evaluates E's actual candidate batches with all four methods.
+Posterior, projected trajectories and geometric terms are fixed, isolating numerical
+evaluation from search evolution. Reference scores audit exclusions after screening;
+they are not supplied to R or H when deciding what to refine. We record probability
+errors, category changes, ordered elites and the iteration winner. Refinement counts
+partition into elite candidates, selection-only candidates outside that set, unresolved
+but ultimately unselected candidates, and excluded candidates.
+
+The second layer supplies common recorded posteriors but permits each method to generate
+its own candidates, update distributions and retain its own warm start. E's distribution
+is never imposed on T after a disagreement. We compare ordered elites, means and
+deviations, iteration winners, cross-iteration best and complete controls, including
+the first differing iteration and maximum numerical control difference. These are
+search replays, not four new closed-loop navigation rollouts.
+
+\subsection{Timing and Statistical Units}
+Three pure timing passes run separately from detailed tracing, with serialization outside
+measured calls. Numerical-library threads are fixed to one, methods run serially on an
+AMD Ryzen 7 5700G, and invocation order is balanced across all permutations. The
+environment uses Python 3.8, NumPy 1.23.5 and SciPy 1.10.1; CPU frequency is not locked.
+A full planning call
+includes table construction and remaining exact refinement, but not the upstream filter.
+Step percentiles pool measured calls across the three passes, rather than averaging
+episode percentiles. Paired mean differences first average technical repetitions within
+each episode; exploratory 95\% intervals bootstrap the ten paired episodes per
+configuration. Technical repetitions and correlated control states are not independent
+navigation samples. Slow steps and slower episodes remain in the report.
+
+Detailed mechanism measurements count table CDF and derivative evaluations as well as
+candidate CDF evaluations. Exclusive subroutine timers in that instrumented pass explain
+work allocation, but are not substituted for the uninstrumented latency measurements.
+The protection cost is the paired H-minus-T time, not an assumed advantage of H over T.
+
+\subsection{Upstream and Numerical Checks}
+Posterior-only replays cannot validate tracker simplification. Six deterministic
+legal-observation fixtures separately cover continuous detections, occlusion and
+reappearance, visible misses, deletion, measurement noise and timestamp gaps.
+These short sequences compare ID order, full means and covariances, existence,
+missed age, visibility, predictions and adapter outputs.
+They are not additional navigation episodes.
+Separate tests reject invalid inputs and confirm that a failed envelope returns
+the same controls as exact evaluation on valid input.
+
+\section{RESULTS}
+\subsection{Information Value}
+The historical controlled comparison in Table~\ref{tab:historical} answers why posterior
+uncertainty is retained: with the same track set and means, collision counts fall from
+39 to 12 when uncertainty is used. This motivates the computational problem without
+claiming a new estimator or Bayesian superiority over every uncertainty representation.
+The full historical and severe-noise results are retained below; their version and
+layouts are not conflated with this replay cohort.
+
+\subsection{Fixed-Candidate and Evolving-Search Preservation}
+The first layer audits 5432 actual E candidate batches, comprising 2781184 candidate
+rows. R and H preserve all ordered route elites and iteration winners, with no
+incorrectly excluded necessary candidates. No reference hazard lies outside the
+recorded intervals, even before the registered $10^{-10}$ diagnostic tolerance.
+This empirical enclosure result is distinct from a universal floating-point bound.
+
+T changes no feasibility category, but changes eight ordered route-elite lists and
+seven iteration-winner indices in the 10-person configuration. Its maximum conditional
+probability error is $4.364\times10^{-7}$, below the real-arithmetic interpolation bound;
+the maximum aggregated hazard error is $3.354\times10^{-5}$. Small error therefore does
+not imply identical discrete selections.
+
+In the second layer, R and H preserve the complete search traces and controls on all
+1358 states. T changes eight iteration elite collections and seven iteration winners,
+yet changes the final control sequence and first action on only one state, at a maximum
+absolute component difference of $1.1102230246251565\times10^{-16}$. The first trace
+disagreement is case 23000, step 33, iteration zero in the 10-person configuration.
+No practically significant control discrepancy or navigation loss is demonstrated.
+The grid was not coarsened to manufacture one.
+
+Earlier old/new architecture checks against untouched references and 96 upstream
+observation updates remain separate provenance evidence. They are not added to the
+current sample count. The present replay establishes tested preservation of the frozen
+implementation, not new tracker validity, global optimality or physical safety.
+
+\subsection{Same-Run Latency}
+\begin{table}[tb]
+\centering\small
+\caption{Planning milliseconds over three balanced technical passes. E: exact; R: cached
+rectangle; T: direct interpolation; H: protected Hermite. All share the search loop.}
+\label{tab:latency}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Configuration & Statistic & E & R & T & H & R/H refine (\%) & T outputs\\
+\midrule
+5-person circle & Median & 42.62 & 43.35 & 34.11 & 39.99 & 27.05/8.01 & 0/387\\
+ & p95 & 53.98 & 56.01 & 36.35 & 43.03 & & \\
+10-person circle & Median & 81.32 & 81.33 & 66.49 & 78.24 & 38.66/8.04 & 1/453\\
+ & p95 & 95.90 & 105.75 & 69.02 & 81.14 & & \\
+20-person square & Median & 140.84 & 140.34 & 104.11 & 125.15 & 44.96/8.03 & 0/518\\
+ & p95 & 158.50 & 179.41 & 116.71 & 136.94 & & \\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{\linewidth}{\footnotesize Refinement percentages use only
+bound-evaluated fixed batches. T outputs counts non-bitwise-identical control sequences,
+not navigation failures. R and H have zero output differences. T uses direct point
+queries, so an exact-candidate refinement percentage is not comparable.}
+\end{table}
+
+Relative to E, H reduces median latency by 6.2\%, 3.8\% and 11.1\% in the three
+configurations. Episode-average paired H-minus-E differences are -4.18, -6.29 and
+-15.18 ms, with exploratory 95\% intervals [-4.96,-3.38], [-7.80,-4.90] and
+[-17.32,-13.08] ms. Every episode's mean over technical repetitions is faster with H
+than E or R. Nevertheless, H is slower than E on 337/1161, 265/1359 and 16/1554
+individual timing calls, and slower than R on 71, 324 and 96 calls, respectively.
+These are step--repetition counts, not independent episodes.
+
+T is faster than H in every episode-average comparison. The paired protection overhead
+$T_H-T_T$ is 5.36, 11.06 and 18.21 ms, with intervals [5.18,5.53], [10.69,11.48]
+and [17.51,18.95] ms. H still saves work relative to E after paying this cost, but the
+natural replay evidence does not establish that this overhead is needed to prevent
+material control errors. Figure~\ref{fig:latency} reports both sides of the tradeoff.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{latency.png}
+\caption{Same-cohort latency and episode-paired differences. Intervals resample episodes;
+three timing passes are technical repetitions. H-minus-T explicitly prices protection.}
+\label{fig:latency}
+\end{figure}
+
+\subsection{Why Tight Bounds Reduce Refinement}
+In the 20-person configuration, R refines 476925 of 1060864 fixed candidate rows
+(44.96\%); H refines 85140 (8.03\%). Both include 84952 elite rows. R additionally
+refines 7000 nonelite selection-pool rows and 384973 ultimately unused rows; H has
+58 and 130, respectively. R leaves 148692 candidate categories unresolved by its
+bounds, versus nine for H. This is evidence that tight bounds reduce unresolved
+comparisons, not that H ignores more posterior mass.
+
+The nonelite selection-pool counts need not match: a broad exact tolerance pool is
+an audit category, not a claim that every member must be refined. H can exclude
+nonwinning members while preserving the winner. Similarly, all-resolved masks on
+12 no-risk batches in the 5-person cohort do not represent CDF refinement. Their
+6144 rows are excluded from the bound-evaluated partition in Figure~\ref{fig:mechanism},
+but retained in timing and selection audits. Raw masks remain in the records.
+
+The first naturally encountered 20-person feasible elite boundary is shown in
+Figure~\ref{fig:boundary}. The methods receive identical candidates. This local view
+and the width-stratified counts are descriptive, not a causal claim that interval
+width alone controls runtime or that larger covariance always makes screening useful.
+
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{mechanism.png}
+\caption{Disjoint candidate accounting on batches with probability bounds (left), and
+unused refinement by hazard-interval width in the 20-person configuration (right).
+No-risk batches are not mislabeled as failed interval screening.}
+\label{fig:mechanism}
+\end{figure}
+\begin{figure}[tb]
+\centering
+\includegraphics[width=\linewidth]{boundary.png}
+\caption{R and H bounds at the first recorded 20-person feasible elite boundary.
+Points are reference scores; intervals are collected before refinement. A cost interval
+alone does not resolve a candidate whose feasibility category remains ambiguous.}
+\label{fig:boundary}
+\end{figure}
+
+\subsection{Special-Function Accounting}
+Across the 518 independently evolving 20-person search calls, E performs 192378140
+candidate CDF scalar evaluations; R performs 85975523; H performs 15379103. H also
+uses 1860309 table CDF and 1860309 scaled-Bessel evaluations. T uses the same table
+counts and 1035 outside-table reference CDF evaluations. The mean number of distinct
+curve parameters is 27.84 per call, each with 129 nodes. Curve equality is exact;
+parameters are not rounded into bins.
+There are 2072 bound-query batches, or 276725760 candidate--pedestrian--step components
+before the shared numerical conventions are applied. The corresponding counts in the
+5- and 10-person configurations are 1536/55214080 and 1812/132349952. These cardinalities
+are derived from registered posterior dimensions and the unchanged population and
+iteration count; they are not additional special-function evaluations.
+
+Diagnostic H subroutine means in milliseconds are 55.50 for the instrumented common
+geometry/cost/rollout routines, 1.86 for construction, 43.47 for bound queries and
+aggregation, 6.86 for remaining exact hazard, 1.29 for scoring and 1.50 for screening.
+These are exclusive instrumented buckets, not a complete partition of pure planning
+time: candidate generation and distribution updates also cost time. In E, the analogous
+exact-risk bucket costs 70.32 ms. Querying and aggregating bounds remain substantial,
+explaining why a roughly 92\% reduction in refined rows gives only modest total speedup.
+No further masking or adaptive-switch optimization is added to these measurements.
+
+\subsection{Historical Navigation Motivation}
+Table~\ref{tab:historical} retains exact-controller background evidence, not a new
+rollout of the accelerated implementation. Its layouts have subsequently been reused.
+\begin{table}[tb]
+\centering\small
+\caption{Historical exact-risk navigation, six scenes and 600 layouts per arm.
+These are not newly measured EP-MPC success rates.}
+\label{tab:historical}
+\begin{tabular}{lrrr}
+\toprule
+Representation & SR (\%) & CR (\%) & Penalized time (s)\\
+\midrule
+Visible detections only & 67.17 & 32.83 & 15.33\\
+CV memory & 93.00 & 7.00 & 12.09\\
+Posterior mean & 93.50 & 6.50 & 12.03\\
+Covariance, planning existence=1 & 96.67 & 2.67 & 12.26\\
+Full posterior & 97.17 & 2.00 & 12.22\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Posterior mean and full posterior share the Bayesian track set and predicted means.
+Their collision counts, 39 and 12, motivate preserving uncertainty in this particular
+navigator. Most of the increment is recovered with covariance and planning existence
+fixed to one. The residual planning-existence contribution was not statistically
+resolved; this does not remove or invalidate existence-based track management.
+The entries cannot be interpreted as an additive decomposition assigning a fixed
+number of success-rate points to each architectural component.
+
+Fairly calibrated severe-noise results limit the interpretation.
+Table~\ref{tab:severe} retains all five historical controls, rather than selecting only
+the weaker alternatives. It uses 600 dense-square layouts per arm, position noise
+0.10 m, velocity noise 0.20 m/s, and detection probability 0.80. Each arm was calibrated
+on the same development data; selected work points need not share numerical parameter
+values. Bayes versus EWMA and conformal did not establish a clear success or collision
+advantage. Failure to detect a difference is not an equivalence result.
+The computation mechanism can also operate on suitable Gaussian predictions obtained
+without Bayesian filtering; its mathematics is not exclusive to Bayesian inference.
+
+\begin{table}[tb]
+\centering\small
+\caption{Historical severe-noise controls, 600 dense-square layouts per arm.
+SR, CR and TR are success, audited collision and timeout rates. No entries are new H rollouts.}
+\label{tab:severe}
+\begin{tabular}{lrrrrr}
+\toprule
+Method & Point & SR (\%) & CR (\%) & TR (\%) & Penalty (s)\\
+\midrule
+Bayes & 1 & 74.00 & 11.67 & 14.33 & 18.129\\
+Static covariance & 4 & 63.83 & 35.33 & 0.83 & 17.465\\
+EWMA & 1 & 75.67 & 13.00 & 11.33 & 17.885\\
+Conformal & 4 & 74.17 & 11.00 & 14.83 & 18.726\\
+Age margin & 0 & 49.67 & 6.83 & 43.50 & 21.615\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Separate Closed-Loop Budget Check}
+A previously completed experiment allows both E and H to choose their population from
+512, 640, 768, 896 and 1024, while holding the controller, risk settings and four
+iterations fixed. Its 20 development layouts comprise ten clean and ten severe
+20-person squares, yielding 200 calibration episodes. Eligibility requires full
+observation-to-action p99 at most 250 ms; collision count, success count and penalized
+time determine the choice, with a smaller population breaking remaining ties.
+Both arms select 640. These calibration outcomes are not final-test observations.
+
+On 60 separate paired layouts, 30 per condition, the two arms run independently
+closed-loop, totaling 120 episodes. Each maintains its own observations, posterior
+and warm start. Both achieve 50 successes, seven collisions and three timeouts, with
+15.508 s mean penalized time; neither rescues nor harms a layout relative to the other.
+The penalty is arrival time for collision-free success and 25 s otherwise.
+Table~\ref{tab:budget} reports the already completed test without new runs.
+
+\begin{table}[tb]
+\centering\small
+\caption{Independent budget pilot, population 640. Counts are per arm, not pooled
+independent outcomes. Timings include legal observation processing through action output.}
+\label{tab:budget}
+\begin{tabular}{llrrrrr}
+\toprule
+Condition & Arm & S/C/T & Penalty (s) & p50 & p95 & p99\\
+\midrule
+Clean & E & 29/1/0 & 12.783 & 168.61 & 191.69 & 198.80\\
+Clean & H & 29/1/0 & 12.783 & 138.86 & 167.33 & 169.40\\
+Severe & E & 21/6/3 & 18.233 & 162.27 & 193.44 & 200.22\\
+Severe & H & 21/6/3 & 18.233 & 143.43 & 183.01 & 191.68\\
+Combined & E & 50/7/3 & 15.508 & 165.69 & 192.69 & 199.46\\
+Combined & H & 50/7/3 & 15.508 & 139.50 & 181.51 & 186.64\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 3183 measured control steps per arm meet the soft budget in this pilot.
+Combined full-pipeline median, p95 and p99 decrease by 15.8\%, 5.8\% and 6.4\%,
+respectively, but the preregistered continuation gate for extra navigation benefit
+is not met. This is not a hard real-time or safety-equivalence guarantee.
+The budget cohort does not store full posteriors and is not reused to assert T replay
+or closed-loop equivalence. Its absolute timings are not mixed with the population-512
+planning-only replay measurements.
+
+\section{DISCUSSION AND LIMITATIONS}
+The implementation removes duplicate search logic and dormant computations, not the
+base navigator's active decision rules. Route populations, geometry and degraded motion
+still affect behavior. The claim is relative to this declared controller, not a
+hypothetical minimal MPC.
+
+A tighter envelope is useful only when avoided refinement outweighs lookup and screening.
+Common geometry remains substantial. The direct-interpolation control is a stronger
+challenge than rectangles: it is faster and virtually output-identical on these inputs.
+The present evidence supports a costed conditional selection guarantee, not an observed
+material control advantage over an ordinary lookup table. No adaptive switching
+mechanism or deliberately coarsened table is added to conceal that tradeoff.
+
+The probability model is isotropic and factorized across pedestrians. Actual motion
+need not satisfy independence, and the sign of positional correlation alone does not
+determine union-risk bias. The model does not infer intentions, ambiguous identities
+or never-seen pedestrian births. Preserving decisions does not repair these limitations.
+
+A universal floating-point enclosure for the employed special functions remains
+unestablished. Development replays do not validate physical deployment, unicycle
+execution or asynchronous timing. The separate independent budget pilot does not
+extend this four-evaluator mechanism study to held-out posteriors or establish extra
+navigation benefit. Timing repetitions share one machine with normal desktop services
+and unlocked CPU frequency. No empirical superiority over complete contemporary
+belief-space planners is claimed.
+
+Existing work already establishes bounded collision probabilities, action-consistent
+simplification and lazy cross-entropy search. The proposed specialization is shared
+Gaussian-risk evaluation with explicit elite and tolerance-pool refinement, evaluated
+through a controlled cost comparison. Its publication-level novelty cannot be inferred
+from a name, a software cleanup or a positive speedup alone.
+
+\section{CONCLUSION}
+Shared Hermite envelopes and selective exact refinement reduce repeated probability work
+without discarding the navigator's posterior or changing its tested finite-search decisions.
+The maintained implementation has one search loop and one risk-scoring formula.
+Two-layer E/R/T/H replay separates local evaluation differences from evolving-search
+effects. H preserves the tested reference and reduces computation, whereas direct
+interpolation is faster with only a floating-point-scale output discrepancy. The
+measured protection overhead must therefore be justified by the conditional selection
+property, not by an invented navigation improvement. Historical ablations motivate
+retaining uncertainty; the independent budget pilot explicitly finds no additional
+navigation benefit. The demonstrated objective is efficient preservation of a specified
+controller, not new Bayesian inference or guaranteed safety.
+\end{document}
