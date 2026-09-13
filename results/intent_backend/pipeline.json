@@ -1,0 +1,2138 @@
+[
+  {
+    "state": [
+      2000000,
+      16,
+      3
+    ],
+    "people": 5,
+    "visible": 4,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 3.944304526105059e-31,
+      "risk_bound_0": 1.7763568394002505e-15,
+      "risk_bound_1": 3.944304526105059e-31
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.03420664779030878,
+      0.9994147813830601
+    ],
+    "full_modes": 253,
+    "measures": [
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 0.9338632225990295,
+        "compression": 0.18647965043783188,
+        "rollout": 398.5893540084362,
+        "observation": 0.6217369809746742,
+        "mpc": 607.8243181109428,
+        "total": 1009.0511310845613,
+        "risk": 577.7008617296815,
+        "mpc_other": 30.12345638126135
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 0.8978238329291344,
+        "compression": 0.18103141337633133,
+        "rollout": 1.901739276945591,
+        "observation": 0.6384989246726036,
+        "mpc": 607.0218272507191,
+        "total": 611.4850379526615,
+        "risk": 576.6340224072337,
+        "mpc_other": 30.387804843485355
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 0.8666748180985451,
+        "compression": 0.20275171846151352,
+        "rollout": 396.04806806892157,
+        "observation": 0.6676232442259789,
+        "mpc": 109.20616332441568,
+        "total": 507.33365025371313,
+        "risk": 78.16071901470423,
+        "mpc_other": 31.045444309711456
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 0.9463652968406677,
+        "compression": 0.15567895025014877,
+        "rollout": 1.8982477486133575,
+        "observation": 0.6187334656715393,
+        "mpc": 106.53650667518377,
+        "total": 110.43741554021835,
+        "risk": 78.09541560709476,
+        "mpc_other": 28.44109106808901
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 0.9613111615180969,
+        "compression": 0.1586824655532837,
+        "rollout": 1.872963272035122,
+        "observation": 0.6264159455895424,
+        "mpc": 606.8141181021929,
+        "total": 611.2707620486617,
+        "risk": 578.2459126785398,
+        "mpc_other": 28.568205423653126
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 0.9058555588126183,
+        "compression": 0.17642229795455933,
+        "rollout": 395.74271626770496,
+        "observation": 0.6171269342303276,
+        "mpc": 109.08268205821514,
+        "total": 506.8775089457631,
+        "risk": 78.43603938817978,
+        "mpc_other": 30.646642670035362
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 0.9173816069960594,
+        "compression": 0.15539862215518951,
+        "rollout": 1.876666210591793,
+        "observation": 0.6213877350091934,
+        "mpc": 106.28849733620882,
+        "total": 110.18605250865221,
+        "risk": 77.88358442485332,
+        "mpc_other": 28.404912911355495
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 0.9428728371858597,
+        "compression": 0.1598689705133438,
+        "rollout": 396.09409403055906,
+        "observation": 0.6832694634795189,
+        "mpc": 602.0262101665139,
+        "total": 1000.8191550150514,
+        "risk": 573.4252464026213,
+        "mpc_other": 28.60096376389265
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 0.8853916078805923,
+        "compression": 0.199819914996624,
+        "rollout": 400.1228138804436,
+        "observation": 0.6234133616089821,
+        "mpc": 108.46981592476368,
+        "total": 510.6831528246403,
+        "risk": 78.16211506724358,
+        "mpc_other": 30.307700857520103
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 0.9365864098072052,
+        "compression": 0.15679560601711273,
+        "rollout": 1.879040151834488,
+        "observation": 0.6237626075744629,
+        "mpc": 105.99927883595228,
+        "total": 109.90591533482075,
+        "risk": 77.63801701366901,
+        "mpc_other": 28.361261822283268
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 0.8750557899475098,
+        "compression": 0.18172990530729294,
+        "rollout": 396.21080085635185,
+        "observation": 0.6359154358506203,
+        "mpc": 601.9909391179681,
+        "total": 1000.8355677127838,
+        "risk": 573.351007886231,
+        "mpc_other": 28.639931231737137
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 0.8887443691492081,
+        "compression": 0.15602726489305496,
+        "rollout": 1.8828120082616806,
+        "observation": 0.6087459623813629,
+        "mpc": 603.2284777611494,
+        "total": 607.6784869655967,
+        "risk": 572.9263657703996,
+        "mpc_other": 30.302111990749836
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.06210220087039439,
+      "horizon_clearance": 0.06210220087039439,
+      "first_physical_clearance": 0.06210220087039439,
+      "cost": 22.434914554506438,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4386.0
+    }
+  },
+  {
+    "state": [
+      2000001,
+      16,
+      1
+    ],
+    "people": 5,
+    "visible": 3,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 6.643574579356937e-13,
+      "risk_bound_0": 5.559996907322784e-13,
+      "risk_bound_1": 4.440892098500626e-13
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.5190815274033183,
+      0.8547247322434505
+    ],
+    "full_modes": 254,
+    "measures": [
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 1.1896966025233269,
+        "compression": 0.1338878646492958,
+        "rollout": 1.609519124031067,
+        "observation": 0.639546662569046,
+        "mpc": 663.2232554256916,
+        "total": 667.0423774048686,
+        "risk": 634.0238861739635,
+        "mpc_other": 29.199369251728058
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 31.387182883918285,
+        "compression": 0.18738675862550735,
+        "rollout": 382.85218086093664,
+        "observation": 0.6133569404482841,
+        "mpc": 175.12672021985054,
+        "total": 590.5262371525168,
+        "risk": 146.0165400058031,
+        "mpc_other": 29.110180214047432
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 1.2584198266267776,
+        "compression": 0.13458635658025742,
+        "rollout": 1.5896139666438103,
+        "observation": 0.6197113543748856,
+        "mpc": 174.64208416640759,
+        "total": 178.52797638624907,
+        "risk": 145.54273057729006,
+        "mpc_other": 29.099353589117527
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 31.26118704676628,
+        "compression": 0.14645885676145554,
+        "rollout": 385.7078282162547,
+        "observation": 0.6208289414644241,
+        "mpc": 664.1089962795377,
+        "total": 1082.2118315845728,
+        "risk": 635.1577043533325,
+        "mpc_other": 28.95129192620516
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 31.527705490589142,
+        "compression": 0.19290484488010406,
+        "rollout": 381.80901389569044,
+        "observation": 0.6152410060167313,
+        "mpc": 174.62909407913685,
+        "total": 589.1403527930379,
+        "risk": 145.7252288237214,
+        "mpc_other": 28.90386525541544
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 1.3593435287475586,
+        "compression": 0.14436431229114532,
+        "rollout": 1.7290888354182243,
+        "observation": 0.6201304495334625,
+        "mpc": 174.6725346893072,
+        "total": 178.78094594925642,
+        "risk": 145.47058288007975,
+        "mpc_other": 29.201951809227467
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 31.317269429564476,
+        "compression": 0.1565171405673027,
+        "rollout": 381.47418946027756,
+        "observation": 0.6350073963403702,
+        "mpc": 659.2182805761695,
+        "total": 1073.1379752978683,
+        "risk": 630.5683618411422,
+        "mpc_other": 28.649918735027313
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 1.2137917801737785,
+        "compression": 0.13409648090600967,
+        "rollout": 1.597435213625431,
+        "observation": 0.6867609918117523,
+        "mpc": 662.0834963396192,
+        "total": 665.9871293231845,
+        "risk": 633.5122250020504,
+        "mpc_other": 28.57127133756876
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 1.2294352054595947,
+        "compression": 0.17586257308721542,
+        "rollout": 1.6557546332478523,
+        "observation": 0.6049750372767448,
+        "mpc": 175.0011444091797,
+        "total": 178.94088570028543,
+        "risk": 145.66809684038162,
+        "mpc_other": 29.333047568798065
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 31.48803487420082,
+        "compression": 0.16566645354032516,
+        "rollout": 380.7868706062436,
+        "observation": 0.7725972682237625,
+        "mpc": 664.2482625320554,
+        "total": 1077.8111312538385,
+        "risk": 635.5930343270302,
+        "mpc_other": 28.655228205025196
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 1.2382371351122856,
+        "compression": 0.16357004642486572,
+        "rollout": 1.6617607325315475,
+        "observation": 0.6162198260426521,
+        "mpc": 669.5824768394232,
+        "total": 673.5187266021967,
+        "risk": 640.6143577769399,
+        "mpc_other": 28.96811906248331
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 31.109140254557133,
+        "compression": 0.14820601791143417,
+        "rollout": 386.1442729830742,
+        "observation": 0.6299782544374466,
+        "mpc": 174.32800214737654,
+        "total": 592.6845772191882,
+        "risk": 145.6074733287096,
+        "mpc_other": 28.720528818666935
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.22204354545096835,
+      "horizon_clearance": 0.01721235135612928,
+      "first_physical_clearance": 0.22204354545096835,
+      "cost": 27.288320109410577,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4515.0
+    }
+  },
+  {
+    "state": [
+      2000002,
+      12,
+      3
+    ],
+    "people": 5,
+    "visible": 5,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 5.551115123125783e-16,
+      "risk_bound_0": 6.661338147750939e-16,
+      "risk_bound_1": 9.992007221626409e-16
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.7053075205709287,
+      0.7089014751191371
+    ],
+    "full_modes": 762,
+    "measures": [
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 100.01671686768532,
+        "compression": 0.5882829427719116,
+        "rollout": 1288.942457176745,
+        "observation": 0.6145443767309189,
+        "mpc": 605.3724996745586,
+        "total": 1995.8791034296155,
+        "risk": 573.8130137324333,
+        "mpc_other": 31.55948594212532
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 2.4844342842698097,
+        "compression": 0.4145856946706772,
+        "rollout": 7.213185541331768,
+        "observation": 0.6198501214385033,
+        "mpc": 602.7448195964098,
+        "total": 613.7967519462109,
+        "risk": 572.6727712899446,
+        "mpc_other": 30.07204830646515
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 99.82814267277718,
+        "compression": 0.5382746458053589,
+        "rollout": 1286.8719790130854,
+        "observation": 0.6554713472723961,
+        "mpc": 1862.7696512266994,
+        "total": 3251.036547124386,
+        "risk": 1832.120142877102,
+        "mpc_other": 30.649508349597454
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 2.305706962943077,
+        "compression": 0.4402846097946167,
+        "rollout": 6.908112205564976,
+        "observation": 0.6378013640642166,
+        "mpc": 1865.9620778635144,
+        "total": 1876.5485137701035,
+        "risk": 1835.2927351370454,
+        "mpc_other": 30.66934272646904
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 2.294742502272129,
+        "compression": 0.43881870806217194,
+        "rollout": 6.659404374659061,
+        "observation": 0.6346581503748894,
+        "mpc": 602.9725056141615,
+        "total": 613.2936086505651,
+        "risk": 572.756371460855,
+        "mpc_other": 30.216134153306484
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 100.70759896188974,
+        "compression": 0.5510551854968071,
+        "rollout": 1288.828614167869,
+        "observation": 0.6211791187524796,
+        "mpc": 1871.9196366146207,
+        "total": 3263.0086559802294,
+        "risk": 1841.0451654344797,
+        "mpc_other": 30.874471180140972
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 2.323308028280735,
+        "compression": 0.408160500228405,
+        "rollout": 6.90811313688755,
+        "observation": 0.5996664986014366,
+        "mpc": 1864.1569316387177,
+        "total": 1874.6877005323768,
+        "risk": 1833.5125241428614,
+        "mpc_other": 30.644407495856285
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 99.92955345660448,
+        "compression": 0.5041211843490601,
+        "rollout": 1288.4094221517444,
+        "observation": 0.6430391222238541,
+        "mpc": 603.9775377139449,
+        "total": 1993.8397044315934,
+        "risk": 573.5668232664466,
+        "mpc_other": 30.41071444749832
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 99.41348806023598,
+        "compression": 0.549030490219593,
+        "rollout": 1292.0594550669193,
+        "observation": 0.6578452885150909,
+        "mpc": 1867.2705758363008,
+        "total": 3260.3384405374527,
+        "risk": 1836.615340784192,
+        "mpc_other": 30.655235052108765
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 2.2786790505051613,
+        "compression": 0.4571191966533661,
+        "rollout": 6.9118160754442215,
+        "observation": 0.6441567093133926,
+        "mpc": 1868.055953644216,
+        "total": 1878.6655059084296,
+        "risk": 1837.2328178957105,
+        "mpc_other": 30.823135748505592
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 101.40267107635736,
+        "compression": 0.5868859589099884,
+        "rollout": 1291.4613233879209,
+        "observation": 0.6219465285539627,
+        "mpc": 604.2235922068357,
+        "total": 1998.6834153532982,
+        "risk": 574.2240399122238,
+        "mpc_other": 29.99955229461193
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 2.3173708468675613,
+        "compression": 0.4245024174451828,
+        "rollout": 6.799718365073204,
+        "observation": 0.6227148696780205,
+        "mpc": 603.7843525409698,
+        "total": 614.2450012266636,
+        "risk": 574.0699656307697,
+        "mpc_other": 29.71438691020012
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.254892249628787,
+      "horizon_clearance": 0.10705647082880157,
+      "first_physical_clearance": 0.2688621197921808,
+      "cost": 45.72666135223175,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4128.0
+    }
+  },
+  {
+    "state": [
+      2000003,
+      16,
+      1
+    ],
+    "people": 5,
+    "visible": 4,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 3.355538069627073e-12,
+      "risk_bound_0": 2.4922286456785514e-12,
+      "risk_bound_1": 3.149480676256644e-12
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.14114223765329537,
+      0.2060372327613249
+    ],
+    "full_modes": 499,
+    "measures": [
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 1.301444135606289,
+        "compression": 0.31009968370199203,
+        "rollout": 3.7786131724715233,
+        "observation": 0.6437385454773903,
+        "mpc": 493.4579161927104,
+        "total": 499.7924854978919,
+        "risk": 462.64868043363094,
+        "mpc_other": 30.809235759079456
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 31.39926679432392,
+        "compression": 0.3900006413459778,
+        "rollout": 784.7115574404597,
+        "observation": 0.6438763812184334,
+        "mpc": 1373.6250614747405,
+        "total": 2191.1286814138293,
+        "risk": 1336.1189812421799,
+        "mpc_other": 37.506080232560635
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 1.3112910091876984,
+        "compression": 0.2934783697128296,
+        "rollout": 3.766811452805996,
+        "observation": 0.6216671317815781,
+        "mpc": 1375.857506878674,
+        "total": 1382.1149673312902,
+        "risk": 1338.6233262717724,
+        "mpc_other": 37.234180606901646
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 31.382014974951744,
+        "compression": 0.36387890577316284,
+        "rollout": 792.8864024579525,
+        "observation": 0.6510009989142418,
+        "mpc": 492.6852500066161,
+        "total": 1318.3023240417242,
+        "risk": 462.50347793102264,
+        "mpc_other": 30.18177207559347
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 31.396263279020786,
+        "compression": 0.3939121961593628,
+        "rollout": 793.7443451955914,
+        "observation": 0.62508974224329,
+        "mpc": 1371.8539280816913,
+        "total": 2198.341936804354,
+        "risk": 1334.4939621165395,
+        "mpc_other": 37.35996596515179
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 1.2773480266332626,
+        "compression": 0.28404872864484787,
+        "rollout": 3.674970008432865,
+        "observation": 0.6233435124158859,
+        "mpc": 1374.858619645238,
+        "total": 1380.9872921556234,
+        "risk": 1337.671303190291,
+        "mpc_other": 37.187316454946995
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 31.208316795527935,
+        "compression": 0.37261005491018295,
+        "rollout": 785.9431579709053,
+        "observation": 0.64820796251297,
+        "mpc": 491.76856875419617,
+        "total": 1310.3392412886024,
+        "risk": 461.7160055786371,
+        "mpc_other": 30.052563175559044
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 1.3312678784132004,
+        "compression": 0.28838030993938446,
+        "rollout": 3.7084929645061493,
+        "observation": 0.6379410624504089,
+        "mpc": 491.8001377955079,
+        "total": 498.0383235961199,
+        "risk": 461.41260769218206,
+        "mpc_other": 30.387530103325844
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 1.297532580792904,
+        "compression": 0.28516631573438644,
+        "rollout": 3.7726787850260735,
+        "observation": 0.6232727319002151,
+        "mpc": 1376.5578847378492,
+        "total": 1382.8337844461203,
+        "risk": 1339.1301687806845,
+        "mpc_other": 37.427715957164764
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 31.589866615831852,
+        "compression": 0.40089618414640427,
+        "rollout": 793.9117597416043,
+        "observation": 0.6280224770307541,
+        "mpc": 491.43583979457617,
+        "total": 1318.3547761291265,
+        "risk": 461.23367361724377,
+        "mpc_other": 30.2021661773324
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 1.3286815956234932,
+        "compression": 0.2982979640364647,
+        "rollout": 3.7895096465945244,
+        "observation": 0.6266254931688309,
+        "mpc": 492.12315771728754,
+        "total": 498.4630336984992,
+        "risk": 462.18716260045767,
+        "mpc_other": 29.935995116829872
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 31.40436392277479,
+        "compression": 0.37756841629743576,
+        "rollout": 788.0517700687051,
+        "observation": 0.6841057911515236,
+        "mpc": 1376.134849153459,
+        "total": 2196.9806384295225,
+        "risk": 1338.580021634698,
+        "mpc_other": 37.55482751876116
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.10544071524759588,
+      "horizon_clearance": 0.04927423530541164,
+      "first_physical_clearance": 0.10544071524759588,
+      "cost": 41.924632375903585,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4257.0
+    }
+  },
+  {
+    "state": [
+      2000010,
+      12,
+      0
+    ],
+    "people": 10,
+    "visible": 7,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 1.1102230246251565e-16,
+      "risk_bound_0": 3.3306690738754696e-16,
+      "risk_bound_1": 2.220446049250313e-16
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.6315461122106485,
+      0.7753383185110968
+    ],
+    "full_modes": 1006,
+    "measures": [
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 118.0310333147645,
+        "compression": 0.7510855793952942,
+        "rollout": 1985.5918046087027,
+        "observation": 1.0153688490390778,
+        "mpc": 2347.072553820908,
+        "total": 4453.638619743288,
+        "risk": 2298.93213044852,
+        "mpc_other": 48.140423372387886
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 2.6639290153980255,
+        "compression": 0.6052544340491295,
+        "rollout": 10.970985516905785,
+        "observation": 1.0050320997834206,
+        "mpc": 2356.1138650402427,
+        "total": 2372.425979934633,
+        "risk": 2307.48978164047,
+        "mpc_other": 48.624083399772644
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 115.8532751724124,
+        "compression": 0.812966376543045,
+        "rollout": 1961.953917518258,
+        "observation": 0.9854063391685486,
+        "mpc": 670.7138540223241,
+        "total": 2751.2982608750463,
+        "risk": 627.170180901885,
+        "mpc_other": 43.54367312043905
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 2.62642465531826,
+        "compression": 0.5833245813846588,
+        "rollout": 11.288979090750217,
+        "observation": 0.9893868118524551,
+        "mpc": 670.5157104879618,
+        "total": 686.8681246414781,
+        "risk": 627.1527865901589,
+        "mpc_other": 43.36292389780283
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 2.605680376291275,
+        "compression": 0.5894005298614502,
+        "rollout": 10.917417705059052,
+        "observation": 1.027940772473812,
+        "mpc": 2354.7830879688263,
+        "total": 2370.918221771717,
+        "risk": 2306.5125485882163,
+        "mpc_other": 48.27053938060999
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 116.7638823390007,
+        "compression": 0.6984947249293327,
+        "rollout": 1976.9184235483408,
+        "observation": 0.9896671399474144,
+        "mpc": 671.1061587557197,
+        "total": 2767.442894168198,
+        "risk": 627.3835469037294,
+        "mpc_other": 43.72261185199022
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 2.7046483010053635,
+        "compression": 0.590798445045948,
+        "rollout": 10.951430536806583,
+        "observation": 1.0111797600984573,
+        "mpc": 670.2126655727625,
+        "total": 686.329641379416,
+        "risk": 626.8528858199716,
+        "mpc_other": 43.35977975279093
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 116.38030782341957,
+        "compression": 0.6948597729206085,
+        "rollout": 1957.9376988112926,
+        "observation": 1.007826067507267,
+        "mpc": 2345.7236187532544,
+        "total": 4422.772252000868,
+        "risk": 2298.0852890759706,
+        "mpc_other": 47.638329677283764
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 116.6338361799717,
+        "compression": 0.7577221840620041,
+        "rollout": 1961.6880947723985,
+        "observation": 1.0664239525794983,
+        "mpc": 669.9476120993495,
+        "total": 2750.9853672236204,
+        "risk": 626.900308765471,
+        "mpc_other": 43.04730333387852
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 2.5910837575793266,
+        "compression": 0.582696869969368,
+        "rollout": 10.878168977797031,
+        "observation": 0.9973486885428429,
+        "mpc": 670.161958783865,
+        "total": 686.0212152823806,
+        "risk": 626.9390005618334,
+        "mpc_other": 43.22295822203159
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 116.4854196831584,
+        "compression": 0.8070999756455421,
+        "rollout": 1961.9639730080962,
+        "observation": 1.0325508192181587,
+        "mpc": 2346.0167460143566,
+        "total": 4427.319761365652,
+        "risk": 2298.1035904958844,
+        "mpc_other": 47.913155518472195
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 2.6760119944810867,
+        "compression": 0.5868161097168922,
+        "rollout": 11.163263581693172,
+        "observation": 1.0264739394187927,
+        "mpc": 2341.1976182833314,
+        "total": 2357.6145693659782,
+        "risk": 2293.4342781081796,
+        "mpc_other": 47.763340175151825
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.2548922496287847,
+      "horizon_clearance": 0.12826856711738316,
+      "first_physical_clearance": 0.2553719707206954,
+      "cost": 38.98539291547954,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 5031.0
+    }
+  },
+  {
+    "state": [
+      2000011,
+      24,
+      1
+    ],
+    "people": 10,
+    "visible": 4,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 7.780442956573097e-13,
+      "risk_bound_0": 4.3298697960381105e-12,
+      "risk_bound_1": 1.5543122344752192e-12
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.02359647454757125,
+      0.99972156443128
+    ],
+    "full_modes": 989,
+    "measures": [
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 11.425591073930264,
+        "compression": 0.5667014047503471,
+        "rollout": 7.251807488501072,
+        "observation": 1.084652729332447,
+        "mpc": 2242.1371145173907,
+        "total": 2263.9721585437655,
+        "risk": 2187.9655169323087,
+        "mpc_other": 54.171597585082054
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 1008.2167237997055,
+        "compression": 0.6954912096261978,
+        "rollout": 1561.3009305670857,
+        "observation": 1.0690083727240562,
+        "mpc": 475.27123149484396,
+        "total": 3048.068684525788,
+        "risk": 430.42834661901,
+        "mpc_other": 44.84288487583399
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 11.561713181436062,
+        "compression": 0.5840221419930458,
+        "rollout": 7.1971220895648,
+        "observation": 1.1028805747628212,
+        "mpc": 475.53935647010803,
+        "total": 497.4142797291279,
+        "risk": 430.6713957339525,
+        "mpc_other": 44.86796073615551
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 1006.3173603266478,
+        "compression": 0.7334854453802109,
+        "rollout": 1544.7208974510431,
+        "observation": 1.1185258626937866,
+        "mpc": 2243.6693171039224,
+        "total": 4798.148151487112,
+        "risk": 2188.6117001995444,
+        "mpc_other": 55.05761690437794
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 1009.0779513120651,
+        "compression": 0.7897093892097473,
+        "rollout": 1555.8396000415087,
+        "observation": 1.0979929938912392,
+        "mpc": 474.17477425187826,
+        "total": 3042.464387603104,
+        "risk": 429.26952149719,
+        "mpc_other": 44.90525275468826
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 11.516106314957142,
+        "compression": 0.542675144970417,
+        "rollout": 7.103252224624157,
+        "observation": 1.0917764157056808,
+        "mpc": 476.25426203012466,
+        "total": 497.963591478765,
+        "risk": 431.1719601973891,
+        "mpc_other": 45.08230183273554
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 1012.6229422166944,
+        "compression": 0.7392121478915215,
+        "rollout": 1558.8470166549087,
+        "observation": 1.0874457657337189,
+        "mpc": 2238.999024964869,
+        "total": 4813.944620080292,
+        "risk": 2183.931420557201,
+        "mpc_other": 55.067604407668114
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 11.227098293602467,
+        "compression": 0.6532380357384682,
+        "rollout": 7.1768686175346375,
+        "observation": 1.1250916868448257,
+        "mpc": 2240.8764585852623,
+        "total": 2262.6016410067677,
+        "risk": 2186.3483181223273,
+        "mpc_other": 54.52814046293497
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 11.412251740694046,
+        "compression": 0.5603451281785965,
+        "rollout": 7.3373643681406975,
+        "observation": 1.0775290429592133,
+        "mpc": 474.3611142039299,
+        "total": 496.12889997661114,
+        "risk": 429.62739523500204,
+        "mpc_other": 44.73371896892786
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 1003.2602166756988,
+        "compression": 0.7397718727588654,
+        "rollout": 1553.1937628984451,
+        "observation": 1.1276062577962875,
+        "mpc": 2239.641575142741,
+        "total": 4799.545489251614,
+        "risk": 2185.186767950654,
+        "mpc_other": 54.45480719208717
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 11.733455583453178,
+        "compression": 0.5405796691775322,
+        "rollout": 7.138455286622047,
+        "observation": 1.100926660001278,
+        "mpc": 2246.143135242164,
+        "total": 2268.155441619456,
+        "risk": 2192.03370064497,
+        "mpc_other": 54.109434597194195
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 1019.2810194566846,
+        "compression": 0.7814662531018257,
+        "rollout": 1572.3253469914198,
+        "observation": 1.092684455215931,
+        "mpc": 478.28576900064945,
+        "total": 3073.2277389615774,
+        "risk": 433.01391415297985,
+        "mpc_other": 45.2718548476696
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.23363223278786147,
+      "horizon_clearance": 0.1065372885519473,
+      "first_physical_clearance": 0.23363223278786147,
+      "cost": 28.000515817549427,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4644.0
+    }
+  },
+  {
+    "state": [
+      2000012,
+      20,
+      4
+    ],
+    "people": 10,
+    "visible": 5,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 9.992007221626409e-13,
+      "risk_bound_0": 9.947598300641403e-13,
+      "risk_bound_1": 1.3322676295501878e-12
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.6646144106363282,
+      0.31697789520500746
+    ],
+    "full_modes": 506,
+    "measures": [
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 695.513010956347,
+        "compression": 0.4300912842154503,
+        "rollout": 861.4139668643475,
+        "observation": 1.0113883763551712,
+        "mpc": 609.4568148255348,
+        "total": 2169.273592531681,
+        "risk": 563.8796091079712,
+        "mpc_other": 45.57720571756363
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 8.170586079359055,
+        "compression": 0.30618999153375626,
+        "rollout": 4.34867013245821,
+        "observation": 1.0254960507154465,
+        "mpc": 604.338482953608,
+        "total": 619.6442395448685,
+        "risk": 559.9259678274393,
+        "mpc_other": 44.41251512616873
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 696.163103915751,
+        "compression": 0.3614332526922226,
+        "rollout": 853.5652840510011,
+        "observation": 0.9892480447888374,
+        "mpc": 1406.7627061158419,
+        "total": 2959.491455927491,
+        "risk": 1359.932734631002,
+        "mpc_other": 46.829971484839916
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 8.09047557413578,
+        "compression": 0.47925859689712524,
+        "rollout": 4.274285398423672,
+        "observation": 0.9986069053411484,
+        "mpc": 1407.0088304579258,
+        "total": 1422.393647953868,
+        "risk": 1360.5347089469433,
+        "mpc_other": 46.47412151098251
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 8.211932145059109,
+        "compression": 0.3060474991798401,
+        "rollout": 4.350903443992138,
+        "observation": 1.0157879441976547,
+        "mpc": 605.3423276171088,
+        "total": 620.7031896337867,
+        "risk": 560.7728799805045,
+        "mpc_other": 44.56944763660431
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 695.5537293106318,
+        "compression": 0.37875398993492126,
+        "rollout": 866.6102420538664,
+        "observation": 1.0463790968060493,
+        "mpc": 1406.384020112455,
+        "total": 2971.650391817093,
+        "risk": 1359.3485057353973,
+        "mpc_other": 47.03551437705755
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 8.15494079142809,
+        "compression": 0.44824741780757904,
+        "rollout": 4.307741299271584,
+        "observation": 0.9964415803551674,
+        "mpc": 1407.9438112676144,
+        "total": 1423.3949789777398,
+        "risk": 1361.5157818421721,
+        "mpc_other": 46.42802942544222
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 693.1894943118095,
+        "compression": 0.37344638258218765,
+        "rollout": 849.3763459846377,
+        "observation": 1.0337373241782188,
+        "mpc": 605.8324119076133,
+        "total": 2151.2592071667314,
+        "risk": 561.0971562564373,
+        "mpc_other": 44.735255651175976
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 695.517411455512,
+        "compression": 0.3574518486857414,
+        "rollout": 851.0770797729492,
+        "observation": 1.0082460939884186,
+        "mpc": 1407.5718997046351,
+        "total": 2957.225838676095,
+        "risk": 1360.6489729136229,
+        "mpc_other": 46.92292679101229
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 8.030899800360203,
+        "compression": 0.6749574095010757,
+        "rollout": 4.318078048527241,
+        "observation": 0.9959526360034943,
+        "mpc": 1403.2680010423064,
+        "total": 1418.7890104949474,
+        "risk": 1358.7916465476155,
+        "mpc_other": 44.476354494690895
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 699.7691374272108,
+        "compression": 0.3692563623189926,
+        "rollout": 855.5208761245012,
+        "observation": 0.996442511677742,
+        "mpc": 597.0125021412969,
+        "total": 2155.103334225714,
+        "risk": 556.0761159285903,
+        "mpc_other": 40.936386212706566
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 8.057858794927597,
+        "compression": 0.30688755214214325,
+        "rollout": 4.375976510345936,
+        "observation": 1.0356232523918152,
+        "mpc": 596.5923313051462,
+        "total": 611.6792699322104,
+        "risk": 555.7370986789465,
+        "mpc_other": 40.85523262619972
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.2548889077632566,
+      "horizon_clearance": 0.0395473777441647,
+      "first_physical_clearance": 0.37130800619160187,
+      "cost": 54.01699598623207,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 5418.0
+    }
+  },
+  {
+    "state": [
+      2000013,
+      20,
+      7
+    ],
+    "people": 10,
+    "visible": 6,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 9.992007221626409e-13,
+      "risk_bound_0": 5.551115123125783e-13,
+      "risk_bound_1": 3.3306690738754696e-13
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.9069122507825929,
+      0.25676342592583273
+    ],
+    "full_modes": 1003,
+    "measures": [
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 2.9164105653762817,
+        "compression": 0.58003980666399,
+        "rollout": 9.554093703627586,
+        "observation": 1.090310513973236,
+        "mpc": 868.7574090436101,
+        "total": 884.0841185301542,
+        "risk": 824.4705414399505,
+        "mpc_other": 44.28686760365963
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 107.49565251171589,
+        "compression": 0.7911743596196175,
+        "rollout": 1815.1473877951503,
+        "observation": 1.0894015431404114,
+        "mpc": 2492.528609931469,
+        "total": 4418.472402729094,
+        "risk": 2440.7197842374444,
+        "mpc_other": 51.80882569402456
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 2.8189802542328835,
+        "compression": 0.5912156775593758,
+        "rollout": 9.533769451081753,
+        "observation": 1.0898904874920845,
+        "mpc": 2509.026854299009,
+        "total": 2524.2309207096696,
+        "risk": 2452.345471829176,
+        "mpc_other": 56.6813824698329
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 106.88173770904541,
+        "compression": 0.7599545642733574,
+        "rollout": 1817.8823487833142,
+        "observation": 1.1623864993453026,
+        "mpc": 879.0881503373384,
+        "total": 2806.9709790870547,
+        "risk": 829.5786771923304,
+        "mpc_other": 49.50947314500809
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 108.1713791936636,
+        "compression": 0.7142098620533943,
+        "rollout": 1823.7894792109728,
+        "observation": 1.117548905313015,
+        "mpc": 2514.3686132505536,
+        "total": 4449.437878094614,
+        "risk": 2456.8381551653147,
+        "mpc_other": 57.530458085238934
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 2.8517358005046844,
+        "compression": 0.5674008280038834,
+        "rollout": 9.54466499388218,
+        "observation": 1.1138468980789185,
+        "mpc": 2521.566013805568,
+        "total": 2536.8696050718427,
+        "risk": 2463.9707431197166,
+        "mpc_other": 57.595270685851574
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 107.76182357221842,
+        "compression": 0.7633091881871223,
+        "rollout": 1823.051942512393,
+        "observation": 1.0994598269462585,
+        "mpc": 875.4383940249681,
+        "total": 2809.3214575201273,
+        "risk": 827.5518482550979,
+        "mpc_other": 47.88654576987028
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 2.8321100398898125,
+        "compression": 0.5704732611775398,
+        "rollout": 9.541451930999756,
+        "observation": 1.0855607688426971,
+        "mpc": 876.3513742014766,
+        "total": 891.5531355887651,
+        "risk": 827.4184511974454,
+        "mpc_other": 48.93292300403118
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 2.843005582690239,
+        "compression": 0.5604848265647888,
+        "rollout": 9.615416638553143,
+        "observation": 1.0793451219797134,
+        "mpc": 2515.2550525963306,
+        "total": 2530.553544871509,
+        "risk": 2457.3211865499616,
+        "mpc_other": 57.933866046369076
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 106.90723080188036,
+        "compression": 0.7516425102949142,
+        "rollout": 1804.8925651237369,
+        "observation": 1.1023934930562973,
+        "mpc": 877.1889954805374,
+        "total": 2791.9877553358674,
+        "risk": 828.5641437396407,
+        "mpc_other": 48.6248517408967
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 2.8265221044421196,
+        "compression": 0.6002951413393021,
+        "rollout": 9.524482302367687,
+        "observation": 1.1428315192461014,
+        "mpc": 876.9719237461686,
+        "total": 892.2229940071702,
+        "risk": 828.7891084328294,
+        "mpc_other": 48.18281531333923
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 106.36672005057335,
+        "compression": 0.7202848792076111,
+        "rollout": 1830.9131264686584,
+        "observation": 1.0893316939473152,
+        "mpc": 2509.6036130562425,
+        "total": 4449.988794513047,
+        "risk": 2451.239798218012,
+        "mpc_other": 58.36381483823061
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.25489224962878393,
+      "horizon_clearance": 0.014017304265709657,
+      "first_physical_clearance": 0.5870394897225146,
+      "cost": 59.31920540893895,
+      "exact_risk_rows": 165.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4902.0
+    }
+  },
+  {
+    "state": [
+      2000020,
+      24,
+      0
+    ],
+    "people": 20,
+    "visible": 13,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 1.687538997430238e-14,
+      "risk_bound_0": 1.7319479184152442e-14,
+      "risk_bound_1": 2.9753977059954195e-14
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.07163329501472404,
+      -0.2251532128034034
+    ],
+    "full_modes": 2719,
+    "measures": [
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 1386.5431854501367,
+        "compression": 2.3724092170596123,
+        "rollout": 7172.456105239689,
+        "observation": 1.9231811165809631,
+        "mpc": 6195.062099024653,
+        "total": 14760.22966299206,
+        "risk": 6127.419225871563,
+        "mpc_other": 67.64287315309048
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 13.64483404904604,
+        "compression": 1.8832320347428322,
+        "rollout": 44.74587179720402,
+        "observation": 1.8260292708873749,
+        "mpc": 6273.639009334147,
+        "total": 6337.588682770729,
+        "risk": 6200.526778586209,
+        "mpc_other": 73.11223074793816
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 1385.9664965420961,
+        "compression": 2.570832148194313,
+        "rollout": 7142.139466479421,
+        "observation": 1.8654214218258858,
+        "mpc": 1668.2011056691408,
+        "total": 10202.752129174769,
+        "risk": 1595.4940328374505,
+        "mpc_other": 72.70707283169031
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 13.739680871367455,
+        "compression": 1.934845931828022,
+        "rollout": 45.267803594470024,
+        "observation": 1.9326088950037956,
+        "mpc": 1670.4267039895058,
+        "total": 1735.1504415273666,
+        "risk": 1597.3266260698438,
+        "mpc_other": 73.100077919662
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 13.736258260905743,
+        "compression": 2.0143957808613777,
+        "rollout": 45.25893274694681,
+        "observation": 1.8243547528982162,
+        "mpc": 6270.464810542762,
+        "total": 6335.089582018554,
+        "risk": 6196.20150513947,
+        "mpc_other": 74.26330540329218
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 1391.7596461251378,
+        "compression": 2.459079958498478,
+        "rollout": 7157.388933002949,
+        "observation": 1.8391599878668785,
+        "mpc": 1661.7258060723543,
+        "total": 10217.178219929338,
+        "risk": 1594.6912625804543,
+        "mpc_other": 67.03454349189997
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 13.867142610251904,
+        "compression": 1.8624886870384216,
+        "rollout": 45.159196481108665,
+        "observation": 1.8712179735302925,
+        "mpc": 1667.3976378515363,
+        "total": 1732.102658599615,
+        "risk": 1594.0569518133998,
+        "mpc_other": 73.34068603813648
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 1401.5678968280554,
+        "compression": 2.496306784451008,
+        "rollout": 7177.388030104339,
+        "observation": 1.895872876048088,
+        "mpc": 6277.06624660641,
+        "total": 14862.351570278406,
+        "risk": 6201.842542737722,
+        "mpc_other": 75.22370386868715
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 1392.9217541590333,
+        "compression": 2.5193514302372932,
+        "rollout": 7178.391524590552,
+        "observation": 1.8953830003738403,
+        "mpc": 1670.7992423325777,
+        "total": 10248.512601479888,
+        "risk": 1597.1235958859324,
+        "mpc_other": 73.67564644664526
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 13.739959336817265,
+        "compression": 1.9858991727232933,
+        "rollout": 45.69063149392605,
+        "observation": 1.9457386806607246,
+        "mpc": 1662.7635238692164,
+        "total": 1728.0145706608891,
+        "risk": 1589.4609736278653,
+        "mpc_other": 73.30255024135113
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 1395.9843441843987,
+        "compression": 2.530321478843689,
+        "rollout": 7141.882305033505,
+        "observation": 1.8761763349175453,
+        "mpc": 6281.8819507956505,
+        "total": 14826.059424318373,
+        "risk": 6207.418686710298,
+        "mpc_other": 74.46326408535242
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 13.657056726515293,
+        "compression": 1.9975611940026283,
+        "rollout": 44.91579532623291,
+        "observation": 1.8594153225421906,
+        "mpc": 6275.191396474838,
+        "total": 6339.515635743737,
+        "risk": 6201.278002932668,
+        "mpc_other": 73.91339354217052
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.25489224962877893,
+      "horizon_clearance": 0.04848376796927861,
+      "first_physical_clearance": 0.9207758248827972,
+      "cost": 1112.2519085128488,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 5031.0
+    }
+  },
+  {
+    "state": [
+      2000021,
+      20,
+      10
+    ],
+    "people": 20,
+    "visible": 9,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 4.0234482412415673e-13,
+      "risk_bound_0": 4.218847493575595e-12,
+      "risk_bound_1": 7.771561172376096e-13
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.36788942726277885,
+      0.4477314651104226
+    ],
+    "full_modes": 2061,
+    "measures": [
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 16.70798286795616,
+        "compression": 1.2740669772028923,
+        "rollout": 25.813059881329536,
+        "observation": 1.7200792208313942,
+        "mpc": 4914.777376689017,
+        "total": 4961.855008266866,
+        "risk": 4856.4284378662705,
+        "mpc_other": 58.34893882274628
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 1805.363094434142,
+        "compression": 1.6808947548270226,
+        "rollout": 4421.655681915581,
+        "observation": 1.6366178169846535,
+        "mpc": 1627.802505157888,
+        "total": 7859.70794595778,
+        "risk": 1567.5861155614257,
+        "mpc_other": 60.21638959646225
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 16.78019855171442,
+        "compression": 1.3531269505620003,
+        "rollout": 26.148932985961437,
+        "observation": 1.663227565586567,
+        "mpc": 1629.989200271666,
+        "total": 1677.4776447564363,
+        "risk": 1570.1448610052466,
+        "mpc_other": 59.84433926641941
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 1820.5893011763692,
+        "compression": 1.7548594623804092,
+        "rollout": 4451.341154053807,
+        "observation": 1.696891151368618,
+        "mpc": 4929.52851485461,
+        "total": 11206.394312903285,
+        "risk": 4868.658824823797,
+        "mpc_other": 60.86969003081322
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 1821.818945929408,
+        "compression": 1.7267856746912003,
+        "rollout": 4440.129209309816,
+        "observation": 1.6532400622963905,
+        "mpc": 1635.0717740133405,
+        "total": 7901.924405246973,
+        "risk": 1574.2950392886996,
+        "mpc_other": 60.776734724640846
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 16.165795736014843,
+        "compression": 1.337764784693718,
+        "rollout": 25.94415284693241,
+        "observation": 1.62467360496521,
+        "mpc": 1637.4440416693687,
+        "total": 1683.954062871635,
+        "risk": 1576.9037930294871,
+        "mpc_other": 60.54024863988161
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 1829.3421613052487,
+        "compression": 1.7146319150924683,
+        "rollout": 4486.263549886644,
+        "observation": 1.6519827768206596,
+        "mpc": 4939.68793284148,
+        "total": 11260.197630152106,
+        "risk": 4878.634694032371,
+        "mpc_other": 61.053238809108734
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 15.94209112226963,
+        "compression": 1.2775575742125511,
+        "rollout": 26.02607663720846,
+        "observation": 1.6812467947602272,
+        "mpc": 4929.038641043007,
+        "total": 4975.366652943194,
+        "risk": 4865.731932222843,
+        "mpc_other": 63.306708820164204
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 16.470449045300484,
+        "compression": 1.3463525101542473,
+        "rollout": 25.889398530125618,
+        "observation": 1.7061801627278328,
+        "mpc": 1635.9409615397453,
+        "total": 1682.7708631753922,
+        "risk": 1575.1659059897065,
+        "mpc_other": 60.775055550038815
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 1822.6000629365444,
+        "compression": 1.706390641629696,
+        "rollout": 4439.97304327786,
+        "observation": 1.6540074720978737,
+        "mpc": 4976.755050010979,
+        "total": 11244.239614345133,
+        "risk": 4915.8774660900235,
+        "mpc_other": 60.87758392095566
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 16.008161939680576,
+        "compression": 1.285310834646225,
+        "rollout": 25.902736000716686,
+        "observation": 1.6642054542899132,
+        "mpc": 4931.2282698228955,
+        "total": 4977.534072473645,
+        "risk": 4871.243967674673,
+        "mpc_other": 59.98430214822292
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 1816.4252256974578,
+        "compression": 1.67747400701046,
+        "rollout": 4441.187812946737,
+        "observation": 1.7070891335606575,
+        "mpc": 1629.7068977728486,
+        "total": 7892.199547030032,
+        "risk": 1568.682225421071,
+        "mpc_other": 61.024672351777554
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.254890736031646,
+      "horizon_clearance": 0.021017315680850523,
+      "first_physical_clearance": 0.3877437741947969,
+      "cost": 60.299848934833115,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 5805.0
+    }
+  },
+  {
+    "state": [
+      2000022,
+      16,
+      4
+    ],
+    "people": 20,
+    "visible": 11,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 6.661338147750939e-13,
+      "risk_bound_0": 5.551115123125783e-13,
+      "risk_bound_1": 4.440892098500626e-13
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      -0.5398077095188714,
+      0.8417883562653917
+    ],
+    "full_modes": 2727,
+    "measures": [
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 1775.71268286556,
+        "compression": 2.101276069879532,
+        "rollout": 6937.035125680268,
+        "observation": 1.6614124178886414,
+        "mpc": 1698.883787728846,
+        "total": 10416.910285130143,
+        "risk": 1633.3854291588068,
+        "mpc_other": 65.49835857003927
+      },
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 16.480994410812855,
+        "compression": 1.66371650993824,
+        "rollout": 41.62035509943962,
+        "observation": 1.7649177461862564,
+        "mpc": 1702.1316699683666,
+        "total": 1764.9768562987447,
+        "risk": 1638.1039815023541,
+        "mpc_other": 64.02768846601248
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 1774.0935953333974,
+        "compression": 2.0312247797846794,
+        "rollout": 6937.1171882376075,
+        "observation": 1.6439491882920265,
+        "mpc": 6175.953632220626,
+        "total": 14892.154935747385,
+        "risk": 6114.237028174102,
+        "mpc_other": 61.71660404652357
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 15.894528478384018,
+        "compression": 1.6304021701216698,
+        "rollout": 41.3627065718174,
+        "observation": 1.6954941675066948,
+        "mpc": 6180.811731144786,
+        "total": 6242.5731010735035,
+        "risk": 6120.067891664803,
+        "mpc_other": 60.74383947998285
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 15.965697355568409,
+        "compression": 1.6301926225423813,
+        "rollout": 41.317795403301716,
+        "observation": 1.6473038122057915,
+        "mpc": 1701.0445026680827,
+        "total": 1762.904073111713,
+        "risk": 1637.8008667379618,
+        "mpc_other": 63.243635930120945
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 1765.3313064947724,
+        "compression": 2.101910300552845,
+        "rollout": 6896.312872879207,
+        "observation": 1.638013869524002,
+        "mpc": 6182.5254540890455,
+        "total": 14849.15407653898,
+        "risk": 6120.397340506315,
+        "mpc_other": 62.12811358273029
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 16.090435907244682,
+        "compression": 1.6112662851810455,
+        "rollout": 41.48087650537491,
+        "observation": 1.7083454877138138,
+        "mpc": 6173.18291310221,
+        "total": 6235.199907794595,
+        "risk": 6111.107602715492,
+        "mpc_other": 62.07531038671732
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 1762.8686614334583,
+        "compression": 2.143186517059803,
+        "rollout": 6942.448959685862,
+        "observation": 1.6773343086242676,
+        "mpc": 1696.8864342197776,
+        "total": 10407.423239201307,
+        "risk": 1632.2866678237915,
+        "mpc_other": 64.59976639598608
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 1748.998167924583,
+        "compression": 2.0901747047901154,
+        "rollout": 6924.771630205214,
+        "observation": 1.704922877252102,
+        "mpc": 6242.49739293009,
+        "total": 14921.449361369014,
+        "risk": 6180.317036807537,
+        "mpc_other": 62.18035612255335
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 16.06382615864277,
+        "compression": 1.5565073117613792,
+        "rollout": 41.58445633947849,
+        "observation": 1.6876719892024994,
+        "mpc": 6166.830466128886,
+        "total": 6228.958368301392,
+        "risk": 6105.254387483001,
+        "mpc_other": 61.57607864588499
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 1763.8949267566204,
+        "compression": 2.125232480466366,
+        "rollout": 6950.48425719142,
+        "observation": 1.6988469287753105,
+        "mpc": 1703.3033464103937,
+        "total": 10422.903602942824,
+        "risk": 1637.762662023306,
+        "mpc_other": 65.54068438708782
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 15.850108116865158,
+        "compression": 1.672656275331974,
+        "rollout": 41.17692168802023,
+        "observation": 1.6813157126307487,
+        "mpc": 1702.9822105541825,
+        "total": 1764.7193456068635,
+        "risk": 1638.9388088136911,
+        "mpc_other": 64.04340174049139
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.25489224962878015,
+      "horizon_clearance": 0.0010843511505519154,
+      "first_physical_clearance": 0.35059962514272613,
+      "cost": 48.19915369027103,
+      "exact_risk_rows": 164.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 4515.0
+    }
+  },
+  {
+    "state": [
+      2000023,
+      28,
+      15
+    ],
+    "people": 20,
+    "visible": 9,
+    "errors": {
+      "controls": 0.0,
+      "risk_exact": 4.440892098500626e-13,
+      "risk_bound_0": 4.440892098500626e-13,
+      "risk_bound_1": 1.1022294188478554e-12
+    },
+    "ordered_elites_equal": true,
+    "action": [
+      0.09113933974519953,
+      0.27339606872584543
+    ],
+    "full_modes": 1749,
+    "measures": [
+      {
+        "variant": "combined",
+        "repetition": 0,
+        "goal_update": 8.904209360480309,
+        "compression": 1.315760426223278,
+        "rollout": 21.792090497910976,
+        "observation": 2.066916786134243,
+        "mpc": 1149.303786456585,
+        "total": 1184.695454314351,
+        "risk": 1076.5298753976822,
+        "mpc_other": 72.77391105890274
+      },
+      {
+        "variant": "original",
+        "repetition": 0,
+        "goal_update": 777.3385718464851,
+        "compression": 1.7248978838324547,
+        "rollout": 3484.9078664556146,
+        "observation": 2.0569292828440666,
+        "mpc": 4138.675294816494,
+        "total": 8405.153416097164,
+        "risk": 4056.935152038932,
+        "mpc_other": 81.74014277756214
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 0,
+        "goal_update": 8.942482993006706,
+        "compression": 1.243474893271923,
+        "rollout": 21.876600570976734,
+        "observation": 2.057417295873165,
+        "mpc": 4121.925128623843,
+        "total": 4156.415408477187,
+        "risk": 4043.4266477823257,
+        "mpc_other": 78.49848084151745
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 0,
+        "goal_update": 780.6962467730045,
+        "compression": 1.6072839498519897,
+        "rollout": 3506.743890233338,
+        "observation": 2.0300401374697685,
+        "mpc": 1155.5857630446553,
+        "total": 5448.076132684946,
+        "risk": 1085.0082533434033,
+        "mpc_other": 70.57750970125198
+      },
+      {
+        "variant": "original",
+        "repetition": 1,
+        "goal_update": 773.3914274722338,
+        "compression": 1.6324268653988838,
+        "rollout": 3519.627439789474,
+        "observation": 2.0546941086649895,
+        "mpc": 4139.917094260454,
+        "total": 8437.098989263177,
+        "risk": 4058.5239958018064,
+        "mpc_other": 81.39309845864773
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 1,
+        "goal_update": 8.917201310396194,
+        "compression": 1.2839147821068764,
+        "rollout": 21.63920644670725,
+        "observation": 2.0145345479249954,
+        "mpc": 4130.073432810605,
+        "total": 4164.396371692419,
+        "risk": 4051.33455991745,
+        "mpc_other": 78.73887289315462
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 1,
+        "goal_update": 774.3965303525329,
+        "compression": 1.6996171325445175,
+        "rollout": 3513.972860760987,
+        "observation": 2.0368145778775215,
+        "mpc": 1152.7364011853933,
+        "total": 5446.2208384647965,
+        "risk": 1081.888879649341,
+        "mpc_other": 70.84752153605223
+      },
+      {
+        "variant": "combined",
+        "repetition": 1,
+        "goal_update": 8.86621605604887,
+        "compression": 1.2931330129504204,
+        "rollout": 21.771487779915333,
+        "observation": 1.9900202751159668,
+        "mpc": 1154.4974083080888,
+        "total": 1189.7742552682757,
+        "risk": 1082.3378982022405,
+        "mpc_other": 72.15951010584831
+      },
+      {
+        "variant": "behavior_only",
+        "repetition": 2,
+        "goal_update": 8.960293605923653,
+        "compression": 1.246897503733635,
+        "rollout": 21.929613314568996,
+        "observation": 2.0291320979595184,
+        "mpc": 4142.864583991468,
+        "total": 4177.399214357138,
+        "risk": 4061.990133486688,
+        "mpc_other": 80.87445050477982
+      },
+      {
+        "variant": "risk_only",
+        "repetition": 2,
+        "goal_update": 779.4598257169127,
+        "compression": 1.6437405720353127,
+        "rollout": 3523.857376538217,
+        "observation": 2.001543529331684,
+        "mpc": 1151.4010149985552,
+        "total": 5459.8067961633205,
+        "risk": 1080.789491534233,
+        "mpc_other": 70.61152346432209
+      },
+      {
+        "variant": "combined",
+        "repetition": 2,
+        "goal_update": 8.9994752779603,
+        "compression": 1.2450134381651878,
+        "rollout": 21.793278865516186,
+        "observation": 2.0316466689109802,
+        "mpc": 1154.858773574233,
+        "total": 1190.3139986097813,
+        "risk": 1082.5933115556836,
+        "mpc_other": 72.26546201854944
+      },
+      {
+        "variant": "original",
+        "repetition": 2,
+        "goal_update": 780.5039007216692,
+        "compression": 1.7082784324884415,
+        "rollout": 3512.4787874519825,
+        "observation": 2.0011253654956818,
+        "mpc": 4176.902703940868,
+        "total": 8474.060993641615,
+        "risk": 4095.896326005459,
+        "mpc_other": 81.00637793540955
+      }
+    ],
+    "diagnostics": {
+      "feasibility_class": 0.0,
+      "first_clearance": 0.09119669876496458,
+      "horizon_clearance": 0.0011396845543630574,
+      "first_physical_clearance": 0.09119669876496458,
+      "cost": 53.122817442094366,
+      "exact_risk_rows": 165.0,
+      "total_candidate_rows": 2048.0,
+      "refinement_batches": 4.0,
+      "table_cdf_values": 6579.0
+    }
+  }
+]

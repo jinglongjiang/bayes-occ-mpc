@@ -1,0 +1,18 @@
+{
+  "behavior_0_0.0": 4.440892098500626e-16,
+  "behavior_0_0.7": 2.220446049250313e-16,
+  "behavior_1_0.0": 5.551115123125783e-17,
+  "behavior_1_0.7": 1.1102230246251565e-15,
+  "behavior_12_0.0": 0.0,
+  "behavior_12_0.7": 2.220446049250313e-16,
+  "risk_0.0_None": 0.0,
+  "risk_0.0_0.7": 0.0,
+  "reference_cdf_rejection_0.04_None": true,
+  "risk_0.04_None": 0.0,
+  "reference_cdf_rejection_0.04_0.7": true,
+  "risk_0.04_0.7": 0.0,
+  "reference_cdf_rejection_4.0_None": true,
+  "risk_4.0_None": 0.0,
+  "reference_cdf_rejection_4.0_0.7": true,
+  "risk_4.0_0.7": 0.0
+}

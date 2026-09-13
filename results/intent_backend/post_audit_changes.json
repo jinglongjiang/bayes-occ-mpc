@@ -1,0 +1,122 @@
+{
+  "visible_metadata": [
+    {
+      "state": [
+        2000000,
+        16,
+        3
+      ],
+      "old": 3,
+      "new": 4
+    },
+    {
+      "state": [
+        2000001,
+        16,
+        1
+      ],
+      "old": 4,
+      "new": 3
+    },
+    {
+      "state": [
+        2000002,
+        12,
+        3
+      ],
+      "old": 5,
+      "new": 5
+    },
+    {
+      "state": [
+        2000003,
+        16,
+        1
+      ],
+      "old": 4,
+      "new": 4
+    },
+    {
+      "state": [
+        2000010,
+        12,
+        0
+      ],
+      "old": 7,
+      "new": 7
+    },
+    {
+      "state": [
+        2000011,
+        24,
+        1
+      ],
+      "old": 5,
+      "new": 4
+    },
+    {
+      "state": [
+        2000012,
+        20,
+        4
+      ],
+      "old": 5,
+      "new": 5
+    },
+    {
+      "state": [
+        2000013,
+        20,
+        7
+      ],
+      "old": 6,
+      "new": 6
+    },
+    {
+      "state": [
+        2000020,
+        24,
+        0
+      ],
+      "old": 12,
+      "new": 13
+    },
+    {
+      "state": [
+        2000021,
+        20,
+        10
+      ],
+      "old": 9,
+      "new": 9
+    },
+    {
+      "state": [
+        2000022,
+        16,
+        4
+      ],
+      "old": 13,
+      "new": 11
+    },
+    {
+      "state": [
+        2000023,
+        28,
+        15
+      ],
+      "old": 11,
+      "new": 9
+    }
+  ],
+  "notes": [
+    "Corrected visible count to current frame; timing and numerical results unchanged.",
+    "Copied existence array before optional override; frozen timing uses no override and numerical formulas unchanged.",
+    "Added edge checks and report conclusions after timed run."
+  ],
+  "source_sha256": {
+    "experiments/intent_backend.py": "9a5794bb74e48769fefcbcc69325c2935cce2b094bc2b09faff5e6beb1570d74",
+    "experiments/intent_backend_audit.py": "9fdd0820300731443ee7d0446696536705908ef0ad5feca69cd43598feab823d",
+    "experiments/intent_kernels.cpp": "8d4e0b980491dc991a1f294922dfbc924b49d62df8cb13e6964d4411ceb9c1bf"
+  }
+}

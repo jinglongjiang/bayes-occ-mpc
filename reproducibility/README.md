@@ -99,6 +99,56 @@ or claim those old collectors are portable. Registered intent layouts already ex
 
 ## Scope of the evidence
 
+The computational-backend follow-up also hashes
+`results/intent_repair/selection.json`. Its selected likelihood values are checked
+and reported by the smoke test. `posterior_fixture.json` adds a fixed-seed,
+unknown-goal history with consecutive detections and a missing interval, including
+reference particle weights and future predictions. Run just this additional check
+without repeating the original 36-step environment replay:
+
+```bash
+env -u PYTHONPATH -u PYTHONHOME python reproducibility/smoke.py \
+  --posterior-only --output /tmp/posterior-check.json
+```
+
+## Optional Computational Backend
+
+`experiments/intent_backend.py` is an opt-in experimental backend. The original
+entry and vendored behavior sources are unchanged. It builds its shared library
+locally with `g++`, using the original RVO constraints and LP solver; generated
+headers add access-only friendship. No binary is distributed. It also fuses mixture
+risk arrays while retaining SciPy CDF evaluation and the original Hermite tables.
+
+```python
+from experiments.intent_backend import enabled
+with enabled(behavior=True, risk=True):
+    # Invoke the existing intent engine and mixture planner here.
+    pass
+```
+
+The context manager is intended for a single experiment process, not concurrent
+threads. Cached contexts contain legal state/neighbor geometry, never goal scores.
+Proposed goals still replay their own history. Diverging future modes rebuild
+their own constraints. No modes or probability mass are dropped.
+
+The frozen-input audit uses existing experiment records (not new episodes):
+
+```bash
+python experiments/intent_backend_audit.py all
+python experiments/intent_backend_audit.py edges
+```
+
+It resumes completed states in `results/intent_backend`; preserve that directory
+as the recorded run rather than treating a resumed command as an independent
+replication. Audit and three rotated timing repeats are separate. Timing includes
+legal observation/filter update through executable command construction, but not
+compilation, restored-prefix setup, copying snapshots, or environment advancement.
+See that directory's protocol and verdict for tolerances, measurements and limits.
+The edge checks preserve a known reference limitation: the installed SciPy 1.3.3
+can return nonfinite CDF values at zero noncentrality for some positive-variance
+inputs. Both backends raise rather than turn this into low risk. This task does
+not repair or replace that special-function implementation.
+
 See `verification.json` for actual checks. Same-host, separate-directory success is
 path-independent reproduction only. Rebuilding RVO on the same host is additional
 compiler/source validation, not a clean-machine or cross-environment installation test.

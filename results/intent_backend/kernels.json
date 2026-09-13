@@ -1,0 +1,410 @@
+[
+  {
+    "state": [
+      2000000,
+      16,
+      3
+    ],
+    "people": 5,
+    "goals": 256,
+    "history": 6,
+    "errors": {
+      "trajectory_1": 1.1102230246251565e-16,
+      "trajectory_16": 1.1102230246251565e-15,
+      "history_log_density": 3.552713678800501e-14,
+      "history_bias": 1.0798653637955624e-16,
+      "particle_goals": 0.0,
+      "particle_weights": 3.730349362740526e-14
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 30.164452269673347,
+        "optimized": 0.2785325050354004
+      },
+      "D_16": {
+        "original": 397.0659514889121,
+        "optimized": 1.9254153594374657
+      },
+      "history": {
+        "original": 186.5293337032199,
+        "optimized_cold": 2.08172295242548,
+        "optimized_warm": 1.6788719221949577,
+        "context_hits": 6
+      }
+    }
+  },
+  {
+    "state": [
+      2000001,
+      16,
+      1
+    ],
+    "people": 5,
+    "goals": 256,
+    "history": 7,
+    "errors": {
+      "trajectory_1": 2.7755575615628914e-17,
+      "trajectory_16": 6.661338147750939e-16,
+      "history_log_density": 7.105427357601002e-15,
+      "history_bias": 7.589415207398531e-18,
+      "particle_goals": 0.0,
+      "particle_weights": 5.329070518200751e-15
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 28.34596484899521,
+        "optimized": 0.3342665731906891
+      },
+      "D_16": {
+        "original": 383.706352673471,
+        "optimized": 1.6565220430493355
+      },
+      "history": {
+        "original": 215.08147288113832,
+        "optimized_cold": 2.3050103336572647,
+        "optimized_warm": 1.9728392362594604,
+        "context_hits": 7
+      }
+    }
+  },
+  {
+    "state": [
+      2000002,
+      12,
+      3
+    ],
+    "people": 5,
+    "goals": 256,
+    "history": 7,
+    "errors": {
+      "trajectory_1": 2.220446049250313e-16,
+      "trajectory_16": 4.440892098500626e-16,
+      "history_log_density": 0.0,
+      "history_bias": 1.6263032587282567e-19,
+      "particle_goals": 0.0,
+      "particle_weights": 3.552713678800501e-15
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 31.80225659161806,
+        "optimized": 0.31394045799970627
+      },
+      "D_16": {
+        "original": 426.90975591540337,
+        "optimized": 2.240685746073723
+      },
+      "history": {
+        "original": 224.9341430142522,
+        "optimized_cold": 2.4619456380605698,
+        "optimized_warm": 2.036605030298233,
+        "context_hits": 7
+      }
+    }
+  },
+  {
+    "state": [
+      2000003,
+      16,
+      1
+    ],
+    "people": 5,
+    "goals": 256,
+    "history": 3,
+    "errors": {
+      "trajectory_1": 2.220446049250313e-16,
+      "trajectory_16": 8.881784197001252e-16,
+      "history_log_density": 0.0,
+      "history_bias": 0.0,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 29.527627862989902,
+        "optimized": 0.29899459332227707
+      },
+      "D_16": {
+        "original": 390.71832317858934,
+        "optimized": 1.8532685935497284
+      },
+      "history": {
+        "original": 88.44564482569695,
+        "optimized_cold": 1.099039800465107,
+        "optimized_warm": 0.8821096271276474,
+        "context_hits": 3
+      }
+    }
+  },
+  {
+    "state": [
+      2000010,
+      12,
+      0
+    ],
+    "people": 10,
+    "goals": 256,
+    "history": 8,
+    "errors": {
+      "trajectory_1": 6.938893903907228e-18,
+      "trajectory_16": 1.1102230246251565e-16,
+      "history_log_density": 0.0,
+      "history_bias": 0.0,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 37.633609026670456,
+        "optimized": 0.3314027562737465
+      },
+      "D_16": {
+        "original": 481.937269680202,
+        "optimized": 2.7070222422480583
+      },
+      "history": {
+        "original": 304.3233221396804,
+        "optimized_cold": 2.8677303344011307,
+        "optimized_warm": 2.2855233401060104,
+        "context_hits": 8
+      }
+    }
+  },
+  {
+    "state": [
+      2000011,
+      24,
+      1
+    ],
+    "people": 10,
+    "goals": 256,
+    "history": 2,
+    "errors": {
+      "trajectory_1": 2.220446049250313e-16,
+      "trajectory_16": 8.881784197001252e-16,
+      "history_log_density": 1.7763568394002505e-14,
+      "history_bias": 5.551115123125783e-17,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 28.18609494715929,
+        "optimized": 0.27664564549922943
+      },
+      "D_16": {
+        "original": 370.13171054422855,
+        "optimized": 1.7966264858841896
+      },
+      "history": {
+        "original": 67.37090367823839,
+        "optimized_cold": 0.8101025596261024,
+        "optimized_warm": 0.6257882341742516,
+        "context_hits": 2
+      }
+    }
+  },
+  {
+    "state": [
+      2000012,
+      20,
+      4
+    ],
+    "people": 10,
+    "goals": 256,
+    "history": 13,
+    "errors": {
+      "trajectory_1": 0.0,
+      "trajectory_16": 4.440892098500626e-16,
+      "history_log_density": 5.684341886080802e-14,
+      "history_bias": 0.0,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 32.99460560083389,
+        "optimized": 0.33754855394363403
+      },
+      "D_16": {
+        "original": 423.85987751185894,
+        "optimized": 2.228601835668087
+      },
+      "history": {
+        "original": 476.18497908115387,
+        "optimized_cold": 4.372833296656609,
+        "optimized_warm": 3.6576464772224426,
+        "context_hits": 13
+      }
+    }
+  },
+  {
+    "state": [
+      2000013,
+      20,
+      7
+    ],
+    "people": 10,
+    "goals": 256,
+    "history": 16,
+    "errors": {
+      "trajectory_1": 0.0,
+      "trajectory_16": 4.440892098500626e-16,
+      "history_log_density": 2.842170943040401e-14,
+      "history_bias": 5.204170427930421e-17,
+      "particle_goals": 0.0,
+      "particle_weights": 2.1316282072803006e-14
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 33.317068591713905,
+        "optimized": 0.27762260288000107
+      },
+      "D_16": {
+        "original": 430.32728508114815,
+        "optimized": 2.377924509346485
+      },
+      "history": {
+        "original": 609.6525127068162,
+        "optimized_cold": 5.419631488621235,
+        "optimized_warm": 4.518525674939156,
+        "context_hits": 16
+      }
+    }
+  },
+  {
+    "state": [
+      2000020,
+      24,
+      0
+    ],
+    "people": 20,
+    "goals": 256,
+    "history": 17,
+    "errors": {
+      "trajectory_1": 0.0,
+      "trajectory_16": 8.881784197001252e-16,
+      "history_log_density": 2.842170943040401e-14,
+      "history_bias": 1.0367683274392636e-18,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 53.262246772646904,
+        "optimized": 0.38895197212696075
+      },
+      "D_16": {
+        "original": 658.9848669245839,
+        "optimized": 4.0033673867583275
+      },
+      "history": {
+        "original": 745.3910429030657,
+        "optimized_cold": 5.977323278784752,
+        "optimized_warm": 4.934785887598991,
+        "context_hits": 17
+      }
+    }
+  },
+  {
+    "state": [
+      2000021,
+      20,
+      10
+    ],
+    "people": 20,
+    "goals": 256,
+    "history": 16,
+    "errors": {
+      "trajectory_1": 0.0,
+      "trajectory_16": 5.551115123125783e-16,
+      "history_log_density": 1.4210854715202004e-14,
+      "history_bias": 2.066760391300493e-18,
+      "particle_goals": 0.0,
+      "particle_weights": 8.881784197001252e-16
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 25.249850004911423,
+        "optimized": 0.31093787401914597
+      },
+      "D_16": {
+        "original": 319.9498634785414,
+        "optimized": 2.0432397723197937
+      },
+      "history": {
+        "original": 402.9298508539796,
+        "optimized_cold": 5.354050546884537,
+        "optimized_warm": 4.357258789241314,
+        "context_hits": 16
+      }
+    }
+  },
+  {
+    "state": [
+      2000022,
+      16,
+      4
+    ],
+    "people": 20,
+    "goals": 256,
+    "history": 16,
+    "errors": {
+      "trajectory_1": 1.1102230246251565e-16,
+      "trajectory_16": 8.881784197001252e-16,
+      "history_log_density": 1.5631940186722204e-13,
+      "history_bias": 5.377642775528102e-17,
+      "particle_goals": 0.0,
+      "particle_weights": 1.4921397450962104e-13
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 46.19649890810251,
+        "optimized": 0.33873599022626877
+      },
+      "D_16": {
+        "original": 562.4998705461621,
+        "optimized": 3.451891243457794
+      },
+      "history": {
+        "original": 600.5348647013307,
+        "optimized_cold": 5.361104384064674,
+        "optimized_warm": 4.456435330212116,
+        "context_hits": 16
+      }
+    }
+  },
+  {
+    "state": [
+      2000023,
+      28,
+      15
+    ],
+    "people": 20,
+    "goals": 256,
+    "history": 2,
+    "errors": {
+      "trajectory_1": 0.0,
+      "trajectory_16": 4.440892098500626e-16,
+      "history_log_density": 0.0,
+      "history_bias": 0.0,
+      "particle_goals": 0.0,
+      "particle_weights": 0.0
+    },
+    "milliseconds": {
+      "D_1": {
+        "original": 28.45282293856144,
+        "optimized": 0.3398526459932327
+      },
+      "D_16": {
+        "original": 492.22016986459494,
+        "optimized": 3.2371263951063156
+      },
+      "history": {
+        "original": 72.81952165067196,
+        "optimized_cold": 0.7850993424654007,
+        "optimized_warm": 0.593939796090126,
+        "context_hits": 2
+      }
+    }
+  }
+]

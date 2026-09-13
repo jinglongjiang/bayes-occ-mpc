@@ -26,6 +26,34 @@ def plain(value):
     raise TypeError(type(value).__name__)
 
 
+def check_posterior():
+    fixture=json.loads((ROOT/'reproducibility/posterior_fixture.json').read_text())
+    actual=repair.fitted_settings()
+    assert json.loads(json.dumps(actual,default=plain))==fixture['settings']
+    base.legacy._load_modules(base.CROWD)
+    model=None;max_error=0.;previous=None;gaps=0
+    for row in fixture['history']:
+        f=row['features']
+        for key in ('pos','vel','goal'):f[key]=np.array(f[key])
+        step=row['step']
+        if model is None:
+            model=repair.RepairedPosterior(fixture['scene'],step,f,fixture['calibration'],fixture['seed'],**actual)
+            assert not model.fixed
+        else:
+            gaps+=int(step>previous+1);model.update(step,f)
+        for key in ('goals','logweights','density','bias','bias_covariance'):
+            a=np.array(getattr(model,key));b=np.array(row['reference'][key])
+            np.testing.assert_allclose(a,b,atol=1e-12,rtol=0)
+            max_error=max(max_error,float(np.max(abs(a-b))))
+        previous=step
+    assert gaps>0 and model.updates>0
+    forecast=old.forward(f,model.goals,16)
+    np.testing.assert_allclose(forecast,fixture['forecast'],atol=1e-12,rtol=0)
+    return dict(settings=fixture['settings'],history_rows=len(fixture['history']),gaps=gaps,
+                updates=model.updates,max_posterior_error=max_error,
+                max_forecast_error=float(np.max(abs(forecast-fixture['forecast']))))
+
+
 def run(fixture):
     results = []
     _, _, ActionXY, _, _ = base.legacy._load_modules(base.CROWD)
@@ -66,6 +94,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--capture', action='store_true')
     parser.add_argument('--check-entry', action='store_true', help='Also read/validate existing experiment records; no writes or simulation queue')
+    parser.add_argument('--posterior-only',action='store_true')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     path = ROOT / 'reproducibility/fixture.json'
@@ -117,7 +146,8 @@ def main():
     if args.check_entry:
         records = old.data()
         repair.setup(records)
-    result = run(fixture)
+    posterior=check_posterior()
+    result = [] if args.posterior_only else run(fixture)
     errors = {}
     for expected, actual in zip(fixture['reference'], result):
         assert actual['layout_hash'] == expected['layout_hash']
@@ -140,7 +170,8 @@ def main():
     report=dict(status='pass', scope='same-host independent-directory replay; not a new navigation result',
         root=str(ROOT), python=sys.version, platform=platform.platform(), modules=modules,
         PYTHONPATH=os.environ.get('PYTHONPATH'), max_absolute_errors=errors,
-        layout_count=3, replay_steps=36, action_tolerance='bitwise', numeric_atol=1e-12, numeric_rtol=0)
+        layout_count=0 if args.posterior_only else 3, replay_steps=0 if args.posterior_only else 36,
+        action_tolerance='bitwise', numeric_atol=1e-12, numeric_rtol=0,posterior=posterior)
     report['experiment_entry_records_checked'] = len(records) if args.check_entry else None
     report['forbidden_source_roots'] = forbidden
     report['wrong_hash_rejected'] = True

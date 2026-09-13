@@ -1,0 +1,61 @@
+{
+  "status": "pass",
+  "scope": "same-host independent-directory replay; not a new navigation result",
+  "root": "/home/abc/workspace/bayes_occ_mpc_hermite",
+  "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
+  "modules": {
+    "crowd_sim": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/__init__.py",
+    "rvo2": "/home/abc/.local/lib/python3.8/site-packages/rvo2.cpython-38-x86_64-linux-gnu.so",
+    "crowd_sim.envs.utils": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/__init__.py",
+    "crowd_sim.envs.policy": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/policy/__init__.py",
+    "crowd_sim.envs.policy.policy": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/policy/policy.py",
+    "crowd_sim.envs.utils.action": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/action.py",
+    "crowd_sim.envs.policy.linear": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/policy/linear.py",
+    "crowd_sim.envs.policy.orca": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/policy/orca.py",
+    "crowd_sim.envs.policy.policy_factory": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/policy/policy_factory.py",
+    "crowd_sim.envs.utils.state": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/state.py",
+    "crowd_sim.envs.utils.agent": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/agent.py",
+    "crowd_sim.envs.utils.human": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/human.py",
+    "crowd_sim.envs.utils.info": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/info.py",
+    "crowd_sim.envs.utils.utils": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/utils.py",
+    "crowd_sim.envs.crowd_sim": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/crowd_sim.py",
+    "crowd_sim.envs": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/__init__.py",
+    "crowd_sim.envs.utils.robot": "/home/abc/workspace/bayes_occ_mpc_hermite/vendor/CrowdNav/crowd_sim/envs/utils/robot.py"
+  },
+  "PYTHONPATH": null,
+  "max_absolute_errors": {},
+  "layout_count": 0,
+  "replay_steps": 0,
+  "action_tolerance": "bitwise",
+  "numeric_atol": 1e-12,
+  "numeric_rtol": 0,
+  "posterior": {
+    "settings": {
+      "sigma": [
+        [
+          0.00022414219952382976,
+          7.254989278778869e-06
+        ],
+        [
+          7.254989278778869e-06,
+          0.00019372611764709578
+        ]
+      ],
+      "fraction": 0.25,
+      "tau": 0.25,
+      "count": 256,
+      "mh": 2
+    },
+    "history_rows": 9,
+    "gaps": 1,
+    "updates": 7,
+    "max_posterior_error": 0.0,
+    "max_forecast_error": 0.0
+  },
+  "experiment_entry_records_checked": null,
+  "forbidden_source_roots": [
+    "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/"
+  ],
+  "wrong_hash_rejected": true
+}

@@ -1,0 +1,137 @@
+{
+  "baseline": "822c28bfda6fb819083a13253739936384144c7a",
+  "states": [
+    [
+      2000000,
+      16,
+      3
+    ],
+    [
+      2000001,
+      16,
+      1
+    ],
+    [
+      2000002,
+      12,
+      3
+    ],
+    [
+      2000003,
+      16,
+      1
+    ],
+    [
+      2000010,
+      12,
+      0
+    ],
+    [
+      2000011,
+      24,
+      1
+    ],
+    [
+      2000012,
+      20,
+      4
+    ],
+    [
+      2000013,
+      20,
+      7
+    ],
+    [
+      2000020,
+      24,
+      0
+    ],
+    [
+      2000021,
+      20,
+      10
+    ],
+    [
+      2000022,
+      16,
+      4
+    ],
+    [
+      2000023,
+      28,
+      15
+    ]
+  ],
+  "settings": {
+    "sigma": [
+      [
+        0.00022414219952382976,
+        7.254989278778869e-06
+      ],
+      [
+        7.254989278778869e-06,
+        0.00019372611764709578
+      ]
+    ],
+    "fraction": 0.25,
+    "tau": 0.25,
+    "count": 256,
+    "mh": 2
+  },
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "mode_cap": 256,
+  "repetitions": 3,
+  "tolerances": {
+    "trajectory": 1e-10,
+    "log_density": 1e-08,
+    "weights": 1e-10,
+    "risk": 1e-10,
+    "controls": 1e-09
+  },
+  "scope": "12 fixed development states, common canonical prefix and warm start; no new navigation outcomes",
+  "ordering": "rotate four backends by state and repetition; single process, one CPU, one numerical thread",
+  "primary_cache": "empty history context cache at each timed control; warm-cache repeat measured only in kernel audit",
+  "source_revisions": [
+    {
+      "experiments/intent_backend_audit.py": "32ef7c35d6f032431cb190ff746df08df460cc83d80b200a9c61f4ffd2b84328",
+      "experiments/intent_backend.py": "7d97fa7dd1d81e6f826d19ab393560922f884d1cf48595d275ade71018e19641",
+      "experiments/intent_kernels.cpp": "a503218e6d5cd7c0efd023b1ef33d077d8449536c59c9096f53658b8abc6eca6"
+    },
+    {
+      "experiments/intent_backend_audit.py": "32ef7c35d6f032431cb190ff746df08df460cc83d80b200a9c61f4ffd2b84328",
+      "experiments/intent_backend.py": "6c376c4e3bcc4d17d6d23d52842d992d1c2f68d5b9dd62bd55e7c9deb7088a35",
+      "experiments/intent_kernels.cpp": "8d4e0b980491dc991a1f294922dfbc924b49d62df8cb13e6964d4411ceb9c1bf"
+    }
+  ]
+}

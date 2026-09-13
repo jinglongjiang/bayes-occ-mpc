@@ -79,7 +79,7 @@
     "vendor/Python-RVO2/src/Vector2.h": "f0011aae6fbcdc14a777cabbc19b30f547af08858a4b485fcfcae6b1602a8738",
     "vendor/Python-RVO2/src/RVO.h": "58404677263716fbed5453948b38ca27d265a0b4b5f730226b0e31586b83a87f",
     "vendor/Python-RVO2/src/Agent.cpp": "5907734946eb350ee8e603795d9c62f9ca5534263cc938841a6b67ea7027ac4c",
-    "reproducibility/smoke.py": "921faae483132fca9ea7138c2e46be17b68653f7ee9604e8f7a87604bbfa6d1a",
+    "reproducibility/smoke.py": "90351a368d5c2f3b3b26d0c46458ae2c462abc92f108d9f219badea9add9bb53",
     "reproducibility/fixture.json": "e98f964ba0c64c8427787e3f57049cd145cffcded7be7b53211a18f327a5f53a",
     "reproducibility/requirements.txt": "ad05aab1898bd235da6ae3764f47750bd8b93f4c476d21c91954bc4ffc43efd8",
     "reproducibility/runtime.py": "4118abff52abc6d471560e8be95db666715cd97489bb9879dcd699cdb8c9c3fb",
@@ -105,7 +105,9 @@
     "results/intent_repair/calibration.json": "f3035e5fd6fb3bb2693c27e78a1989892f583af6eb60b89a53a28aad9c447238",
     "results/intent_repair/inference_config.json": "02ef615a44cb79c51b22ca7f516cb348a4e901c762294153a2f4ea8c28b6f53e",
     "results/intent_repair/compression_config.json": "b57e39ca36f6cf323620dfbf50e8d270181cc6e5178d196e3bfd42490b2d959f",
-    "results/goal_posterior_probe/calibration.json": "8ff321f55d705e702d7f56369ea6bfa8c7286b06d87b70b26fc49200692ebba7"
+    "results/goal_posterior_probe/calibration.json": "8ff321f55d705e702d7f56369ea6bfa8c7286b06d87b70b26fc49200692ebba7",
+    "results/intent_repair/selection.json": "60a9d11fb650165bd303baf1dc3b349e0590c7e9f7b276b26b543dad971758d7",
+    "reproducibility/posterior_fixture.json": "1807583726335b5681be5246a68a1f671bd274ee95b0866c43c956d51978014d"
   },
   "python": "3.8.10 (default, Mar 18 2025, 20:04:55) \n[GCC 9.4.0]",
   "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.29",
@@ -140,5 +142,9 @@
     "build_command": "python setup.py build_ext --inplace",
     "compiler": "g++ (Ubuntu 8.4.0-3ubuntu2) 8.4.0",
     "cmake": "cmake version 3.31.4"
+  },
+  "loaded_likelihood_settings": {
+    "tau": 0.25,
+    "fraction": 0.25
   }
 }
