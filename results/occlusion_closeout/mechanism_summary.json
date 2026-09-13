@@ -1,0 +1,509 @@
+{
+  "states": [
+    {
+      "scene": 0,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 269,
+          "action": [
+            -0.15162176717767034,
+            0.7818770827553745
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 124,
+          "first_feasible": 512,
+          "cost": 53.85648333867246
+        },
+        "bayes": {
+          "winner": 269,
+          "action": [
+            -0.15162176717767034,
+            0.7818770827553745
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 119,
+          "first_feasible": 512,
+          "cost": 58.01437623331724
+        },
+        "age_margin": {
+          "winner": 433,
+          "action": [
+            -0.23776667431519244,
+            0.6924020730893141
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 50,
+          "first_feasible": 512,
+          "cost": 60.084344755105626
+        }
+      },
+      "action_delta_bayes_mean": 0.0
+    },
+    {
+      "scene": 0,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 348,
+          "action": [
+            0.27906602374278894,
+            0.9602719169029099
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 451,
+          "first_feasible": 512,
+          "cost": 15.111798014844505
+        },
+        "bayes": {
+          "winner": 176,
+          "action": [
+            0.23852267509598157,
+            0.4258821256928835
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 407,
+          "first_feasible": 512,
+          "cost": 15.414694586345567
+        },
+        "age_margin": {
+          "winner": 176,
+          "action": [
+            0.23852267509598157,
+            0.4258821256928835
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 261,
+          "first_feasible": 305,
+          "cost": 15.373196632882044
+        }
+      },
+      "action_delta_bayes_mean": 0.5359255657915493
+    },
+    {
+      "scene": 1,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 0,
+          "action": [
+            0.02072567572123167,
+            0.9997852001134535
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 133,
+          "first_feasible": 512,
+          "cost": 34.266686728384244
+        },
+        "bayes": {
+          "winner": 0,
+          "action": [
+            0.02072567572123167,
+            0.9997852001134535
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 121,
+          "first_feasible": 512,
+          "cost": 36.40322858943949
+        },
+        "age_margin": {
+          "winner": 347,
+          "action": [
+            -0.2992326614038362,
+            0.9541801791848209
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 16,
+          "first_feasible": 512,
+          "cost": 51.28804519631765
+        }
+      },
+      "action_delta_bayes_mean": 0.0
+    },
+    {
+      "scene": 1,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 0,
+          "action": [
+            0.08152764094095996,
+            0.9966710810305485
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 261,
+          "first_feasible": 512,
+          "cost": 1.958887723548873
+        },
+        "bayes": {
+          "winner": 0,
+          "action": [
+            0.08152764094095996,
+            0.9966710810305485
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 215,
+          "first_feasible": 512,
+          "cost": 2.2109062077996398
+        },
+        "age_margin": {
+          "winner": 348,
+          "action": [
+            -0.030257022662558874,
+            0.9995421514771639
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 127,
+          "first_feasible": 512,
+          "cost": 2.132249032891497
+        }
+      },
+      "action_delta_bayes_mean": 0.0
+    },
+    {
+      "scene": 2,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 7,
+          "action": [
+            -0.2964084950264251,
+            -0.18536660699003343
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 6,
+          "first_feasible": 512,
+          "cost": 66.68653099340573
+        },
+        "bayes": {
+          "winner": 135,
+          "action": [
+            0.11993530350416014,
+            -0.3949221101877573
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 4,
+          "first_feasible": 512,
+          "cost": 72.74785845420087
+        },
+        "age_margin": {
+          "winner": 1,
+          "action": [
+            0.0,
+            0.0
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 2,
+          "first_feasible": 512,
+          "cost": 88.63151287113489
+        }
+      },
+      "action_delta_bayes_mean": 0.4661069271050665
+    },
+    {
+      "scene": 2,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 0,
+          "action": [
+            -0.2740724182403582,
+            0.7741878539414695
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 36,
+          "first_feasible": 512,
+          "cost": 17.579116778161392
+        },
+        "bayes": {
+          "winner": 310,
+          "action": [
+            -0.9735543563985334,
+            0.22845549924971706
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 26,
+          "first_feasible": 512,
+          "cost": 43.36841328586898
+        },
+        "age_margin": {
+          "winner": 69,
+          "action": [
+            -0.8219968271264875,
+            0.15539169924317175
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 10,
+          "first_feasible": 512,
+          "cost": 50.331351022417344
+        }
+      },
+      "action_delta_bayes_mean": 0.8871858794902688
+    },
+    {
+      "scene": 3,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 118,
+          "action": [
+            0.8449077077879951,
+            0.5349121099025856
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 8,
+          "first_feasible": 512,
+          "cost": 67.16620495788007
+        },
+        "bayes": {
+          "winner": 402,
+          "action": [
+            0.8624000337336136,
+            0.5062274012894425
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 5,
+          "first_feasible": 512,
+          "cost": 75.42503177507773
+        },
+        "age_margin": {
+          "winner": 4,
+          "action": [
+            0.9875048078220865,
+            0.15758887818708567
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 1,
+          "first_feasible": 512,
+          "cost": 467.0249530318796
+        }
+      },
+      "action_delta_bayes_mean": 0.033597529302147884
+    },
+    {
+      "scene": 3,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 444,
+          "action": [
+            -0.37186954698023356,
+            0.9282849993556482
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 43,
+          "first_feasible": 512,
+          "cost": 20.166800507658486
+        },
+        "bayes": {
+          "winner": 146,
+          "action": [
+            -0.04489046832895652,
+            0.998991914808727
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 13,
+          "first_feasible": 512,
+          "cost": 33.62280287194725
+        },
+        "age_margin": {
+          "winner": 6,
+          "action": [
+            0.18462580991926814,
+            0.9725807474506445
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 1,
+          "first_feasible": 512,
+          "cost": 44.447780149874255
+        }
+      },
+      "action_delta_bayes_mean": 0.33453667327892
+    },
+    {
+      "scene": 4,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 444,
+          "action": [
+            0.5612215959906018,
+            0.8276655847585798
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 332,
+          "first_feasible": 512,
+          "cost": 94.66238844244762
+        },
+        "bayes": {
+          "winner": 444,
+          "action": [
+            0.5612215959906018,
+            0.8276655847585798
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 321,
+          "first_feasible": 512,
+          "cost": 97.4688836019841
+        },
+        "age_margin": {
+          "winner": 334,
+          "action": [
+            0.33049110562448514,
+            0.9438091062832068
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 233,
+          "first_feasible": 512,
+          "cost": 98.61184920052898
+        }
+      },
+      "action_delta_bayes_mean": 0.0
+    },
+    {
+      "scene": 4,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 348,
+          "action": [
+            -0.037358236546188896,
+            0.9993019374354074
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 199,
+          "first_feasible": 512,
+          "cost": 56.20163757530573
+        },
+        "bayes": {
+          "winner": 176,
+          "action": [
+            -0.04688409796191134,
+            0.5219160038893847
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 171,
+          "first_feasible": 512,
+          "cost": 57.41493039235868
+        },
+        "age_margin": {
+          "winner": 94,
+          "action": [
+            0.4320093793058556,
+            0.835212821895166
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 116,
+          "first_feasible": 512,
+          "cost": 58.77333407411073
+        }
+      },
+      "action_delta_bayes_mean": 0.4774809646292919
+    },
+    {
+      "scene": 5,
+      "case": 3001017,
+      "step": 8,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 443,
+          "action": [
+            0.01741089005769797,
+            0.21989008359988926
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 195,
+          "first_feasible": 512,
+          "cost": 59.1698497851346
+        },
+        "bayes": {
+          "winner": 110,
+          "action": [
+            0.5761965043817479,
+            0.10421182850717997
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 174,
+          "first_feasible": 512,
+          "cost": 64.37807433807328
+        },
+        "age_margin": {
+          "winner": 137,
+          "action": [
+            0.032127790727148275,
+            0.20502254612494802
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 80,
+          "first_feasible": 512,
+          "cost": 62.6479100521764
+        }
+      },
+      "action_delta_bayes_mean": 0.5706337016657882
+    },
+    {
+      "scene": 5,
+      "case": 3001017,
+      "step": 24,
+      "design": "common finite candidate pool, cold-start diagnostic; not actual warm-start CEM replay",
+      "arms": {
+        "posterior_mean": {
+          "winner": 398,
+          "action": [
+            0.4356381973978931,
+            0.9001218589546165
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 84,
+          "first_feasible": 512,
+          "cost": 24.287750795509485
+        },
+        "bayes": {
+          "winner": 330,
+          "action": [
+            0.6618333286147833,
+            0.22523502841867138
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 68,
+          "first_feasible": 512,
+          "cost": 31.075819111865883
+        },
+        "age_margin": {
+          "winner": 78,
+          "action": [
+            0.8779416746575509,
+            0.4787676011380626
+          ],
+          "feasibility_class": 0,
+          "full_feasible": 19,
+          "first_feasible": 512,
+          "cost": 31.825522137122224
+        }
+      },
+      "action_delta_bayes_mean": 0.7117840061543106
+    }
+  ],
+  "caution": "Action changes alone do not establish better navigation; no truth enters candidate scoring."
+}

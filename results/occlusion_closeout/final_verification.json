@@ -1,0 +1,22 @@
+{
+  "complete": true,
+  "registered_episodes": 4080,
+  "unique_keys": 4080,
+  "actuator_violations": 0,
+  "manuscript_main_rows_checked": 36,
+  "max_nav_time": 25.25,
+  "new_source_hashes_verified": true,
+  "portable_numerical_outputs_equal": [
+    "confirmation_summary.json",
+    "covariance_attribution.json",
+    "visibility_summary.json",
+    "outcome_transitions.json",
+    "mechanism_summary.json",
+    "uncertainty_trace.json",
+    "failure_analysis.json"
+  ],
+  "late_timeout_endpoints": 25,
+  "late_successes": 0,
+  "late_collisions": 0,
+  "pdf_pages": 15
+}

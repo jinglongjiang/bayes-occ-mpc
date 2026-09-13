@@ -1,0 +1,30 @@
+{
+  "scope": "Supplementary checksum inventory created during confirmation. Frozen selected parameters and development summary were already registered; this is not a retroactive preregistration of raw historical files.",
+  "files": {
+    "/home/abc/temp/devsweep/clean/clean_age_margin_p0.json": "dfb5b6a19474548162b563cc98f51e881c12349a7f27571425f2676e5ef17893",
+    "/home/abc/temp/devsweep/clean/clean_age_margin_p1.json": "e48ecdc9b98e358fa34c8efdb4d4e92224031c98b5f012c7fb90df808fe973c8",
+    "/home/abc/temp/devsweep/clean/clean_age_margin_p2.json": "f1ab45ae4edcaa3dc8a48320740d1b79fe84946a3a87cf4b07767c87b42e239b",
+    "/home/abc/temp/devsweep/clean/clean_age_margin_p3.json": "d04b8e9d3b0e0b84d32a396d7d030da7166bb8b649587fa736bf72ee7a3bc6f3",
+    "/home/abc/temp/devsweep/clean/clean_age_margin_p4.json": "2fba388086a7f4a01cf60ad4fdd78a62d3db3d0a52ce8c9e14ea9491a546d854",
+    "/home/abc/temp/devsweep/clean/clean_bayes_p0.json": "737805bd8e133a5188e1b8d211be2e16e8216850e4491bff2f5304219c070195",
+    "/home/abc/temp/devsweep/clean/clean_bayes_p1.json": "44d9bb85aba1cd7e1ab734ebcdc426a35afcacdc20f846c06e0f8e04d82ffc5b",
+    "/home/abc/temp/devsweep/clean/clean_bayes_p2.json": "274ca5ccb825825bfd4a0bce36720ff53f189fb6134948fb941f283507bf4260",
+    "/home/abc/temp/devsweep/clean/clean_bayes_p3.json": "c523ce4541603fccd180bd0aa232529a9844e4fda829374ef6dcb26edadecb3b",
+    "/home/abc/temp/devsweep/clean/clean_bayes_p4.json": "2e3e66931793803d597695394bf108b05d16f7cad3166e89e839be12d28c4e98",
+    "/home/abc/temp/devsweep/clean/clean_conformal_p0.json": "aabd7bb0c98c6ca60efeb32619db8f37eb7d228b3dfa1f456c90f2e5f0f9e909",
+    "/home/abc/temp/devsweep/clean/clean_conformal_p1.json": "86c2d5b36ecd1faf541738265236d38a2f84c852dd90c6ae869c99d5f2d2f58d",
+    "/home/abc/temp/devsweep/clean/clean_conformal_p2.json": "64d595bdfa8f432281eaccc5f0b204db75a9f5ffe66d178786ff7fd9c10df33d",
+    "/home/abc/temp/devsweep/clean/clean_conformal_p3.json": "18bcb6547bbd58d840e08343826380bbe0bf739f612a628bd4b0152913a74ce3",
+    "/home/abc/temp/devsweep/clean/clean_conformal_p4.json": "2b708ba4ed50e2cee705d3134f6254e60c1399acc8830c9d3c8d82c82cc14f35",
+    "/home/abc/temp/devsweep/clean/clean_ewma_p0.json": "430dbc0164b23f5280102d6d02c4daba651db9eee5ae3da51743c6bb7e40eb6f",
+    "/home/abc/temp/devsweep/clean/clean_ewma_p1.json": "4851e43173bc96ef70a4ce6b6c97f6fd8d52dda8f4bbd67b1e50d7aa2fefc229",
+    "/home/abc/temp/devsweep/clean/clean_ewma_p2.json": "818462ccd80d0664ca570173b3f86bf7a23df6d3c7a6bceb377296278f58608b",
+    "/home/abc/temp/devsweep/clean/clean_ewma_p3.json": "121088177231645b113347acf19b575695dcc5403846762fa223ad95e3fe7594",
+    "/home/abc/temp/devsweep/clean/clean_ewma_p4.json": "998a389204c531da6f0387d4de3ee4a31cb872233025aed0c3982b91e336cdb1",
+    "/home/abc/temp/devsweep/clean/clean_static_cov_p0.json": "96b3b3ace08ddb77d42e9978c825733395821d7baa328c2058c58affa38f4e2e",
+    "/home/abc/temp/devsweep/clean/clean_static_cov_p1.json": "79f2f3c54894797454f160a9411042b24bd0945ca6007242ba085cb55032409a",
+    "/home/abc/temp/devsweep/clean/clean_static_cov_p2.json": "3ee382ceb54a09562d3e464acdf9951ab3f616973f2080193382552e376d5751",
+    "/home/abc/temp/devsweep/clean/clean_static_cov_p3.json": "5f38c2783ed74198bc2ca56465da913307aae31279605b0caf421463646fef81",
+    "/home/abc/temp/devsweep/clean/clean_static_cov_p4.json": "0b3bcdde3353b28beffaafa8e07b77a7847a1f18cb699a7e4c425f31ed7c3c14"
+  }
+}

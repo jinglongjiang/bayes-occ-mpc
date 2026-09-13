@@ -1,0 +1,815 @@
+{
+  "complete": true,
+  "n": 4080,
+  "expected": 4080,
+  "table": [
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 99,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 9.6125
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "covariance",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.8175
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "bayes",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.8175
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "age_margin",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.055
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "ewma",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.7625
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 0,
+      "method": "conformal",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.1025
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 93,
+      "collision": 7,
+      "timeout": 0,
+      "penalty": 10.485
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "covariance",
+      "n": 100,
+      "success": 96,
+      "collision": 3,
+      "timeout": 1,
+      "penalty": 10.595
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "bayes",
+      "n": 100,
+      "success": 97,
+      "collision": 3,
+      "timeout": 0,
+      "penalty": 10.465
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "age_margin",
+      "n": 100,
+      "success": 97,
+      "collision": 2,
+      "timeout": 1,
+      "penalty": 11.155
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "ewma",
+      "n": 100,
+      "success": 95,
+      "collision": 5,
+      "timeout": 0,
+      "penalty": 10.4575
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 1,
+      "method": "conformal",
+      "n": 100,
+      "success": 95,
+      "collision": 3,
+      "timeout": 2,
+      "penalty": 11.4425
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 95,
+      "collision": 5,
+      "timeout": 0,
+      "penalty": 12.01
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "covariance",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.4925
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "bayes",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.555
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "age_margin",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.7175
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "ewma",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.4825
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 2,
+      "method": "conformal",
+      "n": 100,
+      "success": 99,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.945
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 76,
+      "collision": 24,
+      "timeout": 0,
+      "penalty": 14.6325
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "covariance",
+      "n": 100,
+      "success": 94,
+      "collision": 3,
+      "timeout": 3,
+      "penalty": 13.6975
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "bayes",
+      "n": 100,
+      "success": 90,
+      "collision": 6,
+      "timeout": 4,
+      "penalty": 14.095
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "age_margin",
+      "n": 100,
+      "success": 95,
+      "collision": 3,
+      "timeout": 2,
+      "penalty": 14.515
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "ewma",
+      "n": 100,
+      "success": 90,
+      "collision": 7,
+      "timeout": 3,
+      "penalty": 13.9
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 3,
+      "method": "conformal",
+      "n": 100,
+      "success": 87,
+      "collision": 5,
+      "timeout": 8,
+      "penalty": 15.3175
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 99,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 14.705
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "covariance",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.8725
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "bayes",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.8075
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "age_margin",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 15.3325
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "ewma",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.85
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 4,
+      "method": "conformal",
+      "n": 100,
+      "success": 100,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 15.535
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "posterior_mean",
+      "n": 100,
+      "success": 92,
+      "collision": 8,
+      "timeout": 0,
+      "penalty": 11.1825
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "covariance",
+      "n": 100,
+      "success": 99,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.435
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "bayes",
+      "n": 100,
+      "success": 99,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.4025
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "age_margin",
+      "n": 100,
+      "success": 94,
+      "collision": 6,
+      "timeout": 0,
+      "penalty": 12.8575
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "ewma",
+      "n": 100,
+      "success": 97,
+      "collision": 3,
+      "timeout": 0,
+      "penalty": 11.2325
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "scene": 5,
+      "method": "conformal",
+      "n": 100,
+      "success": 97,
+      "collision": 2,
+      "timeout": 1,
+      "penalty": 12.63
+    },
+    {
+      "sensor": "range_only",
+      "scene": 0,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 10.275
+    },
+    {
+      "sensor": "range_only",
+      "scene": 0,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.775
+    },
+    {
+      "sensor": "range_only",
+      "scene": 1,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.4
+    },
+    {
+      "sensor": "range_only",
+      "scene": 1,
+      "method": "covariance",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 10.525
+    },
+    {
+      "sensor": "range_only",
+      "scene": 2,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.825
+    },
+    {
+      "sensor": "range_only",
+      "scene": 2,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.375
+    },
+    {
+      "sensor": "range_only",
+      "scene": 3,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 17,
+      "collision": 3,
+      "timeout": 0,
+      "penalty": 13.75
+    },
+    {
+      "sensor": "range_only",
+      "scene": 3,
+      "method": "covariance",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 13.525
+    },
+    {
+      "sensor": "range_only",
+      "scene": 4,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 15.475
+    },
+    {
+      "sensor": "range_only",
+      "scene": 4,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.725
+    },
+    {
+      "sensor": "range_only",
+      "scene": 5,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 18,
+      "collision": 2,
+      "timeout": 0,
+      "penalty": 11.6625
+    },
+    {
+      "sensor": "range_only",
+      "scene": 5,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.9625
+    },
+    {
+      "sensor": "full",
+      "scene": 0,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 10.225
+    },
+    {
+      "sensor": "full",
+      "scene": 0,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.7
+    },
+    {
+      "sensor": "full",
+      "scene": 1,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.4375
+    },
+    {
+      "sensor": "full",
+      "scene": 1,
+      "method": "covariance",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 10.8125
+    },
+    {
+      "sensor": "full",
+      "scene": 2,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.6375
+    },
+    {
+      "sensor": "full",
+      "scene": 2,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.125
+    },
+    {
+      "sensor": "full",
+      "scene": 3,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 12.725
+    },
+    {
+      "sensor": "full",
+      "scene": 3,
+      "method": "covariance",
+      "n": 20,
+      "success": 19,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 13.5875
+    },
+    {
+      "sensor": "full",
+      "scene": 4,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.475
+    },
+    {
+      "sensor": "full",
+      "scene": 4,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.5125
+    },
+    {
+      "sensor": "full",
+      "scene": 5,
+      "method": "posterior_mean",
+      "n": 20,
+      "success": 18,
+      "collision": 2,
+      "timeout": 0,
+      "penalty": 11.5625
+    },
+    {
+      "sensor": "full",
+      "scene": 5,
+      "method": "covariance",
+      "n": 20,
+      "success": 20,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 12.075
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "bayes",
+      "b": "posterior_mean",
+      "collision_union": {
+        "delta": -0.06,
+        "ci95": [
+          -0.08,
+          -0.039999999999999994
+        ]
+      },
+      "seed_block_randomization_p": 4.999750012499375e-05,
+      "success_without_overlap": {
+        "delta": 0.05333333333333333,
+        "ci95": [
+          0.03333333333333333,
+          0.07333333333333333
+        ]
+      },
+      "penalty": {
+        "delta": -0.08083333333333334,
+        "ci95": [
+          -0.3925,
+          0.22376041666666655
+        ]
+      },
+      "A_fail_B_success": 8,
+      "A_success_B_fail": 40,
+      "descriptive_mcnemar_p": 4.405936238072169e-08
+    },
+    {
+      "a": "bayes",
+      "b": "covariance",
+      "collision_union": {
+        "delta": 0.005,
+        "ci95": [
+          0.0,
+          0.011666666666666665
+        ]
+      },
+      "seed_block_randomization_p": 0.2456377181140943,
+      "success_without_overlap": {
+        "delta": -0.005,
+        "ci95": [
+          -0.013333333333333332,
+          0.0016666666666666666
+        ]
+      },
+      "penalty": {
+        "delta": 0.03874999999999999,
+        "ci95": [
+          -0.05583333333333333,
+          0.13958333333333334
+        ]
+      },
+      "A_fail_B_success": 4,
+      "A_success_B_fail": 1,
+      "descriptive_mcnemar_p": 0.25,
+      "secondary_holm_p": 0.9825508724563772
+    },
+    {
+      "a": "bayes",
+      "b": "age_margin",
+      "collision_union": {
+        "delta": -0.0016666666666666672,
+        "ci95": [
+          -0.013333333333333332,
+          0.01
+        ]
+      },
+      "seed_block_randomization_p": 1.0,
+      "success_without_overlap": {
+        "delta": 5.551115123125783e-19,
+        "ci95": [
+          -0.013333333333333332,
+          0.013333333333333332
+        ]
+      },
+      "penalty": {
+        "delta": -0.5816666666666667,
+        "ci95": [
+          -0.8020833333333331,
+          -0.3554166666666667
+        ]
+      },
+      "A_fail_B_success": 8,
+      "A_success_B_fail": 8,
+      "descriptive_mcnemar_p": 0.9999999999999999,
+      "secondary_holm_p": 1.0
+    },
+    {
+      "a": "bayes",
+      "b": "ewma",
+      "collision_union": {
+        "delta": -0.008333333333333333,
+        "ci95": [
+          -0.021666666666666664,
+          0.003333333333333333
+        ]
+      },
+      "seed_block_randomization_p": 0.3136343182840858,
+      "success_without_overlap": {
+        "delta": 0.006666666666666667,
+        "ci95": [
+          -0.005,
+          0.02
+        ]
+      },
+      "penalty": {
+        "delta": 0.07624999999999998,
+        "ci95": [
+          -0.12083333333333333,
+          0.26
+        ]
+      },
+      "A_fail_B_success": 4,
+      "A_success_B_fail": 8,
+      "descriptive_mcnemar_p": 0.22656250000000003,
+      "secondary_holm_p": 0.9825508724563772
+    },
+    {
+      "a": "bayes",
+      "b": "conformal",
+      "collision_union": {
+        "delta": -0.0016666666666666666,
+        "ci95": [
+          -0.013333333333333332,
+          0.008333333333333333
+        ]
+      },
+      "seed_block_randomization_p": 1.0,
+      "success_without_overlap": {
+        "delta": 0.013333333333333332,
+        "ci95": [
+          -2.8449465006019007e-19,
+          0.028333333333333332
+        ]
+      },
+      "penalty": {
+        "delta": -0.805,
+        "ci95": [
+          -1.0225,
+          -0.5991562500000001
+        ]
+      },
+      "A_fail_B_success": 7,
+      "A_success_B_fail": 15,
+      "descriptive_mcnemar_p": 0.9999999999999999,
+      "secondary_holm_p": 1.0
+    }
+  ],
+  "visibility_effects": [
+    {
+      "comparison": "combined minus range_only",
+      "field": "collision_union",
+      "delta": -0.016666666666666666,
+      "ci95": [
+        -0.041666666666666664,
+        0.0
+      ]
+    },
+    {
+      "comparison": "combined minus range_only",
+      "field": "success_without_overlap",
+      "delta": 0.016666666666666666,
+      "ci95": [
+        0.0,
+        0.041666666666666664
+      ]
+    },
+    {
+      "comparison": "combined minus range_only",
+      "field": "penalty",
+      "delta": -0.13333333333333328,
+      "ci95": [
+        -0.5041666666666667,
+        0.175
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "collision_union",
+      "delta": -0.041666666666666664,
+      "ci95": [
+        -0.08333333333333334,
+        0.0
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "success_without_overlap",
+      "delta": 0.041666666666666664,
+      "ci95": [
+        0.0,
+        0.08333333333333334
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "penalty",
+      "delta": -0.5083333333333333,
+      "ci95": [
+        -1.1854166666666666,
+        0.1313020833333326
+      ]
+    }
+  ],
+  "note": "No safety-equivalence or deployment timing claim"
+}

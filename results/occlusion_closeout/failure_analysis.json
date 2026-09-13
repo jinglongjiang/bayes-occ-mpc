@@ -1,0 +1,44 @@
+[
+  {
+    "method": "posterior_mean",
+    "collisions": 46,
+    "any_hidden_track_at_collision": 44,
+    "degraded_at_collision": 29,
+    "timeout_with_low_progress_interval": 0
+  },
+  {
+    "method": "covariance",
+    "collisions": 7,
+    "any_hidden_track_at_collision": 6,
+    "degraded_at_collision": 3,
+    "timeout_with_low_progress_interval": 4
+  },
+  {
+    "method": "bayes",
+    "collisions": 10,
+    "any_hidden_track_at_collision": 9,
+    "degraded_at_collision": 5,
+    "timeout_with_low_progress_interval": 4
+  },
+  {
+    "method": "age_margin",
+    "collisions": 11,
+    "any_hidden_track_at_collision": 7,
+    "degraded_at_collision": 10,
+    "timeout_with_low_progress_interval": 3
+  },
+  {
+    "method": "ewma",
+    "collisions": 15,
+    "any_hidden_track_at_collision": 14,
+    "degraded_at_collision": 9,
+    "timeout_with_low_progress_interval": 3
+  },
+  {
+    "method": "conformal",
+    "collisions": 11,
+    "any_hidden_track_at_collision": 9,
+    "degraded_at_collision": 10,
+    "timeout_with_low_progress_interval": 11
+  }
+]

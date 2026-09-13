@@ -1,0 +1,87 @@
+{
+  "posterior_mean": {
+    "success": {
+      "success": 546,
+      "collision": 40,
+      "timeout": 0
+    },
+    "collision": {
+      "success": 5,
+      "collision": 5,
+      "timeout": 0
+    },
+    "timeout": {
+      "success": 3,
+      "collision": 1,
+      "timeout": 0
+    }
+  },
+  "covariance": {
+    "success": {
+      "success": 585,
+      "collision": 0,
+      "timeout": 1
+    },
+    "collision": {
+      "success": 3,
+      "collision": 7,
+      "timeout": 0
+    },
+    "timeout": {
+      "success": 1,
+      "collision": 0,
+      "timeout": 3
+    }
+  },
+  "age_margin": {
+    "success": {
+      "success": 578,
+      "collision": 7,
+      "timeout": 1
+    },
+    "collision": {
+      "success": 6,
+      "collision": 4,
+      "timeout": 0
+    },
+    "timeout": {
+      "success": 2,
+      "collision": 0,
+      "timeout": 2
+    }
+  },
+  "ewma": {
+    "success": {
+      "success": 578,
+      "collision": 8,
+      "timeout": 0
+    },
+    "collision": {
+      "success": 3,
+      "collision": 7,
+      "timeout": 0
+    },
+    "timeout": {
+      "success": 1,
+      "collision": 0,
+      "timeout": 3
+    }
+  },
+  "conformal": {
+    "success": {
+      "success": 571,
+      "collision": 7,
+      "timeout": 8
+    },
+    "collision": {
+      "success": 6,
+      "collision": 4,
+      "timeout": 0
+    },
+    "timeout": {
+      "success": 1,
+      "collision": 0,
+      "timeout": 3
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "table": [
+    {
+      "sensor": "range_and_occlusion",
+      "method": "posterior_mean",
+      "n": 120,
+      "success": 111,
+      "collision": 9,
+      "timeout": 0,
+      "penalty": 12.160416666666666
+    },
+    {
+      "sensor": "range_and_occlusion",
+      "method": "covariance",
+      "n": 120,
+      "success": 118,
+      "collision": 2,
+      "timeout": 0,
+      "penalty": 12.110416666666667
+    },
+    {
+      "sensor": "range_only",
+      "method": "posterior_mean",
+      "n": 120,
+      "success": 113,
+      "collision": 7,
+      "timeout": 0,
+      "penalty": 11.897916666666667
+    },
+    {
+      "sensor": "range_only",
+      "method": "covariance",
+      "n": 120,
+      "success": 118,
+      "collision": 2,
+      "timeout": 0,
+      "penalty": 11.98125
+    },
+    {
+      "sensor": "full",
+      "method": "posterior_mean",
+      "n": 120,
+      "success": 116,
+      "collision": 4,
+      "timeout": 0,
+      "penalty": 11.510416666666666
+    },
+    {
+      "sensor": "full",
+      "method": "covariance",
+      "n": 120,
+      "success": 118,
+      "collision": 2,
+      "timeout": 0,
+      "penalty": 11.96875
+    }
+  ],
+  "effects": [
+    {
+      "comparison": "combined minus range_only",
+      "field": "collision_union",
+      "delta": -0.016666666666666666,
+      "ci95": [
+        -0.041666666666666664,
+        0.0
+      ]
+    },
+    {
+      "comparison": "combined minus range_only",
+      "field": "success_without_overlap",
+      "delta": 0.016666666666666666,
+      "ci95": [
+        0.0,
+        0.041666666666666664
+      ]
+    },
+    {
+      "comparison": "combined minus range_only",
+      "field": "penalty",
+      "delta": -0.13333333333333328,
+      "ci95": [
+        -0.5041666666666667,
+        0.175
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "collision_union",
+      "delta": -0.041666666666666664,
+      "ci95": [
+        -0.08333333333333334,
+        0.0
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "success_without_overlap",
+      "delta": 0.041666666666666664,
+      "ci95": [
+        0.0,
+        0.08333333333333334
+      ]
+    },
+    {
+      "comparison": "combined minus full",
+      "field": "penalty",
+      "delta": -0.5083333333333333,
+      "ci95": [
+        -1.1854166666666666,
+        0.1313020833333326
+      ]
+    }
+  ]
+}

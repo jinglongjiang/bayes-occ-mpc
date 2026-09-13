@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checked_files": 127,
+  "loaded_modules": {
+    "legacy": "/home/abc/workspace/bayes_occ_mpc_hermite/archive/legacy/continuous_mpc_gate.py",
+    "matched": "/home/abc/workspace/bayes_occ_mpc_hermite/archive/legacy/evaluate_matched_safety.py",
+    "rvo2": "/home/abc/.local/lib/python3.8/site-packages/rvo2.cpython-38-x86_64-linux-gnu.so"
+  },
+  "data_directory": "/tmp/occlusion-closeout-final/run",
+  "scope": "Relocated data analysis and recorded-action replay on the same installed environment; not a cross-environment installation test"
+}

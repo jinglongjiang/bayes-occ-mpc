@@ -1,0 +1,17 @@
+{
+  "engine": "Tectonic 0.17.0",
+  "command": "tectonic latex_FCS.txt --keep-logs",
+  "canonical_source": "/home/abc/workspace/nav_data/mamba/camrl/mamba_log/latex_FCS.txt",
+  "pages": 15,
+  "cited_entries": 13,
+  "unresolved_citations": [],
+  "largest_overfull_pt": 0.1663,
+  "scope": "Same-machine compilation, including isolated-directory compilation; author names and affiliations retained from supplied manuscript",
+  "hashes": {
+    "latex_FCS.txt": "9a0fbfe8e257bde6575fc281101eddc5a1b6d36c2d64ed61713ea09cfaca7c80",
+    "latex_FCS.pdf": "a4197ca562a12c423a64922cb935ae95a1a450658e32f4e8f28881fdff923f15",
+    "fcs.cls": "88634710060fbf31fe4af8318043f772b478c7bb754c368030c3e047ec9f33d0",
+    "logo.pdf": "44f1bda6c3915ca78768412baa42a0bf3da2abe4e557d6ffe95052bfef00aa40",
+    "occlusion_figure.png": "c6a4bc4501e5e0492f83b55db8de057a2a06ad133274a11e834b57510f2476f4"
+  }
+}

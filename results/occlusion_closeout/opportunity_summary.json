@@ -1,0 +1,56 @@
+[
+  {
+    "scene": 0,
+    "steps": 3927,
+    "hidden_track_steps": 4062,
+    "eligible_track_steps": 691,
+    "eligible_fraction": 0.17011324470704087,
+    "states_with_opportunity": 614,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  },
+  {
+    "scene": 1,
+    "steps": 3897,
+    "hidden_track_steps": 8685,
+    "eligible_track_steps": 1157,
+    "eligible_fraction": 0.1332181922855498,
+    "states_with_opportunity": 915,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  },
+  {
+    "scene": 2,
+    "steps": 4622,
+    "hidden_track_steps": 14088,
+    "eligible_track_steps": 3358,
+    "eligible_fraction": 0.23835888699602498,
+    "states_with_opportunity": 1987,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  },
+  {
+    "scene": 3,
+    "steps": 5145,
+    "hidden_track_steps": 34461,
+    "eligible_track_steps": 7480,
+    "eligible_fraction": 0.21705696294361743,
+    "states_with_opportunity": 3326,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  },
+  {
+    "scene": 4,
+    "steps": 5923,
+    "hidden_track_steps": 24425,
+    "eligible_track_steps": 4632,
+    "eligible_fraction": 0.1896417604912999,
+    "states_with_opportunity": 2798,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  },
+  {
+    "scene": 5,
+    "steps": 4464,
+    "hidden_track_steps": 25350,
+    "eligible_track_steps": 4061,
+    "eligible_fraction": 0.1601972386587771,
+    "states_with_opportunity": 2236,
+    "caveat": "7x7 Gaussian quadrature diagnostic; unobserved out-of-grid space remains unknown; not a bound or a decision-value test"
+  }
+]

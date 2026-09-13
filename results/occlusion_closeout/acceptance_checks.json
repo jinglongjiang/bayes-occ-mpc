@@ -1,0 +1,23 @@
+{
+  "historical_development_reproduction": {
+    "case": 3650,
+    "target": 0.75,
+    "event": "reach_goal",
+    "nav_time": 10.25,
+    "actual_min_clearance": 0.3440492200663421,
+    "match": "exact"
+  },
+  "range_sensor": {
+    "original_visible": [
+      0
+    ],
+    "range_only_visible": [
+      0,
+      1
+    ],
+    "out_of_range_id": 2,
+    "occupancy_labels": "identical"
+  },
+  "six_arm_first_layout": "completed",
+  "scope": "These checks establish execution compatibility, not scientific superiority"
+}
