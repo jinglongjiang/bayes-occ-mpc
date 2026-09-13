@@ -1,0 +1,34 @@
+{
+  "scope": "Development-only one-frame spatial-evidence intervention on existing 12 fixed snapshots",
+  "likelihood": "Zero on current observed-free cells, one elsewhere, conditional on existence; planning existence held fixed",
+  "arms": [
+    "old Gaussian",
+    "conditioned spatial distribution",
+    "same conditioned distribution projected to full-covariance Gaussian"
+  ],
+  "candidates": "23 evenly spaced original finite-pool candidates plus old winner; no new CEM search or environment rollouts",
+  "numerical_orders": [
+    25,
+    49,
+    97
+  ],
+  "convergence": "Two finest resolutions: max candidate-step risk error <= .005 and same selected candidate in both new arms",
+  "quadrature": "Fixed uniform standardized spatial grid on [-6,6]^2; exact Gaussian cell masses, midpoint collision integration; omitted prior mass < 4e-9",
+  "continuation": "At least 3 numerically stable states from 2 layouts, fully feasible shape-vs-Gaussian action change >= .05 m/s; otherwise no online mixture implementation in this round. A pass indicates choice sensitivity, NOT navigation improvement.",
+  "mirror": "Coupled distance reflection is an algebraic self-test only, not a novelty test.",
+  "source_sha256": "7aa0fd0a2c23430ea013922ff43b698457f08f9c9cb96b47d58af5e51d734f95",
+  "snapshots": {
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/0_3001017_24.pkl": "5ae8fa0dcc23e66048e04e30181ac8b0f306c3f5e9a51a879ee3587f6f0d1320",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/0_3001017_8.pkl": "b4c462b7be7ea3f3c37eb9785208226a42782257125edd24c56cd75185828408",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/1_3001017_24.pkl": "dba3000f368ccaea2fe0147943e6111833e9d2b6ae439f42c3a984605cd3840c",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/1_3001017_8.pkl": "def5ce7122c9e1eff29214ce51d6910b8c07a2c3a8f02e2c190bc9edb5ac13d8",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/2_3001017_24.pkl": "6a80a04b90ab7f64b9556dcfaf0fb152f68a6f0c25298c05239bc66a037f934e",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/2_3001017_8.pkl": "b1d82493121d63df85772aafcf5d750f714a4682a09f8783272363b0d49bc0c3",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/3_3001017_24.pkl": "abaf943f3a9c0ad4ffcfdbf3393bb8c8e5c2a84c4955309ca25ac5f6b31ca0af",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/3_3001017_8.pkl": "c46cc8fd52ac1c1d1f44078e34038ca751842a10d706bda661385f1f6e6e6ec4",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/4_3001017_24.pkl": "ddfba7970b574657f5be9733f3d454fc2dd25f2f5c773d10a6b308d19f6f0c57",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/4_3001017_8.pkl": "d5cfd709da3e5bdcc330037e974d8cd0503512dc9c8b64eff25a2bacf28b0ad0",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/5_3001017_24.pkl": "cd0327ef1eebdc0a0147dbf7a58997a65a820d0a0e241e734a19a4e4296215f4",
+    "/home/abc/workspace/bayes_occ_mpc_hermite/results/occlusion_closeout/mechanism/5_3001017_8.pkl": "2b0936b8876de1ac01e27fd2e8d9116928009d94343c6ce0bb3208989f352a10"
+  }
+}

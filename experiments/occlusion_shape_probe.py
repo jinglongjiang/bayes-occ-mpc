@@ -18,7 +18,21 @@ from scipy.stats import ncx2
 from experiments.occlusion_confirmation import OUT,verify,legacy
 from experiments.occlusion_closeout import save
 
-DEST=OUT/'binding'/'shape'
+GRID=os.environ.get('OCCLUSION_FIXED_GRID')=='1'
+ALL_CANDIDATES=os.environ.get('OCCLUSION_ALL_CANDIDATES')=='1'
+DEST=OUT/'binding'/('fixed_grid_all' if GRID and ALL_CANDIDATES else 'fixed_grid' if GRID else 'shape')
+
+
+def quadrature(order):
+    if GRID:
+        edges=np.linspace(-6.,6.,order+1)
+        nodes=(edges[:-1]+edges[1:])/2
+        weights=np.diff(ndtr(edges))
+        weights/=weights.sum()
+        return np.array(np.meshgrid(nodes,nodes)).reshape(2,-1).T, np.outer(weights,weights).ravel()
+    nodes,weights=np.polynomial.hermite.hermgauss(order)
+    return (np.array(np.meshgrid(nodes,nodes)).reshape(2,-1).T*np.sqrt(2.),
+            np.outer(weights,weights).ravel()/np.pi)
 
 
 def labels(points,snapshot):
@@ -74,15 +88,14 @@ def evaluate(path):
     oldhazard=planner._belief_collision_hazard(controls,obs,positions)
     original=selection(planner,controls,positions,obs,oldhazard)
     indices=np.unique(np.r_[np.linspace(0,511,23).astype(int),original['winner']])
+    if ALL_CANDIDATES:indices=np.arange(512)
     controls=controls[indices];positions=positions[indices];oldhazard=oldhazard[indices]
     baseline=selection(planner,controls,positions,obs,oldhazard)
     tracks=[t for t in snapshot['tracks'].values() if t.visible or t.existence>=.15]
     assert len(tracks)==len(obs.entities)
     orders=[]
-    for order in (15,31,63):
-        nodes,weights=np.polynomial.hermite.hermgauss(order)
-        xy=np.array(np.meshgrid(nodes,nodes)).reshape(2,-1).T*np.sqrt(2.)
-        baseweights=np.outer(weights,weights).ravel()/np.pi
+    for order in ((25,49,97) if GRID else (15,31,63)):
+        xy,baseweights=quadrature(order)
         hazard_full=np.zeros_like(oldhazard);hazard_gauss=np.zeros_like(oldhazard)
         affected=0;normalizers=[];mirror_error=0.
         for i,track in enumerate(tracks):
@@ -148,8 +161,9 @@ def main():
     protocol=dict(scope='Development-only one-frame spatial-evidence intervention on existing 12 fixed snapshots',
         likelihood='Zero on current observed-free cells, one elsewhere, conditional on existence; planning existence held fixed',
         arms=['old Gaussian','conditioned spatial distribution','same conditioned distribution projected to full-covariance Gaussian'],
-        candidates='23 evenly spaced original finite-pool candidates plus old winner; no new CEM search or environment rollouts',
-        numerical_orders=[15,31,63],convergence='31 to 63 max candidate-step risk error <= .005 and same selected candidate in both new arms',
+        candidates='All 512 original finite-pool candidates; no new CEM search or environment rollouts' if ALL_CANDIDATES else '23 evenly spaced original finite-pool candidates plus old winner; no new CEM search or environment rollouts',
+        numerical_orders=[25,49,97] if GRID else [15,31,63],convergence='Two finest resolutions: max candidate-step risk error <= .005 and same selected candidate in both new arms',
+        quadrature='Fixed uniform standardized spatial grid on [-6,6]^2; exact Gaussian cell masses, midpoint collision integration; omitted prior mass < 4e-9' if GRID else 'Gauss-Hermite',
         continuation='At least 3 numerically stable states from 2 layouts, fully feasible shape-vs-Gaussian action change >= .05 m/s; '
         'otherwise no online mixture implementation in this round. A pass indicates choice sensitivity, NOT navigation improvement.',
         mirror='Coupled distance reflection is an algebraic self-test only, not a novelty test.',
@@ -159,7 +173,11 @@ def main():
     if path.exists() and json.loads(path.read_text())!=protocol:raise RuntimeError('Probe protocol changed')
     save(path,protocol)
     with ProcessPoolExecutor(6) as pool:
-        results=list(pool.map(evaluate,protocol['snapshots']))
+        results=[]
+        for result in pool.map(evaluate,protocol['snapshots']):
+            results.append(result)
+            print('Completed',result['scene'],result['step'],'stable',result['stable'],
+                  'action delta',result['full_vs_gaussian_action_delta'],flush=True)
     qualified=[r for r in results if r['qualified']]
     summary=dict(states=len(results),stable_states=sum(r['stable'] for r in results),
         qualified_states=len(qualified),qualified_layouts=len({(r['scene'],r['case']) for r in qualified}),
