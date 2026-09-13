@@ -140,3 +140,31 @@ tectonic latex_FCS.txt --keep-logs
 ```
 Navigation can be rerun on the original registered paths with `python experiments/occlusion_confirmation.py run --workers 6`; existing episode keys are skipped. Use an explicitly separate result copy for a fresh rerun, not a mixture of old and new timing records.
 Portable reanalysis is not an independent simulator installation or a new scientific replication. See portable_analysis_check.json and the existing repository reproducibility documentation for the tested scope.
+
+## Continuation: Risk Relevance and Submission Position
+
+The subsequent read-only audit replayed all 600 Bayes layouts and 27,978 control states with the original seeds and individual warm starts. Every first action and executed robot position reproduced within 1e-9. The original 4,080-episode file remains unchanged.
+
+At the registered 1-percentage-point selected-plan risk-reduction threshold, the 15-point-per-axis screen identifies 4,992 states (17.84%; descriptive seed-block interval 16.92--18.76%). This is 22.17% of states with hidden tracks and 39.85% of geometric-opportunity states. The six configuration rates are 6.93%, 7.70%, 24.45%, 28.14%, 20.45%, and 14.14% in the registered order. Exact rectangular-cell Gaussian masses, combined with monotonic set-inclusion checks, bracket the fraction at 16.47--20.80%. This bracket is numerical classification uncertainty, not a confidence interval.
+
+Thus the 10% potential-relevance threshold passes. It measures removal of ALL eligible tracks, not a legal posterior update or actual constraint change; it does not prove that negative evidence will improve actions. The diagnostic only bounds this risk-reduction question, not effects on alternative candidates or risk increases.
+
+The next, separately registered, developmental probe compared the old Gaussian, a one-frame spatially conditioned distribution, and its full-covariance Gaussian projection on the 12 previously fixed snapshots. All methods used the same 24-or-fewer candidates and unchanged geometry and existence weights. No new online filter, planner, or navigation episode was added. All first commands remained unchanged. Only four states activate the update; three of those meet the probability-refinement tolerance. Overall 11/12 states are numerically stable. The registered 3-state/2-layout shape-specific action-change threshold is not met. This small coverage does NOT establish absence of a spatial-evidence benefit in general or under recursive filtering. No favorable states are added after inspecting this result.
+
+Whole-world mirroring is not a novelty test: an equivariant margin planner can mirror its actions too. The probe instead isolates spatial conditioning and Gaussian projection on fixed inputs. Its coupled distance-reflection check is only numerical self-consistency.
+
+The repaired external-adapter table now includes configuration-wise outcomes, native solver success, and collision-interval END speeds, recomputed from 3,600 historical records. All 42 aggregate rows match the repaired analysis. T-MPC++ solve success is 40.93% in dense square, not the superseded 10.3%. SH-MPC has 35,763 successful replies in 35,769 steps, and all 190 collision-terminal replies report success and nonzero slack. Its collisions cannot all be described as solver-failure braking. These remain local unicycle adaptations, not the holonomic main experiment or universal failure boundaries.
+
+The manuscript now explicitly states the planning-existence negative finding: Cov-1 has 589 successes/7 collisions versus Bayes 586/10, with four timeouts each. The direction is not uniform by configuration. PaS sensor-code inheritance, its learned social-inference objective, and the narrower previously-detected-track scope here are explicitly distinguished.
+
+**Decision:** advance the current system-and-mechanism manuscript toward submission without requiring Bayesian indispensability. Do not add a negative-evidence mixture to the formal method on the strength of this limited probe. The research possibility remains open; this round supplies no new navigation or shape-specific efficacy claim. A manuscript with reproducible evidence is not a guarantee of novelty acceptance or journal acceptance. No journal submission has been made; authors must approve venue, authorship, and final submission materials.
+
+Additional reproducible commands:
+```bash
+python experiments/occlusion_binding.py --workers 6
+python experiments/occlusion_report.py binding
+python experiments/occlusion_report.py cells
+python experiments/occlusion_shape_probe.py
+python experiments/occlusion_report.py external
+```
+The final command reads the historical repaired-adapter raw records at their recorded location; `external_scope.json` additionally releases the compact per-episode sufficient counts with raw-source hashes. Diagnostic sources, protocols, and per-state results are in the repository. The main paper remains a 16-page manuscript with configuration-stratified controls as its principal comparison.

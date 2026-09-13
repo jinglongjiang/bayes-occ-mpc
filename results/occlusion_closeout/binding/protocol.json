@@ -1,0 +1,25 @@
+{
+  "baseline": "6bf42a163344e9d624ea6b0d4502c55e2fc4ac1f",
+  "source_sha256": "e563995df06150543dfd058f84e0cbab90c858cc98bddae540f179b13533942c",
+  "data_sha256": "7876b31b8fd4e0317bc9341046b48fa8e8900749025e0f91e4aa42af3f1f1a62",
+  "scope": "Post-confirmation read-only developmental diagnostic; no new navigation outcomes",
+  "population": "All 600 full-Bayes range-and-occlusion layouts, all recorded control steps",
+  "primary_threshold": 0.01,
+  "sensitivity_thresholds": [
+    0.005,
+    0.02
+  ],
+  "quadrature_orders": [
+    7,
+    15
+  ],
+  "definition": "Max per-step collision probability decrease on actual selected plan after removal of ALL eligible tracks",
+  "denominators": [
+    "all control states",
+    "states with hidden tracks",
+    "states with eligible reported tracks"
+  ],
+  "decision": "Below 10% of all control states: do not implement negative-evidence mixture in this round. Above 10%: only establishes potential relevance, not benefit; do not automatically claim novelty.",
+  "replay_tolerance": 1e-09,
+  "stopping": "Finish registered population; stop on source or action/state mismatch"
+}

@@ -305,6 +305,10 @@ def package():
             entries['run/'+path.name]=path
     for path in (OUT/'mechanism').glob('*.pkl'):
         entries['run/mechanism/'+path.name]=path
+    for path in (OUT/'binding').glob('*'):
+        if path.is_file():entries['run/binding/'+path.name]=path
+    for name in ('occlusion_report.py','occlusion_binding.py'):
+        entries['analysis/'+name]=ROOT/'experiments'/name
     extra=json.loads((OUT/'development_source_manifest.json').read_text())['files']
     for source in set(p['files'])|set(extra):
         path=Path(source)
@@ -395,7 +399,197 @@ def portable_analysis(directory):
         data_directory=str(OUT),scope='Relocated data analysis and recorded-action replay on the same installed environment; not a cross-environment installation test'))
 
 
+def external_scope():
+    """Extract repaired adapter diagnostics; never pool with holonomic confirmation."""
+    directory=Path('/home/abc/temp/modern/repaired_main')
+    source=directory/'test_results.json'
+    original=json.loads(source.read_text())
+    compact=[]
+    for row in original:
+        task,r=row['task'],row['result']
+        collision=bool(r['collision_union'])
+        native=r.get('native_steps',[])
+        compact.append(dict(scene=task['scene'][0],humans=task['scene'][1],case=task['case'],
+            family=task['candidate']['family'],occluded=task['occluded'],
+            success=int(r['success_without_overlap']),collision=int(collision),
+            timeout=int(not collision and not r['success_without_overlap']),
+            penalty=r['nav_time'] if r['success_without_overlap'] else 25.,
+            solver_steps=len(native),solver_successes=sum(bool(s.get('success')) for s in native),
+            low_speed_collision=int(collision and abs(r['steps'][-1]['speed'])<.1),
+            solved_collision=int(collision and bool(native) and bool(native[-1].get('success'))),
+            slack_collision=int(collision and bool(native) and native[-1].get('slack1',0)>1e-9),
+            requested_saturations=r['bound_violations'],
+            runner_sha256=r['runner_sha256'],binary_sha256=r['binary_sha256'],
+            settings_sha256=r['settings_sha256'],layout_sha256=r['layout_sha256']))
+    assert len(compact)==3600
+    assert len({(r['scene'],r['case'],r['family'],r['occluded']) for r in compact})==3600
+    summary=[]
+    for occluded in (True,False):
+        for scene in [None]+[s[0] for s in matched.SCENES]:
+            for family in ('bayes','tmpc','shmpc'):
+                rows=[r for r in compact if r['family']==family and r['occluded']==occluded
+                      and (scene is None or r['scene']==scene)]
+                counts={k:sum(r[k] for r in rows) for k in ('success','collision','timeout','solver_steps',
+                    'solver_successes','low_speed_collision','solved_collision','slack_collision','requested_saturations')}
+                summary.append(dict(scene=scene,family=family,occluded=occluded,n=len(rows),**counts,
+                    penalty=float(np.mean([r['penalty'] for r in rows])),
+                    solve_rate=counts['solver_successes']/counts['solver_steps'] if counts['solver_steps'] else None))
+    evidence=dict(source=str(source),source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+        scope='Historical repaired continuous-unicycle adapters; distinct from new holonomic confirmation',
+        stationary_definition='Speed below 0.1 m/s at END of collision interval; not speed at first contact or causal attribution',
+        records=compact,summary=summary)
+    save(OUT/'external_scope.json',evidence)
+    for row in summary:
+        if row['occluded']:
+            print(row)
+
+
+def binding_report():
+    directory=OUT/'binding'
+    summary=json.loads((directory/'summary.json').read_text())
+    if not summary['complete']:
+        raise RuntimeError('Binding audit incomplete')
+    rows=[json.loads(path.read_text()) for path in directory.glob('[0-5]_*.json')]
+    protocol=verify()
+    assert {(r['scene'],r['case']) for r in rows}=={
+        (s,c) for s in range(6) for c in protocol['cases']}
+    cases=protocol['cases']
+    rng=np.random.default_rng(2026091301)
+    draws=rng.integers(0,len(cases),(10000,len(cases)))
+    intervals=[]
+    for order in (7,15):
+        blocks=[]
+        for case in cases:
+            steps=[s for r in rows if r['case']==case for s in r['steps']]
+            blocks.append([sum(s[str(order)]['max_probability_removal']>=.01 for s in steps),len(steps)])
+        blocks=np.asarray(blocks)
+        sampled=blocks[draws].sum(axis=1)
+        intervals.append(dict(quadrature=order,fraction=float(blocks[:,0].sum()/blocks[:,1].sum()),
+            ci=np.quantile(sampled[:,0]/sampled[:,1],[.025,.975]).tolist(),
+            unit='100 seed blocks, six configurations per block; descriptive, not a new efficacy test'))
+    steps=[s for r in rows for s in r['steps']]
+    disagree=sum((s['7']['max_probability_removal']>=.01)!=(s['15']['max_probability_removal']>=.01) for s in steps)
+    main=next(r for r in summary['configurations'] if r['scene'] is None and r['quadrature']==15 and r['threshold']==.01)
+    decision=('Do not implement negative-evidence mixture in this round: registered potential-binding rate is below 10%.'
+              if main['fraction_all']<.1 else
+              'Potential relevance threshold passed; this is not a decision-benefit or novelty result.')
+    save(directory/'interpretation.json',dict(intervals=intervals,classification_disagreements=disagree,
+        states=len(steps),decision=decision,
+        limitation='Only risk-reduction potential on selected plans is screened; alternative candidate effects and risk increases are not bounded. '
+        'Finite quadrature checks are not certified cell-mass integration. These data have now been inspected and are developmental.',
+        mirror_correction='Reflecting all geometry and coupled random draws can reflect any equivariant policy. '
+        'This does not isolate posterior shape. An informative contrast holds kinematics, candidates and constraints fixed '
+        'and changes only legal visibility evidence; a Gaussian projection control is also needed.'))
+    text=['# Selected-plan risk contribution audit','',decision,'',
+          'All 600 recorded Bayes layouts were replayed with original seeds and separate warm starts. '
+          'Every first command and executed robot position matched within 1e-9. No new navigation outcomes were generated.',
+          '', '| Configuration | Control states | Geometric opportunity states | Potential binding states | Fraction of all states |',
+          '|---|---:|---:|---:|---:|']
+    for row in summary['configurations']:
+        if row['quadrature']==15 and row['threshold']==.01:
+            name='All' if row['scene'] is None else protocol['scenes'][row['scene']][0]
+            text.append(f"| {name} | {row['states']} | {row['opportunity_states']} | {row['potential_binding_states']} | {100*row['fraction_all']:.2f}% |")
+    text += ['', 'Binding here means >=1 percentage point maximum per-step collision-probability reduction '
+        'after removing ALL geometrically eligible tracks from the selected plan. This is an optimistic diagnostic, '
+        'not a valid posterior update, an actual constraint switch, or demonstrated navigation benefit.',
+        '',f'7 versus 15 point quadrature classification disagreements: {disagree}/{len(steps)}.',
+        '', 'Sensitivity thresholds 0.5 and 2 percentage points, all denominators, and descriptive seed-block intervals '
+        'are retained in summary.json and interpretation.json. No efficacy significance test or additional sample selection is performed.']
+    (directory/'verdict.md').write_text('\n'.join(text)+'\n')
+    print('\n'.join(text))
+
+
+def cell_screen_one(row):
+    from scipy.special import ndtr
+    from experiments.occlusion_binding import eligible
+    p=verify()
+    cfg=legacy.MPCConfig(**p['configs']['bayes'])
+    calibration=json.loads((OUT/'calibration.json').read_text())
+    _,_,ActionXY,_,_=legacy._load_modules(CROWD)
+    env=build(row['scene'],row['case_id'])
+    adapter=matched.MatchedAdapter('bayes',cfg.horizon,cfg.human_margin,cfg.dt,
+        cfg.chance_limit,cfg.fixed_uncertainty_radius,cfg.acceleration_std,
+        method='bayes',calibration=calibration,point=p['points']['bayes'])
+    previous=json.loads((OUT/'binding'/f"{row['scene']}_{row['case_id']}.json").read_text())['steps']
+    assert len(previous)==len(row['steps'])
+    records=[]
+    for step,old in zip(row['steps'],previous):
+        adapter.read(env)
+        mx,my=adapter.sensor_mesh
+        grid=adapter.sensor_grid
+        dx,dy=mx[0,1]-mx[0,0],my[1,0]-my[0,0]
+        xedges=np.r_[mx[0]-dx/2,mx[0,-1]+dx/2]
+        yedges=np.r_[my[:,0]-dy/2,my[-1,0]+dy/2]
+        exact=set()
+        for j,identifier in enumerate(adapter.reported_ids):
+            track=adapter.rfs.tracks[identifier]
+            if track.visible or track.covariance[0,0]<=0:continue
+            sd=np.sqrt(track.covariance[0,0])
+            px=np.diff(ndtr((xedges-track.mean[0])/sd))
+            py=np.diff(ndtr((yedges-track.mean[1])/sd))
+            mass=py[:,None]*px[None,:]
+            free=mass[grid==0].sum()
+            unknown=mass[grid==.5].sum()+max(0.,1-mass.sum())
+            if free>=.01 and unknown>=.01:exact.add(j)
+        coarse=set(eligible(adapter,15))
+        assert len(coarse)==old['15']['eligible_tracks']
+        bound=old['15']['max_probability_removal']>=.01
+        # Track removal has nonnegative additive hazard, giving set-inclusion bounds.
+        if not exact:
+            low=high=False
+        elif exact==coarse:
+            low=high=bound
+        elif exact.issubset(coarse) and not bound:
+            low=high=False
+        elif exact.issuperset(coarse) and bound:
+            low=high=True
+        else:
+            low,high=False,True
+        records.append(dict(step=old['step'],eligible_tracks=len(exact),
+            same_set=exact==coarse,binding_lower=low,binding_upper=high))
+        env.step(ActionXY(step['action_a'],step['action_b']))
+        if not np.allclose([env.robot.px,env.robot.py],[step['x'],step['y']],atol=1e-9,rtol=0):
+            raise RuntimeError('Cell-screen replay mismatch')
+    result=dict(scene=row['scene'],case=row['case_id'],steps=records)
+    save(OUT/'binding'/f"cell_{row['scene']}_{row['case_id']}.json",result)
+    return row['scene'],row['case_id']
+
+
+def cell_screen():
+    from concurrent.futures import ProcessPoolExecutor
+    directory=OUT/'binding'
+    protocol=dict(scope='Numerical robustness check; does not change primary 15-point diagnostic',
+        integration='Separable Gaussian rectangular-cell mass using ndtr; outside grid remains unknown',
+        threshold=.01,eligible_mass=.01,population='all 600 frozen Bayes layouts',
+        decision='Report set-inclusion lower/upper counts. Do not replace unresolved states with favorable guesses.',
+        source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
+    path=directory/'cell_protocol.json'
+    if path.exists() and json.loads(path.read_text())!=protocol:raise RuntimeError('Cell protocol changed')
+    save(path,protocol)
+    assert json.loads((directory/'summary.json').read_text())['complete']
+    rows=[json.loads(line) for line in (OUT/'episodes.jsonl').read_text().splitlines()]
+    rows=[r for r in rows if r['method']=='bayes' and r['sensor']=='range_and_occlusion']
+    pending=[r for r in rows if not (directory/f"cell_{r['scene']}_{r['case_id']}.json").exists()]
+    with ProcessPoolExecutor(6) as pool:
+        for item in pool.map(cell_screen_one,pending):print('Cell screen',*item,flush=True)
+    records=[json.loads(path.read_text()) for path in directory.glob('cell_[0-5]_*.json')]
+    assert len(records)==600
+    result=[]
+    for scene in [None]+list(range(6)):
+        steps=[s for r in records if scene is None or r['scene']==scene for s in r['steps']]
+        result.append(dict(scene=scene,states=len(steps),
+            opportunity_states=sum(s['eligible_tracks']>0 for s in steps),
+            different_sets=sum(not s['same_set'] for s in steps),
+            binding_lower=sum(s['binding_lower'] for s in steps),binding_upper=sum(s['binding_upper'] for s in steps)))
+    save(directory/'cell_summary.json',dict(complete=True,results=result,
+        caution='Numerical cell-mass integration, not directed-rounding certification. Bounds concern whole-track removal on selected plans only.'))
+    print(result)
+
+
 if __name__=='__main__':
     if sys.argv[1:]==['package']:package()
+    elif sys.argv[1:]==['external']:external_scope()
+    elif sys.argv[1:]==['binding']:binding_report()
+    elif sys.argv[1:]==['cells']:cell_screen()
     elif len(sys.argv)==3 and sys.argv[1]=='portable':portable_analysis(sys.argv[2])
     else:report()

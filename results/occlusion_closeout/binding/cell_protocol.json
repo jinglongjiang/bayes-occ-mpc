@@ -1,0 +1,9 @@
+{
+  "scope": "Numerical robustness check; does not change primary 15-point diagnostic",
+  "integration": "Separable Gaussian rectangular-cell mass using ndtr; outside grid remains unknown",
+  "threshold": 0.01,
+  "eligible_mass": 0.01,
+  "population": "all 600 frozen Bayes layouts",
+  "decision": "Report set-inclusion lower/upper counts. Do not replace unresolved states with favorable guesses.",
+  "source_sha256": "1c75d65b8a3292fac5d075513250e9ff1eec2ad15cb2c28596e49248c699480c"
+}

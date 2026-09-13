@@ -1,0 +1,16 @@
+{
+  "binding_layouts": 600,
+  "binding_states": 27978,
+  "action_and_position_atol": 1e-09,
+  "original_episode_sha256": "7876b31b8fd4e0317bc9341046b48fa8e8900749025e0f91e4aa42af3f1f1a62",
+  "external_aggregate_rows_recomputed": 42,
+  "eligibility_boundary_tests": 5,
+  "shape_cdf_boundary_tests_passed": true,
+  "shape_baseline_hazard_max_error": 0.0,
+  "shape_central_cdf_fix_changed_real_outputs": false,
+  "shape_reflection_distance_checks": 36,
+  "shape_states": 12,
+  "shape_numerically_stable_states": 11,
+  "shape_update_active_states": 4,
+  "scope": "No production algorithm change; numerical probes do not establish navigation benefit"
+}

@@ -18,5 +18,11 @@
   "late_timeout_endpoints": 25,
   "late_successes": 0,
   "late_collisions": 0,
-  "pdf_pages": 15
+  "pdf_pages": 16,
+  "continuation": "All 600 selected-plan replays and 600 cell-integral replays complete; main seven numerical results unchanged on relocated archive",
+  "binding_states": 27978,
+  "shape_probe_states": 12,
+  "shape_probe_stable": 11,
+  "shape_probe_qualified": 0,
+  "external_scope_rows_verified": 42
 }

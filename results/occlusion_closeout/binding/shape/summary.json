@@ -1,0 +1,166 @@
+{
+  "states": 12,
+  "stable_states": 11,
+  "qualified_states": 0,
+  "qualified_layouts": 0,
+  "passed": false,
+  "rows": [
+    {
+      "scene": 0,
+      "case": 3001017,
+      "step": 24,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 0,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 1,
+      "case": 3001017,
+      "step": 24,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 1,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 2,
+      "case": 3001017,
+      "step": 24,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0021401162287609868,
+        "gaussian": 0.0012678188688301367
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 2,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 3,
+      "case": 3001017,
+      "step": 24,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.003064440769464729,
+        "gaussian": 0.0009109058254276325
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 3,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 4,
+      "case": 3001017,
+      "step": 24,
+      "stable": false,
+      "probability_refinement_error": {
+        "full": 0.00529837250600651,
+        "gaussian": 0.005277909472440889
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 4,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 5,
+      "case": 3001017,
+      "step": 24,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.0,
+        "gaussian": 0.0
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    },
+    {
+      "scene": 5,
+      "case": 3001017,
+      "step": 8,
+      "stable": true,
+      "probability_refinement_error": {
+        "full": 0.00027264646945898696,
+        "gaussian": 0.0002360284540782187
+      },
+      "full_vs_gaussian_action_delta": 0.0,
+      "full_vs_old_action_delta": 0.0,
+      "qualified": false
+    }
+  ],
+  "limitation": "Single-frame conditioning of old Gaussian, not a recursive negative-evidence filter. Numerical nonconvergence is not evidence against negative evidence. No new safety or Bayesian indispensability claim."
+}

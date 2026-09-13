@@ -1,0 +1,27 @@
+{
+  "intervals": [
+    {
+      "quadrature": 7,
+      "fraction": 0.16784616484380585,
+      "ci": [
+        0.15856589991573528,
+        0.17698830152661701
+      ],
+      "unit": "100 seed blocks, six configurations per block; descriptive, not a new efficacy test"
+    },
+    {
+      "quadrature": 15,
+      "fraction": 0.17842590606905426,
+      "ci": [
+        0.16923642328474486,
+        0.18760034319722252
+      ],
+      "unit": "100 seed blocks, six configurations per block; descriptive, not a new efficacy test"
+    }
+  ],
+  "classification_disagreements": 432,
+  "states": 27978,
+  "decision": "Potential relevance threshold passed; this is not a decision-benefit or novelty result.",
+  "limitation": "Only risk-reduction potential on selected plans is screened; alternative candidate effects and risk increases are not bounded. Finite quadrature checks are not certified cell-mass integration. These data have now been inspected and are developmental.",
+  "mirror_correction": "Reflecting all geometry and coupled random draws can reflect any equivariant policy. This does not isolate posterior shape. An informative contrast holds kinematics, candidates and constraints fixed and changes only legal visibility evidence; a Gaussian projection control is also needed."
+}

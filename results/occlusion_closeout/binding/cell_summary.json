@@ -1,0 +1,62 @@
+{
+  "complete": true,
+  "results": [
+    {
+      "scene": null,
+      "states": 27978,
+      "opportunity_states": 12575,
+      "different_sets": 2254,
+      "binding_lower": 4609,
+      "binding_upper": 5818
+    },
+    {
+      "scene": 0,
+      "states": 3927,
+      "opportunity_states": 665,
+      "different_sets": 50,
+      "binding_lower": 261,
+      "binding_upper": 289
+    },
+    {
+      "scene": 1,
+      "states": 3897,
+      "opportunity_states": 1006,
+      "different_sets": 141,
+      "binding_lower": 280,
+      "binding_upper": 344
+    },
+    {
+      "scene": 2,
+      "states": 4622,
+      "opportunity_states": 2071,
+      "different_sets": 240,
+      "binding_lower": 1074,
+      "binding_upper": 1201
+    },
+    {
+      "scene": 3,
+      "states": 5145,
+      "opportunity_states": 3495,
+      "different_sets": 886,
+      "binding_lower": 1269,
+      "binding_upper": 1752
+    },
+    {
+      "scene": 4,
+      "states": 5923,
+      "opportunity_states": 2992,
+      "different_sets": 403,
+      "binding_lower": 1160,
+      "binding_upper": 1373
+    },
+    {
+      "scene": 5,
+      "states": 4464,
+      "opportunity_states": 2346,
+      "different_sets": 534,
+      "binding_lower": 565,
+      "binding_upper": 859
+    }
+  ],
+  "caution": "Numerical cell-mass integration, not directed-rounding certification. Bounds concern whole-track removal on selected plans only."
+}
