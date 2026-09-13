@@ -2,7 +2,36 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdint>
+#include <limits>
 #include <vector>
+
+struct RiskNode { double x,y,r,w; int left,right,mode; };
+struct RiskTree {
+    std::vector<RiskNode> nodes;
+    std::vector<int> roots;
+    const double* centers; const double* weights; int horizon;
+    int build(std::vector<int>& ids,int begin,int end,int k) {
+        int node=nodes.size(); nodes.push_back({0,0,0,0,-1,-1,ids[begin]});
+        RiskNode n=nodes[node]; double low[2]={1e300,1e300},high[2]={-1e300,-1e300};
+        for(int z=begin;z<end;++z) {
+            int m=ids[z]; double w=weights[m];n.w+=w;
+            for(int d=0;d<2;++d) {double v=centers[2*(m*horizon+k)+d];low[d]=std::min(low[d],v);high[d]=std::max(high[d],v);}
+        }
+        n.x=(low[0]+high[0])*.5;n.y=(low[1]+high[1])*.5;
+        for(int z=begin;z<end;++z) {
+            int j=2*(ids[z]*horizon+k); double dx=centers[j]-n.x,dy=centers[j+1]-n.y;
+            n.r=std::max(n.r,std::sqrt(dx*dx+dy*dy));
+        }
+        if(end-begin>1 && n.r>0.) {
+            int axis=high[1]-low[1]>high[0]-low[0],mid=(begin+end)/2;
+            std::nth_element(ids.begin()+begin,ids.begin()+mid,ids.begin()+end,[&](int a,int b){
+                double x=centers[2*(a*horizon+k)+axis],y=centers[2*(b*horizon+k)+axis];return x==y?a<b:x<y;
+            });
+            n.left=build(ids,begin,mid,k);n.right=build(ids,mid,end,k);
+        }
+        nodes[node]=n;return node;
+    }
+};
 #include "Agent.h"
 #include "KdTree.h"
 #include "RVOSimulator.h"
@@ -173,6 +202,77 @@ void aggregate_exact(const double* probability,int candidates,int horizon,int mo
             h-=std::log1p(-std::min(std::max(p*existence[i],0.),1.-1e-12));
         }
         out[n*horizon+k]=h;
+    }
+}
+
+void* risk_tree_build(const double* centers,const double* weights,const int64_t* offsets,int people,int horizon) {
+    RiskTree* tree=new RiskTree();tree->centers=centers;tree->weights=weights;tree->horizon=horizon;
+    for(int i=0;i<people;++i) for(int k=0;k<horizon;++k) {
+        std::vector<int> ids;for(int m=offsets[i];m<offsets[i+1];++m)ids.push_back(m);
+        tree->roots.push_back(tree->build(ids,0,ids.size(),k));
+    }
+    return tree;
+}
+void risk_tree_free(void* tree) {delete static_cast<RiskTree*>(tree);}
+
+double point_query(double d,int j,int m,const double* variance,const double* sigma,const double* radius,
+    const int64_t* component,const double* table,const double* derivative,int nodes,double spacing) {
+    if(variance[j]<1e-9)return d<=radius[m]?1.:0.;
+    double z=(d-radius[m])/sigma[j];
+    if(z>=8.)return 6.22096057427174e-16;
+    if(z < -8.)return 1.;
+    double index=(z+8.)/spacing;int left=std::min(std::max(int(std::floor(index)),0),nodes-2);
+    double t=std::min(std::max(index-left,0.),1.),t2=t*t,t3=t2*t;
+    int64_t slot=component[j]*nodes+left;
+    double q=(2*t3-3*t2+1)*table[slot]+(t3-2*t2+t)*spacing*derivative[slot]
+        +(-2*t3+3*t2)*table[slot+1]+(t3-t2)*spacing*derivative[slot+1];
+    if(!std::isfinite(q))return std::numeric_limits<double>::quiet_NaN();
+    return std::max(0.,std::min(1.,q));
+}
+
+// mode 0: clean full-mode interpolation; mode 1: adaptive per-person tree bounds.
+void approximate_risk(int mode,void* pointer,const double* positions,int candidates,int horizon,
+    const double* centers,const double* variance,const double* sigma,const double* radius,
+    const int64_t* component,const double* table,const double* derivative,int nodes,double spacing,
+    double error,const double* weights,const int64_t* offsets,const double* existence,int people,
+    double epsilon,double* lower,double* upper,int64_t* counts) {
+    RiskTree* tree=static_cast<RiskTree*>(pointer);std::vector<int> stack;
+    counts[0]=counts[1]=counts[2]=0;
+    for(int n=0;n<candidates;++n) for(int k=0;k<horizon;++k) {
+        double hl=0.,hu=0.,x=positions[2*(n*horizon+k)],y=positions[2*(n*horizon+k)+1];
+        for(int i=0;i<people;++i) {
+            double pl=0.,pu=0.;
+            if(mode==0) {
+                for(int m=offsets[i];m<offsets[i+1];++m) {
+                    int j=m*horizon+k;double dx=x-centers[2*j],dy=y-centers[2*j+1];
+                    pl+=weights[m]*point_query(std::sqrt(dx*dx+dy*dy),j,m,variance,sigma,radius,component,table,derivative,nodes,spacing);
+                    ++counts[0];
+                }
+                pu=pl;
+            } else {
+                stack.clear();stack.push_back(tree->roots[i*horizon+k]);
+                while(!stack.empty()) {
+                    RiskNode a=tree->nodes[stack.back()];stack.pop_back();++counts[1];
+                    if(a.w==0.)continue;
+                    int m=a.mode,j=m*horizon+k;double dx=x-a.x,dy=y-a.y,d=std::sqrt(dx*dx+dy*dy);
+                    double lo=point_query(d+a.r,j,m,variance,sigma,radius,component,table,derivative,nodes,spacing);
+                    double hi=point_query(std::max(0.,d-a.r),j,m,variance,sigma,radius,component,table,derivative,nodes,spacing);
+                    if(!std::isfinite(lo) || !std::isfinite(hi)) {
+                        lower[0]=upper[0]=std::numeric_limits<double>::quiet_NaN();return;
+                    }
+                    double pad=variance[j]<1e-9?0.:error+1e-12;
+                    lo=std::max(0.,lo-pad);hi=std::min(1.,hi+pad);counts[0]+=2;
+                    if(a.left<0 || hi-lo<=epsilon) {pl+=a.w*lo;pu+=a.w*hi;++counts[2];}
+                    else {stack.push_back(a.right);stack.push_back(a.left);}
+                }
+            }
+            if(!std::isfinite(pl) || !std::isfinite(pu)) {
+                lower[0]=upper[0]=std::numeric_limits<double>::quiet_NaN();return;
+            }
+            hl-=std::log1p(-std::min(std::max(pl*existence[i],0.),1.-1e-12));
+            hu-=std::log1p(-std::min(std::max(pu*existence[i],0.),1.-1e-12));
+        }
+        lower[n*horizon+k]=hl;upper[n*horizon+k]=hu;
     }
 }
 }

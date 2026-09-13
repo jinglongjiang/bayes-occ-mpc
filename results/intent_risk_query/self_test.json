@@ -1,0 +1,26 @@
+[
+  {
+    "variance": 0.0,
+    "width": 0.0,
+    "containment": true,
+    "split": true,
+    "permutation": true,
+    "nan_rejected": false
+  },
+  {
+    "variance": 0.09,
+    "width": 4.79160362691097e-05,
+    "containment": true,
+    "split": true,
+    "permutation": true,
+    "nan_rejected": true
+  },
+  {
+    "variance": 2.0,
+    "width": 6.09023275938706e-05,
+    "containment": true,
+    "split": true,
+    "permutation": true,
+    "nan_rejected": true
+  }
+]

@@ -1,0 +1,121 @@
+{
+  "base": "c711be6c1f4fd60c0f83a8a303bcd9b2d158551e",
+  "epsilon": 0.0001,
+  "states": [
+    [
+      2000000,
+      16,
+      3
+    ],
+    [
+      2000001,
+      16,
+      1
+    ],
+    [
+      2000002,
+      12,
+      3
+    ],
+    [
+      2000003,
+      16,
+      1
+    ],
+    [
+      2000010,
+      12,
+      0
+    ],
+    [
+      2000011,
+      24,
+      1
+    ],
+    [
+      2000012,
+      20,
+      4
+    ],
+    [
+      2000013,
+      20,
+      7
+    ],
+    [
+      2000020,
+      24,
+      0
+    ],
+    [
+      2000021,
+      20,
+      10
+    ],
+    [
+      2000022,
+      16,
+      4
+    ],
+    [
+      2000023,
+      28,
+      15
+    ]
+  ],
+  "repetitions": 3,
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "settings": {
+    "sigma": [
+      [
+        0.00022414219952382976,
+        7.254989278778869e-06
+      ],
+      [
+        7.254989278778869e-06,
+        0.00019372611764709578
+      ]
+    ],
+    "fraction": 0.25,
+    "tau": 0.25,
+    "count": 256,
+    "mh": 2
+  },
+  "scope": "fixed development inputs, no navigation; common canonical warm start at each state",
+  "hierarchy_score": "upper bound, no elite certification; conditional on valid floating probability envelopes",
+  "sources": {
+    "experiments/intent_risk_query.py": "eeb381b95f73c82d3d86e197b0a66ee7569f1a7f8752cb75001d3570aa34b58f",
+    "experiments/intent_kernels.cpp": "f538657554d7f8f846d828443f8edd518e835d08c88a1fe56f026406e5097e98"
+  }
+}

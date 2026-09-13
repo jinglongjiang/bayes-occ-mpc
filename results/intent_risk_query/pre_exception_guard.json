@@ -1,0 +1,2609 @@
+{
+  "protocol": {
+    "base": "c711be6c1f4fd60c0f83a8a303bcd9b2d158551e",
+    "epsilon": 0.0001,
+    "states": [
+      [
+        2000000,
+        16,
+        3
+      ],
+      [
+        2000001,
+        16,
+        1
+      ],
+      [
+        2000002,
+        12,
+        3
+      ],
+      [
+        2000003,
+        16,
+        1
+      ],
+      [
+        2000010,
+        12,
+        0
+      ],
+      [
+        2000011,
+        24,
+        1
+      ],
+      [
+        2000012,
+        20,
+        4
+      ],
+      [
+        2000013,
+        20,
+        7
+      ],
+      [
+        2000020,
+        24,
+        0
+      ],
+      [
+        2000021,
+        20,
+        10
+      ],
+      [
+        2000022,
+        16,
+        4
+      ],
+      [
+        2000023,
+        28,
+        15
+      ]
+    ],
+    "repetitions": 3,
+    "config": {
+      "dt": 0.25,
+      "horizon": 16,
+      "population": 512,
+      "iterations": 4,
+      "elite_fraction": 0.08,
+      "v_max": 1.0,
+      "a_max": 2.0,
+      "human_margin": 0.1,
+      "unknown_margin": 0.05,
+      "goal_stage_weight": 0.28,
+      "goal_terminal_weight": 9.0,
+      "smooth_weight": 0.35,
+      "effort_weight": 0.02,
+      "collision_weight": 20000.0,
+      "discomfort_weight": 500.0,
+      "unknown_weight": 6500.0,
+      "probability_weight": 1.0,
+      "chance_limit": 0.75,
+      "risk_gamma": 2.0,
+      "near_chance_limit": 0.225,
+      "occupancy_chance_limit": 0.15,
+      "fixed_uncertainty_radius": 0.35,
+      "stagnation_weight": 250.0,
+      "min_progress": 0.15,
+      "init_std": 0.65,
+      "min_std": 0.08,
+      "acceleration_std": 0.55,
+      "existence_override": null,
+      "conformal_visible_radii": [],
+      "conformal_hidden_radii": []
+    },
+    "settings": {
+      "sigma": [
+        [
+          0.00022414219952382976,
+          7.254989278778869e-06
+        ],
+        [
+          7.254989278778869e-06,
+          0.00019372611764709578
+        ]
+      ],
+      "fraction": 0.25,
+      "tau": 0.25,
+      "count": 256,
+      "mh": 2
+    },
+    "scope": "fixed development inputs, no navigation; common canonical warm start at each state",
+    "hierarchy_score": "upper bound, no elite certification; conditional on valid floating probability envelopes",
+    "sources": {
+      "experiments/intent_risk_query.py": "e30792f8267c81a76058dc6531941cdd0637abef277ef5602c80e65e504bcb8d",
+      "experiments/intent_kernels.cpp": "27a66f2aab32a0e7031d758522e126632baa9fc10f28fea44f32dbff2cffb18e"
+    }
+  },
+  "states": [
+    {
+      "state": [
+        2000000,
+        16,
+        3
+      ],
+      "people": 5,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 4.871502328751554e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.4558014548294038e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 3.0555052993722076e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 0.9278571233153343,
+          "compression": 0.15840306878089905,
+          "rollout": 1.771552488207817,
+          "observation": 0.6722332909703255,
+          "mpc": 109.0278560295701,
+          "total": 113.17251529544592,
+          "risk": 78.93708720803261,
+          "mpc_other": 30.090768821537495,
+          "table_build": 3.727210685610771,
+          "tree_build": 0.0,
+          "bound_or_point_query": 46.566592529416084,
+          "remaining_exact": 28.637905605137348
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 0.880013220012188,
+          "compression": 0.15979912132024765,
+          "rollout": 1.7689689993858337,
+          "observation": 0.6656693294644356,
+          "mpc": 85.90051624923944,
+          "total": 89.69708159565926,
+          "risk": 56.7973218858242,
+          "mpc_other": 29.10319436341524,
+          "table_build": 3.7102391943335533,
+          "tree_build": 0.0,
+          "bound_or_point_query": 52.912477403879166,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8421376,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 0.8787568658590317,
+          "compression": 0.1782383769750595,
+          "rollout": 1.831267960369587,
+          "observation": 0.6331922486424446,
+          "mpc": 52.4194585159421,
+          "total": 56.264703162014484,
+          "risk": 25.202917866408825,
+          "mpc_other": 27.216540649533272,
+          "table_build": 3.7109367549419403,
+          "tree_build": 0.4262486472725868,
+          "bound_or_point_query": 20.789294503629208,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            1158656,
+            579328,
+            371584
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 0.9057857096195221,
+          "compression": 0.15253480523824692,
+          "rollout": 1.803540624678135,
+          "observation": 0.711275264620781,
+          "mpc": 87.74093445390463,
+          "total": 91.58967062830925,
+          "risk": 58.36786888539791,
+          "mpc_other": 29.373065568506718,
+          "table_build": 3.931150771677494,
+          "tree_build": 0.0,
+          "bound_or_point_query": 54.2440228164196,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8421376,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 0.8736588060855865,
+          "compression": 0.17998367547988892,
+          "rollout": 1.775813288986683,
+          "observation": 0.6210394203662872,
+          "mpc": 51.52631364762783,
+          "total": 55.298362858593464,
+          "risk": 24.950086139142513,
+          "mpc_other": 26.576227508485317,
+          "table_build": 3.6782510578632355,
+          "tree_build": 0.45362673699855804,
+          "bound_or_point_query": 20.581024698913097,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            1158656,
+            579328,
+            371584
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 0.9191958233714104,
+          "compression": 0.16252323985099792,
+          "rollout": 1.7786063253879547,
+          "observation": 0.6188731640577316,
+          "mpc": 109.06913317739964,
+          "total": 113.16797509789467,
+          "risk": 78.71938683092594,
+          "mpc_other": 30.349746346473694,
+          "table_build": 3.7483731284737587,
+          "tree_build": 0.0,
+          "bound_or_point_query": 46.66919261217117,
+          "remaining_exact": 28.2801715657115
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 0.9253416210412979,
+          "compression": 0.15358254313468933,
+          "rollout": 1.7790962010622025,
+          "observation": 0.6188740953803062,
+          "mpc": 54.31672837585211,
+          "total": 58.051411993801594,
+          "risk": 26.0899867862463,
+          "mpc_other": 28.22674158960581,
+          "table_build": 3.7191780284047127,
+          "tree_build": 0.5666306242346764,
+          "bound_or_point_query": 21.567686460912228,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            1158656,
+            579328,
+            371584
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 0.9205229580402374,
+          "compression": 0.19520893692970276,
+          "rollout": 1.7853816971182823,
+          "observation": 0.7163742557168007,
+          "mpc": 108.73207356780767,
+          "total": 113.01257647573948,
+          "risk": 78.71121820062399,
+          "mpc_other": 30.020855367183685,
+          "table_build": 3.6866320297122,
+          "tree_build": 0.0,
+          "bound_or_point_query": 46.93207982927561,
+          "remaining_exact": 28.086711652576923
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 0.9206635877490044,
+          "compression": 0.148833729326725,
+          "rollout": 1.8052170053124428,
+          "observation": 0.6338199600577354,
+          "mpc": 85.49151942133904,
+          "total": 89.27348721772432,
+          "risk": 56.6530954092741,
+          "mpc_other": 28.838424012064934,
+          "table_build": 3.733007237315178,
+          "tree_build": 0.0,
+          "bound_or_point_query": 52.72697564214468,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8421376,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000001,
+        16,
+        1
+      ],
+      "people": 5,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 5.329299742617977e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.59207713390641e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 2,
+          "max_interval_width": 3.0426545341577516e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 1.3071009889245033,
+          "compression": 0.13765878975391388,
+          "rollout": 1.5703365206718445,
+          "observation": 0.6560301408171654,
+          "mpc": 97.34706114977598,
+          "total": 101.2897351756692,
+          "risk": 69.64197289198637,
+          "mpc_other": 27.705088257789612,
+          "table_build": 3.7570325657725334,
+          "tree_build": 0.0,
+          "bound_or_point_query": 65.62246941030025,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8454144,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 1.236281357705593,
+          "compression": 0.13528484851121902,
+          "rollout": 1.7340462654829025,
+          "observation": 0.6406642496585846,
+          "mpc": 73.5642509534955,
+          "total": 77.55197398364544,
+          "risk": 46.87872156500816,
+          "mpc_other": 26.68552938848734,
+          "table_build": 3.7607355043292046,
+          "tree_build": 0.5687270313501358,
+          "bound_or_point_query": 42.32450481504202,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            2424120,
+            1212060,
+            687950
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 1.2525534257292747,
+          "compression": 0.14233868569135666,
+          "rollout": 1.5001464635133743,
+          "observation": 0.6206193938851357,
+          "mpc": 175.26025976985693,
+          "total": 179.02902606874704,
+          "risk": 146.3997671380639,
+          "mpc_other": 28.860492631793022,
+          "table_build": 3.7883231416344643,
+          "tree_build": 0.0,
+          "bound_or_point_query": 60.79328712075949,
+          "remaining_exact": 81.78826607763767
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 1.2506674975156784,
+          "compression": 0.15113875269889832,
+          "rollout": 1.5228446573019028,
+          "observation": 0.6563793867826462,
+          "mpc": 73.52995779365301,
+          "total": 77.41557247936726,
+          "risk": 46.70006409287453,
+          "mpc_other": 26.829893700778484,
+          "table_build": 3.8381200283765793,
+          "tree_build": 0.573405995965004,
+          "bound_or_point_query": 42.06713568419218,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            2424120,
+            1212060,
+            687950
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 1.2318799272179604,
+          "compression": 0.16657449305057526,
+          "rollout": 1.4932313933968544,
+          "observation": 0.6157299503684044,
+          "mpc": 174.77192264050245,
+          "total": 178.53000201284885,
+          "risk": 145.89948300272226,
+          "mpc_other": 28.87243963778019,
+          "table_build": 3.794747404754162,
+          "tree_build": 0.0,
+          "bound_or_point_query": 60.547370463609695,
+          "remaining_exact": 81.55135903507471
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 1.253252848982811,
+          "compression": 0.13912562280893326,
+          "rollout": 1.489180140197277,
+          "observation": 0.6195018067955971,
+          "mpc": 96.58808261156082,
+          "total": 100.38129519671202,
+          "risk": 69.6295415982604,
+          "mpc_other": 26.95854101330042,
+          "table_build": 3.747115842998028,
+          "tree_build": 0.0,
+          "bound_or_point_query": 65.69336075335741,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8454144,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 1.2455005198717117,
+          "compression": 0.16678404062986374,
+          "rollout": 1.5260567888617516,
+          "observation": 0.6436677649617195,
+          "mpc": 174.51196815818548,
+          "total": 178.34848165512085,
+          "risk": 145.72599716484547,
+          "mpc_other": 28.785970993340015,
+          "table_build": 3.785320557653904,
+          "tree_build": 0.0,
+          "bound_or_point_query": 60.549115762114525,
+          "remaining_exact": 81.38667047023773
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 1.255907118320465,
+          "compression": 0.16964692622423172,
+          "rollout": 1.4834525063633919,
+          "observation": 0.6529567763209343,
+          "mpc": 96.26317769289017,
+          "total": 100.0774810090661,
+          "risk": 69.18156985193491,
+          "mpc_other": 27.081607840955257,
+          "table_build": 3.782595507800579,
+          "tree_build": 0.0,
+          "bound_or_point_query": 65.19314832985401,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            8454144,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 1.2397030368447304,
+          "compression": 0.1684604212641716,
+          "rollout": 1.504753716289997,
+          "observation": 0.7329974323511124,
+          "mpc": 74.40522313117981,
+          "total": 78.35160009562969,
+          "risk": 47.639233991503716,
+          "mpc_other": 26.765989139676094,
+          "table_build": 3.7999171763658524,
+          "tree_build": 0.5986187607049942,
+          "bound_or_point_query": 43.01398899406195,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            2424120,
+            1212060,
+            687950
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000002,
+        12,
+        3
+      ],
+      "people": 5,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 5.011611670102667e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.079591914616209e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 3.598070210935472e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 2.2990023717284203,
+          "compression": 0.41514262557029724,
+          "rollout": 6.006727926433086,
+          "observation": 0.6245309486985207,
+          "mpc": 208.00971891731024,
+          "total": 217.66515355557203,
+          "risk": 179.328091442585,
+          "mpc_other": 28.681627474725246,
+          "table_build": 4.377442412078381,
+          "tree_build": 0.8776402100920677,
+          "bound_or_point_query": 173.77561889588833,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            10364692,
+            5182346,
+            2673093
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 2.4541225284337997,
+          "compression": 0.4405668005347252,
+          "rollout": 6.029914133250713,
+          "observation": 0.6243214011192322,
+          "mpc": 603.1601717695594,
+          "total": 613.0115846171975,
+          "risk": 573.0367200449109,
+          "mpc_other": 30.123451724648476,
+          "table_build": 4.415855742990971,
+          "tree_build": 0.0,
+          "bound_or_point_query": 261.6982152685523,
+          "remaining_exact": 306.9155225530267
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 2.3230277001857758,
+          "compression": 0.4380512982606888,
+          "rollout": 6.062671542167664,
+          "observation": 0.6611980497837067,
+          "mpc": 282.7039500698447,
+          "total": 292.45821200311184,
+          "risk": 255.03273215144873,
+          "mpc_other": 27.671217918395996,
+          "table_build": 4.4065676629543304,
+          "tree_build": 0.0,
+          "bound_or_point_query": 250.32444670796394,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            25034752,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 2.3537585511803627,
+          "compression": 0.41053444147109985,
+          "rollout": 6.0033043846488,
+          "observation": 0.6279535591602325,
+          "mpc": 603.5774108022451,
+          "total": 613.2702110335231,
+          "risk": 573.5607463866472,
+          "mpc_other": 30.016664415597916,
+          "table_build": 4.366268403828144,
+          "tree_build": 0.0,
+          "bound_or_point_query": 262.03429605811834,
+          "remaining_exact": 307.1559900417924
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 2.3245643824338913,
+          "compression": 0.4103919491171837,
+          "rollout": 6.1464812606573105,
+          "observation": 0.6241807714104652,
+          "mpc": 281.5911499783397,
+          "total": 291.409807279706,
+          "risk": 253.96644789725542,
+          "mpc_other": 27.62470208108425,
+          "table_build": 4.4344337657094,
+          "tree_build": 0.0,
+          "bound_or_point_query": 249.26919862627983,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            25034752,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 2.3924512788653374,
+          "compression": 0.46431180089712143,
+          "rollout": 6.095357239246368,
+          "observation": 0.6255777552723885,
+          "mpc": 206.87352307140827,
+          "total": 216.75182413309813,
+          "risk": 179.16039936244488,
+          "mpc_other": 27.713123708963394,
+          "table_build": 4.542271606624126,
+          "tree_build": 0.9375652298331261,
+          "bound_or_point_query": 173.33512473851442,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            10364692,
+            5182346,
+            2673093
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 2.7010859921574593,
+          "compression": 0.40878821164369583,
+          "rollout": 6.111491471529007,
+          "observation": 0.6454139947891235,
+          "mpc": 282.11455047130585,
+          "total": 292.3009963706136,
+          "risk": 254.82977088540792,
+          "mpc_other": 27.284779585897923,
+          "table_build": 4.409570246934891,
+          "tree_build": 0.0,
+          "bound_or_point_query": 250.15780329704285,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            25034752,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 2.2626835852861404,
+          "compression": 0.43407175689935684,
+          "rollout": 6.042207591235638,
+          "observation": 0.6366129964590073,
+          "mpc": 205.84034454077482,
+          "total": 215.5031803995371,
+          "risk": 178.91015205532312,
+          "mpc_other": 26.9301924854517,
+          "table_build": 4.337702877819538,
+          "tree_build": 0.8499119430780411,
+          "bound_or_point_query": 173.39602671563625,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            10364692,
+            5182346,
+            2673093
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 2.286571078002453,
+          "compression": 0.4615914076566696,
+          "rollout": 6.022232584655285,
+          "observation": 0.6676940247416496,
+          "mpc": 605.6500524282455,
+          "total": 615.4009643942118,
+          "risk": 576.1887766420841,
+          "mpc_other": 29.461275786161423,
+          "table_build": 4.390014335513115,
+          "tree_build": 0.0,
+          "bound_or_point_query": 262.7160279080272,
+          "remaining_exact": 309.0769350528717
+        }
+      ]
+    },
+    {
+      "state": [
+        2000003,
+        16,
+        1
+      ],
+      "people": 5,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 4.1479283569012537e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.819836281724897e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 3.870789963331831e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 1.3197427615523338,
+          "compression": 0.3152675926685333,
+          "rollout": 3.367452882230282,
+          "observation": 0.6482768803834915,
+          "mpc": 492.46461875736713,
+          "total": 498.3791531994939,
+          "risk": 463.0514606833458,
+          "mpc_other": 29.41315807402134,
+          "table_build": 4.082988016307354,
+          "tree_build": 0.0,
+          "bound_or_point_query": 166.4598360657692,
+          "remaining_exact": 292.50081442296505
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 1.2681987136602402,
+          "compression": 0.2873307093977928,
+          "rollout": 3.358162008225918,
+          "observation": 0.6112605333328247,
+          "mpc": 191.51643197983503,
+          "total": 197.3257139325142,
+          "risk": 164.36644829809666,
+          "mpc_other": 27.149983681738377,
+          "table_build": 4.0221549570560455,
+          "tree_build": 0.0,
+          "bound_or_point_query": 160.12254357337952,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16449536,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 1.2903381139039993,
+          "compression": 0.2747606486082077,
+          "rollout": 3.3661946654319763,
+          "observation": 0.6217369809746742,
+          "mpc": 228.72302401810884,
+          "total": 234.56757701933384,
+          "risk": 201.08484290540218,
+          "mpc_other": 27.63818111270666,
+          "table_build": 4.068112000823021,
+          "tree_build": 0.9673871099948883,
+          "bound_or_point_query": 195.73044404387474,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            11432200,
+            5716100,
+            2939970
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 1.302562654018402,
+          "compression": 0.3007417544722557,
+          "rollout": 3.37786041200161,
+          "observation": 0.6234133616089821,
+          "mpc": 191.3506956771016,
+          "total": 197.25957326591015,
+          "risk": 164.02694210410118,
+          "mpc_other": 27.32375357300043,
+          "table_build": 4.08815685659647,
+          "tree_build": 0.0,
+          "bound_or_point_query": 159.67834554612637,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16449536,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 1.291944645345211,
+          "compression": 0.42673666030168533,
+          "rollout": 3.422836773097515,
+          "observation": 0.631166622042656,
+          "mpc": 228.31577342003584,
+          "total": 234.3500880524516,
+          "risk": 200.77970437705517,
+          "mpc_other": 27.53606904298067,
+          "table_build": 4.054282791912556,
+          "tree_build": 0.9692031890153885,
+          "bound_or_point_query": 195.39889972656965,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            11432200,
+            5716100,
+            2939970
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 1.3061240315437317,
+          "compression": 0.361085869371891,
+          "rollout": 3.429054282605648,
+          "observation": 0.6497437134385109,
+          "mpc": 493.6013035476208,
+          "total": 499.6187165379524,
+          "risk": 463.37448339909315,
+          "mpc_other": 30.226820148527622,
+          "table_build": 4.0315138176083565,
+          "tree_build": 0.0,
+          "bound_or_point_query": 165.32643139362335,
+          "remaining_exact": 294.01423037052155
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 1.2610750272870064,
+          "compression": 0.32078661024570465,
+          "rollout": 3.3808620646595955,
+          "observation": 0.6443662568926811,
+          "mpc": 229.83344830572605,
+          "total": 235.7030063867569,
+          "risk": 202.09050364792347,
+          "mpc_other": 27.742944657802582,
+          "table_build": 4.049324430525303,
+          "tree_build": 0.9629875421524048,
+          "bound_or_point_query": 196.71955239027739,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            11432200,
+            5716100,
+            2939970
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 1.3051452115178108,
+          "compression": 0.35046879202127457,
+          "rollout": 3.3555785194039345,
+          "observation": 0.6299782544374466,
+          "mpc": 492.24161077290773,
+          "total": 498.2105540111661,
+          "risk": 462.15000189840794,
+          "mpc_other": 30.091608874499798,
+          "table_build": 4.10191435366869,
+          "tree_build": 0.0,
+          "bound_or_point_query": 164.97491672635078,
+          "remaining_exact": 293.085397221148
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 1.2516453862190247,
+          "compression": 0.3021378070116043,
+          "rollout": 3.346710465848446,
+          "observation": 0.6210394203662872,
+          "mpc": 191.33218750357628,
+          "total": 197.10654858499765,
+          "risk": 164.02813233435154,
+          "mpc_other": 27.30405516922474,
+          "table_build": 4.035215824842453,
+          "tree_build": 0.0,
+          "bound_or_point_query": 159.76586006581783,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16449536,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000010,
+        12,
+        0
+      ],
+      "people": 10,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 5.431729268590146e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.307096339265735e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 3.434503212018658e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 2.7144262567162514,
+          "compression": 0.5499394610524178,
+          "rollout": 10.927824303507805,
+          "observation": 1.0140426456928253,
+          "mpc": 368.6791993677616,
+          "total": 384.79875959455967,
+          "risk": 330.8257246389985,
+          "mpc_other": 37.8534747287631,
+          "table_build": 5.158420652151108,
+          "tree_build": 0.0,
+          "bound_or_point_query": 325.3346439450979,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33128448,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 2.6843929663300514,
+          "compression": 0.5876533687114716,
+          "rollout": 10.443955659866333,
+          "observation": 1.0127155110239983,
+          "mpc": 171.19179852306843,
+          "total": 186.81072909384966,
+          "risk": 131.60183560103178,
+          "mpc_other": 39.58996292203665,
+          "table_build": 5.18049206584692,
+          "tree_build": 0.9864550083875656,
+          "bound_or_point_query": 125.08588563650846,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7235964,
+            3617982,
+            1956447
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 2.9897447675466537,
+          "compression": 0.582205131649971,
+          "rollout": 10.598797351121902,
+          "observation": 1.0072682052850723,
+          "mpc": 672.377779148519,
+          "total": 688.3728113025427,
+          "risk": 627.2858344018459,
+          "mpc_other": 45.09194474667311,
+          "table_build": 5.124407820403576,
+          "tree_build": 0.0,
+          "bound_or_point_query": 329.7713864594698,
+          "remaining_exact": 292.38767083734274
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 2.6244688779115677,
+          "compression": 0.6067892536520958,
+          "rollout": 10.79121045768261,
+          "observation": 1.008734107017517,
+          "mpc": 173.76954294741154,
+          "total": 189.60505444556475,
+          "risk": 131.88902661204338,
+          "mpc_other": 41.880516335368156,
+          "table_build": 5.119937472045422,
+          "tree_build": 0.8531259372830391,
+          "bound_or_point_query": 125.54307095706463,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7235964,
+            3617982,
+            1956447
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 2.636061981320381,
+          "compression": 0.5506370216608047,
+          "rollout": 10.636094957590103,
+          "observation": 1.003076322376728,
+          "mpc": 673.4356814995408,
+          "total": 689.0872977674007,
+          "risk": 628.3810390159488,
+          "mpc_other": 45.05464248359203,
+          "table_build": 5.111417733132839,
+          "tree_build": 0.0,
+          "bound_or_point_query": 331.0460802167654,
+          "remaining_exact": 292.2426788136363
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 2.6503102853894234,
+          "compression": 0.5797604098916054,
+          "rollout": 10.73575858026743,
+          "observation": 0.9889686480164528,
+          "mpc": 370.49056217074394,
+          "total": 386.19274366647005,
+          "risk": 328.11395451426506,
+          "mpc_other": 42.37660765647888,
+          "table_build": 5.228822119534016,
+          "tree_build": 0.0,
+          "bound_or_point_query": 322.5905345752835,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33128448,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 2.701016142964363,
+          "compression": 0.5730576813220978,
+          "rollout": 10.83416398614645,
+          "observation": 1.041838899254799,
+          "mpc": 677.6618473231792,
+          "total": 693.6665857210755,
+          "risk": 631.4715640619397,
+          "mpc_other": 46.19028326123953,
+          "table_build": 5.202211439609528,
+          "tree_build": 0.0,
+          "bound_or_point_query": 329.92266304790974,
+          "remaining_exact": 296.3425684720278
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 2.849152311682701,
+          "compression": 0.600435771048069,
+          "rollout": 10.789603926241398,
+          "observation": 1.0117366909980774,
+          "mpc": 370.9353879094124,
+          "total": 386.98943611234426,
+          "risk": 328.7392510101199,
+          "mpc_other": 42.19613689929247,
+          "table_build": 5.257247947156429,
+          "tree_build": 0.0,
+          "bound_or_point_query": 323.1861526146531,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33128448,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 2.8693359345197678,
+          "compression": 0.620061531662941,
+          "rollout": 10.670382529497147,
+          "observation": 1.027451828122139,
+          "mpc": 174.9157952144742,
+          "total": 190.96376840025187,
+          "risk": 131.78775180131197,
+          "mpc_other": 43.12804341316223,
+          "table_build": 5.204657092690468,
+          "tree_build": 0.8544512093067169,
+          "bound_or_point_query": 125.34038908779621,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7235964,
+            3617982,
+            1956447
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000011,
+        24,
+        1
+      ],
+      "people": 10,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 5.81955312217719e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.3623412981372367e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 2.9589796999185403e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 11.570303700864315,
+          "compression": 0.5423258990049362,
+          "rollout": 6.77101407200098,
+          "observation": 1.086539588868618,
+          "mpc": 180.83068076521158,
+          "total": 201.68213546276093,
+          "risk": 135.22309437394142,
+          "mpc_other": 45.60758639127016,
+          "table_build": 4.930386319756508,
+          "tree_build": 2.1430449560284615,
+          "bound_or_point_query": 127.74765025824308,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7452000,
+            3726000,
+            2026840
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 11.363082565367222,
+          "compression": 0.5746614187955856,
+          "rollout": 6.798670627176762,
+          "observation": 1.1452063918113708,
+          "mpc": 476.54187399894,
+          "total": 497.35714960843325,
+          "risk": 429.6498131006956,
+          "mpc_other": 46.89206089824438,
+          "table_build": 4.87947091460228,
+          "tree_build": 0.0,
+          "bound_or_point_query": 221.91045619547367,
+          "remaining_exact": 202.8582813218236
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 11.670039966702461,
+          "compression": 0.5485434085130692,
+          "rollout": 6.9771865382790565,
+          "observation": 1.1213896796107292,
+          "mpc": 298.0757774785161,
+          "total": 319.22790315002203,
+          "risk": 252.80406326055527,
+          "mpc_other": 45.271714217960835,
+          "table_build": 4.875419661402702,
+          "tree_build": 0.0,
+          "bound_or_point_query": 247.6617032662034,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            32604160,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 11.673251166939735,
+          "compression": 0.5755005404353142,
+          "rollout": 6.774295121431351,
+          "observation": 1.1047683656215668,
+          "mpc": 477.22367476671934,
+          "total": 498.30672703683376,
+          "risk": 430.20505644381046,
+          "mpc_other": 47.01861832290888,
+          "table_build": 4.8335837200284,
+          "tree_build": 0.0,
+          "bound_or_point_query": 223.16824737936258,
+          "remaining_exact": 202.20323000103235
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 12.053683400154114,
+          "compression": 0.6283726543188095,
+          "rollout": 6.680567748844624,
+          "observation": 1.108049415051937,
+          "mpc": 299.6417135000229,
+          "total": 320.51523867994547,
+          "risk": 258.0581661313772,
+          "mpc_other": 41.58354736864567,
+          "table_build": 4.878771491348743,
+          "tree_build": 0.0,
+          "bound_or_point_query": 252.86405719816685,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            32604160,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 11.442353017628193,
+          "compression": 0.5710301920771599,
+          "rollout": 6.748874671757221,
+          "observation": 1.0875165462493896,
+          "mpc": 175.81299226731062,
+          "total": 195.949399843812,
+          "risk": 135.21841447800398,
+          "mpc_other": 40.59457778930664,
+          "table_build": 4.838194698095322,
+          "tree_build": 2.2579357028007507,
+          "bound_or_point_query": 127.73724272847176,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7452000,
+            3726000,
+            2026840
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 11.43795344978571,
+          "compression": 0.6058821454644203,
+          "rollout": 7.246288470923901,
+          "observation": 1.0875165462493896,
+          "mpc": 299.0752924233675,
+          "total": 319.7328634560108,
+          "risk": 259.91059746593237,
+          "mpc_other": 39.16469495743513,
+          "table_build": 4.820523783564568,
+          "tree_build": 0.0,
+          "bound_or_point_query": 254.79946099221706,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            32604160,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 11.314750649034977,
+          "compression": 0.5701221525669098,
+          "rollout": 6.8673258647322655,
+          "observation": 1.0917754843831062,
+          "mpc": 172.94896487146616,
+          "total": 193.10450740158558,
+          "risk": 134.49344970285892,
+          "mpc_other": 38.455515168607235,
+          "table_build": 4.851743578910828,
+          "tree_build": 2.257656306028366,
+          "bound_or_point_query": 127.01102159917355,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            7452000,
+            3726000,
+            2026840
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 11.473781429231167,
+          "compression": 0.5370881408452988,
+          "rollout": 6.722819991409779,
+          "observation": 1.0850708931684494,
+          "mpc": 472.34462294727564,
+          "total": 493.0172814056277,
+          "risk": 429.4495778158307,
+          "mpc_other": 42.89504513144493,
+          "table_build": 4.900144413113594,
+          "tree_build": 0.0,
+          "bound_or_point_query": 223.07144571095705,
+          "remaining_exact": 201.47616881877184
+        }
+      ]
+    },
+    {
+      "state": [
+        2000012,
+        20,
+        4
+      ],
+      "people": 10,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 4.824341458542492e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.574693074748613e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 3.421400391870333e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 8.242732845246792,
+          "compression": 0.3360109403729439,
+          "rollout": 4.011888988316059,
+          "observation": 1.0011913254857063,
+          "mpc": 600.7817583158612,
+          "total": 614.687941968441,
+          "risk": 558.881058357656,
+          "mpc_other": 41.90069995820522,
+          "table_build": 4.511750303208828,
+          "tree_build": 0.0,
+          "bound_or_point_query": 239.55781664699316,
+          "remaining_exact": 314.8067370057106
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 8.003243245184422,
+          "compression": 0.44189300388097763,
+          "rollout": 4.039265215396881,
+          "observation": 1.0002125054597855,
+          "mpc": 259.1797662898898,
+          "total": 272.93830271810293,
+          "risk": 221.53400722891092,
+          "mpc_other": 37.64575906097889,
+          "table_build": 4.552886821329594,
+          "tree_build": 0.0,
+          "bound_or_point_query": 216.7250057682395,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16809984,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 7.962455041706562,
+          "compression": 0.2676369622349739,
+          "rollout": 4.304667003452778,
+          "observation": 0.9854771196842194,
+          "mpc": 449.55902453511953,
+          "total": 463.3584190160036,
+          "risk": 413.1913809105754,
+          "mpc_other": 36.367643624544144,
+          "table_build": 4.534448496997356,
+          "tree_build": 0.9510442614555359,
+          "bound_or_point_query": 407.2878072038293,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            23835584,
+            11917792,
+            6106352
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 7.958892732858658,
+          "compression": 0.2887994050979614,
+          "rollout": 4.3411944061517715,
+          "observation": 0.9930888190865517,
+          "mpc": 257.92099721729755,
+          "total": 271.7819921672344,
+          "risk": 221.43203485757113,
+          "mpc_other": 36.48896235972643,
+          "table_build": 4.498760215938091,
+          "tree_build": 0.0,
+          "bound_or_point_query": 216.65180940181017,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16809984,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 8.014557883143425,
+          "compression": 0.28432905673980713,
+          "rollout": 4.336517304182053,
+          "observation": 1.003216952085495,
+          "mpc": 451.74453128129244,
+          "total": 465.7176258042455,
+          "risk": 415.14487005770206,
+          "mpc_other": 36.599661223590374,
+          "table_build": 4.598424769937992,
+          "tree_build": 0.980098731815815,
+          "bound_or_point_query": 409.1485496610403,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            23835584,
+            11917792,
+            6106352
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 8.015465922653675,
+          "compression": 0.2720346674323082,
+          "rollout": 4.245788790285587,
+          "observation": 1.019350253045559,
+          "mpc": 601.337494328618,
+          "total": 615.2181858196855,
+          "risk": 560.6556152924895,
+          "mpc_other": 40.68187903612852,
+          "table_build": 4.503928124904633,
+          "tree_build": 0.0,
+          "bound_or_point_query": 240.14770705252886,
+          "remaining_exact": 316.00279081612825
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 8.148026652634144,
+          "compression": 0.29801856726408005,
+          "rollout": 4.178741946816444,
+          "observation": 1.0051727294921875,
+          "mpc": 452.23636366426945,
+          "total": 466.1922752857208,
+          "risk": 414.6936871111393,
+          "mpc_other": 37.54267655313015,
+          "table_build": 4.569440148770809,
+          "tree_build": 0.9682253003120422,
+          "bound_or_point_query": 408.75149331986904,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            23835584,
+            11917792,
+            6106352
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 8.222757838666439,
+          "compression": 0.29738899320364,
+          "rollout": 4.117139615118504,
+          "observation": 1.02151557803154,
+          "mpc": 599.8453805223107,
+          "total": 613.8158896937966,
+          "risk": 559.7215387970209,
+          "mpc_other": 40.12384172528982,
+          "table_build": 4.512240178883076,
+          "tree_build": 0.0,
+          "bound_or_point_query": 240.3271347284317,
+          "remaining_exact": 314.8803496733308
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 8.042983710765839,
+          "compression": 0.2911034971475601,
+          "rollout": 4.169312305748463,
+          "observation": 1.0025175288319588,
+          "mpc": 259.28194634616375,
+          "total": 273.08671921491623,
+          "risk": 221.78976610302925,
+          "mpc_other": 37.4921802431345,
+          "table_build": 4.518594592809677,
+          "tree_build": 0.0,
+          "bound_or_point_query": 216.9733652845025,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            16809984,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000013,
+        20,
+        7
+      ],
+      "people": 10,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 4.7210225717631005e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 2.9890297959325046e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 4.077569921512791e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 2.9348479583859444,
+          "compression": 0.5738241598010063,
+          "rollout": 9.064776822924614,
+          "observation": 1.1427607387304306,
+          "mpc": 416.0072151571512,
+          "total": 430.0647471100092,
+          "risk": 376.4655087143183,
+          "mpc_other": 39.54170644283295,
+          "table_build": 5.339663475751877,
+          "tree_build": 0.0,
+          "bound_or_point_query": 370.8256660029292,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33062912,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 2.8206557035446167,
+          "compression": 0.5781557410955429,
+          "rollout": 9.257960133254528,
+          "observation": 1.0872362181544304,
+          "mpc": 635.169230401516,
+          "total": 649.2240391671658,
+          "risk": 590.3181079775095,
+          "mpc_other": 44.85112242400646,
+          "table_build": 5.177977494895458,
+          "tree_build": 1.5136254951357841,
+          "bound_or_point_query": 583.206401206553,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            34421500,
+            17210750,
+            8769215
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 2.8019389137625694,
+          "compression": 0.5650240927934647,
+          "rollout": 9.098303504288197,
+          "observation": 1.0959664359688759,
+          "mpc": 869.2715177312493,
+          "total": 883.1411749124527,
+          "risk": 823.709680698812,
+          "mpc_other": 45.561837032437325,
+          "table_build": 5.109252408146858,
+          "tree_build": 0.0,
+          "bound_or_point_query": 395.70451341569424,
+          "remaining_exact": 422.894025221467
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 2.7818242087960243,
+          "compression": 0.6139175966382027,
+          "rollout": 9.037259966135025,
+          "observation": 1.1232756078243256,
+          "mpc": 635.0687276571989,
+          "total": 648.963738232851,
+          "risk": 590.3623178601265,
+          "mpc_other": 44.70640979707241,
+          "table_build": 5.219602957367897,
+          "tree_build": 1.567893661558628,
+          "bound_or_point_query": 583.085504360497,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            34421500,
+            17210750,
+            8769215
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 2.8508277609944344,
+          "compression": 0.5753617733716965,
+          "rollout": 9.054301306605339,
+          "observation": 1.1121705174446106,
+          "mpc": 869.0520040690899,
+          "total": 882.9714581370354,
+          "risk": 823.7593397498131,
+          "mpc_other": 45.29266431927681,
+          "table_build": 5.131253041327,
+          "tree_build": 0.0,
+          "bound_or_point_query": 395.916067995131,
+          "remaining_exact": 422.7087339386344
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 2.8373487293720245,
+          "compression": 0.6007133051753044,
+          "rollout": 9.084751829504967,
+          "observation": 1.129073090851307,
+          "mpc": 417.2789752483368,
+          "total": 431.26862216740847,
+          "risk": 377.0842421799898,
+          "mpc_other": 40.19473306834698,
+          "table_build": 5.253825336694717,
+          "tree_build": 0.0,
+          "bound_or_point_query": 371.5149397030473,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33062912,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 3.031649626791477,
+          "compression": 0.5970131605863571,
+          "rollout": 9.025107137858868,
+          "observation": 1.0951291769742966,
+          "mpc": 869.3652469664812,
+          "total": 883.4276692941785,
+          "risk": 825.3893880173564,
+          "mpc_other": 43.97585894912481,
+          "table_build": 5.151018500328064,
+          "tree_build": 0.0,
+          "bound_or_point_query": 397.8082351386547,
+          "remaining_exact": 422.42894507944584
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 2.789018675684929,
+          "compression": 0.5705421790480614,
+          "rollout": 9.21095721423626,
+          "observation": 1.1056745424866676,
+          "mpc": 420.8780247718096,
+          "total": 434.87214017659426,
+          "risk": 380.86446560919285,
+          "mpc_other": 40.01355916261673,
+          "table_build": 5.093957297503948,
+          "tree_build": 0.0,
+          "bound_or_point_query": 375.41557010263205,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            33062912,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 2.886587753891945,
+          "compression": 0.5485415458679199,
+          "rollout": 9.198594838380814,
+          "observation": 1.095060259103775,
+          "mpc": 635.3794578462839,
+          "total": 649.3990663439035,
+          "risk": 590.7140430063009,
+          "mpc_other": 44.66541483998299,
+          "table_build": 5.123150534927845,
+          "tree_build": 1.5247296541929245,
+          "bound_or_point_query": 583.6276924237609,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            34421500,
+            17210750,
+            8769215
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000020,
+        24,
+        0
+      ],
+      "people": 20,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 3.2527569987506055e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.5820081711004925e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 1,
+          "max_interval_width": 5.010170950049686e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 13.602998107671738,
+          "compression": 1.8761763349175453,
+          "rollout": 44.21667382121086,
+          "observation": 1.8538972362875938,
+          "mpc": 1243.651743978262,
+          "total": 1305.6323500350118,
+          "risk": 1180.8599177747965,
+          "mpc_other": 62.79182620346546,
+          "table_build": 7.86900520324707,
+          "tree_build": 8.302797563374043,
+          "bound_or_point_query": 1164.1573123633862,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67571816,
+            33785908,
+            17187866
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 13.837669044733047,
+          "compression": 1.8650013953447342,
+          "rollout": 44.2637475207448,
+          "observation": 1.9263233989477158,
+          "mpc": 1660.4412635788321,
+          "total": 1723.6546585336328,
+          "risk": 1594.2558655515313,
+          "mpc_other": 66.18539802730083,
+          "table_build": 8.019865490496159,
+          "tree_build": 0.0,
+          "bound_or_point_query": 827.9604278504848,
+          "remaining_exact": 758.2780867815018
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 13.66459857672453,
+          "compression": 1.9103307276964188,
+          "rollout": 44.193560257554054,
+          "observation": 1.8965015187859535,
+          "mpc": 932.7834891155362,
+          "total": 995.7383973523974,
+          "risk": 863.0278175696731,
+          "mpc_other": 69.75567154586315,
+          "table_build": 7.840580306947231,
+          "tree_build": 0.0,
+          "bound_or_point_query": 854.8603737726808,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89260032,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 14.036579988896847,
+          "compression": 1.8869303166866302,
+          "rollout": 44.14523020386696,
+          "observation": 1.8497062847018242,
+          "mpc": 1656.7840343341231,
+          "total": 1720.0470874086022,
+          "risk": 1590.4301069676876,
+          "mpc_other": 66.35392736643553,
+          "table_build": 7.941152900457382,
+          "tree_build": 0.0,
+          "bound_or_point_query": 825.1179773360491,
+          "remaining_exact": 757.3623824864626
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 13.728715479373932,
+          "compression": 1.950979232788086,
+          "rollout": 44.14348304271698,
+          "observation": 1.862487755715847,
+          "mpc": 933.731741271913,
+          "total": 996.7106049880385,
+          "risk": 863.8743776828051,
+          "mpc_other": 69.85736358910799,
+          "table_build": 8.002613671123981,
+          "tree_build": 0.0,
+          "bound_or_point_query": 855.5373568087816,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89260032,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 13.784170150756836,
+          "compression": 1.957823522388935,
+          "rollout": 43.9770482480526,
+          "observation": 1.908373087644577,
+          "mpc": 1248.9728284999728,
+          "total": 1311.0600132495165,
+          "risk": 1183.909728191793,
+          "mpc_other": 65.06310030817986,
+          "table_build": 7.959939539432526,
+          "tree_build": 8.433472365140915,
+          "bound_or_point_query": 1166.9565280899405,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67571816,
+            33785908,
+            17187866
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 13.946623541414738,
+          "compression": 1.8387408927083015,
+          "rollout": 44.07691955566406,
+          "observation": 1.9136127084493637,
+          "mpc": 937.6405412331223,
+          "total": 999.8673414811492,
+          "risk": 867.8695019334555,
+          "mpc_other": 69.77103929966688,
+          "table_build": 8.076019585132599,
+          "tree_build": 0.0,
+          "bound_or_point_query": 859.4836620613933,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89260032,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 13.589308597147465,
+          "compression": 1.9278591498732567,
+          "rollout": 43.967198580503464,
+          "observation": 1.8501244485378265,
+          "mpc": 1252.6783179491758,
+          "total": 1314.4734231755137,
+          "risk": 1185.0676434114575,
+          "mpc_other": 67.6106745377183,
+          "table_build": 7.975165732204914,
+          "tree_build": 8.102070540189743,
+          "bound_or_point_query": 1168.4533199295402,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67571816,
+            33785908,
+            17187866
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 13.685692101716995,
+          "compression": 1.8937783315777779,
+          "rollout": 44.05024088919163,
+          "observation": 1.8907049670815468,
+          "mpc": 1673.7092984840274,
+          "total": 1735.614544712007,
+          "risk": 1599.8911699280143,
+          "mpc_other": 73.81812855601311,
+          "table_build": 8.093618787825108,
+          "tree_build": 0.0,
+          "bound_or_point_query": 829.6747803688049,
+          "remaining_exact": 762.1198389679193
+        }
+      ]
+    },
+    {
+      "state": [
+        2000021,
+        20,
+        10
+      ],
+      "people": 20,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 3.5192296482522423e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.295703761159799e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 4.5354954275031445e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 16.57493319362402,
+          "compression": 1.304655335843563,
+          "rollout": 24.544653482735157,
+          "observation": 1.704225316643715,
+          "mpc": 1618.050618097186,
+          "total": 1662.5674068927765,
+          "risk": 1562.3676320537925,
+          "mpc_other": 55.68298604339361,
+          "table_build": 7.193558849394321,
+          "tree_build": 0.0,
+          "bound_or_point_query": 763.0427367985249,
+          "remaining_exact": 792.118065059185
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 16.279220581054688,
+          "compression": 1.3321749866008759,
+          "rollout": 24.665899574756622,
+          "observation": 1.6786614432930946,
+          "mpc": 809.374799951911,
+          "total": 853.7185899913311,
+          "risk": 753.9512105286121,
+          "mpc_other": 55.423589423298836,
+          "table_build": 7.191742770373821,
+          "tree_build": 0.0,
+          "bound_or_point_query": 746.4418224990368,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67764224,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 16.12891908735037,
+          "compression": 1.3073114678263664,
+          "rollout": 24.791615083813667,
+          "observation": 1.6539394855499268,
+          "mpc": 1426.2893181294203,
+          "total": 1470.5894570797682,
+          "risk": 1371.41901999712,
+          "mpc_other": 54.87029813230038,
+          "table_build": 7.131051272153854,
+          "tree_build": 4.282806999981403,
+          "bound_or_point_query": 1359.4998512417078,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            78256060,
+            39128030,
+            19826159
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 16.022618860006332,
+          "compression": 1.3101762160658836,
+          "rollout": 24.842667393386364,
+          "observation": 1.6682567074894905,
+          "mpc": 805.9602733701468,
+          "total": 850.1630527898669,
+          "risk": 749.5612651109695,
+          "mpc_other": 56.39900825917721,
+          "table_build": 7.450021803379059,
+          "tree_build": 0.0,
+          "bound_or_point_query": 741.7753012850881,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67764224,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 76.8990870565176,
+          "compression": 1.2825857847929,
+          "rollout": 24.826047010719776,
+          "observation": 1.708834432065487,
+          "mpc": 1419.1612023860216,
+          "total": 1524.2662886157632,
+          "risk": 1365.490097552538,
+          "mpc_other": 53.671104833483696,
+          "table_build": 7.229388691484928,
+          "tree_build": 4.322895780205727,
+          "bound_or_point_query": 1353.4188140183687,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            78256060,
+            39128030,
+            19826159
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 16.18779543787241,
+          "compression": 1.269104890525341,
+          "rollout": 24.792661890387535,
+          "observation": 1.6871830448508263,
+          "mpc": 1617.9902739822865,
+          "total": 1662.335460074246,
+          "risk": 1562.6761252060533,
+          "mpc_other": 55.314148776233196,
+          "table_build": 7.163108326494694,
+          "tree_build": 0.0,
+          "bound_or_point_query": 767.5059475004673,
+          "remaining_exact": 788.0079094320536
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 16.205047257244587,
+          "compression": 1.306123100221157,
+          "rollout": 24.776317179203033,
+          "observation": 1.6633663326501846,
+          "mpc": 1418.6445074155927,
+          "total": 1462.959031574428,
+          "risk": 1365.3104603290558,
+          "mpc_other": 53.334047086536884,
+          "table_build": 7.249084301292896,
+          "tree_build": 4.329321905970573,
+          "bound_or_point_query": 1353.2011155039072,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            78256060,
+            39128030,
+            19826159
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 16.083172522485256,
+          "compression": 1.3299379497766495,
+          "rollout": 24.76737927645445,
+          "observation": 1.6498174518346786,
+          "mpc": 1615.0994254276156,
+          "total": 1659.288584254682,
+          "risk": 1559.728774242103,
+          "mpc_other": 55.37065118551254,
+          "table_build": 7.249712944030762,
+          "tree_build": 0.0,
+          "bound_or_point_query": 763.8969095423818,
+          "remaining_exact": 788.5833419859409
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 16.231308691203594,
+          "compression": 1.321001909673214,
+          "rollout": 24.733223952353,
+          "observation": 1.6574999317526817,
+          "mpc": 810.9024632722139,
+          "total": 855.2159406244755,
+          "risk": 757.756925188005,
+          "mpc_other": 53.145538084208965,
+          "table_build": 7.1735139936208725,
+          "tree_build": 0.0,
+          "bound_or_point_query": 750.2622026950121,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            67764224,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000022,
+        16,
+        4
+      ],
+      "people": 20,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 4.766072639328378e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.141083642331268e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 2,
+          "max_interval_width": 4.1370149079608676e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 16.045107506215572,
+          "compression": 1.597365364432335,
+          "rollout": 39.88644573837519,
+          "observation": 1.6952846199274063,
+          "mpc": 935.0762069225311,
+          "total": 994.7244245558977,
+          "risk": 881.4117358997464,
+          "mpc_other": 53.66447102278471,
+          "table_build": 7.960500195622444,
+          "tree_build": 0.0,
+          "bound_or_point_query": 873.1361795216799,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89522176,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 16.044759191572666,
+          "compression": 1.6639232635498047,
+          "rollout": 40.76073318719864,
+          "observation": 1.657569780945778,
+          "mpc": 1222.7761233225465,
+          "total": 1283.3107840269804,
+          "risk": 1166.8526707217097,
+          "mpc_other": 55.923452600836754,
+          "table_build": 8.134337142109871,
+          "tree_build": 5.393092520534992,
+          "bound_or_point_query": 1152.7528828009963,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            66860064,
+            33430032,
+            16977160
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 16.115997917950153,
+          "compression": 1.738445833325386,
+          "rollout": 40.60589428991079,
+          "observation": 1.6873925924301147,
+          "mpc": 1676.427075639367,
+          "total": 1737.0006376877427,
+          "risk": 1620.7159459590912,
+          "mpc_other": 55.71112968027592,
+          "table_build": 8.081745356321335,
+          "tree_build": 0.0,
+          "bound_or_point_query": 842.9377842694521,
+          "remaining_exact": 769.6950882673264
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 16.11124910414219,
+          "compression": 1.5992531552910805,
+          "rollout": 40.48646427690983,
+          "observation": 1.6551259905099869,
+          "mpc": 1220.0450077652931,
+          "total": 1280.328443273902,
+          "risk": 1166.4111288264394,
+          "mpc_other": 53.63387893885374,
+          "table_build": 7.904276251792908,
+          "tree_build": 5.274360068142414,
+          "bound_or_point_query": 1152.6982681825757,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            66860064,
+            33430032,
+            16977160
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 16.034982167184353,
+          "compression": 1.5358338132500648,
+          "rollout": 39.76408112794161,
+          "observation": 1.75583828240633,
+          "mpc": 1682.8710865229368,
+          "total": 1742.3620205372572,
+          "risk": 1626.2207152321935,
+          "mpc_other": 56.65037129074335,
+          "table_build": 7.857761345803738,
+          "tree_build": 0.0,
+          "bound_or_point_query": 845.5039337277412,
+          "remaining_exact": 772.8736875578761
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 16.56145416200161,
+          "compression": 1.6906773671507835,
+          "rollout": 40.225946344435215,
+          "observation": 1.6993358731269836,
+          "mpc": 934.2724597081542,
+          "total": 994.8161989450455,
+          "risk": 880.9352023527026,
+          "mpc_other": 53.337257355451584,
+          "table_build": 7.888142019510269,
+          "tree_build": 0.0,
+          "bound_or_point_query": 872.6641843095422,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89522176,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 16.140233725309372,
+          "compression": 1.6309628263115883,
+          "rollout": 40.755704045295715,
+          "observation": 1.685088500380516,
+          "mpc": 1683.1429144367576,
+          "total": 1743.8315749168396,
+          "risk": 1627.031097188592,
+          "mpc_other": 56.11181724816561,
+          "table_build": 8.022869005799294,
+          "tree_build": 0.0,
+          "bound_or_point_query": 845.5003025010228,
+          "remaining_exact": 773.5096039250493
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 16.10684860497713,
+          "compression": 1.6008559614419937,
+          "rollout": 39.84698373824358,
+          "observation": 1.7004543915390968,
+          "mpc": 932.8889520838857,
+          "total": 992.5455516204238,
+          "risk": 879.2752586305141,
+          "mpc_other": 53.613693453371525,
+          "table_build": 7.872497662901878,
+          "tree_build": 0.0,
+          "bound_or_point_query": 871.0624864324927,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            89522176,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 16.01863745599985,
+          "compression": 1.57061405479908,
+          "rollout": 40.242502465844154,
+          "observation": 1.7022695392370224,
+          "mpc": 1220.8585310727358,
+          "total": 1280.8206919580698,
+          "risk": 1167.591675184667,
+          "mpc_other": 53.266855888068676,
+          "table_build": 7.979985326528549,
+          "tree_build": 5.340082570910454,
+          "bound_or_point_query": 1153.725509531796,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            66860064,
+            33430032,
+            16977160
+          ]
+        }
+      ]
+    },
+    {
+      "state": [
+        2000023,
+        28,
+        15
+      ],
+      "people": 20,
+      "common_candidates": 2048,
+      "errors": {
+        "direct": {
+          "max_probability_error": 3.311948378603713e-07,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 0.0,
+          "interval_violations": null,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        },
+        "hierarchy": {
+          "max_probability_error": 3.5671189126459425e-05,
+          "threshold_false_safe": 0,
+          "threshold_false_unsafe": 0,
+          "max_interval_width": 5.3648420554455734e-05,
+          "interval_violations": 0,
+          "action_difference": 0.0,
+          "controls_difference": 0.0,
+          "ordered_elite_changes": 0
+        }
+      },
+      "measures": [
+        {
+          "variant": "hierarchy",
+          "repetition": 0,
+          "goal_update": 9.207606315612793,
+          "compression": 1.3321759179234505,
+          "rollout": 20.739078521728516,
+          "observation": 2.0627258345484734,
+          "mpc": 862.2302860021591,
+          "total": 895.9872908890247,
+          "risk": 795.8189435303211,
+          "mpc_other": 66.411342471838,
+          "table_build": 7.104021497070789,
+          "tree_build": 3.694174811244011,
+          "bound_or_point_query": 784.4357490539551,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            45539712,
+            22769856,
+            11712608
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 0,
+          "goal_update": 8.930191397666931,
+          "compression": 1.4006206765770912,
+          "rollout": 20.639621652662754,
+          "observation": 2.074318937957287,
+          "mpc": 1146.41685038805,
+          "total": 1179.817309603095,
+          "risk": 1081.046998500824,
+          "mpc_other": 65.3698518872261,
+          "table_build": 7.0763640105724335,
+          "tree_build": 0.0,
+          "bound_or_point_query": 555.2539313212037,
+          "remaining_exact": 518.7171949073672
+        },
+        {
+          "variant": "direct",
+          "repetition": 0,
+          "goal_update": 8.899040520191193,
+          "compression": 1.3014404103159904,
+          "rollout": 20.672309212386608,
+          "observation": 2.011810429394245,
+          "mpc": 646.9862889498472,
+          "total": 680.2953956648707,
+          "risk": 582.8493693843484,
+          "mpc_other": 64.13691956549883,
+          "table_build": 7.0015620440244675,
+          "tree_build": 0.0,
+          "bound_or_point_query": 575.508302077651,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            57671680,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 1,
+          "goal_update": 9.246996603906155,
+          "compression": 1.4263875782489777,
+          "rollout": 21.31457906216383,
+          "observation": 2.689213491976261,
+          "mpc": 1151.603976264596,
+          "total": 1186.79840862751,
+          "risk": 1084.2419443652034,
+          "mpc_other": 67.3620318993926,
+          "table_build": 7.587749511003494,
+          "tree_build": 0.0,
+          "bound_or_point_query": 558.4144406020641,
+          "remaining_exact": 518.2433146983385
+        },
+        {
+          "variant": "direct",
+          "repetition": 1,
+          "goal_update": 9.002896957099438,
+          "compression": 1.3117091730237007,
+          "rollout": 20.592059940099716,
+          "observation": 2.138645388185978,
+          "mpc": 658.8090034201741,
+          "total": 692.3628384247422,
+          "risk": 595.2711924910545,
+          "mpc_other": 63.53781092911959,
+          "table_build": 7.261376827955246,
+          "tree_build": 0.0,
+          "bound_or_point_query": 587.6323850825429,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            57671680,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 1,
+          "goal_update": 8.998706936836243,
+          "compression": 1.2985095381736755,
+          "rollout": 20.73880098760128,
+          "observation": 2.0275963470339775,
+          "mpc": 857.9213563352823,
+          "total": 891.3668664172292,
+          "risk": 794.5586387068033,
+          "mpc_other": 63.362717628479004,
+          "table_build": 7.012387737631798,
+          "tree_build": 3.890293650329113,
+          "bound_or_point_query": 783.1141203641891,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            45539712,
+            22769856,
+            11712608
+          ]
+        },
+        {
+          "variant": "direct",
+          "repetition": 2,
+          "goal_update": 8.964275009930134,
+          "compression": 1.316598616540432,
+          "rollout": 20.7275515422225,
+          "observation": 2.050013281404972,
+          "mpc": 648.0581602081656,
+          "total": 681.5046463161707,
+          "risk": 583.7872130796313,
+          "mpc_other": 64.27094712853432,
+          "table_build": 7.092148996889591,
+          "tree_build": 0.0,
+          "bound_or_point_query": 576.3869881629944,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            57671680,
+            0,
+            0
+          ]
+        },
+        {
+          "variant": "hierarchy",
+          "repetition": 2,
+          "goal_update": 8.939828723669052,
+          "compression": 1.2472476810216904,
+          "rollout": 20.560420118272305,
+          "observation": 2.0078998059034348,
+          "mpc": 857.7105728909373,
+          "total": 890.8428382128477,
+          "risk": 794.1598389297724,
+          "mpc_other": 63.55073396116495,
+          "table_build": 7.019512355327606,
+          "tree_build": 3.6564599722623825,
+          "bound_or_point_query": 782.9261049628258,
+          "remaining_exact": 0.0,
+          "query_counts": [
+            45539712,
+            22769856,
+            11712608
+          ]
+        },
+        {
+          "variant": "reference",
+          "repetition": 2,
+          "goal_update": 8.99430736899376,
+          "compression": 1.2495527043938637,
+          "rollout": 20.88498044759035,
+          "observation": 2.0512016490101814,
+          "mpc": 1145.8060080185533,
+          "total": 1179.3899443000555,
+          "risk": 1080.1762733608484,
+          "mpc_other": 65.62973465770483,
+          "table_build": 7.036902941763401,
+          "tree_build": 0.0,
+          "bound_or_point_query": 554.449207149446,
+          "remaining_exact": 518.6925437301397
+        }
+      ]
+    }
+  ]
+}
