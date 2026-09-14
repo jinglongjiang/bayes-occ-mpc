@@ -1,0 +1,71 @@
+{
+  "files": [
+    {
+      "path": "/home/abc/temp/peroi-sample/peroi_sample.csv",
+      "sha256": "8b8813d2263d3910e110f6e8bce79af17ce261e650be85bdc6fe5abb43c3c190",
+      "rows": 279,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 1,
+      "Robot_Presence": {
+        "1": 279
+      },
+      "Robot_Type": {
+        "Go1": 279
+      },
+      "Robot_Influence": {
+        "avoid": 279
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "avoid": 1
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737975981424.0,
+        1737975998757.0
+      ],
+      "timestamp_delta_quantiles": [
+        33.0,
+        33.0,
+        67.0,
+        75.36000000000058,
+        133.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    }
+  ],
+  "structural_checks": {
+    "group_partitions": 15,
+    "group_trials": 1000,
+    "group_additive_expected_cost_max_error": 3.552713678800501e-15,
+    "group_scope": "Fixed candidate additive pairwise social cost only; not non-additive group dynamics or information gathering",
+    "sensor_count_confounding_max_error": 0.0,
+    "sensor_scope": "Independent fresh existence example, not general persistent-track identifiability",
+    "shared_health_two_misses": 0.41000000000000003,
+    "mean_health_two_misses": 0.25
+  }
+}
