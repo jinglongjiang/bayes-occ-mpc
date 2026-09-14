@@ -1,7 +1,7 @@
 import unittest
 import numpy as np
 from experiments.switching_validation import (normalize_update,sequence,ct_path,
-    probability_scores,filtered,Bank)
+    probability_scores,filtered,Bank,experts_fit,expert_predict)
 
 
 class SwitchingTests(unittest.TestCase):
@@ -44,6 +44,30 @@ class SwitchingTests(unittest.TestCase):
         p,_,_=filtered(bank,seqs['x'])
         assigned=bank.model.means_[p.argmax(1),0]>0
         self.assertGreater(np.mean(assigned==np.r_[np.zeros(100),np.ones(100)]),.98)
+
+    def test_expert_forecast_positive_control(self):
+        rng=np.random.default_rng(91)
+        x=rng.normal(size=(500,3)); z=rng.integers(0,2,500)
+        y=np.zeros((500,4,2)); y[:,:,0]=(2*z[:,None]-1)*np.ones((1,4))
+        weights=np.eye(2)[z]*.999+.0005
+        models=experts_fit(x,y,np.arange(400),weights,1.)
+        modes=expert_predict(models,x[400:],np.zeros((100,4,2)))
+        full=np.sum(modes*weights[400:,:,None,None],axis=1)
+        self.assertLess(np.linalg.norm(full-y[400:],axis=-1).mean(),.01)
+
+    def test_multimodal_risk_positive_control(self):
+        modes=np.array([[[[1.,0.]]*4, [[-1.,0.]]*4]]*2)
+        y=np.array([[[1.,0.]]*4,[[-1.,0.]]*4])
+        robot=np.array([[[1.,0.]]*4]*2)
+        full=probability_scores(modes,np.ones((2,2))*.5,y,robot,np.ones(4)*.0025)
+        hard=probability_scores(modes[:,:1],np.ones((2,1)),y,robot,np.ones(4)*.0025)
+        self.assertLess(full[0].mean(),hard[0].mean())
+        self.assertLess(full[1].mean(),hard[1].mean())
+
+    def test_no_unknown_probability_without_unknown_model(self):
+        p,_=normalize_update(np.array([.2,.8]),np.array([-1e6,-1e6]))
+        self.assertAlmostEqual(p.sum(),1.)
+        np.testing.assert_allclose(p,[.2,.8],atol=1e-10)
 
 
 if __name__=='__main__': unittest.main()
