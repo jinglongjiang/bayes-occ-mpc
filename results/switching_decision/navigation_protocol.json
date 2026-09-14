@@ -1,0 +1,492 @@
+{
+  "cases": [
+    {
+      "case": 8000000,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 0,
+      "layout_hash": "6ccec10313857ad3"
+    },
+    {
+      "case": 8000001,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 1,
+      "layout_hash": "862ae15f49b42f0b"
+    },
+    {
+      "case": 8000002,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 2,
+      "layout_hash": "22662826e01f8bd5"
+    },
+    {
+      "case": 8000003,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 3,
+      "layout_hash": "4c1e2083fe100ecc"
+    },
+    {
+      "case": 8000004,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 4,
+      "layout_hash": "19d900a3d68b115f"
+    },
+    {
+      "case": 8000005,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 5,
+      "layout_hash": "1cc1f37567ffb89a"
+    },
+    {
+      "case": 8000006,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 6,
+      "layout_hash": "0277fa099374fd02"
+    },
+    {
+      "case": 8000007,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 7,
+      "layout_hash": "d6bc30d52c36904a"
+    },
+    {
+      "case": 8000008,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 8,
+      "layout_hash": "e4d5e32df6d49e8f"
+    },
+    {
+      "case": 8000009,
+      "people": 5,
+      "scene": "circle_crossing",
+      "index": 9,
+      "layout_hash": "c0e898f55b71e2c8"
+    },
+    {
+      "case": 8000010,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 10,
+      "layout_hash": "c61812b111d59b16"
+    },
+    {
+      "case": 8000011,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 11,
+      "layout_hash": "d0297763f790fc79"
+    },
+    {
+      "case": 8000012,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 12,
+      "layout_hash": "c1062630250fb252"
+    },
+    {
+      "case": 8000013,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 13,
+      "layout_hash": "ded948365fe241c1"
+    },
+    {
+      "case": 8000014,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 14,
+      "layout_hash": "7cf9c67c383adc5a"
+    },
+    {
+      "case": 8000015,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 15,
+      "layout_hash": "6771c48b4570c7ec"
+    },
+    {
+      "case": 8000016,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 16,
+      "layout_hash": "f06818612d2cb7ce"
+    },
+    {
+      "case": 8000017,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 17,
+      "layout_hash": "bc178971c9dda96f"
+    },
+    {
+      "case": 8000018,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 18,
+      "layout_hash": "fbd9a3b8d510b661"
+    },
+    {
+      "case": 8000019,
+      "people": 5,
+      "scene": "square_crossing",
+      "index": 19,
+      "layout_hash": "47414666011db9f8"
+    },
+    {
+      "case": 8000020,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 20,
+      "layout_hash": "1257f5fea876845d"
+    },
+    {
+      "case": 8000021,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 21,
+      "layout_hash": "13468f15b24c1de0"
+    },
+    {
+      "case": 8000022,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 22,
+      "layout_hash": "e629118bcc9156a0"
+    },
+    {
+      "case": 8000023,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 23,
+      "layout_hash": "a8730ed4b3c29dea"
+    },
+    {
+      "case": 8000024,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 24,
+      "layout_hash": "53b4fc05d8b7df28"
+    },
+    {
+      "case": 8000025,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 25,
+      "layout_hash": "cec2b8f7229f1fc3"
+    },
+    {
+      "case": 8000026,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 26,
+      "layout_hash": "f974cafd3d042a67"
+    },
+    {
+      "case": 8000027,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 27,
+      "layout_hash": "35ff9d7177028bd8"
+    },
+    {
+      "case": 8000028,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 28,
+      "layout_hash": "152bcb770bae657b"
+    },
+    {
+      "case": 8000029,
+      "people": 10,
+      "scene": "circle_crossing",
+      "index": 29,
+      "layout_hash": "27480e33802a685a"
+    },
+    {
+      "case": 8000030,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 30,
+      "layout_hash": "2fb9a5924555033a"
+    },
+    {
+      "case": 8000031,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 31,
+      "layout_hash": "871361b316b80e52"
+    },
+    {
+      "case": 8000032,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 32,
+      "layout_hash": "189d56633632cc48"
+    },
+    {
+      "case": 8000033,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 33,
+      "layout_hash": "83beeb0943dd7620"
+    },
+    {
+      "case": 8000034,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 34,
+      "layout_hash": "9b57053dadcaa827"
+    },
+    {
+      "case": 8000035,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 35,
+      "layout_hash": "7c179e3e51a4d395"
+    },
+    {
+      "case": 8000036,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 36,
+      "layout_hash": "73fc939b84e9cc5e"
+    },
+    {
+      "case": 8000037,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 37,
+      "layout_hash": "d64df662419af7b3"
+    },
+    {
+      "case": 8000038,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 38,
+      "layout_hash": "6861dded9f853a5f"
+    },
+    {
+      "case": 8000039,
+      "people": 10,
+      "scene": "square_crossing",
+      "index": 39,
+      "layout_hash": "ecd369e85acf99ae"
+    },
+    {
+      "case": 8000040,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 40,
+      "layout_hash": "f7ac3bfc24943975"
+    },
+    {
+      "case": 8000041,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 41,
+      "layout_hash": "c0bd69847a48530a"
+    },
+    {
+      "case": 8000042,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 42,
+      "layout_hash": "4a2ff2ed4d25cbae"
+    },
+    {
+      "case": 8000043,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 43,
+      "layout_hash": "32663871cfe97564"
+    },
+    {
+      "case": 8000044,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 44,
+      "layout_hash": "db505e3d278a9235"
+    },
+    {
+      "case": 8000045,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 45,
+      "layout_hash": "32ed338b6ba1c422"
+    },
+    {
+      "case": 8000046,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 46,
+      "layout_hash": "03fb653d99e43693"
+    },
+    {
+      "case": 8000047,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 47,
+      "layout_hash": "b57fc74c5466c07c"
+    },
+    {
+      "case": 8000048,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 48,
+      "layout_hash": "d06eb73c08cb9867"
+    },
+    {
+      "case": 8000049,
+      "people": 20,
+      "scene": "circle_crossing",
+      "index": 49,
+      "layout_hash": "8027a3baa5d0a2e2"
+    },
+    {
+      "case": 8000050,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 50,
+      "layout_hash": "fb17154f589c586b"
+    },
+    {
+      "case": 8000051,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 51,
+      "layout_hash": "a2e5463d7b455ad3"
+    },
+    {
+      "case": 8000052,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 52,
+      "layout_hash": "3e6d2d447b59dcd8"
+    },
+    {
+      "case": 8000053,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 53,
+      "layout_hash": "591329238db008f2"
+    },
+    {
+      "case": 8000054,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 54,
+      "layout_hash": "01b8804748e3b8d3"
+    },
+    {
+      "case": 8000055,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 55,
+      "layout_hash": "47f54e1f06ea30ee"
+    },
+    {
+      "case": 8000056,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 56,
+      "layout_hash": "d2b086b4216a13a1"
+    },
+    {
+      "case": 8000057,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 57,
+      "layout_hash": "049949d0a0042466"
+    },
+    {
+      "case": 8000058,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 58,
+      "layout_hash": "b18b89bd65ae26ce"
+    },
+    {
+      "case": 8000059,
+      "people": 20,
+      "scene": "square_crossing",
+      "index": 59,
+      "layout_hash": "7fc6cfddd061dde3"
+    }
+  ],
+  "arms": [
+    "O",
+    "CV",
+    "TREE",
+    "MAP",
+    "IID",
+    "FULL"
+  ],
+  "config": {
+    "dt": 0.25,
+    "horizon": 16,
+    "population": 512,
+    "iterations": 4,
+    "elite_fraction": 0.08,
+    "v_max": 1.0,
+    "a_max": 2.0,
+    "human_margin": 0.1,
+    "unknown_margin": 0.05,
+    "goal_stage_weight": 0.28,
+    "goal_terminal_weight": 9.0,
+    "smooth_weight": 0.35,
+    "effort_weight": 0.02,
+    "collision_weight": 20000.0,
+    "discomfort_weight": 500.0,
+    "unknown_weight": 6500.0,
+    "probability_weight": 1.0,
+    "chance_limit": 0.75,
+    "risk_gamma": 2.0,
+    "near_chance_limit": 0.225,
+    "occupancy_chance_limit": 0.15,
+    "fixed_uncertainty_radius": 0.35,
+    "stagnation_weight": 250.0,
+    "min_progress": 0.15,
+    "init_std": 0.65,
+    "min_std": 0.08,
+    "acceleration_std": 0.55,
+    "existence_override": null,
+    "conformal_visible_radii": [],
+    "conformal_hidden_radii": []
+  },
+  "source_commit": "0c8b814",
+  "inference_source_sha256": "22193f7168b5a28ff86c94c7e6876e8e1cdca64342089b2f6fd33875da8d5458",
+  "model_sha256": "3cea44970dde3541b72dd7c26f671513da63de26d14dae4d1265ce65acc6b41f",
+  "history_files": 31481,
+  "history_unreadable": [],
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "parallel_workers": 6,
+  "scope": "Synchronous independent ORCA/TTC simulator; nonresponsive humans. Not real interactive validation.",
+  "geometry": "All six arms retain the same CV hard geometry; five new arms share source-calibrated variance when eligible.",
+  "timing": "Concurrent exploratory timings, not deployment certification",
+  "seeds": "case*100003+step*97+1729; arm order rotated by layout index"
+}

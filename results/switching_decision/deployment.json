@@ -1,0 +1,17 @@
+{
+  "k": 6,
+  "seed": 11,
+  "total_trees": 96,
+  "leaf": 15,
+  "training_queries": 6011,
+  "training_tracks": 1520,
+  "variance": [
+    0.0032184569102647977,
+    0.01518802584186563,
+    0.08826922900873202,
+    0.5715158575796155
+  ],
+  "sha256": "3cea44970dde3541b72dd7c26f671513da63de26d14dae4d1265ce65acc6b41f",
+  "no_simulator_training": true,
+  "platform_feature": "zeros: unseen robot platform"
+}
