@@ -13,7 +13,7 @@ def difference(f,a,b,cluster):
 
 
 def run():
-    raw=pd.read_csv(OUT/'queries.csv')
+    raw=pd.read_csv(OUT/'queries.csv' if (OUT/'queries.csv').exists() else OUT/'queries.csv.gz')
     methods=['cv','ca','ct','simple_full','simple_map','universal_ridge','universal_trees',
              'learned_full','learned_map','learned_iid','learned_prior']
     # Seeds do not create independent observations.

@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "directory": "results/switching_validation",
+      "rows": 18240,
+      "distinct_query_keys": 6080,
+      "forecast_mean_reconstructed": 0.4304939070077483,
+      "finite": true,
+      "split_disjoint": true
+    },
+    {
+      "directory": "results/switching_validation/nonlinear",
+      "rows": 18240,
+      "distinct_query_keys": 6080,
+      "forecast_mean_reconstructed": 0.40026771833264607,
+      "finite": true,
+      "split_disjoint": true
+    }
+  ],
+  "source_and_data_hashes_match": true,
+  "tests": "../home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n/home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n........../home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n/home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n..\n----------------------------------------------------------------------\nRan 14 tests in 0.066s\n\nOK\n",
+  "environment": {
+    "python": "3.8.20 (default, Oct  3 2024, 15:24:27) \n[GCC 11.2.0]",
+    "numpy": "1.23.5",
+    "pandas": "2.0.3",
+    "scipy": "1.10.1",
+    "sklearn": "1.0.2",
+    "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.17"
+  },
+  "scope": "Same-machine deterministic artifact checks, not cross-environment replication or closed-loop navigation"
+}

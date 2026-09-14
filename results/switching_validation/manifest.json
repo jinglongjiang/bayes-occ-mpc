@@ -1,0 +1,16 @@
+{
+  "source_sha256": "e8425d43843d7abb4a45fe5e676aea6a94ff9b8cc99db19898fbcb3e6b1edc22",
+  "protocol_sha256": "a7fb80ecc33b967067f0dfe64be7f35832a4f3adb8215a713bbef28678e0f109",
+  "queries": 6011,
+  "tracks": 1520,
+  "transitions": 26823,
+  "data_files": {
+    "dynamic_robot/1737635531(dog)/filtered_trajectories_labeled_and_robot_relabelled.csv": "a9f1de24a8153dc2de487edfea41660f8f4d910fc5be11b428c95e86b78a0e5d",
+    "stationary_robot/1737455747(hsr)/filtered_trajectories_labeled_and_robot_relabelled.csv": "6df69160496a16a662ddd677c34c916a60367cef49fdf7b937f229e73455c36c",
+    "stationary_robot/1737541545(steve)/filtered_trajectories_labeled_and_robot_relabelled.csv": "29d49b2a9272c770463edfd4132a04923bd3c145afbc99f174614af799bacdd0",
+    "stationary_robot/1737975940(go2)/filtered_trajectories_labeled_and_robot_relabelled.csv": "d4b462b1108306d61f2c2ed628a816a1382ee7f9c28ddec3cb37b7984ca6790a",
+    "stationary_robot/1738146369(go1)/filtered_trajectories_labeled_and_robot_relabelled.csv": "378d01ec5977ce964c021c56bf8e2d01ea215282d0de1824646224fbe90478e8",
+    "stationary_robot/1738758438(go1)/filtered_trajectories_labeled_and_robot_relabelled.csv": "9b30a32270b62ecde628418ab3e4be76965391ecf638e0b302251e2b37975736"
+  },
+  "prior_protocol_sha256": "3d9d2acbde0a8c45ba4f71f0844719d5f67260920e1a1f944e31e2c7cd7c3798"
+}

@@ -1,0 +1,230 @@
+{
+  "results": [
+    {
+      "condition": "no_change",
+      "method": "residual",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05625,
+      "first_second_alarm_rate": 0.18,
+      "detected_in_15s": 0.99,
+      "median_delay_given_detection": 3.5
+    },
+    {
+      "condition": "no_change",
+      "method": "ewma",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.075625,
+      "first_second_alarm_rate": 0.155,
+      "detected_in_15s": 0.79,
+      "median_delay_given_detection": 4.5
+    },
+    {
+      "condition": "no_change",
+      "method": "cusum",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.056375,
+      "first_second_alarm_rate": 0.115,
+      "detected_in_15s": 0.93,
+      "median_delay_given_detection": 4.125
+    },
+    {
+      "condition": "no_change",
+      "method": "bank_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.054375,
+      "first_second_alarm_rate": 0.175,
+      "detected_in_15s": 0.985,
+      "median_delay_given_detection": 3.5
+    },
+    {
+      "condition": "no_change",
+      "method": "update_kl",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.051875,
+      "first_second_alarm_rate": 0.19,
+      "detected_in_15s": 0.95,
+      "median_delay_given_detection": 3.375
+    },
+    {
+      "condition": "no_change",
+      "method": "single_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.057625,
+      "first_second_alarm_rate": 0.18,
+      "detected_in_15s": 0.995,
+      "median_delay_given_detection": 3.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "residual",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.0515,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "ewma",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.063375,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "cusum",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05525,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "bank_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.051375,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "update_kl",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.051,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "known_mode_switch",
+      "method": "single_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05025,
+      "first_second_alarm_rate": 0.49,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 1.25
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "residual",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05175,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "ewma",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.0615,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "cusum",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05425,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "bank_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05125,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "update_kl",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.048375,
+      "first_second_alarm_rate": 0.215,
+      "detected_in_15s": 0.96,
+      "median_delay_given_detection": 3.125
+    },
+    {
+      "condition": "unknown_lateral_drift",
+      "method": "single_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.06025,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "noise_increase",
+      "method": "residual",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.052125,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "noise_increase",
+      "method": "ewma",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.064125,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "noise_increase",
+      "method": "cusum",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.052125,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "noise_increase",
+      "method": "bank_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.05125,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    },
+    {
+      "condition": "noise_increase",
+      "method": "update_kl",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.052125,
+      "first_second_alarm_rate": 0.975,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.5
+    },
+    {
+      "condition": "noise_increase",
+      "method": "single_nll",
+      "trials": 200,
+      "prechange_step_alarm_rate": 0.046875,
+      "first_second_alarm_rate": 1.0,
+      "detected_in_15s": 1.0,
+      "median_delay_given_detection": 0.25
+    }
+  ],
+  "thresholds": {
+    "residual": 0.060427095581951105,
+    "ewma": 0.03981446422069374,
+    "cusum": 0.01455984417385729,
+    "bank_nll": -2.8450945792382467,
+    "update_kl": 0.009257778163790106,
+    "single_nll": -2.2612995362204322
+  },
+  "identical_observation_different_cause_score_difference": 0.0,
+  "limitations": "Known change times are synthetic. No-change post60 alarm is not detection. Single-step 5% calibration does not imply episode-level 5% false alarms. No algorithm can anticipate an independent unsignalled random switch from identical prefixes."
+}
