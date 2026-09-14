@@ -1,0 +1,50 @@
+{
+  "1737635531(dog)": {
+    "tracks": 226,
+    "eligible_tracks": 90,
+    "queries": 362,
+    "rejected_gaps": 302,
+    "rejected_nonfinite": 58,
+    "rejected_kinematics": 1
+  },
+  "1737455747(hsr)": {
+    "tracks": 1047,
+    "eligible_tracks": 645,
+    "queries": 2458,
+    "rejected_gaps": 1793,
+    "rejected_nonfinite": 0,
+    "rejected_kinematics": 1
+  },
+  "1737541545(steve)": {
+    "tracks": 813,
+    "eligible_tracks": 532,
+    "queries": 2439,
+    "rejected_gaps": 1388,
+    "rejected_nonfinite": 0,
+    "rejected_kinematics": 0
+  },
+  "1737975940(go2)": {
+    "tracks": 512,
+    "eligible_tracks": 303,
+    "queries": 1489,
+    "rejected_gaps": 879,
+    "rejected_nonfinite": 0,
+    "rejected_kinematics": 0
+  },
+  "1738146369(go1)": {
+    "tracks": 251,
+    "eligible_tracks": 172,
+    "queries": 889,
+    "rejected_gaps": 323,
+    "rejected_nonfinite": 0,
+    "rejected_kinematics": 0
+  },
+  "1738758438(go1)": {
+    "tracks": 222,
+    "eligible_tracks": 144,
+    "queries": 684,
+    "rejected_gaps": 395,
+    "rejected_nonfinite": 0,
+    "rejected_kinematics": 0
+  }
+}

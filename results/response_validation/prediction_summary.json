@@ -1,0 +1,482 @@
+[
+  {
+    "family": "ridge",
+    "subset": "all_loso",
+    "queries": 8321,
+    "tracks": 1886,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.27609268720459235,
+      "ca": 0.4022257037592252,
+      "pooled": 535181494.0002361,
+      "true_label": 1315395673.3865662,
+      "map": 862519589.7113037,
+      "full_mean": 703337608.0974791,
+      "prior_mean": 537113246.587203,
+      "shuffled_label": 690369504.1539763,
+      "full_finite_energy": 608546356.3825971
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1886,
+        "mean": 780214179.3863342,
+        "interval95": [
+          0.0003076938770778408,
+          2078186870.0078378
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1886,
+        "mean": 1315395673.1104774,
+        "interval95": [
+          -0.016031590236396033,
+          3245029366.8841558
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1886,
+        "mean": -159181981.6138263,
+        "interval95": [
+          -580354525.2341449,
+          85667836.02241907
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1886,
+        "mean": 168156114.09724236,
+        "interval95": [
+          -0.0008071939499416494,
+          437410384.6489532
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": 5514670413.877065,
+      "interval95": [
+        0.00017801234683973037,
+        16544011241.629776
+      ]
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "moving_loso",
+    "queries": 362,
+    "tracks": 90,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.28668601066397,
+      "ca": 0.4406145614955307,
+      "pooled": 11215025524.68614,
+      "true_label": 27564847106.047108,
+      "map": 18074577174.78226,
+      "full_mean": 14738830315.677097,
+      "prior_mean": 11255506473.338875,
+      "shuffled_label": 14467076492.963848,
+      "full_finite_energy": 12752426974.602661
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 90,
+        "mean": 16349821581.360992,
+        "interval95": [
+          0.006903758210336477,
+          42872457851.95695
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 90,
+        "mean": 27564847105.760445,
+        "interval95": [
+          0.03271359852798008,
+          67985957167.505325
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 90,
+        "mean": -3335746859.105164,
+        "interval95": [
+          -11623236767.847641,
+          1795217097.1315672
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 90,
+        "mean": 3523804790.9909625,
+        "interval95": [
+          0.0032231429165806903,
+          9166177616.107218
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": 33088022483.25848,
+      "interval95": [
+        33088022483.25848,
+        33088022483.25848
+      ]
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "moving_temporal",
+    "queries": 96,
+    "tracks": 22,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.3106032867531562,
+      "ca": 0.48849863205336364,
+      "pooled": 0.28340820469467476,
+      "true_label": 69697784229.81927,
+      "map": 0.2732519222181068,
+      "full_mean": 141210884224.4004,
+      "prior_mean": 223795503790.8548,
+      "shuffled_label": 34008862577.199192,
+      "full_finite_energy": 72368298934.84991
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 22,
+        "mean": 69697784229.53587,
+        "interval95": [
+          -0.0020101344202592807,
+          209093352688.58768
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 22,
+        "mean": 69697784229.50868,
+        "interval95": [
+          -0.03417675147287209,
+          209093352688.565
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 22,
+        "mean": 141210884224.12717,
+        "interval95": [
+          0.0014087611934995596,
+          403605304947.732
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 22,
+        "mean": 141210884224.11697,
+        "interval95": [
+          -0.006586119078223353,
+          403605304947.72296
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": 159724088859.32462,
+      "interval95": [
+        159724088859.32462,
+        159724088859.32462
+      ]
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "approaching_loso",
+    "queries": 4155,
+    "tracks": 1564,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.26441479184004996,
+      "ca": 0.4007181924455634,
+      "pooled": 496435018.82392323,
+      "true_label": 775340986.0875912,
+      "map": 775340986.08782,
+      "full_mean": 562716522.3983536,
+      "prior_mean": 498226914.9241472,
+      "shuffled_label": 664925631.3051596,
+      "full_finite_energy": 526315255.74373245
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1564,
+        "mean": 278905967.2636663,
+        "interval95": [
+          0.00026506134351593404,
+          836717901.7896978
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1564,
+        "mean": 775340985.8231746,
+        "interval95": [
+          -0.019181402907335242,
+          2326022957.5067787
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1564,
+        "mean": -212624463.68946826,
+        "interval95": [
+          -637873391.0662249,
+          -0.0006569253748736772
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1564,
+        "mean": 66281503.574430384,
+        "interval95": [
+          -0.00045070760416049584,
+          198844510.72385278
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": 1571924082.1578407,
+      "interval95": [
+        -0.00010530153652728765,
+        4715772246.4712
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "all_loso",
+    "queries": 8321,
+    "tracks": 1886,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.27609268720459235,
+      "ca": 0.4022257037592252,
+      "pooled": 0.24332931209265526,
+      "true_label": 0.24162849265575873,
+      "map": 0.24426015845228088,
+      "full_mean": 0.24241020766163615,
+      "prior_mean": 0.24260196063066547,
+      "shuffled_label": 0.24299265675895496,
+      "full_finite_energy": 0.22596424539328266
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1886,
+        "mean": -0.0017008194368960826,
+        "interval95": [
+          -0.0027154298432100947,
+          -0.0007161483730656625
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1886,
+        "mean": -0.034464194548833066,
+        "interval95": [
+          -0.03766916568996172,
+          -0.031086453468523654
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1886,
+        "mean": -0.0018499507906447328,
+        "interval95": [
+          -0.0026264430644460266,
+          -0.001057674629355211
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1886,
+        "mean": -0.0009191044310182906,
+        "interval95": [
+          -0.001555508591300788,
+          -0.0003106479237895568
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.0023424750591476457,
+      "interval95": [
+        -0.004019962725434037,
+        -0.0007027195820989313
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "moving_loso",
+    "queries": 362,
+    "tracks": 90,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.28668601066397,
+      "ca": 0.4406145614955307,
+      "pooled": 0.3145898846251832,
+      "true_label": 0.31042621734175296,
+      "map": 0.311490171444013,
+      "full_mean": 0.3106523077066585,
+      "prior_mean": 0.3104839546253488,
+      "shuffled_label": 0.3109940973652703,
+      "full_finite_energy": 0.28980873640072063
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 90,
+        "mean": -0.004163667283430221,
+        "interval95": [
+          -0.009818164718625804,
+          0.001364373173211126
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 90,
+        "mean": 0.023740206677783066,
+        "interval95": [
+          0.001310090875597137,
+          0.048715510778327885
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 90,
+        "mean": -0.0008378637373544415,
+        "interval95": [
+          -0.0058954963308494234,
+          0.003982302265269596
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 90,
+        "mean": -0.00393757691852474,
+        "interval95": [
+          -0.007204449558122877,
+          -0.0008952176408830216
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": -0.0057358923549233574,
+      "interval95": [
+        -0.0057358923549233574,
+        -0.0057358923549233574
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "moving_temporal",
+    "queries": 96,
+    "tracks": 22,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.3106032867531562,
+      "ca": 0.48849863205336364,
+      "pooled": 0.2825810891805338,
+      "true_label": 0.2823958485492074,
+      "map": 0.2774738883517276,
+      "full_mean": 0.2822316441487392,
+      "prior_mean": 0.2797072969317248,
+      "shuffled_label": 0.28019681328813084,
+      "full_finite_energy": 0.25960995090215444
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 22,
+        "mean": -0.00018524063132647605,
+        "interval95": [
+          -0.015264769136434132,
+          0.015617237995314833
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 22,
+        "mean": -0.02820743820394878,
+        "interval95": [
+          -0.045922612286219106,
+          -0.009218066820250932
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 22,
+        "mean": 0.004757755797011661,
+        "interval95": [
+          -0.0043920229664998565,
+          0.014346221077831588
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 22,
+        "mean": -0.00034944503179460264,
+        "interval95": [
+          -0.00847853301060506,
+          0.00744418343681835
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": -0.005924870369826092,
+      "interval95": [
+        -0.005924870369826092,
+        -0.005924870369826092
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "approaching_loso",
+    "queries": 4155,
+    "tracks": 1564,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.26441479184004996,
+      "ca": 0.4007181924455634,
+      "pooled": 0.22844003328948176,
+      "true_label": 0.2261453510426198,
+      "map": 0.22965947543718299,
+      "full_mean": 0.22805568630409712,
+      "prior_mean": 0.22813466215746703,
+      "shuffled_label": 0.22804057088507193,
+      "full_finite_energy": 0.21151486099610947
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1564,
+        "mean": -0.0022946822468620466,
+        "interval95": [
+          -0.0036603320481863773,
+          -0.0009409960576600922
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1564,
+        "mean": -0.038269440797429624,
+        "interval95": [
+          -0.04221868683631343,
+          -0.034228160726053926
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1564,
+        "mean": -0.0016037891330860498,
+        "interval95": [
+          -0.0026734126875810594,
+          -0.0005917671382773093
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1564,
+        "mean": -0.00038434698538466404,
+        "interval95": [
+          -0.001121913643715162,
+          0.0003646871106187546
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.002763921205946354,
+      "interval95": [
+        -0.004953871287347343,
+        -0.000737854130326259
+      ]
+    }
+  }
+]

@@ -1,0 +1,2348 @@
+{
+  "files": [
+    {
+      "path": "/home/abc/temp/peroi-full/data/dynamic_robot/1737635531(dog)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "a9f1de24a8153dc2de487edfea41660f8f4d910fc5be11b428c95e86b78a0e5d",
+      "rows": 28417,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 1520,
+        "Y_Robot": 1520
+      },
+      "tracks": 226,
+      "Robot_Presence": {
+        "1": 28417
+      },
+      "Robot_Type": {
+        "Go1": 28417
+      },
+      "Robot_Influence": {
+        "neutral": 14459,
+        "avoid": 10656,
+        "attract": 3302
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 149,
+        "avoid": 59,
+        "attract": 18
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737635533137.0,
+        1737637001403.0
+      ],
+      "timestamp_delta_quantiles": [
+        59.0,
+        65.0,
+        67.0,
+        200.0,
+        2133.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 3507
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/dynamic_robot/1737635531(dog)/transformed_obstacles.csv",
+      "sha256": "21a1656483fa91fa92255f8c48652f40570b07549f762391233185d5fc13af0b",
+      "rows": 352,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737531432/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "6a7e66c08706a673e5eba809895d1a55978b7ccc1670ddd51d71a5db1bfaae93",
+      "rows": 61087,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 61087,
+        "Robot_Influence": 0,
+        "X_Robot": 61087,
+        "Y_Robot": 61087
+      },
+      "tracks": 272,
+      "Robot_Presence": {
+        "0": 61087
+      },
+      "Robot_Type": {
+        "nan": 61087
+      },
+      "Robot_Influence": {
+        "none": 61087
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 272
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737531523767.0,
+        1737540001100.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.25,
+        32.5,
+        67.0,
+        73.0,
+        26133.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737531432/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737971338/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9a5b7afd72c77b3d523987d93f7adf18a7a6fa44f3ce022664c95b6e655a82a7",
+      "rows": 61914,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 61914,
+        "Robot_Influence": 0,
+        "X_Robot": 61914,
+        "Y_Robot": 61914
+      },
+      "tracks": 323,
+      "Robot_Presence": {
+        "0": 61914
+      },
+      "Robot_Type": {
+        "nan": 61914
+      },
+      "Robot_Influence": {
+        "none": 61914
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 323
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737971342411.0,
+        1737975544677.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.75,
+        33.0,
+        67.0,
+        200.0,
+        5267.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737971338/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737978635/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "e2bb491f04333f1fe077eadfdcb23220116f45c65c92f4bb17496085f238b210",
+      "rows": 223472,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 223472,
+        "Robot_Influence": 0,
+        "X_Robot": 223472,
+        "Y_Robot": 223472
+      },
+      "tracks": 1152,
+      "Robot_Presence": {
+        "0": 223472
+      },
+      "Robot_Type": {
+        "nan": 223472
+      },
+      "Robot_Influence": {
+        "none": 223472
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1152
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737978637671.0,
+        1737993499004.0
+      ],
+      "timestamp_delta_quantiles": [
+        9.428466796875,
+        33.0,
+        67.0,
+        134.0,
+        2067.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1737978635/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738056047/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "b1b20f80782317265d9059e8901732752b6934d7da37dabaebe2ce0872568ad8",
+      "rows": 348,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 348,
+        "Robot_Influence": 0,
+        "X_Robot": 348,
+        "Y_Robot": 348
+      },
+      "tracks": 2,
+      "Robot_Presence": {
+        "0": 348
+      },
+      "Robot_Type": {
+        "nan": 348
+      },
+      "Robot_Influence": {
+        "none": 348
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 2
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738056083247.0,
+        1738056128847.0
+      ],
+      "timestamp_delta_quantiles": [
+        33.5,
+        65.0,
+        67.0,
+        200.0,
+        333.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738056047/transformed_obstacles.csv",
+      "sha256": "333f0723d6f9e255d5b383619cd98afa9c61044731755bb6766953b80058efd7",
+      "rows": 338,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738056349/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "e38bd63073c32333d95163eefe21ee1d6402176d24a9c96dbaaade31d357ba33",
+      "rows": 169,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 169,
+        "Robot_Influence": 0,
+        "X_Robot": 169,
+        "Y_Robot": 169
+      },
+      "tracks": 2,
+      "Robot_Presence": {
+        "0": 169
+      },
+      "Robot_Type": {
+        "nan": 169
+      },
+      "Robot_Influence": {
+        "none": 169
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 2
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738056569201.0,
+        1738056742069.0
+      ],
+      "timestamp_delta_quantiles": [
+        33.0,
+        33.0,
+        67.0,
+        90.10000000000022,
+        799.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738056349/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738059947/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "37bcfdb0bd9bd12a883453f98a6e629777f13905ed8975eb3e438f8725664dc8",
+      "rows": 283402,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 283402,
+        "Robot_Influence": 0,
+        "X_Robot": 283402,
+        "Y_Robot": 283402
+      },
+      "tracks": 1583,
+      "Robot_Presence": {
+        "0": 283402
+      },
+      "Robot_Type": {
+        "nan": 283402
+      },
+      "Robot_Influence": {
+        "none": 283402
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1583
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738059963208.0,
+        1738075955675.0
+      ],
+      "timestamp_delta_quantiles": [
+        9.5712890625,
+        33.0,
+        67.0,
+        134.0,
+        3667.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738059947/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738076465/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "5c9545bb1b5a75a7bc759b39fabf258c49c5c071d30979e3589b90191b2b8673",
+      "rows": 29933,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 29933,
+        "Robot_Influence": 0,
+        "X_Robot": 29933,
+        "Y_Robot": 29933
+      },
+      "tracks": 130,
+      "Robot_Presence": {
+        "0": 29933
+      },
+      "Robot_Type": {
+        "nan": 29933
+      },
+      "Robot_Influence": {
+        "none": 29933
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 130
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738076468078.0,
+        1738080353412.0
+      ],
+      "timestamp_delta_quantiles": [
+        21.66650390625,
+        32.5,
+        67.0,
+        134.0,
+        4000.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738076465/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738143016/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "64b2f0c65a897163fab3569b68fbd33cb18c4a90bcdeaced68cd9fa9384c53bc",
+      "rows": 24046,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 24046,
+        "Robot_Influence": 0,
+        "X_Robot": 24046,
+        "Y_Robot": 24046
+      },
+      "tracks": 109,
+      "Robot_Presence": {
+        "0": 24046
+      },
+      "Robot_Type": {
+        "nan": 24046
+      },
+      "Robot_Influence": {
+        "none": 24046
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 109
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738143041108.0,
+        1738146100642.0
+      ],
+      "timestamp_delta_quantiles": [
+        8.375,
+        13.39990234375,
+        67.0,
+        134.0,
+        2534.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738143016/transformed_obstacles.csv",
+      "sha256": "c93126291c336279e0ee4a73559e125d0301ce56052b79f6e1947b58dd62c3a1",
+      "rows": 48,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738148746/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9a8033288285285723dac49699dcabbda4d1d8225b21bf3cb5e0084b55cb19d8",
+      "rows": 299113,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 299113,
+        "Robot_Influence": 0,
+        "X_Robot": 299113,
+        "Y_Robot": 299113
+      },
+      "tracks": 1576,
+      "Robot_Presence": {
+        "0": 299113
+      },
+      "Robot_Type": {
+        "nan": 299113
+      },
+      "Robot_Influence": {
+        "none": 299113
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1576
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738148748336.0,
+        1738162025202.0
+      ],
+      "timestamp_delta_quantiles": [
+        13.199951171875,
+        33.0,
+        67.0,
+        134.0,
+        5001.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738148746/transformed_obstacles.csv",
+      "sha256": "c93126291c336279e0ee4a73559e125d0301ce56052b79f6e1947b58dd62c3a1",
+      "rows": 48,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738232714/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9c356d9f27aeace5657ae76acf2703d21ae5ce3697b00064044c0f00c9f4e386",
+      "rows": 298684,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 298684,
+        "Robot_Influence": 0,
+        "X_Robot": 298684,
+        "Y_Robot": 298684
+      },
+      "tracks": 1489,
+      "Robot_Presence": {
+        "0": 298684
+      },
+      "Robot_Type": {
+        "nan": 298684
+      },
+      "Robot_Influence": {
+        "none": 298684
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1489
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738232717145.0,
+        1738252436011.0
+      ],
+      "timestamp_delta_quantiles": [
+        11.0,
+        22.33349609375,
+        67.0,
+        134.0,
+        4799.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738232714/transformed_obstacles.csv",
+      "sha256": "60432522a912ea884626d5d58c96738d37dd9f7529edb73f0997f56a12a6b88e",
+      "rows": 103,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738317225/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "e35336b9da026df599cc37fe028f55436b62f143920e9883435e5c626f0034ab",
+      "rows": 204141,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 204141,
+        "Robot_Influence": 0,
+        "X_Robot": 204141,
+        "Y_Robot": 204141
+      },
+      "tracks": 1184,
+      "Robot_Presence": {
+        "0": 204141
+      },
+      "Robot_Type": {
+        "nan": 204141
+      },
+      "Robot_Influence": {
+        "none": 204141
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1184
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738317247883.0,
+        1738332779082.0
+      ],
+      "timestamp_delta_quantiles": [
+        8.25,
+        33.0,
+        67.0,
+        200.0,
+        2867.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738317225/transformed_obstacles.csv",
+      "sha256": "d494f5a39795a3ec8754493337fff1cc6e3b1806f26dd68f7539e9e7aa635546",
+      "rows": 111,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738574351/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "2126c2c5052924ad7d13cb1c48de2f624ac2963ef28e046ade5424fb114371c7",
+      "rows": 11429,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 11429,
+        "Robot_Influence": 0,
+        "X_Robot": 11429,
+        "Y_Robot": 11429
+      },
+      "tracks": 67,
+      "Robot_Presence": {
+        "0": 11429
+      },
+      "Robot_Type": {
+        "nan": 11429
+      },
+      "Robot_Influence": {
+        "none": 11429
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 67
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738574448197.0,
+        1738578876331.0
+      ],
+      "timestamp_delta_quantiles": [
+        21.66650390625,
+        33.0,
+        67.0,
+        200.0,
+        1667.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738574351/transformed_obstacles.csv",
+      "sha256": "1a7543841c0e51d54bedc4610c1bec4eff4dac5e78935d034d8ca19076184eca",
+      "rows": 110,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738578893/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "3aed423b2e42749d2c0778ebbc0bee809e9bd1e8d3a56ec13228e7fb251c5773",
+      "rows": 97714,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 97714,
+        "Robot_Influence": 0,
+        "X_Robot": 97714,
+        "Y_Robot": 97714
+      },
+      "tracks": 685,
+      "Robot_Presence": {
+        "0": 97714
+      },
+      "Robot_Type": {
+        "nan": 97714
+      },
+      "Robot_Influence": {
+        "none": 97714
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 685
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738578896043.0,
+        1738585478842.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.75,
+        33.0,
+        67.0,
+        233.5,
+        2199.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738578893/transformed_obstacles.csv",
+      "sha256": "1a7543841c0e51d54bedc4610c1bec4eff4dac5e78935d034d8ca19076184eca",
+      "rows": 110,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738585557/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9e1f10b53a4ac0df2805572fb06b631a5302fa6eac7a6ac1d09ea3543860dab2",
+      "rows": 2344,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 2344,
+        "Robot_Influence": 0,
+        "X_Robot": 2344,
+        "Y_Robot": 2344
+      },
+      "tracks": 24,
+      "Robot_Presence": {
+        "0": 2344
+      },
+      "Robot_Type": {
+        "nan": 2344
+      },
+      "Robot_Influence": {
+        "none": 2344
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 24
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738585815896.0,
+        1738595700229.0
+      ],
+      "timestamp_delta_quantiles": [
+        32.5,
+        33.0,
+        67.0,
+        133.80999999999995,
+        767.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738585557/transformed_obstacles.csv",
+      "sha256": "1a7543841c0e51d54bedc4610c1bec4eff4dac5e78935d034d8ca19076184eca",
+      "rows": 110,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738596791/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "0991db07ad9274904ce7d78c384beb5e80f045adef64f59a88040ea5c508d6ab",
+      "rows": 5314,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 5314,
+        "Robot_Influence": 0,
+        "X_Robot": 5314,
+        "Y_Robot": 5314
+      },
+      "tracks": 32,
+      "Robot_Presence": {
+        "0": 5314
+      },
+      "Robot_Type": {
+        "nan": 5314
+      },
+      "Robot_Influence": {
+        "none": 5314
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 32
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738596881696.0,
+        1738598651028.0
+      ],
+      "timestamp_delta_quantiles": [
+        22.0,
+        33.0,
+        67.0,
+        200.0,
+        1999.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738596791/transformed_obstacles.csv",
+      "sha256": "1a7543841c0e51d54bedc4610c1bec4eff4dac5e78935d034d8ca19076184eca",
+      "rows": 110,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738662282/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "80a146798af5078a0f3d53547025a81c89e1ff0d621148bfec1dfa9acf72ebab",
+      "rows": 95703,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 95703,
+        "Robot_Influence": 0,
+        "X_Robot": 95703,
+        "Y_Robot": 95703
+      },
+      "tracks": 557,
+      "Robot_Presence": {
+        "0": 95703
+      },
+      "Robot_Type": {
+        "nan": 95703
+      },
+      "Robot_Influence": {
+        "none": 95703
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 557
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738662316240.0,
+        1738668493840.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.5,
+        33.0,
+        67.0,
+        167.0,
+        2022.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738662282/transformed_obstacles.csv",
+      "sha256": "98a132df290fbfcaf95dd231c6184d4309d88c0e542399b97a28ded305e61fa8",
+      "rows": 73,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738668524/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "a6c97dfa34f1bb352937ed27b360c594700dac59d9539912200967fb2c83c922",
+      "rows": 28865,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 28865,
+        "Robot_Influence": 0,
+        "X_Robot": 28865,
+        "Y_Robot": 28865
+      },
+      "tracks": 242,
+      "Robot_Presence": {
+        "0": 28865
+      },
+      "Robot_Type": {
+        "nan": 28865
+      },
+      "Robot_Influence": {
+        "none": 28865
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 242
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738668527863.0,
+        1738671214129.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.5,
+        33.0,
+        67.0,
+        267.0,
+        2066.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738668524/transformed_obstacles.csv",
+      "sha256": "98a132df290fbfcaf95dd231c6184d4309d88c0e542399b97a28ded305e61fa8",
+      "rows": 73,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738671254/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "3363eb407d8ac4bae03ade506c4dcd4b4e2c929ac4a9c0449e2d516bccaf4262",
+      "rows": 8866,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 8866,
+        "Robot_Influence": 0,
+        "X_Robot": 8866,
+        "Y_Robot": 8866
+      },
+      "tracks": 89,
+      "Robot_Presence": {
+        "0": 8866
+      },
+      "Robot_Type": {
+        "nan": 8866
+      },
+      "Robot_Influence": {
+        "none": 8866
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 89
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738671256585.0,
+        1738682319653.0
+      ],
+      "timestamp_delta_quantiles": [
+        32.5,
+        33.0,
+        67.0,
+        266.0,
+        1533.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738671254/transformed_obstacles.csv",
+      "sha256": "98a132df290fbfcaf95dd231c6184d4309d88c0e542399b97a28ded305e61fa8",
+      "rows": 73,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738746257/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "802bca67b10acc6af50b9f4e86b13a382554cb4d4380f8ec0a00f597427481d9",
+      "rows": 200055,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 200055,
+        "Robot_Influence": 0,
+        "X_Robot": 200055,
+        "Y_Robot": 200055
+      },
+      "tracks": 1071,
+      "Robot_Presence": {
+        "0": 200055
+      },
+      "Robot_Type": {
+        "nan": 200055
+      },
+      "Robot_Influence": {
+        "none": 200055
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1071
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738746290314.0,
+        1738758429381.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.5,
+        33.0,
+        67.0,
+        200.0,
+        3532.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738746257/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738760580/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "92882ba4fb60c2fb3739ba04f0790383b60778caf91f9fc3df85d8b3f8a08a08",
+      "rows": 79556,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 79556,
+        "Robot_Influence": 0,
+        "X_Robot": 79556,
+        "Y_Robot": 79556
+      },
+      "tracks": 388,
+      "Robot_Presence": {
+        "0": 79556
+      },
+      "Robot_Type": {
+        "nan": 79556
+      },
+      "Robot_Influence": {
+        "none": 79556
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 388
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738760611926.0,
+        1738771518260.0
+      ],
+      "timestamp_delta_quantiles": [
+        16.5,
+        32.5,
+        67.0,
+        135.0,
+        6066.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738760580/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738919933/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "688589b4dd600ac1736e8031752806eaea9652791220aa65ccd78b3ef13d9b3c",
+      "rows": 158412,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 158412,
+        "Robot_Influence": 0,
+        "X_Robot": 158412,
+        "Y_Robot": 158412
+      },
+      "tracks": 796,
+      "Robot_Presence": {
+        "0": 158412
+      },
+      "Robot_Type": {
+        "nan": 158412
+      },
+      "Robot_Influence": {
+        "none": 158412
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 796
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738919935985.0,
+        1738930567985.0
+      ],
+      "timestamp_delta_quantiles": [
+        13.199951171875,
+        22.666748046875,
+        67.0,
+        167.0,
+        2866.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1738919933/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739180772/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "738b53c9b57949da084bcefd8dbf8b5a9daed213b5fc39405b648396ac94a30c",
+      "rows": 198146,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 198146,
+        "Robot_Influence": 0,
+        "X_Robot": 198146,
+        "Y_Robot": 198146
+      },
+      "tracks": 1008,
+      "Robot_Presence": {
+        "0": 198146
+      },
+      "Robot_Type": {
+        "nan": 198146
+      },
+      "Robot_Influence": {
+        "none": 198146
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1008
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739181284670.0,
+        1739190016870.0
+      ],
+      "timestamp_delta_quantiles": [
+        11.0,
+        33.0,
+        67.0,
+        199.0,
+        5934.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739180772/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739261503/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9cf7824402ed24888a38f26fb43275bcda0a4ba570d9351322a0c915e2a04ad5",
+      "rows": 19211,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 19211,
+        "Robot_Influence": 0,
+        "X_Robot": 19211,
+        "Y_Robot": 19211
+      },
+      "tracks": 89,
+      "Robot_Presence": {
+        "0": 19211
+      },
+      "Robot_Type": {
+        "nan": 19211
+      },
+      "Robot_Influence": {
+        "none": 19211
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 89
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739261532591.0,
+        1739264514190.0
+      ],
+      "timestamp_delta_quantiles": [
+        22.0,
+        33.0,
+        67.0,
+        133.0,
+        14934.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739261503/transformed_obstacles.csv",
+      "sha256": "1a7543841c0e51d54bedc4610c1bec4eff4dac5e78935d034d8ca19076184eca",
+      "rows": 110,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739264572/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "4fe2623761df484ac676315fa26a0bb0063eb4aec94290bc3bfd5b358a3f611a",
+      "rows": 339243,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 339243,
+        "Robot_Influence": 0,
+        "X_Robot": 339243,
+        "Y_Robot": 339243
+      },
+      "tracks": 1700,
+      "Robot_Presence": {
+        "0": 339243
+      },
+      "Robot_Type": {
+        "nan": 339243
+      },
+      "Robot_Influence": {
+        "none": 339243
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 1700
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739264578293.0,
+        1739284404559.0
+      ],
+      "timestamp_delta_quantiles": [
+        11.0,
+        22.33349609375,
+        67.0,
+        166.5,
+        3166.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739264572/transformed_obstacles.csv",
+      "sha256": "18a1452aad6c5c62fb73ab04a99accedee6b8b46291b331f98338f0d725cd43c",
+      "rows": 136,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739284572/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9e7b41b81b97660f43cc2b7c09cfb264ea969798d590d312e62ac9e70789bd9f",
+      "rows": 53486,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 53486,
+        "Robot_Influence": 0,
+        "X_Robot": 53486,
+        "Y_Robot": 53486
+      },
+      "tracks": 246,
+      "Robot_Presence": {
+        "0": 53486
+      },
+      "Robot_Type": {
+        "nan": 53486
+      },
+      "Robot_Influence": {
+        "none": 53486
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 246
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739284615437.0,
+        1739294664571.0
+      ],
+      "timestamp_delta_quantiles": [
+        13.39990234375,
+        22.33349609375,
+        67.0,
+        133.5,
+        20266.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739284572/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739357483/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "7eab7c972300865d7d518262c3737d33618b60ebf5e5fe2cadda26fc5bef216f",
+      "rows": 113903,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 113903,
+        "Robot_Influence": 0,
+        "X_Robot": 113903,
+        "Y_Robot": 113903
+      },
+      "tracks": 627,
+      "Robot_Presence": {
+        "0": 113903
+      },
+      "Robot_Type": {
+        "nan": 113903
+      },
+      "Robot_Influence": {
+        "none": 113903
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 627
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739357485730.0,
+        1739362331397.0
+      ],
+      "timestamp_delta_quantiles": [
+        21.66650390625,
+        33.0,
+        67.0,
+        200.0,
+        2067.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739357483/transformed_obstacles.csv",
+      "sha256": "60432522a912ea884626d5d58c96738d37dd9f7529edb73f0997f56a12a6b88e",
+      "rows": 103,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739369577/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "5e477e336d0cac15d906bfb3797697f92cd877d4d51d6c8a025c6c8b5b2cd8ef",
+      "rows": 4219,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 4219,
+        "Robot_Influence": 0,
+        "X_Robot": 4219,
+        "Y_Robot": 4219
+      },
+      "tracks": 18,
+      "Robot_Presence": {
+        "0": 4219
+      },
+      "Robot_Type": {
+        "nan": 4219
+      },
+      "Robot_Influence": {
+        "none": 4219
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "none": 18
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1739369586008.0,
+        1739369777674.0
+      ],
+      "timestamp_delta_quantiles": [
+        7.333251953125,
+        8.25,
+        66.0,
+        68.0,
+        1001.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/no_robot/1739369577/transformed_obstacles.csv",
+      "sha256": "58caf15f02a269871a88b8c8a8a7a8bcec4e22b093247b9733a4d7f1e062edef",
+      "rows": 22,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737455747(hsr)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "6df69160496a16a662ddd677c34c916a60367cef49fdf7b937f229e73455c36c",
+      "rows": 131352,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 1047,
+      "Robot_Presence": {
+        "1": 131352
+      },
+      "Robot_Type": {
+        "Hsr": 131352
+      },
+      "Robot_Influence": {
+        "neutral": 83703,
+        "avoid": 41921,
+        "attract": 5728
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 727,
+        "avoid": 274,
+        "attract": 46
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737455750329.0,
+        1737462153993.0
+      ],
+      "timestamp_delta_quantiles": [
+        11.0,
+        22.333251953125,
+        66.0,
+        267.0,
+        4334.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737455747(hsr)/transformed_obstacles.csv",
+      "sha256": "d24ca24b15637fca1b08ac3e2c1d2f483f35594aba5ba6a8a3b70bafd0f75126",
+      "rows": 397,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737541545(steve)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "29d49b2a9272c770463edfd4132a04923bd3c145afbc99f174614af799bacdd0",
+      "rows": 157097,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 813,
+      "Robot_Presence": {
+        "1": 157097
+      },
+      "Robot_Type": {
+        "Steve": 157097
+      },
+      "Robot_Influence": {
+        "neutral": 103045,
+        "avoid": 51972,
+        "attract": 2080
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 524,
+        "avoid": 276,
+        "attract": 13
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737541548740.0,
+        1737546927807.0
+      ],
+      "timestamp_delta_quantiles": [
+        11.16650390625,
+        32.0,
+        66.0,
+        166.5,
+        5333.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737541545(steve)/transformed_obstacles.csv",
+      "sha256": "1658112943113478254f8eafeaa2003dc802770a3694a0f04dc5050638bd3f41",
+      "rows": 319,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737975940(go2)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "d4b462b1108306d61f2c2ed628a816a1382ee7f9c28ddec3cb37b7984ca6790a",
+      "rows": 103965,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 512,
+      "Robot_Presence": {
+        "1": 103965
+      },
+      "Robot_Type": {
+        "Go2": 103965
+      },
+      "Robot_Influence": {
+        "neutral": 69984,
+        "avoid": 25833,
+        "attract": 8148
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 346,
+        "avoid": 131,
+        "attract": 35
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1737975944157.0,
+        1737978433690.0
+      ],
+      "timestamp_delta_quantiles": [
+        13.39990234375,
+        22.333251953125,
+        67.0,
+        199.0,
+        4466.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1737975940(go2)/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1738146369(go1)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "378d01ec5977ce964c021c56bf8e2d01ea215282d0de1824646224fbe90478e8",
+      "rows": 45807,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 251,
+      "Robot_Presence": {
+        "1": 45807
+      },
+      "Robot_Type": {
+        "Go1": 45807
+      },
+      "Robot_Influence": {
+        "neutral": 27923,
+        "avoid": 12744,
+        "attract": 5140
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 156,
+        "avoid": 70,
+        "attract": 25
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738146374634.0,
+        1738148452633.0
+      ],
+      "timestamp_delta_quantiles": [
+        21.66650390625,
+        32.5,
+        67.0,
+        134.0,
+        1566.5
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1738146369(go1)/transformed_obstacles.csv",
+      "sha256": "c93126291c336279e0ee4a73559e125d0301ce56052b79f6e1947b58dd62c3a1",
+      "rows": 48,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1738758438(go1)/filtered_trajectories_labeled_and_robot_relabelled.csv",
+      "sha256": "9b30a32270b62ecde628418ab3e4be76965391ecf638e0b302251e2b37975736",
+      "rows": 44906,
+      "columns": [
+        "Frame_Number",
+        "Pedestrian_ID",
+        "X_Position",
+        "Y_Position",
+        "Distance_Increment",
+        "Robot_Presence",
+        "Robot_Type",
+        "Robot_Influence",
+        "X_Robot",
+        "Y_Robot"
+      ],
+      "missing": {
+        "Frame_Number": 0,
+        "Pedestrian_ID": 0,
+        "X_Position": 0,
+        "Y_Position": 0,
+        "Distance_Increment": 0,
+        "Robot_Presence": 0,
+        "Robot_Type": 0,
+        "Robot_Influence": 0,
+        "X_Robot": 0,
+        "Y_Robot": 0
+      },
+      "tracks": 222,
+      "Robot_Presence": {
+        "1": 44906
+      },
+      "Robot_Type": {
+        "Go1": 44906
+      },
+      "Robot_Influence": {
+        "neutral": 29830,
+        "avoid": 11581,
+        "attract": 3495
+      },
+      "duplicate_track_timestamps": 0,
+      "track_label_counts": {
+        "neutral": 146,
+        "avoid": 59,
+        "attract": 17
+      },
+      "label_changes_within_track": 0,
+      "time_range": [
+        1738758441389.0,
+        1738760535522.0
+      ],
+      "timestamp_delta_quantiles": [
+        13.199951171875,
+        22.0,
+        67.0,
+        199.0,
+        1667.0
+      ],
+      "nonpositive_deltas": 0,
+      "robot_unique_positions": 1
+    },
+    {
+      "path": "/home/abc/temp/peroi-full/data/stationary_robot/1738758438(go1)/transformed_obstacles.csv",
+      "sha256": "2cbe3f4c2a599252804813f8ba0281773ba0d2da62f6e6f914f71dbb62577755",
+      "rows": 335,
+      "columns": [
+        "x",
+        "y"
+      ],
+      "missing": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "structural_checks": {
+    "group_partitions": 15,
+    "group_trials": 1000,
+    "group_additive_expected_cost_max_error": 3.552713678800501e-15,
+    "group_scope": "Fixed candidate additive pairwise social cost only; not non-additive group dynamics or information gathering",
+    "sensor_count_confounding_max_error": 0.0,
+    "sensor_scope": "Independent fresh existence example, not general persistent-track identifiability",
+    "shared_health_two_misses": 0.41000000000000003,
+    "mean_health_two_misses": 0.25
+  }
+}
