@@ -1,0 +1,798 @@
+{
+  "rows": [
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "method": "CV",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 155,
+      "event_tracks": 75,
+      "brier": 0.0035538695724528103,
+      "auc_record_mean": 0.9832725154629506,
+      "ap_record_mean": 0.7751567269980448,
+      "fpr_record_mean": 0.05025946028532143,
+      "recall_record_mean": 0.890113906561275,
+      "missed_seed_mean": 9.0,
+      "false_alarm_seed_mean": 367.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "method": "FULL",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 155,
+      "event_tracks": 75,
+      "brier": 0.0031668719262451304,
+      "auc_record_mean": 0.9776482524016331,
+      "ap_record_mean": 0.7947285128229399,
+      "fpr_record_mean": 0.0509770783240285,
+      "recall_record_mean": 0.8955441488336225,
+      "missed_seed_mean": 8.0,
+      "false_alarm_seed_mean": 376.3333333333333
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "method": "IID",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 155,
+      "event_tracks": 75,
+      "brier": 0.003162633041893904,
+      "auc_record_mean": 0.9776659085013066,
+      "ap_record_mean": 0.7956127592014862,
+      "fpr_record_mean": 0.05091617560657739,
+      "recall_record_mean": 0.8955441488336225,
+      "missed_seed_mean": 8.0,
+      "false_alarm_seed_mean": 376.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "method": "MAP",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 155,
+      "event_tracks": 75,
+      "brier": 0.003200567510403442,
+      "auc_record_mean": 0.9780517056763509,
+      "ap_record_mean": 0.7918101416428868,
+      "fpr_record_mean": 0.05206611075425926,
+      "recall_record_mean": 0.8909841376946641,
+      "missed_seed_mean": 7.666666666666667,
+      "false_alarm_seed_mean": 381.3333333333333
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "method": "TREE",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 155,
+      "event_tracks": 75,
+      "brier": 0.003142776982343843,
+      "auc_record_mean": 0.9776817703765873,
+      "ap_record_mean": 0.7947991659259461,
+      "fpr_record_mean": 0.0493660493688377,
+      "recall_record_mean": 0.9042116509221773,
+      "missed_seed_mean": 7.0,
+      "false_alarm_seed_mean": 361.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "method": "CV",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 6,
+      "event_tracks": 2,
+      "brier": 0.002868576555421115,
+      "auc_record_mean": 0.966025641025641,
+      "ap_record_mean": 0.7283549783549783,
+      "fpr_record_mean": 0.011538461538461539,
+      "recall_record_mean": 0.6666666666666666,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 3.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "method": "FULL",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 6,
+      "event_tracks": 2,
+      "brier": 0.0030315267422402273,
+      "auc_record_mean": 0.9173076923076923,
+      "ap_record_mean": 0.5578697077952127,
+      "fpr_record_mean": 0.021794871794871797,
+      "recall_record_mean": 0.6666666666666666,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 5.666666666666667
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "method": "IID",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 6,
+      "event_tracks": 2,
+      "brier": 0.0030311143847458148,
+      "auc_record_mean": 0.917094017094017,
+      "ap_record_mean": 0.5586536051505163,
+      "fpr_record_mean": 0.021794871794871797,
+      "recall_record_mean": 0.6666666666666666,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 5.666666666666667
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "method": "MAP",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 6,
+      "event_tracks": 2,
+      "brier": 0.003036269357519736,
+      "auc_record_mean": 0.9202991452991452,
+      "ap_record_mean": 0.5485659551829186,
+      "fpr_record_mean": 0.023076923076923078,
+      "recall_record_mean": 0.611111111111111,
+      "missed_seed_mean": 2.3333333333333335,
+      "false_alarm_seed_mean": 6.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "method": "TREE",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 6,
+      "event_tracks": 2,
+      "brier": 0.0031524693353931913,
+      "auc_record_mean": 0.9147435897435899,
+      "ap_record_mean": 0.4974331182362035,
+      "fpr_record_mean": 0.019230769230769232,
+      "recall_record_mean": 0.6666666666666666,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 5.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "method": "CV",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 4,
+      "event_tracks": 1,
+      "brier": 0.005853079952121818,
+      "auc_record_mean": 0.9653846153846154,
+      "ap_record_mean": 0.826923076923077,
+      "fpr_record_mean": 0.2153846153846154,
+      "recall_record_mean": 1.0,
+      "missed_seed_mean": 0.0,
+      "false_alarm_seed_mean": 14.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "method": "FULL",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 4,
+      "event_tracks": 1,
+      "brier": 0.005852353610328446,
+      "auc_record_mean": 0.967948717948718,
+      "ap_record_mean": 0.7511363636363636,
+      "fpr_record_mean": 0.1076923076923077,
+      "recall_record_mean": 0.9166666666666666,
+      "missed_seed_mean": 0.3333333333333333,
+      "false_alarm_seed_mean": 7.0
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "method": "IID",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 4,
+      "event_tracks": 1,
+      "brier": 0.0058638595985811524,
+      "auc_record_mean": 0.9666666666666667,
+      "ap_record_mean": 0.6986111111111111,
+      "fpr_record_mean": 0.11794871794871796,
+      "recall_record_mean": 0.9166666666666666,
+      "missed_seed_mean": 0.3333333333333333,
+      "false_alarm_seed_mean": 7.666666666666667
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "method": "MAP",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 4,
+      "event_tracks": 1,
+      "brier": 0.005865282707284888,
+      "auc_record_mean": 0.9705128205128205,
+      "ap_record_mean": 0.75736531986532,
+      "fpr_record_mean": 0.11282051282051282,
+      "recall_record_mean": 0.9166666666666666,
+      "missed_seed_mean": 0.3333333333333333,
+      "false_alarm_seed_mean": 7.333333333333333
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "method": "TREE",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 4,
+      "event_tracks": 1,
+      "brier": 0.0060102576994570086,
+      "auc_record_mean": 0.9692307692307692,
+      "ap_record_mean": 0.7041666666666666,
+      "fpr_record_mean": 0.09230769230769231,
+      "recall_record_mean": 0.75,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 6.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "method": "CV",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 359,
+      "event_tracks": 159,
+      "brier": 0.00722144041297359,
+      "auc_record_mean": 0.9869086751960282,
+      "ap_record_mean": 0.8630182975478684,
+      "fpr_record_mean": 0.04947035488464674,
+      "recall_record_mean": 0.9333913635384223,
+      "missed_seed_mean": 19.0,
+      "false_alarm_seed_mean": 334.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "method": "FULL",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 359,
+      "event_tracks": 159,
+      "brier": 0.006632930199973529,
+      "auc_record_mean": 0.9855029912180306,
+      "ap_record_mean": 0.8797649094010538,
+      "fpr_record_mean": 0.04930106239668083,
+      "recall_record_mean": 0.9281900198566865,
+      "missed_seed_mean": 16.0,
+      "false_alarm_seed_mean": 328.6666666666667
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "method": "IID",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 359,
+      "event_tracks": 159,
+      "brier": 0.006618639249736631,
+      "auc_record_mean": 0.9855593822196149,
+      "ap_record_mean": 0.8799635596644263,
+      "fpr_record_mean": 0.04910341020222192,
+      "recall_record_mean": 0.9281900198566865,
+      "missed_seed_mean": 16.0,
+      "false_alarm_seed_mean": 327.3333333333333
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "method": "MAP",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 359,
+      "event_tracks": 159,
+      "brier": 0.006700722274687465,
+      "auc_record_mean": 0.9856308947420427,
+      "ap_record_mean": 0.8758211964230549,
+      "fpr_record_mean": 0.05056829744089635,
+      "recall_record_mean": 0.9257208840542174,
+      "missed_seed_mean": 16.666666666666668,
+      "false_alarm_seed_mean": 331.3333333333333
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "method": "TREE",
+      "queries": 6007,
+      "tracks": 1519,
+      "event_queries": 359,
+      "event_tracks": 159,
+      "brier": 0.006754509279826082,
+      "auc_record_mean": 0.985374882931568,
+      "ap_record_mean": 0.8776389891464943,
+      "fpr_record_mean": 0.04950320739452065,
+      "recall_record_mean": 0.9299469049469048,
+      "missed_seed_mean": 16.0,
+      "false_alarm_seed_mean": 329.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "method": "CV",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 8,
+      "event_tracks": 3,
+      "brier": 0.0028655788460426506,
+      "auc_record_mean": 0.9893410852713179,
+      "ap_record_mean": 0.874537037037037,
+      "fpr_record_mean": 0.01937984496124031,
+      "recall_record_mean": 0.875,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 5.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "method": "FULL",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 8,
+      "event_tracks": 3,
+      "brier": 0.0037255589499056805,
+      "auc_record_mean": 0.9588178294573644,
+      "ap_record_mean": 0.767713515258424,
+      "fpr_record_mean": 0.03229974160206719,
+      "recall_record_mean": 0.75,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 8.333333333333334
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "method": "IID",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 8,
+      "event_tracks": 3,
+      "brier": 0.003614576230758186,
+      "auc_record_mean": 0.959140826873385,
+      "ap_record_mean": 0.7695489784982819,
+      "fpr_record_mean": 0.03229974160206719,
+      "recall_record_mean": 0.75,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 8.333333333333334
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "method": "MAP",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 8,
+      "event_tracks": 3,
+      "brier": 0.0038114454454586874,
+      "auc_record_mean": 0.9605943152454781,
+      "ap_record_mean": 0.7565740120932015,
+      "fpr_record_mean": 0.03617571059431524,
+      "recall_record_mean": 0.75,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 9.333333333333334
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "method": "TREE",
+      "queries": 266,
+      "tracks": 70,
+      "event_queries": 8,
+      "event_tracks": 3,
+      "brier": 0.003568146811165886,
+      "auc_record_mean": 0.9578488372093025,
+      "ap_record_mean": 0.756469298245614,
+      "fpr_record_mean": 0.031007751937984496,
+      "recall_record_mean": 0.75,
+      "missed_seed_mean": 2.0,
+      "false_alarm_seed_mean": 8.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "method": "CV",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 5,
+      "event_tracks": 1,
+      "brier": 0.007426777067669519,
+      "auc_record_mean": 0.975,
+      "ap_record_mean": 0.8769230769230769,
+      "fpr_record_mean": 0.15625,
+      "recall_record_mean": 1.0,
+      "missed_seed_mean": 0.0,
+      "false_alarm_seed_mean": 10.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "method": "FULL",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 5,
+      "event_tracks": 1,
+      "brier": 0.007349503058881347,
+      "auc_record_mean": 0.9791666666666666,
+      "ap_record_mean": 0.8867521367521367,
+      "fpr_record_mean": 0.07291666666666667,
+      "recall_record_mean": 0.8000000000000002,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 4.666666666666667
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "method": "IID",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 5,
+      "event_tracks": 1,
+      "brier": 0.007325121199291488,
+      "auc_record_mean": 0.9791666666666666,
+      "ap_record_mean": 0.8867521367521367,
+      "fpr_record_mean": 0.07291666666666667,
+      "recall_record_mean": 0.8000000000000002,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 4.666666666666667
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "method": "MAP",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 5,
+      "event_tracks": 1,
+      "brier": 0.007336892547490764,
+      "auc_record_mean": 0.9802083333333332,
+      "ap_record_mean": 0.8888888888888888,
+      "fpr_record_mean": 0.078125,
+      "recall_record_mean": 0.8000000000000002,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 5.0
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "method": "TREE",
+      "queries": 69,
+      "tracks": 16,
+      "event_queries": 5,
+      "event_tracks": 1,
+      "brier": 0.007529417363727691,
+      "auc_record_mean": 0.984375,
+      "ap_record_mean": 0.8999999999999999,
+      "fpr_record_mean": 0.0625,
+      "recall_record_mean": 0.8000000000000002,
+      "missed_seed_mean": 1.0,
+      "false_alarm_seed_mean": 4.0
+    }
+  ],
+  "paired_brier": [
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "comparison": "FULL-CV",
+      "track_difference": -0.00038699764620767996,
+      "track_ci95": [
+        -0.0006483225888946813,
+        -0.0001528651758255795
+      ],
+      "record_difference": -0.00030104635836451565,
+      "record_ci95": [
+        -0.0005387011137240701,
+        -6.117182151477343e-05
+      ]
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "comparison": "FULL-TREE",
+      "track_difference": 2.409494390128763e-05,
+      "track_ci95": [
+        -3.2936083371035835e-05,
+        8.33257826223275e-05
+      ],
+      "record_difference": 1.6275025836523465e-05,
+      "record_ci95": [
+        -4.864673410157982e-05,
+        6.747418420527154e-05
+      ]
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "comparison": "FULL-MAP",
+      "track_difference": -3.369558415831155e-05,
+      "track_ci95": [
+        -7.027438556092253e-05,
+        -1.782293188867125e-07
+      ],
+      "record_difference": -2.744719942347407e-05,
+      "record_ci95": [
+        -5.701729846589689e-05,
+        -3.419756438542503e-06
+      ]
+    },
+    {
+      "radius": 0.7,
+      "subset": "all_loso",
+      "comparison": "FULL-IID",
+      "track_difference": 4.238884351226415e-06,
+      "track_ci95": [
+        -1.5097262000886427e-06,
+        1.207422399344434e-05
+      ],
+      "record_difference": 3.4396501948487806e-06,
+      "record_ci95": [
+        1.1913985332705576e-06,
+        5.493269804479004e-06
+      ]
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "comparison": "FULL-CV",
+      "track_difference": 0.00016295018681911286,
+      "track_ci95": [
+        2.2057712392925313e-05,
+        0.0003844002767714788
+      ],
+      "record_difference": 0.00016295018681911286,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "comparison": "FULL-TREE",
+      "track_difference": -0.00012094259315296308,
+      "track_ci95": [
+        -0.0003353398233286372,
+        1.5310806586009806e-05
+      ],
+      "record_difference": -0.00012094259315296308,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "comparison": "FULL-MAP",
+      "track_difference": -4.742615279507495e-06,
+      "track_ci95": [
+        -2.1537174285919373e-05,
+        6.5024265581812004e-06
+      ],
+      "record_difference": -4.742615279507495e-06,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_loso",
+      "comparison": "FULL-IID",
+      "track_difference": 4.123574944130429e-07,
+      "track_ci95": [
+        -3.7349488119126193e-06,
+        5.428894181825708e-06
+      ],
+      "record_difference": 4.1235749441304327e-07,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "comparison": "FULL-CV",
+      "track_difference": -7.263417933718784e-07,
+      "track_ci95": [
+        -1.3489749551547092e-05,
+        1.2498518948524022e-05
+      ],
+      "record_difference": -7.263417933718789e-07,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "comparison": "FULL-TREE",
+      "track_difference": -0.00015790408912856341,
+      "track_ci95": [
+        -0.00047821448956111704,
+        4.3107751827241685e-06
+      ],
+      "record_difference": -0.00015790408912856341,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "comparison": "FULL-MAP",
+      "track_difference": -1.2929096956442521e-05,
+      "track_ci95": [
+        -3.9516188760203166e-05,
+        1.4463799352960363e-06
+      ],
+      "record_difference": -1.292909695644252e-05,
+      "record_ci95": null
+    },
+    {
+      "radius": 0.7,
+      "subset": "moving_temporal",
+      "comparison": "FULL-IID",
+      "track_difference": -1.1505988252706439e-05,
+      "track_ci95": [
+        -3.715184741669814e-05,
+        2.6179033491217357e-06
+      ],
+      "record_difference": -1.1505988252706439e-05,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "comparison": "FULL-CV",
+      "track_difference": -0.0005885102130000625,
+      "track_ci95": [
+        -0.0009938124233878167,
+        -0.00019984317389864622
+      ],
+      "record_difference": -0.0004331443243448645,
+      "record_ci95": [
+        -0.0009908720196861965,
+        0.00017281462127345082
+      ]
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "comparison": "FULL-TREE",
+      "track_difference": -0.00012157907985255382,
+      "track_ci95": [
+        -0.00031257074601815407,
+        4.4754242241755496e-05
+      ],
+      "record_difference": -2.9483141697325543e-05,
+      "record_ci95": [
+        -0.0001691409154359736,
+        8.964698218542632e-05
+      ]
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "comparison": "FULL-MAP",
+      "track_difference": -6.779207471393669e-05,
+      "track_ci95": [
+        -0.0001352084423113827,
+        -4.229003714944487e-06
+      ],
+      "record_difference": -6.475712750746443e-05,
+      "record_ci95": [
+        -0.00011013397782866373,
+        -2.3519872830911198e-05
+      ]
+    },
+    {
+      "radius": 1.0,
+      "subset": "all_loso",
+      "comparison": "FULL-IID",
+      "track_difference": 1.4290950236897083e-05,
+      "track_ci95": [
+        -1.6898533637905924e-07,
+        3.132195313825254e-05
+      ],
+      "record_difference": 2.294131621964702e-05,
+      "record_ci95": [
+        -2.8118869570899885e-06,
+        6.154484096209317e-05
+      ]
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "comparison": "FULL-CV",
+      "track_difference": 0.00085998010386303,
+      "track_ci95": [
+        0.000171928162839485,
+        0.0017968035508562894
+      ],
+      "record_difference": 0.00085998010386303,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "comparison": "FULL-TREE",
+      "track_difference": 0.00015741213873979445,
+      "track_ci95": [
+        -0.00017031176291606607,
+        0.0006546380662416354
+      ],
+      "record_difference": 0.00015741213873979445,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "comparison": "FULL-MAP",
+      "track_difference": -8.588649555300664e-05,
+      "track_ci95": [
+        -0.00020987838371813424,
+        -2.7004324816645393e-06
+      ],
+      "record_difference": -8.588649555300665e-05,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_loso",
+      "comparison": "FULL-IID",
+      "track_difference": 0.00011098271914749503,
+      "track_ci95": [
+        -1.838635435278301e-06,
+        0.00032845679744229284
+      ],
+      "record_difference": 0.00011098271914749503,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "comparison": "FULL-CV",
+      "track_difference": -7.72740087881731e-05,
+      "track_ci95": [
+        -0.00025326098561167257,
+        6.129206860050112e-05
+      ],
+      "record_difference": -7.727400878817309e-05,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "comparison": "FULL-TREE",
+      "track_difference": -0.0001799143048463448,
+      "track_ci95": [
+        -0.0005554199815901532,
+        2.111239334652377e-05
+      ],
+      "record_difference": -0.0001799143048463448,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "comparison": "FULL-MAP",
+      "track_difference": 1.261051139058282e-05,
+      "track_ci95": [
+        -2.0681696714063463e-05,
+        5.62861013496682e-05
+      ],
+      "record_difference": 1.261051139058282e-05,
+      "record_ci95": null
+    },
+    {
+      "radius": 1.0,
+      "subset": "moving_temporal",
+      "comparison": "FULL-IID",
+      "track_difference": 2.4381859589858016e-05,
+      "track_ci95": [
+        -5.877057531766715e-07,
+        6.919273694627872e-05
+      ],
+      "record_difference": 2.4381859589858016e-05,
+      "record_ci95": null
+    }
+  ]
+}

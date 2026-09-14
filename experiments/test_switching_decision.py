@@ -12,6 +12,10 @@ class DecisionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):cls.model=joblib.load(OUT/'deployment.joblib')
 
+    def setUp(self):self.previous_horizons=source.old.H.copy()
+
+    def tearDown(self):source.old.H=self.previous_horizons
+
     def test_online_offline_prefix_equivalence(self):
         engine=Online(self.model,'FULL')
         t=np.arange(0,3.01,.25);p=np.c_[t,.05*t*t];r=np.zeros_like(p)

@@ -1,0 +1,1117 @@
+{
+  "case": 0,
+  "people": 5,
+  "scene": "circle_crossing",
+  "index": 0,
+  "layout_hash": "f186139c3b92a578",
+  "arm": "FULL",
+  "status": "ok",
+  "event": "reach_goal",
+  "success": 1,
+  "collision": 0,
+  "timeout": 0,
+  "penalty": 11.0,
+  "nav_time": 11.0,
+  "steps": [
+    {
+      "step": 0,
+      "action": [
+        0.0,
+        0.5
+      ],
+      "robot_after": [
+        0.0,
+        -3.875
+      ],
+      "human_audit_hash": "26afa19e7a53914f",
+      "visible": 2,
+      "eligible": 0,
+      "tracks": 2,
+      "inference_ms": 0.05419738590717316,
+      "total_ms": 32.93642867356539,
+      "plan_ms": 29.157323762774467,
+      "clearance": 1.4190568458600747,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 9,
+      "risk_permitted": 2028,
+      "feasibility": 0.0
+    },
+    {
+      "step": 1,
+      "action": [
+        0.0,
+        1.0
+      ],
+      "robot_after": [
+        0.0,
+        -3.625
+      ],
+      "human_audit_hash": "903aa7b30881c7e1",
+      "visible": 2,
+      "eligible": 0,
+      "tracks": 2,
+      "inference_ms": 0.048539601266384125,
+      "total_ms": 26.068473234772682,
+      "plan_ms": 25.457770563662052,
+      "clearance": 1.2928247555442165,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 820,
+      "risk_permitted": 2001,
+      "feasibility": 0.0
+    },
+    {
+      "step": 2,
+      "action": [
+        0.0,
+        1.0
+      ],
+      "robot_after": [
+        0.0,
+        -3.375
+      ],
+      "human_audit_hash": "54dffb1c3a9818c9",
+      "visible": 3,
+      "eligible": 0,
+      "tracks": 3,
+      "inference_ms": 0.05077570676803589,
+      "total_ms": 29.356095008552074,
+      "plan_ms": 28.635182417929173,
+      "clearance": 1.1728703867787686,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 1271,
+      "risk_permitted": 1898,
+      "feasibility": 0.0
+    },
+    {
+      "step": 3,
+      "action": [
+        0.0,
+        1.0
+      ],
+      "robot_after": [
+        0.0,
+        -3.125
+      ],
+      "human_audit_hash": "1c9cc69df4724d4f",
+      "visible": 4,
+      "eligible": 0,
+      "tracks": 4,
+      "inference_ms": 0.05384813994169235,
+      "total_ms": 33.194007351994514,
+      "plan_ms": 32.36022684723139,
+      "clearance": 1.0574266795577807,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 1270,
+      "risk_permitted": 1833,
+      "feasibility": 0.0
+    },
+    {
+      "step": 4,
+      "action": [
+        0.0,
+        1.0
+      ],
+      "robot_after": [
+        0.0,
+        -2.875
+      ],
+      "human_audit_hash": "578194d813508bad",
+      "visible": 4,
+      "eligible": 2,
+      "tracks": 4,
+      "inference_ms": 71.04803808033466,
+      "total_ms": 110.70763599127531,
+      "plan_ms": 38.81010506302118,
+      "clearance": 0.9498358779382466,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 794,
+      "risk_permitted": 1417,
+      "feasibility": 0.0
+    },
+    {
+      "step": 5,
+      "action": [
+        0.0,
+        1.0
+      ],
+      "robot_after": [
+        0.0,
+        -2.625
+      ],
+      "human_audit_hash": "f569c2fec6c812c5",
+      "visible": 4,
+      "eligible": 2,
+      "tracks": 4,
+      "inference_ms": 9.380185976624489,
+      "total_ms": 54.86904177814722,
+      "plan_ms": 44.23357825726271,
+      "clearance": 0.849170477280195,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 661,
+      "risk_permitted": 997,
+      "feasibility": 0.0
+    },
+    {
+      "step": 6,
+      "action": [
+        0.12128890387462808,
+        0.850450766963088
+      ],
+      "robot_after": [
+        0.03032222596865702,
+        -2.412387308259228
+      ],
+      "human_audit_hash": "b150a13f053d0f9f",
+      "visible": 4,
+      "eligible": 3,
+      "tracks": 4,
+      "inference_ms": 11.93222776055336,
+      "total_ms": 50.330961123108864,
+      "plan_ms": 37.58213669061661,
+      "clearance": 0.7311384687134123,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 618,
+      "risk_permitted": 902,
+      "feasibility": 0.0
+    },
+    {
+      "step": 7,
+      "action": [
+        -0.10662477036149655,
+        0.5780258579950797
+      ],
+      "robot_after": [
+        0.0036660333782828833,
+        -2.2678808437604583
+      ],
+      "human_audit_hash": "e6f936efb128c6f2",
+      "visible": 5,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 11.753221973776817,
+      "total_ms": 54.074025712907314,
+      "plan_ms": 41.500575840473175,
+      "clearance": 0.6367170269341417,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 414,
+      "risk_permitted": 1351,
+      "feasibility": 0.0
+    },
+    {
+      "step": 8,
+      "action": [
+        -0.5658000456637498,
+        0.5761998597775373
+      ],
+      "robot_after": [
+        -0.13778397803765455,
+        -2.123830878816074
+      ],
+      "human_audit_hash": "35b7326c1776fba0",
+      "visible": 5,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 12.363714165985584,
+      "total_ms": 55.442169308662415,
+      "plan_ms": 42.2710757702589,
+      "clearance": 0.6367170269341417,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 405,
+      "risk_permitted": 1317,
+      "feasibility": 0.0
+    },
+    {
+      "step": 9,
+      "action": [
+        -0.7939784568328008,
+        0.2994631193710799
+      ],
+      "robot_after": [
+        -0.33627859224585477,
+        -2.048965098973304
+      ],
+      "human_audit_hash": "f1f6c7f4a7e56abf",
+      "visible": 5,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 13.136589899659157,
+      "total_ms": 55.328465066850185,
+      "plan_ms": 41.38959478586912,
+      "clearance": 0.657220050714766,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 404,
+      "risk_permitted": 1204,
+      "feasibility": 0.0
+    },
+    {
+      "step": 10,
+      "action": [
+        -0.9796657716321073,
+        0.18226707541561854
+      ],
+      "robot_after": [
+        -0.5811950351538816,
+        -2.0033983301193996
+      ],
+      "human_audit_hash": "38b525f32c7258d0",
+      "visible": 5,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 13.721451163291931,
+      "total_ms": 56.50384444743395,
+      "plan_ms": 41.94204788655043,
+      "clearance": 0.5293100557752474,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 506,
+      "risk_permitted": 1340,
+      "feasibility": 0.0
+    },
+    {
+      "step": 11,
+      "action": [
+        -0.917602230369405,
+        0.2837964535714329
+      ],
+      "robot_after": [
+        -0.8105955927462328,
+        -1.9324492167265415
+      ],
+      "human_audit_hash": "65c85fec17142290",
+      "visible": 5,
+      "eligible": 5,
+      "tracks": 5,
+      "inference_ms": 16.4647214114666,
+      "total_ms": 60.75626891106367,
+      "plan_ms": 43.40748209506273,
+      "clearance": 0.31505218777460964,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 546,
+      "risk_permitted": 1526,
+      "feasibility": 0.0
+    },
+    {
+      "step": 12,
+      "action": [
+        -0.7660465250833832,
+        0.434675573224656
+      ],
+      "robot_after": [
+        -1.0021072240170787,
+        -1.8237803234203775
+      ],
+      "human_audit_hash": "05cb572afddd871a",
+      "visible": 5,
+      "eligible": 5,
+      "tracks": 5,
+      "inference_ms": 17.44202710688114,
+      "total_ms": 60.57013850659132,
+      "plan_ms": 42.270238511264324,
+      "clearance": 0.19138573170697726,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 578,
+      "risk_permitted": 1637,
+      "feasibility": 0.0
+    },
+    {
+      "step": 13,
+      "action": [
+        -0.8474510621183058,
+        0.5002149685183249
+      ],
+      "robot_after": [
+        -1.2139699895466551,
+        -1.6987265812907963
+      ],
+      "human_audit_hash": "8c219b071efa3d28",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 14.514372684061527,
+      "total_ms": 57.76631459593773,
+      "plan_ms": 42.377096600830555,
+      "clearance": 0.1622626620109594,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 426,
+      "risk_permitted": 1510,
+      "feasibility": 0.0
+    },
+    {
+      "step": 14,
+      "action": [
+        -0.5452800947159302,
+        0.7899079120064149
+      ],
+      "robot_after": [
+        -1.3502900132256377,
+        -1.5012496032891927
+      ],
+      "human_audit_hash": "26f8406bfe03da94",
+      "visible": 3,
+      "eligible": 3,
+      "tracks": 5,
+      "inference_ms": 12.255738489329815,
+      "total_ms": 52.68765427172184,
+      "plan_ms": 39.58814963698387,
+      "clearance": 0.16965386874457866,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 496,
+      "risk_permitted": 1768,
+      "feasibility": 0.0
+    },
+    {
+      "step": 15,
+      "action": [
+        -0.18331300982383458,
+        0.9830545968710622
+      ],
+      "robot_after": [
+        -1.3961182656815962,
+        -1.2554859540714272
+      ],
+      "human_audit_hash": "c720c7035fc26e25",
+      "visible": 3,
+      "eligible": 3,
+      "tracks": 5,
+      "inference_ms": 12.787447310984135,
+      "total_ms": 54.961652494966984,
+      "plan_ms": 41.36661719530821,
+      "clearance": 0.19254091859593236,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 491,
+      "risk_permitted": 1663,
+      "feasibility": 0.0
+    },
+    {
+      "step": 16,
+      "action": [
+        0.12115252950692232,
+        0.9926339026015957
+      ],
+      "robot_after": [
+        -1.3658301333048657,
+        -1.0073274784210282
+      ],
+      "human_audit_hash": "7441bdac0fcb5eb9",
+      "visible": 4,
+      "eligible": 3,
+      "tracks": 5,
+      "inference_ms": 13.199448585510254,
+      "total_ms": 54.45096455514431,
+      "plan_ms": 40.420111268758774,
+      "clearance": 0.19813641342867738,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 195,
+      "risk_permitted": 1506,
+      "feasibility": 0.0
+    },
+    {
+      "step": 17,
+      "action": [
+        -0.0032599028638982813,
+        0.9999946865025424
+      ],
+      "robot_after": [
+        -1.3666451090208402,
+        -0.7573288067953926
+      ],
+      "human_audit_hash": "a78ea515164912f2",
+      "visible": 4,
+      "eligible": 3,
+      "tracks": 5,
+      "inference_ms": 13.962896540760994,
+      "total_ms": 55.83335645496845,
+      "plan_ms": 41.00804589688778,
+      "clearance": 0.19905088474722676,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 143,
+      "risk_permitted": 1310,
+      "feasibility": 0.0
+    },
+    {
+      "step": 18,
+      "action": [
+        0.2761045915981098,
+        0.9611275953266772
+      ],
+      "robot_after": [
+        -1.2976189611213127,
+        -0.5170469079637233
+      ],
+      "human_audit_hash": "3a7ace087a6266fb",
+      "visible": 2,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 9.881795383989811,
+      "total_ms": 48.63972682505846,
+      "plan_ms": 37.95041423290968,
+      "clearance": 0.24195118650472425,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 58,
+      "risk_permitted": 1277,
+      "feasibility": 0.0
+    },
+    {
+      "step": 19,
+      "action": [
+        0.27610459159810974,
+        0.9611275953266772
+      ],
+      "robot_after": [
+        -1.2285928132217854,
+        -0.27676500913205404
+      ],
+      "human_audit_hash": "07c0bce6e63ffe84",
+      "visible": 3,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 10.097328573465347,
+      "total_ms": 49.89241994917393,
+      "plan_ms": 38.95635437220335,
+      "clearance": 0.25078319933452875,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 9,
+      "risk_permitted": 1038,
+      "feasibility": 0.0
+    },
+    {
+      "step": 20,
+      "action": [
+        0.2761045915981098,
+        0.9611275953266772
+      ],
+      "robot_after": [
+        -1.1595666653222578,
+        -0.03648311030038473
+      ],
+      "human_audit_hash": "e9f253e330e7f711",
+      "visible": 2,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 10.566738434135914,
+      "total_ms": 50.78786984086037,
+      "plan_ms": 39.365142583847046,
+      "clearance": 0.2719862002684279,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 3,
+      "risk_permitted": 1213,
+      "feasibility": 0.0
+    },
+    {
+      "step": 21,
+      "action": [
+        0.2761045915981098,
+        0.9611275953266772
+      ],
+      "robot_after": [
+        -1.0905405174227303,
+        0.20379878853128458
+      ],
+      "human_audit_hash": "9c2a3fd99f0d5ab3",
+      "visible": 2,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 10.61213668435812,
+      "total_ms": 50.30448921024799,
+      "plan_ms": 38.87722361832857,
+      "clearance": 0.3014399273059587,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 1,
+      "risk_permitted": 1225,
+      "feasibility": 0.0
+    },
+    {
+      "step": 22,
+      "action": [
+        0.13524971975704966,
+        0.9908115427797758
+      ],
+      "robot_after": [
+        -1.056728087483468,
+        0.45150167422622856
+      ],
+      "human_audit_hash": "5ae2a239e65ccaed",
+      "visible": 1,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 5.7593462988734245,
+      "total_ms": 43.29433757811785,
+      "plan_ms": 36.71071119606495,
+      "clearance": 0.20897227124050266,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 5,
+      "risk_permitted": 1252,
+      "feasibility": 0.0
+    },
+    {
+      "step": 23,
+      "action": [
+        -0.31975698219147686,
+        0.7835221287183606
+      ],
+      "robot_after": [
+        -1.136667333031337,
+        0.6473822064058187
+      ],
+      "human_audit_hash": "24f21dcedb6b64d6",
+      "visible": 2,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 5.843925289809704,
+      "total_ms": 44.21185702085495,
+      "plan_ms": 37.55482658743858,
+      "clearance": 0.17067528629032414,
+      "speed_excess": 0.0,
+      "acceleration_excess": 1.1102230246251565e-16,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 7,
+      "risk_permitted": 20,
+      "feasibility": 0.0
+    },
+    {
+      "step": 24,
+      "action": [
+        -0.6068778569153868,
+        0.794795109940787
+      ],
+      "robot_after": [
+        -1.2883867972601837,
+        0.8460809838910154
+      ],
+      "human_audit_hash": "959322c53b844e40",
+      "visible": 2,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 6.14976417273283,
+      "total_ms": 43.44093706458807,
+      "plan_ms": 36.462281830608845,
+      "clearance": 0.17067528629032414,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 220,
+      "risk_permitted": 1054,
+      "feasibility": 0.0
+    },
+    {
+      "step": 25,
+      "action": [
+        -0.914420384220388,
+        0.40056472818558453
+      ],
+      "robot_after": [
+        -1.5169918933152806,
+        0.9462221659374115
+      ],
+      "human_audit_hash": "06a058bfd846d59d",
+      "visible": 2,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 6.312706507742405,
+      "total_ms": 44.24747731536627,
+      "plan_ms": 37.12767083197832,
+      "clearance": 0.18926474372605084,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 173,
+      "risk_permitted": 1209,
+      "feasibility": 0.0
+    },
+    {
+      "step": 26,
+      "action": [
+        -0.7570615434829268,
+        0.0910139613905675
+      ],
+      "robot_after": [
+        -1.7062572791860122,
+        0.9689756562850533
+      ],
+      "human_audit_hash": "6abf6ca81ccf99ae",
+      "visible": 3,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 6.4063649624586105,
+      "total_ms": 43.71052794158459,
+      "plan_ms": 36.40815429389477,
+      "clearance": 0.22689693524226706,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 46,
+      "risk_permitted": 1345,
+      "feasibility": 0.0
+    },
+    {
+      "step": 27,
+      "action": [
+        -0.33264334432086246,
+        -0.1733138506535501
+      ],
+      "robot_after": [
+        -1.7894181152662278,
+        0.9256471936216658
+      ],
+      "human_audit_hash": "387b571ee74caf4e",
+      "visible": 2,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 6.460843607783318,
+      "total_ms": 44.68825180083513,
+      "plan_ms": 37.42366284132004,
+      "clearance": 0.21922422433796418,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 77,
+      "risk_permitted": 1593,
+      "feasibility": 0.0
+    },
+    {
+      "step": 28,
+      "action": [
+        0.06865237717887929,
+        -0.31093373180030276
+      ],
+      "robot_after": [
+        -1.772255020971508,
+        0.8479137606715901
+      ],
+      "human_audit_hash": "1371bf4d65cf35e4",
+      "visible": 3,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 6.7034754902124405,
+      "total_ms": 43.27631741762161,
+      "plan_ms": 35.727680660784245,
+      "clearance": 0.19980479934203266,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 9,
+      "risk_permitted": 1709,
+      "feasibility": 0.0
+    },
+    {
+      "step": 29,
+      "action": [
+        0.4669696116834225,
+        -0.00870305715483799
+      ],
+      "robot_after": [
+        -1.6555126180506523,
+        0.8457379963828806
+      ],
+      "human_audit_hash": "4bae039accc69ccf",
+      "visible": 4,
+      "eligible": 0,
+      "tracks": 5,
+      "inference_ms": 0.05419831722974777,
+      "total_ms": 32.44075644761324,
+      "plan_ms": 31.582322902977467,
+      "clearance": 0.1938311967615759,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 1924,
+      "feasibility": 0.0
+    },
+    {
+      "step": 30,
+      "action": [
+        0.8058687292408472,
+        0.35892091937389553
+      ],
+      "robot_after": [
+        -1.4540454357404404,
+        0.9354682262263545
+      ],
+      "human_audit_hash": "ce478ca11a53d545",
+      "visible": 5,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 2.8218431398272514,
+      "total_ms": 36.90752666443586,
+      "plan_ms": 33.26873667538166,
+      "clearance": 0.1904794679768571,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2024,
+      "feasibility": 0.0
+    },
+    {
+      "step": 31,
+      "action": [
+        0.6778943545190749,
+        0.735159332465532
+      ],
+      "robot_after": [
+        -1.2845718471106717,
+        1.1192580593427375
+      ],
+      "human_audit_hash": "4c005d4a289aff3f",
+      "visible": 5,
+      "eligible": 1,
+      "tracks": 5,
+      "inference_ms": 3.125937655568123,
+      "total_ms": 37.263793870806694,
+      "plan_ms": 33.32663606852293,
+      "clearance": 0.2073287869757805,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 32,
+      "action": [
+        0.4072612334498794,
+        0.9133117144375642
+      ],
+      "robot_after": [
+        -1.182756538748202,
+        1.3475859879521286
+      ],
+      "human_audit_hash": "c66d70ac214e0d67",
+      "visible": 5,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 5.619591102004051,
+      "total_ms": 43.154092505574226,
+      "plan_ms": 36.69814020395279,
+      "clearance": 0.23938449709938825,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 33,
+      "action": [
+        0.4072612334498795,
+        0.9133117144375642
+      ],
+      "robot_after": [
+        -1.080941230385732,
+        1.5759139165615197
+      ],
+      "human_audit_hash": "0eec9a31a7f5edc4",
+      "visible": 5,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 11.047744192183018,
+      "total_ms": 46.73994239419699,
+      "plan_ms": 34.83935445547104,
+      "clearance": 0.2856526386288962,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 34,
+      "action": [
+        0.40726123344987947,
+        0.9133117144375641
+      ],
+      "robot_after": [
+        -0.9791259220232621,
+        1.8042418451709108
+      ],
+      "human_audit_hash": "8160d2605d7a47ce",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 11.426848359405994,
+      "total_ms": 48.16829040646553,
+      "plan_ms": 35.921283066272736,
+      "clearance": 0.37269759390088253,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 35,
+      "action": [
+        0.40726123344987947,
+        0.9133117144375642
+      ],
+      "robot_after": [
+        -0.8773106136607922,
+        2.0325697737803017
+      ],
+      "human_audit_hash": "ed3e1cf89341f8da",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 12.246238999068737,
+      "total_ms": 49.53999537974596,
+      "plan_ms": 36.44845262169838,
+      "clearance": 0.46259594689271066,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 36,
+      "action": [
+        0.40726123344987947,
+        0.9133117144375642
+      ],
+      "robot_after": [
+        -0.7754953052983223,
+        2.2608977023896926
+      ],
+      "human_audit_hash": "1e8bcd8afb4b5eaf",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 12.72563822567463,
+      "total_ms": 49.64748304337263,
+      "plan_ms": 36.09099984169006,
+      "clearance": 0.5390326679277894,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 37,
+      "action": [
+        0.4072612334498794,
+        0.9133117144375643
+      ],
+      "robot_after": [
+        -0.6736799969358525,
+        2.4892256309990834
+      ],
+      "human_audit_hash": "4ad2fba9ba9954ae",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 13.41316755861044,
+      "total_ms": 49.84897933900356,
+      "plan_ms": 35.599867813289165,
+      "clearance": 0.6025423697856999,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 9,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    },
+    {
+      "step": 38,
+      "action": [
+        0.3960125758864947,
+        0.9182450869673865
+      ],
+      "robot_after": [
+        -0.5746768529642288,
+        2.71878690274093
+      ],
+      "human_audit_hash": "f10943dfc4d1f242",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 13.967296108603477,
+      "total_ms": 51.2073440477252,
+      "plan_ms": 36.42449714243412,
+      "clearance": 0.6620742526764426,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 11,
+      "risk_permitted": 2044,
+      "feasibility": 0.0
+    },
+    {
+      "step": 39,
+      "action": [
+        0.3979380487776466,
+        0.9174122897231317
+      ],
+      "robot_after": [
+        -0.4751923407698171,
+        2.948139975171713
+      ],
+      "human_audit_hash": "a56377b4c3b62c56",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 14.645884744822979,
+      "total_ms": 51.49432644248009,
+      "plan_ms": 35.970800556242466,
+      "clearance": 0.7258820783937759,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 4,
+      "risk_permitted": 2036,
+      "feasibility": 0.0
+    },
+    {
+      "step": 40,
+      "action": [
+        0.39139363191265514,
+        0.9202233559838724
+      ],
+      "robot_after": [
+        -0.3773439327916533,
+        3.178195814167681
+      ],
+      "human_audit_hash": "93baad4c08b738a5",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 15.078000724315643,
+      "total_ms": 52.20176000148058,
+      "plan_ms": 36.2951485440135,
+      "clearance": 0.8072494311242334,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2040,
+      "feasibility": 0.0
+    },
+    {
+      "step": 41,
+      "action": [
+        0.3934917332223173,
+        0.9193281546247218
+      ],
+      "robot_after": [
+        -0.27897099948607396,
+        3.4080278528238614
+      ],
+      "human_audit_hash": "44b087f615cd66dd",
+      "visible": 4,
+      "eligible": 4,
+      "tracks": 5,
+      "inference_ms": 15.987418591976166,
+      "total_ms": 53.291440941393375,
+      "plan_ms": 36.48155927658081,
+      "clearance": 0.9097967396266323,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 1,
+      "risk_permitted": 2042,
+      "feasibility": 0.0
+    },
+    {
+      "step": 42,
+      "action": [
+        0.391780244977602,
+        0.9200588240136008
+      ],
+      "robot_after": [
+        -0.18102593824167346,
+        3.638042558827262
+      ],
+      "human_audit_hash": "ae9cce5711102745",
+      "visible": 2,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 8.05590394884348,
+      "total_ms": 44.69334986060858,
+      "plan_ms": 35.8364237472415,
+      "clearance": 1.0373226508220772,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 4,
+      "risk_permitted": 2047,
+      "feasibility": 0.0
+    },
+    {
+      "step": 43,
+      "action": [
+        0.3683251414706482,
+        0.867152934353753
+      ],
+      "robot_after": [
+        -0.0889446528740114,
+        3.8548307924157
+      ],
+      "human_audit_hash": "8626b8f697896999",
+      "visible": 2,
+      "eligible": 2,
+      "tracks": 5,
+      "inference_ms": 8.565403521060944,
+      "total_ms": 45.010155998170376,
+      "plan_ms": 35.60322057455778,
+      "clearance": 1.187268380420445,
+      "speed_excess": 0.0,
+      "acceleration_excess": 0.0,
+      "workspace_excess": 0.0,
+      "geometry_rejected": 0,
+      "risk_permitted": 2048,
+      "feasibility": 0.0
+    }
+  ]
+}

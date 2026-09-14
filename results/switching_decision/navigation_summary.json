@@ -1,0 +1,1571 @@
+{
+  "totals": [
+    {
+      "arm": "CV",
+      "n": 60,
+      "success": 59,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.55,
+      "mean_navigation_time_success": 11.322033898305085,
+      "stopped_step_fraction": 0.0,
+      "eligible_visible_fraction": 0.5834811529933481,
+      "eligible_all_fraction": 0.36279037705935063,
+      "geometry_reject_fraction": 0.14695313072309887,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 4
+    },
+    {
+      "arm": "FULL",
+      "n": 60,
+      "success": 59,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.6,
+      "mean_navigation_time_success": 11.372881355932204,
+      "stopped_step_fraction": 0.0003696857670979667,
+      "eligible_visible_fraction": 0.58565145684442,
+      "eligible_all_fraction": 0.36583104395604393,
+      "geometry_reject_fraction": 0.1402590257809983,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 3
+    },
+    {
+      "arm": "IID",
+      "n": 60,
+      "success": 59,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.495833333333334,
+      "mean_navigation_time_success": 11.266949152542374,
+      "stopped_step_fraction": 0.0007465472191116088,
+      "eligible_visible_fraction": 0.5822421318630829,
+      "eligible_all_fraction": 0.359694873159482,
+      "geometry_reject_fraction": 0.1463458781639918,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 31
+    },
+    {
+      "arm": "MAP",
+      "n": 60,
+      "success": 59,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 11.345833333333333,
+      "mean_navigation_time_success": 11.114406779661017,
+      "stopped_step_fraction": 0.0011329305135951663,
+      "eligible_visible_fraction": 0.5769230769230769,
+      "eligible_all_fraction": 0.3581242639448985,
+      "geometry_reject_fraction": 0.13834506288586726,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 0
+    },
+    {
+      "arm": "O",
+      "n": 60,
+      "success": 60,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.525,
+      "mean_navigation_time_success": 11.525,
+      "stopped_step_fraction": 0.0007230657989877079,
+      "eligible_visible_fraction": 0.0,
+      "eligible_all_fraction": 0.0,
+      "geometry_reject_fraction": 0.0,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 0
+    },
+    {
+      "arm": "TREE",
+      "n": 60,
+      "success": 60,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.3375,
+      "mean_navigation_time_success": 11.3375,
+      "stopped_step_fraction": 0.0011025358324145535,
+      "eligible_visible_fraction": 0.5770768547312306,
+      "eligible_all_fraction": 0.3565987234918674,
+      "geometry_reject_fraction": 0.1443915264797508,
+      "actuator_violations": 0,
+      "workspace_excursion_steps": 18
+    }
+  ],
+  "density": [
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.0
+    },
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.85
+    },
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.025
+    },
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.9
+    },
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.975
+    },
+    {
+      "people": 5,
+      "scene": "circle_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 10.25
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.0
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.0
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.025
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.025
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.125
+    },
+    {
+      "people": 5,
+      "scene": "square_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.025
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.5
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.7
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.95
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.925
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 12.3
+    },
+    {
+      "people": 10,
+      "scene": "circle_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 11.725
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.675
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.975
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.6
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 9,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 10.95
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.75
+    },
+    {
+      "people": 10,
+      "scene": "square_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 9.775
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 9,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 15.525
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.425
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.925
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.075
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 15.025
+    },
+    {
+      "people": 20,
+      "scene": "circle_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 14.5
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "CV",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 13.6
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "FULL",
+      "n": 10,
+      "success": 9,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 14.65
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "IID",
+      "n": 10,
+      "success": 9,
+      "collision": 1,
+      "timeout": 0,
+      "penalty": 13.45
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "MAP",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 12.2
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "O",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 12.975
+    },
+    {
+      "people": 20,
+      "scene": "square_crossing",
+      "arm": "TREE",
+      "n": 10,
+      "success": 10,
+      "collision": 0,
+      "timeout": 0,
+      "penalty": 12.75
+    }
+  ],
+  "paired": [
+    {
+      "comparison": "FULL-O",
+      "success_gained": 0,
+      "success_lost": 1,
+      "collision_avoided": 0,
+      "collision_added": 1,
+      "penalty_difference": 0.075,
+      "penalty_ci95": [
+        -0.45010416666666664,
+        0.6792708333333318
+      ],
+      "collision_difference": 0.016666666666666666,
+      "collision_ci95": [
+        0.0,
+        0.05
+      ],
+      "zero_discordance_one_sided_upper95": null
+    },
+    {
+      "comparison": "FULL-CV",
+      "success_gained": 1,
+      "success_lost": 1,
+      "collision_avoided": 1,
+      "collision_added": 1,
+      "penalty_difference": 0.05,
+      "penalty_ci95": [
+        -0.6291666666666667,
+        0.75
+      ],
+      "collision_difference": 0.0,
+      "collision_ci95": [
+        -0.05,
+        0.05
+      ],
+      "zero_discordance_one_sided_upper95": null
+    },
+    {
+      "comparison": "FULL-TREE",
+      "success_gained": 0,
+      "success_lost": 1,
+      "collision_avoided": 0,
+      "collision_added": 1,
+      "penalty_difference": 0.2625,
+      "penalty_ci95": [
+        -0.20833333333333334,
+        0.8334374999999985
+      ],
+      "collision_difference": 0.016666666666666666,
+      "collision_ci95": [
+        0.0,
+        0.05
+      ],
+      "zero_discordance_one_sided_upper95": null
+    },
+    {
+      "comparison": "FULL-MAP",
+      "success_gained": 1,
+      "success_lost": 1,
+      "collision_avoided": 1,
+      "collision_added": 1,
+      "penalty_difference": 0.25416666666666665,
+      "penalty_ci95": [
+        -0.3625,
+        0.8833333333333333
+      ],
+      "collision_difference": 0.0,
+      "collision_ci95": [
+        -0.05,
+        0.05
+      ],
+      "zero_discordance_one_sided_upper95": null
+    },
+    {
+      "comparison": "FULL-IID",
+      "success_gained": 0,
+      "success_lost": 0,
+      "collision_avoided": 0,
+      "collision_added": 0,
+      "penalty_difference": 0.10416666666666667,
+      "penalty_ci95": [
+        -0.25833333333333336,
+        0.4708333333333333
+      ],
+      "collision_difference": 0.0,
+      "collision_ci95": null,
+      "zero_discordance_one_sided_upper95": 0.04870291331009746
+    },
+    {
+      "comparison": "CV-O",
+      "success_gained": 0,
+      "success_lost": 1,
+      "collision_avoided": 0,
+      "collision_added": 1,
+      "penalty_difference": 0.025,
+      "penalty_ci95": [
+        -0.37916666666666665,
+        0.4625
+      ],
+      "collision_difference": 0.016666666666666666,
+      "collision_ci95": [
+        0.0,
+        0.05
+      ],
+      "zero_discordance_one_sided_upper95": null
+    }
+  ],
+  "timing": [
+    {
+      "arm": "CV",
+      "steps": 2718,
+      "p50_ms": 73.45613511279225,
+      "p95_ms": 130.6826412677765,
+      "p99_ms": 144.74490077234805,
+      "inference_p50_ms": 4.792272113263607,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    },
+    {
+      "arm": "FULL",
+      "steps": 2705,
+      "p50_ms": 90.54406080394983,
+      "p95_ms": 168.43504868447778,
+      "p99_ms": 195.41112445294857,
+      "inference_p50_ms": 15.239126980304718,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    },
+    {
+      "arm": "IID",
+      "steps": 2679,
+      "p50_ms": 87.13917341083288,
+      "p95_ms": 160.46334616839886,
+      "p99_ms": 187.35983880236745,
+      "inference_p50_ms": 15.084425918757915,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    },
+    {
+      "arm": "MAP",
+      "steps": 2648,
+      "p50_ms": 80.26018319651484,
+      "p95_ms": 146.90532442182302,
+      "p99_ms": 159.87964554689827,
+      "inference_p50_ms": 14.141413383185863,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    },
+    {
+      "arm": "O",
+      "steps": 2766,
+      "p50_ms": 93.4383999556303,
+      "p95_ms": 188.78660583868623,
+      "p99_ms": 205.51531133241951,
+      "inference_p50_ms": 0.0,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    },
+    {
+      "arm": "TREE",
+      "steps": 2721,
+      "p50_ms": 78.84203270077705,
+      "p95_ms": 142.6065545529127,
+      "p99_ms": 160.7416413724423,
+      "inference_p50_ms": 11.391927488148212,
+      "exceed_250_fraction": 0.0,
+      "concurrent": true
+    }
+  ],
+  "action": [
+    {
+      "comparison": "FULL-CV",
+      "layouts_with_action_divergence": 60,
+      "first_divergence": [
+        {
+          "case": 8000003,
+          "step": 5
+        },
+        {
+          "case": 8000000,
+          "step": 10
+        },
+        {
+          "case": 8000002,
+          "step": 4
+        },
+        {
+          "case": 8000001,
+          "step": 5
+        },
+        {
+          "case": 8000004,
+          "step": 6
+        },
+        {
+          "case": 8000005,
+          "step": 4
+        },
+        {
+          "case": 8000006,
+          "step": 4
+        },
+        {
+          "case": 8000007,
+          "step": 6
+        },
+        {
+          "case": 8000011,
+          "step": 4
+        },
+        {
+          "case": 8000009,
+          "step": 4
+        },
+        {
+          "case": 8000010,
+          "step": 7
+        },
+        {
+          "case": 8000008,
+          "step": 4
+        },
+        {
+          "case": 8000012,
+          "step": 4
+        },
+        {
+          "case": 8000015,
+          "step": 6
+        },
+        {
+          "case": 8000014,
+          "step": 5
+        },
+        {
+          "case": 8000013,
+          "step": 6
+        },
+        {
+          "case": 8000016,
+          "step": 7
+        },
+        {
+          "case": 8000017,
+          "step": 4
+        },
+        {
+          "case": 8000018,
+          "step": 4
+        },
+        {
+          "case": 8000019,
+          "step": 4
+        },
+        {
+          "case": 8000020,
+          "step": 5
+        },
+        {
+          "case": 8000023,
+          "step": 7
+        },
+        {
+          "case": 8000021,
+          "step": 6
+        },
+        {
+          "case": 8000022,
+          "step": 4
+        },
+        {
+          "case": 8000024,
+          "step": 5
+        },
+        {
+          "case": 8000025,
+          "step": 4
+        },
+        {
+          "case": 8000026,
+          "step": 4
+        },
+        {
+          "case": 8000028,
+          "step": 7
+        },
+        {
+          "case": 8000027,
+          "step": 4
+        },
+        {
+          "case": 8000030,
+          "step": 15
+        },
+        {
+          "case": 8000031,
+          "step": 4
+        },
+        {
+          "case": 8000029,
+          "step": 5
+        },
+        {
+          "case": 8000033,
+          "step": 4
+        },
+        {
+          "case": 8000032,
+          "step": 5
+        },
+        {
+          "case": 8000034,
+          "step": 4
+        },
+        {
+          "case": 8000036,
+          "step": 4
+        },
+        {
+          "case": 8000037,
+          "step": 4
+        },
+        {
+          "case": 8000035,
+          "step": 4
+        },
+        {
+          "case": 8000038,
+          "step": 4
+        },
+        {
+          "case": 8000039,
+          "step": 4
+        },
+        {
+          "case": 8000040,
+          "step": 4
+        },
+        {
+          "case": 8000045,
+          "step": 7
+        },
+        {
+          "case": 8000041,
+          "step": 4
+        },
+        {
+          "case": 8000043,
+          "step": 4
+        },
+        {
+          "case": 8000042,
+          "step": 4
+        },
+        {
+          "case": 8000044,
+          "step": 4
+        },
+        {
+          "case": 8000049,
+          "step": 4
+        },
+        {
+          "case": 8000048,
+          "step": 4
+        },
+        {
+          "case": 8000046,
+          "step": 4
+        },
+        {
+          "case": 8000050,
+          "step": 4
+        },
+        {
+          "case": 8000047,
+          "step": 4
+        },
+        {
+          "case": 8000052,
+          "step": 4
+        },
+        {
+          "case": 8000051,
+          "step": 5
+        },
+        {
+          "case": 8000054,
+          "step": 4
+        },
+        {
+          "case": 8000053,
+          "step": 4
+        },
+        {
+          "case": 8000056,
+          "step": 6
+        },
+        {
+          "case": 8000055,
+          "step": 5
+        },
+        {
+          "case": 8000057,
+          "step": 4
+        },
+        {
+          "case": 8000059,
+          "step": 4
+        },
+        {
+          "case": 8000058,
+          "step": 4
+        }
+      ],
+      "preceding_pose_mismatches": 0
+    },
+    {
+      "comparison": "FULL-TREE",
+      "layouts_with_action_divergence": 59,
+      "first_divergence": [
+        {
+          "case": 8000003,
+          "step": 4
+        },
+        {
+          "case": 8000000,
+          "step": 10
+        },
+        {
+          "case": 8000002,
+          "step": 4
+        },
+        {
+          "case": 8000001,
+          "step": 5
+        },
+        {
+          "case": 8000004,
+          "step": 6
+        },
+        {
+          "case": 8000005,
+          "step": 4
+        },
+        {
+          "case": 8000006,
+          "step": 4
+        },
+        {
+          "case": 8000007,
+          "step": 7
+        },
+        {
+          "case": 8000011,
+          "step": 4
+        },
+        {
+          "case": 8000009,
+          "step": 6
+        },
+        {
+          "case": 8000010,
+          "step": 7
+        },
+        {
+          "case": 8000008,
+          "step": 4
+        },
+        {
+          "case": 8000012,
+          "step": 4
+        },
+        {
+          "case": 8000015,
+          "step": 12
+        },
+        {
+          "case": 8000014,
+          "step": 5
+        },
+        {
+          "case": 8000013,
+          "step": 8
+        },
+        {
+          "case": 8000016,
+          "step": 9
+        },
+        {
+          "case": 8000017,
+          "step": 4
+        },
+        {
+          "case": 8000018,
+          "step": 4
+        },
+        {
+          "case": 8000019,
+          "step": 5
+        },
+        {
+          "case": 8000020,
+          "step": 6
+        },
+        {
+          "case": 8000023,
+          "step": 4
+        },
+        {
+          "case": 8000021,
+          "step": 6
+        },
+        {
+          "case": 8000022,
+          "step": 4
+        },
+        {
+          "case": 8000024,
+          "step": 5
+        },
+        {
+          "case": 8000025,
+          "step": 5
+        },
+        {
+          "case": 8000026,
+          "step": 4
+        },
+        {
+          "case": 8000028,
+          "step": 7
+        },
+        {
+          "case": 8000027,
+          "step": 4
+        },
+        {
+          "case": 8000031,
+          "step": 4
+        },
+        {
+          "case": 8000029,
+          "step": 6
+        },
+        {
+          "case": 8000033,
+          "step": 4
+        },
+        {
+          "case": 8000032,
+          "step": 5
+        },
+        {
+          "case": 8000034,
+          "step": 4
+        },
+        {
+          "case": 8000036,
+          "step": 4
+        },
+        {
+          "case": 8000037,
+          "step": 4
+        },
+        {
+          "case": 8000035,
+          "step": 4
+        },
+        {
+          "case": 8000038,
+          "step": 4
+        },
+        {
+          "case": 8000039,
+          "step": 5
+        },
+        {
+          "case": 8000040,
+          "step": 4
+        },
+        {
+          "case": 8000045,
+          "step": 7
+        },
+        {
+          "case": 8000041,
+          "step": 4
+        },
+        {
+          "case": 8000043,
+          "step": 4
+        },
+        {
+          "case": 8000042,
+          "step": 4
+        },
+        {
+          "case": 8000044,
+          "step": 4
+        },
+        {
+          "case": 8000049,
+          "step": 4
+        },
+        {
+          "case": 8000048,
+          "step": 4
+        },
+        {
+          "case": 8000046,
+          "step": 4
+        },
+        {
+          "case": 8000050,
+          "step": 5
+        },
+        {
+          "case": 8000047,
+          "step": 4
+        },
+        {
+          "case": 8000052,
+          "step": 5
+        },
+        {
+          "case": 8000051,
+          "step": 5
+        },
+        {
+          "case": 8000054,
+          "step": 6
+        },
+        {
+          "case": 8000053,
+          "step": 4
+        },
+        {
+          "case": 8000056,
+          "step": 5
+        },
+        {
+          "case": 8000055,
+          "step": 6
+        },
+        {
+          "case": 8000057,
+          "step": 4
+        },
+        {
+          "case": 8000059,
+          "step": 5
+        },
+        {
+          "case": 8000058,
+          "step": 4
+        }
+      ],
+      "preceding_pose_mismatches": 0
+    },
+    {
+      "comparison": "FULL-MAP",
+      "layouts_with_action_divergence": 58,
+      "first_divergence": [
+        {
+          "case": 8000003,
+          "step": 4
+        },
+        {
+          "case": 8000000,
+          "step": 10
+        },
+        {
+          "case": 8000002,
+          "step": 4
+        },
+        {
+          "case": 8000001,
+          "step": 6
+        },
+        {
+          "case": 8000004,
+          "step": 7
+        },
+        {
+          "case": 8000005,
+          "step": 4
+        },
+        {
+          "case": 8000006,
+          "step": 4
+        },
+        {
+          "case": 8000007,
+          "step": 7
+        },
+        {
+          "case": 8000011,
+          "step": 4
+        },
+        {
+          "case": 8000009,
+          "step": 4
+        },
+        {
+          "case": 8000008,
+          "step": 4
+        },
+        {
+          "case": 8000012,
+          "step": 4
+        },
+        {
+          "case": 8000015,
+          "step": 15
+        },
+        {
+          "case": 8000014,
+          "step": 5
+        },
+        {
+          "case": 8000013,
+          "step": 6
+        },
+        {
+          "case": 8000016,
+          "step": 7
+        },
+        {
+          "case": 8000017,
+          "step": 4
+        },
+        {
+          "case": 8000018,
+          "step": 8
+        },
+        {
+          "case": 8000019,
+          "step": 4
+        },
+        {
+          "case": 8000020,
+          "step": 9
+        },
+        {
+          "case": 8000023,
+          "step": 8
+        },
+        {
+          "case": 8000021,
+          "step": 6
+        },
+        {
+          "case": 8000022,
+          "step": 4
+        },
+        {
+          "case": 8000024,
+          "step": 7
+        },
+        {
+          "case": 8000025,
+          "step": 4
+        },
+        {
+          "case": 8000026,
+          "step": 4
+        },
+        {
+          "case": 8000028,
+          "step": 7
+        },
+        {
+          "case": 8000027,
+          "step": 5
+        },
+        {
+          "case": 8000031,
+          "step": 4
+        },
+        {
+          "case": 8000029,
+          "step": 6
+        },
+        {
+          "case": 8000033,
+          "step": 4
+        },
+        {
+          "case": 8000032,
+          "step": 5
+        },
+        {
+          "case": 8000034,
+          "step": 4
+        },
+        {
+          "case": 8000036,
+          "step": 4
+        },
+        {
+          "case": 8000037,
+          "step": 6
+        },
+        {
+          "case": 8000035,
+          "step": 4
+        },
+        {
+          "case": 8000038,
+          "step": 4
+        },
+        {
+          "case": 8000039,
+          "step": 8
+        },
+        {
+          "case": 8000040,
+          "step": 4
+        },
+        {
+          "case": 8000045,
+          "step": 6
+        },
+        {
+          "case": 8000041,
+          "step": 4
+        },
+        {
+          "case": 8000043,
+          "step": 4
+        },
+        {
+          "case": 8000042,
+          "step": 4
+        },
+        {
+          "case": 8000044,
+          "step": 4
+        },
+        {
+          "case": 8000049,
+          "step": 4
+        },
+        {
+          "case": 8000048,
+          "step": 4
+        },
+        {
+          "case": 8000046,
+          "step": 5
+        },
+        {
+          "case": 8000050,
+          "step": 4
+        },
+        {
+          "case": 8000047,
+          "step": 4
+        },
+        {
+          "case": 8000052,
+          "step": 4
+        },
+        {
+          "case": 8000051,
+          "step": 4
+        },
+        {
+          "case": 8000054,
+          "step": 9
+        },
+        {
+          "case": 8000053,
+          "step": 4
+        },
+        {
+          "case": 8000056,
+          "step": 5
+        },
+        {
+          "case": 8000055,
+          "step": 17
+        },
+        {
+          "case": 8000057,
+          "step": 4
+        },
+        {
+          "case": 8000059,
+          "step": 4
+        },
+        {
+          "case": 8000058,
+          "step": 4
+        }
+      ],
+      "preceding_pose_mismatches": 0
+    },
+    {
+      "comparison": "FULL-IID",
+      "layouts_with_action_divergence": 52,
+      "first_divergence": [
+        {
+          "case": 8000000,
+          "step": 10
+        },
+        {
+          "case": 8000002,
+          "step": 7
+        },
+        {
+          "case": 8000001,
+          "step": 11
+        },
+        {
+          "case": 8000004,
+          "step": 6
+        },
+        {
+          "case": 8000005,
+          "step": 7
+        },
+        {
+          "case": 8000006,
+          "step": 9
+        },
+        {
+          "case": 8000007,
+          "step": 7
+        },
+        {
+          "case": 8000009,
+          "step": 13
+        },
+        {
+          "case": 8000008,
+          "step": 9
+        },
+        {
+          "case": 8000015,
+          "step": 13
+        },
+        {
+          "case": 8000014,
+          "step": 6
+        },
+        {
+          "case": 8000017,
+          "step": 27
+        },
+        {
+          "case": 8000018,
+          "step": 6
+        },
+        {
+          "case": 8000019,
+          "step": 18
+        },
+        {
+          "case": 8000020,
+          "step": 9
+        },
+        {
+          "case": 8000023,
+          "step": 8
+        },
+        {
+          "case": 8000021,
+          "step": 20
+        },
+        {
+          "case": 8000022,
+          "step": 7
+        },
+        {
+          "case": 8000024,
+          "step": 11
+        },
+        {
+          "case": 8000025,
+          "step": 7
+        },
+        {
+          "case": 8000026,
+          "step": 7
+        },
+        {
+          "case": 8000028,
+          "step": 7
+        },
+        {
+          "case": 8000027,
+          "step": 9
+        },
+        {
+          "case": 8000031,
+          "step": 7
+        },
+        {
+          "case": 8000029,
+          "step": 6
+        },
+        {
+          "case": 8000033,
+          "step": 6
+        },
+        {
+          "case": 8000032,
+          "step": 8
+        },
+        {
+          "case": 8000034,
+          "step": 27
+        },
+        {
+          "case": 8000036,
+          "step": 8
+        },
+        {
+          "case": 8000037,
+          "step": 7
+        },
+        {
+          "case": 8000035,
+          "step": 17
+        },
+        {
+          "case": 8000038,
+          "step": 11
+        },
+        {
+          "case": 8000039,
+          "step": 8
+        },
+        {
+          "case": 8000040,
+          "step": 28
+        },
+        {
+          "case": 8000045,
+          "step": 7
+        },
+        {
+          "case": 8000041,
+          "step": 7
+        },
+        {
+          "case": 8000043,
+          "step": 7
+        },
+        {
+          "case": 8000042,
+          "step": 13
+        },
+        {
+          "case": 8000044,
+          "step": 8
+        },
+        {
+          "case": 8000049,
+          "step": 6
+        },
+        {
+          "case": 8000048,
+          "step": 28
+        },
+        {
+          "case": 8000046,
+          "step": 6
+        },
+        {
+          "case": 8000050,
+          "step": 8
+        },
+        {
+          "case": 8000047,
+          "step": 12
+        },
+        {
+          "case": 8000052,
+          "step": 16
+        },
+        {
+          "case": 8000054,
+          "step": 11
+        },
+        {
+          "case": 8000053,
+          "step": 15
+        },
+        {
+          "case": 8000056,
+          "step": 9
+        },
+        {
+          "case": 8000055,
+          "step": 32
+        },
+        {
+          "case": 8000057,
+          "step": 8
+        },
+        {
+          "case": 8000059,
+          "step": 6
+        },
+        {
+          "case": 8000058,
+          "step": 8
+        }
+      ],
+      "preceding_pose_mismatches": 0
+    }
+  ]
+}

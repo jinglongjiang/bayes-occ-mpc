@@ -1,0 +1,71 @@
+[
+  {
+    "case": 8000032,
+    "arm": "MAP",
+    "step": 24,
+    "collider_id": 4,
+    "visible": false,
+    "tracked": true,
+    "clearance": -0.03738995223382302,
+    "feasibility": 0.0,
+    "learned_forecast_enabled": false,
+    "cv_next_error": 0.2927300559379317,
+    "existence": 0.984089800125
+  },
+  {
+    "case": 8000042,
+    "arm": "CV",
+    "step": 45,
+    "collider_id": 1,
+    "visible": true,
+    "tracked": true,
+    "clearance": -0.03803089459166176,
+    "feasibility": 2.0,
+    "learned_forecast_enabled": false,
+    "cv_next_error": 0.0002648496097374731,
+    "existence": 0.999
+  },
+  {
+    "case": 8000059,
+    "arm": "FULL",
+    "step": 20,
+    "collider_id": 4,
+    "visible": true,
+    "tracked": true,
+    "clearance": -0.004298238323888093,
+    "feasibility": 2.0,
+    "learned_forecast_enabled": false,
+    "cv_next_error": 0.0007893270346537182,
+    "existence": 0.999
+  },
+  {
+    "case": 8000059,
+    "arm": "IID",
+    "step": 19,
+    "collider_id": 4,
+    "visible": true,
+    "tracked": true,
+    "clearance": -0.01559632879450068,
+    "feasibility": 2.0,
+    "learned_forecast_enabled": true,
+    "cv_next_error": 0.0014054972441641536,
+    "existence": 0.999,
+    "mode_weights": [
+      0.6126957114246208,
+      0.02155346939911054,
+      0.2122440718135586,
+      0.10405684033455574,
+      0.040568697083910824,
+      0.008881209944240041
+    ],
+    "mode_next_errors": [
+      0.03231798615540178,
+      0.004435802148905225,
+      0.02232152743966147,
+      0.019140808781508797,
+      0.012569169486403619,
+      0.025947377494486265
+    ],
+    "variance_first": 0.0016092284551323989
+  }
+]

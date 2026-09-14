@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "episodes": 360,
+  "layouts": 60,
+  "steps": 16237,
+  "python": "3.8.20",
+  "human_paths_equal_on_paired_prefix": true,
+  "frozen_code_and_model_match": true,
+  "forecast_reproduction_max": 6.661338147750939e-16,
+  "test_output": ".../home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n/home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n..../home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n/home/abc/.local/lib/python3.8/site-packages/sklearn/linear_model/_ridge.py:157: DeprecationWarning: The 'sym_pos' keyword is deprecated and should be replaced by using 'assume_a = \"pos\"'. 'sym_pos' will be removed in SciPy 1.11.0.\n  return linalg.solve(A, Xy, sym_pos=True, overwrite_a=True).T\n..........\n----------------------------------------------------------------------\nRan 17 tests in 1.231s\n\nOK\n",
+  "artifacts": {
+    "results/switching_decision/PROTOCOL_ZH.txt": "d3f943ff1ab522414f47c4fd9fc27b5d85e291c50bb0cb557f44228fe160d793",
+    "results/switching_decision/REPORT_ZH.txt": "b8131ac7adc8c537d969ae15df412bb09dc58b88a97dc177e2105db905d8a0de",
+    "results/switching_decision/collision_audit.json": "467b3e4f352fb05b139005d143919de650eb232f1aec015a2e8874bb24d1508f",
+    "results/switching_decision/data/query_population.json": "cea3f3d55f10603f43b1745e0557cebdbaf9fb3c9a800796c8bc25e88aa26b3a",
+    "results/switching_decision/deployment.joblib": "3cea44970dde3541b72dd7c26f671513da63de26d14dae4d1265ce65acc6b41f",
+    "results/switching_decision/deployment.json": "786fc9b7a4deacc418e93c4f557189c1278e34843e8451f1daec98cbfef7885e",
+    "results/switching_decision/factual_metrics.json": "425680300b846460a0e839e0e6f93950179a9f282324279b1e74de4c9529c157",
+    "results/switching_decision/factual_population.json": "71da350a4d494f8aa39bba356c6c0ea7c25db2378f91f06ccb55db17ed81fa60",
+    "results/switching_decision/factual_queries.csv": "b7496c704f7e5276455e4ef18a51b5f887607b7e7a889beafe5cf82b27174bdc",
+    "results/switching_decision/factual_summary.json": "f416fc08aa85bf874a4a64184f08a6ed2703b9e3f9f28948a9696ff218d7b3cb",
+    "results/switching_decision/forecast_reproduction.json": "fc5c61dc10322996b6728cadfe0321fb95d1a6af90a4151140d7474e3f389cd7",
+    "results/switching_decision/navigation.jsonl": "689586c1166085a8fecc4cff554c921b8f621ae7b1a6db03edc73d47c1eca623",
+    "results/switching_decision/navigation_episodes.csv": "ccc88b940697dd5c5146816a2611191d9820d86187e6879acc339f527f0dc9d7",
+    "results/switching_decision/navigation_protocol.json": "07b65c47621bdd8131184354fbf21799e78def1d991b923ef97668d2876e3e7b",
+    "results/switching_decision/navigation_summary.json": "8ba9ebea73e6f875bb328eff8052b2a79501da7b64424aa9e6ddeff42b646e0c",
+    "results/switching_decision/smoke.json": "25717615a19a27e92d4000303a1846842ae65a2550b1142157580a6e3b22d55e"
+  }
+}
