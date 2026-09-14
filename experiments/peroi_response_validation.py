@@ -17,9 +17,17 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import confusion_matrix, log_loss, balanced_accuracy_score
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT/'results/response_validation'
+OUT = ROOT/'results/response_validation/stable'
 LABELS = ['attract', 'avoid', 'neutral']
 H = np.array([.5, 1., 2.])
+
+
+class PhysicalScaler(StandardScaler):
+    def fit(self, X, y=None, sample_weight=None):
+        super().fit(X, y, sample_weight=sample_weight)
+        # Static robot projections contain rounding noise, not 1e-15 physical scales.
+        self.scale_ = np.maximum(self.scale_, .01)
+        return self
 
 
 def save(name, value):
@@ -130,7 +138,7 @@ def conditional_features(X, labels):
 
 def regressor(family, parameter):
     if family=='ridge':
-        return make_pipeline(StandardScaler(), Ridge(alpha=parameter))
+        return make_pipeline(PhysicalScaler(), Ridge(alpha=parameter))
     return ExtraTreesRegressor(n_estimators=96, min_samples_leaf=parameter,
                                max_depth=16,random_state=20260914,n_jobs=4)
 
@@ -154,7 +162,7 @@ def calibrated_prob(model, X, temperature):
 
 
 def choose_classifier(X,labels,train,val):
-    models = [make_pipeline(StandardScaler(),LogisticRegression(C=1.,max_iter=1000)),
+    models = [make_pipeline(PhysicalScaler(),LogisticRegression(C=1.,max_iter=1000)),
               ExtraTreesClassifier(n_estimators=128,min_samples_leaf=5,max_depth=16,
                                    random_state=20260914,n_jobs=4)]
     best = None
@@ -189,6 +197,9 @@ def metrics(y,p):
 
 def bootstrap_difference(frame,a,b,cluster):
     means = frame.assign(diff=frame[a]-frame[b]).groupby(cluster)['diff'].mean().values
+    if len(means)<2:
+        return dict(clusters=len(means),mean=float(means.mean()),interval95=None,
+                    reason='One independent cluster cannot estimate between-session uncertainty')
     rng = np.random.default_rng(20260914)
     draws = np.mean(rng.choice(means,(2000,len(means)),replace=True),axis=1)
     return dict(clusters=len(means),mean=float(means.mean()),
@@ -221,7 +232,7 @@ def run(root):
         splits=[dict(name=s,train_tracks=sorted(meta.iloc[tr].track.unique()),
                       val_tracks=sorted(meta.iloc[va].track.unique()),
                       test_tracks=sorted(meta.iloc[te].track.unique())) for s,tr,va,te in splits],
-        selection='Validation only; ridge alpha1/10/100, ET leaves5/15; classifier LR/ET temperature .5/1/2/4',
+        selection='Validation only; ridge alpha1/10/100, ET leaves5/15; classifier LR/ET temperature .5/1/2/4; feature scale floor .01 prevents constant-field numerical amplification',
         limitations='Modes learned from factual motion; changing candidate robot actions is unsupported. Mixture ES is a finite point distribution, not calibrated residual uncertainty.')
     path = OUT/'prediction_protocol.json'
     if path.exists() and json.loads(path.read_text())!=protocol:
