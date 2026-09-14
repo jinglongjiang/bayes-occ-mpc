@@ -1,0 +1,44 @@
+{
+  "python": "3.8.20 (default, Oct  3 2024, 15:24:27) \n[GCC 11.2.0]",
+  "executable": "/home/abc/miniconda3/envs/crowdnav/bin/python",
+  "platform": "Linux-5.15.0-139-generic-x86_64-with-glibc2.17",
+  "versions": {
+    "numpy": "1.23.5",
+    "scipy": "1.10.1",
+    "pandas": "2.0.3",
+    "scikit-learn": "1.0.2"
+  },
+  "formal_hashes": "PASS",
+  "structural": {
+    "group_partitions": 15,
+    "group_trials": 1000,
+    "group_additive_expected_cost_max_error": 3.552713678800501e-15,
+    "group_scope": "Fixed candidate additive pairwise social cost only; not non-additive group dynamics or information gathering",
+    "sensor_count_confounding_max_error": 0.0,
+    "sensor_scope": "Independent fresh existence example, not general persistent-track identifiability",
+    "shared_health_two_misses": 0.41000000000000003,
+    "mean_health_two_misses": 0.25
+  },
+  "outputs": {
+    "stable": {
+      "rows": 16834,
+      "queries": 8321,
+      "tracks": 1886,
+      "sessions": 6,
+      "source_hash": "PASS",
+      "split_disjointness": "PASS",
+      "finite_predictions": "PASS"
+    },
+    "long_context": {
+      "rows": 12160,
+      "queries": 6011,
+      "tracks": 1520,
+      "sessions": 6,
+      "source_hash": "PASS",
+      "split_disjointness": "PASS",
+      "finite_predictions": "PASS"
+    }
+  },
+  "dataset_md5": "69a095a086cbf12631eb4c359b2d9477",
+  "dataset_sha256": "fd51fd9205ebcac41480c8eaf9283a63905c1a14b0436dc3d7c3ef1c24e06561"
+}

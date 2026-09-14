@@ -1,0 +1,474 @@
+[
+  {
+    "family": "ridge",
+    "subset": "all_loso",
+    "queries": 6011,
+    "tracks": 1520,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.491910771707103,
+      "ca": 0.9893476145236215,
+      "pooled": 0.4452535077760479,
+      "true_label": 0.4359777911231848,
+      "map": 0.45062665826752063,
+      "full_mean": 0.44122945421152404,
+      "prior_mean": 0.4458075841675553,
+      "shuffled_label": 0.4516622090174728,
+      "full_finite_energy": 0.3953306115993244
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1520,
+        "mean": -0.009275716652864252,
+        "interval95": [
+          -0.013817992550888532,
+          -0.004518351954871738
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1520,
+        "mean": -0.055932980583918775,
+        "interval95": [
+          -0.06573719111386733,
+          -0.04573522058066419
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1520,
+        "mean": -0.009397204055996864,
+        "interval95": [
+          -0.01290414388400549,
+          -0.005981315726337501
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1520,
+        "mean": -0.0040240535645241025,
+        "interval95": [
+          -0.005805201472338699,
+          -0.002162125741277124
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.008748179038634202,
+      "interval95": [
+        -0.013089213225467534,
+        -0.0038082419431667413
+      ]
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "moving_loso",
+    "queries": 270,
+    "tracks": 71,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.5458139112864937,
+      "ca": 1.161843708666045,
+      "pooled": 0.5565133479186706,
+      "true_label": 0.5589525660519367,
+      "map": 0.5903373301713469,
+      "full_mean": 0.5653274507715482,
+      "prior_mean": 0.5594248378743079,
+      "shuffled_label": 0.5586456708168049,
+      "full_finite_energy": 0.5040258230442468
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 71,
+        "mean": 0.0024392181332657924,
+        "interval95": [
+          -0.021583761944562543,
+          0.030245981282096882
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 71,
+        "mean": 0.013138654765442712,
+        "interval95": [
+          -0.02846943489235806,
+          0.05916023624184401
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 71,
+        "mean": -0.02500987939979856,
+        "interval95": [
+          -0.041173333652088535,
+          -0.009741222405661809
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 71,
+        "mean": 0.00881410285287753,
+        "interval95": [
+          0.0008669304311326388,
+          0.016506680308103386
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": 0.0021032541119630657,
+      "interval95": null,
+      "reason": "One independent cluster cannot estimate between-session uncertainty"
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "moving_temporal",
+    "queries": 69,
+    "tracks": 16,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.6053977982003653,
+      "ca": 1.1149671511366783,
+      "pooled": 0.5553500429318855,
+      "true_label": 0.4958216910252877,
+      "map": 0.5745443755769223,
+      "full_mean": 0.5635468481709686,
+      "prior_mean": 0.5547326931544858,
+      "shuffled_label": 0.6217913598754147,
+      "full_finite_energy": 0.4751306318712674
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 16,
+        "mean": -0.059528351906597846,
+        "interval95": [
+          -0.10437773651683661,
+          -0.009422179284394145
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 16,
+        "mean": -0.10957610717507765,
+        "interval95": [
+          -0.16473351601441175,
+          -0.053676566111932285
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 16,
+        "mean": -0.010997527405953665,
+        "interval95": [
+          -0.06854253462246285,
+          0.03971638842862226
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 16,
+        "mean": 0.008196805239083092,
+        "interval95": [
+          -0.018634586580954224,
+          0.033350770158226815
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": -0.06077929136735119,
+      "interval95": null,
+      "reason": "One independent cluster cannot estimate between-session uncertainty"
+    }
+  },
+  {
+    "family": "ridge",
+    "subset": "approaching_loso",
+    "queries": 3187,
+    "tracks": 1253,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.48297666491936675,
+      "ca": 1.0004419936063145,
+      "pooled": 0.43617570515915494,
+      "true_label": 0.4295727633783114,
+      "map": 0.4455311605640309,
+      "full_mean": 0.4328393420469325,
+      "prior_mean": 0.4369801483521805,
+      "shuffled_label": 0.4432210752338929,
+      "full_finite_energy": 0.3854680744031102
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1253,
+        "mean": -0.006602941780843357,
+        "interval95": [
+          -0.012325844091239284,
+          -0.0007906085503391504
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1253,
+        "mean": -0.05340390154105498,
+        "interval95": [
+          -0.0658508473852944,
+          -0.04106809237669126
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1253,
+        "mean": -0.01269181851709848,
+        "interval95": [
+          -0.017168076201958447,
+          -0.00836309780053095
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1253,
+        "mean": -0.003336363112222228,
+        "interval95": [
+          -0.0058308915806636556,
+          -0.00092561650958396
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.005309013691381016,
+      "interval95": [
+        -0.011237808912844477,
+        0.00024860001353815527
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "all_loso",
+    "queries": 6011,
+    "tracks": 1520,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.491910771707103,
+      "ca": 0.9893476145236215,
+      "pooled": 0.40674463461466476,
+      "true_label": 0.39431917363530655,
+      "map": 0.41564009849778855,
+      "full_mean": 0.40967935782328424,
+      "prior_mean": 0.41113354245938244,
+      "shuffled_label": 0.40895577316693277,
+      "full_finite_energy": 0.3707057920887372
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1520,
+        "mean": -0.012425460979358077,
+        "interval95": [
+          -0.016062239597453728,
+          -0.00875736316345278
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1520,
+        "mean": -0.09759159807179693,
+        "interval95": [
+          -0.10456440762250295,
+          -0.0905569374318837
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1520,
+        "mean": -0.005960740674504557,
+        "interval95": [
+          -0.008908812675411758,
+          -0.0031720355185073453
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1520,
+        "mean": 0.002934723208620069,
+        "interval95": [
+          0.0009545667978810864,
+          0.004904576553332236
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.015000340723628906,
+      "interval95": [
+        -0.020791599017978137,
+        -0.009216147449511209
+      ]
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "moving_loso",
+    "queries": 270,
+    "tracks": 71,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.5458139112864937,
+      "ca": 1.161843708666045,
+      "pooled": 0.598590218362036,
+      "true_label": 0.5728094260615234,
+      "map": 0.6101372862804769,
+      "full_mean": 0.5912152828231123,
+      "prior_mean": 0.5851430507294403,
+      "shuffled_label": 0.5969245431421796,
+      "full_finite_energy": 0.5462731370241797
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 71,
+        "mean": -0.025780792300512737,
+        "interval95": [
+          -0.04311500857382044,
+          -0.009427233666352723
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 71,
+        "mean": 0.02699551477502953,
+        "interval95": [
+          -0.01530795434711153,
+          0.07386313446308553
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 71,
+        "mean": -0.01892200345736482,
+        "interval95": [
+          -0.028998963867005637,
+          -0.00895537452421942
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 71,
+        "mean": -0.007374935538924077,
+        "interval95": [
+          -0.01764195881220631,
+          0.0018551565391383678
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": -0.027469038891770596,
+      "interval95": null,
+      "reason": "One independent cluster cannot estimate between-session uncertainty"
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "moving_temporal",
+    "queries": 69,
+    "tracks": 16,
+    "sessions": 1,
+    "track_equal_mean": {
+      "cv": 0.6053977982003653,
+      "ca": 1.1149671511366783,
+      "pooled": 0.5748251745950423,
+      "true_label": 0.5380981386649601,
+      "map": 0.5585628128250677,
+      "full_mean": 0.559631716371668,
+      "prior_mean": 0.5544412580665923,
+      "shuffled_label": 0.5867518413587706,
+      "full_finite_energy": 0.5033176253165663
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 16,
+        "mean": -0.03672703593008218,
+        "interval95": [
+          -0.06366792928147347,
+          -0.009947234434980915
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 16,
+        "mean": -0.06729965953540513,
+        "interval95": [
+          -0.1002606992544427,
+          -0.03446803550040966
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 16,
+        "mean": 0.0010689035466002628,
+        "interval95": [
+          -0.01883440224114522,
+          0.020670884100325446
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 16,
+        "mean": -0.015193458223374423,
+        "interval95": [
+          -0.034043301915330344,
+          0.00409966618884517
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 1,
+      "mean": -0.04352089504756029,
+      "interval95": null,
+      "reason": "One independent cluster cannot estimate between-session uncertainty"
+    }
+  },
+  {
+    "family": "trees",
+    "subset": "approaching_loso",
+    "queries": 3187,
+    "tracks": 1253,
+    "sessions": 6,
+    "track_equal_mean": {
+      "cv": 0.48297666491936675,
+      "ca": 1.0004419936063145,
+      "pooled": 0.39570669811766807,
+      "true_label": 0.38288768762408765,
+      "map": 0.40688595699070285,
+      "full_mean": 0.3992732377469707,
+      "prior_mean": 0.40133091070449306,
+      "shuffled_label": 0.3977677270761513,
+      "full_finite_energy": 0.35723732279597115
+    },
+    "paired": {
+      "true_label-minus-pooled": {
+        "clusters": 1253,
+        "mean": -0.012819010493581903,
+        "interval95": [
+          -0.01767571626608713,
+          -0.008063271857691056
+        ]
+      },
+      "true_label-minus-cv": {
+        "clusters": 1253,
+        "mean": -0.10008897729527984,
+        "interval95": [
+          -0.10899814954770352,
+          -0.0916756983348513
+        ]
+      },
+      "full_mean-minus-map": {
+        "clusters": 1253,
+        "mean": -0.007612719243732539,
+        "interval95": [
+          -0.011582235568318104,
+          -0.0037641209371059334
+        ]
+      },
+      "full_mean-minus-pooled": {
+        "clusters": 1253,
+        "mean": 0.0035665396293014812,
+        "interval95": [
+          0.001148287533163265,
+          0.00607725801062598
+        ]
+      }
+    },
+    "session_paired": {
+      "clusters": 6,
+      "mean": -0.015951765293333205,
+      "interval95": [
+        -0.028619432277727525,
+        -0.005154506418902972
+      ]
+    }
+  }
+]

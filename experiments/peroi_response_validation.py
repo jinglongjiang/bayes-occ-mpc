@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT/'results/response_validation/stable'
 LABELS = ['attract', 'avoid', 'neutral']
 H = np.array([.5, 1., 2.])
+LONG_CONTEXT = False
 
 
 class PhysicalScaler(StandardScaler):
@@ -88,14 +89,14 @@ def build(root):
             present = np.isfinite(r).all(axis=1)
             distances = np.where(present, np.linalg.norm(p-r,axis=1), np.inf)
             closest = t[np.argmin(distances)]
-            query_times = np.arange(t[0]+1., t[-1]-2.+1e-6, 1.)
+            query_times = np.arange(t[0]+1., t[-1]-H[-1]+1e-6, 1.)
             used = 0
             for desired in query_times:
                 j = np.searchsorted(t, desired)
-                if j>=len(t) or t[j]+2>t[-1]:
+                if j>=len(t) or t[j]+H[-1]>t[-1]:
                     continue
                 lo = max(0, np.searchsorted(t,t[j]-1.,side='right')-1)
-                hi = np.searchsorted(t,t[j]+2.,side='left')
+                hi = np.searchsorted(t,t[j]+H[-1],side='left')
                 if np.max(np.diff(t[lo:hi+1])) > .3:
                     info['rejected_gaps'] += 1
                     continue
@@ -108,6 +109,17 @@ def build(root):
                 if np.linalg.norm(cv[1])>4 or np.linalg.norm(f[24:26])>4:
                     info['rejected_kinematics'] += 1
                     continue
+                if LONG_CONTEXT:
+                    old = max(0,np.searchsorted(t,t[j]-4.,side='right')-1)
+                    invalid = np.flatnonzero(~np.isfinite(r[old:j+1]).all(axis=1))
+                    if len(invalid): old += invalid[-1]+1
+                    gaps = np.flatnonzero(np.diff(t[old:j+1])>.3)
+                    if len(gaps): old += gaps[-1]+1
+                    ages = np.minimum(np.array([4.,3.,2.,1.,0.]),t[j]-t[old])
+                    long_p = (interpolate(t[old:j+1],p[old:j+1],t[j]-ages)-p[j])@rot
+                    long_r = (interpolate(t[old:j+1],r[old:j+1],t[j]-ages)-p[j])@rot
+                    f = np.r_[f,long_p.ravel(),long_r.ravel(),ages,
+                              min(t[j]-t[0],30.),(p[j]-p[0])@rot]
                 # No final goal, actual closest time, session ID or label in features.
                 kind = str(g.Robot_Type.iloc[0]).lower()
                 platform = [float(k in kind) for k in ('go','hsr','mpo')]
@@ -148,7 +160,7 @@ def choose_reg(X,Y,train,val,family):
     best = None
     for param in grid:
         m = regressor(family,param).fit(X[train],Y[train].reshape(len(train),-1))
-        pred = m.predict(X[val]).reshape(-1,3,2)
+        pred = m.predict(X[val]).reshape(-1,len(H),2)
         score = float(np.linalg.norm(pred-Y[val],axis=2).mean())
         if best is None or score<best[0]:
             best = score,param,m
@@ -228,7 +240,8 @@ def run(root):
         splits.append(('moving_temporal',train,val,test))
     protocol = dict(source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         scope='Processed positions, prefix-only features; not raw-sensor online validation or causal robot-action response identification',
-        horizons=H.tolist(), sample='Every 1s after 1s history, 2s future available, within 6m, first at most 10 per track; gaps<=.3s',
+        horizons=H.tolist(), long_context=LONG_CONTEXT,
+        sample='Every 1s after 1s history, max horizon future available, within 6m, first at most 10 per track; gaps<=.3s',
         splits=[dict(name=s,train_tracks=sorted(meta.iloc[tr].track.unique()),
                       val_tracks=sorted(meta.iloc[va].track.unique()),
                       test_tracks=sorted(meta.iloc[te].track.unique())) for s,tr,va,te in splits],
@@ -257,9 +270,9 @@ def run(root):
             base,base_cfg = choose_reg(X,Y-CV,tr,va,family)
             CX = conditional_features(X,labels)
             conditional,cond_cfg = choose_reg(CX,Y-CV,tr,va,family)
-            modes = np.stack([conditional.predict(conditional_features(X[te],np.full(len(te),z))).reshape(-1,3,2)+CV[te]
+            modes = np.stack([conditional.predict(conditional_features(X[te],np.full(len(te),z))).reshape(-1,len(H),2)+CV[te]
                               for z in range(3)],axis=1)
-            prediction = dict(cv=CV[te],ca=CA[te],pooled=base.predict(X[te]).reshape(-1,3,2)+CV[te],
+            prediction = dict(cv=CV[te],ca=CA[te],pooled=base.predict(X[te]).reshape(-1,len(H),2)+CV[te],
                               true_label=modes[np.arange(len(te)),labels[te]],
                               map=modes[np.arange(len(te)),probs.argmax(1)],
                               full_mean=np.sum(probs[:,:,None,None]*modes,axis=1),
@@ -273,7 +286,7 @@ def run(root):
             sl = meta.track.map(shuffled).values
             shuffle_model = regressor(family,cond_cfg['parameter']).fit(
                 conditional_features(X[tr],sl[tr]),(Y-CV)[tr].reshape(len(tr),-1))
-            prediction['shuffled_label'] = shuffle_model.predict(conditional_features(X[te],sl[te])).reshape(-1,3,2)+CV[te]
+            prediction['shuffled_label'] = shuffle_model.predict(conditional_features(X[te],sl[te])).reshape(-1,len(H),2)+CV[te]
             errors = {k:np.linalg.norm(v-Y[te],axis=-1) for k,v in prediction.items()}
             for local,idx in enumerate(te):
                 row = meta.iloc[idx].to_dict()
@@ -281,7 +294,7 @@ def run(root):
                 row.update({f'{k}_{h}':float(v[local,j]) for k,v in errors.items() for j,h in enumerate(H)})
                 row.update({k:float(v[local].mean()) for k,v in errors.items()})
                 row['full_finite_energy'] = float(score[local].mean())
-                row['mode_spread_2s'] = float(np.max(np.linalg.norm(modes[local,:,None,-1]-modes[local,None,:,-1],axis=-1)))
+                row['mode_spread_final'] = float(np.max(np.linalg.norm(modes[local,:,None,-1]-modes[local,None,:,-1],axis=-1)))
                 row['max_probability'] = float(probs[local].max())
                 all_rows.append(row)
             details.append(dict(fold=name,family=family,base=base_cfg,conditional=cond_cfg,
@@ -315,5 +328,10 @@ def run(root):
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('root',type=Path)
+    parser.add_argument('--long-context',action='store_true')
     args = parser.parse_args()
+    if args.long_context:
+        LONG_CONTEXT = True
+        H = np.array([.5,1.,2.,4.])
+        OUT = ROOT/'results/response_validation/long_context'
     run(args.root)
