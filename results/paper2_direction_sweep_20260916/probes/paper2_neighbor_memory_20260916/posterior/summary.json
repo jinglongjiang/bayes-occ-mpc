@@ -1,0 +1,88 @@
+{
+  "64": {
+    "selected_scales": {
+      "visible": 4.0,
+      "memory": 1.0
+    },
+    "holdout_layouts": 15,
+    "holdout_queries": 50,
+    "means": {
+      "visible_point": 0.45272997854870084,
+      "visible_energy": 0.36293166114528913,
+      "visible_map": 0.42867089923148544,
+      "memory_point": 0.4290261032229889,
+      "memory_energy": 0.38165599061350025,
+      "memory_map": 0.444047728669026
+    },
+    "comparisons": {
+      "memory_point-visible_point": {
+        "mean": -0.02370387532571201,
+        "ci95": [
+          -0.07288884149964975,
+          0.03776183761099858
+        ],
+        "relative_improvement": 0.052357644620085936
+      },
+      "memory_energy-visible_energy": {
+        "mean": 0.018724329468211214,
+        "ci95": [
+          -0.018573102032564553,
+          0.07081080773366545
+        ],
+        "relative_improvement": -0.05159188759978555
+      },
+      "memory_point-memory_map": {
+        "mean": -0.015021625446037098,
+        "ci95": [
+          -0.051442954862393434,
+          0.018247659501590893
+        ],
+        "relative_improvement": 0.03382885324301156
+      }
+    },
+    "cv": 0.523865255712063
+  },
+  "128": {
+    "selected_scales": {
+      "visible": 4.0,
+      "memory": 1.0
+    },
+    "holdout_layouts": 15,
+    "holdout_queries": 50,
+    "means": {
+      "visible_point": 0.46196191380951535,
+      "visible_energy": 0.3598510107866126,
+      "visible_map": 0.4525655543763686,
+      "memory_point": 0.403089425701992,
+      "memory_energy": 0.3471323625231901,
+      "memory_map": 0.4147509740308397
+    },
+    "comparisons": {
+      "memory_point-visible_point": {
+        "mean": -0.05887248810752334,
+        "ci95": [
+          -0.10038547810892647,
+          -0.01751729252901656
+        ],
+        "relative_improvement": 0.1274401338024561
+      },
+      "memory_energy-visible_energy": {
+        "mean": -0.012718648263422486,
+        "ci95": [
+          -0.04169441288957277,
+          0.016891908559293192
+        ],
+        "relative_improvement": 0.03534420602465528
+      },
+      "memory_point-memory_map": {
+        "mean": -0.01166154832884764,
+        "ci95": [
+          -0.05470480520556464,
+          0.02831470423665066
+        ],
+        "relative_improvement": 0.028116988407555905
+      }
+    },
+    "cv": 0.523865255712063
+  }
+}

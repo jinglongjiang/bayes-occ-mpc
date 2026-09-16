@@ -1,0 +1,27 @@
+{
+  "intervention": "Only replace list comprehension spawn by sequential append in diagnostic process",
+  "production_changed": false,
+  "retraining": false,
+  "scenarios": [
+    "baseline_circle",
+    "baseline_square",
+    "dense_circle",
+    "dense_square",
+    "large_circle",
+    "large_square"
+  ],
+  "count": 100,
+  "seeds": [
+    2407,
+    4807,
+    7207
+  ],
+  "arms": [
+    "no_belief",
+    "map",
+    "full"
+  ],
+  "profile": "heldout_nonstationary",
+  "script_sha256": "6080dfa97ae5a8ec44d84ecef209626c5c0597447ce0f60d15fd92ff75415340",
+  "note": "Same random case seeds; physical layouts necessarily change after rejection sampling fix. Not paired same-layout treatment effect."
+}

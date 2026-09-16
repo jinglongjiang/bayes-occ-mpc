@@ -1,0 +1,702 @@
+{
+  "population": {
+    "test": 20093,
+    "train": 68608,
+    "val": 6072
+  },
+  "recordings": {
+    "test": 8,
+    "train": 23,
+    "val": 2
+  },
+  "global_alpha": 1.0,
+  "selected": {
+    "ewma": {
+      "parameter": 0.01,
+      "validation_nll": -0.19685532645076362
+    },
+    "bayes": {
+      "parameter": 1000.0,
+      "validation_nll": -0.2389334641339832
+    }
+  },
+  "results": {
+    "global": {
+      "mean": {
+        "ade2": 0.4216059639020132,
+        "nll": -0.041221165195110265,
+        "coverage90": 0.9260574363547792,
+        "width90": 0.8840060087646842
+      },
+      "recordings": {
+        "no_robot/1737531432": {
+          "ade2": 0.3755996213248882,
+          "nll": -0.46841744474807556,
+          "coverage90": 0.9340980024968789,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738056349": {
+          "ade2": 0.4739196196930675,
+          "nll": -0.5817347422815122,
+          "coverage90": 1.0,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738076465": {
+          "ade2": 0.36415319788229045,
+          "nll": -0.31827774995355196,
+          "coverage90": 0.9324935400516796,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738148746": {
+          "ade2": 0.39322452486456616,
+          "nll": -0.22038274647057596,
+          "coverage90": 0.928878846567678,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738662282": {
+          "ade2": 0.3869666183042956,
+          "nll": -0.2972448688623558,
+          "coverage90": 0.9295012165450122,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738668524": {
+          "ade2": 0.5608804912922348,
+          "nll": 1.6951942644070408,
+          "coverage90": 0.8360811781609195,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1739284572": {
+          "ade2": 0.3884245755758375,
+          "nll": -0.1575930089313846,
+          "coverage90": 0.9319842896174864,
+          "width90": 0.884006008764684
+        },
+        "stationary_robot/1737541545(steve)": {
+          "ade2": 0.4296790622789255,
+          "nll": 0.01868697527953332,
+          "coverage90": 0.915422417398578,
+          "width90": 0.884006008764684
+        }
+      }
+    },
+    "cv": {
+      "mean": {
+        "ade2": 0.4559152573497241,
+        "nll": 0.36933224163578693,
+        "coverage90": 0.9079269204783195,
+        "width90": 0.8840060087646842
+      },
+      "recordings": {
+        "no_robot/1737531432": {
+          "ade2": 0.40979096654365,
+          "nll": -0.06307755209067098,
+          "coverage90": 0.9130305867665418,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738056349": {
+          "ade2": 0.4387551247715207,
+          "nll": -0.7276203950081068,
+          "coverage90": 1.0,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738076465": {
+          "ade2": 0.3948412835615186,
+          "nll": 0.11804563812694983,
+          "coverage90": 0.9203811369509044,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738148746": {
+          "ade2": 0.45469698878990517,
+          "nll": 0.4753700988815794,
+          "coverage90": 0.8994055304497525,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738662282": {
+          "ade2": 0.4262351569144635,
+          "nll": 0.139085365756119,
+          "coverage90": 0.9139902676399027,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738668524": {
+          "ade2": 0.6152812094459366,
+          "nll": 2.2126341370055256,
+          "coverage90": 0.8142241379310345,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1739284572": {
+          "ade2": 0.42311937654528875,
+          "nll": 0.2270195011961693,
+          "coverage90": 0.9153176229508196,
+          "width90": 0.884006008764684
+        },
+        "stationary_robot/1737541545(steve)": {
+          "ade2": 0.4846019522255102,
+          "nll": 0.5732011392187303,
+          "coverage90": 0.8870660811375993,
+          "width90": 0.884006008764684
+        }
+      }
+    },
+    "ewma": {
+      "mean": {
+        "ade2": 0.4256698807840698,
+        "nll": -0.02096874920142594,
+        "coverage90": 0.9251746487851172,
+        "width90": 0.8840060087646842
+      },
+      "recordings": {
+        "no_robot/1737531432": {
+          "ade2": 0.37684465619159174,
+          "nll": -0.46752631102719017,
+          "coverage90": 0.9353776529338327,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738056349": {
+          "ade2": 0.4717123748468861,
+          "nll": -0.5922430391849675,
+          "coverage90": 1.0,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738076465": {
+          "ade2": 0.3687221301853084,
+          "nll": -0.30407497759973523,
+          "coverage90": 0.9308785529715762,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738148746": {
+          "ade2": 0.39976342799369863,
+          "nll": -0.17591243724494618,
+          "coverage90": 0.9275446524639552,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738662282": {
+          "ade2": 0.39491040666206145,
+          "nll": -0.2577152759974778,
+          "coverage90": 0.9277676399026764,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738668524": {
+          "ade2": 0.5612698096904578,
+          "nll": 1.7160533212793465,
+          "coverage90": 0.8378412356321839,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1739284572": {
+          "ade2": 0.39262622842652845,
+          "nll": -0.15012672623224887,
+          "coverage90": 0.9274590163934426,
+          "width90": 0.884006008764684
+        },
+        "stationary_robot/1737541545(steve)": {
+          "ade2": 0.4395100122760261,
+          "nll": 0.06379545239581164,
+          "coverage90": 0.9145284399832707,
+          "width90": 0.884006008764684
+        }
+      }
+    },
+    "bayes": {
+      "mean": {
+        "ade2": 0.4186824830944382,
+        "nll": -0.056331650284390244,
+        "coverage90": 0.9277588388430501,
+        "width90": 0.8853066111056904
+      },
+      "recordings": {
+        "no_robot/1737531432": {
+          "ade2": 0.36173295583077697,
+          "nll": -0.5559162922003502,
+          "coverage90": 0.9414325842696629,
+          "width90": 0.885372443805619
+        },
+        "no_robot/1738056349": {
+          "ade2": 0.4736298116593439,
+          "nll": -0.5814205390994532,
+          "coverage90": 1.0,
+          "width90": 0.8849530417893734
+        },
+        "no_robot/1738076465": {
+          "ade2": 0.36511590750339673,
+          "nll": -0.320109482839708,
+          "coverage90": 0.9318475452196382,
+          "width90": 0.8854416613963739
+        },
+        "no_robot/1738148746": {
+          "ade2": 0.38727669027328215,
+          "nll": -0.24043256035550606,
+          "coverage90": 0.9328975683236497,
+          "width90": 0.8849397246119156
+        },
+        "no_robot/1738662282": {
+          "ade2": 0.38894257721025216,
+          "nll": -0.28693704578343704,
+          "coverage90": 0.9290374087591241,
+          "width90": 0.88513698208782
+        },
+        "no_robot/1738668524": {
+          "ade2": 0.5588049911601906,
+          "nll": 1.7040844952677079,
+          "coverage90": 0.83746408045977,
+          "width90": 0.8858159827582148
+        },
+        "no_robot/1739284572": {
+          "ade2": 0.38724109421702213,
+          "nll": -0.18792180513527573,
+          "coverage90": 0.9326673497267759,
+          "width90": 0.8855471337495364
+        },
+        "stationary_robot/1737541545(steve)": {
+          "ade2": 0.42671583690124065,
+          "nll": 0.01800002787090044,
+          "coverage90": 0.9167241739857801,
+          "width90": 0.8852459186466707
+        }
+      }
+    },
+    "bayes_point": {
+      "mean": {
+        "ade2": 0.4186824830944382,
+        "nll": -0.04881453614522417,
+        "coverage90": 0.9274073721444782,
+        "width90": 0.8840060087646842
+      },
+      "recordings": {
+        "no_robot/1737531432": {
+          "ade2": 0.36173295583077697,
+          "nll": -0.5532025825801052,
+          "coverage90": 0.9408083645443196,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738056349": {
+          "ade2": 0.4736298116593439,
+          "nll": -0.5828988886094284,
+          "coverage90": 1.0,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738076465": {
+          "ade2": 0.36511590750339673,
+          "nll": -0.31585243147674547,
+          "coverage90": 0.9315245478036176,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738148746": {
+          "ade2": 0.38727669027328215,
+          "nll": -0.2362872931196112,
+          "coverage90": 0.932402625349688,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738662282": {
+          "ade2": 0.38894257721025216,
+          "nll": -0.28314282379348255,
+          "coverage90": 0.9287180656934306,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1738668524": {
+          "ade2": 0.5588049911601906,
+          "nll": 1.7332617115410065,
+          "coverage90": 0.8372485632183908,
+          "width90": 0.884006008764684
+        },
+        "no_robot/1739284572": {
+          "ade2": 0.38724109421702213,
+          "nll": -0.17685400002804347,
+          "coverage90": 0.9324965846994535,
+          "width90": 0.884006008764684
+        },
+        "stationary_robot/1737541545(steve)": {
+          "ade2": 0.42671583690124065,
+          "nll": 0.024460018904616382,
+          "coverage90": 0.916060225846926,
+          "width90": 0.884006008764684
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "global": {
+      "ade2": {
+        "mean": -0.0029234808075750546,
+        "ci95": [
+          -0.006600191117948878,
+          -0.00010998161672206235
+        ]
+      },
+      "nll": {
+        "mean": -0.015110485089280002,
+        "ci95": [
+          -0.03818803487752195,
+          0.0021868714251819274
+        ]
+      }
+    },
+    "ewma": {
+      "ade2": {
+        "mean": -0.0069873976896316775,
+        "ci95": [
+          -0.01085556070300904,
+          -0.003187476461047962
+        ]
+      },
+      "nll": {
+        "mean": -0.035362901082964304,
+        "ci95": [
+          -0.055787680335339325,
+          -0.01569800821967534
+        ]
+      }
+    },
+    "bayes_point": {
+      "ade2": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "nll": {
+        "mean": -0.007517114139166069,
+        "ci95": [
+          -0.014420199820124751,
+          -0.002640906480383436
+        ]
+      }
+    }
+  },
+  "audits": {
+    "ewma": [
+      {
+        "session": "dynamic_robot/1737635531(dog)",
+        "unique_evidence": 190,
+        "queries": 813
+      },
+      {
+        "session": "no_robot/1737531432",
+        "unique_evidence": 267,
+        "queries": 1549
+      },
+      {
+        "session": "no_robot/1737971338",
+        "unique_evidence": 319,
+        "queries": 1737
+      },
+      {
+        "session": "no_robot/1737978635",
+        "unique_evidence": 1136,
+        "queries": 6195
+      },
+      {
+        "session": "no_robot/1738056047",
+        "unique_evidence": 2,
+        "queries": 12
+      },
+      {
+        "session": "no_robot/1738056349",
+        "unique_evidence": 2,
+        "queries": 6
+      },
+      {
+        "session": "no_robot/1738059947",
+        "unique_evidence": 1562,
+        "queries": 8218
+      },
+      {
+        "session": "no_robot/1738076465",
+        "unique_evidence": 129,
+        "queries": 735
+      },
+      {
+        "session": "no_robot/1738143016",
+        "unique_evidence": 109,
+        "queries": 622
+      },
+      {
+        "session": "no_robot/1738148746",
+        "unique_evidence": 1549,
+        "queries": 8378
+      },
+      {
+        "session": "no_robot/1738232714",
+        "unique_evidence": 1468,
+        "queries": 8000
+      },
+      {
+        "session": "no_robot/1738317225",
+        "unique_evidence": 1156,
+        "queries": 5957
+      },
+      {
+        "session": "no_robot/1738574351",
+        "unique_evidence": 67,
+        "queries": 356
+      },
+      {
+        "session": "no_robot/1738578893",
+        "unique_evidence": 657,
+        "queries": 2939
+      },
+      {
+        "session": "no_robot/1738585557",
+        "unique_evidence": 24,
+        "queries": 81
+      },
+      {
+        "session": "no_robot/1738596791",
+        "unique_evidence": 31,
+        "queries": 155
+      },
+      {
+        "session": "no_robot/1738662282",
+        "unique_evidence": 548,
+        "queries": 2961
+      },
+      {
+        "session": "no_robot/1738668524",
+        "unique_evidence": 231,
+        "queries": 861
+      },
+      {
+        "session": "no_robot/1738671254",
+        "unique_evidence": 87,
+        "queries": 296
+      },
+      {
+        "session": "no_robot/1738746257",
+        "unique_evidence": 1048,
+        "queries": 5636
+      },
+      {
+        "session": "no_robot/1738760580",
+        "unique_evidence": 383,
+        "queries": 2131
+      },
+      {
+        "session": "no_robot/1738919933",
+        "unique_evidence": 784,
+        "queries": 4321
+      },
+      {
+        "session": "no_robot/1739180772",
+        "unique_evidence": 996,
+        "queries": 5450
+      },
+      {
+        "session": "no_robot/1739261503",
+        "unique_evidence": 89,
+        "queries": 524
+      },
+      {
+        "session": "no_robot/1739264572",
+        "unique_evidence": 1678,
+        "queries": 9174
+      },
+      {
+        "session": "no_robot/1739284572",
+        "unique_evidence": 244,
+        "queries": 1351
+      },
+      {
+        "session": "no_robot/1739357483",
+        "unique_evidence": 615,
+        "queries": 3162
+      },
+      {
+        "session": "no_robot/1739369577",
+        "unique_evidence": 18,
+        "queries": 91
+      },
+      {
+        "session": "stationary_robot/1737455747(hsr)",
+        "unique_evidence": 885,
+        "queries": 3583
+      },
+      {
+        "session": "stationary_robot/1737541545(steve)",
+        "unique_evidence": 797,
+        "queries": 4252
+      },
+      {
+        "session": "stationary_robot/1737975940(go2)",
+        "unique_evidence": 504,
+        "queries": 2702
+      },
+      {
+        "session": "stationary_robot/1738146369(go1)",
+        "unique_evidence": 249,
+        "queries": 1326
+      },
+      {
+        "session": "stationary_robot/1738758438(go1)",
+        "unique_evidence": 220,
+        "queries": 1199
+      }
+    ],
+    "bayes": [
+      {
+        "session": "dynamic_robot/1737635531(dog)",
+        "unique_evidence": 190,
+        "queries": 813
+      },
+      {
+        "session": "no_robot/1737531432",
+        "unique_evidence": 267,
+        "queries": 1549
+      },
+      {
+        "session": "no_robot/1737971338",
+        "unique_evidence": 319,
+        "queries": 1737
+      },
+      {
+        "session": "no_robot/1737978635",
+        "unique_evidence": 1136,
+        "queries": 6195
+      },
+      {
+        "session": "no_robot/1738056047",
+        "unique_evidence": 2,
+        "queries": 12
+      },
+      {
+        "session": "no_robot/1738056349",
+        "unique_evidence": 2,
+        "queries": 6
+      },
+      {
+        "session": "no_robot/1738059947",
+        "unique_evidence": 1562,
+        "queries": 8218
+      },
+      {
+        "session": "no_robot/1738076465",
+        "unique_evidence": 129,
+        "queries": 735
+      },
+      {
+        "session": "no_robot/1738143016",
+        "unique_evidence": 109,
+        "queries": 622
+      },
+      {
+        "session": "no_robot/1738148746",
+        "unique_evidence": 1549,
+        "queries": 8378
+      },
+      {
+        "session": "no_robot/1738232714",
+        "unique_evidence": 1468,
+        "queries": 8000
+      },
+      {
+        "session": "no_robot/1738317225",
+        "unique_evidence": 1156,
+        "queries": 5957
+      },
+      {
+        "session": "no_robot/1738574351",
+        "unique_evidence": 67,
+        "queries": 356
+      },
+      {
+        "session": "no_robot/1738578893",
+        "unique_evidence": 657,
+        "queries": 2939
+      },
+      {
+        "session": "no_robot/1738585557",
+        "unique_evidence": 24,
+        "queries": 81
+      },
+      {
+        "session": "no_robot/1738596791",
+        "unique_evidence": 31,
+        "queries": 155
+      },
+      {
+        "session": "no_robot/1738662282",
+        "unique_evidence": 548,
+        "queries": 2961
+      },
+      {
+        "session": "no_robot/1738668524",
+        "unique_evidence": 231,
+        "queries": 861
+      },
+      {
+        "session": "no_robot/1738671254",
+        "unique_evidence": 87,
+        "queries": 296
+      },
+      {
+        "session": "no_robot/1738746257",
+        "unique_evidence": 1048,
+        "queries": 5636
+      },
+      {
+        "session": "no_robot/1738760580",
+        "unique_evidence": 383,
+        "queries": 2131
+      },
+      {
+        "session": "no_robot/1738919933",
+        "unique_evidence": 784,
+        "queries": 4321
+      },
+      {
+        "session": "no_robot/1739180772",
+        "unique_evidence": 996,
+        "queries": 5450
+      },
+      {
+        "session": "no_robot/1739261503",
+        "unique_evidence": 89,
+        "queries": 524
+      },
+      {
+        "session": "no_robot/1739264572",
+        "unique_evidence": 1678,
+        "queries": 9174
+      },
+      {
+        "session": "no_robot/1739284572",
+        "unique_evidence": 244,
+        "queries": 1351
+      },
+      {
+        "session": "no_robot/1739357483",
+        "unique_evidence": 615,
+        "queries": 3162
+      },
+      {
+        "session": "no_robot/1739369577",
+        "unique_evidence": 18,
+        "queries": 91
+      },
+      {
+        "session": "stationary_robot/1737455747(hsr)",
+        "unique_evidence": 885,
+        "queries": 3583
+      },
+      {
+        "session": "stationary_robot/1737541545(steve)",
+        "unique_evidence": 797,
+        "queries": 4252
+      },
+      {
+        "session": "stationary_robot/1737975940(go2)",
+        "unique_evidence": 504,
+        "queries": 2702
+      },
+      {
+        "session": "stationary_robot/1738146369(go1)",
+        "unique_evidence": 249,
+        "queries": 1326
+      },
+      {
+        "session": "stationary_robot/1738758438(go1)",
+        "unique_evidence": 220,
+        "queries": 1199
+      }
+    ]
+  },
+  "seconds": 33.7313187122345
+}

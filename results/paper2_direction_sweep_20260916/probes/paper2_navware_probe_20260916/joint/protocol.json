@@ -1,0 +1,32 @@
+{
+  "train_scenes": [
+    6,
+    20,
+    26
+  ],
+  "calibration_scenes": [
+    13
+  ],
+  "test_scenes": [
+    32,
+    39,
+    46,
+    52
+  ],
+  "means": "same shared per-human HistGB",
+  "covariance": "LedoitWolf on calibration residuals",
+  "controls": "same means and exact same per-human covariance blocks; remove off-diagonal human blocks only",
+  "horizon": [
+    0.5,
+    1,
+    1.5,
+    2
+  ],
+  "query_spacing": 1,
+  "thresholds": [
+    0.6,
+    1.0
+  ],
+  "samples": 1024,
+  "scope": "proximity to recorded robot at discrete horizons; NOT counterfactual collision/navigation"
+}

@@ -1,0 +1,226 @@
+{
+  "scope": "exploratory delayed Bayesian expert selection, not human type inference or navigation approval",
+  "split": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation": [
+      6
+    ],
+    "test": [
+      7,
+      8,
+      9
+    ]
+  },
+  "evidence": "completed2s targets, evidence windows2.2s apart; history features as-of",
+  "caveats": [
+    "all sessions are official training-domain data, repeatedly explored",
+    "experts correspond to training recordings, not known human behavioral types",
+    "bank has5x the trees of universal; bank comparisons share identical experts",
+    "Gaussian likelihood approximate; future robot actions not given, no causal action model",
+    "rate is prior reset per evidence update, power!=1 is generalized Bayes"
+  ],
+  "variance": [
+    [
+      0.32775005364390913,
+      0.38070299105149824
+    ],
+    [
+      0.5878526596307075,
+      0.4398271550702725
+    ],
+    [
+      0.4001804243334262,
+      0.487811268412693
+    ],
+    [
+      0.38719588772900343,
+      0.3659915483173501
+    ],
+    [
+      0.3856808772290463,
+      0.4759096584117203
+    ]
+  ],
+  "arms": {
+    "universal": {
+      "error": 0.5447545987633554
+    },
+    "uniform": {
+      "rate": 0,
+      "power": 1,
+      "validation_nll": 1.7547294506576119,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5669584135555858,
+          "nll": 1.5388231627887057,
+          "entropy": 1.6094379124340996
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.532101120264406,
+          "nll": 1.501678981117083,
+          "entropy": 1.6094379124340996
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6593638122678842,
+          "nll": 1.6793341500002388,
+          "entropy": 1.6094379124341003
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5677533722205566,
+          "nll": 1.5398077907095467,
+          "entropy": 1.6094379124341003
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.6984792969748426,
+          "nll": 1.778196290535196,
+          "entropy": 1.6094379124340998
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.49889551031856794,
+          "nll": 1.4625456163886286,
+          "entropy": 1.6094379124340998
+        }
+      ],
+      "error": 0.5872585876003072,
+      "nll": 1.5833976652565667
+    },
+    "map": {
+      "rate": 0.2,
+      "power": 0.1,
+      "validation_nll": 1.5195632251284275,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5457027948778637,
+          "nll": 1.4527450271899627,
+          "entropy": 0.0
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.5098809394226633,
+          "nll": 1.3353773602442622,
+          "entropy": 0.0
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6822339226732455,
+          "nll": 1.6720449509506035,
+          "entropy": 0.0
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5629493421217214,
+          "nll": 1.4325829764463032,
+          "entropy": 0.0
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.7508856714970837,
+          "nll": 1.8169598899028188,
+          "entropy": 0.0
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.5450407457410832,
+          "nll": 1.3967587533609565,
+          "entropy": 0.0
+        }
+      ],
+      "error": 0.5994489027222768,
+      "nll": 1.517744826349151
+    },
+    "full": {
+      "rate": 0.05,
+      "power": 1.0,
+      "validation_nll": 1.5306096403925522,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5164618935878919,
+          "nll": 1.436287515390129,
+          "entropy": 0.860490883744076
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.49058045473237505,
+          "nll": 1.3697567900581098,
+          "entropy": 0.9269907374812388
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6409340661871844,
+          "nll": 1.6130183461224759,
+          "entropy": 1.0001475084500036
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5227957723324383,
+          "nll": 1.4155212041316276,
+          "entropy": 0.9654344031029588
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.6939654046457455,
+          "nll": 1.6962626104876046,
+          "entropy": 0.887152298653778
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.5097863646588154,
+          "nll": 1.3846933244174167,
+          "entropy": 1.0918626839715433
+        }
+      ],
+      "error": 0.5624206593574085,
+      "nll": 1.4859232984345605
+    }
+  }
+}

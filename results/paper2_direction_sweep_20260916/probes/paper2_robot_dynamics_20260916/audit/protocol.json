@@ -1,0 +1,27 @@
+{
+  "train": "b3test1..3",
+  "validation": "b14test1..3",
+  "test": "b24test1..3",
+  "target": "one observation step reported odometry velocity",
+  "command_alignment": "latest command strictly available at odometry bag receipt",
+  "predictors": [
+    "CurrentVelocity",
+    "CurrentCommand",
+    "ARX_current",
+    "ARX_history"
+  ],
+  "history_seconds": [
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "ridge": 0.001,
+  "caveats": [
+    "wheel odometry is not externally measured ground-truth motion",
+    "no commanded-packet applied-time acknowledgement",
+    "cross-recording comparison is not randomized delay intervention"
+  ]
+}

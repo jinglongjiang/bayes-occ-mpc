@@ -1,0 +1,12 @@
+{
+  "question": "Does measured body orientation add legal future information beyond four-frame geometry?",
+  "source_sha256": "9b8634f144480ddc649b1b5986a5c3de4ea66ecd2227405fb5d973f82ff7d2c3",
+  "data": "same frozen DIAMOR queries; day 1 fit, day 2 confirmation",
+  "arms": [
+    "HistoryNoFacing",
+    "HistoryFacing"
+  ],
+  "control": "same 36 input columns; orientation columns zeroed in NoFacing",
+  "gate": "at least 5% lower error, block confidence interval excludes zero; screening only",
+  "limitation": "body orientation comes from dataset tracker; no Bayes or navigation benefit implied"
+}

@@ -1,0 +1,26 @@
+{
+  "script_sha256": "c2aa75425d5f23594b0540d9754142441286166cd3e51078301fd1b274cbad99",
+  "base": "global Ridge residual to CV, train only",
+  "horizons": [
+    1.0,
+    2.0
+  ],
+  "global_alpha": [
+    1.0,
+    10.0,
+    100.0
+  ],
+  "ewma_alpha": [
+    0.01,
+    0.05,
+    0.2
+  ],
+  "bayes_precision": [
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "selection": "validation recording-equal Gaussian NLL for adaptive models; ADE2 for global ridge",
+  "evidence": "first eligible query per track, admitted only after 2s outcome is observable",
+  "limitation": "processed tracks; exploratory reused public data; no robot counterfactual"
+}

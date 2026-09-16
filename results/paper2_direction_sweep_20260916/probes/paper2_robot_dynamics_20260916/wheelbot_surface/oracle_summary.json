@@ -1,0 +1,860 @@
+{
+  "record_counts": {
+    "train": 17,
+    "val": 6,
+    "test": 6
+  },
+  "record_equal_rmse": {
+    "Current": 0.19641791118515864,
+    "History": 0.17480011574096146,
+    "Oracle": 0.16224425782759985
+  },
+  "oracle_relative_improvement": 0.07182980320200874,
+  "future_control_enabled": true,
+  "history_minus_oracle_ci": [
+    -0.0016036712461047703,
+    0.03400288857519624
+  ],
+  "predictive_gate_passed": false,
+  "status": "predictive_oracle_only_no_bayesian_or_navigation_approval",
+  "results": [
+    {
+      "seed": 2407,
+      "arm": "Current",
+      "best_step": 250,
+      "validation_rmse": 0.29114463925361633,
+      "test_rmse": 0.1968445678551992,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.14760954678058624
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.15011237561702728
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.2527926564216614
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.23215335607528687
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.21958771347999573
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.17881175875663757
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.366620272397995
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.29114463925361633
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.2956204414367676
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.3004893958568573
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.299164742231369
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.31166768074035645
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.30059874057769775
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.3177638053894043
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.30772116780281067
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.31809866428375244
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.3078715205192566
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.3203229606151581
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.3087480366230011
+        }
+      ]
+    },
+    {
+      "seed": 2407,
+      "arm": "History",
+      "best_step": 1500,
+      "validation_rmse": 0.2509259879589081,
+      "test_rmse": 0.1658287557462851,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.11832010746002197
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.10214341431856155
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.22131142020225525
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.20729751884937286
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.19522863626480103
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.15067143738269806
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3671605587005615
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.2721361517906189
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.2701869606971741
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.26709887385368347
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.2640824019908905
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.2737793028354645
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.2509259879589081
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.26092150807380676
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.2608371078968048
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.26610109210014343
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.254514217376709
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.2639194428920746
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.2631200850009918
+        }
+      ]
+    },
+    {
+      "seed": 2407,
+      "arm": "Oracle",
+      "best_step": 1500,
+      "validation_rmse": 0.23573355376720428,
+      "test_rmse": 0.1644196423391501,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.11162258684635162
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.09994318336248398
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.22985321283340454
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.2019205093383789
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.1914202719926834
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.1517580896615982
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3672032356262207
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.2727821469306946
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.2646116316318512
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.262236624956131
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.2518649995326996
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.25527021288871765
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.23573355376720428
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.23751430213451385
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.23968219757080078
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.24061667919158936
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.23669330775737762
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.24435295164585114
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.2493104338645935
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "Current",
+      "best_step": 250,
+      "validation_rmse": 0.28396549820899963,
+      "test_rmse": 0.19700968265533447,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.14311230182647705
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.1704864352941513
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.24869148433208466
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.2292547971010208
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.20889225602149963
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.18162082135677338
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.36831891536712646
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.28396549820899963
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.30302971601486206
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.2993481457233429
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.31439387798309326
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.31881824135780334
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.31920313835144043
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.3327641785144806
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.3235040009021759
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.3371741771697998
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.33412304520606995
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.3231235444545746
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.33069750666618347
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "History",
+      "best_step": 1500,
+      "validation_rmse": 0.257763147354126,
+      "test_rmse": 0.160468856493632,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.11542832851409912
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.09792284667491913
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.2121482640504837
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.20406003296375275
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.1917138248682022
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.14153984189033508
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3660447299480438
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.26340293884277344
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.263550728559494
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.25846636295318604
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.26326486468315125
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.26860442757606506
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.257763147354126
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.28552746772766113
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.2711903154850006
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.288448691368103
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.29188570380210876
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.2832867205142975
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.2864753007888794
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "Oracle",
+      "best_step": 1500,
+      "validation_rmse": 0.23936130106449127,
+      "test_rmse": 0.15948335702220598,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.11116955429315567
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.09648744761943817
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.21741992235183716
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.19473318755626678
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.19268733263015747
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.14440269768238068
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3660670816898346
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.27421119809150696
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.25476083159446716
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.24624419212341309
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.24037154018878937
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.24977169930934906
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.23936130106449127
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.2554696500301361
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.24694980680942535
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.2629135847091675
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.25958240032196045
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.27165910601615906
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.2657616436481476
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "Current",
+      "best_step": 250,
+      "validation_rmse": 0.277852863073349,
+      "test_rmse": 0.19539948304494223,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.14295290410518646
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.15144185721874237
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.250871479511261
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.2284301221370697
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.2222781777381897
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.1764223575592041
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.36466869711875916
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.277852863073349
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.29640910029411316
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.3208376169204712
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.3175402581691742
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.3052981197834015
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.3184598386287689
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.32096996903419495
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.3069145381450653
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.32933542132377625
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.31528985500335693
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.30566105246543884
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.3048507273197174
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "History",
+      "best_step": 250,
+      "validation_rmse": 0.2501332461833954,
+      "test_rmse": 0.19810273498296738,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.1541348695755005
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.15385818481445312
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.24244576692581177
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.2346533089876175
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.22030071914196014
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.18322356045246124
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3697676360607147
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.2501332461833954
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.25304463505744934
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.2765311896800995
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.26313042640686035
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.25550222396850586
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.27910205721855164
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.2833807170391083
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.27906787395477295
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.29170265793800354
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.27896904945373535
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.28508803248405457
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.27704983949661255
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "Oracle",
+      "best_step": 1250,
+      "validation_rmse": 0.22733961045742035,
+      "test_rmse": 0.16282977412144342,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/yaw/49.csv",
+          "rmse": 0.10865063220262527
+        },
+        {
+          "record": 9,
+          "name": "data/yaw/42.csv",
+          "rmse": 0.0968107059597969
+        },
+        {
+          "record": 18,
+          "name": "data/yaw/3.csv",
+          "rmse": 0.2243122160434723
+        },
+        {
+          "record": 19,
+          "name": "data/yaw/2.csv",
+          "rmse": 0.1941254585981369
+        },
+        {
+          "record": 28,
+          "name": "data/yaw/19.csv",
+          "rmse": 0.2057797610759735
+        },
+        {
+          "record": 29,
+          "name": "data/yaw/17.csv",
+          "rmse": 0.1472998708486557
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.3697454035282135
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.25499647855758667
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.2350659966468811
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.25776049494743347
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.2460334450006485
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.22733961045742035
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.24632804095745087
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.25080835819244385
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.2375655174255371
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.24584777653217316
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.24742765724658966
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.24088644981384277
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.2381318360567093
+        }
+      ]
+    }
+  ],
+  "script_sha256": "5ffe8472c21f1ba52880c04c8010ff27b3f17a5b5da022265da5bc9025c30e67"
+}

@@ -1,0 +1,8 @@
+{
+  "sha256": "3627c74624590677f4b53f6d1eb82476e6401aa4d84a56b8d8ae5ce3e931d659",
+  "ttl_seconds": 4,
+  "max_pairs_per_layout": 32,
+  "uses_true_goal": "oracle conditional-model diagnosis ONLY",
+  "inputs": "legal detections and history only for neighbors; no private response memory",
+  "selection": "evenly spaced consecutive visible unknown-birth-goal transitions"
+}

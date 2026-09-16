@@ -1,0 +1,210 @@
+{
+  "scope": "exploratory only; all nine sessions belong to official training domain",
+  "shared_proprioception": "robot heading, current robot goal, current controller turning flag; as-of only",
+  "heading_arm": "adds only the two human orientations; robot orientation shared",
+  "split": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation": [
+      6
+    ],
+    "test": [
+      7,
+      8,
+      9
+    ]
+  },
+  "arms": {
+    "current": {
+      "validation": 0.6396124124214364,
+      "leaves": 15,
+      "rows": [
+        {
+          "session": 7,
+          "error": 0.5557951496396872,
+          "near_error": 0.5369618363326014,
+          "n": 922,
+          "near_n": 146,
+          "risk_n": 65,
+          "risk_error": 0.5472927252317027
+        },
+        {
+          "session": 7,
+          "error": 0.5185236584500214,
+          "near_error": 0.5605110694578648,
+          "n": 922,
+          "near_n": 177,
+          "risk_n": 62,
+          "risk_error": 0.4835555364355969
+        },
+        {
+          "session": 8,
+          "error": 0.6253016614074689,
+          "near_error": 0.6416985230793247,
+          "n": 1099,
+          "near_n": 244,
+          "risk_n": 123,
+          "risk_error": 0.5957613905609
+        },
+        {
+          "session": 8,
+          "error": 0.5550944222331915,
+          "near_error": 0.5254373505847799,
+          "n": 1099,
+          "near_n": 167,
+          "risk_n": 48,
+          "risk_error": 0.560788715016367
+        },
+        {
+          "session": 9,
+          "error": 0.6530645403747785,
+          "near_error": 0.7033568293505403,
+          "n": 876,
+          "near_n": 123,
+          "risk_n": 44,
+          "risk_error": 0.7486413458126552
+        },
+        {
+          "session": 9,
+          "error": 0.5040671356710185,
+          "near_error": 0.44688380527339217,
+          "n": 876,
+          "near_n": 152,
+          "risk_n": 27,
+          "risk_error": 0.3906693359449847
+        }
+      ],
+      "mean_error": 0.568641094629361,
+      "mean_near_error": 0.569141569013084
+    },
+    "history": {
+      "validation": 0.5790704143132932,
+      "leaves": 15,
+      "rows": [
+        {
+          "session": 7,
+          "error": 0.5353868712874912,
+          "near_error": 0.5433437223692223,
+          "n": 922,
+          "near_n": 146,
+          "risk_n": 65,
+          "risk_error": 0.4975164205730708
+        },
+        {
+          "session": 7,
+          "error": 0.48725984285508755,
+          "near_error": 0.47969799845836053,
+          "n": 922,
+          "near_n": 177,
+          "risk_n": 62,
+          "risk_error": 0.50233333997139
+        },
+        {
+          "session": 8,
+          "error": 0.6184237451561359,
+          "near_error": 0.6345047485856622,
+          "n": 1099,
+          "near_n": 244,
+          "risk_n": 123,
+          "risk_error": 0.6101971063800494
+        },
+        {
+          "session": 8,
+          "error": 0.537406727758305,
+          "near_error": 0.5384105887687605,
+          "n": 1099,
+          "near_n": 167,
+          "risk_n": 48,
+          "risk_error": 0.5941332490725765
+        },
+        {
+          "session": 9,
+          "error": 0.6331952077750443,
+          "near_error": 0.7167673840492901,
+          "n": 876,
+          "near_n": 123,
+          "risk_n": 44,
+          "risk_error": 0.7158526339179967
+        },
+        {
+          "session": 9,
+          "error": 0.45685519774806843,
+          "near_error": 0.42197519868772243,
+          "n": 876,
+          "near_n": 152,
+          "risk_n": 27,
+          "risk_error": 0.40675938277855356
+        }
+      ],
+      "mean_error": 0.5447545987633554,
+      "mean_near_error": 0.555783273486503
+    },
+    "heading": {
+      "validation": 0.663282491932579,
+      "leaves": 15,
+      "rows": [
+        {
+          "session": 7,
+          "error": 0.5394072606346544,
+          "near_error": 0.532143749198594,
+          "n": 922,
+          "near_n": 146,
+          "risk_n": 65,
+          "risk_error": 0.5137451878415288
+        },
+        {
+          "session": 7,
+          "error": 0.49515808909981107,
+          "near_error": 0.52255381946686,
+          "n": 922,
+          "near_n": 177,
+          "risk_n": 62,
+          "risk_error": 0.4728784067527141
+        },
+        {
+          "session": 8,
+          "error": 0.6007685177320097,
+          "near_error": 0.5924574806863522,
+          "n": 1099,
+          "near_n": 244,
+          "risk_n": 123,
+          "risk_error": 0.5441825320682334
+        },
+        {
+          "session": 8,
+          "error": 0.5504801894194058,
+          "near_error": 0.52084117339457,
+          "n": 1099,
+          "near_n": 167,
+          "risk_n": 48,
+          "risk_error": 0.5703413913161376
+        },
+        {
+          "session": 9,
+          "error": 0.6244743516316437,
+          "near_error": 0.6652872654078804,
+          "n": 876,
+          "near_n": 123,
+          "risk_n": 44,
+          "risk_error": 0.6626387996954364
+        },
+        {
+          "session": 9,
+          "error": 0.491930064129505,
+          "near_error": 0.4444594454122118,
+          "n": 876,
+          "near_n": 152,
+          "risk_n": 27,
+          "risk_error": 0.4067455591867135
+        }
+      ],
+      "mean_error": 0.5503697454411717,
+      "mean_near_error": 0.5462904889277447
+    }
+  }
+}

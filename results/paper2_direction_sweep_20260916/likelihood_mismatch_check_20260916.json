@@ -1,0 +1,409 @@
+{
+  "scope": "three historical development states; not heldout or navigation",
+  "scales": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "temperatures": [
+    1,
+    0.5,
+    0.25,
+    0.1
+  ],
+  "rows": [
+    {
+      "case": 2000000,
+      "step": 16,
+      "transitions": 6,
+      "candidates": 258,
+      "rows": [
+        {
+          "scale": 1.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -35.333364046926796,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -17.666682023463398,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -8.833341011731699,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -3.53333640469268,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -24.052713126314604,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -12.026356563157302,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -6.013178281578651,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -2.4052713126314607,
+          "candidates_above_truth": 94,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -13.012706673388863,
+          "candidates_above_truth": 93,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -6.506353336694431,
+          "candidates_above_truth": 93,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -3.2531766683472156,
+          "candidates_above_truth": 93,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -1.3012706673388865,
+          "candidates_above_truth": 93,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -5.126251562116704,
+          "candidates_above_truth": 92,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -2.563125781058352,
+          "candidates_above_truth": 92,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -1.281562890529176,
+          "candidates_above_truth": 92,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.5126251562116705,
+          "candidates_above_truth": 92,
+          "best_index": 1
+        }
+      ]
+    },
+    {
+      "case": 2000010,
+      "step": 12,
+      "transitions": 8,
+      "candidates": 258,
+      "rows": [
+        {
+          "scale": 1.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -24.446795304165043,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -12.223397652082522,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -6.111698826041261,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -2.4446795304165043,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -12.556621923472541,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -6.2783109617362705,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -3.1391554808681352,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -1.2556621923472542,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -4.5749022425579815,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -2.2874511212789908,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -1.1437255606394954,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.4574902242557982,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -1.3139575187349202,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -0.6569787593674601,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -0.32848937968373004,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.131395751873492,
+          "candidates_above_truth": 12,
+          "best_index": 1
+        }
+      ]
+    },
+    {
+      "case": 2000020,
+      "step": 24,
+      "transitions": 17,
+      "candidates": 258,
+      "rows": [
+        {
+          "scale": 1.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -0.521584456626961,
+          "candidates_above_truth": 2,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -0.2607922283134805,
+          "candidates_above_truth": 2,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -0.13039611415674024,
+          "candidates_above_truth": 2,
+          "best_index": 1
+        },
+        {
+          "scale": 1.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.05215844566269556,
+          "candidates_above_truth": 2,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -0.29855102566897784,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -0.14927551283448892,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -0.07463775641724446,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 2.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.02985510256689805,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -0.10417746787070925,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -0.052088733935354625,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -0.026044366967677313,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 4.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.010417746787070747,
+          "candidates_above_truth": 5,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 1.0,
+          "true_minus_best_loglik": -0.026393732210067355,
+          "candidates_above_truth": 4,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.5,
+          "true_minus_best_loglik": -0.013196866105033678,
+          "candidates_above_truth": 4,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.25,
+          "true_minus_best_loglik": -0.006598433052516839,
+          "candidates_above_truth": 4,
+          "best_index": 1
+        },
+        {
+          "scale": 8.0,
+          "eta": 0.1,
+          "true_minus_best_loglik": -0.0026393732210068244,
+          "candidates_above_truth": 4,
+          "best_index": 1
+        }
+      ]
+    }
+  ],
+  "oracle_transition_count": 31,
+  "oracle_rms": [
+    {
+      "case": 2000000,
+      "rms_m": {
+        "frozen_D": 0.028097201815681566,
+        "no_extra_response_clip": 0.03614989435792746,
+        "oracle_memory_legal_neighbors": 0.06418746122043037,
+        "oracle_memory_full_neighbors": 0.0
+      }
+    },
+    {
+      "case": 2000010,
+      "rms_m": {
+        "frozen_D": 0.0077774023338574765,
+        "no_extra_response_clip": 0.0077774023338574765,
+        "oracle_memory_legal_neighbors": 0.01000733414743369,
+        "oracle_memory_full_neighbors": 0.0
+      }
+    },
+    {
+      "case": 2000020,
+      "rms_m": {
+        "frozen_D": 0.024835143842575028,
+        "no_extra_response_clip": 0.013371103569588899,
+        "oracle_memory_legal_neighbors": 0.010920221530291945,
+        "oracle_memory_full_neighbors": 0.0
+      }
+    }
+  ],
+  "checks": "PASS: original likelihood reproduction, RMS, tempering MAP invariance",
+  "script_sha256": "1bb763e91da4a7096f76dd27f801fa9341a734b9328d7b1b87dff8c1734aaa47"
+}

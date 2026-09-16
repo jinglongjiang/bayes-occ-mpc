@@ -1,0 +1,22 @@
+{
+  "cases_per_scene": 20,
+  "scenarios": [
+    "dense_circle",
+    "large_circle",
+    "dense_square",
+    "large_square"
+  ],
+  "case_start": 984000,
+  "profile": "heldout_nonstationary",
+  "spawn": "sequential append, initial overlaps fixed",
+  "actor": "2407_no_belief/attempt0_20480.zip frozen",
+  "checkpoint_sha": "a6abb04ff1d7e9c9e8edc35616f2d7ed331bb1a101c40bc4dca6044c455f0796",
+  "trigger": "first t in [3,131] with current actor action held 2s CV swept clearance <0.5m; no future/outcome selection",
+  "candidates": "3x3 dv +/-.2 dw +/-.4 plus stop; existing acceleration projection; execute2s then frozen actor; baseline feedback branch",
+  "selectors": "identical existing unicycle cost, margin .5; CV vs four-frame decayed acceleration vs exact2s human future",
+  "gate": "Oracle-Current mean return >=.02 and paired scene-stratified episode bootstrap CI lower>0; no collision increase. Same separate gate for History-Current.",
+  "limitation": "privileged forecast with fixed cost is not optimal information upper bound, legal inference, or Bayesian necessity; heldout here used as research data, not final untouched paper test",
+  "production_changed": false,
+  "training_updates": 0,
+  "script_sha": "9ec41bf41c22a65a2262d80eac634e55af59f0c2c22afd9483eb37be11b3575f"
+}

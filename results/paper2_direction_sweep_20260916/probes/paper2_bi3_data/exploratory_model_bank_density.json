@@ -1,0 +1,324 @@
+{
+  "scope": "exploratory delayed Bayesian expert selection, not human type inference or navigation approval",
+  "split": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation": [
+      6
+    ],
+    "test": [
+      7,
+      8,
+      9
+    ]
+  },
+  "evidence": "completed2s targets, evidence windows2.2s apart; history features as-of",
+  "caveats": [
+    "all sessions are official training-domain data, repeatedly explored",
+    "experts correspond to training recordings, not known human behavioral types",
+    "bank has5x the trees of universal; bank comparisons share identical experts",
+    "Gaussian likelihood approximate; future robot actions not given, no causal action model",
+    "rate is prior reset per evidence update, power!=1 is generalized Bayes"
+  ],
+  "variance": [
+    [
+      0.21278957977044838,
+      0.34971415235049214
+    ],
+    [
+      0.49025442335407365,
+      0.5781005656261954
+    ],
+    [
+      0.4031908753097868,
+      0.6545448067008245
+    ],
+    [
+      0.20840182287850523,
+      0.3699885473309422
+    ],
+    [
+      0.38360331171202405,
+      0.8090559768787555
+    ]
+  ],
+  "arms": {
+    "universal": {
+      "error": 0.5447545987633554
+    },
+    "uniform": {
+      "rate": 0,
+      "power": 1,
+      "validation_nll": 1.6869387310016875,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5669584135555858,
+          "nll": 1.5681572073834211,
+          "entropy": 1.6094379124340996,
+          "moment_nll": 1.5918506317303907
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.532101120264406,
+          "nll": 1.5096581532869902,
+          "entropy": 1.6094379124340996,
+          "moment_nll": 1.5504086781529223
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6593638122678842,
+          "nll": 1.66201753157881,
+          "entropy": 1.6094379124341003,
+          "moment_nll": 1.7154782560362236
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5677533722205566,
+          "nll": 1.5124557356234585,
+          "entropy": 1.6094379124341003,
+          "moment_nll": 1.6003610899347376
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.6984792969748426,
+          "nll": 1.7541025843912894,
+          "entropy": 1.6094379124340998,
+          "moment_nll": 1.7849417329820454
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.49889551031856794,
+          "nll": 1.4274548725435179,
+          "entropy": 1.6094379124340998,
+          "moment_nll": 1.4861784398648339
+        }
+      ],
+      "error": 0.5872585876003072,
+      "nll": 1.5723076808012477,
+      "moment_nll": 1.6215364714501919
+    },
+    "map": {
+      "rate": 0.05,
+      "power": 1.0,
+      "validation_nll": 1.4440902313678454,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5933357600476769,
+          "nll": 1.51353200928807,
+          "entropy": 0.0,
+          "moment_nll": 1.5135320092880693
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.510988311121622,
+          "nll": 1.244928999459395,
+          "entropy": 0.0,
+          "moment_nll": 1.2449289994593946
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6987651779774435,
+          "nll": 1.7043926649502716,
+          "entropy": 0.0,
+          "moment_nll": 1.7043926649502712
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5698965851741897,
+          "nll": 1.3815014770633556,
+          "entropy": 0.0,
+          "moment_nll": 1.3815014770633554
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.7320324034389891,
+          "nll": 1.8016151584301432,
+          "entropy": 0.0,
+          "moment_nll": 1.8016151584301432
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.5648891869286535,
+          "nll": 1.3724158161801245,
+          "entropy": 0.0,
+          "moment_nll": 1.3724158161801245
+        }
+      ],
+      "error": 0.6116512374480958,
+      "nll": 1.5030643542285602,
+      "moment_nll": 1.5030643542285596
+    },
+    "full": {
+      "rate": 0.05,
+      "power": 1.0,
+      "validation_nll": 1.425960804023919,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "n": 922,
+          "error": 0.5554739291242007,
+          "nll": 1.4363378563376459,
+          "entropy": 0.6537901514224809,
+          "moment_nll": 1.4376505048680719
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "n": 922,
+          "error": 0.505505591866663,
+          "nll": 1.2641395776951745,
+          "entropy": 0.5688246661227625,
+          "moment_nll": 1.2809524139033452
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "n": 1099,
+          "error": 0.6553369243569971,
+          "nll": 1.5877374691202437,
+          "entropy": 0.8079874137861573,
+          "moment_nll": 1.5998036244177232
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "n": 1099,
+          "error": 0.5206307166060717,
+          "nll": 1.328631198741241,
+          "entropy": 0.8123874361995052,
+          "moment_nll": 1.3411211673390677
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "n": 876,
+          "error": 0.7001297483562963,
+          "nll": 1.6920863853016757,
+          "entropy": 0.8426206854268437,
+          "moment_nll": 1.6917414346523123
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "n": 876,
+          "error": 0.51178314560277,
+          "nll": 1.2852540080528039,
+          "entropy": 0.884406082785499,
+          "moment_nll": 1.3009777362537742
+        }
+      ],
+      "error": 0.5748100093188332,
+      "nll": 1.4323644158747975,
+      "moment_nll": 1.4420411469057157
+    },
+    "universal_gaussian": {
+      "df": null,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "nll": 1.286266938674316
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "nll": 1.057009806236864
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "nll": 1.4839317919693693
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "nll": 1.2109253876192911
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "nll": 1.52165587037683
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "nll": 0.9489253426539823
+        }
+      ],
+      "nll": 1.2514525229217754
+    },
+    "universal_student": {
+      "df": 30,
+      "rows": [
+        {
+          "session": 7,
+          "human": 1,
+          "nll": 1.262795886577699
+        },
+        {
+          "session": 7,
+          "human": 2,
+          "nll": 1.0478899547699754
+        },
+        {
+          "session": 8,
+          "human": 1,
+          "nll": 1.4754896648160887
+        },
+        {
+          "session": 8,
+          "human": 2,
+          "nll": 1.2036703080178415
+        },
+        {
+          "session": 9,
+          "human": 1,
+          "nll": 1.5125852296147473
+        },
+        {
+          "session": 9,
+          "human": 2,
+          "nll": 0.9351604394548573
+        }
+      ],
+      "nll": 1.2395985805418681
+    }
+  },
+  "density_protocol": "all zero-mean diagonal residual variances calibrated by MSE onUM6; df and bank hyperparameters selected there; no test refit",
+  "universal_variance": [
+    0.17137488421853642,
+    0.2714675861282959
+  ]
+}

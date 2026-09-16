@@ -1,0 +1,104 @@
+遗漏交互与贝叶斯似然失配：代码、数值及近邻审查
+日期：2026-09-16
+
+一、结论
+问题有具体证据，不是抽象猜测：当前意图似然遗漏部分交互条件，真实目标也可能被强烈排斥。
+但问题存在不等于新算法成立。降置信度/温度化是已有方法；从行人行为推断隐藏障碍并用于RL也已有直接近邻。
+本次不批准直接重构Bayes或长训PPO。仍缺合法观测下的修复及独立导航收益。
+不能把本报告解释成“方向已经成功”，也不能说“任何简单修复都不可能有效”。
+
+二、本次实际执行
+读取goal_posterior_probe.py的likelihood、posterior递推和depth_likelihood；复核历史reference.json、likelihood_model.json及网格缓存。
+检索并阅读相关作者论文页面及部分全文，区分通用稳健Bayes与crowd-navigation近邻。
+新增独立诊断脚本，仅在/home/abc/temp中，不修改生产算法。
+从原轨迹合法历史重新计算三个固定历史状态的Student-t似然，复现原真实目标log likelihood。
+每个状态使用258个诊断候选：真实目标、原网格MAP、固定种子抽取256个网格目标。
+执行噪声尺度1/2/4/8倍及似然指数1/.5/.25/.1，共每状态16种设置。
+尺度指Student-t scale matrix乘尺度平方，不是给传感器添加噪声。
+这不是穷尽目标空间的重积分，也不是独立确认集：三个状态已经用于历史开发诊断。
+没有计算新的未来轨迹误差、校准覆盖率或导航结局，没有重新执行历史31条Oracle物理回放。
+
+三、根因复核
+旧似然并非普通Gaussian，而是二维Student-t、df=4：
+log L(g) = -3 * sum_t log(1 + residual_t(g)' S^-1 residual_t(g)/4)。
+当前版本把各步条件残差贡献累加。未知邻居及响应状态近似可能造成结构偏差；时间残差相关性是待测问题，本次没有验证其大小。
+
+历史真实目标单步位移RMS，单位米：
+case       当前D       真记忆+合法邻居      真记忆+全部邻居
+2000000    .028097       .064187               0
+2000010    .007777       .010007               0
+2000020    .024835       .010920               0
+三个状态合计31条转移，RMS由逐条误差重新计算，与原JSON一致。
+固定真实响应记忆后，补齐邻居将残差消除，这是邻居遗漏影响的受控证据。
+但当前D到完整Oracle同时涉及多个差异，不能把全部误差百分之百归因于邻居。
+只补记忆在前两个状态反而变差，说明“修一个记忆字段”不是普遍修复。
+完整Oracle仍使用同一个模拟器内部规律和特权信息，不能当成合法可部署估计器。
+
+四、本次数值实验结果
+下表为真实目标log likelihood减去258个候选中的最大值；越接近0越少被排斥。
+不跨尺度比较绝对似然，只比较同尺度内的目标似然比；省略的密度常数在此抵消。
+
+case       原尺度       2倍          4倍          8倍
+2000000   -35.3334     -24.0527     -13.0127      -5.1263
+2000010   -24.4468     -12.5566      -4.5749      -1.3140
+2000020    -0.5216      -0.2986      -0.1042      -0.0264
+
+所有12个case/尺度组合，最优候选仍为原网格MAP，不是真实目标。
+这只能说该候选集与尺度网格下未纠正MAP；均值预测及概率覆盖仍可能改善，本次未测。
+温度指数扫描同样未改变各尺度内排序。当前均匀先验、静态目标下，正指数乘log likelihood保持排序，本就是数学性质。
+不要推广到非均匀先验、动态状态或时变权重滤波的全部情形。
+放宽似然可以缓解错误确定性，但不等于找回正确解释。
+
+五、文献近邻与创新边界
+以下是定向核查，不是穷尽性综述；没有使用“未搜到”证明全球首次。
+
+1. Safe-Bayesian Generalized Linear Regression，AISTATS 2020。
+在模型失配下使用generalized Bayes和likelihood learning rate。因此“调节证据强度抵抗模型错误”不是新原理。
+原论文：https://proceedings.mlr.press/v108/heide20a.html
+
+2. Robust Bayesian inference via coarsening，Miller与Dunson。
+通过coarsened posterior处理模型误差；特定情形可由likelihood tempering近似。它不等于已解决当前行人模型，但构成通用方法近邻。
+原论文：https://arxiv.org/abs/1506.06101
+
+3. Tempering the Bayes Filter towards Improved Model-Based Estimation，2025预印本。
+将tempering明确用于递归Bayes filter。仅提出“递归时降低错误置信度”已经不足以形成新机制。
+全文：https://arxiv.org/html/2512.02823v1
+
+4. Multi-Agent Variational Occlusion Inference Using People as Sensors，2021。
+可见人的交互行为用于推断遮挡区域；“人的偏转说明存在未观测因素”并不是空白问题。
+原论文：https://arxiv.org/abs/2109.02173
+
+5. Occlusion-Aware Crowd Navigation Using People as Sensors，ICRA 2023。
+使用观测历史推断隐藏占据，并将表示用于RL导航；论文同样假设机器人不影响人的运动。
+因此不能主张首次“隐藏交互推断+RL导航”。它的目标是占据推断，不等同于本项目纠正目标似然归因，但差异尚不自动构成贡献。
+全文：https://arxiv.org/html/2210.00552v3
+
+六、现在能主张的技术缺口
+可提出的问题：在不可见交互因素存在时，如何避免把避障引起的偏转错误归因于行人的目标？
+标准概率形式本身只是：
+p(delta_x | goal, history) = integral p(delta_x | goal, u, history) p(u | goal, history) du。
+u表示未观测交互/响应因素。这个边际化公式不是创新，不能给它起名字就算新算法。
+真正未完成的是：如何用合法数据约束u，避免与目标混淆，如何经济地计算，以及相对重尾/温度/加宽噪声是否有实际收益。
+如果u只是一个宽残差分布，可能退化成旧噪声加宽基线；如果u靠模拟器真值推断，就发生泄漏。
+
+七、执行判决
+缺陷存在：有局部受控证据。
+重尾尚未尝试：错误，旧模型已经使用重尾。
+简单温度和尺度能恢复正确MAP：本次有限网格未能。
+简单修复导航一定无效：未证明。
+正式新算法空间成立：尚未证明。
+下一阶段PPO/导航实验：未启动，因为尚无合法修复版本的预测增量，不满足前置条件。
+
+本次给出的不是第二篇方案成功通知，而是明确缩小了问题：
+不要再修Bayes更新公式或堆粒子；如继续，必须处理似然条件中的遗漏因素，并先超过已有稳健推断。
+当前证据只允许研究这个具体缺口，不允许宣称非Bayes不可或承诺论文创新成立。
+原先一天预算是上限，本次低成本诊断已完成，没有为了用满预算继续盲目训练。
+
+八、自检与复现
+脚本：/home/abc/temp/likelihood_mismatch_check_20260916.py
+数值结果：/home/abc/temp/likelihood_mismatch_check_20260916.json
+命令：/home/abc/miniconda3/envs/crowdnav/bin/python /home/abc/temp/likelihood_mismatch_check_20260916.py
+自检：原似然重现、真实目标历史似然重现、原RMS复算、温度MAP不变断言全部通过。
+原始证据：/home/abc/workspace/bayes_occ_mpc_hermite/results/goal_posterior_probe/depth/
+源代码：/home/abc/workspace/bayes_occ_mpc_hermite/experiments/goal_posterior_probe.py
+没有改IL、PPO、Actor、reward、传感器或生产滤波器；没有删除历史文件。

@@ -1,0 +1,27 @@
+{
+  "train": "b3",
+  "validation": "b14",
+  "test": "b24",
+  "target": "next observed odometry velocity",
+  "inputs": "current velocity and six past command taps; no future commands",
+  "update_order": "predict and score, then assimilate next observation",
+  "posterior": "linear Gaussian residual coefficients; forgetting covariance optional",
+  "prior_variance": [
+    0.001,
+    0.01,
+    0.1
+  ],
+  "forgetting": [
+    1.0,
+    0.999,
+    0.99
+  ],
+  "ewma": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "selection": "validation standardized MSE for adaptation; validation NLL for calibration",
+  "controls": "identical posterior mean with fixed Gaussian/Student-t variance; fixed ARX; EWMA",
+  "scope": "predictive diagnostic only; not proof of physical delay or navigation gain"
+}

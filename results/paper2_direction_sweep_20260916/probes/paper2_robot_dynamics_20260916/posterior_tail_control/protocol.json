@@ -1,0 +1,27 @@
+{
+  "train": "b3",
+  "validation": "b14",
+  "test": "b24",
+  "lag_grid_seconds": [
+    0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "transition_reset_probability": [
+    0,
+    0.01,
+    0.05
+  ],
+  "likelihood_variance_multipliers": [
+    1,
+    4,
+    16
+  ],
+  "order": "predict next observed velocity using previous posterior; score; then update",
+  "target": "one-step odometry velocity, not navigation",
+  "constraints": "no future command, no future odometry used in current prediction",
+  "strong_baseline": "single ARX with all six command-history taps"
+}

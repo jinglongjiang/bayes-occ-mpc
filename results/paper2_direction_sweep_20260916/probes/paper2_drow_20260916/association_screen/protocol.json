@@ -1,0 +1,19 @@
+{
+  "source_sha256": "be4d23b926fbfde311557279ffef25601ca4915f159da90f474d5f70a5fc8562",
+  "dense_link": "unique in both directions within 0.30m, dt<=0.10s; otherwise new fragment",
+  "detection_threshold": 0.6,
+  "pairing": "two matched fragments at three consecutive cached frames",
+  "history": "previous associations supplied by conservative dense fragments; optimistic diagnostic",
+  "likelihood_sd_grid": [
+    0.1,
+    0.2,
+    0.4,
+    0.8,
+    1.6
+  ],
+  "validation": "two complete FROG calibration records",
+  "limitation": "No annotated identity. Excludes unmatched people, births and ambiguous dense links. Not navigation.",
+  "velocity_update": "equal old velocity and displacement velocity; 2s forecast",
+  "event_spacing": 2.0,
+  "current_pair_distance": 3.0
+}

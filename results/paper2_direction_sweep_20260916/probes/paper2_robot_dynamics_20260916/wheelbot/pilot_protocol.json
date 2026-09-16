@@ -1,0 +1,277 @@
+{
+  "selection": "all 30 velocity trajectories; UUID ordering within each hardware; 6 train / 2 val / 2 test",
+  "source": "https://zenodo.org/records/18260659",
+  "records": [
+    {
+      "name": "data/velocity/0.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2c13de31-07b9-41c4-926e-50bab369e32f"
+    },
+    {
+      "name": "data/velocity/2.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2d64e7c7-5a78-4270-a405-abb4e6f4a8ea"
+    },
+    {
+      "name": "data/velocity/4.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2e5a8ed6-ddf8-44b3-8d00-91b002749bd0"
+    },
+    {
+      "name": "data/velocity/3.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "57674647-746c-4ff2-909b-1529fcfcdaf1"
+    },
+    {
+      "name": "data/velocity/8.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "5a4f6cba-70f5-42a1-8940-77d8a2316916"
+    },
+    {
+      "name": "data/velocity/9.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "80ceaae8-bcce-4792-ad82-766a60ee9930"
+    },
+    {
+      "name": "data/velocity/7.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "85658514-320d-4d80-82de-24fbe6c83b9c"
+    },
+    {
+      "name": "data/velocity/1.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "93758de0-b473-4552-83b3-9b0030f5db96"
+    },
+    {
+      "name": "data/velocity/6.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "c8fe2dda-16bb-49f0-8e33-9a2fad13d332"
+    },
+    {
+      "name": "data/velocity/5.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "cfce5ad8-14e2-40f8-b267-02669a28dcf5"
+    },
+    {
+      "name": "data/velocity/26.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "035e272c-b643-408b-bd49-94790e880cc9"
+    },
+    {
+      "name": "data/velocity/24.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "13ca7a19-dcac-40ec-aae7-8a7d4b3238c5"
+    },
+    {
+      "name": "data/velocity/27.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "34ad9f03-e2b1-4398-9859-45ca860e4f7a"
+    },
+    {
+      "name": "data/velocity/29.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "52e0b311-dc0e-48ab-8e92-f67b2222f96a"
+    },
+    {
+      "name": "data/velocity/20.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "6fbf663e-bea1-494c-9271-497b12f9c70e"
+    },
+    {
+      "name": "data/velocity/28.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "983410b8-a575-4ee1-b88a-044261b30f17"
+    },
+    {
+      "name": "data/velocity/25.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "a698f17c-e99a-4935-8b58-6b50bcef9871"
+    },
+    {
+      "name": "data/velocity/23.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "ba3904f6-e950-4f57-9276-d7416c2d8343"
+    },
+    {
+      "name": "data/velocity/21.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "db800983-41f0-4d14-bafb-54a01671c298"
+    },
+    {
+      "name": "data/velocity/22.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "f7fa5231-c4af-4f0c-9738-28bb940c671d"
+    },
+    {
+      "name": "data/velocity/17.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "0522b0be-dc5c-403a-8d11-2a17c8d3137b"
+    },
+    {
+      "name": "data/velocity/12.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "0b80d002-596c-42b5-8698-fe2fbea0644f"
+    },
+    {
+      "name": "data/velocity/11.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "2bf5c556-4c37-480f-9cef-f7ca1ba0134b"
+    },
+    {
+      "name": "data/velocity/18.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "2f9a5927-16b2-4cdf-b729-c5f3a00c15f8"
+    },
+    {
+      "name": "data/velocity/16.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "8ca05f6d-25e5-4b24-aedd-4b2e7240fcf9"
+    },
+    {
+      "name": "data/velocity/10.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "a3f305a2-378e-4cfe-963e-b653547c72cc"
+    },
+    {
+      "name": "data/velocity/14.csv",
+      "split": "val",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "cd7d6fb3-48a2-494b-9bb5-88ab402cac1b"
+    },
+    {
+      "name": "data/velocity/13.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "e438eb3f-1faa-485a-9ca5-79f4801831fd"
+    },
+    {
+      "name": "data/velocity/15.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "eefd212c-11cb-4908-8c60-94a2f2ea8f50"
+    },
+    {
+      "name": "data/velocity/19.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "f9c2dfa7-acdd-424f-8145-e4ba69d34729"
+    }
+  ],
+  "scope": "predictive hardware-context oracle pilot, not a navigation result or deployable belief",
+  "arms": [
+    "Current",
+    "History",
+    "History+Oracle hardware"
+  ],
+  "target": "0.1s relative Vicon rotation vector; no future state enters model input",
+  "future_control": "recorded torque profile is provided equally as a prescribed candidate input, not inferred from future state",
+  "input_history_seconds": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "sample_interval": 0.01,
+  "model": "same padded-input 128x128 MLP, three seeds, 3000 update cap, validation checkpoint selection",
+  "seeds": [
+    2407,
+    4807,
+    7207
+  ],
+  "optimizer": "Adam lr=.001 batch=128, episode-balanced sampling",
+  "preprocessing": "train-only standardization; all non-Vicon current fields; histories as-of, not interpolated from future",
+  "current_gate": "2s after first nonzero commanded torque, current enabled, abs onboard roll/pitch<.6",
+  "target_gate": "finite normalized Vicon endpoint quaternions and actual interval .095-.105s; no future fall exclusion",
+  "uncertainty": "10000 paired bootstrap draws across model seeds and whole test episodes; no frame bootstrap",
+  "gate": "oracle must reduce record-equal vector RMSE by at least 5% versus History, with paired trajectory bootstrap CI excluding zero",
+  "limitations": [
+    "known hardware instances across independent episodes, not unseen hardware generalization",
+    "all velocity trials are on black PVC; no claim about terrain transitions",
+    "predictive gate only, no counterfactual control return or safety claim"
+  ]
+}

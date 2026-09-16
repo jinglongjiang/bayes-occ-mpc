@@ -1,0 +1,245 @@
+{
+  "selected_threshold": 0.4,
+  "threshold_grid": [
+    {
+      "threshold": 0.1,
+      "f1": 0.42214532871972316,
+      "tp": 427,
+      "gt": 626,
+      "detections": 1397
+    },
+    {
+      "threshold": 0.2,
+      "f1": 0.4749082007343941,
+      "tp": 388,
+      "gt": 626,
+      "detections": 1008
+    },
+    {
+      "threshold": 0.30000000000000004,
+      "f1": 0.4941500344115623,
+      "tp": 359,
+      "gt": 626,
+      "detections": 827
+    },
+    {
+      "threshold": 0.4,
+      "f1": 0.5034013605442177,
+      "tp": 333,
+      "gt": 626,
+      "detections": 697
+    },
+    {
+      "threshold": 0.5,
+      "f1": 0.49958779884583676,
+      "tp": 303,
+      "gt": 626,
+      "detections": 587
+    },
+    {
+      "threshold": 0.6,
+      "f1": 0.4854014598540146,
+      "tp": 266,
+      "gt": 626,
+      "detections": 470
+    },
+    {
+      "threshold": 0.7000000000000001,
+      "f1": 0.44865403788634095,
+      "tp": 225,
+      "gt": 626,
+      "detections": 377
+    },
+    {
+      "threshold": 0.8,
+      "f1": 0.3937007874015748,
+      "tp": 175,
+      "gt": 626,
+      "detections": 263
+    },
+    {
+      "threshold": 0.9,
+      "f1": 0.2503293807641634,
+      "tp": 95,
+      "gt": 626,
+      "detections": 133
+    }
+  ],
+  "models": {
+    "logistic": {
+      "recordings": [
+        {
+          "recording": "run_2015-11-25-11-01-30.bag.wp",
+          "people": 90,
+          "pairs": 52,
+          "bias": -0.010917672545199934,
+          "pair_covariance": 0.03213378763651442,
+          "centered_pair_covariance": 0.03291548885127856,
+          "brier": 0.1896978634564763,
+          "nll": 0.5647304388589326,
+          "miss_rate": 0.5,
+          "predicted": 0.5109176725451999,
+          "variance": 0.2163404756952995,
+          "centered_normalized_correlation": 0.15214669721646418
+        },
+        {
+          "recording": "run_t_2015-11-26-11-22-03.bag.wp",
+          "people": 134,
+          "pairs": 31,
+          "bias": -0.029143996541480033,
+          "pair_covariance": 0.12384804829666303,
+          "centered_pair_covariance": 0.11179763952770225,
+          "brier": 0.2174548137147298,
+          "nll": 0.622220399308112,
+          "miss_rate": 0.3656716417910448,
+          "predicted": 0.3948156383325248,
+          "variance": 0.2105439349105743,
+          "centered_normalized_correlation": 0.5309943484013766
+        },
+        {
+          "recording": "run_t_2015-11-26-11-55-45.bag.wp",
+          "people": 9,
+          "pairs": 0,
+          "bias": 0.2826467354924127,
+          "pair_covariance": 0.0,
+          "centered_pair_covariance": 0.0,
+          "brier": 0.11428441615291018,
+          "nll": 0.3832400625747243,
+          "miss_rate": 0.8888888888888888,
+          "predicted": 0.6062421533964764,
+          "variance": 0.18826250536349703,
+          "centered_normalized_correlation": 0.0
+        },
+        {
+          "recording": "run_t_2015-11-26-13-35-21.bag.wp",
+          "people": 18,
+          "pairs": 2,
+          "bias": 0.05531464701264357,
+          "pair_covariance": 0.19332908076931443,
+          "centered_pair_covariance": 0.21196466275440654,
+          "brier": 0.21099504319237042,
+          "nll": 0.6056703586682465,
+          "miss_rate": 0.7222222222222222,
+          "predicted": 0.6669075752095787,
+          "variance": 0.2053317471823645,
+          "centered_normalized_correlation": 1.0323034097895785
+        },
+        {
+          "recording": "run_t_2015-11-26-13-47-42.bag.wp",
+          "people": 137,
+          "pairs": 81,
+          "bias": -0.02407947514613266,
+          "pair_covariance": 0.008410396061272559,
+          "centered_pair_covariance": 0.00404689586157045,
+          "brier": 0.204241348092726,
+          "nll": 0.596064233033749,
+          "miss_rate": 0.46715328467153283,
+          "predicted": 0.4912327598176655,
+          "variance": 0.1960435392899704,
+          "centered_normalized_correlation": 0.020642842279972498
+        }
+      ],
+      "mean_centered_cov": 0.09018117174873946,
+      "ci95": [
+        0.018481192356424505,
+        0.16720236927862456
+      ]
+    },
+    "nonlinear": {
+      "recordings": [
+        {
+          "recording": "run_2015-11-25-11-01-30.bag.wp",
+          "people": 90,
+          "pairs": 52,
+          "bias": -0.0910500287201854,
+          "pair_covariance": 0.043326275542703234,
+          "centered_pair_covariance": 0.0434830426862251,
+          "brier": 0.18563791638975868,
+          "nll": 0.5323937813020403,
+          "miss_rate": 0.5,
+          "predicted": 0.5910500287201853,
+          "variance": 0.16059531126438087,
+          "centered_normalized_correlation": 0.2707615953658878
+        },
+        {
+          "recording": "run_t_2015-11-26-11-22-03.bag.wp",
+          "people": 134,
+          "pairs": 31,
+          "bias": 0.03188519564194192,
+          "pair_covariance": 0.11815785149793939,
+          "centered_pair_covariance": 0.13614184771385637,
+          "brier": 0.19092281001004266,
+          "nll": 0.5826352740631928,
+          "miss_rate": 0.3656716417910448,
+          "predicted": 0.3337864461491029,
+          "variance": 0.09913356343051385,
+          "centered_normalized_correlation": 1.3733174013187057
+        },
+        {
+          "recording": "run_t_2015-11-26-11-55-45.bag.wp",
+          "people": 9,
+          "pairs": 0,
+          "bias": 0.3649419108554428,
+          "pair_covariance": 0.0,
+          "centered_pair_covariance": 0.0,
+          "brier": 0.28827606500695235,
+          "nll": 0.8759349141515563,
+          "miss_rate": 0.8888888888888888,
+          "predicted": 0.523946978033446,
+          "variance": 0.08329694707008642,
+          "centered_normalized_correlation": 0.0
+        },
+        {
+          "recording": "run_t_2015-11-26-13-35-21.bag.wp",
+          "people": 18,
+          "pairs": 2,
+          "bias": 0.005774720041327928,
+          "pair_covariance": 0.33761262421532656,
+          "centered_pair_covariance": 0.34235427065300184,
+          "brier": 0.13976543569666594,
+          "nll": 0.43378404073219085,
+          "miss_rate": 0.7222222222222222,
+          "predicted": 0.7164475021808943,
+          "variance": 0.11419435433931074,
+          "centered_normalized_correlation": 2.997996465182065
+        },
+        {
+          "recording": "run_t_2015-11-26-13-47-42.bag.wp",
+          "people": 137,
+          "pairs": 81,
+          "bias": 0.04904318922219837,
+          "pair_covariance": -0.0198629421059442,
+          "centered_pair_covariance": -0.012361288710202733,
+          "brier": 0.1817065058082826,
+          "nll": 0.5783375418654374,
+          "miss_rate": 0.46715328467153283,
+          "predicted": 0.4181100954493345,
+          "variance": 0.1303107565222476,
+          "centered_normalized_correlation": -0.09486007939868206
+        }
+      ],
+      "mean_centered_cov": 0.12740446808572015,
+      "ci95": [
+        0.01556087698801118,
+        0.26763646366130767
+      ]
+    }
+  },
+  "population": {
+    "test": {
+      "frames": 486,
+      "people": 388,
+      "miss": 179,
+      "tp": 209,
+      "detections": 343
+    },
+    "val": {
+      "frames": 787,
+      "people": 626,
+      "miss": 293,
+      "tp": 333,
+      "detections": 697
+    }
+  },
+  "warning": "Geometry/GT count are diagnostic nuisance conditioning, NOT deployable inference features; sequence centering uses outcomes only for descriptive correlation."
+}

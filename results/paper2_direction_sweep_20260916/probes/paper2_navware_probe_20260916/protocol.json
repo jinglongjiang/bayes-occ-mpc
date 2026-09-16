@@ -1,0 +1,20 @@
+{
+  "scope": "observational prediction, not action counterfactual or navigation",
+  "split": "group1 train, blind-corner group1 validation, group2 test",
+  "history_seconds": 1.0,
+  "future_seconds": 2.0,
+  "query_spacing_seconds": 1.0,
+  "maximum_interpolation_gap_seconds": 0.25,
+  "predictor": "HistGradientBoosting max_iter=150 max_leaf_nodes=15 min_samples_leaf=30 l2=1",
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "limitations": [
+    "manual selected traversals",
+    "only focal human and robot consistently present in both CSV formats",
+    "future robot is endogenous privileged information",
+    "group2 has only one participant group, not independent population replication"
+  ]
+}

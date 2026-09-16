@@ -1,0 +1,35 @@
+{
+  "sha256": "3d996bd81cabee081973b1868843ef3ebf45fdb9f8093366411b0ad6594cec68",
+  "grids": {
+    "mixture_components": [
+      2,
+      3
+    ],
+    "query_ages": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "horizons": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "onset": "observed moving >=.25 then speed <=.15; .5s backward velocity, .25s grid",
+  "event": "second successive >=.25m/s sample; gaps>.3s and track end right censored",
+  "condition": "only stops observed >=1s; fit residual beyond first second to avoid left-truncation bias",
+  "inference": "Bayesian persistent exponential-component type posterior given observed survival age",
+  "baselines": [
+    "Exponential",
+    "Weibull",
+    "EmpiricalSurvival",
+    "MAP",
+    "MeanWait"
+  ],
+  "selection": "training right-censored likelihood; K selected by recording-equal validation event NLL",
+  "warning": "evaluated horizons omit unresolved right-censored labels; report this selection limitation",
+  "gate": "FULL reliably better than Weibull and EmpiricalSurvival before any robot decision experiment"
+}

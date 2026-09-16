@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Bi3/jsons/um/um1/cv.json",
+    "bytes": 19724881,
+    "frames": 9907,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um3/cv.json",
+    "bytes": 22541850,
+    "frames": 11324,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um8/cv.json",
+    "bytes": 22320954,
+    "frames": 11206,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um5/cv.json",
+    "bytes": 18672426,
+    "frames": 9391,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um4/cv.json",
+    "bytes": 19566920,
+    "frames": 9837,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um9/cv.json",
+    "bytes": 17889526,
+    "frames": 8986,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um6/cv.json",
+    "bytes": 17735497,
+    "frames": 8913,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um2/cv.json",
+    "bytes": 13840395,
+    "frames": 6957,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  },
+  {
+    "name": "Bi3/jsons/um/um7/cv.json",
+    "bytes": 18788373,
+    "frames": 9445,
+    "keys": [
+      "robot_state",
+      "agent_states",
+      "predictions",
+      "robot_prediction",
+      "robot_goal",
+      "turning",
+      "time",
+      "logits"
+    ]
+  }
+]

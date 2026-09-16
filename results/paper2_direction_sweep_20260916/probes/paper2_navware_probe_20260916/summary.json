@@ -1,0 +1,53 @@
+{
+  "files": 541,
+  "deduplicated_rows": 0,
+  "conflicting_timestamps": 0,
+  "queries": {
+    "test": 4815,
+    "train": 4309,
+    "validation": 544
+  },
+  "scenes": {
+    "test": 19,
+    "train": 16,
+    "validation": 4
+  },
+  "results": {
+    "Current": {
+      "ade": 0.2969970608870246,
+      "fde2": 0.41918657569150647,
+      "scene_equal_fde2": 0.43635033484086705
+    },
+    "History": {
+      "ade": 0.29747737377650846,
+      "fde2": 0.42020401618300035,
+      "scene_equal_fde2": 0.437199302067295
+    },
+    "OracleRobotFuture": {
+      "ade": 0.29565446645961907,
+      "fde2": 0.4159883711371266,
+      "scene_equal_fde2": 0.4281132330187884
+    },
+    "CV": {
+      "ade": 0.35945393223543165,
+      "fde2": 0.5205579392406776,
+      "scene_equal_fde2": 0.5647014861845056
+    }
+  },
+  "caveat": "Oracle robot future advantage is not causal or Bayesian evidence",
+  "History-Current": {
+    "scene_mean": 0.0008489672264279132,
+    "scene_bootstrap_ci95": [
+      -0.0032954202257451225,
+      0.00543137239131354
+    ]
+  },
+  "OracleRobotFuture-History": {
+    "scene_mean": -0.00908606904850659,
+    "scene_bootstrap_ci95": [
+      -0.015496679939201244,
+      -0.0028005097790278115
+    ]
+  },
+  "script_sha256": "e090e0ce022b40f99b801ec696e2e12e767eece69ac2c6dcd713f517aa34232c"
+}

@@ -1,0 +1,54 @@
+{
+  "cases": 80,
+  "eligible": 78,
+  "arms": {
+    "current": {
+      "success": 15,
+      "collision": 63,
+      "timeout": 0,
+      "mean_return": -0.2817780556544017
+    },
+    "history": {
+      "success": 11,
+      "collision": 67,
+      "timeout": 0,
+      "mean_return": -0.3288096173363097
+    },
+    "oracle": {
+      "success": 19,
+      "collision": 59,
+      "timeout": 0,
+      "mean_return": -0.23371225518051703
+    },
+    "actor": {
+      "success": 21,
+      "collision": 57,
+      "timeout": 0,
+      "mean_return": -0.19747404576148764
+    },
+    "best": {
+      "success": 49,
+      "collision": 28,
+      "timeout": 1,
+      "mean_return": 0.15099284102622
+    }
+  },
+  "history_vs_current": {
+    "mean_return_gain": -0.046925792113161474,
+    "ci95": [
+      -0.10234892100017358,
+      0.0017797691754629942
+    ],
+    "excess_collisions": 4,
+    "passed": false
+  },
+  "oracle_vs_current": {
+    "mean_return_gain": 0.04827432798240354,
+    "ci95": [
+      -0.013463754635372574,
+      0.11492121108968431
+    ],
+    "excess_collisions": -4,
+    "passed": false
+  }
+}

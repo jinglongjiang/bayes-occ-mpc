@@ -1,0 +1,212 @@
+{
+  "selected": {
+    "reset": 0.01,
+    "multiplier": 1,
+    "nll": -7.061328552898307
+  },
+  "validation_grid": [
+    {
+      "reset": 0,
+      "multiplier": 1,
+      "nll": -6.9242260705719145
+    },
+    {
+      "reset": 0,
+      "multiplier": 4,
+      "nll": -6.219675257743346
+    },
+    {
+      "reset": 0,
+      "multiplier": 16,
+      "nll": -5.003816783696287
+    },
+    {
+      "reset": 0.01,
+      "multiplier": 1,
+      "nll": -7.061328552898307
+    },
+    {
+      "reset": 0.01,
+      "multiplier": 4,
+      "nll": -6.2226247449557475
+    },
+    {
+      "reset": 0.01,
+      "multiplier": 16,
+      "nll": -4.9954913255604465
+    },
+    {
+      "reset": 0.05,
+      "multiplier": 1,
+      "nll": -7.054570510749848
+    },
+    {
+      "reset": 0.05,
+      "multiplier": 4,
+      "nll": -6.192071862497545
+    },
+    {
+      "reset": 0.05,
+      "multiplier": 16,
+      "nll": -4.9619937509858945
+    }
+  ],
+  "records": [
+    {
+      "full_rmse": [
+        0.0035069249674074,
+        0.020694173685046027
+      ],
+      "map_rmse": [
+        0.00351874503154089,
+        0.02094137574776501
+      ],
+      "full_nll": -7.01067320661406,
+      "map_nll": -6.809565868080472,
+      "entropy_mean": 0.23808471039744264,
+      "full_map_mean_vector_difference": 0.001445712224478423,
+      "record": "b14test1",
+      "split": "validation",
+      "queries": 7294,
+      "history_arx_rmse": [
+        0.003229135168373038,
+        0.013469242281242397
+      ],
+      "history_arx_nll": -7.201204860057156
+    },
+    {
+      "full_rmse": [
+        0.003076695226936368,
+        0.01730131818658449
+      ],
+      "map_rmse": [
+        0.003091980164349874,
+        0.017576485597266808
+      ],
+      "full_nll": -7.151553628579728,
+      "map_nll": -7.048936766834271,
+      "entropy_mean": 0.20903492716494504,
+      "full_map_mean_vector_difference": 0.0010978322005128804,
+      "record": "b14test2",
+      "split": "validation",
+      "queries": 4948,
+      "history_arx_rmse": [
+        0.00274668204041452,
+        0.010857302732871957
+      ],
+      "history_arx_nll": -7.5112434781696065
+    },
+    {
+      "full_rmse": [
+        0.0038308571771279425,
+        0.01887234030076363
+      ],
+      "map_rmse": [
+        0.003846016055233823,
+        0.019943119967500776
+      ],
+      "full_nll": -7.021758823501136,
+      "map_nll": -6.8477775576509154,
+      "entropy_mean": 0.22746866040899363,
+      "full_map_mean_vector_difference": 0.0011447057547841614,
+      "record": "b14test3",
+      "split": "validation",
+      "queries": 3251,
+      "history_arx_rmse": [
+        0.003854779958036635,
+        0.01250343680570992
+      ],
+      "history_arx_nll": -7.084094146536305
+    },
+    {
+      "full_rmse": [
+        0.006206605598180451,
+        0.024876856617543606
+      ],
+      "map_rmse": [
+        0.006161921042565573,
+        0.02525509786962087
+      ],
+      "full_nll": -6.193205784012444,
+      "map_nll": -5.832233156798435,
+      "entropy_mean": 0.29721829717788856,
+      "full_map_mean_vector_difference": 0.0016200700041386832,
+      "record": "b24test1",
+      "split": "test",
+      "queries": 12160,
+      "history_arx_rmse": [
+        0.005262605116807942,
+        0.01783043459989054
+      ],
+      "history_arx_nll": -6.058976886790332
+    },
+    {
+      "full_rmse": [
+        0.006395926722481905,
+        0.023621214607607504
+      ],
+      "map_rmse": [
+        0.006371746748169005,
+        0.02396744071119896
+      ],
+      "full_nll": -6.181299962417669,
+      "map_nll": -5.910617245060258,
+      "entropy_mean": 0.2759780442785133,
+      "full_map_mean_vector_difference": 0.0014639208298148666,
+      "record": "b24test2",
+      "split": "test",
+      "queries": 7463,
+      "history_arx_rmse": [
+        0.00569066289972976,
+        0.019072545839399994
+      ],
+      "history_arx_nll": -5.723140194011077
+    },
+    {
+      "full_rmse": [
+        0.005901584502465883,
+        0.024667316142694587
+      ],
+      "map_rmse": [
+        0.005893736257435822,
+        0.02455450312947681
+      ],
+      "full_nll": -6.247247394398117,
+      "map_nll": -6.0167876167088234,
+      "entropy_mean": 0.28160847721279536,
+      "full_map_mean_vector_difference": 0.0015159343934489375,
+      "record": "b24test3",
+      "split": "test",
+      "queries": 6881,
+      "history_arx_rmse": [
+        0.005590974579508637,
+        0.01962552278438706
+      ],
+      "history_arx_nll": -5.708831968606704
+    }
+  ],
+  "test_record_equal": {
+    "full_rmse": [
+      0.006168038941042747,
+      0.024388462455948567
+    ],
+    "map_rmse": [
+      0.0061424680160568,
+      0.02459234723676555
+    ],
+    "history_arx_rmse": [
+      0.005514747532015446,
+      0.01884283440789253
+    ],
+    "full_nll": -6.207251046942743,
+    "map_nll": -5.919879339522505,
+    "history_arx_nll": -5.830316349802705
+  },
+  "limitations": [
+    "effective delay hypothesis may conflate controller inertia, not identified physical communication delay",
+    "no external pose ground truth",
+    "three test records from one later recording date",
+    "different likelihood family and memory parameterization; not a universal Bayes impossibility test"
+  ],
+  "script_sha256": "cf99b2b7500b54f239a8f7aa21dceac43fb3b76ef62980d0d00b0ab2997de324"
+}

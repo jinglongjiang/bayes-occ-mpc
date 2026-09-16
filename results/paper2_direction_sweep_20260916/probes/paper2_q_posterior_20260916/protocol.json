@@ -1,0 +1,36 @@
+{
+  "source_sha256": "3b9bba830834c4b5558d6da1091880d6b89a8c276a610a0ed6618933d148c4c9",
+  "files": {
+    "critic": {
+      "path": "/home/abc/workspace/bayes_set_continuous/CrowdNav/repair_results/critic_truth_tree/C4_wide_mc5000_td1000_critic.pt",
+      "sha256": "0648e0ad1e4150fd38a4e2487a1d18bd6cbc6f8c78ce9df37f8ec824ad0caefb"
+    },
+    "transitions": {
+      "path": "/home/abc/workspace/bayes_set_continuous/CrowdNav/repair_results/no_belief_local_finetune/frozen_transitions.pt",
+      "sha256": "38cb2b89a28bc6011e10b1d3caf804edda05b4132c61159cf79242cfb5376b42"
+    },
+    "counterfactuals": {
+      "path": "/home/abc/workspace/bayes_set_continuous/CrowdNav/repair_results/critic_truth_tree/counterfactuals.pt",
+      "sha256": "006248da7f08d6f28571d29aeb9ddaecf5c97094f32b550ba83bd9c6567f51d7"
+    }
+  },
+  "fit": "fixed Q1 penultimate features, Gaussian last-layer correction to MC return",
+  "precision": [
+    0.001,
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "calibration": "first 10 counterfactual layouts; remaining 40 layouts test, both states stay together",
+  "uncertainty": "posterior variance of candidate-minus-baseline, including their covariance",
+  "controls": [
+    "original Q1",
+    "original minQ",
+    "mean correction",
+    "constant calibrated error bound",
+    "posterior scaled bound"
+  ],
+  "limitation": "historically reused audit; behavior MC differs from deterministic continuation; not prospective RL"
+}

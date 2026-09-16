@@ -1,0 +1,831 @@
+{
+  "scope": "two-human joint 2s forecast error; not decision or online Bayesian approval",
+  "protocol": "same frozen UM1-5 mean and UM6 calibration/selection; LAAS1-20 cross-site test; no LAAS tuning",
+  "covariance": [
+    [
+      0.14128508657196284,
+      0.005152020797696014,
+      0.0031885351235168852,
+      0.006111224620841779
+    ],
+    [
+      0.005152020797696014,
+      0.23009550830744382,
+      -0.0017107398561788,
+      0.06432490449258153
+    ],
+    [
+      0.0031885351235168852,
+      -0.0017107398561788,
+      0.17174972750279485,
+      -0.0461919926252048
+    ],
+    [
+      0.006111224620841779,
+      0.06432490449258153,
+      -0.0461919926252048,
+      0.21787889005662917
+    ]
+  ],
+  "correlation": [
+    [
+      1.0,
+      0.02857428526104127,
+      0.020468924117065357,
+      0.034831526552076386
+    ],
+    [
+      0.02857428526104127,
+      1.0,
+      -0.008605614249563071,
+      0.2872880109834323
+    ],
+    [
+      0.020468924117065357,
+      -0.008605614249563071,
+      1.0,
+      -0.2387872267784709
+    ],
+    [
+      0.034831526552076386,
+      0.2872880109834323,
+      -0.2387872267784709,
+      1.0
+    ]
+  ],
+  "rows": [
+    {
+      "session": 1,
+      "n": 1180,
+      "nll": {
+        "gaussian_full": 5.576519559264859,
+        "gaussian_block": 5.058559458951622,
+        "student_full": 5.028980284379018,
+        "student_block_shared_scale": 4.776444166986718,
+        "student_independent": 4.900360774941421
+      }
+    },
+    {
+      "session": 2,
+      "n": 1026,
+      "nll": {
+        "gaussian_full": 5.468402587369014,
+        "gaussian_block": 5.14630215066824,
+        "student_full": 4.922819684975204,
+        "student_block_shared_scale": 4.7620077285679026,
+        "student_independent": 4.882117044460716
+      }
+    },
+    {
+      "session": 3,
+      "n": 1019,
+      "nll": {
+        "gaussian_full": 5.610044042215685,
+        "gaussian_block": 5.161737068717634,
+        "student_full": 4.990696648419388,
+        "student_block_shared_scale": 4.759921916136538,
+        "student_independent": 4.94412097222131
+      }
+    },
+    {
+      "session": 4,
+      "n": 1004,
+      "nll": {
+        "gaussian_full": 5.711004819182908,
+        "gaussian_block": 5.26900038987016,
+        "student_full": 5.089741607224883,
+        "student_block_shared_scale": 4.864842044188199,
+        "student_independent": 5.091962777306558
+      }
+    },
+    {
+      "session": 5,
+      "n": 1212,
+      "nll": {
+        "gaussian_full": 5.3685941669324855,
+        "gaussian_block": 4.913367695975784,
+        "student_full": 4.893535315307095,
+        "student_block_shared_scale": 4.681771819185023,
+        "student_independent": 4.850619455706616
+      }
+    },
+    {
+      "session": 6,
+      "n": 896,
+      "nll": {
+        "gaussian_full": 6.039887382741072,
+        "gaussian_block": 5.621470882886448,
+        "student_full": 5.238230361487291,
+        "student_block_shared_scale": 5.031182270293392,
+        "student_independent": 5.226520983762691
+      }
+    },
+    {
+      "session": 7,
+      "n": 1295,
+      "nll": {
+        "gaussian_full": 4.527343657370304,
+        "gaussian_block": 4.202557721122174,
+        "student_full": 4.336998899369069,
+        "student_block_shared_scale": 4.149331917544429,
+        "student_independent": 4.257038678709362
+      }
+    },
+    {
+      "session": 8,
+      "n": 1404,
+      "nll": {
+        "gaussian_full": 4.25724289772764,
+        "gaussian_block": 3.902905787480332,
+        "student_full": 4.230077660887126,
+        "student_block_shared_scale": 3.973790887926703,
+        "student_independent": 4.054802130948133
+      }
+    },
+    {
+      "session": 9,
+      "n": 921,
+      "nll": {
+        "gaussian_full": 4.954650722951088,
+        "gaussian_block": 4.766961348173071,
+        "student_full": 4.678082672526378,
+        "student_block_shared_scale": 4.596055103055576,
+        "student_independent": 4.704583567788875
+      }
+    },
+    {
+      "session": 10,
+      "n": 1070,
+      "nll": {
+        "gaussian_full": 4.637750398545689,
+        "gaussian_block": 4.294074431282106,
+        "student_full": 4.4016180917162435,
+        "student_block_shared_scale": 4.2279315662772605,
+        "student_independent": 4.34501467593153
+      }
+    },
+    {
+      "session": 11,
+      "n": 1093,
+      "nll": {
+        "gaussian_full": 5.291201085595807,
+        "gaussian_block": 4.9528036200230625,
+        "student_full": 4.814767639618563,
+        "student_block_shared_scale": 4.65084049042381,
+        "student_independent": 4.809583973147775
+      }
+    },
+    {
+      "session": 12,
+      "n": 1110,
+      "nll": {
+        "gaussian_full": 5.56818396492396,
+        "gaussian_block": 5.089896689017039,
+        "student_full": 5.023477247276977,
+        "student_block_shared_scale": 4.777598725293077,
+        "student_independent": 4.974305353827208
+      }
+    },
+    {
+      "session": 13,
+      "n": 938,
+      "nll": {
+        "gaussian_full": 6.047118722062239,
+        "gaussian_block": 5.690481191961557,
+        "student_full": 5.368607427062878,
+        "student_block_shared_scale": 5.160138784826905,
+        "student_independent": 5.3968599884326665
+      }
+    },
+    {
+      "session": 14,
+      "n": 1373,
+      "nll": {
+        "gaussian_full": 5.26001339558399,
+        "gaussian_block": 4.908604860067382,
+        "student_full": 4.837934785552543,
+        "student_block_shared_scale": 4.673538949260944,
+        "student_independent": 4.814801058687735
+      }
+    },
+    {
+      "session": 15,
+      "n": 1077,
+      "nll": {
+        "gaussian_full": 5.590717804904368,
+        "gaussian_block": 5.124872868387242,
+        "student_full": 4.989978400818086,
+        "student_block_shared_scale": 4.76901028051634,
+        "student_independent": 4.951100969767239
+      }
+    },
+    {
+      "session": 16,
+      "n": 1244,
+      "nll": {
+        "gaussian_full": 5.231574872388298,
+        "gaussian_block": 4.777821959346704,
+        "student_full": 4.901195615020781,
+        "student_block_shared_scale": 4.668589103388136,
+        "student_independent": 4.819884198089134
+      }
+    },
+    {
+      "session": 17,
+      "n": 1118,
+      "nll": {
+        "gaussian_full": 4.302637267276262,
+        "gaussian_block": 3.9755235246227785,
+        "student_full": 4.095253025824258,
+        "student_block_shared_scale": 3.924222497975449,
+        "student_independent": 3.936908189666091
+      }
+    },
+    {
+      "session": 18,
+      "n": 1052,
+      "nll": {
+        "gaussian_full": 5.346801880234753,
+        "gaussian_block": 5.04461944921118,
+        "student_full": 4.952244335443031,
+        "student_block_shared_scale": 4.807241607858153,
+        "student_independent": 5.000533116591636
+      }
+    },
+    {
+      "session": 19,
+      "n": 1048,
+      "nll": {
+        "gaussian_full": 5.411247304598381,
+        "gaussian_block": 5.081167084822852,
+        "student_full": 4.926041425359959,
+        "student_block_shared_scale": 4.749943870416394,
+        "student_independent": 4.92845358937162
+      }
+    },
+    {
+      "session": 20,
+      "n": 1145,
+      "nll": {
+        "gaussian_full": 5.025189305721721,
+        "gaussian_block": 4.599455684750722,
+        "student_full": 4.70030439642841,
+        "student_block_shared_scale": 4.449550467961362,
+        "student_independent": 4.494836432429166
+      }
+    }
+  ],
+  "mean": {
+    "gaussian_full": 5.261306291879526,
+    "gaussian_block": 4.879109193366904,
+    "student_full": 4.821029276234858,
+    "student_block_shared_scale": 4.622697709904115,
+    "student_independent": 4.769220396589374
+  },
+  "caveats": [
+    "20 LAAS records; earlier other-model exploration of these records; not a new untouched confirmatory dataset",
+    "world-frame human displacements, actual logged controller, not candidate-action counterfactual",
+    "block multivariateStudent retains shared scale dependence; independentStudent removes it",
+    "static covariance fit is not recursive Bayesian posterior"
+  ],
+  "adaptive": {
+    "iw_full": {
+      "parameter": 64,
+      "validation_nll": 2.277044112241257,
+      "test_nll": [
+        4.27604829703311,
+        4.375790306628512,
+        4.311542123458849,
+        4.399318976240574,
+        4.147249202123656,
+        4.587088925615162,
+        3.7298204785205513,
+        3.460604518734526,
+        4.031551333406203,
+        3.8206538635016285,
+        4.218763266763861,
+        4.180176266871645,
+        4.622714532741144,
+        4.125617267213582,
+        4.402259110664954,
+        4.124740763031441,
+        3.669336880469243,
+        4.35323728375937,
+        4.245321489130011,
+        4.016355066771847
+      ],
+      "mean_nll": 4.154909497633993
+    },
+    "iw_block": {
+      "parameter": 64,
+      "validation_nll": 2.308218518446912,
+      "test_nll": [
+        4.242940219878955,
+        4.399686851812026,
+        4.326067531763463,
+        4.458617925503257,
+        4.106028390741619,
+        4.605464051048661,
+        3.783240280493627,
+        3.531457124433268,
+        4.1302316201387,
+        3.831804608914323,
+        4.239020464127049,
+        4.21951702848076,
+        4.725701507309312,
+        4.152219666010203,
+        4.306697644100224,
+        4.106044130220331,
+        3.6276854391701963,
+        4.315298062050087,
+        4.2798326161562965,
+        4.052892526592568
+      ],
+      "mean_nll": 4.172022384447247
+    },
+    "ewma_full": {
+      "parameter": 0.01,
+      "validation_nll": 2.274936513220081,
+      "test_nll": [
+        4.384239614559148,
+        4.401460679756686,
+        4.390111277278188,
+        4.469741547983326,
+        4.300692999690306,
+        4.6606256668578,
+        3.8734125822624637,
+        3.644326554174031,
+        4.176121524515163,
+        3.944960996516657,
+        4.2919406172014565,
+        4.31190897898929,
+        4.740854178733306,
+        4.242295930198143,
+        4.448892310882053,
+        4.297738537067936,
+        3.72180020428977,
+        4.466318393613357,
+        4.346368030416919,
+        4.149947166042782
+      ],
+      "mean_nll": 4.263187889551439
+    },
+    "ewma_block": {
+      "parameter": 0.01,
+      "validation_nll": 2.307126769371223,
+      "test_nll": [
+        4.398888135099149,
+        4.451313156839019,
+        4.398621562334386,
+        4.524453997991944,
+        4.298109303232055,
+        4.645645023224567,
+        3.93107477496175,
+        3.716453701758986,
+        4.298752220705846,
+        3.9804659642103317,
+        4.338917701223805,
+        4.362226496909845,
+        4.8122472970145145,
+        4.293603825398229,
+        4.419227340087611,
+        4.300123371758153,
+        3.723308197078146,
+        4.479212686115066,
+        4.402452650720656,
+        4.175721679511824
+      ],
+      "mean_nll": 4.297540954308794
+    }
+  },
+  "adaptive_protocol": "known fixed residual mean; IW prior E[cov]=UM6cov;df=nu-3; completed2s residuals update every2.2s; all block versions retain shared Student scale;UM6 selects parameters",
+  "occupancy": {
+    "protocol": "radius0.6m around current robot CV position at2s; real future human locations;4096sharedSobolStudent samples;full vs block same marginals",
+    "limitations": "endpoint occupancy forecast, not swept collision; hypothetical reference point not a counterfactual robot action; static calibratedStudent, not adaptive posterior",
+    "rows": [
+      {
+        "session": 1,
+        "n": 1180,
+        "positives": 59,
+        "metrics": {
+          "full": {
+            "brier": 0.10327798547381062,
+            "auroc": 0.707026111673899
+          },
+          "block": {
+            "brier": 0.10341763238785631,
+            "auroc": 0.7068144362630218
+          },
+          "independent": {
+            "brier": 0.10321756510411279,
+            "auroc": 0.7073511846263173
+          }
+        },
+        "mean_abs_probability_delta": 0.001368842690677966
+      },
+      {
+        "session": 2,
+        "n": 1026,
+        "positives": 67,
+        "metrics": {
+          "full": {
+            "brier": 0.11247373289532131,
+            "auroc": 0.7354987315767356
+          },
+          "block": {
+            "brier": 0.11254583737771182,
+            "auroc": 0.7358411280407141
+          },
+          "independent": {
+            "brier": 0.11245099668614349,
+            "auroc": 0.7356310211196364
+          }
+        },
+        "mean_abs_probability_delta": 0.0016030949226364523
+      },
+      {
+        "session": 3,
+        "n": 1019,
+        "positives": 32,
+        "metrics": {
+          "full": {
+            "brier": 0.09192595929931027,
+            "auroc": 0.7650392603850051
+          },
+          "block": {
+            "brier": 0.09183349389440296,
+            "auroc": 0.7670656028368794
+          },
+          "independent": {
+            "brier": 0.09169443081826761,
+            "auroc": 0.7671764184397163
+          }
+        },
+        "mean_abs_probability_delta": 0.0014521455624386653
+      },
+      {
+        "session": 4,
+        "n": 1004,
+        "positives": 28,
+        "metrics": {
+          "full": {
+            "brier": 0.10091076268855319,
+            "auroc": 0.7210553278688525
+          },
+          "block": {
+            "brier": 0.10135708393091225,
+            "auroc": 0.7220067330210773
+          },
+          "independent": {
+            "brier": 0.10167247668442973,
+            "auroc": 0.7226288056206089
+          }
+        },
+        "mean_abs_probability_delta": 0.001855371482818725
+      },
+      {
+        "session": 5,
+        "n": 1212,
+        "positives": 79,
+        "metrics": {
+          "full": {
+            "brier": 0.11497712140232816,
+            "auroc": 0.6495134458757416
+          },
+          "block": {
+            "brier": 0.11508008193458268,
+            "auroc": 0.6506809523277509
+          },
+          "independent": {
+            "brier": 0.11525159877519009,
+            "auroc": 0.6505357122906588
+          }
+        },
+        "mean_abs_probability_delta": 0.0014733040686881187
+      },
+      {
+        "session": 6,
+        "n": 896,
+        "positives": 52,
+        "metrics": {
+          "full": {
+            "brier": 0.10726205492392182,
+            "auroc": 0.6930026430915057
+          },
+          "block": {
+            "brier": 0.10695485724136233,
+            "auroc": 0.6944039372949325
+          },
+          "independent": {
+            "brier": 0.10707123943471483,
+            "auroc": 0.6945178636529348
+          }
+        },
+        "mean_abs_probability_delta": 0.001678466796875
+      },
+      {
+        "session": 7,
+        "n": 1295,
+        "positives": 27,
+        "metrics": {
+          "full": {
+            "brier": 0.08636306501263356,
+            "auroc": 0.7503797172566888
+          },
+          "block": {
+            "brier": 0.08670083450074362,
+            "auroc": 0.7512998013786656
+          },
+          "independent": {
+            "brier": 0.08689862742847457,
+            "auroc": 0.7504819488257974
+          }
+        },
+        "mean_abs_probability_delta": 0.0018077717784749036
+      },
+      {
+        "session": 8,
+        "n": 1404,
+        "positives": 24,
+        "metrics": {
+          "full": {
+            "brier": 0.08881472369544527,
+            "auroc": 0.5138737922705314
+          },
+          "block": {
+            "brier": 0.08866679863712387,
+            "auroc": 0.5143417874396136
+          },
+          "independent": {
+            "brier": 0.08867038361876778,
+            "auroc": 0.5146286231884059
+          }
+        },
+        "mean_abs_probability_delta": 0.0014961438301282052
+      },
+      {
+        "session": 9,
+        "n": 921,
+        "positives": 43,
+        "metrics": {
+          "full": {
+            "brier": 0.10233887191962988,
+            "auroc": 0.7065211633204429
+          },
+          "block": {
+            "brier": 0.10218130170198786,
+            "auroc": 0.7058854690893681
+          },
+          "independent": {
+            "brier": 0.10197963265461461,
+            "auroc": 0.7066933305080256
+          }
+        },
+        "mean_abs_probability_delta": 0.0014420466883821933
+      },
+      {
+        "session": 10,
+        "n": 1070,
+        "positives": 74,
+        "metrics": {
+          "full": {
+            "brier": 0.09611201319739084,
+            "auroc": 0.7447492673396288
+          },
+          "block": {
+            "brier": 0.09633358861798438,
+            "auroc": 0.7442472593075002
+          },
+          "independent": {
+            "brier": 0.09626589066514345,
+            "auroc": 0.7445389666775208
+          }
+        },
+        "mean_abs_probability_delta": 0.0017048773364485982
+      },
+      {
+        "session": 11,
+        "n": 1093,
+        "positives": 24,
+        "metrics": {
+          "full": {
+            "brier": 0.07236971761366695,
+            "auroc": 0.6472170252572498
+          },
+          "block": {
+            "brier": 0.07209601733843776,
+            "auroc": 0.6475288431555971
+          },
+          "independent": {
+            "brier": 0.07208557692778186,
+            "auroc": 0.647139070782663
+          }
+        },
+        "mean_abs_probability_delta": 0.0014867337602927722
+      },
+      {
+        "session": 12,
+        "n": 1110,
+        "positives": 29,
+        "metrics": {
+          "full": {
+            "brier": 0.10504246853493356,
+            "auroc": 0.7689399980860634
+          },
+          "block": {
+            "brier": 0.10473273541476276,
+            "auroc": 0.7691792401671504
+          },
+          "independent": {
+            "brier": 0.10477191510501209,
+            "auroc": 0.7690835433347156
+          }
+        },
+        "mean_abs_probability_delta": 0.0014578054617117118
+      },
+      {
+        "session": 13,
+        "n": 938,
+        "positives": 57,
+        "metrics": {
+          "full": {
+            "brier": 0.11734375249602393,
+            "auroc": 0.7071210944500865
+          },
+          "block": {
+            "brier": 0.11749127952020559,
+            "auroc": 0.7079475078160782
+          },
+          "independent": {
+            "brier": 0.11738112301968817,
+            "auroc": 0.7074496684389749
+          }
+        },
+        "mean_abs_probability_delta": 0.0017415191064765459
+      },
+      {
+        "session": 14,
+        "n": 1373,
+        "positives": 33,
+        "metrics": {
+          "full": {
+            "brier": 0.08954022309247021,
+            "auroc": 0.741576209859792
+          },
+          "block": {
+            "brier": 0.08963331465120308,
+            "auroc": 0.7419945725915875
+          },
+          "independent": {
+            "brier": 0.08957165292988532,
+            "auroc": 0.741010854816825
+          }
+        },
+        "mean_abs_probability_delta": 0.0015500173547887837
+      },
+      {
+        "session": 15,
+        "n": 1077,
+        "positives": 45,
+        "metrics": {
+          "full": {
+            "brier": 0.11511028532419586,
+            "auroc": 0.6650624461670973
+          },
+          "block": {
+            "brier": 0.11490313986881862,
+            "auroc": 0.6651701119724376
+          },
+          "independent": {
+            "brier": 0.11489183490986944,
+            "auroc": 0.664890180878553
+          }
+        },
+        "mean_abs_probability_delta": 0.0018479427808727948
+      },
+      {
+        "session": 16,
+        "n": 1244,
+        "positives": 44,
+        "metrics": {
+          "full": {
+            "brier": 0.11255778861007507,
+            "auroc": 0.7325094696969696
+          },
+          "block": {
+            "brier": 0.11270850844130255,
+            "auroc": 0.7322348484848484
+          },
+          "independent": {
+            "brier": 0.11304660299583263,
+            "auroc": 0.7320454545454544
+          }
+        },
+        "mean_abs_probability_delta": 0.0016112496231913184
+      },
+      {
+        "session": 17,
+        "n": 1118,
+        "positives": 62,
+        "metrics": {
+          "full": {
+            "brier": 0.09787176029626714,
+            "auroc": 0.7468459799608993
+          },
+          "block": {
+            "brier": 0.09786295357671748,
+            "auroc": 0.7469987170087977
+          },
+          "independent": {
+            "brier": 0.0979648597658427,
+            "auroc": 0.7473881964809383
+          }
+        },
+        "mean_abs_probability_delta": 0.001537125097830948
+      },
+      {
+        "session": 18,
+        "n": 1052,
+        "positives": 29,
+        "metrics": {
+          "full": {
+            "brier": 0.10852902697066391,
+            "auroc": 0.6960764485792295
+          },
+          "block": {
+            "brier": 0.1085397596594952,
+            "auroc": 0.6963292547274749
+          },
+          "independent": {
+            "brier": 0.10859113217759948,
+            "auroc": 0.6961944247817441
+          }
+        },
+        "mean_abs_probability_delta": 0.0019633362048479086
+      },
+      {
+        "session": 19,
+        "n": 1048,
+        "positives": 83,
+        "metrics": {
+          "full": {
+            "brier": 0.12250148379848204,
+            "auroc": 0.6788626006617141
+          },
+          "block": {
+            "brier": 0.12252914319739087,
+            "auroc": 0.6792995817466758
+          },
+          "independent": {
+            "brier": 0.12274901824825593,
+            "auroc": 0.6795180722891566
+          }
+        },
+        "mean_abs_probability_delta": 0.0015282084923664123
+      },
+      {
+        "session": 20,
+        "n": 1145,
+        "positives": 58,
+        "metrics": {
+          "full": {
+            "brier": 0.09096041324357279,
+            "auroc": 0.7738318053484756
+          },
+          "block": {
+            "brier": 0.09085677648735879,
+            "auroc": 0.7749658979158075
+          },
+          "independent": {
+            "brier": 0.09086750043011128,
+            "auroc": 0.7748548678742505
+          }
+        },
+        "mean_abs_probability_delta": 0.0016629281522925765
+      }
+    ],
+    "mean_brier": {
+      "full": 0.10181416052443482,
+      "block": 0.10182125691901804,
+      "independent": 0.1018547029189869
+    }
+  },
+  "exploratory_record_bootstrap": {
+    "iw_full minus ewma_full": {
+      "delta": -0.10827839191744566,
+      "ci95": [
+        -0.12625935529213272,
+        -0.0897572012984074
+      ],
+      "wins": 20
+    },
+    "iw_full minus iw_block": {
+      "delta": -0.017112886813252827,
+      "ci95": [
+        -0.038047898200365395,
+        0.00415436786956243
+      ],
+      "wins": 14
+    }
+  }
+}

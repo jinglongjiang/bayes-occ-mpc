@@ -1,0 +1,68 @@
+现有机器人日志核查报告
+日期：2026-09-16
+
+一、结论
+找到了第一篇论文延迟实验对应的逐回合原始指标和轨迹，不需要重新采集才能开始失败轨迹分析。
+但尚未找到可直接辨识实际执行延迟的、同步保存最终发布控制命令与里程计反馈的完整记录。
+现有证据支持“人工控制延迟条件下导航完成率下降”，尚不支持“未知时延可被贝叶斯可靠估计并改善导航”。
+本轮只搜索、读取和核对数据，没有修改训练、教师或环境代码，没有启动训练。
+
+二、最重要的原始归档：与论文数字对应
+根目录：/home/abc/workspace/nav_data/mamba/camrl/mamba_log/Additional/
+以下每个目录均有 metrics_log.json 和15份 trajectory_log_*.json：
+none/                         成功15/15，100.00%
+control_delay/200ms/           成功 9/15， 60.00%
+control_delay/300ms/           成功 5/15， 33.33%
+
+200ms：6回合 outcome=interrupted，collision_count合计0；平均安全干预10.533次。
+300ms：10回合 outcome=interrupted，collision_count合计0；平均安全干预9.067次。
+不能把interrupted直接改称碰撞或环境自然超时，停止条件仍需结合当时运行脚本审计。
+none部分未记录laser_safety_trigger_count，不能将缺失解释为零安全干预。
+指标还有navigation_time、path_length、min_dist_to_human、goal_error和终点坐标。
+轨迹JSON字段为robot、actors：机器人和行人位置点形如[x,y,wall_time]。
+因此可以分析运动路径、终点附近徘徊、相对净空和中断位置；尚未在本轮完成这些因果分析。
+
+同目录另有leg_dropout/20%、40%、60%：各15回合，均15成功。
+这是既有漏检实验结果，不是新增鲁棒性证明。
+
+三、另一批独立版本结果：不要和论文原始实验混合
+目录：/home/abc/workspace/nav_data/mamba/camrl/mamba_log/gazebo_mamba_vl_runs/
+Mamba-VL-T24-Value-delay200ms_gazebo_smoke_20260720_162829：15回合，strict_success=12。
+Mamba-VL-T24-Value-delay300ms_gazebo_smoke_20260720_164336：15回合，strict_success=9。
+各目录包含metrics_collected.json、tracking/和trajectories/。
+指标包含checkpoint、policy_interface、perturbation、推理耗时汇总及逐回合结果。
+这是7月版本；不能用其80%/60%替代4月归档的60%/33.33%。
+gazebo_mamba_vl_runtime内还有运行时副本，不能重复计为独立样本。
+
+四、其他找到的记录
+/home/abc/crowdnav_sim_ws/src/crowdnav_sim/trajectory_logs/：664份轨迹JSON。
+/home/abc/crowdnav_sim_ws/src/crowdnav_sim/diffdrive_tracking_logs/：11份tracking JSON，共2906条sample。
+该处metrics_log.json有11条，均strict_success，记录的安全干预合计53次；tracking均control_delay_ms=0。
+/home/abc/.ros/log：检索3508份log，有200ms/300ms实验标识、周期性策略速度输出和结束摘要。
+例：python3_2912858_1775458003652.log、python3_229891_1784533204760.log。
+ROS日志中的保存路径帮助定位了被Git忽略的mamba_log归档。
+crowdnav_ws及camrl中还有crowdnav_sim_log.csv，保存位置、速度和人机距离，但不是同步最终cmd_vel与odom的完整日志。
+
+五、关键数据陷阱：actual_dx/dy不是实际执行反馈
+源文件：/home/abc/crowdnav_sim_ws/src/crowdnav_sim/move_sarl.py
+902-907行：_diffdrive_body_delta用(v,w,horizon)计算理论位移。
+909-950行：_record_diffdrive_tracking将该理论位移记为actual_dx/actual_dy。
+11份tracking中这些字段可由公式重建，最大差约1.5e-6米，是保存精度量级。
+因此pos_err_m是控制转换的模型内差异，不能解释为里程计测得的实际跟踪误差。
+792行附近在_publish之前记录tracking；881-892行_publish才实施控制延迟队列。
+队列实际释放的命令没有逐条独立记录，tracking命令不能视为已发布命令。
+657-669行cb_odom只更新位置/朝向，没有保存完整反馈时间戳和twist。
+817-832行轨迹用time.time()；1116-1119行tracking时间优先使用仿真时间。
+两个时间域缺少显式映射，不能直接对齐相减估计时延。
+7月适配器mamba_log/gazebo_tools/move_mamba_vl_bridge.py导入move_sarl并调用其tracking保存接口，同样需要注意这套字段语义。
+
+六、现有数据能做什么，不能做什么
+可以立即做：针对论文45回合，复核中断规则，比较成功与中断轨迹的终点误差、路径绕行和近人行为。
+不能直接做：用actual_dx/dy拟合实际时延；用推理耗时汇总当执行时延；证明贝叶斯优于固定延迟补偿。
+若失败审计指向控制问题，再最小补采：同一时钟的策略生成、队列发布、odom反馈时间戳，最终(v,w)，实测pose/twist，reset与终止原因。
+即使补采完成，仍需比较固定补偿、在线点估计和完整后验；找到日志不是找到论文创新。
+
+七、检索范围与限制
+检索了CrowdNav、crowdnav_ws、crowdnav_sim_ws、camrl、tb3_ws及.ros等本地目录，包含被忽略文件。
+发现的bag主要是SLAM、四旋翼或检测器示例；在本次相关项目检索范围内未发现可确认的导航cmd_vel/odom同步bag。
+未在本轮解包所有历史压缩归档，也未搜索远程4090，因此不宣称所有机器上都不存在此类数据。

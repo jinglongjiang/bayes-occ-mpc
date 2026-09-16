@@ -1,0 +1,387 @@
+{
+  "selected": {
+    "prior": 0.1,
+    "forget": 0.999,
+    "validation_mse": 0.8818886989197491
+  },
+  "ewma_rate": 0.01,
+  "validation_candidates": [
+    {
+      "prior": 0.001,
+      "forget": 1.0,
+      "validation_mse": 0.9103728832594911
+    },
+    {
+      "prior": 0.001,
+      "forget": 0.999,
+      "validation_mse": 0.9050775285613746
+    },
+    {
+      "prior": 0.001,
+      "forget": 0.99,
+      "validation_mse": 4.79304003086727
+    },
+    {
+      "prior": 0.01,
+      "forget": 1.0,
+      "validation_mse": 0.9040512780433385
+    },
+    {
+      "prior": 0.01,
+      "forget": 0.999,
+      "validation_mse": 0.8926258764965572
+    },
+    {
+      "prior": 0.01,
+      "forget": 0.99,
+      "validation_mse": 4.79186962369133
+    },
+    {
+      "prior": 0.1,
+      "forget": 1.0,
+      "validation_mse": 0.896067726850942
+    },
+    {
+      "prior": 0.1,
+      "forget": 0.999,
+      "validation_mse": 0.8818886989197491
+    },
+    {
+      "prior": 0.1,
+      "forget": 0.99,
+      "validation_mse": 4.795151144604228
+    }
+  ],
+  "calibration": {
+    "fixed_gaussian": {
+      "scale": 1,
+      "df": null
+    },
+    "fixed_student": {
+      "scale": 1,
+      "df": 3
+    },
+    "ewma_gaussian": {
+      "scale": 1,
+      "df": null
+    },
+    "ewma_student": {
+      "scale": 1,
+      "df": 3
+    },
+    "parameters_gaussian": {
+      "scale": 1,
+      "df": null
+    },
+    "parameters_student": {
+      "scale": 1,
+      "df": 3
+    },
+    "posterior_gaussian": {
+      "scale": 1,
+      "df": null
+    }
+  },
+  "test_record_equal": {
+    "fixed_rmse": [
+      0.005514747532015446,
+      0.01884283440789253
+    ],
+    "ewma_rmse": [
+      0.005539469952518955,
+      0.01892761878855262
+    ],
+    "parameters_rmse": [
+      0.00518560699264077,
+      0.01855168374063126
+    ],
+    "fixed_gaussian_nll": -5.830316349802705,
+    "fixed_student_nll": -6.3506368776131366,
+    "ewma_gaussian_nll": -5.8091420507434615,
+    "ewma_student_nll": -6.3344500148108365,
+    "parameters_gaussian_nll": -6.0146982369684165,
+    "parameters_student_nll": -6.56733746067394,
+    "posterior_gaussian_nll": -6.154646196453117
+  },
+  "records": [
+    {
+      "name": "b14test1",
+      "split": "validation",
+      "queries": 7294,
+      "fixed_rmse": [
+        0.003229135168373038,
+        0.013469242281242397
+      ],
+      "ewma_rmse": [
+        0.00324024206673813,
+        0.01352830211098977
+      ],
+      "parameters_rmse": [
+        0.003059476623433998,
+        0.013791075050869947
+      ],
+      "fixed_gaussian_nll": -7.201204860057156,
+      "fixed_student_nll": -7.596125016787853,
+      "ewma_gaussian_nll": -7.19344589896651,
+      "ewma_student_nll": -7.587276579410331,
+      "parameters_gaussian_nll": -7.221388525378048,
+      "parameters_student_nll": -7.718641054846533,
+      "posterior_gaussian_nll": -7.2970056891422495,
+      "posterior_variance_quantiles": [
+        1.0019335254800068,
+        1.0395712592792092,
+        1.2790259624782236,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b14test2",
+      "split": "validation",
+      "queries": 4948,
+      "fixed_rmse": [
+        0.00274668204041452,
+        0.010857302732871957
+      ],
+      "ewma_rmse": [
+        0.0027583595261776056,
+        0.010899905292555478
+      ],
+      "parameters_rmse": [
+        0.0026068664393238115,
+        0.010396956527354699
+      ],
+      "fixed_gaussian_nll": -7.511243478169607,
+      "fixed_student_nll": -7.852117464422676,
+      "ewma_gaussian_nll": -7.50576490852079,
+      "ewma_student_nll": -7.843430619361882,
+      "parameters_gaussian_nll": -7.572081056279554,
+      "parameters_student_nll": -8.010557360097438,
+      "posterior_gaussian_nll": -7.596084065267994,
+      "posterior_variance_quantiles": [
+        1.00190803410006,
+        1.0391482155542688,
+        1.2595821192426577,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b14test3",
+      "split": "validation",
+      "queries": 3251,
+      "fixed_rmse": [
+        0.003854779958036635,
+        0.01250343680570992
+      ],
+      "ewma_rmse": [
+        0.0038591027976000174,
+        0.012550539936261136
+      ],
+      "parameters_rmse": [
+        0.003821395299720556,
+        0.012389848545673899
+      ],
+      "fixed_gaussian_nll": -7.084094146536305,
+      "fixed_student_nll": -7.545134806125663,
+      "ewma_gaussian_nll": -7.079204405117898,
+      "ewma_student_nll": -7.532650592461566,
+      "parameters_gaussian_nll": -7.103393630303397,
+      "parameters_student_nll": -7.636965957152697,
+      "posterior_gaussian_nll": -7.1830003297687,
+      "posterior_variance_quantiles": [
+        1.0025811625511238,
+        1.0574100412589456,
+        1.2450546805340421,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b24test1",
+      "split": "test",
+      "queries": 12160,
+      "fixed_rmse": [
+        0.005262605116807942,
+        0.01783043459989054
+      ],
+      "ewma_rmse": [
+        0.0052861246877877995,
+        0.01790547429912471
+      ],
+      "parameters_rmse": [
+        0.004962041495221201,
+        0.01783066897131504
+      ],
+      "fixed_gaussian_nll": -6.058976886790332,
+      "fixed_student_nll": -6.451305304463447,
+      "ewma_gaussian_nll": -6.040455954820971,
+      "ewma_student_nll": -6.43649962561606,
+      "parameters_gaussian_nll": -6.191093231345231,
+      "parameters_student_nll": -6.653536753961314,
+      "posterior_gaussian_nll": -6.297997032902042,
+      "posterior_variance_quantiles": [
+        1.0024256718429378,
+        1.0472215777651868,
+        1.212100215507891,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b24test2",
+      "split": "test",
+      "queries": 7463,
+      "fixed_rmse": [
+        0.00569066289972976,
+        0.019072545839399994
+      ],
+      "ewma_rmse": [
+        0.005716100279989369,
+        0.019159373580031887
+      ],
+      "parameters_rmse": [
+        0.0053788583132404226,
+        0.018926268138946323
+      ],
+      "fixed_gaussian_nll": -5.723140194011077,
+      "fixed_student_nll": -6.28901691223808,
+      "ewma_gaussian_nll": -5.700942607540495,
+      "ewma_student_nll": -6.272406960336423,
+      "parameters_gaussian_nll": -5.887827770760683,
+      "parameters_student_nll": -6.512611945526623,
+      "posterior_gaussian_nll": -6.047911867618685,
+      "posterior_variance_quantiles": [
+        1.0026437542644993,
+        1.0538273082741652,
+        1.210858207347402,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b24test3",
+      "split": "test",
+      "queries": 6881,
+      "fixed_rmse": [
+        0.005590974579508637,
+        0.01962552278438706
+      ],
+      "ewma_rmse": [
+        0.005616184889779697,
+        0.01971800848650126
+      ],
+      "parameters_rmse": [
+        0.005215921169460684,
+        0.018898114111632416
+      ],
+      "fixed_gaussian_nll": -5.708831968606705,
+      "fixed_student_nll": -6.311588416137881,
+      "ewma_gaussian_nll": -5.686027589868918,
+      "ewma_student_nll": -6.294443458480027,
+      "parameters_gaussian_nll": -5.965173708799335,
+      "parameters_student_nll": -6.535863682533883,
+      "posterior_gaussian_nll": -6.118029688838627,
+      "posterior_variance_quantiles": [
+        1.0023482830722343,
+        1.0462809787788157,
+        1.1745948851935009,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b3test1",
+      "split": "train",
+      "queries": 16549,
+      "fixed_rmse": [
+        0.0028950869796538557,
+        0.012061408754603058
+      ],
+      "ewma_rmse": [
+        0.002904495715189866,
+        0.01207870883635397
+      ],
+      "parameters_rmse": [
+        0.0026604055539791436,
+        0.011766499764520433
+      ],
+      "fixed_gaussian_nll": -7.394427280731347,
+      "fixed_student_nll": -7.864048421948496,
+      "ewma_gaussian_nll": -7.390858002320577,
+      "ewma_student_nll": -7.850520481870061,
+      "parameters_gaussian_nll": -7.471065733464321,
+      "parameters_student_nll": -7.998921981258229,
+      "posterior_gaussian_nll": -7.521501816366944,
+      "posterior_variance_quantiles": [
+        1.001844397942527,
+        1.047487244845665,
+        1.234315159343193,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b3test2",
+      "split": "train",
+      "queries": 9895,
+      "fixed_rmse": [
+        0.0028970603228453675,
+        0.011350814256506733
+      ],
+      "ewma_rmse": [
+        0.00290569587861886,
+        0.011394614579853846
+      ],
+      "parameters_rmse": [
+        0.0027977695855384657,
+        0.011511958074374487
+      ],
+      "fixed_gaussian_nll": -7.442655220757767,
+      "fixed_student_nll": -7.9138024452039515,
+      "ewma_gaussian_nll": -7.437583082833433,
+      "ewma_student_nll": -7.904502627752636,
+      "parameters_gaussian_nll": -7.456179429585346,
+      "parameters_student_nll": -7.995703706903833,
+      "posterior_gaussian_nll": -7.511337417186438,
+      "posterior_variance_quantiles": [
+        1.001742987245645,
+        1.0421030117848706,
+        1.2465816859532681,
+        5.499973473196522
+      ]
+    },
+    {
+      "name": "b3test3",
+      "split": "train",
+      "queries": 5489,
+      "fixed_rmse": [
+        0.005220123494706516,
+        0.0179563221406717
+      ],
+      "ewma_rmse": [
+        0.005210602690734459,
+        0.018035105811780493
+      ],
+      "parameters_rmse": [
+        0.004952191610341968,
+        0.01793911189915075
+      ],
+      "fixed_gaussian_nll": -6.064932105465511,
+      "fixed_student_nll": -6.868739968062791,
+      "ewma_gaussian_nll": -6.06089850719836,
+      "ewma_student_nll": -6.84770830501636,
+      "parameters_gaussian_nll": -6.183932809115484,
+      "parameters_student_nll": -6.894337736583324,
+      "posterior_gaussian_nll": -6.332145840387753,
+      "posterior_variance_quantiles": [
+        1.0025961876724931,
+        1.0462498252268813,
+        1.2758250234535176,
+        5.499973473196522
+      ]
+    }
+  ],
+  "conjugate_update_test": true,
+  "limitations": [
+    "same test recordings previously examined; exploratory, not fresh confirmation",
+    "wheel odometry only; no physical ground-truth pose or execution acknowledgment",
+    "Gaussian coefficient model with likelihood variance calibrated on validation",
+    "same posterior mean is exactly reproducible by recursive least squares",
+    "three test recordings share one date; no navigation intervention"
+  ],
+  "script_sha256": "dbc69399c27a00a924a179b95d04f46edec048fbae07a510792dad8d4a710602"
+}

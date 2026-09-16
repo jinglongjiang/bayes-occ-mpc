@@ -1,0 +1,16 @@
+{
+  "source_sha256": "93181ff7e04a1457f414770829fd9e69c9d54253aa57242ce7755cbe5acd78bc",
+  "population": "same pre-existing near-pair queries, no outcome selection",
+  "target": "each individual 2-second displacement, not pair-relative displacement",
+  "split": "day 1 train, day 2 test; ten-minute block intervals, same venue limitation",
+  "arms": [
+    "CurrentNoFacing",
+    "CurrentFacing",
+    "HistoryNoFacing",
+    "HistoryFacing"
+  ],
+  "inputs": "four causal 1Hz frames: pair-local position, velocity, measured facing sin/cos",
+  "control": "identical input shape and tree capacity; removed columns zero-filled",
+  "gate": "facing vs no-facing History >=5% improvement and upper confidence bound <0",
+  "limitation": "offline information screen, no Bayesian or robot decision claim"
+}

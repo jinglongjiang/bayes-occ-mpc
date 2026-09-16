@@ -1,0 +1,603 @@
+{
+  "records": [
+    {
+      "name": "data/yaw/43.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "365f0e2b-2e2a-4daa-9d71-638919c36b40",
+      "rows": 58050,
+      "queries": 2597,
+      "retained": 2528,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "70eea12f8636032d79afd4598a9ab599328f017b88c85ca06a3487b468cfbb5c"
+    },
+    {
+      "name": "data/yaw/47.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "61773510-bed6-4511-91ce-0fe4452f54eb",
+      "rows": 56954,
+      "queries": 2605,
+      "retained": 2537,
+      "dt_quantiles": [
+        0.4990100000000002,
+        0.5,
+        0.5009999999999994
+      ],
+      "invalid_vicon_rows": 37,
+      "sha256": "4ea2144368a71e8ff3a6ff818e1d866f659fec40661a63de318397e3fc02b0bc"
+    },
+    {
+      "name": "data/yaw/48.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "62f43326-88e3-462d-a202-5018119abd2e",
+      "rows": 57907,
+      "queries": 2591,
+      "retained": 2522,
+      "dt_quantiles": [
+        0.49899999999999967,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 22,
+      "sha256": "96df25c7833346f30f21ace364c811637ffa00418512bc788beef2d99a203137"
+    },
+    {
+      "name": "data/yaw/41.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "7a995aab-b0fb-4cb3-ab63-1c9316c24eb5",
+      "rows": 58987,
+      "queries": 2646,
+      "retained": 2578,
+      "dt_quantiles": [
+        0.49899999999999967,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "9e31d2109fb7da685aad16126cc6aed6a6a71b6f3263f5cbb524353c04e2cb98"
+    },
+    {
+      "name": "data/yaw/40.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c23fadd2-f8ef-4201-8950-a06a8acb1eea",
+      "rows": 57588,
+      "queries": 2588,
+      "retained": 2520,
+      "dt_quantiles": [
+        0.499979999999999,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 16,
+      "sha256": "c594497c9d72bf3480e310b312572c8b5feb5756b187b7cba18ebe7f96e35c12"
+    },
+    {
+      "name": "data/yaw/46.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c78aeb60-479c-4f19-8082-1d26c71f02ff",
+      "rows": 3327,
+      "queries": 0,
+      "retained": 0,
+      "dt_quantiles": [],
+      "invalid_vicon_rows": 0,
+      "sha256": "5fc99e92a8819932f935548302a3d49c373aedbd63ba2e612e68370870e9344c"
+    },
+    {
+      "name": "data/yaw/45.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c9e68907-c193-4ec9-9b8a-455a0c476881",
+      "rows": 58540,
+      "queries": 2619,
+      "retained": 2552,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "59663d52e2cbda3bebd37a106f06908a8f390d6be8262534e60a106ff70bfa9d"
+    },
+    {
+      "name": "data/yaw/44.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "d6585a44-c292-4598-84a3-9b42ffd4b49a",
+      "rows": 61378,
+      "queries": 2766,
+      "retained": 2687,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "72af09dbd467363e22b76ea5a2a0427546b4426edbe5b223e0915cf87c3ebb64"
+    },
+    {
+      "name": "data/yaw/49.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "e611ef8b-55a4-4c2e-adb4-bd072d1d7102",
+      "rows": 59679,
+      "queries": 2701,
+      "retained": 2588,
+      "dt_quantiles": [
+        0.04299999999999926,
+        0.5,
+        0.9570000000000007
+      ],
+      "invalid_vicon_rows": 31,
+      "sha256": "7103b7796b4ae751d3063fafc3b1a5f3678faa6d707e794beae063cb1e94a90c"
+    },
+    {
+      "name": "data/yaw/42.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "ecd1b281-2165-4f7c-8b89-13a9b5de16e5",
+      "rows": 57890,
+      "queries": 2591,
+      "retained": 2523,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "4d4267aefb626be2d18ed037e620371e1f9c24461ec51924cb4bc6ea54b6fa0f"
+    },
+    {
+      "name": "data/yaw/1.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "17d2cb5f-c7a6-4afd-ac6f-0fa8b1d71b2e",
+      "rows": 18301,
+      "queries": 615,
+      "retained": 615,
+      "dt_quantiles": [
+        0.49997999999999987,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "f7d974310597e9b4e658487e58f1b86675a9d16b15bcfa2df89bdc420ab4299d"
+    },
+    {
+      "name": "data/yaw/6.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "1d1e27f1-ff25-4d57-9db8-abbd028a9930",
+      "rows": 56228,
+      "queries": 2601,
+      "retained": 2511,
+      "dt_quantiles": [
+        0.29699999999999704,
+        0.5,
+        0.703000000000003
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "fbd2f81bf258c21ec2ab9ba714d1e1aee17e9643b111d2f96e2649efb44e8cdd"
+    },
+    {
+      "name": "data/yaw/9.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "2baad754-bd4d-4ec7-be3b-098db18183f5",
+      "rows": 60184,
+      "queries": 2707,
+      "retained": 2639,
+      "dt_quantiles": [
+        0.49997999999999987,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "26bf00173574d3069b4c7e24f012fe6a851902ab22a93c74c2159b099a7b18dc"
+    },
+    {
+      "name": "data/yaw/5.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "2dee5abc-bdfd-4605-b8bb-5703acd50c52",
+      "rows": 57871,
+      "queries": 2590,
+      "retained": 2520,
+      "dt_quantiles": [
+        0.49997999999999987,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "f51f5b23f16ec8b498cf810398ac936315841a368cdf6bc1f40ee8beb4295d96"
+    },
+    {
+      "name": "data/yaw/8.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "3e2f97af-94ba-4d09-b2d6-c83dde658bdf",
+      "rows": 58737,
+      "queries": 2708,
+      "retained": 2641,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 108,
+      "sha256": "6ac839edb2d17309232071766551dd0930918f9ac87c946500279dc74bdceb0d"
+    },
+    {
+      "name": "data/yaw/7.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "3e59795a-cf22-4b05-bcb5-dddb8352d4a1",
+      "rows": 57831,
+      "queries": 2591,
+      "retained": 2521,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "6111b3b81ae5e130006d31d76a07eff4ca802a03a2eb1f2bf223c37f3e0ab803"
+    },
+    {
+      "name": "data/yaw/0.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "9bd6e95b-ab77-4774-8093-4d4afedfea88",
+      "rows": 57280,
+      "queries": 2563,
+      "retained": 2506,
+      "dt_quantiles": [
+        0.4999899999999995,
+        0.5,
+        0.5009999999999994
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "900c79ad153c71875c59cc92354d529054702cdfd023bc42949b5ddc70a58bd4"
+    },
+    {
+      "name": "data/yaw/4.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "d31438c2-3b18-4706-bf2a-eff539f3a21f",
+      "rows": 57327,
+      "queries": 2580,
+      "retained": 2513,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "c0437ddc534203d122037435973da2800a5ad6f412f2a1bbcd77c55c3a4618d2"
+    },
+    {
+      "name": "data/yaw/3.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "dfc646b5-eb9e-4084-b233-6364fb333a05",
+      "rows": 57818,
+      "queries": 2589,
+      "retained": 2522,
+      "dt_quantiles": [
+        0.4999899999999995,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 19,
+      "sha256": "aee0eb1b9d8f5a38854a6d2865464df0f26cd4e487aff89e0077186d961b9d56"
+    },
+    {
+      "name": "data/yaw/2.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "fc6930c1-bbe3-4ec9-8e8e-f9d84059a6c9",
+      "rows": 57470,
+      "queries": 2570,
+      "retained": 2505,
+      "dt_quantiles": [
+        0.49899999999999967,
+        0.5,
+        0.5010000000000003
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "73491ca453ef260df34180400be54444bb3029e7a6229d4db7a416c5759e14c5"
+    },
+    {
+      "name": "data/yaw/16.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "19ab7d3b-cb83-42eb-a6e8-30c84d7c2e30",
+      "rows": 62646,
+      "queries": 2827,
+      "retained": 2762,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "85f9e83ca4f0731663d9faeb5091c5167257180fcf44c7b3b934f6a8d751e356"
+    },
+    {
+      "name": "data/yaw/14.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "4f8077bc-7dc1-4598-b85e-f31ccddd08cc",
+      "rows": 34657,
+      "queries": 1427,
+      "retained": 1417,
+      "dt_quantiles": [
+        0.4999900000000004,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "41f360da0218e671f2e8c51dd339f9b7e1f961f02d6ea389965dfbeacb3be6bf"
+    },
+    {
+      "name": "data/yaw/15.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "7d9b800f-7536-4a06-b5a0-71cd9e7df6a5",
+      "rows": 57852,
+      "queries": 2590,
+      "retained": 2521,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "82c22815831a7178c3939dd2b62a352b19cdab5615f64644a259b72bc8d4a4a5"
+    },
+    {
+      "name": "data/yaw/11.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "87323f52-e8c5-48b4-94bd-3e0781f61d8a",
+      "rows": 58522,
+      "queries": 2622,
+      "retained": 2545,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "1ad9e52296ed78d8b788266c5a7033bf641e1f1117454a473e7fba7d957a0c68"
+    },
+    {
+      "name": "data/yaw/18.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "9f6f50f1-0ddb-4738-b76a-94b84c59f742",
+      "rows": 57947,
+      "queries": 2588,
+      "retained": 2518,
+      "dt_quantiles": [
+        0.4989999999999988,
+        0.5,
+        0.5010000000000012
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "406139a51203ddcaeb248e28c671c8a62e53fc026f4c638cbc738ea2fbb1d118"
+    },
+    {
+      "name": "data/yaw/12.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "b9ee4d78-4569-45d9-83e9-2676382d5aee",
+      "rows": 57808,
+      "queries": 2585,
+      "retained": 2512,
+      "dt_quantiles": [
+        0.4999899999999995,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "007a6e9efe672457bca7f76753dd9da44924e56b5c78b6333d3476c2f3b7992a"
+    },
+    {
+      "name": "data/yaw/13.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "cbc4f3d0-d921-4a7c-95c3-108cd6d36ca0",
+      "rows": 57893,
+      "queries": 2590,
+      "retained": 2520,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 25,
+      "sha256": "3b234ececd167449d36921b6f3bea7e14198fed884907c7e0ab2f076ea0ccd74"
+    },
+    {
+      "name": "data/yaw/10.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "eda256fb-7115-4b44-888b-a8f3a18b3482",
+      "rows": 57574,
+      "queries": 2576,
+      "retained": 2509,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "aa10f535218b1cf50dc2aa404d2227e773f9e854ab354151ef720f2999eec3ca"
+    },
+    {
+      "name": "data/yaw/19.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "f3c5a119-3f1b-4421-9687-b3bb844e6a7a",
+      "rows": 38239,
+      "queries": 1610,
+      "retained": 1603,
+      "dt_quantiles": [
+        0.4999899999999986,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "9f4d1209e64ff889d4aae5fccabd737e775beb21ab63d9100365687e9cd7dc30"
+    },
+    {
+      "name": "data/yaw/17.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "f53cced7-7b93-4ad0-ab8b-bde7617b7e63",
+      "rows": 57620,
+      "queries": 2580,
+      "retained": 2517,
+      "dt_quantiles": [
+        0.4999899999999995,
+        0.5,
+        0.5009900000000016
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "cc9732a55f955e792c761c5567a71a77addad1cb665010faa13cba6896e0417c"
+    }
+  ],
+  "current_fields": [
+    "/gyro0/x",
+    "/gyro0/y",
+    "/gyro0/z",
+    "/gyro1/x",
+    "/gyro1/y",
+    "/gyro1/z",
+    "/gyro2/x",
+    "/gyro2/y",
+    "/gyro2/z",
+    "/gyro3/x",
+    "/gyro3/y",
+    "/gyro3/z",
+    "/accel0/x",
+    "/accel0/y",
+    "/accel0/z",
+    "/accel1/x",
+    "/accel1/y",
+    "/accel1/z",
+    "/accel2/x",
+    "/accel2/y",
+    "/accel2/z",
+    "/accel3/x",
+    "/accel3/y",
+    "/accel3/z",
+    "/q_yrp/yaw",
+    "/q_yrp/roll",
+    "/q_yrp/pitch",
+    "/dq_yrp/yaw_vel",
+    "/dq_yrp/roll_vel",
+    "/dq_yrp/pitch_vel",
+    "/q_DR/drive_wheel",
+    "/q_DR/reaction_wheel",
+    "/dq_DR/drive_wheel",
+    "/dq_DR/reaction_wheel",
+    "/ddq_DR/drive_wheel",
+    "/ddq_DR/reaction_wheel",
+    "/tau_DR_command/drive_wheel",
+    "/tau_DR_command/reaction_wheel",
+    "/setpoint/yaw",
+    "/setpoint/roll",
+    "/setpoint/pitch",
+    "/setpoint/yaw_rate",
+    "/setpoint/roll_rate",
+    "/setpoint/pitch_rate",
+    "/setpoint/driving_wheel_angle",
+    "/setpoint/driving_wheel_angular_velocity",
+    "/setpoint/balancing_wheel_angle",
+    "/setpoint/balancing_wheel_angular_velocity",
+    "battery/voltage"
+  ],
+  "current_dim": 49,
+  "plan_dim": 20,
+  "history_dim": 147,
+  "oracle_dim": 3,
+  "legal_information": "All non-Vicon current robot fields including sensors, setpoints and causal estimates; no time index or outcome label",
+  "units": "Vicon rotation used as quaternion; Vicon position unused because raw numeric units require further checking",
+  "future_control": "same10 recorded torque samples across requested horizon supplied to every arm as prescribed profile",
+  "limitations": [
+    "Vicon marker/body extrinsics not independently calibrated; this is an initial information screen",
+    "observed response under a prescribed recorded torque sequence is not a navigation return"
+  ],
+  "script_sha256": "5ffe8472c21f1ba52880c04c8010ff27b3f17a5b5da022265da5bc9025c30e67"
+}

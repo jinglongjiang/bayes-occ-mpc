@@ -1,0 +1,18 @@
+{
+  "scope": "unmodified GAMMA MAP vs backward difference CV, ETH only; not Bayesian full ablation or navigation",
+  "query_count": 3776,
+  "horizons_seconds": [
+    0.4,
+    4.4
+  ],
+  "ade_gamma_cv": [
+    0.5536490816946688,
+    0.6215909179236893
+  ],
+  "fde_gamma_cv": [
+    1.0913076066912009,
+    1.209255097154397
+  ],
+  "output_final_query_frame": 2099,
+  "complete_output": true
+}

@@ -1,0 +1,91 @@
+{
+  "dataset": "FROG",
+  "threshold": 0.6,
+  "matching_radius": 0.5,
+  "records": [
+    {
+      "record": "test_10-31.wp.json",
+      "counts_detections_falsepositives": {
+        "2": [
+          533,
+          186
+        ],
+        "4": [
+          1937,
+          734
+        ],
+        "10": [
+          4204,
+          1907
+        ],
+        "30": [
+          4470,
+          2173
+        ]
+      }
+    },
+    {
+      "record": "test_14-57.wp.json",
+      "counts_detections_falsepositives": {
+        "2": [
+          347,
+          101
+        ],
+        "4": [
+          1288,
+          321
+        ],
+        "10": [
+          2916,
+          830
+        ],
+        "30": [
+          3087,
+          1001
+        ]
+      }
+    },
+    {
+      "record": "test_15-53.wp.json",
+      "counts_detections_falsepositives": {
+        "2": [
+          658,
+          169
+        ],
+        "4": [
+          1867,
+          648
+        ],
+        "10": [
+          3445,
+          1327
+        ],
+        "30": [
+          3618,
+          1500
+        ]
+      }
+    },
+    {
+      "record": "test_16-41.wp.json",
+      "counts_detections_falsepositives": {
+        "2": [
+          486,
+          104
+        ],
+        "4": [
+          1446,
+          311
+        ],
+        "10": [
+          3175,
+          775
+        ],
+        "30": [
+          3335,
+          934
+        ]
+      }
+    }
+  ]
+}

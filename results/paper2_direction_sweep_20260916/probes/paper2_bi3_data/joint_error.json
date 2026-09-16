@@ -1,0 +1,147 @@
+{
+  "scope": "two-human joint 2s forecast error; not decision or online Bayesian approval",
+  "protocol": "same four-output nonlinear mean; UM1-5train,UM6bias/covcalibration,UM7-9test;matched2D marginals",
+  "covariance": [
+    [
+      0.14128508657196284,
+      0.005152020797696014,
+      0.0031885351235168852,
+      0.006111224620841779
+    ],
+    [
+      0.005152020797696014,
+      0.23009550830744382,
+      -0.0017107398561788,
+      0.06432490449258153
+    ],
+    [
+      0.0031885351235168852,
+      -0.0017107398561788,
+      0.17174972750279485,
+      -0.0461919926252048
+    ],
+    [
+      0.006111224620841779,
+      0.06432490449258153,
+      -0.0461919926252048,
+      0.21787889005662917
+    ]
+  ],
+  "correlation": [
+    [
+      1.0,
+      0.02857428526104127,
+      0.020468924117065357,
+      0.034831526552076386
+    ],
+    [
+      0.02857428526104127,
+      1.0,
+      -0.008605614249563071,
+      0.2872880109834323
+    ],
+    [
+      0.020468924117065357,
+      -0.008605614249563071,
+      1.0,
+      -0.2387872267784709
+    ],
+    [
+      0.034831526552076386,
+      0.2872880109834323,
+      -0.2387872267784709,
+      1.0
+    ]
+  ],
+  "rows": [
+    {
+      "session": 7,
+      "n": 922,
+      "nll": {
+        "gaussian_full": 2.0927781021294543,
+        "gaussian_block": 2.090378297983071,
+        "student_full": 1.9538516052204784,
+        "student_block_shared_scale": 1.9592945484191302,
+        "student_independent": 1.955775978547281
+      }
+    },
+    {
+      "session": 8,
+      "n": 1099,
+      "nll": {
+        "gaussian_full": 2.8728677630417434,
+        "gaussian_block": 2.864615802261069,
+        "student_full": 2.8758505344535634,
+        "student_block_shared_scale": 2.872641553172171,
+        "student_independent": 2.864687574785618
+      }
+    },
+    {
+      "session": 9,
+      "n": 876,
+      "nll": {
+        "gaussian_full": 2.406292751573204,
+        "gaussian_block": 2.3445495671858736,
+        "student_full": 2.4063718812711605,
+        "student_block_shared_scale": 2.354119095368341,
+        "student_independent": 2.3663038026780656
+      }
+    }
+  ],
+  "mean": {
+    "gaussian_full": 2.4573128722481337,
+    "gaussian_block": 2.433181222476671,
+    "student_full": 2.4120246736484012,
+    "student_block_shared_scale": 2.395351732319881,
+    "student_independent": 2.3955891186703218
+  },
+  "caveats": [
+    "all officialtrain domain, repeated exploratory use, only3test sessions",
+    "world-frame human displacements, actual logged controller, not candidate-action counterfactual",
+    "block multivariateStudent retains shared scale dependence; independentStudent removes it",
+    "static covariance fit is not recursive Bayesian posterior"
+  ],
+  "adaptive": {
+    "iw_full": {
+      "parameter": 64,
+      "validation_nll": 2.277044112241257,
+      "test_nll": [
+        2.037364307533031,
+        2.791760905169023,
+        2.3025487294324876
+      ],
+      "mean_nll": 2.377224647378181
+    },
+    "iw_block": {
+      "parameter": 64,
+      "validation_nll": 2.308218518446912,
+      "test_nll": [
+        2.039362354253194,
+        2.7644323074164143,
+        2.2922584987785446
+      ],
+      "mean_nll": 2.3653510534827173
+    },
+    "ewma_full": {
+      "parameter": 0.01,
+      "validation_nll": 2.274936513220081,
+      "test_nll": [
+        1.918661152586452,
+        2.8263841726095955,
+        2.350000648318275
+      ],
+      "mean_nll": 2.3650153245047743
+    },
+    "ewma_block": {
+      "parameter": 0.01,
+      "validation_nll": 2.307126769371223,
+      "test_nll": [
+        1.931322550728054,
+        2.810516039276882,
+        2.3339986355676827
+      ],
+      "mean_nll": 2.358612408524206
+    }
+  },
+  "adaptive_protocol": "known fixed residual mean; IW prior E[cov]=UM6cov;df=nu-3; completed2s residuals update every2.2s; all block versions retain shared Student scale;UM6 selects parameters"
+}

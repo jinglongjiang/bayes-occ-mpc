@@ -1,0 +1,50 @@
+{
+  "population": {
+    "train": 17608,
+    "test": 53226,
+    "train_groups": 1113,
+    "test_groups": 1098
+  },
+  "results": {
+    "Current": {
+      "relative_future_error": 0.7116377591759712,
+      "group_auc": 0.9728494176727371,
+      "group_brier": 0.01703100005104603,
+      "group_nll": 0.05789725849667644,
+      "ambiguous_fraction": 0.034137451621388044
+    },
+    "History": {
+      "relative_future_error": 0.5766293763439944,
+      "group_auc": 0.982147113913796,
+      "group_brier": 0.015805899093124926,
+      "group_nll": 0.052671378676255216,
+      "ambiguous_fraction": 0.03107503851501146
+    },
+    "Oracle": {
+      "relative_future_error": 0.7120092332250261
+    },
+    "HistoryOracle": {
+      "relative_future_error": 0.5767265150497377
+    },
+    "CV": {
+      "relative_future_error": 0.8001602604702822
+    }
+  },
+  "oracle_delta_block_equal": {
+    "Current": {
+      "mean": 0.00027596004850005543,
+      "ci95": [
+        -0.00032175640281222257,
+        0.0008904486088631676
+      ]
+    },
+    "History": {
+      "mean": 0.0001751014176155555,
+      "ci95": [
+        -0.00018697539263695637,
+        0.0005403689862433858
+      ]
+    }
+  },
+  "limitation": "Only two days in one venue. Relative-future prediction, not navigation or social cost. Group truth is Oracle only."
+}

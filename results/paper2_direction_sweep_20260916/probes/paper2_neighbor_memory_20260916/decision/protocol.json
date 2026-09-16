@@ -1,0 +1,35 @@
+{
+  "source_sha256": "5fee09073bba24bea43950272efdd7f269b7fe7c099c9d350aaca6ce9f2e231c",
+  "scope": "historical fixed query local decision diagnostic; NOT full navigation or new data",
+  "posterior": "frozen 128-node memory likelihood; scale from existing development selection",
+  "scale": 1.0,
+  "horizon_seconds": 2,
+  "collision_cost": 10,
+  "objective": "terminal goal distance + 10 * probability(any swept collision in 2s)",
+  "candidates": "same original holonomic MPC projected speed/direction lattice for every arm",
+  "arms": [
+    "CV",
+    "MAP",
+    "Mean",
+    "ScalarCV",
+    "ScalarMean",
+    "Moment",
+    "FULL",
+    "OracleFocal",
+    "OracleAll"
+  ],
+  "scalar_grid": [
+    0,
+    0.1,
+    0.2,
+    0.4,
+    0.8
+  ],
+  "moment": "256 full joint-time Gaussian samples, same mean/cov as FULL",
+  "gate": "FULL must beat MAP, Moment and development-tuned scalar on actual local cost; fresh confirmation still required",
+  "caveats": [
+    "one focal target belief; remaining people use same legal CV memory",
+    "human futures independent of robot in original environment",
+    "no PPO, no claim about unicycle closed loop"
+  ]
+}

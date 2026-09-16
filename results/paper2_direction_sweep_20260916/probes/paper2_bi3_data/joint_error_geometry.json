@@ -1,0 +1,148 @@
+{
+  "scope": "two-human joint 2s forecast error; not decision or online Bayesian approval",
+  "protocol": "same four-output nonlinear mean; UM1-5train,UM6bias/covcalibration,UM7-9test;matched2D marginals",
+  "covariance": [
+    [
+      0.19851198921600877,
+      -0.037188583535101655,
+      0.03656179625513872,
+      0.0045789554960680235
+    ],
+    [
+      -0.037188583535101655,
+      0.16395631041222,
+      -0.018522134249032363,
+      0.0352727284708228
+    ],
+    [
+      0.03656179625513872,
+      -0.018522134249032363,
+      0.18838706746865144,
+      -0.009065518211546348
+    ],
+    [
+      0.0045789554960680235,
+      0.0352727284708228,
+      -0.009065518211546348,
+      0.20845037542922443
+    ]
+  ],
+  "correlation": [
+    [
+      1.0,
+      -0.2061352185229347,
+      0.1890638993067441,
+      0.022509803875204085
+    ],
+    [
+      -0.2061352185229347,
+      1.0,
+      -0.10539048824673765,
+      0.1907979244635258
+    ],
+    [
+      0.1890638993067441,
+      -0.10539048824673765,
+      1.0,
+      -0.045747329899774966
+    ],
+    [
+      0.022509803875204085,
+      0.1907979244635258,
+      -0.045747329899774966,
+      1.0
+    ]
+  ],
+  "rows": [
+    {
+      "session": 7,
+      "n": 922,
+      "nll": {
+        "gaussian_full": 1.9946046295326203,
+        "gaussian_block": 2.0099377276488615,
+        "student_full": 1.8609449934680613,
+        "student_block_shared_scale": 1.8738780855758028,
+        "student_independent": 1.8813251743806358
+      }
+    },
+    {
+      "session": 8,
+      "n": 1099,
+      "nll": {
+        "gaussian_full": 3.167354820877075,
+        "gaussian_block": 3.0903961151919943,
+        "student_full": 3.1598183549919074,
+        "student_block_shared_scale": 3.107436705949374,
+        "student_independent": 3.104661467916025
+      }
+    },
+    {
+      "session": 9,
+      "n": 876,
+      "nll": {
+        "gaussian_full": 2.4108595172415885,
+        "gaussian_block": 2.360825149523469,
+        "student_full": 2.37470824855413,
+        "student_block_shared_scale": 2.337347693429243,
+        "student_independent": 2.353953892488701
+      }
+    }
+  ],
+  "mean": {
+    "gaussian_full": 2.5242729892170948,
+    "gaussian_block": 2.487052997454775,
+    "student_full": 2.4651571990047,
+    "student_block_shared_scale": 2.4395541616514733,
+    "student_independent": 2.4466468449284537
+  },
+  "caveats": [
+    "all officialtrain domain, repeated exploratory use, only3test sessions",
+    "world-frame human displacements, actual logged controller, not candidate-action counterfactual",
+    "block multivariateStudent retains shared scale dependence; independentStudent removes it",
+    "static covariance fit is not recursive Bayesian posterior"
+  ],
+  "adaptive": {
+    "iw_full": {
+      "parameter": 64,
+      "validation_nll": 2.305568567086536,
+      "test_nll": [
+        1.9174038358130978,
+        2.9574391814657806,
+        2.3346213333049413
+      ],
+      "mean_nll": 2.4031547835279397
+    },
+    "iw_block": {
+      "parameter": 64,
+      "validation_nll": 2.342014691642703,
+      "test_nll": [
+        1.9551072250596178,
+        2.9326292334292914,
+        2.3069852334211465
+      ],
+      "mean_nll": 2.3982405639700186
+    },
+    "ewma_full": {
+      "parameter": 0.01,
+      "validation_nll": 2.305829634239042,
+      "test_nll": [
+        1.8212445064975673,
+        3.025897700635061,
+        2.3315275242968414
+      ],
+      "mean_nll": 2.3928899104764896
+    },
+    "ewma_block": {
+      "parameter": 0.01,
+      "validation_nll": 2.342879390084427,
+      "test_nll": [
+        1.8561384304808897,
+        2.9974027441836824,
+        2.312484013107092
+      ],
+      "mean_nll": 2.3886750625905546
+    }
+  },
+  "adaptive_protocol": "known fixed residual mean; IW prior E[cov]=UM6cov;df=nu-3; completed2s residuals update every2.2s; all block versions retain shared Student scale;UM6 selects parameters",
+  "geometry_control": "rotate both human errors into current human1-to-human2 axis; current geometry only; determinant1 preserves density units; means unchanged before calibration"
+}

@@ -1,0 +1,272 @@
+{
+  "selection": "all30 yaw trials on hardware2, three surfaces each10; UUID order6train2val2test; no outcome selection",
+  "source": "https://zenodo.org/records/18260659",
+  "records": [
+    {
+      "name": "data/yaw/43.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "365f0e2b-2e2a-4daa-9d71-638919c36b40"
+    },
+    {
+      "name": "data/yaw/47.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "61773510-bed6-4511-91ce-0fe4452f54eb"
+    },
+    {
+      "name": "data/yaw/48.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "62f43326-88e3-462d-a202-5018119abd2e"
+    },
+    {
+      "name": "data/yaw/41.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "7a995aab-b0fb-4cb3-ab63-1c9316c24eb5"
+    },
+    {
+      "name": "data/yaw/40.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c23fadd2-f8ef-4201-8950-a06a8acb1eea"
+    },
+    {
+      "name": "data/yaw/46.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c78aeb60-479c-4f19-8082-1d26c71f02ff"
+    },
+    {
+      "name": "data/yaw/45.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "c9e68907-c193-4ec9-9b8a-455a0c476881"
+    },
+    {
+      "name": "data/yaw/44.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "d6585a44-c292-4598-84a3-9b42ffd4b49a"
+    },
+    {
+      "name": "data/yaw/49.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "e611ef8b-55a4-4c2e-adb4-bd072d1d7102"
+    },
+    {
+      "name": "data/yaw/42.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "ecd1b281-2165-4f7c-8b89-13a9b5de16e5"
+    },
+    {
+      "name": "data/yaw/1.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "17d2cb5f-c7a6-4afd-ac6f-0fa8b1d71b2e"
+    },
+    {
+      "name": "data/yaw/6.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "1d1e27f1-ff25-4d57-9db8-abbd028a9930"
+    },
+    {
+      "name": "data/yaw/9.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "2baad754-bd4d-4ec7-be3b-098db18183f5"
+    },
+    {
+      "name": "data/yaw/5.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "2dee5abc-bdfd-4605-b8bb-5703acd50c52"
+    },
+    {
+      "name": "data/yaw/8.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "3e2f97af-94ba-4d09-b2d6-c83dde658bdf"
+    },
+    {
+      "name": "data/yaw/7.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "3e59795a-cf22-4b05-bcb5-dddb8352d4a1"
+    },
+    {
+      "name": "data/yaw/0.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "9bd6e95b-ab77-4774-8093-4d4afedfea88"
+    },
+    {
+      "name": "data/yaw/4.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "d31438c2-3b18-4706-bf2a-eff539f3a21f"
+    },
+    {
+      "name": "data/yaw/3.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "dfc646b5-eb9e-4084-b233-6364fb333a05"
+    },
+    {
+      "name": "data/yaw/2.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "concrete",
+      "uuid": "fc6930c1-bbe3-4ec9-8e8e-f9d84059a6c9"
+    },
+    {
+      "name": "data/yaw/16.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "19ab7d3b-cb83-42eb-a6e8-30c84d7c2e30"
+    },
+    {
+      "name": "data/yaw/14.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "4f8077bc-7dc1-4598-b85e-f31ccddd08cc"
+    },
+    {
+      "name": "data/yaw/15.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "7d9b800f-7536-4a06-b5a0-71cd9e7df6a5"
+    },
+    {
+      "name": "data/yaw/11.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "87323f52-e8c5-48b4-94bd-3e0781f61d8a"
+    },
+    {
+      "name": "data/yaw/18.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "9f6f50f1-0ddb-4738-b76a-94b84c59f742"
+    },
+    {
+      "name": "data/yaw/12.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "b9ee4d78-4569-45d9-83e9-2676382d5aee"
+    },
+    {
+      "name": "data/yaw/13.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "cbc4f3d0-d921-4a7c-95c3-108cd6d36ca0"
+    },
+    {
+      "name": "data/yaw/10.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "eda256fb-7115-4b44-888b-a8f3a18b3482"
+    },
+    {
+      "name": "data/yaw/19.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "f3c5a119-3f1b-4421-9687-b3bb844e6a7a"
+    },
+    {
+      "name": "data/yaw/17.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "gray_felt",
+      "uuid": "f53cced7-7b93-4ad0-ab8b-bde7617b7e63"
+    }
+  ],
+  "oracle_variable": "surface",
+  "oracle_categories": [
+    "black_pvc",
+    "concrete",
+    "gray_felt"
+  ],
+  "horizon_seconds": 0.5,
+  "target": "0.5s Vicon relative rotation vector",
+  "input_history_seconds": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "sample_interval": 0.02,
+  "arms": [
+    "Current",
+    "History",
+    "History+Oracle surface"
+  ],
+  "future_control": "same10 recorded torque samples every0.05s supplied as prescribed control, not future observation",
+  "model": "same padded128x128 MLP, three seeds2407/4807/7207,3000updates,episode-balanced128batch,Adam.001",
+  "selection_gate": "validation record-equal RMSE checkpoint selection",
+  "gate": "Oracle >=5% RMSE reduction versus History and paired whole-record/seed bootstrap CI lower>0",
+  "preprocessing": "train-only normalization, as-of history, current enabled and abs roll/pitch<.6,2s after activation",
+  "target_validity": "actual interval within .005s, valid endpoint quaternions, no future failure exclusion",
+  "limits": "known surfaces on one robot, not novel surface generalization, no within-episode terrain transition, no Bayesian/navigation approval"
+}

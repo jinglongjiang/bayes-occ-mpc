@@ -1,0 +1,30 @@
+{
+  "source": "fixed final 20480-step PPO checkpoints, no selection",
+  "seeds": [
+    2407,
+    4807,
+    7207
+  ],
+  "arms": [
+    "no_belief",
+    "map",
+    "full"
+  ],
+  "scenarios": [
+    "baseline_circle",
+    "baseline_square",
+    "dense_circle",
+    "dense_square",
+    "large_circle",
+    "large_square"
+  ],
+  "cases_per_cell": 100,
+  "profile": "heldout_nonstationary",
+  "policy": "deterministic mean",
+  "training": false,
+  "checkpoint_selection": false,
+  "primary": "equal-weight five high-density held-out scenarios",
+  "gate": "FULL success >= each baseline+3pp, no collision increase, return positive in >=2/3 seeds and paired CI lower>0",
+  "limitation": "three RL seeds share an IL initialization; positive pilot needs new IL seeds and independent confirmation",
+  "script_sha256": "1427bb71a9a17565b3298e4681d8a8d639a5564c1af9429fca5ec6bd33e3046b"
+}

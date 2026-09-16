@@ -1,0 +1,79 @@
+{
+  "selected_sd": 0.1,
+  "validation_scores": [
+    [
+      8.948672658002819e-07,
+      0.1
+    ],
+    [
+      0.0002487294436314706,
+      0.2
+    ],
+    [
+      0.007852042414480708,
+      0.4
+    ],
+    [
+      0.09275421689067567,
+      0.8
+    ],
+    [
+      0.3094731101326644,
+      1.6
+    ]
+  ],
+  "train_queries": 816,
+  "test_queries": 704,
+  "test_ambiguous": 0,
+  "records": [
+    {
+      "recording": "10-31",
+      "n": 180,
+      "ambiguous": 0,
+      "map_correct": 1.0,
+      "true_probability": 1.0,
+      "full_error": 0.8110269885106574,
+      "map_error": 0.8110269885106574,
+      "fragment_oracle_error": 0.8110269885106574,
+      "ambiguous_full_error": null,
+      "ambiguous_map_error": null
+    },
+    {
+      "recording": "14-57",
+      "n": 179,
+      "ambiguous": 0,
+      "map_correct": 1.0,
+      "true_probability": 0.999999999999993,
+      "full_error": 0.9312563876248984,
+      "map_error": 0.9312563876248994,
+      "fragment_oracle_error": 0.9312563876248994,
+      "ambiguous_full_error": null,
+      "ambiguous_map_error": null
+    },
+    {
+      "recording": "15-53",
+      "n": 198,
+      "ambiguous": 0,
+      "map_correct": 1.0,
+      "true_probability": 0.9999999999866448,
+      "full_error": 0.5951269877083636,
+      "map_error": 0.5951269877093281,
+      "fragment_oracle_error": 0.5951269877093281,
+      "ambiguous_full_error": null,
+      "ambiguous_map_error": null
+    },
+    {
+      "recording": "16-41",
+      "n": 147,
+      "ambiguous": 0,
+      "map_correct": 1.0,
+      "true_probability": 0.9999999999999992,
+      "full_error": 0.8282691611203424,
+      "map_error": 0.8282691611203424,
+      "fragment_oracle_error": 0.8282691611203424,
+      "ambiguous_full_error": null,
+      "ambiguous_map_error": null
+    }
+  ],
+  "status": "diagnostic_only_no_navigation_or_novelty_claim"
+}

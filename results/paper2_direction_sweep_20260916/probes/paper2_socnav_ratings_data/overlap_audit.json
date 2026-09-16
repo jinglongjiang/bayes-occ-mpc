@@ -1,0 +1,47 @@
+{
+  "all_ratings": {
+    "raters": 49,
+    "answers": 6481,
+    "answers_range": [
+      50,
+      302
+    ],
+    "invalid": 0,
+    "unique_items": 5588,
+    "multi_rater_items": 51,
+    "multi_rater_noncontrol": 35,
+    "repeated_pairs": 245,
+    "repeat_mae": 0.15694507081332512,
+    "noncontrol_between_mae": 0.2134602097447969,
+    "overlap_rater_hist": {
+      "49": 6,
+      "43": 1,
+      "39": 1,
+      "38": 1,
+      "36": 1,
+      "35": 3,
+      "34": 2,
+      "2": 35,
+      "6": 1
+    }
+  },
+  "selected_ratings": {
+    "raters": 22,
+    "answers": 4402,
+    "answers_range": [
+      100,
+      302
+    ],
+    "invalid": 0,
+    "unique_items": 3958,
+    "multi_rater_items": 34,
+    "multi_rater_noncontrol": 19,
+    "repeated_pairs": 110,
+    "repeat_mae": 0.1391681584835663,
+    "noncontrol_between_mae": 0.21768840645577306,
+    "overlap_rater_hist": {
+      "22": 15,
+      "2": 19
+    }
+  }
+}

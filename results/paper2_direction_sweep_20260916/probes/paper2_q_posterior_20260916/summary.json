@@ -1,0 +1,122 @@
+{
+  "complete_episodes": 62,
+  "training_transitions": 2956,
+  "partial_excluded": 44,
+  "calibration_layouts": 10,
+  "test_layouts": 40,
+  "precision": 0.001,
+  "choices": [
+    [
+      0.025676704387936768,
+      0.001
+    ],
+    [
+      0.025793534963668013,
+      0.01
+    ],
+    [
+      0.026176100797621057,
+      0.1
+    ],
+    [
+      0.02639717774369289,
+      1.0
+    ],
+    [
+      0.02631351093142036,
+      10.0
+    ],
+    [
+      0.026306823015763547,
+      100.0
+    ]
+  ],
+  "likelihood_variance": 0.0017507131184354354,
+  "constant_bound": 0.026516892996953593,
+  "posterior_multiplier": 7.925629425165574,
+  "uncalibrated_claim": "Not assumed calibrated or Bayes-optimal",
+  "test_positive_error_coverage_nominal": 0.71625,
+  "test_positive_error_coverage_calibrated": 0.95375,
+  "arms": {
+    "original_q1": {
+      "n": 80,
+      "changed": 80,
+      "mean_gain": -0.016780622200691982,
+      "mean_regret": 0.04229891139913948,
+      "harm_over_01": 8,
+      "benefit_over_01": 6
+    },
+    "original_min": {
+      "n": 80,
+      "changed": 79,
+      "mean_gain": -0.016441453044541796,
+      "mean_regret": 0.04195974224298929,
+      "harm_over_01": 9,
+      "benefit_over_01": 7
+    },
+    "posterior_mean": {
+      "n": 80,
+      "changed": 80,
+      "mean_gain": -0.0036211797577961912,
+      "mean_regret": 0.02913946895624369,
+      "harm_over_01": 8,
+      "benefit_over_01": 9
+    },
+    "constant_bound": {
+      "n": 80,
+      "changed": 8,
+      "mean_gain": -0.00036244769218353456,
+      "mean_regret": 0.025880736890631036,
+      "harm_over_01": 2,
+      "benefit_over_01": 0
+    },
+    "calibrated_posterior": {
+      "n": 80,
+      "changed": 1,
+      "mean_gain": 2.415040960407344e-07,
+      "mean_regret": 0.02551804769435146,
+      "harm_over_01": 0,
+      "benefit_over_01": 0
+    },
+    "nominal_posterior": {
+      "n": 80,
+      "changed": 66,
+      "mean_gain": -0.0010779034414470639,
+      "mean_regret": 0.026596192639894562,
+      "harm_over_01": 6,
+      "benefit_over_01": 7
+    },
+    "baseline": {
+      "n": 80,
+      "changed": 0,
+      "mean_gain": 0.0,
+      "mean_regret": 0.025518289198447498,
+      "harm_over_01": 0,
+      "benefit_over_01": 0
+    }
+  },
+  "paired": {
+    "baseline": {
+      "mean": 2.415040960407344e-07,
+      "ci95": [
+        0.0,
+        7.245122881222033e-07
+      ]
+    },
+    "posterior_mean": {
+      "mean": 0.003621421261892232,
+      "ci95": [
+        -0.001298815891550564,
+        0.009805727798210732
+      ]
+    },
+    "constant_bound": {
+      "mean": 0.0003626891962795753,
+      "ci95": [
+        -2.0682139145373686e-05,
+        0.0009669930408690077
+      ]
+    }
+  },
+  "status": "screen_only_not_approved"
+}

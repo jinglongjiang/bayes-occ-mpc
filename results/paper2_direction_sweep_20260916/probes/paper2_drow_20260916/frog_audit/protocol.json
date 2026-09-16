@@ -1,0 +1,17 @@
+{
+  "dataset": "FROG original h5",
+  "weights": "0c8404c99f2bc52ae9eeff407a0936b755f4d7961e1e3fc706f0a38f94c91aaf",
+  "calibration": "11-36 and 12-43 complete recordings",
+  "test": [
+    "10-31",
+    "14-57",
+    "15-53",
+    "16-41"
+  ],
+  "sampling": "first frame then >=1 second since previous selected frame, reset on recording gap",
+  "angles": "linspace(-pi/2,pi/2,720,endpoint=False), official FROG DataLoader",
+  "detector": "official pretrained DROW3, strict load, upstream cutout and NMS",
+  "threshold": "calibration micro F1 grid .1 to .9",
+  "matching_radius": 0.5,
+  "scope": "diagnostic conditional pair covariance; not online health inference or navigation"
+}

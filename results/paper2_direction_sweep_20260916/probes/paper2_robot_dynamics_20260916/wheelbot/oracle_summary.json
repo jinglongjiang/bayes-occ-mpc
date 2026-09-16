@@ -1,0 +1,859 @@
+{
+  "record_counts": {
+    "train": 18,
+    "val": 6,
+    "test": 6
+  },
+  "record_equal_rmse": {
+    "Current": 0.03086200346135431,
+    "History": 0.03142058114624686,
+    "Oracle": 0.032185194392999016
+  },
+  "oracle_relative_improvement": -0.024334790091668612,
+  "history_minus_oracle_ci": [
+    -0.00290228557617714,
+    0.0008499494016480935
+  ],
+  "predictive_gate_passed": false,
+  "status": "predictive_oracle_only_no_bayesian_or_navigation_approval",
+  "results": [
+    {
+      "seed": 2407,
+      "arm": "Current",
+      "best_step": 2750,
+      "validation_rmse": 0.02185186743736267,
+      "test_rmse": 0.031053175684064627,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04833802580833435
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.011591990478336811
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.00958535447716713
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.013863438740372658
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.018382934853434563
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08455730974674225
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05748315155506134
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.02449997328221798
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.024249067530035973
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.023344354704022408
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.02380777709186077
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.022404251620173454
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.022418104112148285
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.022790556773543358
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.02260732091963291
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.022009430453181267
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.022139497101306915
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.02185186743736267
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.022706374526023865
+        }
+      ]
+    },
+    {
+      "seed": 2407,
+      "arm": "History",
+      "best_step": 2500,
+      "validation_rmse": 0.02206624113023281,
+      "test_rmse": 0.03143199533224106,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04108405485749245
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.014258626848459244
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.011312439106404781
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.015239869244396687
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.02062639221549034
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08607058972120285
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.057891976088285446
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.025106072425842285
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.024362212046980858
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.025153080001473427
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.02382614277303219
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.02388751693069935
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.022734684869647026
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.023327430710196495
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.02322869934141636
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.02271239273250103
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.02206624113023281
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.022569844499230385
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.022397324442863464
+        }
+      ]
+    },
+    {
+      "seed": 2407,
+      "arm": "Oracle",
+      "best_step": 2750,
+      "validation_rmse": 0.022400612011551857,
+      "test_rmse": 0.031176418997347355,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.044706668704748154
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.01453567948192358
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.011242339387536049
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.014937602914869785
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.020510904490947723
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08112531900405884
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05788634344935417
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.025139549747109413
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.02426021732389927
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.0251806378364563
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.024281950667500496
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.023540757596492767
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.02278243750333786
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.023226914927363396
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.023442836478352547
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.022967638447880745
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.022723214700818062
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.022400612011551857
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.022895129397511482
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "Current",
+      "best_step": 2750,
+      "validation_rmse": 0.020995819941163063,
+      "test_rmse": 0.030904462095350027,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.046327292919158936
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.0110579589381814
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.009854489006102085
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.013878042809665203
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.017872203141450882
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08643678575754166
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.057604845613241196
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.025897378101944923
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.023365234956145287
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.02318463660776615
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.022593548521399498
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.022199643775820732
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.02214023284614086
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.022243404760956764
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.021209098398685455
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.021516792476177216
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.021473318338394165
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.020995819941163063
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.021762603893876076
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "History",
+      "best_step": 2750,
+      "validation_rmse": 0.02196657657623291,
+      "test_rmse": 0.03114063401396076,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04096633195877075
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.01314796507358551
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.011278538964688778
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.015380775555968285
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.01951376534998417
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08655642718076706
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05723932385444641
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.02567829191684723
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.023691460490226746
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.02348029427230358
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.022714436054229736
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.023214884102344513
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.022150268778204918
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.02323581464588642
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.0221040491014719
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.02254110760986805
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.022120729088783264
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.02196657657623291
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.02197776921093464
+        }
+      ]
+    },
+    {
+      "seed": 4807,
+      "arm": "Oracle",
+      "best_step": 2500,
+      "validation_rmse": 0.02197863720357418,
+      "test_rmse": 0.03348247132574519,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04808080196380615
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.015681281685829163
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.010986887849867344
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.014925014227628708
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.02272743545472622
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08849340677261353
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05724646523594856
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.025613032281398773
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.02366659604012966
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.023213259875774384
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.023011602461338043
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.02292768657207489
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.022350655868649483
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.0230206698179245
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.022120648995041847
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.0231431033462286
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.02197863720357418
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.022287392988801003
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.02261131815612316
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "Current",
+      "best_step": 2750,
+      "validation_rmse": 0.02131795324385166,
+      "test_rmse": 0.030628372604648273,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04371900483965874
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.010882377624511719
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.009886715561151505
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.014101648703217506
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.016782471910119057
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08839801698923111
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05669935420155525
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.02478434145450592
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.02351464331150055
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.02428627759218216
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.02258487045764923
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.021752553060650826
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.022881483659148216
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.023223737254738808
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.022912589833140373
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.021956585347652435
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.02152984030544758
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.02131795324385166
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.02217644453048706
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "History",
+      "best_step": 2750,
+      "validation_rmse": 0.021765211597085,
+      "test_rmse": 0.03168911409253875,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.04586112126708031
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.012985341250896454
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.01104323286563158
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.014716966077685356
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.018698837608098984
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.08682918548583984
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05683201923966408
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.02541869878768921
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.024475807324051857
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.025177404284477234
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.023160038515925407
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.022790180519223213
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.02320840209722519
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.024482911452651024
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.023124463856220245
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.022339945659041405
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.022167125716805458
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.021765211597085
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.022356271743774414
+        }
+      ]
+    },
+    {
+      "seed": 7207,
+      "arm": "Oracle",
+      "best_step": 2750,
+      "validation_rmse": 0.022179512307047844,
+      "test_rmse": 0.0318966928559045,
+      "records": [
+        {
+          "record": 8,
+          "name": "data/velocity/6.csv",
+          "rmse": 0.045780498534440994
+        },
+        {
+          "record": 9,
+          "name": "data/velocity/5.csv",
+          "rmse": 0.011632678098976612
+        },
+        {
+          "record": 18,
+          "name": "data/velocity/21.csv",
+          "rmse": 0.011377767659723759
+        },
+        {
+          "record": 19,
+          "name": "data/velocity/22.csv",
+          "rmse": 0.01451962161809206
+        },
+        {
+          "record": 28,
+          "name": "data/velocity/15.csv",
+          "rmse": 0.017178162932395935
+        },
+        {
+          "record": 29,
+          "name": "data/velocity/19.csv",
+          "rmse": 0.09089142829179764
+        }
+      ],
+      "curve": [
+        {
+          "step": 0,
+          "validation_record_equal_rmse": 0.05684087797999382
+        },
+        {
+          "step": 250,
+          "validation_record_equal_rmse": 0.025417404249310493
+        },
+        {
+          "step": 500,
+          "validation_record_equal_rmse": 0.024384895339608192
+        },
+        {
+          "step": 750,
+          "validation_record_equal_rmse": 0.025737339630723
+        },
+        {
+          "step": 1000,
+          "validation_record_equal_rmse": 0.023869043216109276
+        },
+        {
+          "step": 1250,
+          "validation_record_equal_rmse": 0.02330791763961315
+        },
+        {
+          "step": 1500,
+          "validation_record_equal_rmse": 0.023070821538567543
+        },
+        {
+          "step": 1750,
+          "validation_record_equal_rmse": 0.024388378486037254
+        },
+        {
+          "step": 2000,
+          "validation_record_equal_rmse": 0.02292914129793644
+        },
+        {
+          "step": 2250,
+          "validation_record_equal_rmse": 0.022888481616973877
+        },
+        {
+          "step": 2500,
+          "validation_record_equal_rmse": 0.02254333905875683
+        },
+        {
+          "step": 2750,
+          "validation_record_equal_rmse": 0.022179512307047844
+        },
+        {
+          "step": 3000,
+          "validation_record_equal_rmse": 0.022893795743584633
+        }
+      ]
+    }
+  ],
+  "script_sha256": "e089fbe10cc18587669df4ed4598e475d58e5fafe777f28e70994985fb8b1da7"
+}

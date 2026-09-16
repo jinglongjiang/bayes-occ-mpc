@@ -1,0 +1,607 @@
+{
+  "records": [
+    {
+      "name": "data/velocity/0.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2c13de31-07b9-41c4-926e-50bab369e32f",
+      "rows": 15305,
+      "queries": 1003,
+      "retained": 826,
+      "dt_quantiles": [
+        0.09997999999999863,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "cec48d6d7d8404ff74e855a6f02dbc8f0bdea5f703552d3752df694f3da487dc"
+    },
+    {
+      "name": "data/velocity/2.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2d64e7c7-5a78-4270-a405-abb4e6f4a8ea",
+      "rows": 17450,
+      "queries": 1182,
+      "retained": 1018,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "2c35dff5bec2ecbb8b9c06e87cb28c6d453c53fabeec2e0fb8612ab441cf5c58"
+    },
+    {
+      "name": "data/velocity/4.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "2e5a8ed6-ddf8-44b3-8d00-91b002749bd0",
+      "rows": 9169,
+      "queries": 387,
+      "retained": 387,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "aee00da4ac37120a8aae6f77de4ab124fb02e711a4ccdea92b587de276ec5711"
+    },
+    {
+      "name": "data/velocity/3.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "57674647-746c-4ff2-909b-1529fcfcdaf1",
+      "rows": 10669,
+      "queries": 506,
+      "retained": 506,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "440ed638b177a21c3fc8323c1b8502062eb5bde7113c21e6499685140066c2cf"
+    },
+    {
+      "name": "data/velocity/8.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "5a4f6cba-70f5-42a1-8940-77d8a2316916",
+      "rows": 26872,
+      "queries": 2125,
+      "retained": 1951,
+      "dt_quantiles": [
+        0.09900999999999982,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "7984ef634ee983d8bb83b4215cea871d94ff0e08294224954cf1436a04705a62"
+    },
+    {
+      "name": "data/velocity/9.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "80ceaae8-bcce-4792-ad82-766a60ee9930",
+      "rows": 10735,
+      "queries": 506,
+      "retained": 506,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "079701d398872821c630e76ffd40be23a15ea3d87d8e44f534fe5ceb4f424a90"
+    },
+    {
+      "name": "data/velocity/7.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "85658514-320d-4d80-82de-24fbe6c83b9c",
+      "rows": 25114,
+      "queries": 1949,
+      "retained": 1774,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "4ce4ad790990aa5cf4440d1f2edc65f4e6e5a09f8aff5fe6b28b1f0ee7ea4ccb"
+    },
+    {
+      "name": "data/velocity/1.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "93758de0-b473-4552-83b3-9b0030f5db96",
+      "rows": 16658,
+      "queries": 1104,
+      "retained": 929,
+      "dt_quantiles": [
+        0.09998999999999825,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "756a450659d88b55a1ba06de89b4aa0c3a7062d1773bcb963078411a5fcbb10c"
+    },
+    {
+      "name": "data/velocity/6.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "c8fe2dda-16bb-49f0-8e33-9a2fad13d332",
+      "rows": 25145,
+      "queries": 1954,
+      "retained": 1789,
+      "dt_quantiles": [
+        0.0999800000000004,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "8f6c8b106141726b909922f09c826e70c349ce6d027930a0501c9abdf23c3970"
+    },
+    {
+      "name": "data/velocity/5.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-1",
+      "surface": "black_pvc",
+      "uuid": "cfce5ad8-14e2-40f8-b267-02669a28dcf5",
+      "rows": 24807,
+      "queries": 1948,
+      "retained": 1771,
+      "dt_quantiles": [
+        0.09997999999999951,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "26f3216312a980f29911a7fe0c36bd3ec4f98fa9d6e44e79bca61ca9f330063a"
+    },
+    {
+      "name": "data/velocity/26.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "035e272c-b643-408b-bd49-94790e880cc9",
+      "rows": 18358,
+      "queries": 1268,
+      "retained": 1096,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "b831d747a404d62e1f1e252518faea3c4f51a2069f8245eca40412fb3770cb1e"
+    },
+    {
+      "name": "data/velocity/24.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "13ca7a19-dcac-40ec-aae7-8a7d4b3238c5",
+      "rows": 11479,
+      "queries": 579,
+      "retained": 579,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 27,
+      "sha256": "c89cc7a7e9bc4472fb59a519c668b0242c06ed2e64fa70ec2cbd6b7dee022566"
+    },
+    {
+      "name": "data/velocity/27.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "34ad9f03-e2b1-4398-9859-45ca860e4f7a",
+      "rows": 17686,
+      "queries": 1200,
+      "retained": 1026,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 29,
+      "sha256": "0f6c2de0dd852120e8b097ae7fe7e4128270074ea1f2dcf14f6987180ec00d3d"
+    },
+    {
+      "name": "data/velocity/29.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "52e0b311-dc0e-48ab-8e92-f67b2222f96a",
+      "rows": 11335,
+      "queries": 570,
+      "retained": 570,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "113430933c93add75b1a314f5f8c1f0a1cace936b3e9507c32c65cd3b860b183"
+    },
+    {
+      "name": "data/velocity/20.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "6fbf663e-bea1-494c-9271-497b12f9c70e",
+      "rows": 25200,
+      "queries": 1963,
+      "retained": 1789,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "385d075f524ec5ffd166403e25104e2030ab86cd6e2df6868135712dcd5ac773"
+    },
+    {
+      "name": "data/velocity/28.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "983410b8-a575-4ee1-b88a-044261b30f17",
+      "rows": 20328,
+      "queries": 1466,
+      "retained": 1293,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "35ee54ea1ee2847ef77c1e5066b570de7657d22fafdd1bf5d06cf54cdaa06ac7"
+    },
+    {
+      "name": "data/velocity/25.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "a698f17c-e99a-4935-8b58-6b50bcef9871",
+      "rows": 17661,
+      "queries": 1202,
+      "retained": 1026,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "ea29740689e4f7242e9b1f2c19d24b70f3cd89e8e9073eb985a15b27d97f4636"
+    },
+    {
+      "name": "data/velocity/23.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "ba3904f6-e950-4f57-9276-d7416c2d8343",
+      "rows": 27836,
+      "queries": 2214,
+      "retained": 2039,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "11b0fe3f347d1fe67f6837655480f79ca6ea91fb165940e7f5d1f6b3973d27de"
+    },
+    {
+      "name": "data/velocity/21.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "db800983-41f0-4d14-bafb-54a01671c298",
+      "rows": 27918,
+      "queries": 2225,
+      "retained": 2052,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "0c1eede80e469a8b1669709d12f015d271df187e88c584784874aab73fd36ca5"
+    },
+    {
+      "name": "data/velocity/22.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-2",
+      "surface": "black_pvc",
+      "uuid": "f7fa5231-c4af-4f0c-9738-28bb940c671d",
+      "rows": 28082,
+      "queries": 2243,
+      "retained": 2069,
+      "dt_quantiles": [
+        0.09999000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "7285fbfad3c387381c8f21a55ef72d730d096da13be82e6f78f3fd7724d53e75"
+    },
+    {
+      "name": "data/velocity/17.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "0522b0be-dc5c-403a-8d11-2a17c8d3137b",
+      "rows": 17454,
+      "queries": 1182,
+      "retained": 1010,
+      "dt_quantiles": [
+        0.09899999999999931,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "673e5cbbbfa8f53e730824b87a1c45bdabc6bb0920e58dfbfc1ca056d6898baf"
+    },
+    {
+      "name": "data/velocity/12.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "0b80d002-596c-42b5-8698-fe2fbea0644f",
+      "rows": 24968,
+      "queries": 1935,
+      "retained": 1760,
+      "dt_quantiles": [
+        0.09901000000000071,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "a61d1e33c7aaf29a65125171fbc6c10ee03e9adb4417154ca0bd1fa130f06103"
+    },
+    {
+      "name": "data/velocity/11.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "2bf5c556-4c37-480f-9cef-f7ca1ba0134b",
+      "rows": 25036,
+      "queries": 1940,
+      "retained": 1762,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "146ca8548b4292a39c27d8ca25512128acd98503be5a978afb3e71408f852cd7"
+    },
+    {
+      "name": "data/velocity/18.csv",
+      "split": "train",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "2f9a5927-16b2-4cdf-b729-c5f3a00c15f8",
+      "rows": 10189,
+      "queries": 458,
+      "retained": 458,
+      "dt_quantiles": [
+        0.09997999999999863,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "21e806a6d1a5b17ee49953ee30c465fc1c9b1e5851814171c8d0424e72a3082e"
+    },
+    {
+      "name": "data/velocity/16.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "8ca05f6d-25e5-4b24-aedd-4b2e7240fcf9",
+      "rows": 16630,
+      "queries": 1097,
+      "retained": 925,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "55a0fa143cd691a8e96d31e8af59cf08120a323e0fe97caa3215643407eb049a"
+    },
+    {
+      "name": "data/velocity/10.csv",
+      "split": "train",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "a3f305a2-378e-4cfe-963e-b653547c72cc",
+      "rows": 24639,
+      "queries": 1934,
+      "retained": 1757,
+      "dt_quantiles": [
+        0.09899999999999931,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "a905afe92084cb627249c7d520cf2790978612dfb3ff774d204dee32389bf435"
+    },
+    {
+      "name": "data/velocity/14.csv",
+      "split": "val",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "cd7d6fb3-48a2-494b-9bb5-88ab402cac1b",
+      "rows": 10621,
+      "queries": 501,
+      "retained": 501,
+      "dt_quantiles": [
+        0.09901000000000071,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "a2ff4879c1dfb72e368835000737c68c74470c68b24bd8e8793acd177cc4df15"
+    },
+    {
+      "name": "data/velocity/13.csv",
+      "split": "val",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "e438eb3f-1faa-485a-9ca5-79f4801831fd",
+      "rows": 24927,
+      "queries": 1930,
+      "retained": 1756,
+      "dt_quantiles": [
+        0.09899999999999842,
+        0.09999999999999964,
+        0.10100000000000087
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "31644bb4195e0cdfa2eda3e6ec0b3004eb97cbfb43a01a89a77dc4920218dc1a"
+    },
+    {
+      "name": "data/velocity/15.csv",
+      "split": "test",
+      "experiment_status": "success",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "eefd212c-11cb-4908-8c60-94a2f2ea8f50",
+      "rows": 15340,
+      "queries": 1005,
+      "retained": 830,
+      "dt_quantiles": [
+        0.09900999999999982,
+        0.09999999999999964,
+        0.10099000000000125
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "de08c7380ee49376ee01e7f5c4369ce6f328f609bcdce2fd7331a4f82118f395"
+    },
+    {
+      "name": "data/velocity/19.csv",
+      "split": "test",
+      "experiment_status": "failed",
+      "wheelbot": "wheelbot-beta-3",
+      "surface": "black_pvc",
+      "uuid": "f9c2dfa7-acdd-424f-8145-e4ba69d34729",
+      "rows": 9397,
+      "queries": 410,
+      "retained": 404,
+      "dt_quantiles": [
+        0.0990000000000002,
+        0.09999999999999964,
+        0.10001000000000104
+      ],
+      "invalid_vicon_rows": 0,
+      "sha256": "afdbb5b63187be050539b477d2ee1996a6ce076e75ce612bfad87148154e330f"
+    }
+  ],
+  "current_fields": [
+    "/gyro0/x",
+    "/gyro0/y",
+    "/gyro0/z",
+    "/gyro1/x",
+    "/gyro1/y",
+    "/gyro1/z",
+    "/gyro2/x",
+    "/gyro2/y",
+    "/gyro2/z",
+    "/gyro3/x",
+    "/gyro3/y",
+    "/gyro3/z",
+    "/accel0/x",
+    "/accel0/y",
+    "/accel0/z",
+    "/accel1/x",
+    "/accel1/y",
+    "/accel1/z",
+    "/accel2/x",
+    "/accel2/y",
+    "/accel2/z",
+    "/accel3/x",
+    "/accel3/y",
+    "/accel3/z",
+    "/q_yrp/yaw",
+    "/q_yrp/roll",
+    "/q_yrp/pitch",
+    "/dq_yrp/yaw_vel",
+    "/dq_yrp/roll_vel",
+    "/dq_yrp/pitch_vel",
+    "/q_DR/drive_wheel",
+    "/q_DR/reaction_wheel",
+    "/dq_DR/drive_wheel",
+    "/dq_DR/reaction_wheel",
+    "/ddq_DR/drive_wheel",
+    "/ddq_DR/reaction_wheel",
+    "/tau_DR_command/drive_wheel",
+    "/tau_DR_command/reaction_wheel",
+    "/setpoint/yaw",
+    "/setpoint/roll",
+    "/setpoint/pitch",
+    "/setpoint/yaw_rate",
+    "/setpoint/roll_rate",
+    "/setpoint/pitch_rate",
+    "/setpoint/driving_wheel_angle",
+    "/setpoint/driving_wheel_angular_velocity",
+    "/setpoint/balancing_wheel_angle",
+    "/setpoint/balancing_wheel_angular_velocity",
+    "battery/voltage"
+  ],
+  "current_dim": 49,
+  "plan_dim": 20,
+  "history_dim": 147,
+  "oracle_dim": 3,
+  "legal_information": "All non-Vicon current robot fields including sensors, setpoints and causal estimates; no time index or outcome label",
+  "units": "Vicon rotation used as quaternion; Vicon position unused because raw numeric units require further checking",
+  "future_control": "same recorded torque samples at 10ms spacing supplied to every arm as a prescribed profile",
+  "limitations": [
+    "Vicon marker/body extrinsics not independently calibrated; this is an initial information screen",
+    "0.1s observed response under a prescribed recorded torque sequence is not a navigation return"
+  ],
+  "script_sha256": "e089fbe10cc18587669df4ed4598e475d58e5fafe777f28e70994985fb8b1da7"
+}

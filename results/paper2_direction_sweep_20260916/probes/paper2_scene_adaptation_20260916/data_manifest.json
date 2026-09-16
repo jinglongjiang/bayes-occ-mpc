@@ -1,0 +1,134 @@
+{
+  "dynamic_robot/1737635531(dog)": {
+    "split": "train",
+    "sha256": "a9f1de24a8153dc2de487edfea41660f8f4d910fc5be11b428c95e86b78a0e5d"
+  },
+  "no_robot/1737531432": {
+    "split": "test",
+    "sha256": "6a7e66c08706a673e5eba809895d1a55978b7ccc1670ddd51d71a5db1bfaae93"
+  },
+  "no_robot/1737971338": {
+    "split": "train",
+    "sha256": "9a5b7afd72c77b3d523987d93f7adf18a7a6fa44f3ce022664c95b6e655a82a7"
+  },
+  "no_robot/1737978635": {
+    "split": "train",
+    "sha256": "e2bb491f04333f1fe077eadfdcb23220116f45c65c92f4bb17496085f238b210"
+  },
+  "no_robot/1738056047": {
+    "split": "train",
+    "sha256": "b1b20f80782317265d9059e8901732752b6934d7da37dabaebe2ce0872568ad8"
+  },
+  "no_robot/1738056349": {
+    "split": "test",
+    "sha256": "e38bd63073c32333d95163eefe21ee1d6402176d24a9c96dbaaade31d357ba33"
+  },
+  "no_robot/1738059947": {
+    "split": "train",
+    "sha256": "37bcfdb0bd9bd12a883453f98a6e629777f13905ed8975eb3e438f8725664dc8"
+  },
+  "no_robot/1738076465": {
+    "split": "test",
+    "sha256": "5c9545bb1b5a75a7bc759b39fabf258c49c5c071d30979e3589b90191b2b8673"
+  },
+  "no_robot/1738143016": {
+    "split": "val",
+    "sha256": "64b2f0c65a897163fab3569b68fbd33cb18c4a90bcdeaced68cd9fa9384c53bc"
+  },
+  "no_robot/1738148746": {
+    "split": "test",
+    "sha256": "9a8033288285285723dac49699dcabbda4d1d8225b21bf3cb5e0084b55cb19d8"
+  },
+  "no_robot/1738232714": {
+    "split": "train",
+    "sha256": "9c356d9f27aeace5657ae76acf2703d21ae5ce3697b00064044c0f00c9f4e386"
+  },
+  "no_robot/1738317225": {
+    "split": "train",
+    "sha256": "e35336b9da026df599cc37fe028f55436b62f143920e9883435e5c626f0034ab"
+  },
+  "no_robot/1738574351": {
+    "split": "train",
+    "sha256": "2126c2c5052924ad7d13cb1c48de2f624ac2963ef28e046ade5424fb114371c7"
+  },
+  "no_robot/1738578893": {
+    "split": "train",
+    "sha256": "3aed423b2e42749d2c0778ebbc0bee809e9bd1e8d3a56ec13228e7fb251c5773"
+  },
+  "no_robot/1738585557": {
+    "split": "train",
+    "sha256": "9e1f10b53a4ac0df2805572fb06b631a5302fa6eac7a6ac1d09ea3543860dab2"
+  },
+  "no_robot/1738596791": {
+    "split": "train",
+    "sha256": "0991db07ad9274904ce7d78c384beb5e80f045adef64f59a88040ea5c508d6ab"
+  },
+  "no_robot/1738662282": {
+    "split": "test",
+    "sha256": "80a146798af5078a0f3d53547025a81c89e1ff0d621148bfec1dfa9acf72ebab"
+  },
+  "no_robot/1738668524": {
+    "split": "test",
+    "sha256": "a6c97dfa34f1bb352937ed27b360c594700dac59d9539912200967fb2c83c922"
+  },
+  "no_robot/1738671254": {
+    "split": "train",
+    "sha256": "3363eb407d8ac4bae03ade506c4dcd4b4e2c929ac4a9c0449e2d516bccaf4262"
+  },
+  "no_robot/1738746257": {
+    "split": "train",
+    "sha256": "802bca67b10acc6af50b9f4e86b13a382554cb4d4380f8ec0a00f597427481d9"
+  },
+  "no_robot/1738760580": {
+    "split": "train",
+    "sha256": "92882ba4fb60c2fb3739ba04f0790383b60778caf91f9fc3df85d8b3f8a08a08"
+  },
+  "no_robot/1738919933": {
+    "split": "train",
+    "sha256": "688589b4dd600ac1736e8031752806eaea9652791220aa65ccd78b3ef13d9b3c"
+  },
+  "no_robot/1739180772": {
+    "split": "val",
+    "sha256": "738b53c9b57949da084bcefd8dbf8b5a9daed213b5fc39405b648396ac94a30c"
+  },
+  "no_robot/1739261503": {
+    "split": "train",
+    "sha256": "9cf7824402ed24888a38f26fb43275bcda0a4ba570d9351322a0c915e2a04ad5"
+  },
+  "no_robot/1739264572": {
+    "split": "train",
+    "sha256": "4fe2623761df484ac676315fa26a0bb0063eb4aec94290bc3bfd5b358a3f611a"
+  },
+  "no_robot/1739284572": {
+    "split": "test",
+    "sha256": "9e7b41b81b97660f43cc2b7c09cfb264ea969798d590d312e62ac9e70789bd9f"
+  },
+  "no_robot/1739357483": {
+    "split": "train",
+    "sha256": "7eab7c972300865d7d518262c3737d33618b60ebf5e5fe2cadda26fc5bef216f"
+  },
+  "no_robot/1739369577": {
+    "split": "train",
+    "sha256": "5e477e336d0cac15d906bfb3797697f92cd877d4d51d6c8a025c6c8b5b2cd8ef"
+  },
+  "stationary_robot/1737455747(hsr)": {
+    "split": "train",
+    "sha256": "6df69160496a16a662ddd677c34c916a60367cef49fdf7b937f229e73455c36c"
+  },
+  "stationary_robot/1737541545(steve)": {
+    "split": "test",
+    "sha256": "29d49b2a9272c770463edfd4132a04923bd3c145afbc99f174614af799bacdd0"
+  },
+  "stationary_robot/1737975940(go2)": {
+    "split": "train",
+    "sha256": "d4b462b1108306d61f2c2ed628a816a1382ee7f9c28ddec3cb37b7984ca6790a"
+  },
+  "stationary_robot/1738146369(go1)": {
+    "split": "train",
+    "sha256": "378d01ec5977ce964c021c56bf8e2d01ea215282d0de1824646224fbe90478e8"
+  },
+  "stationary_robot/1738758438(go1)": {
+    "split": "train",
+    "sha256": "9b30a32270b62ecde628418ab3e4be76965391ecf638e0b302251e2b37975736"
+  }
+}

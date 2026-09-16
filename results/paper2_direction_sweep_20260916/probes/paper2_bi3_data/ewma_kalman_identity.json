@@ -1,0 +1,26 @@
+{
+  "scope": "algebraic numerical unit check, not empirical navigation or novelty test",
+  "identity": "P=alpha*R; Q=alpha^2*R/(1-alpha); K=(P+Q)/(P+Q+R)=alpha",
+  "results": [
+    {
+      "alpha": 0.01,
+      "max_mean_difference": 1.214306433183765e-16,
+      "max_gain_difference": 1.734723475976807e-18
+    },
+    {
+      "alpha": 0.03,
+      "max_mean_difference": 4.579669976578771e-16,
+      "max_gain_difference": 6.938893903907228e-18
+    },
+    {
+      "alpha": 0.1,
+      "max_mean_difference": 2.220446049250313e-16,
+      "max_gain_difference": 0.0
+    },
+    {
+      "alpha": 0.3,
+      "max_mean_difference": 3.3306690738754696e-16,
+      "max_gain_difference": 5.551115123125783e-17
+    }
+  ]
+}

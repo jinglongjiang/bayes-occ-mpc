@@ -1,0 +1,116 @@
+[
+  {
+    "file": "frog_11-36_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_11-36_odom.npz",
+    "sha256": "c79fea45fe66b8688c98decf94294ce94127e259d64ba3e8b31da9758b5f56fa",
+    "arrays": {
+      "ts": [
+        17746
+      ],
+      "data": [
+        17746,
+        3
+      ]
+    },
+    "time_range": [
+      1398764185.6022823,
+      1398765963.2842932
+    ],
+    "finite": true
+  },
+  {
+    "file": "frog_12-43_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_12-43_odom.npz",
+    "sha256": "5d139e917d0bff732e25364201fa08f47f65de52d2f505e0b461d1e75d5d34c3",
+    "arrays": {
+      "ts": [
+        18980
+      ],
+      "data": [
+        18980,
+        3
+      ]
+    },
+    "time_range": [
+      1398854621.658864,
+      1398856522.2887669
+    ],
+    "finite": true
+  },
+  {
+    "file": "frog_16-41_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_16-41_odom.npz",
+    "sha256": "3862cb7e878d9f144b3005f0b3fd2dbda8717bac49f36185202df68c7137ff33",
+    "arrays": {
+      "ts": [
+        17623
+      ],
+      "data": [
+        17623,
+        3
+      ]
+    },
+    "time_range": [
+      1398782512.9617994,
+      1398784279.4380717
+    ],
+    "finite": true
+  },
+  {
+    "file": "frog_10-31_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_10-31_odom.npz",
+    "sha256": "09b5030028ddd7d322ef3f32005736e297055879b376922297825844af9989ec",
+    "arrays": {
+      "ts": [
+        15963
+      ],
+      "data": [
+        15963,
+        3
+      ]
+    },
+    "time_range": [
+      1398846690.021079,
+      1398848289.5359306
+    ],
+    "finite": true
+  },
+  {
+    "file": "frog_14-57_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_14-57_odom.npz",
+    "sha256": "90fc97daa2417941492d187f99df7e5d62ddec9e8d277425121986a8d07d7161",
+    "arrays": {
+      "ts": [
+        17428
+      ],
+      "data": [
+        17428,
+        3
+      ]
+    },
+    "time_range": [
+      1398776274.0519032,
+      1398778019.8247612
+    ],
+    "finite": true
+  },
+  {
+    "file": "frog_15-53_odom.npz",
+    "url": "https://robotics.upo.es/datasets/frog/laser2d_people/data/frog_15-53_odom.npz",
+    "sha256": "7892d1edcd4bd9478a467c991fd5195b238af966121ad1c5726a5efc0ba7cf26",
+    "arrays": {
+      "ts": [
+        15091
+      ],
+      "data": [
+        15091,
+        3
+      ]
+    },
+    "time_range": [
+      1398693201.7743876,
+      1398694715.252357
+    ],
+    "finite": true
+  }
+]

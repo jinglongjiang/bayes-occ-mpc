@@ -1,0 +1,57 @@
+{
+  "queries": {
+    "train": 380,
+    "calibration": 162,
+    "test": 562
+  },
+  "covariance_shrinkage": 0.12412870650643304,
+  "comparisons": {
+    "0.6": {
+      "events": 47,
+      "total": 562,
+      "Joint": {
+        "brier": 0.10238341334875792,
+        "mean_probability": 0.1816545262455516,
+        "scene_equal_brier": 0.10640229364262882
+      },
+      "Independent": {
+        "brier": 0.1024377541185698,
+        "mean_probability": 0.18186825789590746,
+        "scene_equal_brier": 0.106453447698591
+      },
+      "scene_differences_joint_minus_independent": {
+        "32": -1.537347141700174e-05,
+        "39": -0.0001558576311384008,
+        "46": -1.3751142165258079e-05,
+        "52": -1.9633979128103052e-05
+      }
+    },
+    "1.0": {
+      "events": 241,
+      "total": 562,
+      "Joint": {
+        "brier": 0.05524727627900147,
+        "mean_probability": 0.4091727368772242,
+        "scene_equal_brier": 0.05683195236953632
+      },
+      "Independent": {
+        "brier": 0.055233028859854594,
+        "mean_probability": 0.4091484096975089,
+        "scene_equal_brier": 0.05680496576618445
+      },
+      "scene_differences_joint_minus_independent": {
+        "32": -6.002112279964583e-05,
+        "39": -2.662237588461902e-05,
+        "46": -2.695532406077339e-05,
+        "52": 0.00022154523615251775
+      }
+    }
+  },
+  "limitations": [
+    "only four test recordings, one group of participants",
+    "recorded robot future used equally in scoring, not a legal planned counterfactual",
+    "Gaussian residual approximation; failure does not exclude all dependence models",
+    "no Bayesian posterior, RL, or navigation claim"
+  ],
+  "script_sha256": "fc2b93d0133700d9ce9645a6b1adbfe966c4417d42f83ea6b1ae1501d4b85a92"
+}

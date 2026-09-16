@@ -1,0 +1,32 @@
+{
+  "sha256": "6dd83b3425f6a9323c5dd52ba54023e47521e835047196aeee5676b43e6996db",
+  "population": "same fixed PeRoI queries and recording splits as scene adaptation",
+  "mean": "frozen global ridge; 2 second error in past velocity frame",
+  "grids": {
+    "ewma": [
+      0.01,
+      0.05,
+      0.2
+    ],
+    "iw": [
+      5,
+      20,
+      100
+    ],
+    "global_t": [
+      3,
+      5,
+      10,
+      30
+    ]
+  },
+  "observation": "first query per track, evidence available only after label_time",
+  "metrics": [
+    "NLL",
+    "90% ellipse coverage",
+    "ellipse area"
+  ],
+  "cold_start": "at most 20 matured tracks",
+  "gate": "Bayes must reliably beat EWMA and fixed Student-t before decision tests",
+  "limitation": "zero-mean residual and shared stationary covariance working model, not sensor truth"
+}

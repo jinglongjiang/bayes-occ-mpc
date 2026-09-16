@@ -1,0 +1,124 @@
+{
+  "128": {
+    "table": {
+      "original": {
+        "index": 0,
+        "config": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "point": 0.45470041371704173,
+        "energy": 0.42392789193438224,
+        "true_region_mass": 0.2651451840341942
+      },
+      "simple": {
+        "index": 12,
+        "config": [
+          0.0,
+          8.0,
+          1.0
+        ],
+        "point": 0.46449582560692654,
+        "energy": 0.37151144010185333,
+        "true_region_mass": 0.17199563950980784
+      },
+      "correlated": {
+        "index": 19,
+        "config": [
+          0.3,
+          8.0,
+          1.0
+        ],
+        "point": 0.46388002421352437,
+        "energy": 0.364005175484898,
+        "true_region_mass": 0.15934742749327682
+      }
+    },
+    "comparisons": {
+      "point": {
+        "correlated_minus_simple": -0.0006158013934021646,
+        "ci95": [
+          -0.011060563446397708,
+          0.009691287447284239
+        ],
+        "relative_improvement": 0.0013257415017616937
+      },
+      "energy": {
+        "correlated_minus_simple": -0.0075062646169553075,
+        "ci95": [
+          -0.0167018260883971,
+          0.000336258024212947
+        ],
+        "relative_improvement": 0.020204666146747447
+      }
+    },
+    "prediction_gate": false
+  },
+  "256": {
+    "table": {
+      "original": {
+        "index": 0,
+        "config": [
+          0.0,
+          1.0,
+          1.0
+        ],
+        "point": 0.4266498697701838,
+        "energy": 0.3923115004479621,
+        "true_region_mass": 0.312980275571077
+      },
+      "simple": {
+        "index": 12,
+        "config": [
+          0.0,
+          8.0,
+          1.0
+        ],
+        "point": 0.43385116367345616,
+        "energy": 0.3440753836202874,
+        "true_region_mass": 0.19326108116903953
+      },
+      "correlated": {
+        "index": 19,
+        "config": [
+          0.3,
+          8.0,
+          1.0
+        ],
+        "point": 0.44636621212127003,
+        "energy": 0.3460814328164686,
+        "true_region_mass": 0.18069742577463552
+      }
+    },
+    "comparisons": {
+      "point": {
+        "correlated_minus_simple": 0.012515048447813796,
+        "ci95": [
+          0.002446117046710591,
+          0.022291248778610034
+        ],
+        "relative_improvement": -0.028846409772991674
+      },
+      "energy": {
+        "correlated_minus_simple": 0.0020060491961812386,
+        "ci95": [
+          -0.004170524956048305,
+          0.00934676321348753
+        ],
+        "relative_improvement": -0.005830260726803584
+      }
+    },
+    "prediction_gate": false
+  },
+  "decision_gate_run": false,
+  "approve_navigation": false,
+  "case_counts": {
+    "development": 10,
+    "holdout": 15
+  },
+  "query_counts": {
+    "development": 56,
+    "holdout": 85
+  }
+}

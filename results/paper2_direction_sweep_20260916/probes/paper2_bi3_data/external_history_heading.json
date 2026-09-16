@@ -1,0 +1,335 @@
+{
+  "scope": "new-record check of frozen history vs history+heading; not Bayesian or navigation validation",
+  "shared_proprioception": "robot heading, current robot goal, current controller turning flag; as-of only",
+  "heading_arm": "adds only the two human orientations; robot orientation shared",
+  "split": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation": [
+      6
+    ],
+    "test": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "arms": {
+    "history": {
+      "validation": 0.5790704143132932,
+      "leaves": 15,
+      "rows": [
+        {
+          "session": 10,
+          "error": 0.5826711447512766,
+          "near_error": 0.7634500296692548,
+          "n": 1012,
+          "near_n": 204,
+          "risk_n": 46,
+          "risk_error": 0.7313447222227447
+        },
+        {
+          "session": 10,
+          "error": 0.6779930535302927,
+          "near_error": 0.7248333345040677,
+          "n": 1012,
+          "near_n": 194,
+          "risk_n": 26,
+          "risk_error": 0.6053858113072315
+        },
+        {
+          "session": 11,
+          "error": 0.7042761198077998,
+          "near_error": 0.8042653116272428,
+          "n": 797,
+          "near_n": 136,
+          "risk_n": 70,
+          "risk_error": 0.7102627801035926
+        },
+        {
+          "session": 11,
+          "error": 0.5988714142659113,
+          "near_error": 0.7584433110964938,
+          "n": 797,
+          "near_n": 92,
+          "risk_n": 29,
+          "risk_error": 0.43062203093709084
+        },
+        {
+          "session": 12,
+          "error": 0.6958878612196665,
+          "near_error": 0.7113073693324303,
+          "n": 857,
+          "near_n": 162,
+          "risk_n": 54,
+          "risk_error": 0.4958455657176855
+        },
+        {
+          "session": 12,
+          "error": 0.7077910644968027,
+          "near_error": 0.7299624796895473,
+          "n": 857,
+          "near_n": 139,
+          "risk_n": 26,
+          "risk_error": 0.5637519520429962
+        },
+        {
+          "session": 13,
+          "error": 0.6956430636955544,
+          "near_error": 0.8072107544278943,
+          "n": 841,
+          "near_n": 184,
+          "risk_n": 78,
+          "risk_error": 0.646580588188135
+        },
+        {
+          "session": 13,
+          "error": 0.650572026861378,
+          "near_error": 0.7358780935222146,
+          "n": 841,
+          "near_n": 158,
+          "risk_n": 62,
+          "risk_error": 0.5737116601891378
+        },
+        {
+          "session": 14,
+          "error": 0.6222769843210245,
+          "near_error": 0.7136565292712316,
+          "n": 1123,
+          "near_n": 118,
+          "risk_n": 31,
+          "risk_error": 0.6586679928036252
+        },
+        {
+          "session": 14,
+          "error": 0.5948618973136776,
+          "near_error": 0.5883713591251246,
+          "n": 1123,
+          "near_n": 160,
+          "risk_n": 38,
+          "risk_error": 0.8168987356136262
+        },
+        {
+          "session": 15,
+          "error": 0.5386740693198085,
+          "near_error": 0.5469554453273531,
+          "n": 911,
+          "near_n": 185,
+          "risk_n": 65,
+          "risk_error": 0.5626717886427415
+        },
+        {
+          "session": 15,
+          "error": 0.557138000842946,
+          "near_error": 0.5136713671267409,
+          "n": 911,
+          "near_n": 195,
+          "risk_n": 96,
+          "risk_error": 0.5206593466349181
+        },
+        {
+          "session": 16,
+          "error": 0.6097637612291523,
+          "near_error": 0.5720099779080166,
+          "n": 884,
+          "near_n": 138,
+          "risk_n": 79,
+          "risk_error": 0.517273716570548
+        },
+        {
+          "session": 16,
+          "error": 0.5590401618363244,
+          "near_error": 0.6325245416454168,
+          "n": 884,
+          "near_n": 145,
+          "risk_n": 24,
+          "risk_error": 0.6026241719703721
+        },
+        {
+          "session": 17,
+          "error": 0.7094983601248769,
+          "near_error": 0.8823335081934909,
+          "n": 749,
+          "near_n": 98,
+          "risk_n": 32,
+          "risk_error": 0.6185842715296749
+        },
+        {
+          "session": 17,
+          "error": 0.6534164713044796,
+          "near_error": 0.7539841535910671,
+          "n": 749,
+          "near_n": 152,
+          "risk_n": 59,
+          "risk_error": 0.6368410062326615
+        }
+      ],
+      "mean_error": 0.6348984659325607,
+      "mean_near_error": 0.7024285978785992
+    },
+    "history_heading": {
+      "validation": 0.5830691843094928,
+      "leaves": 15,
+      "rows": [
+        {
+          "session": 10,
+          "error": 0.5549681159836842,
+          "near_error": 0.6924461450678155,
+          "n": 1012,
+          "near_n": 204,
+          "risk_n": 46,
+          "risk_error": 0.6926630322362316
+        },
+        {
+          "session": 10,
+          "error": 0.6605455151297442,
+          "near_error": 0.7370720729709563,
+          "n": 1012,
+          "near_n": 194,
+          "risk_n": 26,
+          "risk_error": 0.5991950620717353
+        },
+        {
+          "session": 11,
+          "error": 0.6904235118004323,
+          "near_error": 0.7543822984160803,
+          "n": 797,
+          "near_n": 136,
+          "risk_n": 70,
+          "risk_error": 0.6882141231958342
+        },
+        {
+          "session": 11,
+          "error": 0.5824659280052565,
+          "near_error": 0.7420298211234615,
+          "n": 797,
+          "near_n": 92,
+          "risk_n": 29,
+          "risk_error": 0.46009393999579795
+        },
+        {
+          "session": 12,
+          "error": 0.6807746942844103,
+          "near_error": 0.6622899852194722,
+          "n": 857,
+          "near_n": 162,
+          "risk_n": 54,
+          "risk_error": 0.4619897533511002
+        },
+        {
+          "session": 12,
+          "error": 0.6853940050314246,
+          "near_error": 0.7132922061328208,
+          "n": 857,
+          "near_n": 139,
+          "risk_n": 26,
+          "risk_error": 0.5315619773410729
+        },
+        {
+          "session": 13,
+          "error": 0.6808182774685202,
+          "near_error": 0.7777989399542918,
+          "n": 841,
+          "near_n": 184,
+          "risk_n": 78,
+          "risk_error": 0.6123133209469724
+        },
+        {
+          "session": 13,
+          "error": 0.6172518510600569,
+          "near_error": 0.6873958256591141,
+          "n": 841,
+          "near_n": 158,
+          "risk_n": 62,
+          "risk_error": 0.529049242476589
+        },
+        {
+          "session": 14,
+          "error": 0.5964578952675134,
+          "near_error": 0.6657810086311644,
+          "n": 1123,
+          "near_n": 118,
+          "risk_n": 31,
+          "risk_error": 0.5768872239110032
+        },
+        {
+          "session": 14,
+          "error": 0.599795736189108,
+          "near_error": 0.6033535996034349,
+          "n": 1123,
+          "near_n": 160,
+          "risk_n": 38,
+          "risk_error": 0.7912200133269522
+        },
+        {
+          "session": 15,
+          "error": 0.5157457149071492,
+          "near_error": 0.5282803171972581,
+          "n": 911,
+          "near_n": 185,
+          "risk_n": 65,
+          "risk_error": 0.5302621611438167
+        },
+        {
+          "session": 15,
+          "error": 0.5411012115129137,
+          "near_error": 0.5017637453205698,
+          "n": 911,
+          "near_n": 195,
+          "risk_n": 96,
+          "risk_error": 0.4868741682896529
+        },
+        {
+          "session": 16,
+          "error": 0.5971422650633772,
+          "near_error": 0.5625648692799878,
+          "n": 884,
+          "near_n": 138,
+          "risk_n": 79,
+          "risk_error": 0.4952765029469087
+        },
+        {
+          "session": 16,
+          "error": 0.5410547537731095,
+          "near_error": 0.6072113931056681,
+          "n": 884,
+          "near_n": 145,
+          "risk_n": 24,
+          "risk_error": 0.5389575211239243
+        },
+        {
+          "session": 17,
+          "error": 0.7056094462696186,
+          "near_error": 0.82367739693368,
+          "n": 749,
+          "near_n": 98,
+          "risk_n": 32,
+          "risk_error": 0.6182777329990502
+        },
+        {
+          "session": 17,
+          "error": 0.6375701344983027,
+          "near_error": 0.7603504324065684,
+          "n": 749,
+          "near_n": 152,
+          "risk_n": 59,
+          "risk_error": 0.6163963460040717
+        }
+      ],
+      "mean_error": 0.6179449410152889,
+      "mean_near_error": 0.6762306285638966
+    }
+  },
+  "combined_heading_test": true,
+  "selection": "15 leaves fixed from original UM6 selection, no retuning on new records"
+}

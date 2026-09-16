@@ -1,0 +1,15 @@
+{
+  "script": "67bb331480027599417d52222377865c789cfd7adc289fe02aed2a0112f5ce3f",
+  "weights": "d61ecc5edbc7bfd802ac42c9a58a1e5c41a248e107ceef17f747e9121ed1400e",
+  "dataset_zip": "1537422ab02e14de0cbd60dfde60ca9efb354e9d48e4d7bcca5ecfcdbe0df227",
+  "vendor": "8159e4474d750b4ba384ef3dbdbae324a0acb963",
+  "stride": 5,
+  "splits": [
+    "val",
+    "test"
+  ],
+  "threshold_selection": "val micro F1, .1 to .9",
+  "matching_radius": 0.5,
+  "nms": "upstream votes_to_detections3: blur=5 sigma=1 collect=.5 nms=.001, unweighted",
+  "compatibility": "np.bool->np.bool_; np.add.at index list->tuple; skip random init before strict weight load"
+}
