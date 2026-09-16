@@ -1,0 +1,283 @@
+{
+ "arm": "bayes",
+ "point": 3,
+ "scene": 3,
+ "noise": [
+  0.1,
+  0.2,
+  0.8
+ ],
+ "cases": [
+  5099,
+  5099
+ ],
+ "frozen_sensor": true,
+ "frozen_points": {
+  "rule": "\u5728\u81ea\u8eab CR \u4e0b\u9650 + 2pp \u4e4b\u5185\u7684\u6863\u4f4d\u4e2d\u53d6\u5931\u8d25\u60e9\u7f5a\u65f6\u95f4\u6700\u77ed\u8005\uff0c\u5e76\u5217\u65f6\u53d6\u66f4\u5c0f\u7684\u6863\u4f4d\u7f16\u53f7\uff1b\u4ec5\u7528\u5f00\u53d1\u96c6 case\uff0c\u4e0d\u770b\u6b63\u5f0f\u6d4b\u8bd5\u96c6\u3002",
+  "time_convention": "audited_time = nav_time if success_without_overlap else 25.0\uff08\u672c\u6b21\u4fee\u6b63\uff1a\u6b64\u524d\u8bef\u7528 scored_time\uff0c\u5b83\u6309\u73af\u5883\u81ea\u8eab success \u5224\u5b9a\uff09",
+  "tolerance_pp": 2.0,
+  "development_directory": "/home/abc/temp/devsweep/clean",
+  "points": {
+   "bayes": 3,
+   "static_cov": 1,
+   "ewma": 3,
+   "conformal": 3,
+   "age_margin": 0
+  },
+  "detail": {
+   "bayes": {
+    "point": 3,
+    "n": 50,
+    "sr": 1.0,
+    "cr": 0.0,
+    "time": 9.77,
+    "scored_time_for_reference": 9.77,
+    "cr_floor": 0.0,
+    "candidates": {
+     "0": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.115,
+      "scored_time_for_reference": 10.115
+     },
+     "1": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.02,
+      "scored_time_for_reference": 10.02
+     },
+     "2": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.975,
+      "scored_time_for_reference": 9.975
+     },
+     "3": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.77,
+      "scored_time_for_reference": 9.77
+     },
+     "4": {
+      "n": 50,
+      "sr": 0.96,
+      "cr": 0.04,
+      "time": 10.38,
+      "scored_time_for_reference": 10.38
+     }
+    }
+   },
+   "static_cov": {
+    "point": 1,
+    "n": 50,
+    "sr": 1.0,
+    "cr": 0.0,
+    "time": 9.93,
+    "scored_time_for_reference": 9.93,
+    "cr_floor": 0.0,
+    "candidates": {
+     "0": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.96,
+      "scored_time_for_reference": 9.96
+     },
+     "1": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.93,
+      "scored_time_for_reference": 9.93
+     },
+     "2": {
+      "n": 50,
+      "sr": 0.98,
+      "cr": 0.02,
+      "time": 10.09,
+      "scored_time_for_reference": 10.09
+     },
+     "3": {
+      "n": 50,
+      "sr": 0.96,
+      "cr": 0.04,
+      "time": 10.195,
+      "scored_time_for_reference": 10.195
+     },
+     "4": {
+      "n": 50,
+      "sr": 0.96,
+      "cr": 0.04,
+      "time": 10.105,
+      "scored_time_for_reference": 10.105
+     }
+    }
+   },
+   "ewma": {
+    "point": 3,
+    "n": 50,
+    "sr": 1.0,
+    "cr": 0.0,
+    "time": 9.705,
+    "scored_time_for_reference": 9.705,
+    "cr_floor": 0.0,
+    "candidates": {
+     "0": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.025,
+      "scored_time_for_reference": 10.025
+     },
+     "1": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.1,
+      "scored_time_for_reference": 10.1
+     },
+     "2": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.98,
+      "scored_time_for_reference": 9.98
+     },
+     "3": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 9.705,
+      "scored_time_for_reference": 9.705
+     },
+     "4": {
+      "n": 50,
+      "sr": 0.98,
+      "cr": 0.02,
+      "time": 10.015,
+      "scored_time_for_reference": 10.015
+     }
+    }
+   },
+   "conformal": {
+    "point": 3,
+    "n": 50,
+    "sr": 1.0,
+    "cr": 0.0,
+    "time": 10.125,
+    "scored_time_for_reference": 10.125,
+    "cr_floor": 0.0,
+    "candidates": {
+     "0": {
+      "n": 50,
+      "sr": 0.96,
+      "cr": 0.0,
+      "time": 11.695,
+      "scored_time_for_reference": 11.695
+     },
+     "1": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.625,
+      "scored_time_for_reference": 10.625
+     },
+     "2": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.295,
+      "scored_time_for_reference": 10.295
+     },
+     "3": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.125,
+      "scored_time_for_reference": 10.125
+     },
+     "4": {
+      "n": 50,
+      "sr": 0.98,
+      "cr": 0.02,
+      "time": 10.415,
+      "scored_time_for_reference": 10.415
+     }
+    }
+   },
+   "age_margin": {
+    "point": 0,
+    "n": 50,
+    "sr": 1.0,
+    "cr": 0.0,
+    "time": 10.53,
+    "scored_time_for_reference": 10.53,
+    "cr_floor": 0.0,
+    "candidates": {
+     "0": {
+      "n": 50,
+      "sr": 1.0,
+      "cr": 0.0,
+      "time": 10.53,
+      "scored_time_for_reference": 10.53
+     },
+     "1": {
+      "n": 50,
+      "sr": 0.96,
+      "cr": 0.0,
+      "time": 11.45,
+      "scored_time_for_reference": 11.45
+     },
+     "2": {
+      "n": 50,
+      "sr": 0.94,
+      "cr": 0.0,
+      "time": 12.215,
+      "scored_time_for_reference": 12.215
+     },
+     "3": {
+      "n": 50,
+      "sr": 0.9,
+      "cr": 0.0,
+      "time": 13.65,
+      "scored_time_for_reference": 13.65
+     },
+     "4": {
+      "n": 50,
+      "sr": 0.74,
+      "cr": 0.0,
+      "time": 16.375,
+      "scored_time_for_reference": 16.375
+     }
+    }
+   }
+  }
+ },
+ "calibration": "/home/abc/temp/calibration/calibration_clean.json",
+ "episodes": [
+  {
+   "arm": "bayes",
+   "point": 3,
+   "scene": 3,
+   "case_id": 5099,
+   "event": "reach_goal",
+   "success": 1,
+   "collision": 0,
+   "timeout": 0,
+   "nav_time": 9.5,
+   "scored_time": 9.5,
+   "path_length": 8.620472026789644,
+   "min_clearance": 0.018695074730666672,
+   "actual_min_clearance": 0.018867604003159788,
+   "actual_overlap_steps": 0,
+   "collision_union": 0,
+   "success_without_overlap": 1,
+   "mean_plan_ms": 120.96758226279665,
+   "p95_plan_ms": 145.23822085175198
+  }
+ ]
+}

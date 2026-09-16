@@ -1,0 +1,72 @@
+Clean到Severe冻结迁移筛查
+
+状态：已完成；未通过“现有Bayes配置天然更抗观测退化”的筛查，不批准据此直接长训PPO。
+范围：原MPC风险表示，不是Bayesian IL/PPO验收。
+场景：dense_square，20人，25秒上限，holonomic，robot.visible=false。
+布局：5100--5199，100个旧正式测试布局；本次全部重跑clean和severe。
+并非新独立确认集，禁止根据本轮结果调整参数。
+五臂：Bayes、EWMA、Age margin、Conformal、Static covariance。
+所有臂使用原clean冻结工作点及clean标定数据。
+clean实际观测：(position std=0, velocity std=0, detection=1)。
+severe实际观测：(position std=0.1m, velocity std=0.2m/s, detection=0.8)。
+所有臂滤波器仍假设clean测量：std=0/0，detection=0.98；不提供真实测试噪声。
+实际观测噪声与滤波假设已解耦。EWMA在线残差更新保持启用，这不是测试调参。
+所有臂共享Bayesian tracker；实验只区分风险表示，不能据此声称Bayes滤波胜过非Bayes跟踪。
+当前MPC没有已冻结的短历史策略对照，本轮不临时创造，不声称完成短历史或方向性margin比较。
+
+主要统计：各臂clean/severe审计成功率、真实扫掠碰撞并集、失败固定25秒的惩罚时间。
+配对比较：(Bayes severe-clean) - (对照 severe-clean)。SR正值有利Bayes，CR/时间负值有利Bayes。
+按layout整体重采样，10000次bootstrap。对EWMA/Age两主要对照列97.5%区间；其余探索性95%。
+只有Bayes对强对照体现明确成功退化优势且没有碰撞/时间代价，才作为继续的线索。
+区间跨零是证据不足，不是等价证明。100布局不能排除小效应。
+不训练神经网络，不改变IL/PPO，不新增规划器。
+
+补充边界：Age margin使用原frozen_clean.json的point=0（coverage .75），不是后来新稿开发选择的.60；本轮严格不重选工作点。
+除1000正式回合，另有case5099的1回合severe连通测试，不进入统计。
+五臂实际噪声和滤波假设分离均通过断言；clean冻结前后滤波配置相同。
+行人配对哈希一致，可见观测访问契约通过，详见contract_checks.json。
+clean/severe关键源文件及参数hash一致，分析时重新读取源文件复核，未发生运行中改参。
+
+
+执行结果：1000回合完成，case集合、冻结参数和源文件hash全部验证。
+方法 | clean成功/碰撞/其他失败 | severe成功/碰撞/其他失败 | clean/severe惩罚时间(s)
+bayes | 96/0/4 | 61/38/1 | 13.600/18.108
+ewma | 97/2/1 | 67/31/2 | 13.015/18.240
+age_margin | 75/2/23 | 73/15/12 | 17.515/18.775
+conformal | 91/3/6 | 75/23/2 | 14.870/18.012
+static_cov | 99/0/1 | 70/28/2 | 13.275/17.462
+Bayes相对ewma的退化差（97.5%区间）：
+  success_change: -5.000 [-17.000, 7.000]
+  collision_change: 9.000 [-2.000, 20.000]
+  time_change: -0.718 [-2.085, 0.683]
+Bayes相对age_margin的退化差（97.5%区间）：
+  success_change: -33.000 [-50.000, -16.000]
+  collision_change: 25.000 [13.000, 37.000]
+  time_change: 3.248 [1.482, 5.015]
+Bayes相对conformal的退化差（95.0%区间）：
+  success_change: -19.000 [-32.000, -5.000]
+  collision_change: 18.000 [6.000, 30.000]
+  time_change: 1.365 [-0.183, 2.905]
+Bayes相对static_cov的退化差（95.0%区间）：
+  success_change: -6.000 [-18.000, 6.000]
+  collision_change: 10.000 [-1.000, 21.000]
+  time_change: 0.320 [-1.093, 1.723]
+
+最终判断
+1. 没有得到可投入主线的正证据。Bayes成功率96%降到61%，下降35pp；EWMA下降30pp，Age下降2pp，Conformal下降16pp，Static下降29pp。
+2. Bayes相对EWMA的成功退化差为-5pp，97.5%区间[-17,+7]；不能宣称EWMA确定更优，也不能宣称Bayes有优势。碰撞增长差+9pp，区间[-2,+20]。
+3. Bayes相对Age的成功退化差为-33pp，区间[-50,-16]；但Age的clean基线较保守且成功率较低，不能把退化差直接当所有任务上的优劣排名。severe下Age仍比Bayes多12个成功、少23个碰撞，惩罚时间多0.6675秒。
+4. Conformal在severe下75%成功、23%碰撞，Bayes为61%和38%；其退化差探索性区间也不支持Bayes占优。此项不是多场景独立确认。
+5. 实现层的明确限制：clean滤波假设R=0，使每次可见测量直接替换均值并将当前协方差归零。实际测量变噪时，该滤波器并不会自动识别新噪声；EWMA按已有规则从残差调整风险尺度。因此“递归Bayes会天然适应未知噪声”在当前实现中没有依据。该代码事实不是新增噪声自适应方法有效的证明。
+6. 本次是未知观测退化（噪声与漏检同时变化），不是已知新传感器标定后的迁移。不得与旧severe重新标定/调参结果混成同一实验，不把结果单独归因于噪声或漏检。
+7. 结论仅限当前共享跟踪器+MPC、一个20人场景、100个旧布局、冻结clean参数。没有检验短历史Actor、方向性margin、新训练机制或IL/PPO；不能据此宣布所有Bayesian RL不可行。
+决策：本轮结束，不改参数重跑，不启动RL，不扩展新变量搜索。现成配置不足以支持“跨观测条件更稳”的新主线。
+
+复现
+运行入口：/home/abc/temp/formal/run_formal.py
+FREEZE_SENSOR=1，TEST_NOISE分别为[0,0,1]与[0.1,0.2,0.8]。
+参数：bayes:3,ewma:3,age_margin:3,conformal:3,static_cov:3 7 frozen_clean.json calibration_clean.json 5100 100 输出目录。
+注意冒号后3是场景编号，不是工作点；工作点来自冻结JSON。
+分析：/home/abc/miniconda3/envs/crowdnav/bin/python /home/abc/temp/formal/merge.py --transfer-report /home/abc/temp/formal/transfer_20260917
+完整原始回合：clean/和severe/各5个JSON；机器可读汇总：summary.json；每条件源文件hash：protocol.json。
+只修改实验入口run_formal.py及分析入口merge.py，未改生产planner/filter或IL/PPO网络。

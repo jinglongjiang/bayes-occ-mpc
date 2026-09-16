@@ -1,0 +1,177 @@
+{
+  "n_layouts": 100,
+  "n_episodes": 1000,
+  "summary": {
+    "clean": {
+      "bayes": {
+        "successes": 96,
+        "collisions": 0,
+        "other_failures": 4,
+        "penalized_time": 13.6
+      },
+      "ewma": {
+        "successes": 97,
+        "collisions": 2,
+        "other_failures": 1,
+        "penalized_time": 13.015
+      },
+      "age_margin": {
+        "successes": 75,
+        "collisions": 2,
+        "other_failures": 23,
+        "penalized_time": 17.515
+      },
+      "conformal": {
+        "successes": 91,
+        "collisions": 3,
+        "other_failures": 6,
+        "penalized_time": 14.87
+      },
+      "static_cov": {
+        "successes": 99,
+        "collisions": 0,
+        "other_failures": 1,
+        "penalized_time": 13.275
+      }
+    },
+    "severe": {
+      "bayes": {
+        "successes": 61,
+        "collisions": 38,
+        "other_failures": 1,
+        "penalized_time": 18.1075
+      },
+      "ewma": {
+        "successes": 67,
+        "collisions": 31,
+        "other_failures": 2,
+        "penalized_time": 18.24
+      },
+      "age_margin": {
+        "successes": 73,
+        "collisions": 15,
+        "other_failures": 12,
+        "penalized_time": 18.775
+      },
+      "conformal": {
+        "successes": 75,
+        "collisions": 23,
+        "other_failures": 2,
+        "penalized_time": 18.0125
+      },
+      "static_cov": {
+        "successes": 70,
+        "collisions": 28,
+        "other_failures": 2,
+        "penalized_time": 17.4625
+      }
+    }
+  },
+  "paired_change_comparisons": {
+    "ewma": {
+      "confidence": 0.975,
+      "metrics": {
+        "success_change": {
+          "mean": -0.05,
+          "ci": [
+            -0.17,
+            0.07
+          ]
+        },
+        "collision_change": {
+          "mean": 0.09,
+          "ci": [
+            -0.02,
+            0.2
+          ]
+        },
+        "time_change": {
+          "mean": -0.7175,
+          "ci": [
+            -2.085,
+            0.6825312500000018
+          ]
+        }
+      }
+    },
+    "age_margin": {
+      "confidence": 0.975,
+      "metrics": {
+        "success_change": {
+          "mean": -0.33,
+          "ci": [
+            -0.5,
+            -0.16
+          ]
+        },
+        "collision_change": {
+          "mean": 0.25,
+          "ci": [
+            0.13,
+            0.37
+          ]
+        },
+        "time_change": {
+          "mean": 3.2475,
+          "ci": [
+            1.4824687500000002,
+            5.015
+          ]
+        }
+      }
+    },
+    "conformal": {
+      "confidence": 0.95,
+      "metrics": {
+        "success_change": {
+          "mean": -0.19,
+          "ci": [
+            -0.32,
+            -0.05
+          ]
+        },
+        "collision_change": {
+          "mean": 0.18,
+          "ci": [
+            0.06,
+            0.3
+          ]
+        },
+        "time_change": {
+          "mean": 1.365,
+          "ci": [
+            -0.18256249999999943,
+            2.905124999999998
+          ]
+        }
+      }
+    },
+    "static_cov": {
+      "confidence": 0.95,
+      "metrics": {
+        "success_change": {
+          "mean": -0.06,
+          "ci": [
+            -0.18,
+            0.06
+          ]
+        },
+        "collision_change": {
+          "mean": 0.1,
+          "ci": [
+            -0.01,
+            0.21
+          ]
+        },
+        "time_change": {
+          "mean": 0.32,
+          "ci": [
+            -1.0925,
+            1.722562499999999
+          ]
+        }
+      }
+    }
+  },
+  "scope": "shared Bayesian tracker, frozen clean assumptions; risk representation migration only"
+}

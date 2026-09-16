@@ -1,0 +1,84 @@
+{
+  "adapter_checks": {
+    "bayes": {
+      "actual": [
+        0.1,
+        0.2,
+        0.8
+      ],
+      "assumed": [
+        0.0,
+        0.0,
+        0.98
+      ]
+    },
+    "static_cov": {
+      "actual": [
+        0.1,
+        0.2,
+        0.8
+      ],
+      "assumed": [
+        0.0,
+        0.0,
+        0.98
+      ]
+    },
+    "ewma": {
+      "actual": [
+        0.1,
+        0.2,
+        0.8
+      ],
+      "assumed": [
+        0.0,
+        0.0,
+        0.98
+      ]
+    },
+    "conformal": {
+      "actual": [
+        0.1,
+        0.2,
+        0.8
+      ],
+      "assumed": [
+        0.0,
+        0.0,
+        0.98
+      ]
+    },
+    "age_margin": {
+      "actual": [
+        0.1,
+        0.2,
+        0.8
+      ],
+      "assumed": [
+        0.0,
+        0.0,
+        0.98
+      ]
+    }
+  },
+  "pairing": {
+    "sensor": "07f679ae0110943d3104a4d2e6516ea581534a6da1383061e671e5783888379b",
+    "gt": "07f679ae0110943d3104a4d2e6516ea581534a6da1383061e671e5783888379b",
+    "worst": "07f679ae0110943d3104a4d2e6516ea581534a6da1383061e671e5783888379b"
+  },
+  "access": {
+    "visible_ids": [
+      1,
+      6,
+      7,
+      9,
+      11,
+      12,
+      17,
+      19
+    ],
+    "sensor_entities": 8,
+    "gt_entities": 20,
+    "sensor_worst_equal": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "test_noise": [
+    0,
+    0,
+    1
+  ],
+  "frozen_sensor": true,
+  "calibration_noise": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "points": {
+    "bayes": 3,
+    "static_cov": 1,
+    "ewma": 3,
+    "conformal": 3,
+    "age_margin": 0
+  },
+  "cases": [
+    5100,
+    5199
+  ],
+  "blocks": "bayes:3,ewma:3,age_margin:3,conformal:3,static_cov:3",
+  "source_hashes": {
+    "/home/abc/temp/formal/run_formal.py": "7a4dafd962b399cd30e1a5b7943d1f0d689fa7d2163668d95f8bfaca7437c969",
+    "/home/abc/workspace/bayes_occ_mpc/continuous_mpc_gate.py": "5b5489cb115984f5356c81d09deda5e77af452f47efd8b718e5c173fbbd804df",
+    "/home/abc/workspace/bayes_occ_mpc/evaluate_matched_safety.py": "60862b37dd563155da1391777307d6297a70af659a02bc2e7bf2ec0bd469a247",
+    "/home/abc/workspace/bayes_occ_mpc/bayesian_rfs.py": "c3622b4c6a1b7051d91a42a666919bb925f889fec6a6dbd16a692361c8421a4f",
+    "/home/abc/workspace/nav_data/mamba/camrl/CrowdNav/crowd_sim/envs/crowd_sim.py": "cfc5c977284a240639280caecbc602a64df1302d14f98f1d274a80a038b97eab",
+    "/home/abc/temp/formal/frozen_clean.json": "2e88d7696d9323a28d305e0d02923173b0ce2f9562fc586de6c2ccc476806fc9",
+    "/home/abc/temp/calibration/calibration_clean.json": "9808d2a25ad52b471394a3bb5e64037476e60a0d749f5195c5ebafe49d551901"
+  }
+}

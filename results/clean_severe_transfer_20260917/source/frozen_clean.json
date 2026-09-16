@@ -1,0 +1,245 @@
+{
+ "rule": "在自身 CR 下限 + 2pp 之内的档位中取失败惩罚时间最短者，并列时取更小的档位编号；仅用开发集 case，不看正式测试集。",
+ "time_convention": "audited_time = nav_time if success_without_overlap else 25.0（本次修正：此前误用 scored_time，它按环境自身 success 判定）",
+ "tolerance_pp": 2.0,
+ "development_directory": "/home/abc/temp/devsweep/clean",
+ "points": {
+  "bayes": 3,
+  "static_cov": 1,
+  "ewma": 3,
+  "conformal": 3,
+  "age_margin": 0
+ },
+ "detail": {
+  "bayes": {
+   "point": 3,
+   "n": 50,
+   "sr": 1.0,
+   "cr": 0.0,
+   "time": 9.77,
+   "scored_time_for_reference": 9.77,
+   "cr_floor": 0.0,
+   "candidates": {
+    "0": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.115,
+     "scored_time_for_reference": 10.115
+    },
+    "1": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.02,
+     "scored_time_for_reference": 10.02
+    },
+    "2": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.975,
+     "scored_time_for_reference": 9.975
+    },
+    "3": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.77,
+     "scored_time_for_reference": 9.77
+    },
+    "4": {
+     "n": 50,
+     "sr": 0.96,
+     "cr": 0.04,
+     "time": 10.38,
+     "scored_time_for_reference": 10.38
+    }
+   }
+  },
+  "static_cov": {
+   "point": 1,
+   "n": 50,
+   "sr": 1.0,
+   "cr": 0.0,
+   "time": 9.93,
+   "scored_time_for_reference": 9.93,
+   "cr_floor": 0.0,
+   "candidates": {
+    "0": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.96,
+     "scored_time_for_reference": 9.96
+    },
+    "1": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.93,
+     "scored_time_for_reference": 9.93
+    },
+    "2": {
+     "n": 50,
+     "sr": 0.98,
+     "cr": 0.02,
+     "time": 10.09,
+     "scored_time_for_reference": 10.09
+    },
+    "3": {
+     "n": 50,
+     "sr": 0.96,
+     "cr": 0.04,
+     "time": 10.195,
+     "scored_time_for_reference": 10.195
+    },
+    "4": {
+     "n": 50,
+     "sr": 0.96,
+     "cr": 0.04,
+     "time": 10.105,
+     "scored_time_for_reference": 10.105
+    }
+   }
+  },
+  "ewma": {
+   "point": 3,
+   "n": 50,
+   "sr": 1.0,
+   "cr": 0.0,
+   "time": 9.705,
+   "scored_time_for_reference": 9.705,
+   "cr_floor": 0.0,
+   "candidates": {
+    "0": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.025,
+     "scored_time_for_reference": 10.025
+    },
+    "1": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.1,
+     "scored_time_for_reference": 10.1
+    },
+    "2": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.98,
+     "scored_time_for_reference": 9.98
+    },
+    "3": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 9.705,
+     "scored_time_for_reference": 9.705
+    },
+    "4": {
+     "n": 50,
+     "sr": 0.98,
+     "cr": 0.02,
+     "time": 10.015,
+     "scored_time_for_reference": 10.015
+    }
+   }
+  },
+  "conformal": {
+   "point": 3,
+   "n": 50,
+   "sr": 1.0,
+   "cr": 0.0,
+   "time": 10.125,
+   "scored_time_for_reference": 10.125,
+   "cr_floor": 0.0,
+   "candidates": {
+    "0": {
+     "n": 50,
+     "sr": 0.96,
+     "cr": 0.0,
+     "time": 11.695,
+     "scored_time_for_reference": 11.695
+    },
+    "1": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.625,
+     "scored_time_for_reference": 10.625
+    },
+    "2": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.295,
+     "scored_time_for_reference": 10.295
+    },
+    "3": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.125,
+     "scored_time_for_reference": 10.125
+    },
+    "4": {
+     "n": 50,
+     "sr": 0.98,
+     "cr": 0.02,
+     "time": 10.415,
+     "scored_time_for_reference": 10.415
+    }
+   }
+  },
+  "age_margin": {
+   "point": 0,
+   "n": 50,
+   "sr": 1.0,
+   "cr": 0.0,
+   "time": 10.53,
+   "scored_time_for_reference": 10.53,
+   "cr_floor": 0.0,
+   "candidates": {
+    "0": {
+     "n": 50,
+     "sr": 1.0,
+     "cr": 0.0,
+     "time": 10.53,
+     "scored_time_for_reference": 10.53
+    },
+    "1": {
+     "n": 50,
+     "sr": 0.96,
+     "cr": 0.0,
+     "time": 11.45,
+     "scored_time_for_reference": 11.45
+    },
+    "2": {
+     "n": 50,
+     "sr": 0.94,
+     "cr": 0.0,
+     "time": 12.215,
+     "scored_time_for_reference": 12.215
+    },
+    "3": {
+     "n": 50,
+     "sr": 0.9,
+     "cr": 0.0,
+     "time": 13.65,
+     "scored_time_for_reference": 13.65
+    },
+    "4": {
+     "n": 50,
+     "sr": 0.74,
+     "cr": 0.0,
+     "time": 16.375,
+     "scored_time_for_reference": 16.375
+    }
+   }
+  }
+ }
+}
